@@ -1,4 +1,5 @@
 import './App.scss';
+import React from 'react';
 
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,6 +19,11 @@ import CustomDivider from './CustomDivider.jsx'
 import ReflectionContainer from './ReflectionContainer.jsx'
 
 function App() {
+  const [loaded, setLoaded] = React.useState(false);
+  React.useEffect(() => {
+    setTimeout(function() { setLoaded(true); }, 300);
+  }, []);
+
   return (
     <div className="App">
 
@@ -62,13 +68,10 @@ function App() {
 
       <header className="section-a" id="home">
         <div className="particles-container">
-          <CustomParticles className="particles"/>
+          {/*<CustomParticles className="particles"/>*/}
           <Container className="masthead">
             <Row>
-              <h2>1 Dingocoin = 1 Dingocoin</h2>
-            </Row>
-            <Row>
-              <Col><img src={DingocoinLogo} className="masthead-avatar" alt="logo" /></Col>
+              <Col><div className="isometric-holder"><div className={loaded ? "isometric" : "isometric preload"}></div></div></Col>
             </Row>
             <Row>
               <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
