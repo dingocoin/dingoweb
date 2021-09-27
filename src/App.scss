@@ -1,3 +1,9 @@
+$theme-colors: (
+  "primary": #1e4151
+);
+
+@import "~bootstrap/scss/bootstrap";
+
 .App {
   text-align: center;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -132,21 +138,31 @@ h1, h2, h3, h4, h5, h6 {
   height: 14rem;
 }
 
-.project-card a, .project-card a:hover, .project-card a:link, .project-card a:visited, .project-card a:active {
-  color: #1e4151;
-  text-decoration: none;
-}
-
 .project-card .faicon {
+  color: #1e4151;
   font-size: 2.5rem;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
   width: 100%;
 }
 
-.project-card a:hover .faicon {
-  font-size: 4.0rem;
+.project-card p {
+  margin-top: 0.5rem;
+  font-weight: 350;
 }
 
-.project-card p {
-  font-weight: 300;
+
+
+/* ===== WALLETS ===== */
+.wallet-button {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.wallet-section {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.wallet-section p {
+  margin-bottom: 0.5rem;
 }
