@@ -8,7 +8,6 @@ import DingocoinLogo from './assets/img/dingocoin.png'
 import DingoImg from './assets/img/dingo.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 import { SocialIcon } from 'react-social-icons';
-import { Link } from 'react-router-dom'
 
 // Bootstrap.
 import { Button, Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-bootstrap'
@@ -152,15 +151,15 @@ function App() {
                 <p>Official Mainnet Wallets</p>
                 <div className="wallet-download">
                   <FontAwesomeIcon className="faicon" icon={faWindows} />
-                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Windows</Button></Link>
+                  <a target="_blank" href="https://github.com/dingocoin/dingocoin/releases/download/v1.16.0.2/windows-binaries.zip"><Button className="wallet-button" variant="primary">Windows</Button></a>
                 </div>
                 <div className="wallet-download">
                   <FontAwesomeIcon className="faicon" icon={faApple} />
-                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">macOS</Button></Link>
+                  <a target="_blank" href="https://github.com/dingocoin/dingocoin/releases/tag/v1.16.0.2"><Button className="wallet-button" variant="primary">macOS</Button></a>
                 </div>
                 <div className="wallet-download">
                   <FontAwesomeIcon className="faicon" icon={faLinux} />
-                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Linux</Button></Link>
+                  <a target="_blank" href="https://github.com/dingocoin/dingocoin/releases/download/v1.16.0.2/linux-binaries.zip"><Button className="wallet-button" variant="primary">Linux</Button></a>
                 </div>
               </div>
 
@@ -168,7 +167,7 @@ function App() {
                 <p>Other Wallets</p>
                 <div className="wallet-download">
                   <FontAwesomeIcon className="faicon" icon={faWallet} />
-                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Hive Multi-Coin Web Wallet</Button></Link>
+                  <a target="_blank" href="https://beehivewallet.link/"><Button className="wallet-button" variant="primary">Hive Multi-Coin Web Wallet</Button></a>
                 </div>
               </div>
             </Col>
@@ -178,11 +177,11 @@ function App() {
                 <p>wDingocoin on Binance Smart Chain (BSC)</p>
                 <div className="wallet-download">
                   <FontAwesomeIcon className="faicon" icon={faFileContract} />
-                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Smart Contract</Button></Link>
+                  <a target="_blank" href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"><Button className="wallet-button" variant="primary">Smart Contract</Button></a>
                 </div>
                 <div className="wallet-download">
                   <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
-                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Wrap Custodian</Button></Link>
+                  <a target="_blank" href="https://wrap.dingocoin.org"><Button className="wallet-button" variant="primary">Wrap Custodian</Button></a>
                 </div>
               </div>
               <div className="wallet-section">
