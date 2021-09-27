@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { faWpexplorer, faWindows, faApple, faLinux, faTwitter, faReddit, faFacebook, faDiscord, faTelegram } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
-import DingoImg from './assets/img/dingo.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 
 // Bootstrap.
@@ -14,7 +13,6 @@ import { Button, Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-boo
 
 // Others.
 import CustomDivider from './CustomDivider.jsx'
-import ReflectionContainer from './ReflectionContainer.jsx'
 
 function App() {
   const [loaded, setLoaded] = React.useState(false);
@@ -38,6 +36,10 @@ function App() {
               <Nav.Link href="#about">Features</Nav.Link>
               <Nav.Link href="#wallets">Wallets</Nav.Link>
               <Nav.Link href="#roadmap">Roadmap</Nav.Link>
+              <NavDropdown className="navbar-important" title="Resources">
+                <NavDropdown.Item target="_blank" href={WhitepaperPdf}>Whitepaper</NavDropdown.Item>
+                <NavDropdown.Item>Mining Information (W.I.P)</NavDropdown.Item>
+              </NavDropdown>
               <NavDropdown className="navbar-important" title="Live Chart">
                 <NavDropdown.Header>Dingocoin</NavDropdown.Header>
                 <NavDropdown.Item>CoinPaprika</NavDropdown.Item>
@@ -209,28 +211,19 @@ function App() {
         <CustomDivider/>
         <Container>
           <ul className="timeline">
-            <li className="event eventcompleted" data-date="Apr 2, 2021"><h3><head> Birth of Dingocoin</head></h3><p>Genesis plus 1 block mined. Block reward set to 0 - 1,000,000.</p></li>
-            <li className="event eventcompleted" data-date="Apr 8, 2021"><h3><head> 5,000 Blocks Mined</head></h3><p>Block reward halved to 500,000.</p></li>
-            <li className="event eventcompleted" data-date="Jun 17, 2021"><h3><head> 100,000 Blocks Mined</head></h3><p>Block reward halved to 250,000.</p></li>
-            <li className="event eventcompleted" data-date="Aug 29, 2021"><h3><head> Wrapped Dingocoin Released on BSC</head></h3><p>Hold and trade Dingocoin on BSC.</p></li>
-            <li className="event eventcompleted" data-date="Aug 30, 2021"><h3><head> 200,000 Blocks Mined</head></h3><p>Block reward halved to 125,000.</p></li>
-            <li className="event eventcompleted" data-date="Sep 18, 2021"><h3><head> Max Re-org Length Activated</head></h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
-            <li className="event eventincomplete" data-date="~ Oct, 2021"><h3><head> (Height 265,000) Chain ID switch activated</head></h3><p>Merged mining can now be done alongside Doge without conflict.<br/>Increases exposure to miners via AuxPOW.</p></li>
-            <li className="event eventincomplete" data-date="~ Nov, 2021"><h3><head> 300,000 Blocks Mined</head></h3><p>Block reward halved to 62,500.</p></li>
-            <li className="event eventincomplete" data-date="~ Jan, 2022"><h3><head> 400,000 Blocks Mined</head></h3><p>Block reward halved to 31,250.</p></li>
-            <li className="event eventincomplete" data-date="~ Apr, 2022"><h3><head> 500,000 Blocks Mined</head></h3><p>Block reward halved to 15,625.</p></li>
-            <li className="event eventincomplete" data-date="~ Jun, 2022"><h3><head> 600,000 Blocks Mined</head></h3><p>Block reward set permanentely to 10,000.</p></li>
+            <li className="event eventcompleted" data-date="Apr 2, 2021"><h3>Birth of Dingocoin</h3><p>Genesis plus 1 block mined. Block reward set to 0 - 1,000,000.</p></li>
+            <li className="event eventcompleted" data-date="Apr 8, 2021"><h3>5,000 Blocks Mined</h3><p>Block reward halved to 500,000.</p></li>
+            <li className="event eventcompleted" data-date="Jun 17, 2021"><h3>100,000 Blocks Mined</h3><p>Block reward halved to 250,000.</p></li>
+            <li className="event eventcompleted" data-date="Aug 29, 2021"><h3>Wrapped Dingocoin Released on BSC</h3><p>Hold and trade Dingocoin on BSC.</p></li>
+            <li className="event eventcompleted" data-date="Aug 30, 2021"><h3>200,000 Blocks Mined</h3><p>Block reward halved to 125,000.</p></li>
+            <li className="event eventcompleted" data-date="Sep 18, 2021"><h3>Max Re-org Length Activated</h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
+            <li className="event eventincomplete" data-date="~ Oct, 2021"><h3>(Height 265,000) Chain ID switch activated</h3><p>Merged mining can now be done alongside Doge without conflict.<br/>Increases exposure to miners via AuxPOW.</p></li>
+            <li className="event eventincomplete" data-date="~ Nov, 2021"><h3>300,000 Blocks Mined</h3><p>Block reward halved to 62,500.</p></li>
+            <li className="event eventincomplete" data-date="~ Jan, 2022"><h3>400,000 Blocks Mined</h3><p>Block reward halved to 31,250.</p></li>
+            <li className="event eventincomplete" data-date="~ Apr, 2022"><h3>500,000 Blocks Mined</h3><p>Block reward halved to 15,625.</p></li>
+            <li className="event eventincomplete" data-date="~ Jun, 2022"><h3>600,000 Blocks Mined</h3><p>Block reward set permanentely to 10,000.</p></li>
           </ul>
         </Container>
-      </section>
-
-      <section>
-        <div class="totalcontainer">
-          <div class="laya-please layer-1">
-          </div>
-          <div class="laya-please layer-7">
-          </div>
-        </div>
       </section>
 
       <section className="section-footer">
