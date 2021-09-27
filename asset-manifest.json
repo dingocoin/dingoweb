@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/dingoweb2/static/css/main.e98686ae.chunk.css",
-    "main.js": "/dingoweb2/static/js/main.2eaf6ec8.chunk.js",
-    "main.js.map": "/dingoweb2/static/js/main.2eaf6ec8.chunk.js.map",
+    "main.css": "/dingoweb2/static/css/main.09ce283d.chunk.css",
+    "main.js": "/dingoweb2/static/js/main.d2041255.chunk.js",
+    "main.js.map": "/dingoweb2/static/js/main.d2041255.chunk.js.map",
     "runtime-main.js": "/dingoweb2/static/js/runtime-main.610e5f8f.js",
     "runtime-main.js.map": "/dingoweb2/static/js/runtime-main.610e5f8f.js.map",
-    "static/js/2.33a85f1e.chunk.js": "/dingoweb2/static/js/2.33a85f1e.chunk.js",
-    "static/js/2.33a85f1e.chunk.js.map": "/dingoweb2/static/js/2.33a85f1e.chunk.js.map",
+    "static/js/2.18cec998.chunk.js": "/dingoweb2/static/js/2.18cec998.chunk.js",
+    "static/js/2.18cec998.chunk.js.map": "/dingoweb2/static/js/2.18cec998.chunk.js.map",
     "index.html": "/dingoweb2/index.html",
-    "static/css/main.e98686ae.chunk.css.map": "/dingoweb2/static/css/main.e98686ae.chunk.css.map",
-    "static/js/2.33a85f1e.chunk.js.LICENSE.txt": "/dingoweb2/static/js/2.33a85f1e.chunk.js.LICENSE.txt",
+    "static/css/main.09ce283d.chunk.css.map": "/dingoweb2/static/css/main.09ce283d.chunk.css.map",
+    "static/js/2.18cec998.chunk.js.LICENSE.txt": "/dingoweb2/static/js/2.18cec998.chunk.js.LICENSE.txt",
     "static/media/Dingocoin_Whitepaper.56dccef1.pdf": "/dingoweb2/static/media/Dingocoin_Whitepaper.56dccef1.pdf",
     "static/media/dingo.244f9993.png": "/dingoweb2/static/media/dingo.244f9993.png",
-    "static/media/dingocoin.15331900.png": "/dingoweb2/static/media/dingocoin.15331900.png"
+    "static/media/App.scss": "/dingoweb2/static/media/dingocoin.15331900.png"
   },
   "entrypoints": [
     "static/js/runtime-main.610e5f8f.js",
-    "static/js/2.33a85f1e.chunk.js",
-    "static/css/main.e98686ae.chunk.css",
-    "static/js/main.2eaf6ec8.chunk.js"
+    "static/js/2.18cec998.chunk.js",
+    "static/css/main.09ce283d.chunk.css",
+    "static/js/main.d2041255.chunk.js"
   ]
 }
