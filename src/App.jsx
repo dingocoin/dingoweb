@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar className="navbar" expand="lg">
+      <Navbar bg="dark" className="navbar" bg="dark" expand="lg">
         <Container>
           <Navbar.Brand className="navbar-brand">
             <img src={DingocoinLogo}/>
@@ -30,57 +30,63 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <Nav className="ms-auto">
-              <Nav.Link>Home</Nav.Link>
-              <Nav.Link>About</Nav.Link>
-              <Nav.Link>Roadmap</Nav.Link>
-              <NavDropdown className="navbar-item" title="Wallets">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#about">About</Nav.Link>
+              <Nav.Link href="#wallets">Wallets</Nav.Link>
+              <Nav.Link href="#roadmap">Roadmap</Nav.Link>
+              <NavDropdown className="navbar-important" title="Live Chart">
                 <NavDropdown.Header>Dingocoin</NavDropdown.Header>
-                <NavDropdown.Item>Mainnet Wallet</NavDropdown.Item>
-                <NavDropdown.Item>Web Wallet</NavDropdown.Item>
+                <NavDropdown.Item>CoinPaprika</NavDropdown.Item>
+                <NavDropdown.Item>CoinGecko</NavDropdown.Item>
+                <NavDropdown.Item>Nomics</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Header>wDingocoin</NavDropdown.Header>
-                <NavDropdown.Item>BSC Wallet</NavDropdown.Item>
+                <NavDropdown.Header>wDingocoin (BSC)</NavDropdown.Header>
+                <NavDropdown.Item>dex.guru</NavDropdown.Item>
+                <NavDropdown.Item>PooCoin</NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown className="navbar-item" title="Exchanges">
+              <NavDropdown className="navbar-important" title="Exchanges">
                 <NavDropdown.Header>Dingocoin</NavDropdown.Header>
-                <NavDropdown.Item>Mainnet (Dingocoin)</NavDropdown.Item>
-                <NavDropdown.Item>BSC (wDingocoin)</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://wallet.autradex.systems">Autradex Systems</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://dex-trade.com/spot/trading/DINGOUSDT">Dex-Trade</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://main.southxchange.com/Market/Book/DINGO/BTC">SouthXchange</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://cratex.io/index.php?pair=DINGO/LTC">Cratex.io</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://dex.delion.online/market/DELION.DINGO_DOGE">DelionDEX</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Header>wDingocoin</NavDropdown.Header>
-                <NavDropdown.Item>PancakeSwap (BSC)</NavDropdown.Item>
+                <NavDropdown.Header>wDingocoin (BSC)</NavDropdown.Header>
+                <NavDropdown.Item target="_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4">PancakeSwap</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <header className="section-a">
+      <header className="section-a" id="home">
         <div className="particles-container">
+          <CustomParticles className="particles"/>
           <Container className="masthead">
             <Row>
               <h2>1 Dingocoin = 1 Dingocoin</h2>
             </Row>
             <Row>
-              <Col><img src={DingoImg} className="masthead-avatar" alt="logo" /></Col>
+              <Col><img src={DingocoinLogo} className="masthead-avatar"/></Col>
             </Row>
             <Row>
               <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
             <Row>
               <Col>
-                <SocialIcon className="social-icon" url="https://discord.gg/y3J946HFQM " />
+                <SocialIcon className="social-icon" url="https://discord.gg/y3J946HFQM" />
                 <SocialIcon className="social-icon" url="https://t.me/joinchat/wNb353Dwm_c4NWFk" network="telegram" />
                 <SocialIcon className="social-icon" url="https://www.facebook.com/Dingocoin.org/" />
                 <SocialIcon className="social-icon" url="https://www.reddit.com/r/dingocoin" />
-                <SocialIcon className="social-icon" url="https://twitter.com/jaketrent" />
+                <SocialIcon className="social-icon" url="https://twitter.com/dingocoincrypto" />
               </Col>
             </Row>
           </Container>
-          <CustomParticles className="particles"/>
         </div>
       </header>
 
-      <section className="section-b">
+      <section className="section-b" id="about">
         <h2>ABOUT DINGOCOIN</h2>
         <CustomDivider/>
         <Container>
@@ -98,35 +104,35 @@ function App() {
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faCoins} />
-                <Link to="www.google.com"><Button variant="primary">AuxPow Blockchain</Button></Link>
+                <a target="_blank" href="https://github.com/dingocoin/dingocoin"><Button variant="primary">AuxPow Blockchain</Button></a>
                 <p>Dingocoin is backed by its own open-source, community-maintained AuxPow blockchain.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
-                <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
-                <Link to="www.google.com"><Button variant="primary">BSC Wrap Custodian</Button></Link>
-                <p><i>Wrap</i> Dingocoins to wDingocoins on BSC securely. Designed and maintained by our very own community members.</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faWpexplorer} />
-                <Link to="www.google.com"><Button variant="primary">Mainnet Explorer</Button></Link>
+                <a target="_blank" href="https://explorer.dingocoin.com"><Button variant="primary">Mainnet Explorer</Button></a>
                 <p>Explore the Dingocoin mainnet. Built by our very own community member.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
+                <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
+                <a target="_blank" href="https://wrap.dingocoin.org"><Button variant="primary">BSC Wrap Custodian</Button></a>
+                <p><i>Wrap</i> Dingocoins to wDingocoins on BSC securely. Designed and maintained by our very own community members.</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faRobot} />
-                <Link to="www.google.com"><Button variant="primary">Discord Faucet/Tip Bot</Button></Link>
+                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button variant="primary">Discord Faucet/Tip Bot</Button></a>
                 <p>Get free sample Dingocoins. Tip Dingocoins to others easily. Written by our very own community member.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faRobot} />
-                <Link to="www.google.com"><Button variant="primary">Discord Price Bot</Button></Link>
+                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button variant="primary">Discord Price Bot</Button></a>
                 <p>Get live alerts for arbitrage opportunities across exchanges. Written by our very own community member.</p>
               </div>
             </Col>
@@ -134,7 +140,7 @@ function App() {
         </Container>
       </section>
 
-      <section className="section-a">
+      <section className="section-a" id="wallets">
         <h2>DINGOCOIN WALLETS</h2>
         <CustomDivider/>
         <Container>
@@ -143,38 +149,73 @@ function App() {
               <h3>Hold Dingocoins directly...</h3>
 
               <div className="wallet-section">
-                <h6>Official Mainnet Wallets</h6>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary"><FontAwesomeIcon icon={faWindows} /> Windows</Button></Link>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary"><FontAwesomeIcon icon={faApple} /> macOS</Button></Link>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary"><FontAwesomeIcon icon={faLinux} /> Linux</Button></Link>
+                <p>Official Mainnet Wallets</p>
+                <div className="wallet-download">
+                  <FontAwesomeIcon className="faicon" icon={faWindows} />
+                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Windows</Button></Link>
+                </div>
+                <div className="wallet-download">
+                  <FontAwesomeIcon className="faicon" icon={faApple} />
+                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">macOS</Button></Link>
+                </div>
+                <div className="wallet-download">
+                  <FontAwesomeIcon className="faicon" icon={faLinux} />
+                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Linux</Button></Link>
+                </div>
               </div>
 
               <div className="wallet-section">
-                <h6>Other Wallets</h6>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary"><FontAwesomeIcon icon={faWallet} /> Hive Multi-Coin Web Wallet</Button></Link>
+                <p>Other Wallets</p>
+                <div className="wallet-download">
+                  <FontAwesomeIcon className="faicon" icon={faWallet} />
+                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Hive Multi-Coin Web Wallet</Button></Link>
+                </div>
               </div>
             </Col>
             <Col>
               <h3>... or hold wrapped wDingocoins.</h3>
               <div className="wallet-section">
-                <h6>Smart Contracts</h6>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary"><FontAwesomeIcon icon={faFileContract} /> BSC</Button></Link>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary" disabled><FontAwesomeIcon icon={faFileContract}/> SOL (Coming soon...)</Button></Link>
+                <p>wDingocoin on Binance Smart Chain (BSC)</p>
+                <div className="wallet-download">
+                  <FontAwesomeIcon className="faicon" icon={faFileContract} />
+                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Smart Contract</Button></Link>
+                </div>
+                <div className="wallet-download">
+                  <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
+                  <Link to="www.google.com"><Button className="wallet-button" variant="primary">Wrap Custodian</Button></Link>
+                </div>
               </div>
               <div className="wallet-section">
-                <h6>Recommended Wallets</h6>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary"><FontAwesomeIcon icon={faWallet} /> MetaMask</Button></Link>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary"><FontAwesomeIcon icon={faWallet} /> Trust Wallet</Button></Link>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary"><FontAwesomeIcon icon={faWallet} /> Others</Button></Link>
-              </div>
-              <div className="wallet-section">
-                <h6>Wrap Custodians</h6>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary"><FontAwesomeIcon icon={faFileContract} /> BSC</Button></Link>
-                <Link to="www.google.com"><Button className="wallet-button" variant="primary" disabled><FontAwesomeIcon icon={faFileContract} /> SOL (Coming soon...)</Button></Link>
+                <p>wDingocoin on Solana</p>
+                <h5>Coming soon....</h5>
               </div>
             </Col>
           </Row>
         </Container>
+      </section>
+
+      <section className="section-b" id="roadmap">
+        <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
+        <CustomDivider/>
+        <Container>
+          <ul className="timeline">
+            <li className="event eventcompleted" data-date="Apr 2, 2021"><h3><head> Birth of Dingocoin</head></h3><p>Genesis plus 1 block mined. Block reward set to 0 - 1,000,000.</p></li>
+            <li className="event eventcompleted" data-date="Apr 8, 2021"><h3><head> 5,000 Blocks Mined</head></h3><p>Block reward halved to 500,000.</p></li>
+            <li className="event eventcompleted" data-date="Jun 17, 2021"><h3><head> 100,000 Blocks Mined</head></h3><p>Block reward halved to 250,000.</p></li>
+            <li className="event eventcompleted" data-date="Aug 29, 2021"><h3><head> Wrapped Dingocoin Released on BSC</head></h3><p>Hold and trade Dingocoin on BSC.</p></li>
+            <li className="event eventcompleted" data-date="Aug 30, 2021"><h3><head> 200,000 Blocks Mined</head></h3><p>Block reward halved to 125,000.</p></li>
+            <li className="event eventcompleted" data-date="Sep 18, 2021"><h3><head> Max Re-org Length Activated</head></h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
+            <li className="event eventincomplete" data-date="~ Oct, 2021"><h3><head> (Height 265,000) Chain ID switch activated</head></h3><p>Merged mining can now be done alongside Doge without conflict.<br/>Increases exposure to miners via AuxPOW.</p></li>
+            <li className="event eventincomplete" data-date="~ Nov, 2021"><h3><head> 300,000 Blocks Mined</head></h3><p>Block reward halved to 62,500.</p></li>
+            <li className="event eventincomplete" data-date="~ Jan, 2022"><h3><head> 400,000 Blocks Mined</head></h3><p>Block reward halved to 31,250.</p></li>
+            <li className="event eventincomplete" data-date="~ Apr, 2022"><h3><head> 500,000 Blocks Mined</head></h3><p>Block reward halved to 15,625.</p></li>
+            <li className="event eventincomplete" data-date="~ Jun, 2022"><h3><head> 600,000 Blocks Mined</head></h3><p>Block reward set permanentely to 10,000.</p></li>
+          </ul>
+        </Container>
+      </section>
+
+      <section className="section-footer">
+        <h6>Copyright © The Dingocoin Project 2021</h6>
       </section>
 
     </div>
