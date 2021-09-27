@@ -7,6 +7,17 @@ import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract, faShoppingCa
 import { faWpexplorer, faWindows, faApple, faLinux, faTwitter, faReddit, faFacebook, faDiscord, faTelegram } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
+import CoinPaprikaLogo from './assets/img/coinpaprika.png'
+import CoinGeckoLogo from './assets/img/coingecko.png'
+import NomicsLogo from './assets/img/nomics.png'
+import DexGuruLogo from './assets/img/dex-guru.png'
+import PooCoinLogo from './assets/img/poocoin.png'
+import AutradexLogo from './assets/img/autradex.png'
+import DexTradeLogo from './assets/img/dextrade.png'
+import SouthXchangeLogo from './assets/img/southxchange.png'
+import CratexIoLogo from './assets/img/cratexio.png'
+import DelionDexLogo from './assets/img/deliondex.png'
+import PancakeSwap from './assets/img/pancakeswap.png'
 
 // Bootstrap.
 import { Button, Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-bootstrap'
@@ -23,16 +34,15 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar bg="dark" className="navbar" bg="dark" expand="lg" fixed="top">
+      <Navbar className="navbar" bg="dark" expand="lg" fixed="top">
         <Container>
-          <Navbar.Brand className="navbar-brand">
+          <Navbar.Brand href="#home" className="navbar-brand">
             <img src={DingocoinLogo}/>
             <span>DINGOCOIN</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <Nav className="ms-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#about">Features</Nav.Link>
               <Nav.Link href="#wallets">Wallets</Nav.Link>
               <Nav.Link href="#roadmap">Roadmap</Nav.Link>
@@ -42,24 +52,24 @@ function App() {
               </NavDropdown>
               <NavDropdown className="navbar-important" title="Live Chart">
                 <NavDropdown.Header>Dingocoin</NavDropdown.Header>
-                <NavDropdown.Item>CoinPaprika</NavDropdown.Item>
-                <NavDropdown.Item>CoinGecko</NavDropdown.Item>
-                <NavDropdown.Item>Nomics</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://coinpaprika.com/coin/dingo-dingocoin/"><img src={CoinPaprikaLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://www.coingecko.com/en/coins/dingocoin"><img src={CoinGeckoLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://nomics.com/assets/dingo"><img src={NomicsLogo} /></NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Header>wDingocoin (BSC)</NavDropdown.Header>
-                <NavDropdown.Item>dex.guru</NavDropdown.Item>
-                <NavDropdown.Item>PooCoin</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"><img src={DexGuruLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"><img src={PooCoinLogo} /></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className="navbar-important" title="Exchanges">
                 <NavDropdown.Header>Dingocoin</NavDropdown.Header>
-                <NavDropdown.Item target="_blank" href="https://wallet.autradex.systems">Autradex Systems</NavDropdown.Item>
-                <NavDropdown.Item target="_blank" href="https://dex-trade.com/spot/trading/DINGOUSDT">Dex-Trade</NavDropdown.Item>
-                <NavDropdown.Item target="_blank" href="https://main.southxchange.com/Market/Book/DINGO/BTC">SouthXchange</NavDropdown.Item>
-                <NavDropdown.Item target="_blank" href="https://cratex.io/index.php?pair=DINGO/LTC">Cratex.io</NavDropdown.Item>
-                <NavDropdown.Item target="_blank" href="https://dex.delion.online/market/DELION.DINGO_DOGE">DelionDEX</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://wallet.autradex.systems"><img src={AutradexLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://dex-trade.com/spot/trading/DINGOUSDT"><img src={DexTradeLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://main.southxchange.com/Market/Book/DINGO/BTC"><img src={SouthXchangeLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://cratex.io/index.php?pair=DINGO/LTC"><img src={CratexIoLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><img src={DelionDexLogo} /></NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Header>wDingocoin (BSC)</NavDropdown.Header>
-                <NavDropdown.Item target="_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4">PancakeSwap</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><img src={PancakeSwap} /></NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
@@ -109,35 +119,35 @@ function App() {
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faCoins} />
-                <a target="_blank" href="https://github.com/dingocoin/dingocoin"><Button className="project-button" variant="primary">AuxPow Blockchain</Button></a>
+                <a target="_blank" href="https://github.com/dingocoin/dingocoin"><Button className="popup-button" variant="primary">AuxPow Blockchain</Button></a>
                 <p>Dingocoin is backed by its own open-source, community-maintained AuxPow blockchain.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faWpexplorer} />
-                <a target="_blank" href="https://explorer.dingocoin.com"><Button className="project-button" variant="primary">Mainnet Explorer</Button></a>
+                <a target="_blank" href="https://explorer.dingocoin.com"><Button className="popup-button" variant="primary">Mainnet Explorer</Button></a>
                 <p>Explore the Dingocoin mainnet.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
-                <a target="_blank" href="https://wrap.dingocoin.org"><Button className="project-button" variant="primary">BSC Wrap Custodian</Button></a>
+                <a target="_blank" href="https://wrap.dingocoin.org"><Button className="popup-button" variant="primary">BSC Wrap Custodian</Button></a>
                 <p><i>Wrap</i> Dingocoins to wDingocoins on BSC securely.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faRobot} />
-                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button className="project-button" variant="primary">Discord Faucet/Tip Bot</Button></a>
+                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button className="popup-button" variant="primary">Discord Faucet/Tip Bot</Button></a>
                 <p>Get free sample Dingocoins. Tip Dingocoins to others easily.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faRobot} />
-                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button className="project-button" variant="primary">Discord Price Bot</Button></a>
+                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button className="popup-button" variant="primary">Discord Price Bot</Button></a>
                 <p>Get live alerts for arbitrage opportunities across exchanges.</p>
               </div>
             </Col>
@@ -162,25 +172,35 @@ function App() {
 
               <div className="wallet-section">
                 <p>Official Mainnet Wallets</p>
-                <div className="wallet-download">
-                  <FontAwesomeIcon className="faicon" icon={faWindows} />
-                  <a target="_blank" href="https://github.com/dingocoin/dingocoin/releases/download/v1.16.0.2/windows-binaries.zip"><Button className="wallet-button" variant="primary">Windows</Button></a>
-                </div>
-                <div className="wallet-download">
-                  <FontAwesomeIcon className="faicon" icon={faApple} />
-                  <a target="_blank" href="https://github.com/dingocoin/dingocoin/releases/tag/v1.16.0.2"><Button className="wallet-button" variant="primary">macOS</Button></a>
-                </div>
-                <div className="wallet-download">
-                  <FontAwesomeIcon className="faicon" icon={faLinux} />
-                  <a target="_blank" href="https://github.com/dingocoin/dingocoin/releases/download/v1.16.0.2/linux-binaries.zip"><Button className="wallet-button" variant="primary">Linux</Button></a>
-                </div>
+                <Container>
+                  <Row>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon className="faicon" icon={faWindows} />
+                        <a target="_blank" href="https://github.com/dingocoin/dingocoin/releases/download/v1.16.0.2/windows-binaries.zip"><Button className="popup-button" variant="primary">Windows</Button></a>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon className="faicon" icon={faApple} />
+                        <a target="_blank" href="https://github.com/dingocoin/dingocoin/releases/tag/v1.16.0.2"><Button className="popup-button" variant="primary">macOS</Button></a>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon className="faicon" icon={faLinux} />
+                        <a target="_blank" href="https://github.com/dingocoin/dingocoin/releases/download/v1.16.0.2/linux-binaries.zip"><Button className="popup-button" variant="primary">Linux</Button></a>
+                      </div>
+                    </Col>
+                  </Row>
+                </Container>
               </div>
 
               <div className="wallet-section">
-                <p>Other Wallets</p>
+                <p>Other Mainnet Wallets</p>
                 <div className="wallet-download">
                   <FontAwesomeIcon className="faicon" icon={faWallet} />
-                  <a target="_blank" href="https://beehivewallet.link/"><Button className="wallet-button" variant="primary">Hive Multi-Coin Web Wallet</Button></a>
+                  <a target="_blank" href="https://beehivewallet.link/"><Button className="popup-button" variant="primary">Hive Multi-Coin Web Wallet</Button></a>
                 </div>
               </div>
             </Col>
@@ -188,18 +208,22 @@ function App() {
               <h3>... or hold wrapped wDingocoins.</h3>
               <div className="wallet-section">
                 <p>wDingocoin on Binance Smart Chain (BSC)</p>
-                <div className="wallet-download">
-                  <FontAwesomeIcon className="faicon" icon={faFileContract} />
-                  <a target="_blank" href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"><Button className="wallet-button" variant="primary">Smart Contract</Button></a>
-                </div>
-                <div className="wallet-download">
-                  <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
-                  <a target="_blank" href="https://wrap.dingocoin.org"><Button className="wallet-button" variant="primary">Wrap Custodian</Button></a>
-                </div>
-              </div>
-              <div className="wallet-section">
-                <p>wDingocoin on Solana</p>
-                <h5>Coming soon....</h5>
+                <Container>
+                  <Row>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon className="faicon" icon={faFileContract} />
+                        <a target="_blank" href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"><Button className="popup-button" variant="primary">Smart Contract</Button></a>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
+                        <a target="_blank" href="https://wrap.dingocoin.org"><Button className="popup-button" variant="primary">Wrap Custodian</Button></a>
+                      </div>
+                    </Col>
+                  </Row>
+                </Container>
               </div>
             </Col>
           </Row>
