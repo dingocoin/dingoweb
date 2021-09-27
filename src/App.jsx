@@ -1,21 +1,29 @@
 import './App.css';
 
-// Assets
+// Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExchangeAlt, faRobot, faCoins } from '@fortawesome/free-solid-svg-icons'
+import { faWpexplorer } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import DingoImg from './assets/img/dingo.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
+import { SocialIcon } from 'react-social-icons';
 
-// Bootstrap
+// Bootstrap.
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import { Button, Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-bootstrap'
+
+// Others.
+import CustomParticles from './CustomParticles.jsx'
+import CustomDivider from './CustomDivider.jsx'
 
 function App() {
   return (
     <div className="App">
+
       <Navbar className="navbar" expand="lg">
         <Container>
-          <Navbar.Brand class="navbar-brand">
+          <Navbar.Brand className="navbar-brand">
             <img src={DingocoinLogo}/>
             <span>DINGOCOIN</span>
           </Navbar.Brand>
@@ -24,7 +32,6 @@ function App() {
             <Nav className="ms-auto">
               <Nav.Link>Home</Nav.Link>
               <Nav.Link>About</Nav.Link>
-              <Nav.Link>Socials</Nav.Link>
               <Nav.Link>Roadmap</Nav.Link>
               <NavDropdown className="navbar-item" title="Wallets">
                 <NavDropdown.Header>Dingocoin</NavDropdown.Header>
@@ -46,13 +53,96 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <header className="App-header">
-        <div className="masthead">
-          <h2>1 Dingocoin = 1 Dingocoin</h2>
-          <img src={DingoImg} className="masthead-avatar" alt="logo" />
-          <p>Dingocoin is an open source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
+
+      <header className="section-a">
+        <div className="particles-container">
+          <Container className="masthead">
+            <Row>
+              <h2>1 Dingocoin = 1 Dingocoin</h2>
+            </Row>
+            <Row>
+              <Col><img src={DingoImg} className="masthead-avatar" alt="logo" /></Col>
+            </Row>
+            <Row>
+              <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
+            </Row>
+            <Row>
+              <Col>
+                <SocialIcon className="social-icon" url="https://discord.gg/y3J946HFQM " />
+                <SocialIcon className="social-icon" url="https://t.me/joinchat/wNb353Dwm_c4NWFk" network="telegram" />
+                <SocialIcon className="social-icon" url="https://www.facebook.com/Dingocoin.org/" />
+                <SocialIcon className="social-icon" url="https://www.reddit.com/r/dingocoin" />
+                <SocialIcon className="social-icon" url="https://twitter.com/jaketrent" />
+              </Col>
+            </Row>
+          </Container>
+          <CustomParticles className="particles"/>
         </div>
       </header>
+
+      <section className="section-b">
+        <h2>ABOUT DINGOCOIN</h2>
+        <CustomDivider/>
+        <Container>
+          <Row md={1} lg={2}>
+            <Col>
+              <h3>A fun cryptocurrency...</h3>
+              <p>Dingocoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the great Dingo internet currency." Created in parody of Dogecoin for absolutely everyone.</p>
+            </Col>
+            <Col>
+              <h3>... supporting community projects</h3>
+              <p>Backed by its own blockchain, Dingocoin provides a testbed for ideas <i>by</i> the community, <i>for</i> the community. Have something fun to try? Throw it out and we'll help. <b>Check out our community-driven projects below!</b></p>
+            </Col>
+          </Row>
+          <Row xs={1} md={2} lg={3}>
+            <Col>
+              <div className="project-card">
+                <a href="apple">
+                  <FontAwesomeIcon className="faicon" icon={faCoins} />
+                  <h5>AuxPow Blockchain</h5>
+                  <p>Dingocoin is backed by its own open-source, community-maintained AuxPow blockchain.</p>
+                </a>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <a href="apple">
+                  <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
+                  <h5>BSC Wrap Custodian</h5>
+                <p><i>Wrap</i> Dingocoins to wDingocoins on BSC securely. Designed and maintained by our very own community members.</p>
+                </a>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <a href="apple">
+                  <FontAwesomeIcon className="faicon" icon={faWpexplorer} />
+                  <h5>Mainnet Explorer</h5>
+                  <p>Explore the Dingocoin Mainnet. Built by our very own community member.</p>
+                </a>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <a href="apple">
+                  <FontAwesomeIcon className="faicon" icon={faRobot} />
+                  <h5>Discord Faucet/Tip-bot</h5>
+                  <p>Get free sample Dingocoins. Tip Dingocoins to others easily. Written by our very own community member.</p>
+                </a>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <a href="apple">
+                <FontAwesomeIcon className="faicon" icon={faRobot} />
+                  <h5>Discord Price-bot</h5>
+                  <p>Get live alerts for arbitrage opportunities across exchanges. Written by our very own community member.</p>
+                </a>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
     </div>
   );
