@@ -3,7 +3,7 @@ import './App.scss';
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract } from '@fortawesome/free-solid-svg-icons'
-import { faWpexplorer, faWindows, faApple, faLinux } from  '@fortawesome/free-brands-svg-icons'
+import { faWpexplorer, faWindows, faApple, faLinux, faTwitter, faReddit, faFacebook, faDiscord, faTelegram } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import DingoImg from './assets/img/dingo.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
@@ -15,12 +15,13 @@ import { Button, Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-boo
 // Others.
 import CustomParticles from './CustomParticles.jsx'
 import CustomDivider from './CustomDivider.jsx'
+import ReflectionContainer from './ReflectionContainer.jsx'
 
 function App() {
   return (
     <div className="App">
 
-      <Navbar bg="dark" className="navbar" bg="dark" expand="lg">
+      <Navbar bg="dark" className="navbar" bg="dark" expand="lg" fixed="top">
         <Container>
           <Navbar.Brand className="navbar-brand">
             <img src={DingocoinLogo}/>
@@ -67,18 +68,22 @@ function App() {
               <h2>1 Dingocoin = 1 Dingocoin</h2>
             </Row>
             <Row>
-              <Col><img src={DingocoinLogo} className="masthead-avatar"/></Col>
+              <Col><img src={DingocoinLogo} className="masthead-avatar" alt="logo" /></Col>
             </Row>
             <Row>
               <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
             <Row>
               <Col>
-                <SocialIcon className="social-icon" url="https://discord.gg/y3J946HFQM" />
-                <SocialIcon className="social-icon" url="https://t.me/joinchat/wNb353Dwm_c4NWFk" network="telegram" />
-                <SocialIcon className="social-icon" url="https://www.facebook.com/Dingocoin.org/" />
-                <SocialIcon className="social-icon" url="https://www.reddit.com/r/dingocoin" />
-                <SocialIcon className="social-icon" url="https://twitter.com/dingocoincrypto" />
+                <div className="socials">
+                  <ul>
+                    <li><a target="_blank" href="https://discord.gg/y3J946HFQM"><FontAwesomeIcon className="faicon" icon={faDiscord} /></a></li>
+                    <li><a target="_blank" href="https://t.me/joinchat/wNb353Dwm_c4NWFk"><FontAwesomeIcon className="faicon" icon={faTelegram} /></a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/Dingocoin.org/"><FontAwesomeIcon className="faicon" icon={faFacebook} /></a></li>
+                    <li><a target="_blank" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></li>
+                    <li><a target="_blank" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></li>
+                  </ul>
+                </div>
               </Col>
             </Row>
           </Container>
@@ -103,35 +108,35 @@ function App() {
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faCoins} />
-                <a target="_blank" href="https://github.com/dingocoin/dingocoin"><Button variant="primary">AuxPow Blockchain</Button></a>
+                <a target="_blank" href="https://github.com/dingocoin/dingocoin"><Button className="project-button" variant="primary">AuxPow Blockchain</Button></a>
                 <p>Dingocoin is backed by its own open-source, community-maintained AuxPow blockchain.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faWpexplorer} />
-                <a target="_blank" href="https://explorer.dingocoin.com"><Button variant="primary">Mainnet Explorer</Button></a>
+                <a target="_blank" href="https://explorer.dingocoin.com"><Button className="project-button" variant="primary">Mainnet Explorer</Button></a>
                 <p>Explore the Dingocoin mainnet. Built by our very own community member.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
-                <a target="_blank" href="https://wrap.dingocoin.org"><Button variant="primary">BSC Wrap Custodian</Button></a>
+                <a target="_blank" href="https://wrap.dingocoin.org"><Button className="project-button" variant="primary">BSC Wrap Custodian</Button></a>
                 <p><i>Wrap</i> Dingocoins to wDingocoins on BSC securely. Designed and maintained by our very own community members.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faRobot} />
-                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button variant="primary">Discord Faucet/Tip Bot</Button></a>
+                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button className="project-button" variant="primary">Discord Faucet/Tip Bot</Button></a>
                 <p>Get free sample Dingocoins. Tip Dingocoins to others easily. Written by our very own community member.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faRobot} />
-                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button variant="primary">Discord Price Bot</Button></a>
+                <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button className="project-button" variant="primary">Discord Price Bot</Button></a>
                 <p>Get live alerts for arbitrage opportunities across exchanges. Written by our very own community member.</p>
               </div>
             </Col>
