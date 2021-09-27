@@ -7,7 +7,7 @@ $theme-colors: (
 .App {
   text-align: center;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,28 +51,162 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* ===== HEADER =====*/
-
-.particles-container {
+/* ===== Isometric 3D Hover effect ===== */
+/* https://codepen.io/Aakash_codes/pen/LYWYvGp */
+.isometric-holder {
   position: relative;
-}
-
-.particles-container .particles {
-  position: absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
   width: 100%;
+  height: 40rem;
+}
+.isometric{
+  width: 25rem;
+  height: 25rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: url(assets/img/dingocoin.png);
+  background-size: cover;
+  transform: translate(-50%, -50%) rotateX(25deg) rotateZ(-25deg);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  box-shadow: -2.5rem 2.5rem 3rem rgba(30, 65, 81, 1), -4rem 4rem 8rem rgba(30, 65, 81, 1);
+}
+.isometric::before{
+  content: "";
+  width: 100%;
+  height: 2.5rem;
+  position: absolute;
+  bottom: -2.5rem;
+  left: 0;
+  background: linear-gradient(#fff, #1e4151);
+  transform-origin: top;
+  transform: skewX(-45deg) scaleY(0.5);
+  transition: 0.5s;
+}
+.isometric::after{
+  content: "";
+  width: 2.5rem;
   height: 100%;
+  position: absolute;
+  top: 1.22rem;
+  left: -1.22rem;
+  background: linear-gradient(to left, #fff, #1e4151);
+  transform-origin: left;
+  transform: skewY(-45deg) scaleX(0.5);
+  transition: 0.5s;
 }
 
-.particles-container .masthead {
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  color: #1e4151;
-  padding-top: 1rem;
+.isometric.preload, .isometric:hover{
+  transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
+  box-shadow: none;
+  animation: none;
+}
+.isometric.preload::before, .isometric:hover::before{
+  transform: skewX(-45deg) scaleY(0);
+}
+.isometric.preload::after, .isometric:hover::after{
+  top: 0;
+  left: 0;
+  transform: skewY(-45deg) scaleX(0);
+}
+
+@media (max-width: 768px) {
+  .isometric-holder {
+    position: relative;
+    width: 100%;
+    height: 16rem;
+  }
+  .isometric{
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: url(assets/img/dingocoin.png);
+    background-size: cover;
+    transform: translate(-50%, -50%) rotateX(25deg) rotateZ(-25deg);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    box-shadow: -1rem 1rem 1.2rem rgba(0, 0, 0, 1), -1.6rem 1.6rem 3.2rem rgba(30, 65, 81, 1);
+  }
+  .isometric::before{
+    content: "";
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    background: linear-gradient(#fff, #1e4151);
+    transform-origin: top;
+    transform: skewX(-45deg) scaleY(0.5);
+    transition: 0.5s;
+  }
+  .isometric::after{
+    content: "";
+    width: 1rem;
+    height: 100%;
+    position: absolute;
+    top: 0.488rem;
+    left: -0.488rem;
+    background: linear-gradient(to left, #fff, #1e4151);
+    transform-origin: left;
+    transform: skewY(-45deg) scaleX(0.5);
+    transition: 0.5s;
+  }
+
+  .masthead p {
+    font-size: 1.5rem !important;
+    font-weight: 300;
+  }
+}
+
+/* ===== Socials ===== */
+.socials {
+  margin: 0 auto;
+  max-width: 30rem;
+  a {
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: block;
+    text-align: center;
+    margin: 0.5rem auto;
+    border-radius: 50%;
+    padding: 0.4rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    box-shadow: -0.1rem 0.6rem 0.9rem rgba(0,0,0,0.3);
+    transition: .3s;
+    background: linear-gradient(0deg, #ccc, #fff)
+  }
+  a:hover {
+    box-shadow: -0.016rem 0.1rem 0.15rem rgba(0,0,0,0.3);
+  }
+  a .faicon {
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(0deg, #fff, #ccc);
+    color: #fff;
+    border-radius: 50%;
+    transition: .3s;
+  }
+  .socials-button-holder:nth-child(1) a .faicon {
+    color: #728ad6;
+  }
+  .socials-button-holder:nth-child(2) a .faicon {
+    color: #4baae5;
+  }
+  .socials-button-holder:nth-child(3) a .faicon {
+    color: #3b5a95;
+  }
+  .socials-button-holder:nth-child(4) a .faicon {
+    color: #fe4824;
+  }
+  .socials-button-holder:nth-child(5) a .faicon {
+    color: #0dace9;
+  }
 }
 
 .masthead .masthead-avatar {
@@ -94,12 +228,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== SECTIONS ===== */
 .section-a {
-  padding: 4rem;
+  padding: 4rem 1.5rem;
   background-color: #f2ede0;
 }
 
 .section-b {
-  padding: 4rem;
+  padding: 4rem 1.5rem;
   background-color: #fff;
 }
 
@@ -156,13 +290,14 @@ h1, h2, h3, h4, h5, h6 {
 .project-card .faicon {
   color: #1e4151;
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   width: 100%;
+  transition: .3s;
   filter: drop-shadow(-0.1rem 0.4rem 0.2rem rgba(0,0,0,0.4));
 }
 
 .project-card p {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   font-weight: 350;
 }
 
@@ -171,26 +306,31 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: -0.1rem 0.6rem 0.9rem rgba(0,0,0,0.3);
 }
 
-.project-button:hover {
-  box-shadow: -0.016rem 0.1rem 0.15rem rgba(0,0,0,0.3);
+.project-card:hover {
+  .project-button {
+    box-shadow: 0rem 0rem 1rem rgba(0, 0, 255, 1);
+  }
+  .faicon {
+    filter: drop-shadow(-0.016rem 0.1rem 0.15rem rgba(0,0,0,0.3));
+  }
 }
 
 
 
 /* ===== WALLETS ===== */
+.wallet-section {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.wallet-section p {
+  margin-bottom: 0.5rem;
+}
+
 .wallet-button {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   transition: .3s;
   box-shadow: -0.1rem 0.6rem 0.9rem rgba(0,0,0,0.3);
-}
-.wallet-button:hover {
-  box-shadow: -0.016rem 0.1rem 0.15rem rgba(0,0,0,0.3);
-}
-
-.wallet-section {
-  margin-top: 1.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .wallet-download {
@@ -200,9 +340,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #1e4151;
   font-size: 2.0rem;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   width: 100%;
+  transition: .3s;
   filter: drop-shadow(-0.1rem 0.4rem 0.2rem rgba(0,0,0,0.4));
+}
+
+.wallet-download:hover {
+  .wallet-button {
+    box-shadow: 0rem 0rem 1rem rgba(0, 0, 255, 1);
+  }
+  .faicon {
+    filter: drop-shadow(-0.016rem 0.1rem 0.15rem rgba(0,0,0,0.3));
+  }
 }
 
 
@@ -341,120 +491,4 @@ h1, h2, h3, h4, h5, h6 {
 .rtl .timeline .event::after {
   left: 0;
   right: -55.8px;
-}
-
-
-
-/* ===== Socials ===== */
-.socials {
-  ul {
-    display: flex;
-    justify-content: center;
-  }
-  ul li {
-    list-style: none;
-  }
-  ul li a {
-    position: relative;
-    width: 3.5rem;
-    height: 3.5rem;
-    display: block;
-    text-align: center;
-    margin: 0 1rem;
-    border-radius: 50%;
-    padding: 0.4rem;
-    box-sizing: border-box;
-    text-decoration: none;
-    box-shadow: -0.1rem 0.6rem 0.9rem rgba(0,0,0,0.3);
-    transition: .3s;
-    background: linear-gradient(0deg, #ccc, #fff)
-  }
-  ul li a:hover {
-    box-shadow: -0.016rem 0.1rem 0.15rem rgba(0,0,0,0.3);
-  }
-  ul li a .faicon {
-    padding: 0.5rem;
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: linear-gradient(0deg, #fff, #ccc);
-    color: #fff;
-    border-radius: 50%;
-    transition: .3s;
-  }
-  ul li:nth-child(1) a .faicon {
-    color: #728ad6;
-  }
-  ul li:nth-child(2) a .faicon {
-    color: #4baae5;
-  }
-  ul li:nth-child(3) a .faicon {
-    color: #3b5a95;
-  }
-  ul li:nth-child(4) a .faicon {
-    color: #fe4824;
-  }
-  ul li:nth-child(5) a .faicon {
-    color: #0dace9;
-  }
-}
-
-
-/* ===== Isometric 3D Hover effect ===== */
-/* https://codepen.io/Aakash_codes/pen/LYWYvGp */
-.isometric-holder {
-  position: relative;
-  width: 100%;
-  height: 40rem;
-}
-.isometric{
-  width: 25rem;
-  height: 25rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: url(assets/img/dingocoin.png);
-  background-size: cover;
-  transform: translate(-50%, -50%) rotateX(25deg) rotateZ(-25deg);
-  transform-style: preserve-3d;
-  transition: 0.5s;
-  box-shadow: -2.5rem 2.5rem 3rem rgba(0, 0, 0, 1), -4rem 4rem 8rem rgba(30, 65, 81, 1);
-}
-.isometric::before{
-  content: "";
-  width: 100%;
-  height: 2.5rem;
-  position: absolute;
-  bottom: -2.5rem;
-  left: 0;
-  background: linear-gradient(#fff, #1e4151);
-  transform-origin: top;
-  transform: skewX(-45deg) scaleY(0.5);
-  transition: 0.5s;
-}
-.isometric::after{
-  content: "";
-  width: 2.5rem;
-  height: 100%;
-  position: absolute;
-  top: 1.22rem;
-  left: -1.22rem;
-  background: linear-gradient(to left, #fff, #1e4151);
-  transform-origin: left;
-  transform: skewY(-45deg) scaleX(0.5);
-  transition: 0.5s;
-}
-
-.isometric.preload, .isometric:hover{
-  transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
-  box-shadow: none;
-  animation: none;
-}
-.isometric.preload::before, .isometric:hover::before{
-  transform: skewX(-45deg) scaleY(0);
-}
-.isometric.preload::after, .isometric:hover::after{
-  top: 0;
-  left: 0;
-  transform: skewY(-45deg) scaleX(0);
 }

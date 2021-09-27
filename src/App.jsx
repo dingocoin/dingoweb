@@ -3,18 +3,16 @@ import React from 'react';
 
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract } from '@fortawesome/free-solid-svg-icons'
+import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { faWpexplorer, faWindows, faApple, faLinux, faTwitter, faReddit, faFacebook, faDiscord, faTelegram } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import DingoImg from './assets/img/dingo.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
-import { SocialIcon } from 'react-social-icons';
 
 // Bootstrap.
 import { Button, Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-bootstrap'
 
 // Others.
-import CustomParticles from './CustomParticles.jsx'
 import CustomDivider from './CustomDivider.jsx'
 import ReflectionContainer from './ReflectionContainer.jsx'
 
@@ -37,7 +35,7 @@ function App() {
           <Navbar.Collapse>
             <Nav className="ms-auto">
               <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#about">About</Nav.Link>
+              <Nav.Link href="#about">Features</Nav.Link>
               <Nav.Link href="#wallets">Wallets</Nav.Link>
               <Nav.Link href="#roadmap">Roadmap</Nav.Link>
               <NavDropdown className="navbar-important" title="Live Chart">
@@ -68,7 +66,6 @@ function App() {
 
       <header className="section-a" id="home">
         <div className="particles-container">
-          {/*<CustomParticles className="particles"/>*/}
           <Container className="masthead">
             <Row>
               <Col><div className="isometric-holder"><div className={loaded ? "isometric" : "isometric preload"}></div></div></Col>
@@ -76,18 +73,12 @@ function App() {
             <Row>
               <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
-            <Row>
-              <Col>
-                <div className="socials">
-                  <ul>
-                    <li><a target="_blank" href="https://discord.gg/y3J946HFQM"><FontAwesomeIcon className="faicon" icon={faDiscord} /></a></li>
-                    <li><a target="_blank" href="https://t.me/joinchat/wNb353Dwm_c4NWFk"><FontAwesomeIcon className="faicon" icon={faTelegram} /></a></li>
-                    <li><a target="_blank" href="https://www.facebook.com/Dingocoin.org/"><FontAwesomeIcon className="faicon" icon={faFacebook} /></a></li>
-                    <li><a target="_blank" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></li>
-                    <li><a target="_blank" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></li>
-                  </ul>
-                </div>
-              </Col>
+            <Row className="socials">
+              <Col className="socials-button-holder"><a target="_blank" href="https://discord.gg/y3J946HFQM"><FontAwesomeIcon className="faicon" icon={faDiscord} /></a></Col>
+              <Col className="socials-button-holder"><a target="_blank" href="https://t.me/joinchat/wNb353Dwm_c4NWFk"><FontAwesomeIcon className="faicon" icon={faTelegram} /></a></Col>
+              <Col className="socials-button-holder"><a target="_blank" href="https://www.facebook.com/Dingocoin.org/"><FontAwesomeIcon className="faicon" icon={faFacebook} /></a></Col>
+              <Col className="socials-button-holder"><a target="_blank" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></Col>
+              <Col className="socials-button-holder"><a target="_blank" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></Col>
             </Row>
           </Container>
         </div>
@@ -103,10 +94,15 @@ function App() {
               <p>Dingocoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the great Dingo internet currency." Created in parody of Dogecoin for absolutely everyone.</p>
             </Col>
             <Col>
-              <h3>... supporting community projects.</h3>
-              <p>Backed by its own blockchain, Dingocoin provides a testbed for ideas <i>by</i> the community, <i>for</i> the community. Have something fun to try? Throw it out and we'll help. <b>Check out our community-driven projects below!</b></p>
+              <h3>... supporting community features.</h3>
+              <p>Backed by its own blockchain, Dingocoin provides a testbed for ideas <i>by</i> the community, <i>for</i> the community. Have something fun to try? Throw it out and we'll help.</p>
             </Col>
           </Row>
+        </Container>
+        <CustomDivider/>
+        <h3>Community-driven features</h3>
+        <p>Designed and maintained by our very own community members.</p>
+        <Container>
           <Row xs={1} md={2} lg={3}>
             <Col>
               <div className="project-card">
@@ -119,28 +115,35 @@ function App() {
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faWpexplorer} />
                 <a target="_blank" href="https://explorer.dingocoin.com"><Button className="project-button" variant="primary">Mainnet Explorer</Button></a>
-                <p>Explore the Dingocoin mainnet. Built by our very own community member.</p>
+                <p>Explore the Dingocoin mainnet.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faExchangeAlt} />
                 <a target="_blank" href="https://wrap.dingocoin.org"><Button className="project-button" variant="primary">BSC Wrap Custodian</Button></a>
-                <p><i>Wrap</i> Dingocoins to wDingocoins on BSC securely. Designed and maintained by our very own community members.</p>
+                <p><i>Wrap</i> Dingocoins to wDingocoins on BSC securely.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faRobot} />
                 <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button className="project-button" variant="primary">Discord Faucet/Tip Bot</Button></a>
-                <p>Get free sample Dingocoins. Tip Dingocoins to others easily. Written by our very own community member.</p>
+                <p>Get free sample Dingocoins. Tip Dingocoins to others easily.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <FontAwesomeIcon className="faicon" icon={faRobot} />
                 <a target="_blank" href="https://discord.gg/y3J946HFQM"><Button className="project-button" variant="primary">Discord Price Bot</Button></a>
-                <p>Get live alerts for arbitrage opportunities across exchanges. Written by our very own community member.</p>
+                <p>Get live alerts for arbitrage opportunities across exchanges.</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
+                <a><Button variant="primary" disabled>Community Marketplace</Button></a>
+                <p>(Coming soon...) Get Dingocoin merchandise designed by the community.</p>
               </div>
             </Col>
           </Row>
@@ -151,7 +154,7 @@ function App() {
         <h2>DINGOCOIN WALLETS</h2>
         <CustomDivider/>
         <Container>
-          <Row md={1} lg={2}>
+          <Row xs={1} md={1} lg={2}>
             <Col>
               <h3>Hold Dingocoins directly...</h3>
 
@@ -219,6 +222,15 @@ function App() {
             <li className="event eventincomplete" data-date="~ Jun, 2022"><h3><head> 600,000 Blocks Mined</head></h3><p>Block reward set permanentely to 10,000.</p></li>
           </ul>
         </Container>
+      </section>
+
+      <section>
+        <div class="totalcontainer">
+          <div class="laya-please layer-1">
+          </div>
+          <div class="laya-please layer-7">
+          </div>
+        </div>
       </section>
 
       <section className="section-footer">
