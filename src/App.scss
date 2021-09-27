@@ -158,6 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   width: 100%;
+  filter: drop-shadow(-0.1rem 0.4rem 0.2rem rgba(0,0,0,0.4));
 }
 
 .project-card p {
@@ -167,11 +168,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-button {
   transition: .3s;
-  box-shadow: 0 0.6rem 0.9rem rgba(0,0,0,0.3);
+  box-shadow: -0.1rem 0.6rem 0.9rem rgba(0,0,0,0.3);
 }
 
 .project-button:hover {
-  box-shadow: 0 0.1rem 0.15rem rgba(0,0,0,0.3);
+  box-shadow: -0.016rem 0.1rem 0.15rem rgba(0,0,0,0.3);
 }
 
 
@@ -181,10 +182,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   transition: .3s;
-  box-shadow: 0 0.6rem 0.9rem rgba(0,0,0,0.3);
+  box-shadow: -0.1rem 0.6rem 0.9rem rgba(0,0,0,0.3);
 }
 .wallet-button:hover {
-  box-shadow: 0 0.1rem 0.15rem rgba(0,0,0,0.3);
+  box-shadow: -0.016rem 0.1rem 0.15rem rgba(0,0,0,0.3);
 }
 
 .wallet-section {
@@ -201,6 +202,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   width: 100%;
+  filter: drop-shadow(-0.1rem 0.4rem 0.2rem rgba(0,0,0,0.4));
 }
 
 
@@ -343,56 +345,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-/* ===== Reflection Container ===== */
-
-.reflection-container{
-  position:relative;
-  display:inline-block;
-  vertical-align:middle;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  .reflection-content{
-    height:20rem;
-    width:20rem;
-    background:transparent url(assets/img/dingocoin.png);
-    background-size:cover;
-    background-position:center;
-    transform:rotateX(0) rotateY(0);
-    pointer-events:none;
-    transition:100ms linear transform;
-    overflow:hidden;
-    &:before{
-      content:'';
-      position:absolute;
-      width:200%;
-      height:200%;
-      left:-50%;
-      top:-50%;
-      background: linear-gradient(rgba(255,255,255,0.2),rgba(0,0,0,0.2));
-    }
-  }
-  .reflection-grid-cell{
-    position:absolute;
-    z-index: 1;
-    width:10%;
-    height:10%;
-  }
-  @for $r from 1 to 11{
-    @for $c from 1 to 11 {
-      .reflection-grid-cell-#{( ($r*10) + $c - 10)}{
-        top:($r*10%)-10%;
-        left:($c*10%)-10%;
-      }
-      .reflection-grid-cell-#{( ($r*10) + $c - 10)}:hover ~ .reflection-content{
-        transform:rotateX((($r*-5)+25deg)) rotateY((-25deg+($c*5)));
-        &:before{
-          transform:translateY(25-(5%*$r));
-        }
-      }
-    }
-  }
-}
-
+/* ===== Socials ===== */
 .socials {
   ul {
     display: flex;
@@ -412,12 +365,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.4rem;
     box-sizing: border-box;
     text-decoration: none;
-    box-shadow: 0 0.6rem 0.9rem rgba(0,0,0,0.3);
+    box-shadow: -0.1rem 0.6rem 0.9rem rgba(0,0,0,0.3);
     transition: .3s;
     background: linear-gradient(0deg, #ccc, #fff)
   }
   ul li a:hover {
-    box-shadow: 0 0.1rem 0.15rem rgba(0,0,0,0.3);
+    box-shadow: -0.016rem 0.1rem 0.15rem rgba(0,0,0,0.3);
   }
   ul li a .faicon {
     padding: 0.5rem;
