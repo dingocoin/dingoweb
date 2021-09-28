@@ -100,7 +100,7 @@ function App() {
         <h2>ABOUT DINGOCOIN</h2>
         <CustomDivider/>
         <Container>
-          <Row md={1} lg={2}>
+          <Row xs={1} md={1} lg={2}>
             <Col>
               <h3>A fun cryptocurrency...</h3>
               <p>Dingocoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the great Dingo internet currency." Created in parody of Dogecoin for absolutely everyone.</p>
