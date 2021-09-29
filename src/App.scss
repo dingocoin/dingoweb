@@ -175,6 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Socials ===== */
 .socials {
   margin: 1rem auto;
+  margin-top: 2rem;
   max-width: 30rem;
   a {
     position: relative;
@@ -311,9 +312,9 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== PROJECTS ===== */
 
 .project-card {
-  padding: 1rem;
+  padding: 0rem;
   margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0rem;
 }
 
 .project-card .faicon {

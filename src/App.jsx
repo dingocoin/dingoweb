@@ -52,25 +52,21 @@ function App() {
                 <NavDropdown.Item target="_blank" rel="noreferrer" href={WhitepaperPdf}>Whitepaper</NavDropdown.Item>
                 <NavDropdown.Item>Mining Information (W.I.P)</NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown className="navbar-important" title="Live Chart">
-                <NavDropdown.Header>Dingocoin</NavDropdown.Header>
+              <NavDropdown className="navbar-important" title="Live Charts">
+                <NavDropdown.Header>Live Charts</NavDropdown.Header>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://coinpaprika.com/coin/dingo-dingocoin/"><img alt="" src={CoinPaprikaLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.coingecko.com/en/coins/dingocoin"><img alt="" src={CoinGeckoLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://nomics.com/assets/dingo"><img alt="" src={NomicsLogo} /></NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Header>wDingocoin (BSC)</NavDropdown.Header>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"><img alt="" src={DexGuruLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"><img alt="" src={PooCoinLogo} /></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className="navbar-important" title="Exchanges">
-                <NavDropdown.Header>Dingocoin</NavDropdown.Header>
+                <NavDropdown.Header>Exchanges</NavDropdown.Header>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://wallet.autradex.systems"><img alt="" src={AutradexLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><img alt="" src={DexTradeLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/BTC"><img alt="" src={SouthXchangeLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><img alt="" src={CratexIoLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><img alt="" src={DelionDexLogo} /></NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Header>wDingocoin (BSC)</NavDropdown.Header>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><img alt="" src={PancakeSwap} /></NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -87,17 +83,17 @@ function App() {
             <Row>
               <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
+            <Row xs={1} md={1} lg={1} className="quick-actions">
+              <Col>
+                <a target="_blank" rel="noreferrer" onClick={() => { setExchangesShow(true); }}><Button className="popup-button" variant="primary">Buy Dingocoin</Button></a>
+              </Col>
+            </Row>
             <Row xs={3} md={5} lg={5} className="socials">
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><FontAwesomeIcon className="faicon" icon={faDiscord} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://t.me/joinchat/wNb353Dwm_c4NWFk"><FontAwesomeIcon className="faicon" icon={faTelegram} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.facebook.com/Dingocoin.org/"><FontAwesomeIcon className="faicon" icon={faFacebook} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></Col>
-            </Row>
-            <Row xs={1} md={1} lg={1} className="quick-actions">
-              <Col>
-                <a target="_blank" rel="noreferrer" onClick={() => { setExchangesShow(true); }}><Button className="popup-button" variant="primary">Buy Dingocoin</Button></a>
-              </Col>
             </Row>
           </Container>
         </div>
@@ -266,9 +262,21 @@ function App() {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Container fluid className="exchangesModalSection">
+          <Container className="exchangesModalSection">
             <Row>
-              <Col><h5>Dingocoin Exchanges</h5></Col>
+              <Col><h5>Live Charts</h5></Col>
+            </Row>
+            <Row>
+              <Col><a target="_blank" rel="noreferrer" href="https://coinpaprika.com/coin/dingo-dingocoin/"><Button variant="outline-primary"><img alt="" src={CoinPaprikaLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://www.coingecko.com/en/coins/dingocoin"><Button variant="outline-primary"><img alt="" src={CoinGeckoLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://nomics.com/assets/dingo"><Button variant="outline-primary"><img alt="" src={NomicsLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"><Button variant="outline-primary"><img alt="" src={DexGuruLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"><Button variant="outline-primary"><img alt="" src={PooCoinLogo} /></Button></a></Col>
+            </Row>
+          </Container>
+          <Container className="exchangesModalSection">
+            <Row>
+              <Col><h5>Exchanges</h5></Col>
             </Row>
             <Row>
               <Col><a target="_blank" rel="noreferrer" href="https://wallet.autradex.systems"><Button variant="outline-primary"><img alt="" src={AutradexLogo} /></Button></a></Col>
@@ -276,13 +284,6 @@ function App() {
               <Col><a target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/BTC"><Button variant="outline-primary"><img alt="" src={SouthXchangeLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><Button variant="outline-primary"><img alt="" src={CratexIoLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><Button variant="outline-primary"><img alt="" src={DelionDexLogo} /></Button></a></Col>
-            </Row>
-          </Container>
-          <Container fluid className="exchangesModalSection">
-            <Row>
-              <Col><h5>wDingocoin Exchanges</h5></Col>
-            </Row>
-            <Row>
               <Col><a target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><Button variant="outline-primary"><img alt="" src={PancakeSwap} /></Button></a></Col>
             </Row>
           </Container>
