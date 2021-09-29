@@ -27,7 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: yarn install
-    - run: |
-        git config --global user.name 'GHP Publisher'
-        git config --global user.email 'ghp.publisher@users.noreply.github.com'
-        yarn deploy
+    - run: git config --global user.name 'GHP Publisher'
+    - run: git config --global user.email 'ghp.publisher@users.noreply.github.com'
+    - run: yarn deploy
