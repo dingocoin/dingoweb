@@ -20,7 +20,7 @@ import DelionDexLogo from './assets/img/deliondex.png'
 import PancakeSwap from './assets/img/pancakeswap.png'
 
 // Bootstrap.
-import { Button, Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-bootstrap'
+import { Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal } from 'react-bootstrap'
 
 // Others.
 import CustomDivider from './CustomDivider.jsx'
@@ -30,6 +30,8 @@ function App() {
   React.useEffect(() => {
     setTimeout(function() { setLoaded(true); }, 300);
   }, []);
+
+  const [exhangesModalShow, setExchangesShow] = React.useState(false);
 
   return (
     <div className="App">
@@ -85,12 +87,17 @@ function App() {
             <Row>
               <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
-            <Row className="socials">
+            <Row xs={3} md={5} lg={5} className="socials">
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><FontAwesomeIcon className="faicon" icon={faDiscord} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://t.me/joinchat/wNb353Dwm_c4NWFk"><FontAwesomeIcon className="faicon" icon={faTelegram} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.facebook.com/Dingocoin.org/"><FontAwesomeIcon className="faicon" icon={faFacebook} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></Col>
+            </Row>
+            <Row xs={1} md={1} lg={1} className="quick-actions">
+              <Col>
+                <a target="_blank" rel="noreferrer" onClick={() => { setExchangesShow(true); }}><Button className="popup-button" variant="primary">Buy Dingocoin</Button></a>
+              </Col>
             </Row>
           </Container>
         </div>
@@ -246,6 +253,44 @@ function App() {
       <section className="section-footer">
         <h6>Copyright © The Dingocoin Project 2021</h6>
       </section>
+
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={exhangesModalShow}
+        onHide={() => { setExchangesShow(false); }}>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Buy Dingocoin
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container fluid className="exchangesModalSection">
+            <Row>
+              <Col><h5>Dingocoin Exchanges</h5></Col>
+            </Row>
+            <Row>
+              <Col><a target="_blank" rel="noreferrer" href="https://wallet.autradex.systems"><Button variant="outline-primary"><img alt="" src={AutradexLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><Button variant="outline-primary"><img alt="" src={DexTradeLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/BTC"><Button variant="outline-primary"><img alt="" src={SouthXchangeLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><Button variant="outline-primary"><img alt="" src={CratexIoLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><Button variant="outline-primary"><img alt="" src={DelionDexLogo} /></Button></a></Col>
+            </Row>
+          </Container>
+          <Container fluid className="exchangesModalSection">
+            <Row>
+              <Col><h5>wDingocoin Exchanges</h5></Col>
+            </Row>
+            <Row>
+              <Col><a target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><Button variant="outline-primary"><img alt="" src={PancakeSwap} /></Button></a></Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => { setExchangesShow(false); }}>Close</Button>
+        </Modal.Footer>
+      </Modal>
 
     </div>
   );

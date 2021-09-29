@@ -69,11 +69,11 @@ h1, h2, h3, h4, h5, h6 {
 .isometric-holder {
   position: relative;
   width: 100%;
-  height: 40rem;
+  height: 24rem;
 }
 .isometric{
-  width: 25rem;
-  height: 25rem;
+  width: 15rem;
+  height: 15rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -82,14 +82,14 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate(-50%, -50%) rotateX(25deg) rotateZ(-25deg);
   transform-style: preserve-3d;
   transition: 0.5s;
-  box-shadow: -2.5rem 2.5rem 3rem rgba(30, 65, 81, 1), -4rem 4rem 8rem rgba(30, 65, 81, 1);
+  box-shadow: -1.5rem 1.5rem 1.8rem rgba(30, 65, 81, 1), -2.4rem 2.4rem 4.8rem rgba(30, 65, 81, 1);
 }
 .isometric::before{
   content: "";
   width: 100%;
-  height: 2.5rem;
+  height: 1.5rem;
   position: absolute;
-  bottom: -2.5rem;
+  bottom: -1.5rem;
   left: 0;
   background: linear-gradient($secondary-alt, $primary);
   transform-origin: top;
@@ -98,11 +98,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .isometric::after{
   content: "";
-  width: 2.5rem;
+  width: 1.5rem;
   height: 100%;
   position: absolute;
-  top: 1.22rem;
-  left: -1.22rem;
+  top: 0.732rem;
+  left: -0.732rem;
   background: linear-gradient(to left, $secondary-alt, $primary);
   transform-origin: left;
   transform: skewY(-45deg) scaleX(0.5);
@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Socials ===== */
 .socials {
-  margin: 0 auto;
+  margin: 1rem auto;
   max-width: 30rem;
   a {
     position: relative;
@@ -221,19 +221,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.quick-actions {
+  margin: 1rem auto;
+  max-width: 30rem;
+  .popup-button {
+    margin-top: 1rem;
+  }
+}
+
 .masthead .masthead-avatar {
   width: 20rem;
   padding: 2rem;
 }
-
 .masthead p {
   font-size: 2rem;
   font-weight: 300;
-}
-
-.social-icon {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -480,4 +484,20 @@ h1, h2, h3, h4, h5, h6 {
 .rtl .timeline .event::after {
   left: 0;
   right: -55.8px;
+}
+
+.exchangesModalSection {
+  text-align: center;
+  margin: 1.5rem auto;
+}
+
+.exchangesModalSection img {
+  height: 1.2rem;
+  margin: 0rem auto !important;
+  padding: 0 !important;
+}
+
+.exchangesModalSection button {
+  padding: 0.3rem 0.5rem;
+  margin: 0.3rem 0.5rem;
 }
