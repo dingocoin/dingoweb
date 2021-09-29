@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dingoweb2/static/css/main.685d12e2.chunk.css",
-    "main.js": "/dingoweb2/static/js/main.a7930753.chunk.js",
-    "main.js.map": "/dingoweb2/static/js/main.a7930753.chunk.js.map",
+    "main.css": "/dingoweb2/static/css/main.52681e8c.chunk.css",
+    "main.js": "/dingoweb2/static/js/main.8f15723d.chunk.js",
+    "main.js.map": "/dingoweb2/static/js/main.8f15723d.chunk.js.map",
     "runtime-main.js": "/dingoweb2/static/js/runtime-main.610e5f8f.js",
     "runtime-main.js.map": "/dingoweb2/static/js/runtime-main.610e5f8f.js.map",
-    "static/js/2.4282645a.chunk.js": "/dingoweb2/static/js/2.4282645a.chunk.js",
-    "static/js/2.4282645a.chunk.js.map": "/dingoweb2/static/js/2.4282645a.chunk.js.map",
+    "static/js/2.ac0e145e.chunk.js": "/dingoweb2/static/js/2.ac0e145e.chunk.js",
+    "static/js/2.ac0e145e.chunk.js.map": "/dingoweb2/static/js/2.ac0e145e.chunk.js.map",
     "index.html": "/dingoweb2/index.html",
-    "static/css/main.685d12e2.chunk.css.map": "/dingoweb2/static/css/main.685d12e2.chunk.css.map",
-    "static/js/2.4282645a.chunk.js.LICENSE.txt": "/dingoweb2/static/js/2.4282645a.chunk.js.LICENSE.txt",
+    "static/css/main.52681e8c.chunk.css.map": "/dingoweb2/static/css/main.52681e8c.chunk.css.map",
+    "static/js/2.ac0e145e.chunk.js.LICENSE.txt": "/dingoweb2/static/js/2.ac0e145e.chunk.js.LICENSE.txt",
     "static/media/Dingocoin_Whitepaper.56dccef1.pdf": "/dingoweb2/static/media/Dingocoin_Whitepaper.56dccef1.pdf",
     "static/media/autradex.0e756de4.png": "/dingoweb2/static/media/autradex.0e756de4.png",
     "static/media/coingecko.51b1c2e5.png": "/dingoweb2/static/media/coingecko.51b1c2e5.png",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.610e5f8f.js",
-    "static/js/2.4282645a.chunk.js",
-    "static/css/main.685d12e2.chunk.css",
-    "static/js/main.a7930753.chunk.js"
+    "static/js/2.ac0e145e.chunk.js",
+    "static/css/main.52681e8c.chunk.css",
+    "static/js/main.8f15723d.chunk.js"
   ]
 }
