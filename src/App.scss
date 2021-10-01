@@ -3,7 +3,8 @@ $secondary: #f2ede0;
 $secondary-alt: #ffffff;
 
 $theme-colors: (
-"primary": $primary
+  "primary": $primary,
+  "secondary": $secondary
 );
 
 @import "~bootstrap/scss/bootstrap";
@@ -36,6 +37,11 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-brand span {
   color: $secondary;
   font-weight: 700 !important;
+}
+
+.navbar-brand span.navbar-brand-subtitle {
+  color: $secondary-alt;
+  font-weight: 350 !important;
 }
 
 .navbar .nav-link {
@@ -312,7 +318,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== PROJECTS ===== */
 
 .project-card {
-  padding: 0rem;
+  padding: 1rem;
   margin-top: 0.8rem;
   margin-bottom: 0rem;
 }
