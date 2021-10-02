@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // Assets.
 import DingocoinLogo from './assets/img/dingocoin.png'
-import { faEyeDropper, faPaintBrush, faEraser, faUpload } from '@fortawesome/free-solid-svg-icons'
+import { faEyeDropper, faPaintBrush, faEraser, faUpload, faQuestion } from '@fortawesome/free-solid-svg-icons'
 
 // Bootstrap.
 import { Navbar, Container, Row, Col, Button, Modal } from 'react-bootstrap'
@@ -320,6 +320,9 @@ function Canvas() {
     }
   }, [uploadShow]);
 
+  // Help.
+  const [helpShow, setHelpShow] = React.useState(false);
+
   return (
       <div onMouseMove={(e) => setCursorState([e.clientX, e.clientY])}>
       <Navbar className="navbar" bg="dark" expand="lg" fixed="top">
@@ -359,10 +362,14 @@ function Canvas() {
                   <FontAwesomeIcon className="faicon" icon={faUpload} />
                 </Button>
               </Col>
+              <Col>
+                <Button className="control-button" onClick={() => setHelpShow(true)}>
+                  <FontAwesomeIcon className="faicon" icon={faQuestion} />
+                </Button>
+              </Col>
             </Row>
         </Container>
       </header>
-
 
       <Modal
         dialogClassName="color-picker-modal"
@@ -441,6 +448,45 @@ function Canvas() {
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={() => { setUploadShow(false); }}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={helpShow}
+        onHide={() => { setHelpShow(false); }}>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            About Dingocoin Canvas
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container>
+            <Row>
+              <Col>
+                <h5>What's this about?</h5>
+                <p>Arbitrary data can be stored on the Dingocoin mainnet using some tricks. This project explores that idea, by storing a canvas which users can write onto by sending transactions of specific formats.</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <h5>How does it work?</h5>
+                <p>To write a specific color onto a pixel, users send some money to an associated Dingocoin burn address, such as <code>DDingoCanvasUvUMhbVdgP1sfNn8vXRvxX</code>. The burn address encodes exactly which pixel to write to and what color, and the transaction is carved permantely onto the blockchain.</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <h5>Can anyone use the burned amounts?</h5>
+                <p>Probably impossible. Each Dingocoin address is uniquely identified by 160 bits and the Canvas looks only at a 48 bit sub-block. The probability that a random address falls into this sub-block is 1/2^112. It is almost impossible for anyone to end up randomly with the keys to any address in the Canvas sub-block.</p>
+              </Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => { setHelpShow(false); }}>Close</Button>
         </Modal.Footer>
       </Modal>
     </div>
