@@ -129,7 +129,7 @@ function Canvas() {
       console.log('Creating full canvas.');
 
       // Raw canvas.
-      const pixels = (await post('https://n4.dingocoin.org/canvas', {})).canvas;
+      const pixels = (await post('https://n4.dingocoin.org:8443/canvas', {})).canvas;
 
       const fullCanvas = document.createElement('canvas');
       fullCanvas.width = pixelsX * pixelWidth;

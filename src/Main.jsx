@@ -44,9 +44,9 @@ function Main() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <Nav className="ms-auto">
-              <Nav.Link href="#about">Features</Nav.Link>
-              <Nav.Link href="#wallets">Wallets</Nav.Link>
-              <Nav.Link href="#roadmap">Roadmap</Nav.Link>
+              <Nav.Link onClick={() => document.getElementById('about').scrollIntoView()}>Features</Nav.Link>
+              <Nav.Link onClick={() => document.getElementById('wallets').scrollIntoView()}>Wallets</Nav.Link>
+              <Nav.Link onClick={() => document.getElementById('roadmap').scrollIntoView()}>Roadmap</Nav.Link>
               <NavDropdown className="navbar-important" title="Resources">
                 <NavDropdown.Item target="_blank" rel="noreferrer" href={WhitepaperPdf}>Whitepaper</NavDropdown.Item>
                 <NavDropdown.Item>Mining Information (W.I.P)</NavDropdown.Item>
