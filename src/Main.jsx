@@ -230,7 +230,7 @@ function Main() {
         <CustomDivider/>
         <Container>
           <ul className="timeline">
-            <li className="event eventcompleted" data-date="Apr 2, 2021"><h3>Birth of Dingocoin</h3><p>Initial deployment. Block reward set to 0 - 1,000,000.</p></li>
+            <li className="event eventcompleted" data-date="Apr 1, 2021"><h3>Birth of Dingocoin</h3><p>Initial deployment. Block reward set to 0 - 1,000,000.</p></li>
             <li className="event eventcompleted" data-date="Apr 8, 2021"><h3>5,000 Blocks Mined</h3><p>Block reward halved to 500,000.</p></li>
             <li className="event eventcompleted" data-date="Jun 17, 2021"><h3>100,000 Blocks Mined</h3><p>Block reward halved to 250,000.</p></li>
             <li className="event eventcompleted" data-date="Aug 29, 2021"><h3>Wrapped Dingocoin Released on BSC</h3><p>Hold and trade Dingocoin on BSC.</p></li>
