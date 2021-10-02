@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.02c7f182.chunk.css",
-    "main.js": "/static/js/main.106417e7.chunk.js",
-    "main.js.map": "/static/js/main.106417e7.chunk.js.map",
+    "main.css": "/static/css/main.212baa07.chunk.css",
+    "main.js": "/static/js/main.cde9784b.chunk.js",
+    "main.js.map": "/static/js/main.cde9784b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
-    "static/js/2.ac0e145e.chunk.js": "/static/js/2.ac0e145e.chunk.js",
-    "static/js/2.ac0e145e.chunk.js.map": "/static/js/2.ac0e145e.chunk.js.map",
+    "static/js/2.2b9567a2.chunk.js": "/static/js/2.2b9567a2.chunk.js",
+    "static/js/2.2b9567a2.chunk.js.map": "/static/js/2.2b9567a2.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.02c7f182.chunk.css.map": "/static/css/main.02c7f182.chunk.css.map",
-    "static/js/2.ac0e145e.chunk.js.LICENSE.txt": "/static/js/2.ac0e145e.chunk.js.LICENSE.txt",
+    "static/css/main.212baa07.chunk.css.map": "/static/css/main.212baa07.chunk.css.map",
+    "static/js/2.2b9567a2.chunk.js.LICENSE.txt": "/static/js/2.2b9567a2.chunk.js.LICENSE.txt",
     "static/media/Dingocoin_Whitepaper.56dccef1.pdf": "/static/media/Dingocoin_Whitepaper.56dccef1.pdf",
     "static/media/autradex.0e756de4.png": "/static/media/autradex.0e756de4.png",
     "static/media/coingecko.51b1c2e5.png": "/static/media/coingecko.51b1c2e5.png",
@@ -17,15 +17,15 @@
     "static/media/deliondex.e86be68f.png": "/static/media/deliondex.e86be68f.png",
     "static/media/dex-guru.d5e8d0a9.png": "/static/media/dex-guru.d5e8d0a9.png",
     "static/media/dextrade.a6f0ffb5.png": "/static/media/dextrade.a6f0ffb5.png",
-    "static/media/App.scss": "/static/media/dingocoin.15331900.png",
+    "static/media/Canvas.scss": "/static/media/dingocoin.15331900.png",
     "static/media/nomics.6dcec524.png": "/static/media/nomics.6dcec524.png",
     "static/media/poocoin.0e08b024.png": "/static/media/poocoin.0e08b024.png",
     "static/media/southxchange.1fed6f38.png": "/static/media/southxchange.1fed6f38.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f7b3b2ed.js",
-    "static/js/2.ac0e145e.chunk.js",
-    "static/css/main.02c7f182.chunk.css",
-    "static/js/main.106417e7.chunk.js"
+    "static/js/2.2b9567a2.chunk.js",
+    "static/css/main.212baa07.chunk.css",
+    "static/js/main.cde9784b.chunk.js"
   ]
 }
