@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.22e3560b.chunk.css",
+    "main.css": "/static/css/main.16eeceb9.chunk.css",
     "main.js": "/static/js/main.ba3717ff.chunk.js",
     "main.js.map": "/static/js/main.ba3717ff.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
@@ -8,7 +8,7 @@
     "static/js/2.8955ef14.chunk.js": "/static/js/2.8955ef14.chunk.js",
     "static/js/2.8955ef14.chunk.js.map": "/static/js/2.8955ef14.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.22e3560b.chunk.css.map": "/static/css/main.22e3560b.chunk.css.map",
+    "static/css/main.16eeceb9.chunk.css.map": "/static/css/main.16eeceb9.chunk.css.map",
     "static/js/2.8955ef14.chunk.js.LICENSE.txt": "/static/js/2.8955ef14.chunk.js.LICENSE.txt",
     "static/media/Dingocoin_Whitepaper.56dccef1.pdf": "/static/media/Dingocoin_Whitepaper.56dccef1.pdf",
     "static/media/autradex.0e756de4.png": "/static/media/autradex.0e756de4.png",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.8955ef14.chunk.js",
-    "static/css/main.22e3560b.chunk.css",
+    "static/css/main.16eeceb9.chunk.css",
     "static/js/main.ba3717ff.chunk.js"
   ]
 }
