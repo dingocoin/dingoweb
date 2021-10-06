@@ -27,7 +27,7 @@ import CustomDivider from './CustomDivider.jsx'
 function Main() {
   const [loaded, setLoaded] = React.useState(false);
   React.useEffect(() => {
-    setTimeout(function() { setLoaded(true); }, 300);
+    setTimeout(function() { setLoaded(true); }, 2500);
   }, []);
 
   const [exhangesModalShow, setExchangesShow] = React.useState(false);
