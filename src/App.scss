@@ -118,6 +118,8 @@ h1, h2, h3, h4, h5, h6 {
 .isometric.preload, .isometric:hover{
   transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
   box-shadow: none;
+  background: url(assets/img/dingocoin-rotate.gif);
+  background-size: cover;
 }
 .isometric.preload::before, .isometric:hover::before{
   transform: skewX(-45deg) scaleY(0);
