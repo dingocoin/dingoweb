@@ -325,11 +325,23 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0rem;
 }
 
+.project-card .logo-holder {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
 .project-card .faicon {
   color: $primary;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.project-card img {
+  width: 2.5rem;
+  padding: 0;
+  margin: 0;
 }
 
 .project-card p {
