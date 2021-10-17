@@ -159,7 +159,7 @@ function Main() {
             </Col>
             <Col>
               <h3>... supporting community features.</h3>
-              <p>Backed by its own blockchain, Dingocoin provides a testbed for ideas <i>by</i> the community, <i>for</i> the community. Have something fun to try? Throw it out and we'll help.</p>
+              <p>Backed by its own Scrypt AuxPoW blockchain, Dingocoin provides a testbed for ideas <i>by</i> the community, <i>for</i> the community. Have something fun to try? Throw it out and we'll help.</p>
             </Col>
           </Row>
           <Row xs={1} md={2} lg={4} className="projectFactsWrap">
@@ -203,8 +203,8 @@ function Main() {
                 <div className="logo-holder">
                   <FontAwesomeIcon className="faicon" icon={faCoins} />
                 </div>
-                <a target="_blank" rel="noreferrer" href="https://github.com/dingocoin/dingocoin"><Button className="popup-button" variant="primary">AuxPow Blockchain</Button></a>
-                <p>Dingocoin is backed by its own open-source, community-maintained AuxPow blockchain.</p>
+                <a target="_blank" rel="noreferrer" href="https://github.com/dingocoin/dingocoin"><Button className="popup-button" variant="primary">Scrypt AuxPoW Blockchain</Button></a>
+                <p>Dingocoin is backed by its own open-source, community-maintained Scrypt AuxPoW blockchain.</p>
               </div>
             </Col>
             <Col>
@@ -334,7 +334,7 @@ function Main() {
             <li className="event eventcompleted" data-date="Aug, 2021"><h3>Hold and trade Dingocoin on BSC.</h3><p>Wrapped Dingocoin Released on BSC</p></li>
             <li className="event eventcompleted" data-date="Aug, 2021"><h3>Block reward halved to 125,000.</h3><p>200,000 Blocks Mined</p></li>
             <li className="event eventcompleted" data-date="Sep, 2021"><h3>Max Re-org Length Activated</h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
-            <li className="event eventincomplete" data-date="~ Oct, 2021"><h3>(Height 265,000) Chain ID switch activated</h3><p>Merged mining can now be done alongside Doge without conflict.<br/>Increases exposure to miners via AuxPOW.</p></li>
+            <li className="event eventcompleted" data-date="Oct, 2021"><h3>Chain ID switch activated</h3><p>Merged mining can now be done alongside Doge without conflict.<br/>Increases exposure to miners via AuxPoW.</p></li>
             <li className="event eventincomplete" data-date="~ Nov, 2021"><h3>Block reward halved to 62,500.</h3><p>300,000 Blocks Mined</p></li>
             <li className="event eventincomplete" data-date="~ Dec, 2021"><h3>Wrapped Dingocoin Release on SOL</h3><p>Hold and trade Dingocoin on SOL.</p></li>
             <li className="event eventincomplete" data-date="~ Jan, 2022"><h3>Block reward halved to 31,250.</h3><p>400,000 Blocks Mined</p></li>
