@@ -95,10 +95,6 @@ function Main() {
               <Nav.Link onClick={() => document.getElementById('about').scrollIntoView()}>Features</Nav.Link>
               <Nav.Link onClick={() => document.getElementById('wallets').scrollIntoView()}>Wallets</Nav.Link>
               <Nav.Link onClick={() => document.getElementById('roadmap').scrollIntoView()}>Roadmap</Nav.Link>
-              <NavDropdown className="navbar-important" title="Resources">
-                <NavDropdown.Item target="_blank" rel="noreferrer" href={WhitepaperPdf}>Whitepaper</NavDropdown.Item>
-                <NavDropdown.Item>Mining Information (W.I.P)</NavDropdown.Item>
-              </NavDropdown>
               <NavDropdown className="navbar-important" title="Live Charts">
                 <NavDropdown.Header>Live Charts</NavDropdown.Header>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://coinpaprika.com/coin/dingo-dingocoin/"><img alt="" src={CoinPaprikaLogo} /></NavDropdown.Item>
@@ -130,9 +126,15 @@ function Main() {
             <Row>
               <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
-            <Row xs={1} md={1} lg={1} className="quick-actions">
+            <Row xs={1} md={1} lg={3} className="quick-actions">
               <Col>
                 <Button className="popup-button" variant="primary" onClick={() => { setExchangesShow(true); }}>Buy Dingocoin</Button>
+              </Col>
+              <Col>
+                <a target="_blank" href="https://miningpoolstats.stream/dingocoin" rel="noreferrer"><Button className="popup-button" variant="primary">Mine Dingocoin</Button></a>
+              </Col>
+              <Col>
+                <a target="_blank" href={WhitepaperPdf} rel="noreferrer"><Button className="popup-button" variant="primary">Whitepaper</Button></a>
               </Col>
             </Row>
             <Row xs={3} md={5} lg={5} className="socials">

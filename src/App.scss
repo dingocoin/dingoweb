@@ -184,6 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 .socials {
   margin: 1rem auto;
   margin-top: 2rem;
+  justify-content: center;
   max-width: 30rem;
   a {
     position: relative;
@@ -232,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .quick-actions {
   margin: 1rem auto;
-  max-width: 30rem;
+  max-width: 35rem;
   .popup-button {
     margin-top: 1rem;
   }
