@@ -522,3 +522,35 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.3rem 0.5rem;
   margin: 0.3rem 0.5rem;
 }
+
+
+/* ===== Counter ===== */
+.projectFactsWrap .item{
+  text-align: center;
+  padding: 1rem;
+}
+
+.projectFactsWrap .item p.number{
+  font-size: 2rem;
+  padding: 0;
+}
+
+.projectFactsWrap .item p{
+  color: $primary;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.projectFactsWrap .item span{
+  width: 2.5rem;
+  background: $primary;
+  height: 0.1rem;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 786px){
+  .projectFactsWrap .item {
+     flex: 0 0 50%;
+  }
+}

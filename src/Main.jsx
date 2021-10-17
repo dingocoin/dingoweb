@@ -3,7 +3,7 @@ import React from 'react';
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract } from '@fortawesome/free-solid-svg-icons'
-import { faWpexplorer, faWindows, faApple, faLinux, faTwitter, faReddit, faFacebook, faDiscord, faTelegram } from  '@fortawesome/free-brands-svg-icons'
+import { faWpexplorer, faWindows, faLinux, faTwitter, faReddit, faFacebook, faDiscord, faTelegram } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 import CoinPaprikaLogo from './assets/img/coinpaprika.png'
@@ -27,9 +27,55 @@ import { Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image } f
 import CustomDivider from './CustomDivider.jsx'
 
 function Main() {
+
   const [loaded, setLoaded] = React.useState(false);
   React.useEffect(() => {
     setTimeout(function() { setLoaded(true); }, 2500);
+  }, []);
+
+  const [dingoStats, setDingoStats] = React.useState(null);
+  async function post(link, data) {
+    const controller = new AbortController();
+    return (await fetch(link, {
+      withCredentials: true,
+      method: 'POST',
+      signal: controller.signal,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })).json();
+  }
+  React.useEffect(async () => {
+    const stats = await post('https://n4.dingocoin.org:8443/dingoStats', {});
+    const tMax = 2000;
+    const start = Date.now();
+    // It's late and I'm too tired to do it properly. Please replace this eventually.
+    const blockReward = stats.height < 300000 ? 125000 : stats.height < 400000 ? 62500 : stats.height < 500000 ? 31250 : stats.height < 600000 ? 15625 : 10000;
+    const blocksToHalving = stats.height < 300000 ? 300000 - stats.height
+      : stats.height < 400000 ? 400000 - stats.height
+      : stats.height < 500000 ? 500000 - stats.height
+      : stats.height < 600000 ? 600000 - stats.height
+      : null;
+    const interval = setInterval(() => {
+      const progress = (Date.now() - start) / tMax;
+      if (progress >= 1) {
+        clearInterval(interval);
+        setDingoStats({
+          supply: Math.round(stats.total_amount),
+          blocks: stats.height,
+          blockReward: blockReward,
+          blocksToHalving: blocksToHalving });
+      } else {
+        const v = 1 - (1 - progress)**8;
+        setDingoStats({
+          supply: Math.round(v * stats.total_amount),
+          blocks: Math.round(v * stats.height),
+          blockReward: blockReward,
+          blocksToHalving: blocksToHalving});
+      }
+    }, 10);
   }, []);
 
   const [exhangesModalShow, setExchangesShow] = React.useState(false);
@@ -112,6 +158,36 @@ function Main() {
             <Col>
               <h3>... supporting community features.</h3>
               <p>Backed by its own blockchain, Dingocoin provides a testbed for ideas <i>by</i> the community, <i>for</i> the community. Have something fun to try? Throw it out and we'll help.</p>
+            </Col>
+          </Row>
+          <Row xs={1} md={2} lg={4} className="projectFactsWrap">
+            <Col>
+              <div class="item" data-number="55">
+                <p class="number">{dingoStats === null ? "-" : dingoStats.supply.toLocaleString()}</p>
+                <span></span>
+                <p>Dingocoin supply</p>
+              </div>
+            </Col>
+            <Col>
+              <div class="item" data-number="55">
+                <p class="number">{dingoStats === null ? "-" : dingoStats.blocks.toLocaleString()}</p>
+                <span></span>
+                <p>Blocks mined</p>
+              </div>
+            </Col>
+            <Col>
+              <div class="item" data-number="55">
+                <p class="number">{dingoStats === null ? "-" : dingoStats.blockReward.toLocaleString()}</p>
+                <span></span>
+                <p>Current block reward</p>
+              </div>
+            </Col>
+            <Col>
+              <div class="item" data-number="55">
+                <p class="number">{dingoStats === null ? "-" : dingoStats.blocksToHalving.toLocaleString()}</p>
+                <span></span>
+                <p>Blocks to next halving</p>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -198,12 +274,6 @@ function Main() {
                     </Col>
                     <Col>
                       <div className="wallet-download">
-                        <FontAwesomeIcon className="faicon" icon={faApple} />
-                        <a target="_blank" rel="noreferrer" href="https://github.com/dingocoin/dingocoin/releases/latest"><Button className="popup-button" variant="primary">macOS</Button></a>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div className="wallet-download">
                         <FontAwesomeIcon className="faicon" icon={faLinux} />
                         <a target="_blank" rel="noreferrer" href="https://github.com/dingocoin/dingocoin/releases/latest"><Button className="popup-button" variant="primary">Linux</Button></a>
                       </div>
@@ -257,17 +327,17 @@ function Main() {
         <Container>
           <ul className="timeline">
             <li className="event eventcompleted" data-date="Apr 1, 2021"><h3>Birth of Dingocoin</h3><p>Initial deployment. Block reward set to 0 - 1,000,000.</p></li>
-            <li className="event eventcompleted" data-date="Apr, 2021"><h3>5,000 Blocks Mined</h3><p>Block reward halved to 500,000.</p></li>
-            <li className="event eventcompleted" data-date="Jun, 2021"><h3>100,000 Blocks Mined</h3><p>Block reward halved to 250,000.</p></li>
-            <li className="event eventcompleted" data-date="Aug, 2021"><h3>Wrapped Dingocoin Released on BSC</h3><p>Hold and trade Dingocoin on BSC.</p></li>
-            <li className="event eventcompleted" data-date="Aug, 2021"><h3>200,000 Blocks Mined</h3><p>Block reward halved to 125,000.</p></li>
+            <li className="event eventcompleted" data-date="Apr, 2021"><h3>Block reward halved to 500,000.</h3><p>5,000 Blocks Mined</p></li>
+            <li className="event eventcompleted" data-date="Jun, 2021"><h3>Block reward halved to 250,000.</h3><p>100,000 Blocks Mined</p></li>
+            <li className="event eventcompleted" data-date="Aug, 2021"><h3>Hold and trade Dingocoin on BSC.</h3><p>Wrapped Dingocoin Released on BSC</p></li>
+            <li className="event eventcompleted" data-date="Aug, 2021"><h3>Block reward halved to 125,000.</h3><p>200,000 Blocks Mined</p></li>
             <li className="event eventcompleted" data-date="Sep, 2021"><h3>Max Re-org Length Activated</h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
             <li className="event eventincomplete" data-date="~ Oct, 2021"><h3>(Height 265,000) Chain ID switch activated</h3><p>Merged mining can now be done alongside Doge without conflict.<br/>Increases exposure to miners via AuxPOW.</p></li>
-            <li className="event eventincomplete" data-date="~ Nov, 2021"><h3>300,000 Blocks Mined</h3><p>Block reward halved to 62,500.</p></li>
+            <li className="event eventincomplete" data-date="~ Nov, 2021"><h3>Block reward halved to 62,500.</h3><p>300,000 Blocks Mined</p></li>
             <li className="event eventincomplete" data-date="~ Dec, 2021"><h3>Wrapped Dingocoin Release on SOL</h3><p>Hold and trade Dingocoin on SOL.</p></li>
-            <li className="event eventincomplete" data-date="~ Jan, 2022"><h3>400,000 Blocks Mined</h3><p>Block reward halved to 31,250.</p></li>
-            <li className="event eventincomplete" data-date="~ Apr, 2022"><h3>500,000 Blocks Mined</h3><p>Block reward halved to 15,625.</p></li>
-            <li className="event eventincomplete" data-date="~ Jun, 2022"><h3>600,000 Blocks Mined</h3><p>Block reward set permanentely to 10,000.</p></li>
+            <li className="event eventincomplete" data-date="~ Jan, 2022"><h3>Block reward halved to 31,250.</h3><p>400,000 Blocks Mined</p></li>
+            <li className="event eventincomplete" data-date="~ Apr, 2022"><h3>Block reward halved to 15,625.</h3><p>500,000 Blocks Mined</p></li>
+            <li className="event eventincomplete" data-date="~ Jun, 2022"><h3>Block reward set permanentely to 10,000.</h3><p>600,000 Blocks Mined</p></li>
           </ul>
         </Container>
       </section>
