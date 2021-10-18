@@ -107,7 +107,7 @@ function Main() {
                 <NavDropdown.Header>Exchanges</NavDropdown.Header>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://wallet.autradex.systems"><img alt="" src={AutradexLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><img alt="" src={DexTradeLogo} /></NavDropdown.Item>
-                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/BTC"><img alt="" src={SouthXchangeLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/LTC"><img alt="" src={SouthXchangeLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><img alt="" src={CratexIoLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><img alt="" src={DelionDexLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><img alt="" src={PancakeSwap} /></NavDropdown.Item>
@@ -334,7 +334,11 @@ function Main() {
             <li className="event eventcompleted" data-date="Aug, 2021"><h3>Hold and trade Dingocoin on BSC.</h3><p>Wrapped Dingocoin Released on BSC</p></li>
             <li className="event eventcompleted" data-date="Aug, 2021"><h3>Block reward halved to 125,000.</h3><p>200,000 Blocks Mined</p></li>
             <li className="event eventcompleted" data-date="Sep, 2021"><h3>Max Re-org Length Activated</h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
-            <li className="event eventcompleted" data-date="Oct, 2021"><h3>Chain ID switch activated</h3><p>Merged mining can now be done alongside Doge without conflict.<br/>Increases exposure to miners via AuxPoW.</p></li>
+            <li className="event eventcompleted" data-date="Oct, 2021"><h3>Chain ID switch activated</h3>
+              <p>Merged mining can now be done alongside Doge without conflict.<br/>
+              Increases exposure to miners via AuxPoW.<br/>
+              <b>- We hit 1TH/s hashrate on the same day, 10x our past record! 🎉🎉🎉</b></p>
+            </li>
             <li className="event eventincomplete" data-date="~ Nov, 2021"><h3>Block reward halved to 62,500.</h3><p>300,000 Blocks Mined</p></li>
             <li className="event eventincomplete" data-date="~ Dec, 2021"><h3>Wrapped Dingocoin Release on SOL</h3><p>Hold and trade Dingocoin on SOL.</p></li>
             <li className="event eventincomplete" data-date="~ Jan, 2022"><h3>Block reward halved to 31,250.</h3><p>400,000 Blocks Mined</p></li>
