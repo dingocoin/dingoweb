@@ -126,12 +126,15 @@ function Main() {
             <Row>
               <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
-            <Row xs={1} md={1} lg={3} className="quick-actions">
+            <Row xs={1} md={1} lg={4} className="quick-actions">
               <Col>
                 <Button className="popup-button" variant="primary" onClick={() => { setExchangesShow(true); }}>Buy Dingocoin</Button>
               </Col>
               <Col>
                 <a target="_blank" href="https://miningpoolstats.stream/dingocoin" rel="noreferrer"><Button className="popup-button" variant="primary">Mine Dingocoin</Button></a>
+              </Col>
+              <Col>
+                <a target="_blank" href="https://openchains.info/coin/dingocoin/blocks" rel="noreferrer"><Button className="popup-button" variant="primary">Dingocoin Explorer</Button></a>
               </Col>
               <Col>
                 <a target="_blank" href={WhitepaperPdf} rel="noreferrer"><Button className="popup-button" variant="primary">Whitepaper</Button></a>
@@ -210,19 +213,19 @@ function Main() {
             <Col>
               <div className="project-card">
                 <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faWpexplorer} />
+                  <Image src={BSCLogo}/>
                 </div>
-                <a target="_blank" rel="noreferrer" href="https://explorer.dingocoin.com"><Button className="popup-button" variant="primary">Mainnet Explorer</Button></a>
-                <p>Explore the Dingocoin mainnet.</p>
+                <a target="_blank" rel="noreferrer" href="https://wrap.dingocoin.org"><Button className="popup-button" variant="primary">BSC Wrap Custodian</Button></a>
+                <p><i>Wrap</i> Dingocoins to wDingocoins on BSC securely.</p>
               </div>
             </Col>
             <Col>
               <div className="project-card">
                 <div className="logo-holder">
-                  <Image src={BSCLogo}/>
+                  <Image src={SOLLogo}/>
                 </div>
-                <a target="_blank" rel="noreferrer" href="https://wrap.dingocoin.org"><Button className="popup-button" variant="primary">BSC Wrap Custodian</Button></a>
-                <p><i>Wrap</i> Dingocoins to wDingocoins on BSC securely.</p>
+                <a target="_blank" rel="noreferrer" href="https://wrap.dingocoin.org"><Button className="popup-button" variant="primary" disabled>SOL Wrap Custodian</Button></a>
+                <p><i>Wrap</i> Dingocoins to wDingocoins on SOL securely (coming soon...).</p>
               </div>
             </Col>
             <Col>
@@ -241,15 +244,6 @@ function Main() {
                 </div>
                 <a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><Button className="popup-button" variant="primary">Discord Price Bot</Button></a>
                 <p>Get live alerts for arbitrage opportunities across exchanges.</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={SOLLogo}/>
-                </div>
-                <a target="_blank" rel="noreferrer" href="https://wrap.dingocoin.org"><Button className="popup-button" variant="primary" disabled>SOL Wrap Custodian</Button></a>
-                <p><i>Wrap</i> Dingocoins to wDingocoins on SOL securely (coming soon...).</p>
               </div>
             </Col>
           </Row>
@@ -383,7 +377,7 @@ function Main() {
             <Row>
               <Col><a target="_blank" rel="noreferrer" href="https://wallet.autradex.systems"><Button variant="outline-primary"><img alt="" src={AutradexLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><Button variant="outline-primary"><img alt="" src={DexTradeLogo} /></Button></a></Col>
-              <Col><a target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/BTC"><Button variant="outline-primary"><img alt="" src={SouthXchangeLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/LTC"><Button variant="outline-primary"><img alt="" src={SouthXchangeLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><Button variant="outline-primary"><img alt="" src={CratexIoLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><Button variant="outline-primary"><img alt="" src={DelionDexLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><Button variant="outline-primary"><img alt="" src={PancakeSwap} /></Button></a></Col>
