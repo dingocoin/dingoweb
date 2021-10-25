@@ -282,7 +282,7 @@ function Main() {
                 <p>Other Mainnet Wallets</p>
                 <div className="wallet-download">
                   <FontAwesomeIcon className="faicon" icon={faWallet} />
-                  <a target="_blank" rel="noreferrer" href="https://beehivewallet.link/"><Button className="popup-button" variant="primary">Hive Multi-Coin Web Wallet</Button></a>
+                  <a target="_blank" rel="noreferrer" href="https://beehivewallet.link/"><Button className="popup-button" variant="primary">Beehive Web Wallet</Button></a>
                 </div>
               </div>
             </Col>
