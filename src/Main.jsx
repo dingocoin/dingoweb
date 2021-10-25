@@ -8,6 +8,7 @@ import DingocoinLogo from './assets/img/dingocoin.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 import CoinPaprikaLogo from './assets/img/coinpaprika.png'
 import CoinGeckoLogo from './assets/img/coingecko.png'
+import CoinCodexLogo from './assets/img/coincodex.png'
 import NomicsLogo from './assets/img/nomics.png'
 import DexGuruLogo from './assets/img/dex-guru.png'
 import PooCoinLogo from './assets/img/poocoin.png'
@@ -98,6 +99,7 @@ function Main() {
               <NavDropdown className="navbar-important" title="Live Charts">
                 <NavDropdown.Header>Live Charts</NavDropdown.Header>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://coinpaprika.com/coin/dingo-dingocoin/"><img alt="" src={CoinPaprikaLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://coincodex.com/crypto/dingocoin/"><img alt="" src={CoinCodexLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.coingecko.com/en/coins/dingocoin"><img alt="" src={CoinGeckoLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://nomics.com/assets/dingo"><img alt="" src={NomicsLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"><img alt="" src={DexGuruLogo} /></NavDropdown.Item>
@@ -364,6 +366,7 @@ function Main() {
             </Row>
             <Row>
               <Col><a target="_blank" rel="noreferrer" href="https://coinpaprika.com/coin/dingo-dingocoin/"><Button variant="outline-primary"><img alt="" src={CoinPaprikaLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://coincodex.com/crypto/dingocoin/"><Button variant="outline-primary"><img alt="" src={CoinCodexLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://www.coingecko.com/en/coins/dingocoin"><Button variant="outline-primary"><img alt="" src={CoinGeckoLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://nomics.com/assets/dingo"><Button variant="outline-primary"><img alt="" src={NomicsLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"><Button variant="outline-primary"><img alt="" src={DexGuruLogo} /></Button></a></Col>
