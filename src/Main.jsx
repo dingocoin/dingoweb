@@ -2,8 +2,8 @@ import React from 'react';
 
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract } from '@fortawesome/free-solid-svg-icons'
-import { faWpexplorer, faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faTelegram } from  '@fortawesome/free-brands-svg-icons'
+import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract, faPassport } from '@fortawesome/free-solid-svg-icons'
+import { faWpexplorer, faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faTelegram, faAndroid, faGooglePlay, faAppStoreIos } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 import CoinPaprikaLogo from './assets/img/coinpaprika.png'
@@ -287,11 +287,23 @@ function Main() {
               </div>
 
               <div className="wallet-section">
-                <p>Other Mainnet Wallets</p>
-                <div className="wallet-download">
-                  <FontAwesomeIcon className="faicon" icon={faWallet} />
-                  <a target="_blank" rel="noreferrer" href="https://beehivewallet.link/"><Button className="popup-button" variant="primary">Beehive Web Wallet</Button></a>
-                </div>
+                <p>Beehive Wallets (Unofficial)</p>
+                <Container>
+                  <Row>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon className="faicon" icon={faPassport} />
+                        <a target="_blank" rel="noreferrer" href="https://beehivewallet.link/"><Button className="popup-button" variant="primary">Web Wallet</Button></a>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon className="faicon" icon={faGooglePlay} />
+                        <a target="_blank" rel="noreferrer" href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"><Button className="popup-button" variant="primary">Android</Button></a>
+                      </div>
+                    </Col>
+                  </Row>
+                </Container>
               </div>
             </Col>
             <Col>
