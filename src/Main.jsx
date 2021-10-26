@@ -3,7 +3,7 @@ import React from 'react';
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract } from '@fortawesome/free-solid-svg-icons'
-import { faWpexplorer, faWindows, faLinux, faTwitter, faReddit, faFacebook, faDiscord, faTelegram } from  '@fortawesome/free-brands-svg-icons'
+import { faWpexplorer, faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faTelegram } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 import CoinPaprikaLogo from './assets/img/coinpaprika.png'
@@ -268,6 +268,12 @@ function Main() {
                       <div className="wallet-download">
                         <FontAwesomeIcon className="faicon" icon={faWindows} />
                         <a target="_blank" rel="noreferrer" href="https://github.com/dingocoin/dingocoin/releases/latest"><Button className="popup-button" variant="primary">Windows</Button></a>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon className="faicon" icon={faApple} />
+                        <a target="_blank" rel="noreferrer" href="https://github.com/dingocoin/dingocoin/releases/latest"><Button className="popup-button" variant="primary">macOS</Button></a>
                       </div>
                     </Col>
                     <Col>
