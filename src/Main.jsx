@@ -2,14 +2,12 @@ import React from 'react';
 
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExchangeAlt, faRobot, faCoins, faWallet, faFileContract, faPassport } from '@fortawesome/free-solid-svg-icons'
-import { faWpexplorer, faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faTelegram, faAndroid, faGooglePlay, faAppStoreIos } from  '@fortawesome/free-brands-svg-icons'
+import { faExchangeAlt, faRobot, faCoins, faFileContract, faPassport } from '@fortawesome/free-solid-svg-icons'
+import { faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faTelegram, faAndroid, faGooglePlay, faAppStoreIos } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 import CoinPaprikaLogo from './assets/img/coinpaprika.png'
-import CoinGeckoLogo from './assets/img/coingecko.png'
 import CoinCodexLogo from './assets/img/coincodex.png'
-import NomicsLogo from './assets/img/nomics.png'
 import DexGuruLogo from './assets/img/dex-guru.png'
 import PooCoinLogo from './assets/img/poocoin.png'
 import AutradexLogo from './assets/img/autradex.png'
@@ -20,6 +18,7 @@ import DelionDexLogo from './assets/img/deliondex.png'
 import PancakeSwap from './assets/img/pancakeswap.png'
 import BSCLogo from './assets/img/bsc.png'
 import SOLLogo from './assets/img/sol.png'
+import DingosinoLogo from './assets/img/dingosino.png'
 
 // Bootstrap.
 import { Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image } from 'react-bootstrap'
@@ -100,8 +99,6 @@ function Main() {
                 <NavDropdown.Header>Live Charts</NavDropdown.Header>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://coinpaprika.com/coin/dingo-dingocoin/"><img alt="" src={CoinPaprikaLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://coincodex.com/crypto/dingocoin/"><img alt="" src={CoinCodexLogo} /></NavDropdown.Item>
-                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.coingecko.com/en/coins/dingocoin"><img alt="" src={CoinGeckoLogo} /></NavDropdown.Item>
-                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://nomics.com/assets/dingo"><img alt="" src={NomicsLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"><img alt="" src={DexGuruLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"><img alt="" src={PooCoinLogo} /></NavDropdown.Item>
               </NavDropdown>
@@ -226,8 +223,17 @@ function Main() {
                 <div className="logo-holder">
                   <Image src={SOLLogo}/>
                 </div>
-                <a target="_blank" rel="noreferrer" href="https://wrap.dingocoin.org"><Button className="popup-button" variant="primary" disabled>SOL Wrap Custodian</Button></a>
+                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>SOL Wrap Custodian</Button></a>
                 <p><i>Wrap</i> Dingocoins to wDingocoins on SOL securely (coming soon...).</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <Image src={DingosinoLogo}/>
+                </div>
+                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingosino</Button></a>
+                <p>Play games using Dingocoins on Discord (Coming soon...).</p>
               </div>
             </Col>
             <Col>
@@ -345,7 +351,7 @@ function Main() {
             <li className="event eventcompleted" data-date="Apr 1, 2021"><h3>Birth of Dingocoin</h3><p>Initial deployment. Block reward set to 0 - 1,000,000.</p></li>
             <li className="event eventcompleted" data-date="Apr, 2021"><h3>Block reward halved to 500,000.</h3><p>5,000 Blocks Mined</p></li>
             <li className="event eventcompleted" data-date="Jun, 2021"><h3>Block reward halved to 250,000.</h3><p>100,000 Blocks Mined</p></li>
-            <li className="event eventcompleted" data-date="Aug, 2021"><h3>Wrapped Dingocoin Released on BSC</h3><p>Hold and trade Dingocoin on BSC.</p></li>
+            <li className="event eventcompleted" data-date="Aug, 2021"><h3>Wrapped Dingocoin released on BSC</h3><p>Hold and trade Dingocoin on BSC.</p></li>
             <li className="event eventcompleted" data-date="Aug, 2021"><h3>Block reward halved to 125,000.</h3><p>200,000 Blocks Mined</p></li>
             <li className="event eventcompleted" data-date="Sep, 2021"><h3>Max Re-org Length Activated</h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
             <li className="event eventcompleted" data-date="Oct, 2021"><h3>Chain ID switch activated</h3>
@@ -353,11 +359,12 @@ function Main() {
               Increases exposure to miners via AuxPoW.<br/>
               <b>- We hit 1TH/s hashrate on the same day, 10x our past record! 🎉🎉🎉</b></p>
             </li>
-            <li className="event eventincomplete" data-date="~ Nov, 2021"><h3>Block reward halved to 62,500.</h3><p>300,000 Blocks Mined</p></li>
-            <li className="event eventincomplete" data-date="~ Dec, 2021"><h3>Wrapped Dingocoin Release on SOL</h3><p>Hold and trade Dingocoin on SOL.</p></li>
-            <li className="event eventincomplete" data-date="~ Jan, 2022"><h3>Block reward halved to 31,250.</h3><p>400,000 Blocks Mined</p></li>
-            <li className="event eventincomplete" data-date="~ Apr, 2022"><h3>Block reward halved to 15,625.</h3><p>500,000 Blocks Mined</p></li>
-            <li className="event eventincomplete" data-date="~ Jun, 2022"><h3>Block reward set permanentely to 10,000.</h3><p>600,000 Blocks Mined</p></li>
+            <li className="event eventincomplete" data-date="~ Nov, 2021"><p>Dingosino released on Discord</p><p>Play games using Dingocoin on Discord.</p></li>
+            <li className="event eventincomplete" data-date="~ Nov, 2021"><p>Block reward halved to 62,500.</p><p>300,000 Blocks Mined</p></li>
+            <li className="event eventincomplete" data-date="~ Dec, 2021"><p>Wrapped Dingocoin released on SOL</p><p>Hold and trade Dingocoin on SOL.</p></li>
+            <li className="event eventincomplete" data-date="~ Jan, 2022"><p>Block reward halved to 31,250.</p><p>400,000 Blocks Mined</p></li>
+            <li className="event eventincomplete" data-date="~ Apr, 2022"><p>Block reward halved to 15,625.</p><p>500,000 Blocks Mined</p></li>
+            <li className="event eventincomplete" data-date="~ Jun, 2022"><p>Block reward set permanentely to 10,000.</p><p>600,000 Blocks Mined</p></li>
           </ul>
         </Container>
       </section>
@@ -385,8 +392,6 @@ function Main() {
             <Row>
               <Col><a target="_blank" rel="noreferrer" href="https://coinpaprika.com/coin/dingo-dingocoin/"><Button variant="outline-primary"><img alt="" src={CoinPaprikaLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://coincodex.com/crypto/dingocoin/"><Button variant="outline-primary"><img alt="" src={CoinCodexLogo} /></Button></a></Col>
-              <Col><a target="_blank" rel="noreferrer" href="https://www.coingecko.com/en/coins/dingocoin"><Button variant="outline-primary"><img alt="" src={CoinGeckoLogo} /></Button></a></Col>
-              <Col><a target="_blank" rel="noreferrer" href="https://nomics.com/assets/dingo"><Button variant="outline-primary"><img alt="" src={NomicsLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"><Button variant="outline-primary"><img alt="" src={DexGuruLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"><Button variant="outline-primary"><img alt="" src={PooCoinLogo} /></Button></a></Col>
             </Row>
