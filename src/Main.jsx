@@ -2,8 +2,8 @@ import React from 'react';
 
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExchangeAlt, faRobot, faCoins, faFileContract, faPassport } from '@fortawesome/free-solid-svg-icons'
-import { faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faTelegram, faAndroid, faGooglePlay, faAppStoreIos } from  '@fortawesome/free-brands-svg-icons'
+import { faExchangeAlt, faRobot, faCoins, faFileContract, faPassport, faComments } from '@fortawesome/free-solid-svg-icons'
+import { faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faTelegram, faGooglePlay } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 import CoinPaprikaLogo from './assets/img/coinpaprika.png'
@@ -123,7 +123,7 @@ function Main() {
               <Col><div className="isometric-holder"><div className={loaded ? "isometric" : "isometric preload"}></div></div></Col>
             </Row>
             <Row>
-              <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
+              <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD MONEY</p>
             </Row>
             <Row xs={1} md={1} lg={4} className="quick-actions">
               <Col>
@@ -157,7 +157,7 @@ function Main() {
           <Row xs={1} md={1} lg={2}>
             <Col>
               <h3>A fun cryptocurrency...</h3>
-              <p>Dingocoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the great Dingo internet currency." Created in parody of Dogecoin for absolutely everyone.</p>
+              <p>Dingocoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the great Dingo internet currency". </p>
             </Col>
             <Col>
               <h3>... supporting community features.</h3>
@@ -232,8 +232,17 @@ function Main() {
                 <div className="logo-holder">
                   <Image src={DingosinoLogo}/>
                 </div>
-                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingosino</Button></a>
-                <p>Play games using Dingocoins on Discord (Coming soon...).</p>
+                <a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><Button className="popup-button" variant="primary">Dingosino</Button></a>
+                <p>Play games using Dingocoins on Discord.</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <FontAwesomeIcon className="faicon" icon={faComments} />
+                </div>
+                <a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><Button className="popup-button" variant="primary">Dingocoin Social Faucet</Button></a>
+                <p>Earn Dingocoins by promoting Dingocoins.</p>
               </div>
             </Col>
             <Col>
@@ -359,9 +368,10 @@ function Main() {
               Increases exposure to miners via AuxPoW.<br/>
               <b>- We hit 1TH/s hashrate on the same day, 10x our past record! 🎉🎉🎉</b></p>
             </li>
-            <li className="event eventincomplete" data-date="~ Nov, 2021"><p>Dingosino released on Discord</p><p>Play games using Dingocoin on Discord.</p></li>
+            <li className="event eventcompleted" data-date="Nov, 2021"><h3>Dingosino released on Discord</h3><p>Play games using Dingocoin on Discord.</p></li>
             <li className="event eventincomplete" data-date="~ Nov, 2021"><p>Block reward halved to 62,500.</p><p>300,000 Blocks Mined</p></li>
             <li className="event eventincomplete" data-date="~ Dec, 2021"><p>Wrapped Dingocoin released on SOL</p><p>Hold and trade Dingocoin on SOL.</p></li>
+            <li className="event eventincomplete" data-date="~ Dec, 2021"><p>Dingocoin Social Faucet released</p><p>Earn Dingocoins by promoting Dingocoin.</p></li>
             <li className="event eventincomplete" data-date="~ Jan, 2022"><p>Block reward halved to 31,250.</p><p>400,000 Blocks Mined</p></li>
             <li className="event eventincomplete" data-date="~ Apr, 2022"><p>Block reward halved to 15,625.</p><p>500,000 Blocks Mined</p></li>
             <li className="event eventincomplete" data-date="~ Jun, 2022"><p>Block reward set permanentely to 10,000.</p><p>600,000 Blocks Mined</p></li>
