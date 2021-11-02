@@ -241,8 +241,8 @@ function Main() {
                 <div className="logo-holder">
                   <FontAwesomeIcon className="faicon" icon={faComments} />
                 </div>
-                <a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><Button className="popup-button" variant="primary">Dingocoin Social Faucet</Button></a>
-                <p>Earn Dingocoins by promoting Dingocoins.</p>
+                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingocoin Social Faucet</Button></a>
+                <p>Earn Dingocoins by promoting Dingocoins (coming soon...).</p>
               </div>
             </Col>
             <Col>
