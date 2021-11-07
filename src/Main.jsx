@@ -25,6 +25,14 @@ import { Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image } f
 
 // Others.
 import CustomDivider from './CustomDivider.jsx'
+import CoinpaprikaAPI from '@coinpaprika/api-nodejs-client';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql
+} from "@apollo/client";
 
 function Main() {
 
@@ -47,7 +55,20 @@ function Main() {
       body: JSON.stringify(data)
     })).json();
   }
+  async function get(link) {
+    const controller = new AbortController();
+    return (await fetch(link, {
+      withCredentials: true,
+      signal: controller.signal,
+    })).json();
+  }
+
+  const [dingoPrice, setDingoPrice] = React.useState(null);
+  const [dingoVolume, setDingoVolume] = React.useState(null);
+  const [dingoCap, setDingoCap] = React.useState(null);
   React.useEffect(async () => {
+
+    // Get Dingocoin blockchain stats.
     const stats = await post('https://n4.dingocoin.org:8443/dingoStats', {});
     const tMax = 2000;
     const start = Date.now();
@@ -76,6 +97,55 @@ function Main() {
           blocksToHalving: blocksToHalving});
       }
     }, 10);
+
+    const currentTime = new Date();
+    const startTime = new Date();
+    startTime.setDate(startTime.getDate() - 1);
+
+    // Get CoinPaprika data.
+    const coinPaprikaClient = new CoinpaprikaAPI();
+    const coinPaprikaDataCurrent = (await coinPaprikaClient.getCoinsOHLCVHistorical({coinId: "dingo-dingocoin", quote: "usd", start: currentTime.toISOString(), end: currentTime.toISOString()}))[0];
+    const coinPaprikaPrice = coinPaprikaDataCurrent.close; // In USD.
+    const coinPaprikaData24h = (await coinPaprikaClient.getCoinsOHLCVHistorical({coinId: "dingo-dingocoin", quote: "usd", start: startTime.toISOString()}))[0];
+    const coinPaprikaVolume = coinPaprikaData24h.volume; // In USD.
+
+    // Get pancakeswap volume data.
+    const apolloClient = new ApolloClient({
+      uri: 'https://graphql.bitquery.io',
+      cache: new InMemoryCache()
+    });
+    const pancakeVolumeData = await apolloClient
+      .query({
+        query: gql`
+        {
+          ethereum(network: bsc) {
+            dexTrades(
+              time: {since: "${startTime.toISOString()}"}
+              exchangeName: {is: "Pancake v2"}
+              baseCurrency: {is: "0x9b208b117b2c4f76c1534b6f006b033220a681a4"}
+            ) {
+              tradeAmount(in: USD)
+            }
+          }
+        }`
+      });
+    const pancakeVolume = pancakeVolumeData.data.ethereum.dexTrades[0].tradeAmount; // In USD.
+
+    // Get pancakeswap price data.
+    const pancakePriceData = await get('https://api.pancakeswap.info/api/v2/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4');
+    const pancakePrice = pancakePriceData.data.price; // In USD.
+
+    console.log(coinPaprikaPrice);
+    console.log(coinPaprikaVolume);
+          console.log(pancakePrice);
+      console.log(pancakeVolume);
+    const volume = coinPaprikaVolume + pancakeVolume;
+    const price = (coinPaprikaVolume * coinPaprikaPrice + pancakeVolume * pancakePrice) / volume;
+    const cap = price * stats.total_amount;
+    setDingoVolume(volume);
+    setDingoPrice(price);
+    setDingoCap(cap);
+
   }, []);
 
   const [exhangesModalShow, setExchangesShow] = React.useState(false);
@@ -123,7 +193,7 @@ function Main() {
               <Col><div className="isometric-holder"><div className={loaded ? "isometric" : "isometric preload"}></div></div></Col>
             </Row>
             <Row>
-              <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD MONEY</p>
+              <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
             <Row xs={1} md={1} lg={4} className="quick-actions">
               <Col>
@@ -139,9 +209,8 @@ function Main() {
                 <a target="_blank" href={WhitepaperPdf} rel="noreferrer"><Button className="popup-button" variant="primary">Whitepaper</Button></a>
               </Col>
             </Row>
-            <Row xs={3} md={5} lg={5} className="socials">
+            <Row xs={3} md={4} lg={4} className="socials">
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><FontAwesomeIcon className="faicon" icon={faDiscord} /></a></Col>
-              <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://t.me/joinchat/wNb353Dwm_c4NWFk"><FontAwesomeIcon className="faicon" icon={faTelegram} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.facebook.com/Dingocoin.org/"><FontAwesomeIcon className="faicon" icon={faFacebook} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></Col>
@@ -164,30 +233,53 @@ function Main() {
               <p>Backed by its own Scrypt AuxPoW blockchain, Dingocoin provides a testbed for ideas <i>by</i> the community, <i>for</i> the community. Have something fun to try? Throw it out and we'll help.</p>
             </Col>
           </Row>
-          <Row xs={1} md={2} lg={4} className="projectFactsWrap">
+          <Row xs={1} md={1} lg={3} className="projectFactsWrap">
             <Col>
-              <div class="item" data-number="55">
+              <div class="item">
+                <p class="number">{dingoPrice === null ? "-" : ("$" + dingoPrice.toFixed(7))}</p>
+                <span></span>
+                <p>Dingocoin price</p>
+              </div>
+            </Col>
+            <Col>
+              <div class="item">
+                <p class="number">{dingoCap === null ? "-" : ("$" + Math.floor(dingoCap).toLocaleString())}</p>
+                <span></span>
+                <p>Dingocoin marketcap</p>
+              </div>
+            </Col>
+            <Col>
+              <div class="item">
+                <p class="number">{dingoVolume === null ? "-" : ("$" + Math.floor(dingoVolume).toLocaleString())}</p>
+                <span></span>
+                <p>24h volume</p>
+              </div>
+            </Col>
+          </Row>
+          <Row xs={1} md={1} lg={4} className="projectFactsWrap">
+            <Col>
+              <div class="item">
                 <p class="number">{dingoStats === null ? "-" : dingoStats.supply.toLocaleString()}</p>
                 <span></span>
                 <p>Dingocoin supply</p>
               </div>
             </Col>
             <Col>
-              <div class="item" data-number="55">
+              <div class="item">
                 <p class="number">{dingoStats === null ? "-" : dingoStats.blocks.toLocaleString()}</p>
                 <span></span>
                 <p>Blocks mined</p>
               </div>
             </Col>
             <Col>
-              <div class="item" data-number="55">
+              <div class="item">
                 <p class="number">{dingoStats === null ? "-" : dingoStats.blockReward.toLocaleString()}</p>
                 <span></span>
                 <p>Current block reward</p>
               </div>
             </Col>
             <Col>
-              <div class="item" data-number="55">
+              <div class="item">
                 <p class="number">{dingoStats === null ? "-" : dingoStats.blocksToHalving.toLocaleString()}</p>
                 <span></span>
                 <p>Blocks to next halving</p>
@@ -195,6 +287,8 @@ function Main() {
             </Col>
           </Row>
         </Container>
+      </section>
+      <section className="section-a" id="features">
         <CustomDivider/>
         <h3>Community-driven features</h3>
         <p>Designed and maintained by our very own community members.</p>
@@ -267,7 +361,7 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-a" id="wallets">
+      <section className="section-b" id="wallets">
         <h2>DINGOCOIN WALLETS</h2>
         <CustomDivider/>
         <Container>
@@ -352,7 +446,7 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-b" id="roadmap">
+      <section className="section-a" id="roadmap">
         <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
         <CustomDivider/>
         <Container>
