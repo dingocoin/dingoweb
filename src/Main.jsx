@@ -25,14 +25,6 @@ import { Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image } f
 
 // Others.
 import CustomDivider from './CustomDivider.jsx'
-import CoinpaprikaAPI from '@coinpaprika/api-nodejs-client';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql
-} from "@apollo/client";
 
 function Main() {
 
@@ -69,59 +61,17 @@ function Main() {
   React.useEffect(async () => {
 
     // Get Dingocoin blockchain stats.
-    const stats = await post('https://n4.dingocoin.org:8443/dingoStats', {});
+    const dingoStats = await get('https://n4.dingocoin.org:8443/stats/dingo');
     // It's late and I'm too tired to do it properly. Please replace this eventually.
-    const blockReward = stats.height < 300000 ? 125000 : stats.height < 400000 ? 62500 : stats.height < 500000 ? 31250 : stats.height < 600000 ? 15625 : 10000;
-    const blocksToHalving = stats.height < 300000 ? 300000 - stats.height
-      : stats.height < 400000 ? 400000 - stats.height
-      : stats.height < 500000 ? 500000 - stats.height
-      : stats.height < 600000 ? 600000 - stats.height
+    const blockReward = dingoStats.height < 300000 ? 125000 : dingoStats.height < 400000 ? 62500 : dingoStats.height < 500000 ? 31250 : dingoStats.height < 600000 ? 15625 : 10000;
+    const blocksToHalving = dingoStats.height < 300000 ? 300000 - dingoStats.height
+      : dingoStats.height < 400000 ? 400000 - dingoStats.height
+      : dingoStats.height < 500000 ? 500000 - dingoStats.height
+      : dingoStats.height < 600000 ? 600000 - dingoStats.height
       : null;
 
-    const currentTime = new Date();
-    const startTime = new Date();
-    startTime.setDate(startTime.getDate() - 1);
-
-    // Get CoinPaprika data.
-    const coinPaprikaClient = new CoinpaprikaAPI();
-    const coinPaprikaDataCurrent = (await coinPaprikaClient.getCoinsOHLCVHistorical({coinId: "dingo-dingocoin", quote: "usd", start: currentTime.toISOString(), end: currentTime.toISOString()}))[0];
-    const coinPaprikaPrice = coinPaprikaDataCurrent.close; // In USD.
-    const coinPaprikaData24h = (await coinPaprikaClient.getCoinsOHLCVHistorical({coinId: "dingo-dingocoin", quote: "usd", start: startTime.toISOString()}))[0];
-    const coinPaprikaVolume = coinPaprikaData24h.volume; // In USD.
-
-    // Get pancakeswap volume data.
-    const apolloClient = new ApolloClient({
-      uri: 'https://graphql.bitquery.io',
-      cache: new InMemoryCache()
-    });
-    const pancakeVolumeData = await apolloClient
-      .query({
-        query: gql`
-        {
-          ethereum(network: bsc) {
-            dexTrades(
-              time: {since: "${startTime.toISOString()}"}
-              exchangeName: {is: "Pancake v2"}
-              baseCurrency: {is: "0x9b208b117b2c4f76c1534b6f006b033220a681a4"}
-            ) {
-              tradeAmount(in: USD)
-            }
-          }
-        }`
-      });
-    const pancakeVolume = pancakeVolumeData.data.ethereum.dexTrades[0].tradeAmount; // In USD.
-
-    // Get pancakeswap price data.
-    const pancakePriceData = await get('https://api.pancakeswap.info/api/v2/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4');
-    const pancakePrice = pancakePriceData.data.price; // In USD.
-
-    console.log(coinPaprikaPrice);
-    console.log(coinPaprikaVolume);
-          console.log(pancakePrice);
-      console.log(pancakeVolume);
-    const volume = coinPaprikaVolume + pancakeVolume;
-    const price = (coinPaprikaVolume * coinPaprikaPrice + pancakeVolume * pancakePrice) / volume;
-    const cap = price * stats.total_amount;
+    // Get market stats.
+    const { volume, price, cap } = await get('https://n4.dingocoin.org:8443/stats/market');
 
     const tMax = 2000;
     const animateStart = Date.now();
@@ -130,8 +80,8 @@ function Main() {
       if (progress >= 1) {
         clearInterval(interval);
         setDingoStats({
-          supply: Math.round(stats.total_amount),
-          blocks: stats.height,
+          supply: Math.round(dingoStats.total_amount),
+          blocks: dingoStats.height,
           blockReward: blockReward,
           blocksToHalving: blocksToHalving });
         setDingoVolume(volume);
@@ -140,8 +90,8 @@ function Main() {
       } else {
         const v = 1 - (1 - progress)**8;
         setDingoStats({
-          supply: Math.round(v * stats.total_amount),
-          blocks: Math.round(v * stats.height),
+          supply: Math.round(v * dingoStats.total_amount),
+          blocks: Math.round(v * dingoStats.height),
           blockReward: blockReward,
           blocksToHalving: blocksToHalving});
         setDingoVolume(v * volume);
