@@ -244,7 +244,7 @@ function Main() {
         </Container>
       </section>
       <section className="section-a" id="features">
-        <h2>Community-driven features</h2>
+        <h2>COMMUNITY-DRIVEN FEATURES</h2>
         <CustomDivider/>
         <p>Designed and maintained by our very own community members.</p>
         <Container>
