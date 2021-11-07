@@ -116,7 +116,8 @@ function Main() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <Nav className="ms-auto">
-              <Nav.Link onClick={() => document.getElementById('about').scrollIntoView()}>Features</Nav.Link>
+              <Nav.Link onClick={() => document.getElementById('about').scrollIntoView()}>About</Nav.Link>
+              <Nav.Link onClick={() => document.getElementById('features').scrollIntoView()}>Features</Nav.Link>
               <Nav.Link onClick={() => document.getElementById('wallets').scrollIntoView()}>Wallets</Nav.Link>
               <Nav.Link onClick={() => document.getElementById('roadmap').scrollIntoView()}>Roadmap</Nav.Link>
               <NavDropdown className="navbar-important" title="Live Charts">
@@ -243,8 +244,8 @@ function Main() {
         </Container>
       </section>
       <section className="section-a" id="features">
+        <h2>Community-driven features</h2>
         <CustomDivider/>
-        <h3>Community-driven features</h3>
         <p>Designed and maintained by our very own community members.</p>
         <Container>
           <Row xs={1} md={2} lg={3}>
