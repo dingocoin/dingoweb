@@ -70,8 +70,6 @@ function Main() {
 
     // Get Dingocoin blockchain stats.
     const stats = await post('https://n4.dingocoin.org:8443/dingoStats', {});
-    const tMax = 2000;
-    const start = Date.now();
     // It's late and I'm too tired to do it properly. Please replace this eventually.
     const blockReward = stats.height < 300000 ? 125000 : stats.height < 400000 ? 62500 : stats.height < 500000 ? 31250 : stats.height < 600000 ? 15625 : 10000;
     const blocksToHalving = stats.height < 300000 ? 300000 - stats.height
@@ -79,24 +77,6 @@ function Main() {
       : stats.height < 500000 ? 500000 - stats.height
       : stats.height < 600000 ? 600000 - stats.height
       : null;
-    const interval = setInterval(() => {
-      const progress = (Date.now() - start) / tMax;
-      if (progress >= 1) {
-        clearInterval(interval);
-        setDingoStats({
-          supply: Math.round(stats.total_amount),
-          blocks: stats.height,
-          blockReward: blockReward,
-          blocksToHalving: blocksToHalving });
-      } else {
-        const v = 1 - (1 - progress)**8;
-        setDingoStats({
-          supply: Math.round(v * stats.total_amount),
-          blocks: Math.round(v * stats.height),
-          blockReward: blockReward,
-          blocksToHalving: blocksToHalving});
-      }
-    }, 10);
 
     const currentTime = new Date();
     const startTime = new Date();
@@ -142,9 +122,33 @@ function Main() {
     const volume = coinPaprikaVolume + pancakeVolume;
     const price = (coinPaprikaVolume * coinPaprikaPrice + pancakeVolume * pancakePrice) / volume;
     const cap = price * stats.total_amount;
-    setDingoVolume(volume);
-    setDingoPrice(price);
-    setDingoCap(cap);
+
+    const tMax = 2000;
+    const animateStart = Date.now();
+    const interval = setInterval(() => {
+      const progress = (Date.now() - animateStart) / tMax;
+      if (progress >= 1) {
+        clearInterval(interval);
+        setDingoStats({
+          supply: Math.round(stats.total_amount),
+          blocks: stats.height,
+          blockReward: blockReward,
+          blocksToHalving: blocksToHalving });
+        setDingoVolume(volume);
+        setDingoPrice(price);
+        setDingoCap(cap);
+      } else {
+        const v = 1 - (1 - progress)**8;
+        setDingoStats({
+          supply: Math.round(v * stats.total_amount),
+          blocks: Math.round(v * stats.height),
+          blockReward: blockReward,
+          blocksToHalving: blocksToHalving});
+        setDingoVolume(v * volume);
+        setDingoPrice(v * price);
+        setDingoCap(v * cap);
+      }
+    }, 10);
 
   }, []);
 
