@@ -281,7 +281,7 @@ function Main() {
                 <div className="logo-holder">
                   <Image src={DingosinoLogo}/>
                 </div>
-                <a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><Button className="popup-button" variant="primary">Dingosino</Button></a>
+                <a target="_blank" rel="noreferrer" href="https://discord.gg/9advvJ4z5f"><Button className="popup-button" variant="primary">Dingosino</Button></a>
                 <p>Play games using Dingocoins on Discord.</p>
               </div>
             </Col>
