@@ -558,10 +558,9 @@ function Main() {
                     <p>
                       Get rewarded based on your activity:
                       <ul>
-                        <li>1 like on your tweet = 10 Dingocoin</li>
+                        <li>1 like on your tweet (including liking your own) = 10 Dingocoin</li>
                         <li>1 retweet on your tweet = 30 Dingocoin</li>
                         <li>Retweet someone else's tweet = 30 Dingocoin</li>
-                        <li>Liking your own tweet = 10 Dingocoin</li>
                         <li>Retweeting your own tweet = no reward</li>
                       </ul>
                     </p>
