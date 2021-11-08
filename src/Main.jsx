@@ -2,8 +2,8 @@ import React from 'react';
 
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExchangeAlt, faRobot, faCoins, faFileContract, faPassport, faComments } from '@fortawesome/free-solid-svg-icons'
-import { faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faTelegram, faGooglePlay } from  '@fortawesome/free-brands-svg-icons'
+import { faExchangeAlt, faRobot, faCoins, faFileContract, faPassport, faComment, faHeart, faRetweet } from '@fortawesome/free-solid-svg-icons'
+import { faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faGooglePlay } from  '@fortawesome/free-brands-svg-icons'
 import DingocoinLogo from './assets/img/dingocoin.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 import CoinPaprikaLogo from './assets/img/coinpaprika.png'
@@ -19,34 +19,17 @@ import PancakeSwap from './assets/img/pancakeswap.png'
 import BSCLogo from './assets/img/bsc.png'
 import SOLLogo from './assets/img/sol.png'
 import DingosinoLogo from './assets/img/dingosino.png'
+import SocialFaucetLogo from './assets/img/socialfaucet.png'
 
 // Bootstrap.
-import { Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image } from 'react-bootstrap'
+import { Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image } from 'react-bootstrap'
 
 // Others.
 import CustomDivider from './CustomDivider.jsx'
+import { TwitterTweetEmbed } from 'react-twitter-embed'
 
 function Main() {
 
-  const [loaded, setLoaded] = React.useState(false);
-  React.useEffect(() => {
-    setTimeout(function() { setLoaded(true); }, 2500);
-  }, []);
-
-  const [dingoStats, setDingoStats] = React.useState(null);
-  async function post(link, data) {
-    const controller = new AbortController();
-    return (await fetch(link, {
-      withCredentials: true,
-      method: 'POST',
-      signal: controller.signal,
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })).json();
-  }
   async function get(link) {
     const controller = new AbortController();
     return (await fetch(link, {
@@ -54,6 +37,13 @@ function Main() {
       signal: controller.signal,
     })).json();
   }
+
+  const [loaded, setLoaded] = React.useState(false);
+  React.useEffect(() => {
+    setTimeout(function() { setLoaded(true); }, 2500);
+  }, []);
+
+  const [dingoStats, setDingoStats] = React.useState(null);
 
   const [dingoPrice, setDingoPrice] = React.useState(null);
   const [dingoVolume, setDingoVolume] = React.useState(null);
@@ -102,7 +92,31 @@ function Main() {
 
   }, []);
 
-  const [exhangesModalShow, setExchangesShow] = React.useState(false);
+  const [socialFaucetRank, setSocialFaucetRank] = React.useState([]);
+  React.useEffect(async () => {
+    // Retireve.
+    const {metrics, users, lastRefreshed} = await get('https://n4.dingocoin.org:8443/socialFaucet');
+    // Collate.
+    const rank = [];
+    for (const address of Object.keys(metrics)) {
+      rank.push({
+        user: users[address],
+        score: metrics[address].score,
+        replies: metrics[address].reply_count,
+        retweets: metrics[address].retweet_count,
+        likes: metrics[address].like_count,
+        rank: null });
+    }
+    rank.sort((a, b) => b - a); // Sort descending.
+    // Add rank index.
+    for (let i = 0; i < rank.length; i++) {
+      rank[i].rank = i + 1;
+    }
+    setSocialFaucetRank(rank);
+  }, []);
+
+  const [exhangesModalShow, setExchangesModalShow] = React.useState(false);
+  const [socialFaucetModalShow, setSocialFaucetModalShow] = React.useState(false);
 
   return (
     <div>
@@ -152,7 +166,7 @@ function Main() {
             </Row>
             <Row xs={1} md={1} lg={4} className="quick-actions">
               <Col>
-                <Button className="popup-button" variant="primary" onClick={() => { setExchangesShow(true); }}>Buy Dingocoin</Button>
+                <Button className="popup-button" variant="primary" onClick={() => { setExchangesModalShow(true); }}>Buy Dingocoin</Button>
               </Col>
               <Col>
                 <a target="_blank" href="https://miningpoolstats.stream/dingocoin" rel="noreferrer"><Button className="popup-button" variant="primary">Mine Dingocoin</Button></a>
@@ -288,10 +302,10 @@ function Main() {
             <Col>
               <div className="project-card">
                 <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faComments} />
+                  <Image src={SocialFaucetLogo}/>
                 </div>
-                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingocoin Social Faucet</Button></a>
-                <p>Earn Dingocoins by promoting Dingocoins (coming soon...).</p>
+                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" onClick={() => { setSocialFaucetModalShow(true); }}>Dingocoin Social Faucet</Button></a>
+                <p>Earn Dingocoins simply by promoting Dingocoins on Twitter.</p>
               </div>
             </Col>
             <Col>
@@ -414,13 +428,13 @@ function Main() {
             <li className="event eventcompleted" data-date="Sep, 2021"><h3>Max Re-org Length Activated</h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
             <li className="event eventcompleted" data-date="Oct, 2021"><h3>Chain ID switch activated</h3>
               <p>Merged mining can now be done alongside Doge without conflict.<br/>
-              Increases exposure to miners via AuxPoW.<br/>
-              <b>- We hit 1TH/s hashrate on the same day, 10x our past record! 🎉🎉🎉</b></p>
+                Increases exposure to miners via AuxPoW.<br/>
+                <b>- We hit 1TH/s hashrate on the same day, 10x our past record! 🎉🎉🎉</b></p>
             </li>
             <li className="event eventcompleted" data-date="Nov, 2021"><h3>Dingosino released on Discord</h3><p>Play games using Dingocoin on Discord.</p></li>
+            <li className="event eventcompleted" data-date="Nov, 2021"><h3>Dingocoin Social Faucet released</h3><p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p></li>
             <li className="event eventincomplete" data-date="~ Nov, 2021"><p>Block reward halved to 62,500.</p><p>300,000 Blocks Mined</p></li>
             <li className="event eventincomplete" data-date="~ Dec, 2021"><p>Wrapped Dingocoin released on SOL</p><p>Hold and trade Dingocoin on SOL.</p></li>
-            <li className="event eventincomplete" data-date="~ Dec, 2021"><p>Dingocoin Social Faucet released</p><p>Earn Dingocoins by promoting Dingocoin.</p></li>
             <li className="event eventincomplete" data-date="~ Jan, 2022"><p>Block reward halved to 31,250.</p><p>400,000 Blocks Mined</p></li>
             <li className="event eventincomplete" data-date="~ Apr, 2022"><p>Block reward halved to 15,625.</p><p>500,000 Blocks Mined</p></li>
             <li className="event eventincomplete" data-date="~ Jun, 2022"><p>Block reward set permanentely to 10,000.</p><p>600,000 Blocks Mined</p></li>
@@ -437,7 +451,7 @@ function Main() {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         show={exhangesModalShow}
-        onHide={() => { setExchangesShow(false); }}>
+        onHide={() => { setExchangesModalShow(false); }}>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             Buy Dingocoin
@@ -470,11 +484,97 @@ function Main() {
           </Container>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => { setExchangesShow(false); }}>Close</Button>
+          <Button onClick={() => { setExchangesModalShow(false); }}>Close</Button>
         </Modal.Footer>
       </Modal>
 
-    </div>
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={socialFaucetModalShow}
+        onHide={() => { setSocialFaucetModalShow(false); }}>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Dingocoin Social Faucet - Leaderboard
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container>
+            <Row>
+              <div className="social-faucet-table">
+                <Table striped bordered>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>User</th>
+                      <th>Rewards</th>
+                      <th><FontAwesomeIcon className="faicon" icon={faComment} /></th>
+                      <th><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
+                      <th><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {socialFaucetRank.map((x) => (
+                      <tr>
+                        <td>{x.rank}</td>
+                        <td><a href="https://twitter.com/{x.user}" target="_blank">@{x.user}</a></td>
+                        <td>{x.score}</td>
+                        <td>{x.replies}</td>
+                        <td>{x.retweets}</td>
+                        <td>{x.likes}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              </div>
+              <CustomDivider/>
+            </Row>
+            <Row>
+              <Col>
+                <Accordion>
+                  <Accordion.Item eventKey="0">
+                    <Accordion.Header><h5>How to participate?</h5></Accordion.Header>
+                    <Accordion.Body>
+                      <p>Simply post a tweet advertising Dingocoin. In your tweet, include
+                        <ol>
+                          <li>a link to <code>dingocoin.org</code>,</li>
+                          <li>hashtags <code>#dingocoin</code> and <code>#socialfaucter</code>, and</li>
+                          <li>a hashtag with your Dingocoin address (e.g. <code>#DQBx7G4aozdqYFCv2dU4kacaEcPzwg8dkZ</code>). Your rewards will be sent here.</li>
+                        </ol>
+                      </p>
+                      <p>Below is an example:
+                        <TwitterTweetEmbed
+                          tweetId={'1457510685441732609'}
+                          options={{height:700}}
+                        /></p>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item>
+                  <Accordion.Header><h5>Rewards and payouts</h5></Accordion.Header>
+                  <Accordion.Body>
+                    <p>
+                      Get rewarded based on activity on your tweets:
+                      <ul>
+                        <li>1 like = 1 Dingocoin</li>
+                        <li>1 reply = 2 Dingocoin</li>
+                        <li>1 retweet = 3 Dingocoin</li>
+                      </ul>
+                    </p>
+                    <p>The leaderboard is refreshed hourly. Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </Col>
+          </Row>
+        </Container>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={() => { setSocialFaucetModalShow(false); }}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+
+  </div>
   );
 }
 

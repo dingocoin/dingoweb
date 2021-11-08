@@ -20,6 +20,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700 !important;
 }
 
+a:link {
+  text-decoration: none;
+}
 
 
 /* ===== NAV BAR ===== */
@@ -551,4 +554,10 @@ h1, h2, h3, h4, h5, h6 {
   .projectFactsWrap .item {
      flex: 0 0 50%;
   }
+}
+
+.social-faucet-table {
+  max-height: 15rem;
+  overflow: auto;
+  text-align: center;
 }
