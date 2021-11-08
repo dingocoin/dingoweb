@@ -558,7 +558,7 @@ function Main() {
                   <Accordion.Header><h5>Rewards and payouts</h5></Accordion.Header>
                   <Accordion.Body>
                     <p>
-                      Get rewarded based on activity on your tweets:
+                      Get rewarded* based on activity on your tweets:
                       <ul>
                         <li>1 like = 10 Dingocoin</li>
                         <li>1 reply = 20 Dingocoin</li>
@@ -566,6 +566,7 @@ function Main() {
                       </ul>
                     </p>
                     <p>Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
+                    <p>*Rates not fixed. May have to adjust in case we fly to the moon.</p>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
