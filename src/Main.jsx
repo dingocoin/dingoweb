@@ -531,7 +531,7 @@ function Main() {
                   </tbody>
                 </Table>
               </div>
-              <p>The leaderboard is refreshed at the start of every hour (last updated: {socialFaucetLastUpdate == null ? '' : socialFaucetLastUpdate.toLocaleString()}).</p>
+              <p>Updates at the start of every hour (last: {socialFaucetLastUpdate == null ? '' : socialFaucetLastUpdate.toLocaleString()}).</p>
               <CustomDivider/>
             </Row>
             <Row>
