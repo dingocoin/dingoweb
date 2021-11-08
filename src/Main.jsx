@@ -539,7 +539,7 @@ function Main() {
                       <p>Simply post a tweet advertising Dingocoin. In your tweet, include
                         <ol>
                           <li>a link to <code>dingocoin.org</code>,</li>
-                          <li>hashtags <code>#dingocoin</code> and <code>#socialfaucter</code>, and</li>
+                          <li>hashtags <code>#dingocoin</code> and <code>#socialfaucet</code>, and</li>
                           <li>a hashtag with your Dingocoin address (e.g. <code>#DQBx7G4aozdqYFCv2dU4kacaEcPzwg8dkZ</code>). Your rewards will be sent here.</li>
                         </ol>
                       </p>
