@@ -522,7 +522,7 @@ function Main() {
                       <tr>
                         <td>{x.rank}</td>
                         <td><a href="https://twitter.com/{x.user}" target="_blank">@{x.user}</a></td>
-                        <td>{x.score}</td>
+                        <td>{x.score * 10}</td>
                         <td>{x.replies}</td>
                         <td>{x.retweets}</td>
                         <td>{x.likes}</td>
@@ -560,9 +560,9 @@ function Main() {
                     <p>
                       Get rewarded based on activity on your tweets:
                       <ul>
-                        <li>1 like = 1 Dingocoin</li>
-                        <li>1 reply = 2 Dingocoin</li>
-                        <li>1 retweet = 3 Dingocoin</li>
+                        <li>1 like = 10 Dingocoin</li>
+                        <li>1 reply = 20 Dingocoin</li>
+                        <li>1 retweet = 30 Dingocoin</li>
                       </ul>
                     </p>
                     <p>Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
