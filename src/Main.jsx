@@ -531,7 +531,7 @@ function Main() {
                   </tbody>
                 </Table>
               </div>
-              <p>Last updated: {socialFaucetLastUpdate == null ? '' : socialFaucetLastUpdate.toLocaleString()}.<br/>Updates at the start of every hour.</p>
+              <p>Last updated: {socialFaucetLastUpdate == null ? '' : socialFaucetLastUpdate.toLocaleString()}.<br/>(Updates at the start of every hour.)</p>
               <CustomDivider/>
             </Row>
             <Row>
@@ -540,14 +540,15 @@ function Main() {
                   <Accordion.Item eventKey="0">
                     <Accordion.Header><h5>How to participate?</h5></Accordion.Header>
                     <Accordion.Body>
-                      <p>Simply post a tweet advertising Dingocoin. In your tweet, include
+                      <p>Simply post a tweet advertising Dingocoin. In your tweet, include all of:
                         <ol>
                           <li>a link to <code>dingocoin.org</code>,</li>
                           <li>hashtags <code>#dingocoin</code> and <code>#socialfaucet</code>, and</li>
                           <li>a hashtag with your Dingocoin address (e.g. <code>#DQBx7G4aozdqYFCv2dU4kacaEcPzwg8dkZ</code>). Your rewards will be sent here.</li>
                         </ol>
                       </p>
-                      <p>Below is an example:
+                      <p>Retweet someone else for additional rewards (sent to your latest address, if any).</p>
+                      <p>Below is an example tweet:
                         <TwitterTweetEmbed
                           tweetId={'1457510685441732609'}
                           options={{height:700}}
@@ -565,6 +566,7 @@ function Main() {
                         <li>1 retweet = 30 Dingocoin</li>
                       </ul>
                     </p>
+                    <p>Retweeting someone else's tweet gives you 30 Dingocoin. You need at least one of your own tweet for this.</p>
                     <p>Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
                     <p>*Rates not fixed. May have to adjust in case we fly to the moon.</p>
                   </Accordion.Body>
