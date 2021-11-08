@@ -504,7 +504,7 @@ function Main() {
         </Modal.Header>
         <Modal.Body>
           <Container>
-            <Row>
+           <Row className="social-faucet-board">
               <div className="social-faucet-table">
                 <Table striped bordered>
                   <thead>
@@ -512,8 +512,8 @@ function Main() {
                       <th>#</th>
                       <th>User</th>
                       <th>Rewards</th>
-                      <th><FontAwesomeIcon className="faicon" icon={faComment} /></th>
                       <th><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
+                      <th><FontAwesomeIcon className="faicon" icon={faComment} /></th>
                       <th><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
                     </tr>
                   </thead>
@@ -523,15 +523,15 @@ function Main() {
                         <td>{x.rank}</td>
                         <td><a href={"https://twitter.com/" + x.user} target="_blank">@{x.user}</a></td>
                         <td>{x.score * 10}</td>
-                        <td>{x.replies}</td>
                         <td>{x.retweets}</td>
+                        <td>{x.replies}</td>
                         <td>{x.likes}</td>
                       </tr>
                     ))}
                   </tbody>
                 </Table>
               </div>
-              <p>Updates at the start of every hour (last: {socialFaucetLastUpdate == null ? '' : socialFaucetLastUpdate.toLocaleString()}).</p>
+              <p>Last updated: {socialFaucetLastUpdate == null ? '' : socialFaucetLastUpdate.toLocaleString()}.<br/>Updates at the start of every hour.</p>
               <CustomDivider/>
             </Row>
             <Row>
