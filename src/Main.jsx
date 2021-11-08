@@ -550,7 +550,7 @@ function Main() {
                         /></p>
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item>
+                <Accordion.Item eventKey="1">
                   <Accordion.Header><h5>Rewards and payouts</h5></Accordion.Header>
                   <Accordion.Body>
                     <p>
