@@ -22,7 +22,7 @@ import DingosinoLogo from './assets/img/dingosino.png'
 import SocialFaucetLogo from './assets/img/socialfaucet.png'
 
 // Bootstrap.
-import { Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image } from 'react-bootstrap'
+import { Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
 
 // Others.
 import CustomDivider from './CustomDivider.jsx'
@@ -185,6 +185,11 @@ function Main() {
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.facebook.com/Dingocoin.org/"><FontAwesomeIcon className="faicon" icon={faFacebook} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></Col>
+            </Row>
+            <br/>
+            <Row>
+              <h5>Currently raising funds for a Hotbit listing.<br/>Join our Discord to contribute!</h5>
+              <ProgressBar animated now={44.9} className="fund-raising-progress" label="$22,540 / $50,000" />
             </Row>
           </Container>
         </div>
