@@ -521,7 +521,7 @@ function Main() {
                     {socialFaucetRank.map((x) => (
                       <tr>
                         <td>{x.rank}</td>
-                        <td><a href="https://twitter.com/{x.user}" target="_blank">@{x.user}</a></td>
+                        <td><a href={"https://twitter.com/" + x.user} target="_blank">@{x.user}</a></td>
                         <td>{x.score * 10}</td>
                         <td>{x.replies}</td>
                         <td>{x.retweets}</td>
