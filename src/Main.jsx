@@ -108,7 +108,7 @@ function Main() {
         likes: metrics[address].like_count,
         rank: null });
     }
-    rank.sort((a, b) => b - a); // Sort descending.
+    rank.sort((a, b) => b.score - a.score); // Sort descending.
     // Add rank index.
     for (let i = 0; i < rank.length; i++) {
       rank[i].rank = i + 1;
