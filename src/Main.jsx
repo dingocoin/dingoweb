@@ -103,9 +103,8 @@ function Main() {
       rank.push({
         user: users[address],
         score: metrics[address].score,
-        replies: metrics[address].reply_count,
-        retweets: metrics[address].retweet_count,
         likes: metrics[address].like_count,
+        retweets: metrics[address].retweet_count,
         rank: null });
     }
     rank.sort((a, b) => b.score - a.score); // Sort descending.
@@ -513,7 +512,6 @@ function Main() {
                       <th>User</th>
                       <th>Rewards</th>
                       <th><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
-                      <th><FontAwesomeIcon className="faicon" icon={faComment} /></th>
                       <th><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
                     </tr>
                   </thead>
@@ -524,7 +522,6 @@ function Main() {
                         <td><a href={"https://twitter.com/" + x.user} target="_blank">@{x.user}</a></td>
                         <td>{x.score * 10}</td>
                         <td>{x.retweets}</td>
-                        <td>{x.replies}</td>
                         <td>{x.likes}</td>
                       </tr>
                     ))}
@@ -559,14 +556,15 @@ function Main() {
                   <Accordion.Header><h5>Rewards and payouts</h5></Accordion.Header>
                   <Accordion.Body>
                     <p>
-                      Get rewarded* based on activity on your tweets:
+                      Get rewarded based on your activity:
                       <ul>
-                        <li>1 like = 10 Dingocoin</li>
-                        <li>1 reply = 20 Dingocoin</li>
-                        <li>1 retweet = 30 Dingocoin</li>
+                        <li>1 like on your tweet = 10 Dingocoin</li>
+                        <li>1 retweet on your tweet = 30 Dingocoin</li>
+                        <li>Retweet someone else's tweet = 30 Dingocoin</li>
+                        <li>Liking your own tweet = 10 Dingocoin</li>
+                        <li>Retweeting your own tweet = no reward</li>
                       </ul>
                     </p>
-                    <p>Retweeting someone else's tweet gives you 30 Dingocoin. You need at least one of your own tweet for this.</p>
                     <p>Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
                     <p>*Rates not fixed. May have to adjust in case we fly to the moon.</p>
                   </Accordion.Body>
