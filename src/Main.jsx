@@ -312,7 +312,7 @@ function Main() {
                   <Image src={SocialFaucetLogo}/>
                 </div>
                 <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" onClick={() => { setSocialFaucetModalShow(true); }}>Dingocoin Social Faucet</Button></a>
-                <p>Earn Dingocoins simply by promoting Dingocoins on Twitter.</p>
+                <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
               </div>
             </Col>
             <Col>
