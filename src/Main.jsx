@@ -93,6 +93,7 @@ function Main() {
   }, []);
 
   const [socialFaucetRank, setSocialFaucetRank] = React.useState([]);
+  const [socialFaucetLastUpdate, setSocialFaucetLastUpdate] = React.useState(null);
   React.useEffect(async () => {
     // Retireve.
     const {metrics, users, lastRefreshed} = await get('https://n4.dingocoin.org:8443/socialFaucet');
@@ -112,7 +113,9 @@ function Main() {
     for (let i = 0; i < rank.length; i++) {
       rank[i].rank = i + 1;
     }
+    console.log(lastRefreshed);
     setSocialFaucetRank(rank);
+    setSocialFaucetLastUpdate(new Date(Date.parse(lastRefreshed)));
   }, []);
 
   const [exhangesModalShow, setExchangesModalShow] = React.useState(false);
@@ -528,6 +531,7 @@ function Main() {
                   </tbody>
                 </Table>
               </div>
+              <p>The leaderboard is refreshed at the start of every hour (last updated: {socialFaucetLastUpdate == null ? '' : socialFaucetLastUpdate.toLocaleString()}).</p>
               <CustomDivider/>
             </Row>
             <Row>
@@ -561,7 +565,7 @@ function Main() {
                         <li>1 retweet = 3 Dingocoin</li>
                       </ul>
                     </p>
-                    <p>The leaderboard is refreshed hourly. Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
+                    <p>Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
