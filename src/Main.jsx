@@ -525,7 +525,7 @@ function Main() {
                       <tr>
                         <td>{x.rank}</td>
                         <td><a href={"https://twitter.com/" + x.user} target="_blank">@{x.user}</a></td>
-                        <td>{x.score * 10}</td>
+                        <td>{x.score * 100}</td>
                         <td>{x.retweets}</td>
                         <td>{x.likes}</td>
                       </tr>
@@ -563,9 +563,9 @@ function Main() {
                     <p>
                       Get rewarded based on your activity:
                       <ul>
-                        <li>1 like on your tweet (including liking your own) = 10 Dingocoin</li>
-                        <li>1 retweet on your tweet = 30 Dingocoin</li>
-                        <li>Retweet someone else's tweet = 30 Dingocoin</li>
+                        <li>1 like on your tweet (including liking your own) = 100 Dingocoin</li>
+                        <li>1 retweet on your tweet = 200 Dingocoin</li>
+                        <li>Retweet someone else's tweet = 200 Dingocoin</li>
                         <li>Retweeting your own tweet = no reward</li>
                       </ul>
                     </p>
