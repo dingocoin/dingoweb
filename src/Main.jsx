@@ -525,7 +525,7 @@ function Main() {
                       <tr>
                         <td>{x.rank}</td>
                         <td><a href={"https://twitter.com/" + x.user} target="_blank">@{x.user}</a></td>
-                        <td>{x.score * 100}</td>
+                        <td>{(x.score * 100).toLocaleString()}</td>
                         <td>{x.retweets}</td>
                         <td>{x.likes}</td>
                       </tr>
