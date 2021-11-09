@@ -12,13 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <HashRouter baseName="/">
-        <Switch>
-          <Route path="/home" exact component={() => <Main />} />
-          <Route path="/canvas" exact component={() => <Canvas />} />
-          <Redirect exact from="/" to="/home" />
-        </Switch>
-      </HashRouter>
+      <Main />
     </div>
   );
 }
