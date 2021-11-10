@@ -384,14 +384,15 @@ function Main() {
                   <p>
                     Get rewarded based on your activity:
                     <ul>
-                      <li>1 like on your tweet (including liking your own) = 100 Dingocoin</li>
-                      <li>1 retweet on your tweet = 200 Dingocoin</li>
-                      <li>Retweet someone else's tweet = 200 Dingocoin</li>
+                      <li>1 like on your tweet (including liking your own) = 1,000 Dingocoin</li>
+                      <li>1 retweet on your tweet = 2,000 Dingocoin</li>
+                      <li>Retweet someone else's tweet = 2,000 Dingocoin</li>
                       <li>Retweeting your own tweet = no reward</li>
                     </ul>
                   </p>
-                  <p>Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
+                  <p>The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
                   <p>*Rates not fixed. May have to adjust in case we fly to the moon.</p>
+                  <p><b>Feeling generous? Fund your own rewards event! Join our Discord to reach out :)</b></p>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
@@ -428,14 +429,14 @@ function Main() {
                     <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                       <td>{x.rank}</td>
                       <td><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
-                      <td>{(x.score * 100).toLocaleString()}</td>
+                      <td>{(x.score * 1000).toLocaleString()}</td>
                       <td>{x.retweets}</td>
                       <td>{x.likes}</td>
                     </tr>
                   ))}
                   <tr>
                     <td colSpan="2"><b>Total</b></td>
-                    <td>{socialFaucetRank.map((x) => x.score * 100).reduce((a, b) => a + b, 0).toLocaleString()}</td>
+                    <td>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</td>
                     <td>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</td>
                     <td>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</td>
                   </tr>
