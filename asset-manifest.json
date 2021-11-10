@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.baca2f7a.chunk.css",
-    "main.js": "/static/js/main.a0100d83.chunk.js",
-    "main.js.map": "/static/js/main.a0100d83.chunk.js.map",
+    "main.css": "/static/css/main.96e0c7c4.chunk.css",
+    "main.js": "/static/js/main.d8368dec.chunk.js",
+    "main.js.map": "/static/js/main.d8368dec.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.d90847a1.chunk.js": "/static/js/2.d90847a1.chunk.js",
     "static/js/2.d90847a1.chunk.js.map": "/static/js/2.d90847a1.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.baca2f7a.chunk.css.map": "/static/css/main.baca2f7a.chunk.css.map",
+    "static/css/main.96e0c7c4.chunk.css.map": "/static/css/main.96e0c7c4.chunk.css.map",
     "static/js/2.d90847a1.chunk.js.LICENSE.txt": "/static/js/2.d90847a1.chunk.js.LICENSE.txt",
     "static/media/Dingocoin_Whitepaper.56dccef1.pdf": "/static/media/Dingocoin_Whitepaper.56dccef1.pdf",
     "static/media/coincodex.8839b857.png": "/static/media/coincodex.8839b857.png",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.d90847a1.chunk.js",
-    "static/css/main.baca2f7a.chunk.css",
-    "static/js/main.a0100d83.chunk.js"
+    "static/css/main.96e0c7c4.chunk.css",
+    "static/js/main.d8368dec.chunk.js"
   ]
 }
