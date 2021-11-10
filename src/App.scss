@@ -577,17 +577,17 @@ a:link {
   width: 1rem;
 }
 
-.social-faucet-table tbody tr:nth-child(1) {
+.social-faucet-table tbody .gold {
 	background-image: linear-gradient(135deg, yellow, gold, yellow, gold, yellow, gold, yellow, gold);
 	background-size: 1000% 1000%;
 	animation: diagonalGrad 1s linear infinite;
 }
-.social-faucet-table tbody tr:nth-child(2) {
+.social-faucet-table tbody .silver {
 	background-image: linear-gradient(135deg, silver, grey, silver, grey, silver, grey, silver, grey);
 	background-size: 1000% 1000%;
 	animation: diagonalGrad 4s linear infinite;
 }
-.social-faucet-table tbody tr:nth-child(3) {
+.social-faucet-table tbody .bronze {
 	background-image: linear-gradient(135deg, #cd7f32, brown, #cd7f32, brown, #cd7f32, brown, #cd7f32, brown);
 	background-size: 1000% 1000%;
 	animation: diagonalGrad 8s linear infinite;
