@@ -564,10 +564,17 @@ a:link {
 }
 
 .social-faucet-table {
-  max-height: 15rem;
-  overflow: auto;
+  overflow: none;
   text-align: center;
-  margin-bottom: 0.5rem;
+}
+
+.social-faucet-table-search {
+  border-radius: 0;
+}
+
+.table-dingo img {
+  height: 1rem;
+  width: 1rem;
 }
 
 .social-faucet-table tbody tr:nth-child(1) {
@@ -588,4 +595,8 @@ a:link {
 @keyframes diagonalGrad {
     0%{background-position:2% 2%}
     100%{background-position:95% 95%}
+}
+
+.social-faucet-instructions {
+  text-align: left;
 }
