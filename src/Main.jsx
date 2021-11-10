@@ -428,7 +428,7 @@ function Main() {
                   {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
                     <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                       <td>{x.rank}</td>
-                      <td><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                      <td className="text-truncate"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
                       <td>{(x.score * 1000).toLocaleString()}</td>
                       <td>{x.retweets}</td>
                       <td>{x.likes}</td>
