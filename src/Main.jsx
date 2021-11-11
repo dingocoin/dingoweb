@@ -98,16 +98,16 @@ function Main() {
   const [socialFaucetRank, setSocialFaucetRank] = React.useState([]);
   React.useEffect(async () => {
     // Retireve.
-    const {metrics, users, lastRefreshed} = await get('https://n4.dingocoin.org:8443/socialFaucet');
+    const {users, metrics} = await get('https://n4.dingocoin.org:8443/socialFaucet');
     // Collate.
     const rank = [];
-    for (const address of Object.keys(metrics)) {
+    for (const userId of Object.keys(metrics)) {
       rank.push({
-        name: users[address].name,
-        handle: users[address].handle,
-        score: metrics[address].score,
-        likes: metrics[address].like_count,
-        retweets: metrics[address].retweet_count,
+        name: users[userId].name,
+        handle: users[userId].handle,
+        score: metrics[userId].score,
+        likes: metrics[userId].like_count,
+        retweets: metrics[userId].retweet_count,
         rank: null });
     }
     rank.sort((a, b) => b.score - a.score); // Sort descending.
