@@ -109,7 +109,6 @@ function Main() {
         likes: metrics[address].like_count,
         retweets: metrics[address].retweet_count,
         rank: null });
-      console.log(users[address]);
     }
     rank.sort((a, b) => b.score - a.score); // Sort descending.
     // Add rank index.
@@ -389,7 +388,7 @@ function Main() {
           </Col>
           <Col>
             <Accordion>
-                <Accordion.Item eventKey="0">
+              <Accordion.Item eventKey="0">
                 <Accordion.Header><h5>Rewards and payouts</h5></Accordion.Header>
                 <Accordion.Body className="social-faucet-instructions">
                   <p>
@@ -409,52 +408,52 @@ function Main() {
             </Accordion>
           </Col>
         </Row>
-          <Row className="social-faucet-board">
-            <InputGroup className="mb-0">
-              <InputGroup.Text id="basic-addon1">
-                <FontAwesomeIcon className="faicon" icon={faSearch} />
-              </InputGroup.Text>
-              <FormControl
-                placeholder="Search user/handle..."
-                value={filterQuery}
-                onChange={event => setFilterQuery(event.target.value)}
-              />
-            </InputGroup>
-            <div className="social-faucet-table mb-2">
-              <Table striped bordered>
-                <thead>
-                  <tr>
-                    <th className="col-lg-1">Rank</th>
-                    <th className="col-lg-7">User</th>
-                    <th className="col-lg-2">
-                      <span className="table-dingo">
-                        <img alt="" src={DingocoinLogo}/>
-                      </span> earned
-                    </th>
-                    <th className="col-lg-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
-                    <th className="col-lg-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
+        <Row className="social-faucet-board">
+          <InputGroup className="mb-0">
+            <InputGroup.Text id="basic-addon1">
+              <FontAwesomeIcon className="faicon" icon={faSearch} />
+            </InputGroup.Text>
+            <FormControl
+              placeholder="Search user/handle..."
+              value={filterQuery}
+              onChange={event => setFilterQuery(event.target.value)}
+            />
+          </InputGroup>
+          <div className="social-faucet-table mb-2">
+            <Table striped bordered>
+              <thead>
+                <tr>
+                  <th className="col-1 shrinkable">#</th>
+                  <th className="col-7 shrinkable">User</th>
+                  <th className="col-2 shrinkable">
+                    <span className="table-dingo">
+                      <img alt="" src={DingocoinLogo}/>
+                    </span> earned
+                  </th>
+                  <th className="col-1 collapsible"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
+                  <th className="col-1 collapsible"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
+                </tr>
+              </thead>
+              <tbody>
+                {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
+                  <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
+                    <td className="col-1 shrinkable">{x.rank}</td>
+                    <td className="col-7 shrinkable"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                    <td className="col-2 shrinkable">{(x.score * 1000).toLocaleString()}</td>
+                    <td className="col-1 collapsible">{x.retweets}</td>
+                    <td className="col-1 collapsible">{x.likes}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
-                    <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
-                      <td>{x.rank}</td>
-                      <td className="text-truncate"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
-                      <td>{(x.score * 1000).toLocaleString()}</td>
-                      <td>{x.retweets}</td>
-                      <td>{x.likes}</td>
-                    </tr>
-                  ))}
-                  <tr>
-                    <td colSpan="2"><b>Total</b></td>
-                    <td>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</td>
-                    <td>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</td>
-                    <td>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
-          </Row>
+                ))}
+                <tr>
+                  <td colSpan="2" className="col-8"><b>Total</b></td>
+                  <td className="col-2 shrinkable"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                  <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                  <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
+        </Row>
       </Container>
     </section>
 

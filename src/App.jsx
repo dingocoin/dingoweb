@@ -1,9 +1,7 @@
 import './App.scss';
 import React from 'react';
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import Main from './Main';
-import Canvas from './Canvas';
 import ReactGA from 'react-ga';
 
 function App() {
