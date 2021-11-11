@@ -21,6 +21,8 @@ import SOLLogo from './assets/img/sol.png'
 import DingosinoLogo from './assets/img/dingosino.png'
 import SocialFaucetLogo from './assets/img/socialfaucet.png'
 import HappyBananaLogo from './assets/img/happybanana.gif'
+import Panic1Logo from './assets/img/panic.png'
+import Panic2Logo from './assets/img/panic_inverted.png'
 
 // Bootstrap.
 import { InputGroup, FormControl, Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
@@ -258,7 +260,11 @@ function Main() {
             </Col>
             <Col>
               <div class="item">
-                <p class="number">{dingoStats === null ? "-" : dingoStats.blockReward.toLocaleString()}</p>
+                <p class="number">
+                  <img alt="" src={Panic2Logo}/>
+                  {dingoStats === null ? "-" : dingoStats.blockReward.toLocaleString()}
+                  <img alt="" src={Panic1Logo}/>
+                </p>
                 <span></span>
                 <p>Current block reward</p>
               </div>
