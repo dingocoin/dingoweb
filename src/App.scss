@@ -534,6 +534,10 @@ a:link {
 .projectFactsWrap .item p.number{
   font-size: 2rem;
   padding: 0;
+  img {
+    display: inline-block;
+    max-height: 2.5rem;
+  }
 }
 
 .projectFactsWrap .item p{
