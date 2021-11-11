@@ -423,8 +423,8 @@ function Main() {
             <Table striped bordered>
               <thead>
                 <tr>
-                  <th className="col-1 shrinkable">#</th>
-                  <th className="col-7 shrinkable">User</th>
+                  {filterText !== "" && <th className="col-1 shrinkable">#</th>}
+                  <th className={filterText === "" ? "col-8 shrinkable" : "col-7 shrinkable"}>User</th>
                   <th className="col-2 shrinkable">
                     <span className="table-dingo">
                       <img alt="" src={DingocoinLogo}/>
@@ -437,19 +437,21 @@ function Main() {
               <tbody>
                 {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
                   <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
-                    <td className="col-1 shrinkable">{x.rank}</td>
-                    <td className="col-7 shrinkable"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                    {filterText !== "" && <td className="col-1 shrinkable">{x.rank}</td>}
+                    <td className={filterText === "" ? "col-8 shrinkable" : "col-7 shrinkable"}><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
                     <td className="col-2 shrinkable">{(x.score * 1000).toLocaleString()}</td>
                     <td className="col-1 collapsible">{x.retweets}</td>
                     <td className="col-1 collapsible">{x.likes}</td>
                   </tr>
                 ))}
-                <tr>
-                  <td colSpan="2" className="col-8"><b>Total</b></td>
-                  <td className="col-2 shrinkable"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                  <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                  <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                </tr>
+                {filterText === "" &&
+                  <tr>
+                    <td className="col-8"><b>Total</b></td>
+                    <td className="col-2 shrinkable"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                    <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                    <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                  </tr>
+                }
               </tbody>
             </Table>
           </div>
