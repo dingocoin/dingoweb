@@ -23,6 +23,8 @@ import SocialFaucetLogo from './assets/img/socialfaucet.png'
 import HappyBananaLogo from './assets/img/happybanana.gif'
 import Panic1Logo from './assets/img/panic.png'
 import Panic2Logo from './assets/img/panic_inverted.png'
+import Parrot1Logo from './assets/img/parrot.gif'
+import Parrot2Logo from './assets/img/moonwalkingparrot.gif'
 
 // Bootstrap.
 import { InputGroup, FormControl, Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
@@ -199,8 +201,17 @@ function Main() {
             </Row>
             <br/>
             <Row>
-              <h5>Currently raising funds for a Hotbit listing.<br/>Join our Discord to contribute!</h5>
-              <ProgressBar animated now={55.7} className="fund-raising-progress" label="$27,840 / $50,000" />
+              <h5 className="fundraising">
+                <img alt="" src={Parrot1Logo}/>
+                <span>Currently raising funds for a Hotbit listing.</span>
+                <img alt="" src={Parrot1Logo}/>
+              </h5>
+              <ProgressBar animated now={59.4} className="fund-raising-progress" label="$29,706 / $50,000" />
+              <h5 className="fundraising">
+                <img alt="" src={Parrot2Logo}/>
+                <span>Join our Discord to contribute!</span>
+                <img alt="" src={Parrot2Logo}/>
+              </h5>
             </Row>
           </Container>
         </div>
@@ -446,12 +457,12 @@ function Main() {
                   </tr>
                 ))}
                 {filterText === "" &&
-                  <tr>
-                    <td className="col-8"><b>Total</b></td>
-                    <td className="col-2 shrinkable"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                    <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                    <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                  </tr>
+                <tr>
+                  <td className="col-8"><b>Total</b></td>
+                  <td className="col-2 shrinkable"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                  <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                  <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                </tr>
                 }
               </tbody>
             </Table>
