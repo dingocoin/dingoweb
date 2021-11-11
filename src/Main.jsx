@@ -99,12 +99,13 @@ function Main() {
   React.useEffect(async () => {
     // Retireve.
     const {users, metrics} = await get('https://n4.dingocoin.org:8443/socialFaucet');
+    console.log(users);
     // Collate.
     const rank = [];
     for (const userId of Object.keys(metrics)) {
       rank.push({
         name: users[userId].name,
-        handle: users[userId].handle,
+        handle: users[userId].screen_name,
         score: metrics[userId].score,
         likes: metrics[userId].like_count,
         retweets: metrics[userId].retweet_count,
