@@ -2,29 +2,27 @@ import React from 'react';
 
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExchangeAlt, faRobot, faCoins, faFileContract, faPassport, faComment, faHeart, faRetweet, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faExchangeAlt, faRobot, faCoins, faFileContract, faPassport, faComment, faHeart, faRetweet, faSearch, faShoppingCart, faPalette } from '@fortawesome/free-solid-svg-icons'
 import { faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faGooglePlay } from  '@fortawesome/free-brands-svg-icons'
-import DingocoinLogo from './assets/img/dingocoin.png'
-import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
-import CoinPaprikaLogo from './assets/img/coinpaprika.png'
-import CoinCodexLogo from './assets/img/coincodex.png'
-import DexGuruLogo from './assets/img/dex-guru.png'
-import PooCoinLogo from './assets/img/poocoin.png'
 import AutradexLogo from './assets/img/autradex.png'
-import DexTradeLogo from './assets/img/dextrade.png'
-import SouthXchangeLogo from './assets/img/southxchange.png'
+import BSCLogo from './assets/img/bsc.png'
+import CoinCodexLogo from './assets/img/coincodex.png'
+import CoinPaprikaLogo from './assets/img/coinpaprika.png'
 import CratexIoLogo from './assets/img/cratexio.png'
 import DelionDexLogo from './assets/img/deliondex.png'
-import PancakeSwap from './assets/img/pancakeswap.png'
-import BSCLogo from './assets/img/bsc.png'
-import SOLLogo from './assets/img/sol.png'
+import DexGuruLogo from './assets/img/dex-guru.png'
+import DexTradeLogo from './assets/img/dextrade.png'
+import DingocoinLogo from './assets/img/dingocoin.png'
 import DingosinoLogo from './assets/img/dingosino.png'
-import SocialFaucetLogo from './assets/img/socialfaucet.png'
-import HappyBananaLogo from './assets/img/happybanana.gif'
-import Panic1Logo from './assets/img/panic.png'
-import Panic2Logo from './assets/img/panic_inverted.png'
+import PancakeSwap from './assets/img/pancakeswap.png'
 import Parrot1Logo from './assets/img/parrot.gif'
 import Parrot2Logo from './assets/img/moonwalkingparrot.gif'
+import PooCoinLogo from './assets/img/poocoin.png'
+import RobloxLogo from './assets/img/roblox.png'
+import SOLLogo from './assets/img/sol.png'
+import SocialFaucetLogo from './assets/img/socialfaucet.png'
+import SouthXchangeLogo from './assets/img/southxchange.png'
+import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 
 // Bootstrap.
 import { InputGroup, FormControl, Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
@@ -345,6 +343,33 @@ function Main() {
             <Col>
               <div className="project-card">
                 <div className="logo-holder">
+                  <Image src={RobloxLogo}/>
+                </div>
+                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingocoin City</Button></a>
+                <p>Hang out with the Dingo Pack on Roblox. Purchase in-game accessories with Dingocoins.</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
+                </div>
+                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingocoin Marketplace</Button></a>
+                <p>Purchase Dingocoin merchandise/NFTs designed and sold by community members (coming soon...).</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <FontAwesomeIcon className="faicon" icon={faPalette} />
+                </div>
+                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingocoin Gallery</Button></a>
+                <p>View Dingocoin artwork by our very own community artists (coming soon...).</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="project-card">
+                <div className="logo-holder">
                   <FontAwesomeIcon className="faicon" icon={faRobot} />
                 </div>
                 <a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><Button className="popup-button" variant="primary">Discord Faucet/Tip Bot</Button></a>
@@ -417,52 +442,53 @@ function Main() {
           </Col>
         </Row>
         <Row className="social-faucet-board">
-          <InputGroup className="mb-0">
-            <InputGroup.Text id="basic-addon1">
-              <FontAwesomeIcon className="faicon" icon={faSearch} />
-            </InputGroup.Text>
-            <FormControl
-              placeholder="Search user/handle..."
-              value={filterQuery}
-              onChange={event => setFilterQuery(event.target.value)}
-            />
-          </InputGroup>
-          <div className="social-faucet-table mb-2">
-            <Table striped bordered>
+          <Col>
+            <h4>Ranking for the week</h4>
+            <Table className="social-faucet-table mb-0" striped bordered responsive>
               <thead>
                 <tr>
-                  {filterText !== "" && <th className="col-1 shrinkable">#</th>}
-                  <th className={filterText === "" ? "col-8 shrinkable" : "col-7 shrinkable"}>User</th>
-                  <th className="col-2 shrinkable">
+                  <th className="col-1">#</th>
+                  <th className="col-7">User</th>
+                  <th className="col-2">
                     <span className="table-dingo">
                       <img alt="" src={DingocoinLogo}/>
                     </span> earned
                   </th>
-                  <th className="col-1 collapsible"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
-                  <th className="col-1 collapsible"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
+                  <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
+                  <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
                 </tr>
               </thead>
               <tbody>
                 {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
                   <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
-                    {filterText !== "" && <td className="col-1 shrinkable">{x.rank}</td>}
-                    <td className={filterText === "" ? "col-8 shrinkable" : "col-7 shrinkable"}><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
-                    <td className="col-2 shrinkable">{(x.score * 1000).toLocaleString()}</td>
-                    <td className="col-1 collapsible">{x.retweets}</td>
-                    <td className="col-1 collapsible">{x.likes}</td>
+                    <td className="col-1">{x.rank}</td>
+                    <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                    <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
+                    <td className="col-1">{x.retweets}</td>
+                    <td className="col-1">{x.likes}</td>
                   </tr>
                 ))}
                 {filterText === "" &&
                 <tr>
-                  <td className="col-8"><b>Total</b></td>
-                  <td className="col-2 shrinkable"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                  <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                  <td className="col-1 collapsible"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                  <td colSpan="2" className="col-7"><b>Total</b></td>
+                  <td className="col-2"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                  <td className="col-1"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                  <td className="col-1"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                 </tr>
                 }
               </tbody>
             </Table>
-          </div>
+            <InputGroup className="mt-0">
+              <InputGroup.Text id="basic-addon1">
+                <FontAwesomeIcon className="faicon" icon={faSearch} />
+              </InputGroup.Text>
+              <FormControl
+                placeholder="Search user/handle..."
+                value={filterQuery}
+                onChange={event => setFilterQuery(event.target.value)}
+              />
+            </InputGroup>
+          </Col>
         </Row>
       </Container>
     </section>
