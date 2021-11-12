@@ -272,9 +272,7 @@ function Main() {
             <Col>
               <div class="item">
                 <p class="number">
-                  <img alt="" src={Panic2Logo}/>
                   {dingoStats === null ? "-" : dingoStats.blockReward.toLocaleString()}
-                  <img alt="" src={Panic1Logo}/>
                 </p>
                 <span></span>
                 <p>Current block reward</p>
@@ -283,9 +281,7 @@ function Main() {
             <Col>
               <div class="item">
                 <p class="number">
-                  <img alt="" src={HappyBananaLogo}/>
                   {dingoStats === null ? "-" : dingoStats.blocksToHalving.toLocaleString()}
-                  <img alt="" src={HappyBananaLogo}/>
                 </p>
                 <span></span>
                 <p>Blocks to next halving</p>
@@ -574,7 +570,7 @@ function Main() {
           </li>
           <li className="event eventcompleted" data-date="Nov, 2021"><h3>Dingosino released on Discord</h3><p>Play games using Dingocoin on Discord.</p></li>
           <li className="event eventcompleted" data-date="Nov, 2021"><h3>Dingocoin Social Faucet released</h3><p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p></li>
-          <li className="event eventincomplete" data-date="~ Nov, 2021"><p>Block reward halved to 62,500.</p><p>300,000 Blocks Mined</p></li>
+          <li className="event eventcompleted" data-date="Nov, 2021"><h3>Block reward halved to 62,500.</h3><p>300,000 Blocks Mined</p></li>
           <li className="event eventincomplete" data-date="~ Dec, 2021"><p>Wrapped Dingocoin released on SOL</p><p>Hold and trade Dingocoin on SOL.</p></li>
           <li className="event eventincomplete" data-date="~ Jan, 2022"><p>Block reward halved to 31,250.</p><p>400,000 Blocks Mined</p></li>
           <li className="event eventincomplete" data-date="~ Apr, 2022"><p>Block reward halved to 15,625.</p><p>500,000 Blocks Mined</p></li>
