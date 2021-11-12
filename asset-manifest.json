@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.fc290169.chunk.css",
-    "main.js": "/static/js/main.e2639bc4.chunk.js",
-    "main.js.map": "/static/js/main.e2639bc4.chunk.js.map",
+    "main.css": "/static/css/main.23796fef.chunk.css",
+    "main.js": "/static/js/main.c14a2419.chunk.js",
+    "main.js.map": "/static/js/main.c14a2419.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
-    "static/js/2.5661144e.chunk.js": "/static/js/2.5661144e.chunk.js",
-    "static/js/2.5661144e.chunk.js.map": "/static/js/2.5661144e.chunk.js.map",
+    "static/js/2.21517489.chunk.js": "/static/js/2.21517489.chunk.js",
+    "static/js/2.21517489.chunk.js.map": "/static/js/2.21517489.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.fc290169.chunk.css.map": "/static/css/main.fc290169.chunk.css.map",
-    "static/js/2.5661144e.chunk.js.LICENSE.txt": "/static/js/2.5661144e.chunk.js.LICENSE.txt",
+    "static/css/main.23796fef.chunk.css.map": "/static/css/main.23796fef.chunk.css.map",
+    "static/js/2.21517489.chunk.js.LICENSE.txt": "/static/js/2.21517489.chunk.js.LICENSE.txt",
     "static/media/Dingocoin_Whitepaper.56dccef1.pdf": "/static/media/Dingocoin_Whitepaper.56dccef1.pdf",
     "static/media/coincodex.8839b857.png": "/static/media/coincodex.8839b857.png",
     "static/media/cratexio.d52369fa.png": "/static/media/cratexio.d52369fa.png",
@@ -17,19 +17,17 @@
     "static/media/dex-guru.67d58c8a.png": "/static/media/dex-guru.67d58c8a.png",
     "static/media/App.scss": "/static/media/dingocoin.15331900.png",
     "static/media/dingosino.797e49ac.png": "/static/media/dingosino.797e49ac.png",
-    "static/media/happybanana.4c79f6e8.gif": "/static/media/happybanana.4c79f6e8.gif",
     "static/media/moonwalkingparrot.aea3e559.gif": "/static/media/moonwalkingparrot.aea3e559.gif",
-    "static/media/panic.6cfa3ab8.png": "/static/media/panic.6cfa3ab8.png",
-    "static/media/panic_inverted.2d6fbc5d.png": "/static/media/panic_inverted.2d6fbc5d.png",
     "static/media/parrot.e2a2926a.gif": "/static/media/parrot.e2a2926a.gif",
+    "static/media/roblox.cafe3aa9.png": "/static/media/roblox.cafe3aa9.png",
     "static/media/socialfaucet.7855d1e6.png": "/static/media/socialfaucet.7855d1e6.png",
     "static/media/sol.b826535d.png": "/static/media/sol.b826535d.png",
     "static/media/southxchange.2d1f6024.png": "/static/media/southxchange.2d1f6024.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f7b3b2ed.js",
-    "static/js/2.5661144e.chunk.js",
-    "static/css/main.fc290169.chunk.css",
-    "static/js/main.e2639bc4.chunk.js"
+    "static/js/2.21517489.chunk.js",
+    "static/css/main.23796fef.chunk.css",
+    "static/js/main.c14a2419.chunk.js"
   ]
 }
