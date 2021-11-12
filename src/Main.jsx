@@ -346,7 +346,7 @@ function Main() {
                   <Image src={RobloxLogo}/>
                 </div>
                 <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingocoin City</Button></a>
-                <p>Hang out with the Dingo Pack on Roblox. Purchase in-game accessories with Dingocoins.</p>
+                <p>Hang out with the Dingo Pack on Roblox. Purchase in-game accessories with Dingocoins (coming soon...).</p>
               </div>
             </Col>
             <Col>
