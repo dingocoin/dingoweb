@@ -607,3 +607,28 @@ a:link {
 .social-faucet-instructions {
   text-align: left;
 }
+
+.marketplace-container {
+  text-align: center;
+}
+
+.marketplace-card .logo-holder {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.marketplace-card .faicon {
+  color: $primary;
+  font-size: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.marketplace-card img {
+  width: 5rem;
+  padding: 0;
+  margin: 0;
+  border: 2px solid rgb(229, 232, 235);
+  border-radius: 50%;
+}

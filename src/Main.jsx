@@ -23,9 +23,11 @@ import SOLLogo from './assets/img/sol.png'
 import SocialFaucetLogo from './assets/img/socialfaucet.png'
 import SouthXchangeLogo from './assets/img/southxchange.png'
 import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
+import MinerLogo from './assets/img/transparent_miner.png'
+import DingocoinCollection1Logo from './assets/img/dingocoincollection1.png'
 
 // Bootstrap.
-import { InputGroup, FormControl, Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
+import { Card, InputGroup, FormControl, Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
 
 // Others.
 import CustomDivider from './CustomDivider.jsx'
@@ -128,7 +130,8 @@ function Main() {
   }, [filterQuery]);
 
 
-  const [exhangesModalShow, setExchangesModalShow] = React.useState(false);
+  const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
+  const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
 
   return (
     <div>
@@ -143,7 +146,7 @@ function Main() {
           <Navbar.Collapse>
             <Nav className="ms-auto">
               <Nav.Link href="#about">About</Nav.Link>
-              <Nav.Link href='#features'>Features</Nav.Link>
+              <Nav.Link href='#projects'>Projects</Nav.Link>
               <Nav.Link href='#faucet'>Social Faucet</Nav.Link>
               <Nav.Link href='#wallets'>Wallets</Nav.Link>
               <Nav.Link href='#roadmap'>Roadmap</Nav.Link>
@@ -204,7 +207,7 @@ function Main() {
                 <span>Currently raising funds for a Hotbit listing.</span>
                 <img alt="" src={Parrot1Logo}/>
               </h5>
-              <ProgressBar animated now={59.4} className="fund-raising-progress" label="$29,706 / $50,000" />
+              <ProgressBar animated now={31089 * 100 / 50000} className="fund-raising-progress" label="$31,089 / $50,000" />
               <h5 className="fundraising">
                 <img alt="" src={Parrot2Logo}/>
                 <span>Join our Discord to contribute!</span>
@@ -225,8 +228,8 @@ function Main() {
               <p>Dingocoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the great Dingo internet currency". </p>
             </Col>
             <Col>
-              <h3>... supporting community features.</h3>
-              <p>Backed by its own Scrypt AuxPoW blockchain, Dingocoin provides a testbed for ideas <i>by</i> the community, <i>for</i> the community. Have something fun to try? Throw it out and we'll help.</p>
+              <h3>... supporting community projects.</h3>
+              <p>We believe in building community-driven projects around the same Dingocoin. Have something fun in mind? Throw it out and we'll help.</p>
             </Col>
           </Row>
           <Row xs={1} md={1} lg={3} className="projectFactsWrap">
@@ -289,16 +292,16 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-a" id="features">
-        <h2>COMMUNITY-DRIVEN FEATURES</h2>
+      <section className="section-a" id="projects">
+        <h2>COMMUNITY-DRIVEN PROJECTS</h2>
         <CustomDivider/>
-        <p>Designed and maintained by our very own community members.</p>
+        <p>Designed and maintained by our very own community members. <br/>Have something fun in mind? Throw it out and we'll help.</p>
         <Container>
           <Row xs={1} md={2} lg={3}>
             <Col>
               <div className="project-card">
                 <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faCoins} />
+                  <Image src={MinerLogo}/>
                 </div>
                 <a target="_blank" rel="noreferrer" href="https://github.com/dingocoin/dingocoin"><Button className="popup-button" variant="primary">Scrypt AuxPoW Blockchain</Button></a>
                 <p>Dingocoin is backed by its own open-source, community-maintained Scrypt AuxPoW blockchain.</p>
@@ -354,17 +357,8 @@ function Main() {
                 <div className="logo-holder">
                   <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
                 </div>
-                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingocoin Marketplace</Button></a>
-                <p>Purchase Dingocoin merchandise/NFTs designed and sold by community members (coming soon...).</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faPalette} />
-                </div>
-                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingocoin Gallery</Button></a>
-                <p>View Dingocoin artwork by our very own community artists (coming soon...).</p>
+                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" onClick={() => { setMarketplaceModalShow(true); }}>Dingocoin Marketplace</Button></a>
+                <p>Purchase Dingocoin merchandise/NFTs designed and sold by community members.</p>
               </div>
             </Col>
             <Col>
@@ -613,7 +607,7 @@ function Main() {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
-      show={exhangesModalShow}
+      show={exchangesModalShow}
       onHide={() => { setExchangesModalShow(false); }}>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
@@ -648,6 +642,43 @@ function Main() {
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={() => { setExchangesModalShow(false); }}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+
+    <Modal
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      show={marketplaceModalShow}
+      onHide={() => { setMarketplaceModalShow(false); }}>
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Dingocoin Marketplace
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Container className="marketplace-container">
+          <Row>
+            <Col><h5>Purchase NFTs</h5></Col>
+          </Row>
+          <Row xs={1} md={1} lg={1}>
+            <Col>
+              <div className="marketplace-card">
+                <div className="logo-holder mb-2">
+                  <Image src={DingocoinCollection1Logo}/>
+                </div>
+                <a target="_blank" href="https://opensea.io/collection/dingocoin1" rel="noreferrer"><Button className="popup-button" variant="primary">DingoCoin Collection #1</Button></a>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <CustomDivider/>
+            <p>To list your own Dingocoin merchandise/NFT collection, hit us up on our Discord channel.</p>
+          </Row>
+        </Container>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={() => { setMarketplaceModalShow(false); }}>Close</Button>
       </Modal.Footer>
     </Modal>
 
