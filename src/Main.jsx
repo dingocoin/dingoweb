@@ -456,29 +456,30 @@ function Main() {
             </Accordion>
           </Col>
         </Row>
-        <Row className="social-faucet-board">
+        <Row>
           <Col>
             <DropdownButton title={socialFaucetView === "all-time" ? "All-time Ranking" : "This Week's Ranking"} className="mb-2">
               <Dropdown.Item onClick={() => { setSocialFaucetView("all-time") }}>All-time Ranking</Dropdown.Item>
               <Dropdown.Item onClick={() => { setSocialFaucetView("weekly") }}>This Week's Ranking</Dropdown.Item>
             </DropdownButton>
-            <Table className="social-faucet-table mb-0" striped bordered responsive>
-              <thead>
-                <tr>
-                  <th className="col-1">#</th>
-                  <th className="col-7">User</th>
-                  <th className="col-2">
-                    <span className="table-dingo">
-                      <img alt="" src={DingocoinLogo}/>
-                    </span> earned
-                  </th>
-                  <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
-                  <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
-                </tr>
-              </thead>
-              {socialFaucetView === "all-time" &&
+            <div className="social-faucet-board">
+              <Table className="social-faucet-table mb-0" striped bordered responsive>
+                <thead>
+                  <tr>
+                    <th className="col-1">#</th>
+                    <th className="col-7">User</th>
+                    <th className="col-2">
+                      <span className="table-dingo">
+                        <img alt="" src={DingocoinLogo}/>
+                      </span> earned
+                    </th>
+                    <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
+                    <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
+                  </tr>
+                </thead>
+                {socialFaucetView === "all-time" &&
                 <tbody>
-                  {socialFaucetHistoryRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
+                  {socialFaucetHistoryRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
                     <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                       <td className="col-1">{x.rank}</td>
                       <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
@@ -496,10 +497,10 @@ function Main() {
                   </tr>
                   }
                 </tbody>
-              }
-              {socialFaucetView === "weekly" &&
+                }
+                {socialFaucetView === "weekly" &&
                 <tbody>
-                  {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
+                  {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
                     <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                       <td className="col-1">{x.rank}</td>
                       <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
@@ -517,8 +518,9 @@ function Main() {
                   </tr>
                   }
                 </tbody>
-              }
-            </Table>
+                }
+              </Table>
+            </div>
             <InputGroup className="mt-0">
               <InputGroup.Text id="basic-addon1">
                 <FontAwesomeIcon className="faicon" icon={faSearch} />

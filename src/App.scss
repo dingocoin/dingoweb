@@ -575,6 +575,8 @@ a:link {
 
 .social-faucet-board {
   text-align: center;
+  max-height: 25rem;
+  overflow-y: auto;
   p {
     margin-bottom: 0;
   }
