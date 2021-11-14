@@ -448,7 +448,7 @@ function Main() {
                       <li>Retweeting your own tweet = no reward</li>
                     </ul>
                   </p>
-                  <p>The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday noon, UTC. The leaderboard also resets at that time.</p>
+                  <p>The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time.</p>
                   <p>*Rates not fixed. May have to adjust in case we fly to the moon.</p>
                   <p><b>Feeling generous? Fund your own rewards event! Join our Discord to reach out :)</b></p>
                 </Accordion.Body>
