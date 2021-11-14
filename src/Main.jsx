@@ -448,7 +448,7 @@ function Main() {
                       <li>Retweeting your own tweet = no reward</li>
                     </ul>
                   </p>
-                  <p>The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time.</p>
+                  <p>The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time. Only retweets and likes of tweets in the current week are scored.</p>
                   <p>*Rates not fixed. May have to adjust in case we fly to the moon.</p>
                   <p><b>Feeling generous? Fund your own rewards event! Join our Discord to reach out :)</b></p>
                 </Accordion.Body>
@@ -458,9 +458,9 @@ function Main() {
         </Row>
         <Row className="social-faucet-board">
           <Col>
-            <DropdownButton title={socialFaucetView === "all-time" ? "All-time Ranking" : "Weekly Ranking"} className="mb-2">
+            <DropdownButton title={socialFaucetView === "all-time" ? "All-time Ranking" : "This Week's Ranking"} className="mb-2">
               <Dropdown.Item onClick={() => { setSocialFaucetView("all-time") }}>All-time Ranking</Dropdown.Item>
-              <Dropdown.Item onClick={() => { setSocialFaucetView("weekly") }}>Weekly Ranking</Dropdown.Item>
+              <Dropdown.Item onClick={() => { setSocialFaucetView("weekly") }}>This Week's Ranking</Dropdown.Item>
             </DropdownButton>
             <Table className="social-faucet-table mb-0" striped bordered responsive>
               <thead>
