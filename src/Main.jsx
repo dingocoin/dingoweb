@@ -27,7 +27,7 @@ import MinerLogo from './assets/img/transparent_miner.png'
 import DingocoinCollection1Logo from './assets/img/dingocoincollection1.png'
 
 // Bootstrap.
-import { Card, InputGroup, FormControl, Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
+import { DropdownButton, Dropdown, InputGroup, FormControl, Table, Accordion, Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
 
 // Others.
 import CustomDivider from './CustomDivider.jsx'
@@ -98,10 +98,12 @@ function Main() {
   }, []);
 
   const [socialFaucetRank, setSocialFaucetRank] = React.useState([]);
+  const [socialFaucetHistoryRank, setSocialFaucetHistoryRank] = React.useState([]);
+  const [socialFaucetView, setSocialFaucetView] = React.useState("weekly");
   React.useEffect(async () => {
     // Retireve.
-    const {users, metrics} = await get('https://n4.dingocoin.org:8443/socialFaucet');
-    console.log(users);
+    const {users, metrics, historyMetrics} = await get('https://n4.dingocoin.org:8443/socialFaucet');
+
     // Collate.
     const rank = [];
     for (const userId of Object.keys(metrics)) {
@@ -119,6 +121,25 @@ function Main() {
       rank[i].rank = i + 1;
     }
     setSocialFaucetRank(rank);
+
+    // Collate history.
+    const historyRank = [];
+    for (const userId of Object.keys(historyMetrics)) {
+      console.log(historyMetrics[userId]);
+      historyRank.push({
+        name: users[userId].name,
+        handle: users[userId].screen_name,
+        score: historyMetrics[userId].score,
+        likes: historyMetrics[userId].like_count,
+        retweets: historyMetrics[userId].retweet_count,
+        rank: null });
+    }
+    historyRank.sort((a, b) => b.score - a.score); // Sort descending.
+    for (let i = 0; i < historyRank.length; i++) {
+      historyRank[i].rank = i + 1;
+    }
+    setSocialFaucetHistoryRank(historyRank);
+
   }, []);
 
   const [filterQuery, setFilterQuery] = React.useState("");
@@ -437,7 +458,10 @@ function Main() {
         </Row>
         <Row className="social-faucet-board">
           <Col>
-            <h4>Ranking for the week</h4>
+            <DropdownButton title={socialFaucetView === "all-time" ? "All-time Ranking" : "Weekly Ranking"} className="mb-2">
+              <Dropdown.Item onClick={() => { setSocialFaucetView("all-time") }}>All-time Ranking</Dropdown.Item>
+              <Dropdown.Item onClick={() => { setSocialFaucetView("weekly") }}>Weekly Ranking</Dropdown.Item>
+            </DropdownButton>
             <Table className="social-faucet-table mb-0" striped bordered responsive>
               <thead>
                 <tr>
@@ -452,25 +476,48 @@ function Main() {
                   <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
                 </tr>
               </thead>
-              <tbody>
-                {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
-                  <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
-                    <td className="col-1">{x.rank}</td>
-                    <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
-                    <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
-                    <td className="col-1">{x.retweets}</td>
-                    <td className="col-1">{x.likes}</td>
+              {socialFaucetView === "all-time" &&
+                <tbody>
+                  {socialFaucetHistoryRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
+                    <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
+                      <td className="col-1">{x.rank}</td>
+                      <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                      <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
+                      <td className="col-1">{x.retweets}</td>
+                      <td className="col-1">{x.likes}</td>
+                    </tr>
+                  ))}
+                  {filterText === "" &&
+                  <tr>
+                    <td colSpan="2" className="col-7"><b>Total</b></td>
+                    <td className="col-2"><b>{socialFaucetHistoryRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                    <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                    <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                   </tr>
-                ))}
-                {filterText === "" &&
-                <tr>
-                  <td colSpan="2" className="col-7"><b>Total</b></td>
-                  <td className="col-2"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                  <td className="col-1"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                  <td className="col-1"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                </tr>
-                }
-              </tbody>
+                  }
+                </tbody>
+              }
+              {socialFaucetView === "weekly" &&
+                <tbody>
+                  {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).slice(0, 10).map((x) => (
+                    <tr className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
+                      <td className="col-1">{x.rank}</td>
+                      <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                      <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
+                      <td className="col-1">{x.retweets}</td>
+                      <td className="col-1">{x.likes}</td>
+                    </tr>
+                  ))}
+                  {filterText === "" &&
+                  <tr>
+                    <td colSpan="2" className="col-7"><b>Total</b></td>
+                    <td className="col-2"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                    <td className="col-1"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                    <td className="col-1"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                  </tr>
+                  }
+                </tbody>
+              }
             </Table>
             <InputGroup className="mt-0">
               <InputGroup.Text id="basic-addon1">
