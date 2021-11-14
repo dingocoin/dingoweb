@@ -634,3 +634,26 @@ a:link {
   border: 2px solid rgb(229, 232, 235);
   border-radius: 50%;
 }
+
+.community-art h3 img {
+  height: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.community-images {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  li {
+    flex: 0 0 auto;
+    img {
+      height: 10rem;
+      margin-left: 0.2rem;
+      margin-right: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+}
