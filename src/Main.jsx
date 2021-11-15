@@ -443,13 +443,14 @@ function Main() {
                 <Accordion.Item eventKey="0">
                   <Accordion.Header><h5>How to participate?</h5></Accordion.Header>
                   <Accordion.Body className="social-faucet-instructions">
-                    <p>Simply post a tweet advertising Dingocoin. In your tweet, include all of:</p>
+                    <p>Simply post on Twitter advertising Dingocoin. This can be a <b>tweet</b>, a <b>quote-tweet</b>, or a <b>reply</b> to another tweet.</p>
+                    <p>In your post, include all of:</p>
                     <ol>
                       <li>a link to <code>dingocoin.org</code>,</li>
                       <li>hashtags <code>#dingocoin</code> and <code>#socialfaucet</code>, and</li>
                       <li>a hashtag with your Dingocoin address (e.g. <code>#DQBx7G4aozdqYFCv2dU4kacaEcPzwg8dkZ</code>). Your rewards will be sent here.</li>
                     </ol>
-                    <p>Retweet someone else for additional rewards (sent to your latest address, if any).</p>
+                    <p>Retweet/quote-tweet such a post of someone else for additional rewards (sent to your latest address, if any).</p>
                     <p>Below is an example tweet:</p>
                     <TwitterTweetEmbed
                       tweetId={'1457510685441732609'}
@@ -466,10 +467,10 @@ function Main() {
                   <Accordion.Body className="social-faucet-instructions">
                     <p>Get rewarded based on your activity:</p>
                     <ul>
-                      <li>1 like on your tweet (including liking your own) = 1,000 Dingocoin</li>
-                      <li>1 retweet on your tweet = 2,000 Dingocoin</li>
-                      <li>Retweet someone else's tweet = 2,000 Dingocoin</li>
-                      <li>Retweeting your own tweet = no reward</li>
+                      <li>1 like on your post (including liking your own) = 1,000 Dingocoin</li>
+                      <li>1 retweet/quote-retweet on your post = 2,000 Dingocoin</li>
+                      <li>Retweet/quote-retweet someone else's post = 2,000 Dingocoin</li>
+                      <li>Retweeting/quote-retweeting your own post = no reward</li>
                     </ul>
                     <p>The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time. Only retweets and likes of tweets in the current week are scored.</p>
                     <p>*Rates not fixed. May have to adjust in case we fly to the moon.</p>
@@ -678,7 +679,7 @@ function Main() {
       </section>
 
       <section className="section-footer">
-        <h6>Copyright © The Dingocoin Project 2021</h6>
+        <h6>Copyright © The Dingocoin Project 2021 | Multisig Community Donations: A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP </h6>
       </section>
 
       <Modal
