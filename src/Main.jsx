@@ -380,7 +380,7 @@ function Main() {
                   <Image src={SocialFaucetLogo}/>
                 </div>
                 <a href="#faucet"><Button className="popup-button" variant="primary">Dingocoin Social Faucet</Button></a>
-                <p>Earn Dingocoins simply by promoting Dingocoin on Twitter. <i>An advanced version of airdrops.</i></p>
+                <p>Earn Dingocoins simply by promoting Dingocoin on Twitter. <i>The ultimate version of airdrops.</i></p>
               </div>
             </Col>
             <Col>
