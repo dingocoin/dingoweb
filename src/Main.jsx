@@ -121,7 +121,7 @@ function Main() {
   const [socialFaucetView, setSocialFaucetView] = React.useState("weekly");
   React.useEffect(async () => {
     // Retireve.
-    const {users, metrics, historyMetrics} = await get('https://n4.dingocoin.org:8443/socialFaucet');
+    const {users, metrics, historyMetrics, address} = await get('https://n4.dingocoin.org:8443/socialFaucet');
 
     // Collate.
     const rank = [];
@@ -132,7 +132,8 @@ function Main() {
         score: metrics[userId].score,
         likes: metrics[userId].like_count,
         retweets: metrics[userId].retweet_count,
-        rank: null });
+        rank: null,
+        address: address[userId] });
     }
     rank.sort((a, b) => b.score - a.score); // Sort descending.
     // Add rank index.
@@ -526,7 +527,12 @@ function Main() {
                       <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                         <td className="col-1">{x.rank}</td>
                         <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
-                        <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
+                        {typeof x.address === 'undefined' &&
+                            <td className="col-2"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
+                        }
+                        {typeof x.address !== 'undefined' &&
+                            <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
+                        }
                         <td className="col-1">{x.retweets}</td>
                         <td className="col-1">{x.likes}</td>
                       </tr>
@@ -553,6 +559,7 @@ function Main() {
                   onChange={event => setFilterQuery(event.target.value)}
                 />
               </InputGroup>
+              <p>* Please ensure that you have a tweet in the current week associating your Twitter account to a Dingocoin reward address.</p>
             </Col>
           </Row>
         </Container>
