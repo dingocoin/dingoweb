@@ -563,7 +563,7 @@ function Main() {
                   onChange={event => setFilterQuery(event.target.value)}
                 />
               </InputGroup>
-              <p>* Please ensure that you have a tweet in the current week associating your Twitter account to a Dingocoin reward address.</p>
+              <p>* Please ensure that you have a tweet in the current week associating your Twitter account to a Dingocoin reward address. This may not be picked up immediately if your account is new.</p>
             </Col>
           </Row>
         </Container>
