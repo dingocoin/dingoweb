@@ -28,7 +28,7 @@ import DingocoinCollection1Logo from './assets/img/dingocoincollection1.png'
 import BananaLogo from './assets/img/happybanana.gif'
 
 // Bootstrap.
-import { DropdownButton, Dropdown, InputGroup, FormControl, Table, Accordion,
+import { Carousel, DropdownButton, Dropdown, InputGroup, FormControl, Table, Accordion,
   Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
 
 // Others.
@@ -49,9 +49,10 @@ function Main() {
     function importAll(r) {
       return r.keys().map(r);
     }
-    const x = importAll(require.context('./assets/img/community', false, /\.(png|jpe?g|svg)$/));
-    shuffleArr(x);
-    setCommunityImages(x);
+    const images = importAll(require.context('./assets/img/community', false, /\.(png|jpe?g|svg)$/));
+    shuffleArr(images);
+    const authors = require('./assets/img/community/authors');
+    setCommunityImages(images.map((x) => { return {image: x, author: authors[x.default.split('/').pop().split('.')[0]]}; }));
   }, []);
 
   async function get(link) {
@@ -172,6 +173,8 @@ function Main() {
 
   const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
+  const [artModalShow, setArtModalShow] = React.useState(false);
+  const [selectedArt, setSelectedArt] = React.useState(null);
 
   return (
     <div>
@@ -424,7 +427,7 @@ function Main() {
             <CustomDivider/>
             <h3><Image src={BananaLogo}/>Community Art<Image src={BananaLogo}/></h3>
             <ul className="community-images mt-4">
-              {communityImages.map((x) => <li><Image src={x.default}></Image></li>)}
+              {communityImages.map((x, i) => <li key={i}><Image src={x.image.default} onClick={() => { setSelectedArt(x); setArtModalShow(true);} }></Image></li>)}
             </ul>
           </Row>
         </Container>
@@ -529,10 +532,10 @@ function Main() {
                         <td className="col-1">{x.rank}</td>
                         <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
                         {typeof x.address === 'undefined' &&
-                            <td className="col-2"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
+                        <td className="col-2"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
                         }
                         {typeof x.address !== 'undefined' &&
-                            <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
+                        <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
                         }
                         <td className="col-1">{x.retweets}</td>
                         <td className="col-1">{x.likes}</td>
@@ -684,82 +687,110 @@ function Main() {
 
       <Modal
         size="lg"
-  aria-labelledby="contained-modal-title-vcenter"
-  centered
-  show={exchangesModalShow}
-  onHide={() => { setExchangesModalShow(false); }}>
-  <Modal.Header closeButton>
-    <Modal.Title id="contained-modal-title-vcenter">
-      Buy Dingocoin
-    </Modal.Title>
-  </Modal.Header>
-  <Modal.Body>
-    <Container className="exchangesModalSection">
-      <Row>
-        <Col><h5>Live Charts</h5></Col>
-      </Row>
-      <Row>
-        <Col><a target="_blank" rel="noreferrer" href="https://coinpaprika.com/coin/dingo-dingocoin/"><Button variant="outline-primary"><img alt="" src={CoinPaprikaLogo} /></Button></a></Col>
-        <Col><a target="_blank" rel="noreferrer" href="https://coincodex.com/crypto/dingocoin/"><Button variant="outline-primary"><img alt="" src={CoinCodexLogo} /></Button></a></Col>
-        <Col><a target="_blank" rel="noreferrer" href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"><Button variant="outline-primary"><img alt="" src={DexGuruLogo} /></Button></a></Col>
-        <Col><a target="_blank" rel="noreferrer" href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"><Button variant="outline-primary"><img alt="" src={PooCoinLogo} /></Button></a></Col>
-      </Row>
-    </Container>
-    <Container className="exchangesModalSection">
-      <Row>
-        <Col><h5>Exchanges</h5></Col>
-      </Row>
-      <Row>
-        <Col><a target="_blank" rel="noreferrer" href="https://wallet.autradex.systems"><Button variant="outline-primary"><img alt="" src={AutradexLogo} /></Button></a></Col>
-        <Col><a target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><Button variant="outline-primary"><img alt="" src={DexTradeLogo} /></Button></a></Col>
-        <Col><a target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/LTC"><Button variant="outline-primary"><img alt="" src={SouthXchangeLogo} /></Button></a></Col>
-        <Col><a target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><Button variant="outline-primary"><img alt="" src={CratexIoLogo} /></Button></a></Col>
-        <Col><a target="_blank" rel="noreferrer" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><Button variant="outline-primary"><img alt="" src={DelionDexLogo} /></Button></a></Col>
-        <Col><a target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><Button variant="outline-primary"><img alt="" src={PancakeSwap} /></Button></a></Col>
-      </Row>
-    </Container>
-  </Modal.Body>
-  <Modal.Footer>
-    <Button onClick={() => { setExchangesModalShow(false); }}>Close</Button>
-  </Modal.Footer>
-</Modal>
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={exchangesModalShow}
+        onHide={() => { setExchangesModalShow(false); }}>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Buy Dingocoin
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container className="exchangesModalSection">
+            <Row>
+              <Col><h5>Live Charts</h5></Col>
+            </Row>
+            <Row>
+              <Col><a target="_blank" rel="noreferrer" href="https://coinpaprika.com/coin/dingo-dingocoin/"><Button variant="outline-primary"><img alt="" src={CoinPaprikaLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://coincodex.com/crypto/dingocoin/"><Button variant="outline-primary"><img alt="" src={CoinCodexLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"><Button variant="outline-primary"><img alt="" src={DexGuruLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"><Button variant="outline-primary"><img alt="" src={PooCoinLogo} /></Button></a></Col>
+            </Row>
+          </Container>
+          <Container className="exchangesModalSection">
+            <Row>
+              <Col><h5>Exchanges</h5></Col>
+            </Row>
+            <Row>
+              <Col><a target="_blank" rel="noreferrer" href="https://wallet.autradex.systems"><Button variant="outline-primary"><img alt="" src={AutradexLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><Button variant="outline-primary"><img alt="" src={DexTradeLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/LTC"><Button variant="outline-primary"><img alt="" src={SouthXchangeLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><Button variant="outline-primary"><img alt="" src={CratexIoLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><Button variant="outline-primary"><img alt="" src={DelionDexLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><Button variant="outline-primary"><img alt="" src={PancakeSwap} /></Button></a></Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => { setExchangesModalShow(false); }}>Close</Button>
+        </Modal.Footer>
+      </Modal>
 
-<Modal
-  size="lg"
-  aria-labelledby="contained-modal-title-vcenter"
-  centered
-  show={marketplaceModalShow}
-  onHide={() => { setMarketplaceModalShow(false); }}>
-  <Modal.Header closeButton>
-    <Modal.Title id="contained-modal-title-vcenter">
-      Dingocoin Marketplace
-    </Modal.Title>
-  </Modal.Header>
-  <Modal.Body>
-    <Container className="marketplace-container">
-      <Row>
-        <Col><h5>Purchase NFTs</h5></Col>
-      </Row>
-      <Row xs={1} md={1} lg={1}>
-        <Col>
-          <div className="marketplace-card">
-            <div className="logo-holder mb-2">
-              <Image src={DingocoinCollection1Logo}/>
-            </div>
-            <a target="_blank" href="https://opensea.io/collection/dingocoin1" rel="noreferrer"><Button className="popup-button" variant="primary">DingoCoin Collection #1</Button></a>
-          </div>
-        </Col>
-      </Row>
-      <Row>
-        <CustomDivider/>
-        <p>To list your own Dingocoin merchandise/NFT collection, hit us up on our Discord channel.</p>
-      </Row>
-    </Container>
-  </Modal.Body>
-  <Modal.Footer>
-    <Button onClick={() => { setMarketplaceModalShow(false); }}>Close</Button>
-  </Modal.Footer>
-</Modal>
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={marketplaceModalShow}
+        onHide={() => { setMarketplaceModalShow(false); }}>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Dingocoin Marketplace
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container className="marketplace-container">
+            <Row>
+              <Col><h5>Purchase NFTs</h5></Col>
+            </Row>
+            <Row xs={1} md={1} lg={1}>
+              <Col>
+                <div className="marketplace-card">
+                  <div className="logo-holder mb-2">
+                    <Image src={DingocoinCollection1Logo}/>
+                  </div>
+                  <a target="_blank" href="https://opensea.io/collection/dingocoin1" rel="noreferrer"><Button className="popup-button" variant="primary">DingoCoin Collection #1</Button></a>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <CustomDivider/>
+              <p>To list your own Dingocoin merchandise/NFT collection, hit us up on our Discord channel.</p>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => { setMarketplaceModalShow(false); }}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={artModalShow}
+        onHide={() => { setArtModalShow(false); }}>
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+          <Container className="art-container">
+            <Row className="mb-2">
+              <Col>
+                {selectedArt &&
+                <h4>
+                  (Author: <b>{selectedArt.author}</b>)
+                </h4>
+                }
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                {selectedArt !== null && <Image src={selectedArt.image.default}/>}
+              </Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+      </Modal>
 
     </div>
   );
