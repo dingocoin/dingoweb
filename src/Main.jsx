@@ -250,7 +250,7 @@ function Main() {
                 <span>Currently raising funds for a Hotbit listing.</span>
                 <img alt="" src={Parrot1Logo}/>
               </h5>
-              <ProgressBar animated now={32889 * 100 / 50000} className="fund-raising-progress" label="$32,889 / $50,000" />
+              <ProgressBar animated now={36706 * 100 / 50000} className="fund-raising-progress" label="$36,706 / $50,000" />
               <h5 className="fundraising">
                 <img alt="" src={Parrot2Logo}/>
                 <span>Join our Discord to contribute!</span>
