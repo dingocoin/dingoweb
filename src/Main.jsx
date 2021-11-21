@@ -481,7 +481,7 @@ function Main() {
                     <p>* The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time. Only retweets and likes of tweets in the current week are scored.</p>
                     <p>* Please ensure that you have a tweet in the current week associating your Twitter account to a Dingocoin reward address. This may not be picked up immediately if your account is new.</p>
                     <p>* Rates are not fixed. May have to adjust in case we fly to the moon.</p>
-                    <p><b>Feeling generous? Fund your own rewards event! Join our Discord to reach out :)</b></p>
+                    <p><b>Feeling generous? Fund our social faucet to keep it running :) (Deposit address: DJAuG2t4PtUQhFQsTddK1rhDHgE3cFU5oW)</b></p>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
