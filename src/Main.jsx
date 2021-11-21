@@ -124,13 +124,15 @@ function Main() {
     // Retireve.
     const {users, metrics, historyMetrics, address} = await get('https://n4.dingocoin.org:8443/socialFaucet');
 
+    console.log(metrics);
+
     // Collate.
     const rank = [];
     for (const userId of Object.keys(metrics)) {
       rank.push({
         name: users[userId].name,
         handle: users[userId].screen_name,
-        score: metrics[userId].score,
+        score: 0.5 * metrics[userId].retweet_count + metrics[userId].like_count,
         likes: metrics[userId].like_count,
         retweets: metrics[userId].retweet_count,
         rank: null,
@@ -471,12 +473,13 @@ function Main() {
                     <p>Get rewarded based on your activity:</p>
                     <ul>
                       <li>1 like on your post (including liking your own) = 1,000 Dingocoin</li>
-                      <li>1 retweet/quote-retweet on your post = 2,000 Dingocoin</li>
-                      <li>Retweet/quote-retweet someone else's post = 2,000 Dingocoin</li>
+                      <li>1 retweet/quote-retweet on your post = 500 Dingocoin</li>
+                      <li>Retweet/quote-retweet someone else's post = 500 Dingocoin</li>
                       <li>Retweeting/quote-retweeting your own post = no reward</li>
                     </ul>
-                    <p>The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time. Only retweets and likes of tweets in the current week are scored.</p>
-                    <p>*Rates not fixed. May have to adjust in case we fly to the moon.</p>
+                    <p>* The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time. Only retweets and likes of tweets in the current week are scored.</p>
+                    <p>* Please ensure that you have a tweet in the current week associating your Twitter account to a Dingocoin reward address. This may not be picked up immediately if your account is new.</p>
+                    <p>* Rates are not fixed. May have to adjust in case we fly to the moon.</p>
                     <p><b>Feeling generous? Fund your own rewards event! Join our Discord to reach out :)</b></p>
                   </Accordion.Body>
                 </Accordion.Item>
@@ -490,68 +493,76 @@ function Main() {
                 <Dropdown.Item onClick={() => { setSocialFaucetView("weekly") }}>This Week's Ranking</Dropdown.Item>
               </DropdownButton>
               <div className="social-faucet-board">
-                <Table className="social-faucet-table mb-0" striped bordered responsive>
-                  <thead>
-                    <tr>
-                      <th className="col-1">#</th>
-                      <th className="col-7">User</th>
-                      <th className="col-2">
-                        <span className="table-dingo">
-                          <img alt="" src={DingocoinLogo}/>
-                        </span> earned
-                      </th>
-                      <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
-                      <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
-                    </tr>
-                  </thead>
                   {socialFaucetView === "all-time" &&
-                  <tbody>
-                    {socialFaucetHistoryRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
-                      <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
-                        <td className="col-1">{x.rank}</td>
-                        <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
-                        <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
-                        <td className="col-1">{x.retweets}</td>
-                        <td className="col-1">{x.likes}</td>
+                  <Table className="social-faucet-table mb-0" striped bordered responsive>
+                    <thead>
+                      <tr>
+                        <th className="col-1">#</th>
+                        <th className="col-8">User</th>
+                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
+                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
                       </tr>
-                    ))}
-                    {filterText === "" &&
-                    <tr>
-                      <td colSpan="2" className="col-7"><b>Total</b></td>
-                      <td className="col-2"><b>{socialFaucetHistoryRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                      <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                      <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                    </tr>
-                    }
-                  </tbody>
+                    </thead>
+                    <tbody>
+                      {socialFaucetHistoryRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
+                        <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
+                          <td className="col-1">{x.rank}</td>
+                          <td className="col-8"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                          <td className="col-1">{x.retweets}</td>
+                          <td className="col-1">{x.likes}</td>
+                        </tr>
+                      ))}
+                      {filterText === "" &&
+                      <tr>
+                        <td colSpan="2" className="col-7"><b>Total</b></td>
+                        <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                      </tr>
+                      }
+                    </tbody>
+                  </Table>
                   }
                   {socialFaucetView === "weekly" &&
-                  <tbody>
-                    {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
-                      <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
-                        <td className="col-1">{x.rank}</td>
-                        <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
-                        {typeof x.address === 'undefined' &&
-                        <td className="col-2"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
-                        }
-                        {typeof x.address !== 'undefined' &&
-                        <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
-                        }
-                        <td className="col-1">{x.retweets}</td>
-                        <td className="col-1">{x.likes}</td>
+                  <Table className="social-faucet-table mb-0" striped bordered responsive>
+                    <thead>
+                      <tr>
+                        <th className="col-1">#</th>
+                        <th className="col-7">User</th>
+                        <th className="col-2">
+                          <span className="table-dingo">
+                            <img alt="" src={DingocoinLogo}/>
+                          </span> earned
+                        </th>
+                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
+                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
                       </tr>
-                    ))}
-                    {filterText === "" &&
-                    <tr>
-                      <td colSpan="2" className="col-7"><b>Total</b></td>
-                      <td className="col-2"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                      <td className="col-1"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                      <td className="col-1"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                    </tr>
-                    }
-                  </tbody>
+                    </thead>
+                    <tbody>
+                      {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
+                        <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
+                          <td className="col-1">{x.rank}</td>
+                          <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                          {typeof x.address === 'undefined' &&
+                          <td className="col-2"><strike>{(Math.min(x.score, 100) * 1000).toLocaleString()}</strike>*</td>
+                          }
+                          {typeof x.address !== 'undefined' &&
+                          <td className="col-2">{(Math.min(x.score, 100) * 1000).toLocaleString()}</td>
+                          }
+                          <td className="col-1">{x.retweets}</td>
+                          <td className="col-1">{x.likes}</td>
+                        </tr>
+                      ))}
+                      {filterText === "" &&
+                      <tr>
+                        <td colSpan="2" className="col-7"><b>Total</b></td>
+                        <td className="col-2"><b>{socialFaucetRank.map((x) => Math.min(x.score, 100) * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td className="col-1"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td className="col-1"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                      </tr>
+                      }
+                    </tbody>
+                  </Table>
                   }
-                </Table>
               </div>
               <InputGroup className="mt-0">
                 <InputGroup.Text id="basic-addon1">
@@ -563,7 +574,6 @@ function Main() {
                   onChange={event => setFilterQuery(event.target.value)}
                 />
               </InputGroup>
-              <p>* Please ensure that you have a tweet in the current week associating your Twitter account to a Dingocoin reward address. This may not be picked up immediately if your account is new.</p>
             </Col>
           </Row>
         </Container>
