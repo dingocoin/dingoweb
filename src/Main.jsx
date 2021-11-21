@@ -498,7 +498,12 @@ function Main() {
                     <thead>
                       <tr>
                         <th className="col-1">#</th>
-                        <th className="col-8">User</th>
+                        <th className="col-7">User</th>
+                        <th className="col-2">
+                          <span className="table-dingo">
+                            <img alt="" src={DingocoinLogo}/>
+                          </span> earned
+                        </th>
                         <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
                         <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
                       </tr>
@@ -507,7 +512,8 @@ function Main() {
                       {socialFaucetHistoryRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
                         <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                           <td className="col-1">{x.rank}</td>
-                          <td className="col-8"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                          <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                          <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
                           <td className="col-1">{x.retweets}</td>
                           <td className="col-1">{x.likes}</td>
                         </tr>
@@ -515,6 +521,7 @@ function Main() {
                       {filterText === "" &&
                       <tr>
                         <td colSpan="2" className="col-7"><b>Total</b></td>
+                        <td className="col-2"><b>{socialFaucetHistoryRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                         <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                         <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                       </tr>
