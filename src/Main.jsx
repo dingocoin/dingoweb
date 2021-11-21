@@ -4,7 +4,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExchangeAlt, faRobot, faFileContract, faPassport, faHeart, faRetweet, faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faGooglePlay } from  '@fortawesome/free-brands-svg-icons'
-import AutradexLogo from './assets/img/autradex.png'
 import BSCLogo from './assets/img/bsc.png'
 import CoinCodexLogo from './assets/img/coincodex.png'
 import CoinPaprikaLogo from './assets/img/coinpaprika.png'
@@ -204,7 +203,6 @@ function Main() {
               </NavDropdown>
               <NavDropdown className="navbar-important" title="Exchanges">
                 <NavDropdown.Header>Exchanges</NavDropdown.Header>
-                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://wallet.autradex.systems"><img alt="" src={AutradexLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><img alt="" src={DexTradeLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/LTC"><img alt="" src={SouthXchangeLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><img alt="" src={CratexIoLogo} /></NavDropdown.Item>
@@ -252,7 +250,7 @@ function Main() {
                 <span>Currently raising funds for a Hotbit listing.</span>
                 <img alt="" src={Parrot1Logo}/>
               </h5>
-              <ProgressBar animated now={42865 * 100 / 50000} className="fund-raising-progress" label="$42,865 / $50,000" />
+              <ProgressBar animated now={44865 * 100 / 50000} className="fund-raising-progress" label="$44,865 / $50,000" />
               <h5 className="fundraising">
                 <img alt="" src={Parrot2Logo}/>
                 <span>Join our Discord to contribute!</span>
@@ -731,7 +729,6 @@ function Main() {
               <Col><h5>Exchanges</h5></Col>
             </Row>
             <Row>
-              <Col><a target="_blank" rel="noreferrer" href="https://wallet.autradex.systems"><Button variant="outline-primary"><img alt="" src={AutradexLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><Button variant="outline-primary"><img alt="" src={DexTradeLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/LTC"><Button variant="outline-primary"><img alt="" src={SouthXchangeLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><Button variant="outline-primary"><img alt="" src={CratexIoLogo} /></Button></a></Col>
