@@ -238,7 +238,11 @@ function Main() {
               <Col><div className="isometric-holder"><div className={loaded ? "isometric" : "isometric preload"}></div></div></Col>
             </Row>
             <Row>
-              <p>Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
+              <p className="masthead-title">Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
+            </Row>
+            <Row className="warning mt-4">
+              <h5>WARNING!</h5>
+              <p><b><u><a rel="noreferred" href="https://www.dingocoin.org">Dingocoin</a></u></b> and <b><u><a rel="noreferrer" href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4">wDingocoin</a></u></b> are completely unrelated to <b><u><a rel="noreferrer" href="https://dingotoken.com">Dingo Token</a></u></b>.<br/>Please ensure that you are viewing the correct asset.</p>
             </Row>
             <Row xs={2} md={2} lg={4} className="quick-actions">
               <Col>
@@ -260,7 +264,6 @@ function Main() {
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></Col>
             </Row>
-            <br/>
             <Row>
               <h5 className="fundraising">
                 <img alt="" src={Parrot1Logo}/>

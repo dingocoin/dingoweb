@@ -176,11 +176,6 @@ a:link {
     transform: skewY(-45deg) scaleX(0.5);
     transition: 0.5s;
   }
-
-  .masthead p {
-    font-size: 1.5rem !important;
-    font-weight: 300;
-  }
 }
 
 /* ===== Socials ===== */
@@ -243,11 +238,18 @@ a:link {
   width: 20rem;
   padding: 2rem;
 }
-.masthead p {
+
+.masthead .masthead-title {
   font-size: 2rem;
   font-weight: 300;
   margin: 0;
   padding: 0;
+}
+
+.masthead .warning {
+  a, p, h5 {
+    color: red !important;
+  }
 }
 
 .fundraising {
