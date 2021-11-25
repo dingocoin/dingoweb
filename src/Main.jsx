@@ -21,16 +21,13 @@ import RobloxLogo from './assets/img/roblox.png'
 import SOLLogo from './assets/img/sol.png'
 import SocialFaucetLogo from './assets/img/socialfaucet.png'
 import SouthXchangeLogo from './assets/img/southxchange.png'
-import WhitepaperPdf from './assets/pdf/Dingocoin_Whitepaper.pdf'
 import MinerLogo from './assets/img/transparent_miner.png'
 import DingocoinCollection1Logo from './assets/img/dingocoincollection1.png'
 import BananaLogo from './assets/img/happybanana.gif'
 
-// Bootstrap.
-import { Carousel, DropdownButton, Dropdown, InputGroup, FormControl, Table, Accordion,
+// Controls.
+import { DropdownButton, Dropdown, InputGroup, FormControl, Table, Accordion,
   Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
-
-// Others.
 import CustomDivider from './CustomDivider.jsx'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 
@@ -43,16 +40,38 @@ function shuffleArr(array){
 
 function Main() {
 
+  const [communityImagesAuthors, setCommunityImagesAuthors] = React.useState([]);
+  const [communityImagesKeys, setCommunityImagesKeys] = React.useState([]);
+  const [loadAllCommunityImages, setLoadAllCommunityImages] = React.useState(false);
   const [communityImages, setCommunityImages] = React.useState([]);
+
   React.useEffect(async () => {
-    function importAll(r) {
-      return r.keys().map(r);
-    }
-    const images = importAll(require.context('./assets/img/community', false, /\.(png|jpe?g|svg)$/));
-    shuffleArr(images);
     const authors = require('./assets/img/community/authors');
-    setCommunityImages(images.map((x) => { return {image: x, author: authors[x.default.split('/').pop().split('.')[0]]}; }));
+    let keys = Object.keys(authors);
+    shuffleArr(keys);
+    setCommunityImagesAuthors(authors);
+    setCommunityImagesKeys(keys);
   }, []);
+
+  React.useEffect(async () => {
+    if (communityImagesAuthors.length === 0 || communityImagesKeys.length === 0) {
+      return;
+    }
+
+    const importKeys = loadAllCommunityImages ? communityImagesKeys : communityImagesKeys.slice(0, 10);
+    const images = require.context('./assets/img/community', false, /\.(png|jpe?g|svg|gif|mp4)$/);
+    const importedImages = []
+    for (const k of importKeys) {
+      const imgPath = images.keys().find((x) => x.includes(k));
+      if (typeof imgPath !== 'undefined') {
+        importedImages.push(images(imgPath));
+      }
+    }
+
+    console.log(importedImages);
+
+    setCommunityImages(importedImages.map((x) => { return {image: x, author: communityImagesAuthors[x.default.split('/').pop().split('.')[0]]}; }));
+  }, [communityImagesAuthors, communityImagesKeys, loadAllCommunityImages]);
 
   async function get(link) {
     const controller = new AbortController();
@@ -122,8 +141,6 @@ function Main() {
   React.useEffect(async () => {
     // Retireve.
     const {users, metrics, historyMetrics, address} = await get('https://n4.dingocoin.org:8443/socialFaucet');
-
-    console.log(metrics);
 
     // Collate.
     const rank = [];
@@ -234,7 +251,7 @@ function Main() {
                 <a target="_blank" href="https://openchains.info/coin/dingocoin/blocks" rel="noreferrer"><Button className="popup-button" variant="primary">Dingocoin Explorer</Button></a>
               </Col>
               <Col>
-                <a target="_blank" href={WhitepaperPdf} rel="noreferrer"><Button className="popup-button" variant="primary">Whitepaper</Button></a>
+                <a target="_blank" href="/DingocoinWhitePaper.pdf" rel="noreferrer"><Button className="popup-button" variant="primary">Whitepaper</Button></a>
               </Col>
             </Row>
             <Row xs={4} md={4} lg={4} className="socials">
@@ -425,9 +442,25 @@ function Main() {
           </Row>
           <Row className="community-art">
             <CustomDivider/>
-            <h3><Image src={BananaLogo}/>Community Art<Image src={BananaLogo}/></h3>
+            <h3><Image src={BananaLogo}/>Community Art/Memes<Image src={BananaLogo}/></h3>
             <ul className="community-images mt-4">
-              {communityImages.map((x, i) => <li key={i}><Image src={x.image.default} onClick={() => { setSelectedArt(x); setArtModalShow(true);} }></Image></li>)}
+              {communityImages.map((x, i) =>
+              <li key={i}>
+                {x.image.default.endsWith('.mp4') &&
+                <video controls height="200" onClick={(e) => { e.preventDefault(); setSelectedArt(x); setArtModalShow(true);}}>
+                  <source src={x.image.default}/>
+                </video>
+                }
+                {!x.image.default.endsWith('.mp4') &&
+                <Image src={x.image.default} onClick={() => { setSelectedArt(x); setArtModalShow(true);} }></Image>
+                }
+              </li>
+              )}
+              {!loadAllCommunityImages &&
+              <li key="9999">
+                <Button className="popup-button" variant="primary" onClick={() => { setLoadAllCommunityImages(true); }}>Load All</Button>
+              </li>
+              }
             </ul>
           </Row>
         </Container>
@@ -800,7 +833,14 @@ function Main() {
             </Row>
             <Row>
               <Col>
-                {selectedArt !== null && <Image src={selectedArt.image.default}/>}
+                {selectedArt !== null && selectedArt.image.default.endsWith('.mp4') &&
+                  <video controls>
+                    <source src={selectedArt.image.default}/>
+                  </video>
+                }
+                {selectedArt !== null && !selectedArt.image.default.endsWith('.mp4') &&
+                  <Image src={selectedArt.image.default}/>
+                }
               </Col>
             </Row>
           </Container>
