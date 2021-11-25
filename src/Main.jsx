@@ -288,7 +288,7 @@ function Main() {
             </Col>
             <Col>
               <h3>... supporting community projects.</h3>
-              <p>We believe in building community-driven projects around the same, universal Dingocoin; establishing uses and thus concrete value for Dingocoin, instead of trying to overmarket it like the common crypto-Ponzis. Have something fun in mind? Throw it out and we'll help.</p>
+              <p>We believe in building community-driven projects around the same, universal Dingocoin; establishing uses and thus concrete value for Dingocoin, instead of overmarketing like the common crypto Ponzis/scams. Have something fun in mind? Throw it out and we'll help.</p>
             </Col>
           </Row>
           <Row xs={1} md={1} lg={3} className="projectFactsWrap">
