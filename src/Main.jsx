@@ -273,6 +273,7 @@ function Main() {
                 <img alt="" src={Parrot2Logo}/>
               </h5>
             </Row>
+          </Container>
         </div>
       </header>
 
@@ -282,12 +283,12 @@ function Main() {
         <Container>
           <Row xs={1} md={1} lg={2}>
             <Col>
-              <h3>A fun cryptocurrency...</h3>
-              <p>Dingocoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the great Dingo internet currency". </p>
+              <h3>A fun, universal cryptocurrency...</h3>
+              <p>Dingocoin is a decentralized, peer-to-peer digital currency that enables you to easily send money online. Think of it as "the great Dingo internet currency". Why dedicate specific coins to specific purposes, when you can use the same Dingocoin for everything?</p>
             </Col>
             <Col>
               <h3>... supporting community projects.</h3>
-              <p>We believe in building community-driven projects around the same Dingocoin. Have something fun in mind? Throw it out and we'll help.</p>
+              <p>We believe in building community-driven projects around the same, universal Dingocoin; establishing uses and thus concrete value for Dingocoin, instead of trying to overmarket it like the common crypto-Ponzis. Have something fun in mind? Throw it out and we'll help.</p>
             </Col>
           </Row>
           <Row xs={1} md={1} lg={3} className="projectFactsWrap">
