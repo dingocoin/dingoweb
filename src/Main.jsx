@@ -240,10 +240,6 @@ function Main() {
             <Row>
               <p className="masthead-title">Dingocoin is an open-source peer-to-peer digital currency.<br/> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
-            <Row className="warning mt-4">
-              <h5>WARNING!</h5>
-              <p><b><u><a rel="noreferred" href="https://www.dingocoin.org">Dingocoin</a></u></b> and <b><u><a rel="noreferrer" href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4">wDingocoin</a></u></b> are completely unrelated to <b><u><a rel="noreferrer" href="https://dingotoken.com">Dingo Token</a></u></b>.<br/>Please ensure that you are viewing the correct asset.</p>
-            </Row>
             <Row xs={2} md={2} lg={4} className="quick-actions">
               <Col>
                 <Button className="popup-button" variant="primary" onClick={() => { setExchangesModalShow(true); }}>Buy Dingocoin</Button>
@@ -276,6 +272,10 @@ function Main() {
                 <span>Join our Discord to contribute!</span>
                 <img alt="" src={Parrot2Logo}/>
               </h5>
+            </Row>
+            <Row className="warning mt-4">
+              <h5>WARNING!</h5>
+              <p><b><u><a rel="noreferred" href="https://www.dingocoin.org">Dingocoin</a></u></b> and <b><u><a rel="noreferrer" href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4">wDingocoin</a></u></b> are completely unrelated to <b><u><a rel="noreferrer" href="https://dingotoken.com">Dingo Token</a></u></b>.<br/>Please ensure that you are viewing the correct asset.</p>
             </Row>
           </Container>
         </div>
