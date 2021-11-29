@@ -263,13 +263,13 @@ function Main() {
             <Row>
               <h5 className="fundraising">
                 <img alt="" src={Parrot1Logo}/>
-                <span>Currently raising funds for a Hotbit listing.</span>
+                <span>Funds raised for a Hotbit listing!</span>
                 <img alt="" src={Parrot1Logo}/>
               </h5>
-              <ProgressBar animated now={47865 * 100 / 50000} className="fund-raising-progress" label="$47,865 / $50,000" />
+              <ProgressBar animated now={50000 * 100 / 50000} className="fund-raising-progress" label="$50,000 / $50,000" />
               <h5 className="fundraising">
                 <img alt="" src={Parrot2Logo}/>
-                <span>Join our Discord to contribute!</span>
+                <span>Listing in progress...</span>
                 <img alt="" src={Parrot2Logo}/>
               </h5>
             </Row>
