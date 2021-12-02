@@ -711,23 +711,28 @@ function Main() {
         <Container>
           <ul className="timeline">
             <li className="event eventcompleted" data-date="Apr 1, 2021"><h3>Birth of Dingocoin</h3><p>Initial deployment. Block reward set to 0 - 1,000,000.</p></li>
-            <li className="event eventcompleted" data-date="Apr, 2021"><h3>Block reward halved to 500,000.</h3><p>5,000 Blocks Mined</p></li>
-            <li className="event eventcompleted" data-date="Jun, 2021"><h3>Block reward halved to 250,000.</h3><p>100,000 Blocks Mined</p></li>
-            <li className="event eventcompleted" data-date="Aug, 2021"><h3>Wrapped Dingocoin released on BSC</h3><p>Hold and trade Dingocoin on BSC.</p></li>
-            <li className="event eventcompleted" data-date="Aug, 2021"><h3>Block reward halved to 125,000.</h3><p>200,000 Blocks Mined</p></li>
-            <li className="event eventcompleted" data-date="Sep, 2021"><h3>Max Re-org Length Activated</h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
-            <li className="event eventcompleted" data-date="Oct, 2021"><h3>Chain ID switch activated</h3>
+            <li className="event eventcompleted" data-date="Apr 2021"><h3>Block reward halved to 500,000</h3><p>5,000 Blocks Mined.</p></li>
+            <li className="event eventcompleted" data-date="Apr 2021"><h3>Listed on DelionDEX</h3></li>
+            <li className="event eventcompleted" data-date="May 2021"><h3>Listed on Dex-Trade</h3><p>Listing fee of <b>$2,500</b> raised by the community.</p></li>
+            <li className="event eventcompleted" data-date="Jun 2021"><h3>Block reward halved to 250,000</h3><p>100,000 Blocks Mined.</p></li>
+            <li className="event eventcompleted" data-date="Jul 2021"><h3>Listed on Cratex</h3></li>
+            <li className="event eventcompleted" data-date="Aug 2021"><h3>Wrapped Dingocoin released on BSC</h3><p>Hold and trade Dingocoin on BSC.</p></li>
+            <li className="event eventcompleted" data-date="Aug 2021"><h3>Block reward halved to 125,000</h3><p>200,000 Blocks Mined.</p></li>
+            <li className="event eventcompleted" data-date="Aug 2021"><h3>Listed on SouthXchange</h3><p>Listing fee of <b>$5,000</b> raised by the community.</p></li>
+            <li className="event eventcompleted" data-date="Sep 2021"><h3>Max Re-org Length Activated</h3><p>Protects against 51% attacks.<br/>Confirmations on exchanges can now be reduced significantly.</p></li>
+            <li className="event eventcompleted" data-date="Oct 2021"><h3>Chain ID switch activated</h3>
               <p>Merged mining can now be done alongside Doge without conflict.<br/>
                 Increases exposure to miners via AuxPoW.<br/>
                 <b>- We hit 1TH/s hashrate on the same day, 10x our past record! 🎉🎉🎉</b></p>
             </li>
-            <li className="event eventcompleted" data-date="Nov, 2021"><h3>Dingosino released on Discord</h3><p>Play games using Dingocoin on Discord.</p></li>
-            <li className="event eventcompleted" data-date="Nov, 2021"><h3>Dingocoin Social Faucet released</h3><p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p></li>
-            <li className="event eventcompleted" data-date="Nov, 2021"><h3>Block reward halved to 62,500.</h3><p>300,000 Blocks Mined</p></li>
-            <li className="event eventincomplete" data-date="~ Dec, 2021"><p>Wrapped Dingocoin released on SOL</p><p>Hold and trade Dingocoin on SOL.</p></li>
-            <li className="event eventincomplete" data-date="~ Jan, 2022"><p>Block reward halved to 31,250.</p><p>400,000 Blocks Mined</p></li>
-            <li className="event eventincomplete" data-date="~ Apr, 2022"><p>Block reward halved to 15,625.</p><p>500,000 Blocks Mined</p></li>
-            <li className="event eventincomplete" data-date="~ Jun, 2022"><p>Block reward set permanentely to 10,000.</p><p>600,000 Blocks Mined</p></li>
+            <li className="event eventcompleted" data-date="Nov 2021"><h3>Dingosino released on Discord</h3><p>Play games using Dingocoin on Discord.</p></li>
+            <li className="event eventcompleted" data-date="Nov 2021"><h3>Dingocoin Social Faucet released</h3><p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p></li>
+            <li className="event eventcompleted" data-date="Nov 2021"><h3>Block reward halved to 62,500</h3><p>300,000 Blocks Mined.</p></li>
+            <li className="event eventcompleted" data-date="Dec 2021"><h3>Listed on Hotbit</h3><p>Listing fee of <b>$50,000</b> raised by the community.</p></li>
+            <li className="event eventincomplete" data-date="~ Dec 2021"><p>Wrapped Dingocoin released on SOL</p><p>Hold and trade Dingocoin on SOL.</p></li>
+            <li className="event eventincomplete" data-date="~ Jan 2022"><p>Block reward halved to 31,250</p><p>400,000 Blocks Mined.</p></li>
+            <li className="event eventincomplete" data-date="~ Apr 2022"><p>Block reward halved to 15,625</p><p>500,000 Blocks Mined.</p></li>
+            <li className="event eventincomplete" data-date="~ Jun 2022"><p>Block reward set permanentely to 10,000</p><p>600,000 Blocks Mined.</p></li>
           </ul>
         </Container>
       </section>
