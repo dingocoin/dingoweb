@@ -249,7 +249,15 @@ function Main() {
                 <a target="_blank" href="https://miningpoolstats.stream/dingocoin" rel="noreferrer"><Button className="popup-button" variant="primary">Mine Dingocoin</Button></a>
               </Col>
               <Col>
-                <a target="_blank" href="https://openchains.info/coin/dingocoin/blocks" rel="noreferrer"><Button className="popup-button" variant="primary">Dingocoin Explorer</Button></a>
+                <Dropdown>
+                  <Dropdown.Toggle className="popup-button">
+                    Dingocoin Explorer
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item target="_blank" rel="noreferrer" href="https://explorer.dingocoin.org">Official (with API)</Dropdown.Item>
+                    <Dropdown.Item target="_blank" rel="noreferrer" href="https://openchains.info/coin/dingocoin/blocks">Open Chains</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </Col>
               <Col>
                 <a target="_blank" href="/DingocoinWhitePaper.pdf" rel="noreferrer"><Button className="popup-button" variant="primary">Whitepaper</Button></a>
