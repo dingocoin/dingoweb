@@ -107,32 +107,14 @@ function Main() {
     // Get market stats.
     const { volume, price, cap } = await get('https://n4.dingocoin.org:8443/stats/market');
 
-    const tMax = 2000;
-    const animateStart = Date.now();
-    const interval = setInterval(() => {
-      const progress = (Date.now() - animateStart) / tMax;
-      if (progress >= 1) {
-        clearInterval(interval);
-        setDingoStats({
-          supply: Math.round(dingoStats.total_amount),
-          blocks: dingoStats.height,
-          blockReward: blockReward,
-          blocksToHalving: blocksToHalving });
-        setDingoVolume(volume);
-        setDingoPrice(price);
-        setDingoCap(cap);
-      } else {
-        const v = 1 - (1 - progress)**8;
-        setDingoStats({
-          supply: Math.round(v * dingoStats.total_amount),
-          blocks: Math.round(v * dingoStats.height),
-          blockReward: blockReward,
-          blocksToHalving: blocksToHalving});
-        setDingoVolume(v * volume);
-        setDingoPrice(v * price);
-        setDingoCap(v * cap);
-      }
-    }, 10);
+    setDingoStats({
+      supply: Math.round(dingoStats.total_amount),
+      blocks: dingoStats.height,
+      blockReward: blockReward,
+      blocksToHalving: blocksToHalving });
+    setDingoVolume(volume);
+    setDingoPrice(price);
+    setDingoCap(cap);
 
   }, []);
 
