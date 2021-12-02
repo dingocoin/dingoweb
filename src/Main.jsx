@@ -24,6 +24,7 @@ import SouthXchangeLogo from './assets/img/southxchange.png'
 import MinerLogo from './assets/img/transparent_miner.png'
 import DingocoinCollection1Logo from './assets/img/dingocoincollection1.png'
 import BananaLogo from './assets/img/happybanana.gif'
+import HotbitLogo from './assets/img/hotbit.gif'
 
 // Controls.
 import { DropdownButton, Dropdown, InputGroup, FormControl, Table, Accordion,
@@ -148,13 +149,13 @@ function Main() {
       rank.push({
         name: users[userId].name,
         handle: users[userId].screen_name,
-        score: 0.5 * metrics[userId].retweet_count + metrics[userId].like_count,
+        score: metrics[userId].score,
         likes: metrics[userId].like_count,
         retweets: metrics[userId].retweet_count,
         rank: null,
         address: address[userId] });
     }
-    rank.sort((a, b) => b.score - a.score); // Sort descending.
+    rank.sort((a, b) => a.score !== b.score ? b.score - a.score : (0.5 * b.retweets + b.likes) - (0.5 * a.retweets + a.likes)); // Sort descending.
     // Add rank index.
     for (let i = 0; i < rank.length; i++) {
       rank[i].rank = i + 1;
@@ -260,22 +261,13 @@ function Main() {
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></Col>
             </Row>
-            <Row>
-              <h5 className="fundraising">
-                <img alt="" src={Parrot1Logo}/>
-                <span>Funds raised for a Hotbit listing!</span>
-                <img alt="" src={Parrot1Logo}/>
-              </h5>
-              <ProgressBar animated now={50000 * 100 / 50000} className="fund-raising-progress" label="$50,000 / $50,000" />
-              <h5 className="fundraising">
-                <img alt="" src={Parrot2Logo}/>
-                <span>Listing in progress...</span>
-                <img alt="" src={Parrot2Logo}/>
-              </h5>
-            </Row>
           </Container>
         </div>
       </header>
+
+      <section>
+        <Image src={HotbitLogo} style={{ width: '100%' }}/>
+      </section>
 
       <section className="section-b" id="about">
         <h2>ABOUT DINGOCOIN</h2>
@@ -441,7 +433,6 @@ function Main() {
           </Row>
           <Row className="community-art">
             <CustomDivider/>
-            <h3><Image src={BananaLogo}/>Community Art/Memes<Image src={BananaLogo}/></h3>
             <ul className="community-images mt-4">
               {communityImages.map((x, i) =>
               <li key={i}>
@@ -581,10 +572,10 @@ function Main() {
                           <td className="col-1">{x.rank}</td>
                           <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
                           {typeof x.address === 'undefined' &&
-                          <td className="col-2"><strike>{(Math.min(x.score, 100) * 1000).toLocaleString()}</strike>*</td>
+                          <td className="col-2"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
                           }
                           {typeof x.address !== 'undefined' &&
-                          <td className="col-2">{(Math.min(x.score, 100) * 1000).toLocaleString()}</td>
+                          <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
                           }
                           <td className="col-1">{x.retweets}</td>
                           <td className="col-1">{x.likes}</td>
@@ -593,7 +584,7 @@ function Main() {
                       {filterText === "" &&
                       <tr>
                         <td colSpan="2" className="col-7"><b>Total</b></td>
-                        <td className="col-2"><b>{socialFaucetRank.map((x) => Math.min(x.score, 100) * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td className="col-2"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                         <td className="col-1"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                         <td className="col-1"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                       </tr>
@@ -613,6 +604,9 @@ function Main() {
                 />
               </InputGroup>
             </Col>
+          </Row>
+          <Row className="mt-2">
+            <p><b>This week's event: raise your earnings cap to 200,000 for the week by including "hotbit listing" in at least one post!</b></p>
           </Row>
         </Container>
       </section>
