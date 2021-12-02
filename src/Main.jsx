@@ -423,6 +423,7 @@ function Main() {
           </Row>
           <Row className="community-art">
             <CustomDivider/>
+            <h3><Image src={BananaLogo}/>Community Art<Image src={BananaLogo}/></h3>
             <ul className="community-images mt-4">
               {communityImages.map((x, i) =>
               <li key={i}>
