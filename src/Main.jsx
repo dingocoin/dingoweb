@@ -606,7 +606,7 @@ function Main() {
             </Col>
           </Row>
           <Row className="mt-2">
-            <p><b>This week's event: raise your earnings cap to 200,000 for the week by including "hotbit listing" in at least one post!</b></p>
+            <p><b>This week's event: raise your earnings cap to 200,000 for the week by including the word "hotbit" in at least one post!</b></p>
           </Row>
         </Container>
       </section>
