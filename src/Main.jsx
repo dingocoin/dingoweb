@@ -251,7 +251,7 @@ function Main() {
               <Col>
                 <Dropdown>
                   <Dropdown.Toggle className="popup-button">
-                    Dingocoin Explorer
+                    Explorer
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item target="_blank" rel="noreferrer" href="https://explorer.dingocoin.org">Official (with API)</Dropdown.Item>
