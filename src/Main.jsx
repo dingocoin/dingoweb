@@ -25,6 +25,7 @@ import MinerLogo from './assets/img/transparent_miner.png'
 import DingocoinCollection1Logo from './assets/img/dingocoincollection1.png'
 import BananaLogo from './assets/img/happybanana.gif'
 import HotbitLogo from './assets/img/hotbit.gif'
+import HotbitExLogo from './assets/img/hotbitex.png'
 
 // Controls.
 import { DropdownButton, Dropdown, InputGroup, FormControl, Table, Accordion,
@@ -203,9 +204,10 @@ function Main() {
               </NavDropdown>
               <NavDropdown className="navbar-important" title="Exchanges">
                 <NavDropdown.Header>Exchanges</NavDropdown.Header>
-                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><img alt="" src={DexTradeLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"><img alt="" src={HotbitExLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/LTC"><img alt="" src={SouthXchangeLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><img alt="" src={CratexIoLogo} /></NavDropdown.Item>
+                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><img alt="" src={DexTradeLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><img alt="" src={DelionDexLogo} /></NavDropdown.Item>
                 <NavDropdown.Item target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><img alt="" src={PancakeSwap} /></NavDropdown.Item>
               </NavDropdown>
@@ -752,9 +754,10 @@ function Main() {
               <Col><h5>Exchanges</h5></Col>
             </Row>
             <Row>
-              <Col><a target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><Button variant="outline-primary"><img alt="" src={DexTradeLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"><Button variant="outline-primary"><img alt="" src={HotbitExLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://main.southxchange.com/Market/Book/DINGO/LTC"><Button variant="outline-primary"><img alt="" src={SouthXchangeLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://cratex.io/index.php?pair=DINGO/LTC"><Button variant="outline-primary"><img alt="" src={CratexIoLogo} /></Button></a></Col>
+              <Col><a target="_blank" rel="noreferrer" href="https://dex-trade.com/spot/trading/DINGOUSDT"><Button variant="outline-primary"><img alt="" src={DexTradeLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://dex.delion.online/market/DELION.DINGO_DOGE"><Button variant="outline-primary"><img alt="" src={DelionDexLogo} /></Button></a></Col>
               <Col><a target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"><Button variant="outline-primary"><img alt="" src={PancakeSwap} /></Button></a></Col>
             </Row>
