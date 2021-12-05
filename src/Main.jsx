@@ -491,7 +491,7 @@ function Main() {
                       <li>Retweet/quote-retweet someone else's post = 500 Dingocoin</li>
                       <li>Retweeting/quote-retweeting your own post = no reward</li>
                     </ul>
-                    <p>* Each user can earn up to 20,000 Dingocoins per week. Top 3 users for the week can earn up to 100,000 per week!</p>
+                    <p>* Each user can earn up to 20,000 Dingocoins per week. Top 3 users for the week can earn up to 100,000 for that week!</p>
                     <p>* Please ensure that you have a tweet in the current week associating your Twitter account to a Dingocoin reward address.</p>
                     <p>* Your posts might be filtered away by Twitter if your account or activity is deemed too obscure or spammy. Please try increasing the number of followers, to wait for your account to mature, and/or to not spam too blatantly.</p>
                     <p>* The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time. Only retweets and likes of tweets in the current week are scored.</p>
