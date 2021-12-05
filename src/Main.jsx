@@ -551,10 +551,13 @@ function Main() {
                       <tr>
                         <th className="col-1">#</th>
                         <th className="col-7">User</th>
-                        <th className="col-2">
-                          <span className="table-dingo">
+                        <th className="col-1 table-dingo">
+                          <span>
                             <img alt="" src={DingocoinLogo}/>
-                          </span> earned
+                          </span>&nbsp;earned
+                        </th>
+                        <th className="col-1">
+                          Score
                         </th>
                         <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
                         <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
@@ -566,19 +569,21 @@ function Main() {
                           <td className="col-1">{x.rank}</td>
                           <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
                           {typeof x.address === 'undefined' &&
-                          <td className="col-2"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
+                          <td className="col-1"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
                           }
                           {typeof x.address !== 'undefined' &&
-                          <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
+                          <td className="col-1">{(x.score * 1000).toLocaleString()}</td>
                           }
+                          <td className="col-1">{((0.5 * x.retweets + x.likes) * 1000).toLocaleString()}</td>
                           <td className="col-1">{x.retweets}</td>
                           <td className="col-1">{x.likes}</td>
                         </tr>
                       ))}
                       {filterText === "" &&
                       <tr>
-                        <td colSpan="2" className="col-7"><b>Total</b></td>
-                        <td className="col-2"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td colSpan="2" className="col-8"><b>Total</b></td>
+                        <td className="col-1"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td className="col-1"></td>
                         <td className="col-1"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                         <td className="col-1"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
                       </tr>

@@ -583,9 +583,14 @@ a:link {
     margin-bottom: 0;
   }
 }
-.table-dingo img {
-  height: 1rem;
-  width: 1rem;
+.table-dingo {
+  img {
+    height: 1rem;
+    width: 1rem;
+  }
+  span {
+    white-space:nowrap;
+  }
 }
 
 .social-faucet-table tbody .gold {
