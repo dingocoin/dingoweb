@@ -574,7 +574,7 @@ function Main() {
                           {typeof x.address !== 'undefined' &&
                           <td className="col-1">{(x.score * 1000).toLocaleString()}</td>
                           }
-                          <td className="col-1">{((0.5 * x.retweets + x.likes) * 1000).toLocaleString()}</td>
+                          <td className="col-1">{((0.5 * x.retweets + x.likes)).toLocaleString()}</td>
                           <td className="col-1">{x.retweets}</td>
                           <td className="col-1">{x.likes}</td>
                         </tr>
