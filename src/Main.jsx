@@ -752,7 +752,7 @@ function Main() {
               <p>Listing fee of <b>$50,000</b> raised by the community.
                 <br/>
                 <b>- <i>We hit a record $380,000 24H trading volume!</i> 🎉</b><br/>
-                <b>- <i>We hit a record 1,500 Twitter followers!</i> 🎉</b>
+                <b>- <i>We hit a record 1,500 Twitter followers, growing 5x overnight!</i> 🎉</b>
               </p>
             </li>
             <li className="event eventincomplete" data-date="~ Dec 2021"><p>Wrapped Dingocoin released on SOL</p><p>Hold and trade Dingocoin on SOL.</p></li>
