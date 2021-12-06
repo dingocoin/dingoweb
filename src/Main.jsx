@@ -615,7 +615,7 @@ function Main() {
               <Image src={Parrot2Logo} style={{'height': '1.2rem'}}/>
               <br/>
               <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
-              Be the first to get <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> to <i>retweet, quote, or reply</i> to your post, and win <b>5m Dingocoins</b>.
+              Be the first to get <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> to <i>retweet, quote, or reply</i> to your Dingocoin post, and win <b>5m Dingocoins</b>.
               <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
               <br/>
             </p>
