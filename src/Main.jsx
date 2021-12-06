@@ -716,7 +716,7 @@ function Main() {
         <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
         <CustomDivider/>
         <p><i>Did you know?</i>
-            <br/>Autradex was the first exchange to list Dingocoin, and provided a sacred trading grounds for Dingocoin.
+            <br/>Autradex was the first exchange to list Dingocoin, and provided a sacred trading ground for Dingocoin.
             <br/>Unfortunately, Autradex sustained multiple 51% attacks, back when Dingocoin was not as secure as it is now.
             <br/>Autradex eventually had to close down, shouldering the cost of the many attacks.
             <br/><i>Please consider donating toward the Autradex developers, who carried us when no one else could:</i>
