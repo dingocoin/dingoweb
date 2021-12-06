@@ -3,7 +3,7 @@ import React from 'react';
 // Assets.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExchangeAlt, faRobot, faFileContract, faPassport, faHeart, faRetweet, faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { faWindows, faLinux, faApple, faTwitter, faReddit, faFacebook, faDiscord, faGooglePlay } from  '@fortawesome/free-brands-svg-icons'
+import { faWindows, faLinux, faApple, faTwitter, faTelegram, faReddit, faFacebook, faDiscord, faGooglePlay } from  '@fortawesome/free-brands-svg-icons'
 import BSCLogo from './assets/img/bsc.png'
 import CoinCodexLogo from './assets/img/coincodex.png'
 import CoinPaprikaLogo from './assets/img/coinpaprika.png'
@@ -250,8 +250,9 @@ function Main() {
                 <a target="_blank" href="/DingocoinWhitePaper.pdf" rel="noreferrer"><Button className="popup-button" variant="primary">Whitepaper</Button></a>
               </Col>
             </Row>
-            <Row xs={4} md={4} lg={4} className="socials">
+            <Row xs={5} md={5} lg={5} className="socials">
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://discord.gg/y3J946HFQM"><FontAwesomeIcon className="faicon" icon={faDiscord} /></a></Col>
+              <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://t.me/DingoCoinTalk"><FontAwesomeIcon className="faicon" icon={faTelegram} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://twitter.com/dingocoincrypto"><FontAwesomeIcon className="faicon" icon={faTwitter} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/dingocoin"><FontAwesomeIcon className="faicon" icon={faReddit} /></a></Col>
               <Col className="socials-button-holder"><a target="_blank" rel="noreferrer" href="https://www.facebook.com/Dingocoin.org/"><FontAwesomeIcon className="faicon" icon={faFacebook} /></a></Col>
@@ -499,7 +500,7 @@ function Main() {
                     <p>* Your posts might be filtered away by Twitter if your account or activity is deemed too obscure or spammy. Please try increasing the number of followers, to wait for your account to mature, and/or to not spam too blatantly.</p>
                     <p>* The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time. Only retweets and likes of tweets in the current week are scored.</p>
                     <p>* Rates are not fixed. May have to adjust in case we fly to the moon.</p>
-                    <p><b>Feeling generous? Fund our social faucet to keep it running :) (Deposit address: DJAuG2t4PtUQhFQsTddK1rhDHgE3cFU5oW)</b></p>
+                    <p><b>Feeling generous? Fund our social faucet to keep it running :) <code>DJAuG2t4PtUQhFQsTddK1rhDHgE3cFU5oW</code></b></p>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
@@ -714,6 +715,12 @@ function Main() {
       <section className="section-b" id="roadmap">
         <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
         <CustomDivider/>
+        <p><i>Did you know?</i>
+            <br/>Autradex was the first exchange to list Dingocoin, and provided a sacred trading grounds for Dingocoin.
+            <br/>Unfortunately, Autradex sustained multiple 51% attacks, back when Dingocoin was not as secure as it is now.
+            <br/>Autradex eventually had to close down, shouldering the cost of the many attacks.
+            <br/><i>Please consider donating toward the Autradex developers, who carried us when no one else could:</i>
+            <br/><code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code></p>
         <Container>
           <ul className="timeline">
             <li className="event eventcompleted" data-date="Apr 1, 2021"><h3>Birth of Dingocoin</h3><p>Initial deployment. Block reward set to 0 - 1,000,000.</p></li>
@@ -744,7 +751,7 @@ function Main() {
       </section>
 
       <section className="section-footer">
-        <h6>Copyright © The Dingocoin Project 2021 | Multisig Community Donations: A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP </h6>
+        <h6>Copyright © The Dingocoin Project 2021 | Multisig Community Donations: <code>A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP</code> </h6>
       </section>
 
       <Modal
