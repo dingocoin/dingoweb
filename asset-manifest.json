@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.4e2c0c6a.chunk.css",
-    "main.js": "/static/js/main.861e86ec.chunk.js",
-    "main.js.map": "/static/js/main.861e86ec.chunk.js.map",
+    "main.js": "/static/js/main.d7483f16.chunk.js",
+    "main.js.map": "/static/js/main.d7483f16.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.f95b8343.chunk.js": "/static/js/2.f95b8343.chunk.js",
@@ -62,6 +62,7 @@
     "static/media/0050.gif": "/static/media/0050.22dfe483.gif",
     "static/media/0051.jpg": "/static/media/0051.4e846235.jpg",
     "static/media/coincodex.8839b857.png": "/static/media/coincodex.8839b857.png",
+    "static/media/coingecko.7f110fd8.png": "/static/media/coingecko.7f110fd8.png",
     "static/media/cratexio.d52369fa.png": "/static/media/cratexio.d52369fa.png",
     "static/media/deliondex.b1f720d1.png": "/static/media/deliondex.b1f720d1.png",
     "static/media/dex-guru.67d58c8a.png": "/static/media/dex-guru.67d58c8a.png",
@@ -81,6 +82,6 @@
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.f95b8343.chunk.js",
     "static/css/main.4e2c0c6a.chunk.css",
-    "static/js/main.861e86ec.chunk.js"
+    "static/js/main.d7483f16.chunk.js"
   ]
 }
