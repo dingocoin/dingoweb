@@ -122,9 +122,10 @@ function Main() {
   const [socialFaucetRank, setSocialFaucetRank] = React.useState([]);
   const [socialFaucetHistoryRank, setSocialFaucetHistoryRank] = React.useState([]);
   const [socialFaucetView, setSocialFaucetView] = React.useState("weekly");
+  const [theTomBradyScore, setTheTomBradyScore] = React.useState(null);
   React.useEffect(async () => {
     // Retireve.
-    const {users, metrics, historyMetrics, address} = await get('https://n4.dingocoin.org:8443/socialFaucet');
+    const {users, metrics, historyMetrics, tomBradyScore, address} = await get('https://n4.dingocoin.org:8443/socialFaucet');
 
     // Collate.
     const rank = [];
@@ -162,6 +163,8 @@ function Main() {
     }
     setSocialFaucetHistoryRank(historyRank);
 
+    // Set Tom Brady Score.
+    setTheTomBradyScore(tomBradyScore);
   }, []);
 
   const [filterQuery, setFilterQuery] = React.useState("");
@@ -613,7 +616,12 @@ function Main() {
               <br/>
               <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
               Get <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> to <i>retweet, quote, or reply</i> to your post, and receive <b>5m Dingocoins</b>.
-              <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/></p>
+              <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
+              <br/>
+            </p>
+            <p>
+              {theTomBradyScore !== null && <span>Community's current <i>Tom Brady score</i> (total number of tags): <b>{theTomBradyScore}</b></span>}
+            </p>
           </Row>
         </Container>
       </section>
