@@ -140,7 +140,7 @@ function Main() {
         rank: null,
         address: address[userId] });
     }
-    rank.sort((a, b) => a.score !== b.score ? b.score - a.score : (0.5 * b.retweets + b.likes) - (0.5 * a.retweets + a.likes)); // Sort descending.
+    rank.sort((a, b) => (0.5 * b.retweets + b.likes) - (0.5 * a.retweets + a.likes)); // Sort descending.
     // Add rank index.
     for (let i = 0; i < rank.length; i++) {
       rank[i].rank = i + 1;
