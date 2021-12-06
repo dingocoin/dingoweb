@@ -604,6 +604,17 @@ function Main() {
               </InputGroup>
             </Col>
           </Row>
+          <Row>
+            <h5 className="mt-3">Event of the week</h5>
+            <p>
+              <Image src={Parrot2Logo} style={{'height': '1.2rem'}}/>
+              Tag <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> for a <b>2X</b> reward cap.
+              <Image src={Parrot2Logo} style={{'height': '1.2rem'}}/>
+              <br/>
+              <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
+              Get <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> to <i>retweet, quote, or reply</i> to your post, and receive <b>5m Dingocoins</b>.
+              <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/></p>
+          </Row>
         </Container>
       </section>
 
