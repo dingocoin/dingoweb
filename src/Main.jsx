@@ -759,7 +759,7 @@ function Main() {
                           <p>5) Send the transaction: Take the hex output of (4) and run <code>sendrawtransaction HEX-FROM-STEP-4</code></p>
                           <p>These steps burn message and your coins <i>permanently</i> onto Dingocoin's mainnet. Your burn should appear on this board within the next 15 minutes.</p>
                           <p><b>Can anyone steal the burned coins?</b></p>
-                          <p>The burn address was constructed arbitrarily without a private key, with nothing up our sleeves. Read what it says! The probability of anyone randomly generating the private key to this address is very near zero, so it is almost impossible for anyone to ever be able to claim the burned coins.</p>
+                          <p>The burn address was constructed arbitrarily without a private key, with nothing up our sleeves. Read what it says! The probability of anyone randomly generating the private key to this address is very near zero, so it is almost impossible for anyone to ever be able to claim the burned coins.<br/>In particular, we used <a href="https://github.com/joeuhren/generic-unspendable" target="_blank" rel="noreferred"><u>this tool</u></a> with arguments <code>./unspendable.py D MuchKingDingoSuchWi1dDogexx</code>. You can go ahead to regenerate this burn address in the same way for verification.</p>
                         </Col>
                       </Row>
                     </Container>
