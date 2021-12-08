@@ -168,6 +168,16 @@ function Main() {
     setTheTomBradyScore(tomBradyScore);
   }, []);
 
+  const [burnBoardList, setBurnBoardList] = React.useState([]);
+  React.useEffect(async () => {
+    const burnList = await get('https://n4.dingocoin.org:8443/burnBoard');
+    burnList.sort((a, b) => parseFloat(b.amount) - parseFloat(a.amount));
+    for (let i = 0; i < burnList.length; i++) {
+      burnList[i].rank = i + 1;
+    }
+    setBurnBoardList(burnList);
+  }, []);
+
   const [filterQuery, setFilterQuery] = React.useState("");
   const [filterText, setFilterText] = React.useState("");
 
@@ -196,8 +206,9 @@ function Main() {
             <Nav className="ms-auto">
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href='#projects'>Projects</Nav.Link>
-              <Nav.Link href='#faucet'>Social Faucet</Nav.Link>
               <Nav.Link href='#wallets'>Wallets</Nav.Link>
+              <Nav.Link href='#faucet'>Social Faucet</Nav.Link>
+              <Nav.Link href='#burnboard'>Burnboard</Nav.Link>
               <Nav.Link href='#roadmap'>Roadmap</Nav.Link>
               <NavDropdown className="navbar-important" title="Live Charts">
                 <NavDropdown.Header>Live Charts</NavDropdown.Header>
@@ -455,181 +466,7 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-b" id="faucet">
-        <h2>DINGOCOIN SOCIAL FAUCET</h2>
-        <CustomDivider/>
-        <Container>
-          <Row>
-            <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
-          </Row>
-          <Row xs={1} md={1} lg={2} className="mb-4 mt-3">
-            <Col>
-              <Accordion>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header><h5>How to participate?</h5></Accordion.Header>
-                  <Accordion.Body className="social-faucet-instructions">
-                    <p>Simply post on Twitter advertising Dingocoin. This can be a <b>tweet</b>, a <b>quote-tweet</b>, or a <b>reply</b> to another tweet.</p>
-                    <p>In your post, include all of:</p>
-                    <ol>
-                      <li>a link to <code>dingocoin.org</code>,</li>
-                      <li>hashtags <code>#dingocoin</code> and <code>#socialfaucet</code>, and</li>
-                      <li>a hashtag with your Dingocoin address (e.g. <code>#DQBx7G4aozdqYFCv2dU4kacaEcPzwg8dkZ</code>). Your rewards will be sent here.</li>
-                    </ol>
-                    <p>Retweet/quote-tweet such a post of someone else for additional rewards (sent to your latest address, if any).</p>
-                    <p>Below is an example tweet:</p>
-                    <TwitterTweetEmbed
-                      tweetId={'1457510685441732609'}
-                      options={{height:700}}
-                    />
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-            </Col>
-            <Col>
-              <Accordion>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header><h5>Rewards and payouts</h5></Accordion.Header>
-                  <Accordion.Body className="social-faucet-instructions">
-                    <p>Get rewarded based on your activity:</p>
-                    <ul>
-                      <li>1 like on your post (including liking your own) = 1,000 Dingocoin</li>
-                      <li>1 retweet/quote-retweet on your post = 500 Dingocoin</li>
-                      <li>Retweet/quote-retweet someone else's post = 500 Dingocoin</li>
-                      <li>Retweeting/quote-retweeting your own post = no reward</li>
-                    </ul>
-                    <p>* Each user can earn up to 20,000 Dingocoins per week. Top 3 users for the week can earn up to 100,000 for that week!</p>
-                    <p>* Please ensure that you have a tweet in the current week associating your Twitter account to a Dingocoin reward address.</p>
-                    <p>* Your posts might be filtered away by Twitter if your account or activity is deemed too obscure or spammy. Please try increasing the number of followers, to wait for your account to mature, and/or to not spam too blatantly.</p>
-                    <p>* The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time. Only retweets and likes of tweets in the current week are scored.</p>
-                    <p>* Rates are not fixed. May have to adjust in case we fly to the moon.</p>
-                    <p><b>Feeling generous? Fund our social faucet to keep it running :) <code>DJAuG2t4PtUQhFQsTddK1rhDHgE3cFU5oW</code></b></p>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <DropdownButton title={socialFaucetView === "all-time" ? "All-time Ranking" : "This Week's Ranking"} className="mb-2">
-                <Dropdown.Item onClick={() => { setSocialFaucetView("all-time") }}>All-time Ranking</Dropdown.Item>
-                <Dropdown.Item onClick={() => { setSocialFaucetView("weekly") }}>This Week's Ranking</Dropdown.Item>
-              </DropdownButton>
-              <div className="social-faucet-board">
-                  {socialFaucetView === "all-time" &&
-                  <Table className="social-faucet-table mb-0" striped bordered responsive>
-                    <thead>
-                      <tr>
-                        <th className="col-1">#</th>
-                        <th className="col-7">User</th>
-                        <th className="col-2">
-                          <span className="table-dingo">
-                            <img alt="" src={DingocoinLogo}/>
-                          </span> earned
-                        </th>
-                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
-                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {socialFaucetHistoryRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
-                        <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
-                          <td className="col-1">{x.rank}</td>
-                          <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
-                          <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
-                          <td className="col-1">{x.retweets}</td>
-                          <td className="col-1">{x.likes}</td>
-                        </tr>
-                      ))}
-                      {filterText === "" &&
-                      <tr>
-                        <td colSpan="2" className="col-7"><b>Total</b></td>
-                        <td className="col-2"><b>{socialFaucetHistoryRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                        <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                        <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                      </tr>
-                      }
-                    </tbody>
-                  </Table>
-                  }
-                  {socialFaucetView === "weekly" &&
-                  <Table className="social-faucet-table mb-0" striped bordered responsive>
-                    <thead>
-                      <tr>
-                        <th className="col-1">#</th>
-                        <th className="col-7">User</th>
-                        <th className="col-1 table-dingo">
-                          <span>
-                            <img alt="" src={DingocoinLogo}/>
-                          </span>&nbsp;earned
-                        </th>
-                        <th className="col-1">
-                          Score
-                        </th>
-                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
-                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
-                        <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
-                          <td className="col-1">{x.rank}</td>
-                          <td className="col-6"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
-                          {typeof x.address === 'undefined' &&
-                          <td className="col-2"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
-                          }
-                          {typeof x.address !== 'undefined' &&
-                          <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
-                          }
-                          <td className="col-1">{((0.5 * x.retweets + x.likes)).toFixed(1)}</td>
-                          <td className="col-1">{x.retweets}</td>
-                          <td className="col-1">{x.likes}</td>
-                        </tr>
-                      ))}
-                      {filterText === "" &&
-                      <tr>
-                        <td colSpan="2" className="col-7"><b>Total</b></td>
-                        <td className="col-2"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                        <td className="col-1"></td>
-                        <td className="col-1"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                        <td className="col-1"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
-                      </tr>
-                      }
-                    </tbody>
-                  </Table>
-                  }
-              </div>
-              <InputGroup className="mt-0">
-                <InputGroup.Text id="basic-addon1">
-                  <FontAwesomeIcon className="faicon" icon={faSearch} />
-                </InputGroup.Text>
-                <FormControl
-                  placeholder="Search user/handle..."
-                  value={filterQuery}
-                  onChange={event => setFilterQuery(event.target.value)}
-                />
-              </InputGroup>
-            </Col>
-          </Row>
-          <Row>
-            <h5 className="mt-3">Event of the week</h5>
-            <p>
-              <Image src={Parrot2Logo} style={{'height': '1.2rem'}}/>
-              Tag <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> in your Dingocoin post for a <b>2X</b> reward cap.
-              <Image src={Parrot2Logo} style={{'height': '1.2rem'}}/>
-              <br/>
-              <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
-              Be the first to get <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> to <i>retweet, quote, or reply</i> to your Dingocoin post, and win <b>5m Dingocoins</b>.
-              <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
-              <br/>
-            </p>
-            <p>
-              {theTomBradyScore !== null && <span>Community's current <i>Tom Brady score</i> (total number of tags): <b>{theTomBradyScore}</b></span>}
-            </p>
-          </Row>
-        </Container>
-      </section>
-
-      <section className="section-a" id="wallets">
+      <section className="section-b" id="wallets">
         <h2>DINGOCOIN WALLETS</h2>
         <CustomDivider/>
         <Container>
@@ -714,7 +551,249 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-b" id="roadmap">
+      <section className="section-a" id="faucet">
+        <h2>DINGOCOIN SOCIAL FAUCET</h2>
+        <CustomDivider/>
+        <Container>
+          <Row>
+            <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
+          </Row>
+          <Row xs={1} md={1} lg={2} className="mb-4 mt-3">
+            <Col>
+              <Accordion>
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header><h5>How to participate?</h5></Accordion.Header>
+                  <Accordion.Body className="social-faucet-instructions">
+                    <p>Simply post on Twitter advertising Dingocoin. This can be a <b>tweet</b>, a <b>quote-tweet</b>, or a <b>reply</b> to another tweet.</p>
+                    <p>In your post, include all of:</p>
+                    <ol>
+                      <li>a link to <code>dingocoin.org</code>,</li>
+                      <li>hashtags <code>#dingocoin</code> and <code>#socialfaucet</code>, and</li>
+                      <li>a hashtag with your Dingocoin address (e.g. <code>#DQBx7G4aozdqYFCv2dU4kacaEcPzwg8dkZ</code>). Your rewards will be sent here.</li>
+                    </ol>
+                    <p>Retweet/quote-tweet such a post of someone else for additional rewards (sent to your latest address, if any).</p>
+                    <p>Below is an example tweet:</p>
+                    <TwitterTweetEmbed
+                      tweetId={'1457510685441732609'}
+                      options={{height:700}}
+                    />
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </Col>
+            <Col>
+              <Accordion>
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header><h5>Rewards and payouts</h5></Accordion.Header>
+                  <Accordion.Body className="social-faucet-instructions">
+                    <p>Get rewarded based on your activity:</p>
+                    <ul>
+                      <li>1 like on your post (including liking your own) = 1,000 Dingocoin</li>
+                      <li>1 retweet/quote-retweet on your post = 500 Dingocoin</li>
+                      <li>Retweet/quote-retweet someone else's post = 500 Dingocoin</li>
+                      <li>Retweeting/quote-retweeting your own post = no reward</li>
+                    </ul>
+                    <p>* Each user can earn up to 20,000 Dingocoins per week. Top 3 users for the week can earn up to 100,000 for that week!</p>
+                    <p>* Please ensure that you have a tweet in the current week associating your Twitter account to a Dingocoin reward address.</p>
+                    <p>* Your posts might be filtered away by Twitter if your account or activity is deemed too obscure or spammy. Please try increasing the number of followers, to wait for your account to mature, and/or to not spam too blatantly.</p>
+                    <p>* The leaderboard is updated at the start of every hour. Rewards are paid out every Sunday 4AM, UTC. The leaderboard also resets at that time. Only retweets and likes of tweets in the current week are scored.</p>
+                    <p>* Rates are not fixed. May have to adjust in case we fly to the moon.</p>
+                    <p><b>Feeling generous? Fund our social faucet to keep it running :) <code>DJAuG2t4PtUQhFQsTddK1rhDHgE3cFU5oW</code></b></p>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <DropdownButton title={socialFaucetView === "all-time" ? "All-time Ranking" : "This Week's Ranking"} className="mb-2">
+                <Dropdown.Item onClick={() => { setSocialFaucetView("all-time") }}>All-time Ranking</Dropdown.Item>
+                <Dropdown.Item onClick={() => { setSocialFaucetView("weekly") }}>This Week's Ranking</Dropdown.Item>
+              </DropdownButton>
+              <div className="social-faucet-board">
+                  {socialFaucetView === "all-time" &&
+                  <Table className="social-faucet-table" striped bordered responsive>
+                    <thead>
+                      <tr>
+                        <th className="col-1">#</th>
+                        <th className="col-7">User</th>
+                        <th className="col-2">
+                          <span className="table-dingo">
+                            <img alt="" src={DingocoinLogo}/>
+                          </span> earned
+                        </th>
+                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
+                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {socialFaucetHistoryRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
+                        <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
+                          <td className="col-1">{x.rank}</td>
+                          <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                          <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
+                          <td className="col-1">{x.retweets}</td>
+                          <td className="col-1">{x.likes}</td>
+                        </tr>
+                      ))}
+                      {filterText === "" &&
+                      <tr>
+                        <td colSpan="2" className="col-7"><b>Total</b></td>
+                        <td className="col-2"><b>{socialFaucetHistoryRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td className="col-1"><b>{socialFaucetHistoryRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                      </tr>
+                      }
+                    </tbody>
+                  </Table>
+                  }
+                  {socialFaucetView === "weekly" &&
+                  <Table className="social-faucet-table" striped bordered responsive>
+                    <thead>
+                      <tr>
+                        <th className="col-1">#</th>
+                        <th className="col-7">User</th>
+                        <th className="col-1 table-dingo">
+                          <span>
+                            <img alt="" src={DingocoinLogo}/>
+                          </span>&nbsp;earned
+                        </th>
+                        <th className="col-1">
+                          Score
+                        </th>
+                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faRetweet} /></th>
+                        <th className="col-1"><FontAwesomeIcon className="faicon" icon={faHeart} /></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
+                        <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
+                          <td className="col-1">{x.rank}</td>
+                          <td className="col-6"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                          {typeof x.address === 'undefined' &&
+                          <td className="col-2"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
+                          }
+                          {typeof x.address !== 'undefined' &&
+                          <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
+                          }
+                          <td className="col-1">{((0.5 * x.retweets + x.likes)).toFixed(1)}</td>
+                          <td className="col-1">{x.retweets}</td>
+                          <td className="col-1">{x.likes}</td>
+                        </tr>
+                      ))}
+                      {filterText === "" &&
+                      <tr>
+                        <td colSpan="2" className="col-7"><b>Total</b></td>
+                        <td className="col-2"><b>{socialFaucetRank.map((x) => x.score * 1000).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td className="col-1"></td>
+                        <td className="col-1"><b>{socialFaucetRank.map((x) => x.retweets).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                        <td className="col-1"><b>{socialFaucetRank.map((x) => x.likes).reduce((a, b) => a + b, 0).toLocaleString()}</b></td>
+                      </tr>
+                      }
+                    </tbody>
+                  </Table>
+                  }
+              </div>
+              <InputGroup className="mt-0">
+                <InputGroup.Text id="basic-addon1">
+                  <FontAwesomeIcon className="faicon" icon={faSearch} />
+                </InputGroup.Text>
+                <FormControl
+                  placeholder="Search user/handle..."
+                  value={filterQuery}
+                  onChange={event => setFilterQuery(event.target.value)}
+                />
+              </InputGroup>
+            </Col>
+          </Row>
+          <Row>
+            <h5 className="mt-3">Event of the week</h5>
+            <p>
+              <Image src={Parrot2Logo} style={{'height': '1.2rem'}}/>
+              Tag <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> in your Dingocoin post for a <b>2X</b> reward cap.
+              <Image src={Parrot2Logo} style={{'height': '1.2rem'}}/>
+              <br/>
+              <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
+              Be the first to get <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> to <i>retweet, quote, or reply</i> to your Dingocoin post, and win <b>5m Dingocoins</b>.
+              <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
+              <br/>
+            </p>
+            <p>
+              {theTomBradyScore !== null && <span>Community's current <i>Tom Brady score</i> (total number of tags): <b>{theTomBradyScore}</b></span>}
+            </p>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="section-b" id="burnboard">
+        <h2>DINGOCOIN BURNBOARD</h2>
+        <CustomDivider/>
+        <Container>
+          <Row>
+            <Col>
+              <p>Voluntarily burn your Dingocoins for fun.<br/>Rise to the top <i>because you can</i>.</p>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+            <Col className="col-6 justify-content-md-left">
+              <Accordion>
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header><h5>How to participate?</h5></Accordion.Header>
+                  <Accordion.Body className="social-faucet-instructions">
+                    <Container>
+                      <Row>
+                        <Col>
+                          <p><b>Burning without a message</b></p>
+                          <p>To burn your coins without leaving a message, simply send your coins to our burn address, <code>DDingopACKArewiLDASFckF9q7yQa7WRW1</code>.</p>
+                          <p><b>Burning with a message</b></p>
+                          <p>Leaving a message is trickier. You need to manually sign and send a special transaction containing the message, as follows:</p>
+                          <p>1) Open up the "Debug window" in your Dingocoin wallet and go to the "Console".</p>
+                          <p>2) Prepare the transaction: Run <code>createrawtransaction [] {"\"{\\\"DDingopACKArewiLDASFckF9q7yQa7WRW1\\\": XXXX, \\\"data\\\":\\\"YYYY\\\"}\""}</code> making sure to:
+                            <ul>
+                              <li>replace <code>XXXX</code> with the amount you want to burn;</li>
+                              <li>replace <code>YYYY</code> with a hex-encoding (<a href="https://www.online-toolz.com/tools/text-hex-convertor.php" target="_blank" rel="noreferred">convert here</a>) of your ASCII text message. Your text message should have at most 80 characters.</li>
+                            </ul>
+                          </p>
+                          <p>3) Fund the transaction: Take the hex output of (2) and run <code>fundrawtransaction HEX-FROM-STEP-2</code></p>
+                          <p>4) Sign the transaction: Take the hex output of (3) and run <code>signrawtransaction HEX-FROM-STEP-3</code></p>
+                          <p>5) Send the transaction: Take the hex output of (4) and run <code>sendrawtransaction HEX-FROM-STEP-4</code></p>
+                          <p>Your burn should appear on this board within the next 15 minutes.</p>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+              <br/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <h3>Burn rankings</h3>
+              <Table className="social-faucet-table" striped bordered responsive>
+                <thead>
+                  <tr>
+                    <th className="col-1">#</th>
+                    <th className="col-8">Burn Amount</th>
+                    <th className="col-3">Message</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {burnBoardList.map((x) => (
+                    <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
+                      <td className="col-1">{x.rank}</td>
+                      <td className="col-8">{x.amount}</td>
+                      <td className="col-3">{x.data}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="section-a" id="roadmap">
         <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
         <CustomDivider/>
         <p><i>Did you know?</i>
