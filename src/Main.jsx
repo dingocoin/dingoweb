@@ -744,11 +744,11 @@ function Main() {
                       <Row>
                         <Col>
                           <p><b>Burning without a message</b></p>
-                          <p>To burn your coins without leaving a message, simply send your coins to our burn address, <code>DDingopACKArewiLDASFckF9q7yQa7WRW1</code></p>
+                          <p>To burn your coins without leaving a message, simply send your coins to our burn address, <code>DMuchKingDingoSuchWi1dDogexxboXbKD</code></p>
                           <p><b>Burning with a message</b></p>
                           <p>Leaving a message is trickier. You need to manually sign and send a special transaction containing the message, as follows:</p>
                           <p>1) Open up the "Debug window" in your Dingocoin wallet and go to the "Console".</p>
-                          <p>2) Prepare the transaction: Run <code>createrawtransaction [] {"\"{\\\"DDingopACKArewiLDASFckF9q7yQa7WRW1\\\": XXXX, \\\"data\\\":\\\"YYYY\\\"}\""}</code> making sure to:
+                          <p>2) Prepare the transaction: Run <code>createrawtransaction [] {"\"{\\\"DMuchKingDingoSuchWi1dDogexxboXbKD\\\": XXXX, \\\"data\\\":\\\"YYYY\\\"}\""}</code> making sure to:
                             <ul>
                               <li>replace <code>XXXX</code> with the amount you want to burn;</li>
                               <li>replace <code>YYYY</code> with a hex-encoding (<a href="https://www.online-toolz.com/tools/text-hex-convertor.php" target="_blank" rel="noreferred"><u>convert here</u></a>) of your ASCII text message. Your text message should have at most 18 characters.</li>
