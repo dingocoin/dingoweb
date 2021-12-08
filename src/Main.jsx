@@ -757,7 +757,7 @@ function Main() {
                           <p>3) Fund the transaction: Take the hex output of (2) and run <code>fundrawtransaction HEX-FROM-STEP-2</code></p>
                           <p>4) Sign the transaction: Take the hex output of (3) and run <code>signrawtransaction HEX-FROM-STEP-3</code></p>
                           <p>5) Send the transaction: Take the hex output of (4) and run <code>sendrawtransaction HEX-FROM-STEP-4</code></p>
-                          <p>Your burn should appear on this board within the next 15 minutes.</p>
+                          <p>These steps burn message and your coins <i>permanently</i> onto Dingocoin's mainnet. Your burn should appear on this board within the next 15 minutes.</p>
                         </Col>
                       </Row>
                     </Container>
