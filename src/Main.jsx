@@ -775,17 +775,17 @@ function Main() {
               <Table className="social-faucet-table" striped bordered responsive>
                 <thead>
                   <tr>
-                    <th className="col-1">#</th>
-                    <th className="col-8">Burn Amount</th>
-                    <th className="col-3">Message</th>
+                    <th className="col-2">#</th>
+                    <th className="col-5">Burn Amount</th>
+                    <th className="col-5">Message</th>
                   </tr>
                 </thead>
                 <tbody>
                   {burnBoardList.map((x) => (
                     <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
-                      <td className="col-1">{x.rank}</td>
-                      <td className="col-8">{parseFloat(x.amount).toLocaleString()}</td>
-                      <td className="col-3">{x.data === null ? "" : Buffer.from(x.data, 'hex').toString('ascii')}</td>
+                      <td className="col-2">{x.rank}</td>
+                      <td className="col-5">{parseFloat(x.amount).toLocaleString()}</td>
+                      <td className="col-5">{x.data === null ? "" : Buffer.from(x.data, 'hex').toString('ascii')}</td>
                     </tr>
                   ))}
                 </tbody>
