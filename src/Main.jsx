@@ -734,8 +734,8 @@ function Main() {
               <p>Voluntarily burn your Dingocoins for fun.<br/>Rise to the top <i>because you can</i>.</p>
             </Col>
           </Row>
-          <Row className="justify-content-md-center">
-            <Col className="col-6 justify-content-md-left">
+          <Row>
+            <Col>
               <Accordion>
                 <Accordion.Item eventKey="0">
                   <Accordion.Header><h5>How to participate?</h5></Accordion.Header>
