@@ -751,7 +751,7 @@ function Main() {
                           <p>2) Prepare the transaction: Run <code>createrawtransaction [] {"\"{\\\"DDingopACKArewiLDASFckF9q7yQa7WRW1\\\": XXXX, \\\"data\\\":\\\"YYYY\\\"}\""}</code> making sure to:
                             <ul>
                               <li>replace <code>XXXX</code> with the amount you want to burn;</li>
-                              <li>replace <code>YYYY</code> with a hex-encoding (<a href="https://www.online-toolz.com/tools/text-hex-convertor.php" target="_blank" rel="noreferred">convert here</a>) of your ASCII text message. Your text message should have at most 80 characters.</li>
+                              <li>replace <code>YYYY</code> with a hex-encoding (<a href="https://www.online-toolz.com/tools/text-hex-convertor.php" target="_blank" rel="noreferred"><u>convert here</u></a>) of your ASCII text message. Your text message should have at most 80 characters.</li>
                             </ul>
                           </p>
                           <p>3) Fund the transaction: Take the hex output of (2) and run <code>fundrawtransaction HEX-FROM-STEP-2</code></p>
@@ -783,7 +783,7 @@ function Main() {
                     <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                       <td className="col-1">{x.rank}</td>
                       <td className="col-8">{x.amount}</td>
-                      <td className="col-3">{x.data}</td>
+                      <td className="col-3">{Buffer.from(x.data, 'hex').toString('ascii')}</td>
                     </tr>
                   ))}
                 </tbody>
