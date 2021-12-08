@@ -744,7 +744,7 @@ function Main() {
                       <Row>
                         <Col>
                           <p><b>Burning without a message</b></p>
-                          <p>To burn your coins without leaving a message, simply send your coins to our burn address, <code>DDingopACKArewiLDASFckF9q7yQa7WRW1</code>.</p>
+                          <p>To burn your coins without leaving a message, simply send your coins to our burn address, <code>DDingopACKArewiLDASFckF9q7yQa7WRW1</code></p>
                           <p><b>Burning with a message</b></p>
                           <p>Leaving a message is trickier. You need to manually sign and send a special transaction containing the message, as follows:</p>
                           <p>1) Open up the "Debug window" in your Dingocoin wallet and go to the "Console".</p>
