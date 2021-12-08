@@ -785,7 +785,7 @@ function Main() {
                     <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                       <td className="col-1">{x.rank}</td>
                       <td className="col-8">{x.amount}</td>
-                      <td className="col-3">{Buffer.from(x.data, 'hex').toString('ascii')}</td>
+                      <td className="col-3">{x.data === null ? "" : Buffer.from(x.data, 'hex').toString('ascii')}</td>
                     </tr>
                   ))}
                 </tbody>
