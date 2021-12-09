@@ -731,7 +731,7 @@ function Main() {
         <Container>
           <Row>
             <Col>
-              <p>Voluntarily burn your Dingocoins for fun.<br/>Rise to the top <i>because you can</i>.</p>
+              <p>Voluntarily burn your Dingocoins for fun.<br/>Rise to the top <i>because you can</i>.<br/><i>The ultimate answer to "but do you have burn mechanics?"</i></p>
             </Col>
           </Row>
           <Row>
