@@ -30,7 +30,7 @@ import CoinGeckoLogo from './assets/img/coingecko.png'
 
 // Controls.
 import { DropdownButton, Dropdown, InputGroup, FormControl, Table, Accordion,
-  Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image, ProgressBar } from 'react-bootstrap'
+  Button, Navbar, Nav, NavDropdown, Container, Row, Col, Modal, Image } from 'react-bootstrap'
 import CustomDivider from './CustomDivider.jsx'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 
@@ -48,7 +48,7 @@ function Main() {
   const [loadAllCommunityImages, setLoadAllCommunityImages] = React.useState(false);
   const [communityImages, setCommunityImages] = React.useState([]);
 
-  React.useEffect(async () => {
+  React.useEffect(() => {
     const authors = require('./assets/img/community/authors');
     let keys = Object.keys(authors);
     shuffleArr(keys);
@@ -56,7 +56,7 @@ function Main() {
     setCommunityImagesKeys(keys);
   }, []);
 
-  React.useEffect(async () => {
+  React.useEffect(() => {
     if (communityImagesAuthors.length === 0 || communityImagesKeys.length === 0) {
       return;
     }
@@ -94,88 +94,92 @@ function Main() {
   const [dingoPrice, setDingoPrice] = React.useState(null);
   const [dingoVolume, setDingoVolume] = React.useState(null);
   const [dingoCap, setDingoCap] = React.useState(null);
-  React.useEffect(async () => {
+  React.useEffect(() => {
+    (async () => {
+      // Get Dingocoin blockchain stats.
+      const dingoStats = await get('https://n4.dingocoin.org:8443/stats/dingo');
+      // It's late and I'm too tired to do it properly. Please replace this eventually.
+      const blockReward = dingoStats.height < 300000 ? 125000 : dingoStats.height < 400000 ? 62500 : dingoStats.height < 500000 ? 31250 : dingoStats.height < 600000 ? 15625 : 10000;
+      const blocksToHalving = dingoStats.height < 300000 ? 300000 - dingoStats.height
+        : dingoStats.height < 400000 ? 400000 - dingoStats.height
+        : dingoStats.height < 500000 ? 500000 - dingoStats.height
+        : dingoStats.height < 600000 ? 600000 - dingoStats.height
+        : null;
 
-    // Get Dingocoin blockchain stats.
-    const dingoStats = await get('https://n4.dingocoin.org:8443/stats/dingo');
-    // It's late and I'm too tired to do it properly. Please replace this eventually.
-    const blockReward = dingoStats.height < 300000 ? 125000 : dingoStats.height < 400000 ? 62500 : dingoStats.height < 500000 ? 31250 : dingoStats.height < 600000 ? 15625 : 10000;
-    const blocksToHalving = dingoStats.height < 300000 ? 300000 - dingoStats.height
-      : dingoStats.height < 400000 ? 400000 - dingoStats.height
-      : dingoStats.height < 500000 ? 500000 - dingoStats.height
-      : dingoStats.height < 600000 ? 600000 - dingoStats.height
-      : null;
+      // Get market stats.
+      const { volume, price, cap } = await get('https://n4.dingocoin.org:8443/stats/market');
 
-    // Get market stats.
-    const { volume, price, cap } = await get('https://n4.dingocoin.org:8443/stats/market');
-
-    setDingoStats({
-      supply: Math.round(dingoStats.total_amount),
-      blocks: dingoStats.height,
-      blockReward: blockReward,
-      blocksToHalving: blocksToHalving });
-    setDingoVolume(volume);
-    setDingoPrice(price);
-    setDingoCap(cap);
-
+      setDingoStats({
+        supply: Math.round(dingoStats.total_amount),
+        blocks: dingoStats.height,
+        blockReward: blockReward,
+        blocksToHalving: blocksToHalving });
+      setDingoVolume(volume);
+      setDingoPrice(price);
+      setDingoCap(cap);
+    })();
   }, []);
 
   const [socialFaucetRank, setSocialFaucetRank] = React.useState([]);
   const [socialFaucetHistoryRank, setSocialFaucetHistoryRank] = React.useState([]);
   const [socialFaucetView, setSocialFaucetView] = React.useState("weekly");
   const [theTomBradyScore, setTheTomBradyScore] = React.useState(null);
-  React.useEffect(async () => {
-    // Retireve.
-    const {users, metrics, historyMetrics, tomBradyScore, address} = await get('https://n4.dingocoin.org:8443/socialFaucet');
+  React.useEffect(() => {
+    (async () => {
+      // Retireve.
+      const {users, metrics, historyMetrics, tomBradyScore, address} = await get('https://n4.dingocoin.org:8443/socialFaucet');
 
-    // Collate.
-    const rank = [];
-    for (const userId of Object.keys(metrics)) {
-      rank.push({
-        name: users[userId].name,
-        handle: users[userId].screen_name,
-        score: metrics[userId].score,
-        likes: metrics[userId].like_count,
-        retweets: metrics[userId].retweet_count,
-        rank: null,
-        address: address[userId] });
-    }
-    rank.sort((a, b) => (0.5 * b.retweets + b.likes) - (0.5 * a.retweets + a.likes)); // Sort descending.
-    // Add rank index.
-    for (let i = 0; i < rank.length; i++) {
-      rank[i].rank = i + 1;
-    }
-    setSocialFaucetRank(rank);
+      // Collate.
+      const rank = [];
+      for (const userId of Object.keys(metrics)) {
+        rank.push({
+          name: users[userId].name,
+          handle: users[userId].screen_name,
+          score: metrics[userId].score,
+          likes: metrics[userId].like_count,
+          retweets: metrics[userId].retweet_count,
+          rank: null,
+          address: address[userId] });
+      }
+      rank.sort((a, b) => (0.5 * b.retweets + b.likes) - (0.5 * a.retweets + a.likes)); // Sort descending.
+      // Add rank index.
+      for (let i = 0; i < rank.length; i++) {
+        rank[i].rank = i + 1;
+      }
+      setSocialFaucetRank(rank);
 
-    // Collate history.
-    const historyRank = [];
-    for (const userId of Object.keys(historyMetrics)) {
-      historyRank.push({
-        name: users[userId].name,
-        handle: users[userId].screen_name,
-        score: historyMetrics[userId].score,
-        likes: historyMetrics[userId].like_count,
-        retweets: historyMetrics[userId].retweet_count,
-        rank: null });
-    }
-    historyRank.sort((a, b) => b.score - a.score); // Sort descending.
-    for (let i = 0; i < historyRank.length; i++) {
-      historyRank[i].rank = i + 1;
-    }
-    setSocialFaucetHistoryRank(historyRank);
+      // Collate history.
+      const historyRank = [];
+      for (const userId of Object.keys(historyMetrics)) {
+        historyRank.push({
+          name: users[userId].name,
+          handle: users[userId].screen_name,
+          score: historyMetrics[userId].score,
+          likes: historyMetrics[userId].like_count,
+          retweets: historyMetrics[userId].retweet_count,
+          rank: null });
+      }
+      historyRank.sort((a, b) => b.score - a.score); // Sort descending.
+      for (let i = 0; i < historyRank.length; i++) {
+        historyRank[i].rank = i + 1;
+      }
+      setSocialFaucetHistoryRank(historyRank);
 
-    // Set Tom Brady Score.
-    setTheTomBradyScore(tomBradyScore);
+      // Set Tom Brady Score.
+      setTheTomBradyScore(tomBradyScore);
+    })();
   }, []);
 
   const [burnBoardList, setBurnBoardList] = React.useState([]);
-  React.useEffect(async () => {
-    const burnList = await get('https://n4.dingocoin.org:8443/burnBoard');
-    burnList.sort((a, b) => parseFloat(b.amount) - parseFloat(a.amount));
-    for (let i = 0; i < burnList.length; i++) {
-      burnList[i].rank = i + 1;
-    }
-    setBurnBoardList(burnList);
+  React.useEffect(() => {
+    (async () => {
+      const burnList = await get('https://n4.dingocoin.org:8443/burnBoard');
+      burnList.sort((a, b) => parseFloat(b.amount) - parseFloat(a.amount));
+      for (let i = 0; i < burnList.length; i++) {
+        burnList[i].rank = i + 1;
+      }
+      setBurnBoardList(burnList);
+    })();
   }, []);
 
   const [filterQuery, setFilterQuery] = React.useState("");
@@ -381,7 +385,7 @@ function Main() {
                 <div className="logo-holder">
                   <Image src={SOLLogo}/>
                 </div>
-                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>SOL Wrap Custodian</Button></a>
+                <Button className="popup-button" variant="primary" disabled>SOL Wrap Custodian</Button>
                 <p><i>Wrap</i> Dingocoins to wDingocoins on SOL securely (coming soon...).</p>
               </div>
             </Col>
@@ -408,7 +412,7 @@ function Main() {
                 <div className="logo-holder">
                   <Image src={RobloxLogo}/>
                 </div>
-                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" disabled>Dingocoin City</Button></a>
+                <Button className="popup-button" variant="primary" disabled>Dingocoin City</Button>
                 <p>Hang out with the Dingo Pack on Roblox. Purchase in-game accessories with Dingocoins (coming soon...).</p>
               </div>
             </Col>
@@ -417,7 +421,7 @@ function Main() {
                 <div className="logo-holder">
                   <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
                 </div>
-                <a target="_blank" rel="noreferrer"><Button className="popup-button" variant="primary" onClick={() => { setMarketplaceModalShow(true); }}>Dingocoin Marketplace</Button></a>
+                <Button className="popup-button" variant="primary" onClick={() => { setMarketplaceModalShow(true); }}>Dingocoin Marketplace</Button>
                 <p>Purchase Dingocoin merchandise/NFTs designed and sold by community members.</p>
               </div>
             </Col>
@@ -630,7 +634,7 @@ function Main() {
                       {socialFaucetHistoryRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
                         <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                           <td className="col-1">{x.rank}</td>
-                          <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                          <td className="col-7"><a href={"https://twitter.com/" + x.handle} target="_blank" rel="noreferrer">{x.name}</a></td>
                           <td className="col-2">{(x.score * 1000).toLocaleString()}</td>
                           <td className="col-1">{x.retweets}</td>
                           <td className="col-1">{x.likes}</td>
@@ -669,7 +673,7 @@ function Main() {
                       {socialFaucetRank.filter((x) => x.name.toLowerCase().includes(filterText.toLowerCase()) || x.handle.toLowerCase().includes(filterText.toLowerCase())).map((x) => (
                         <tr key={x.rank} className={x.rank === 1 ? "gold" : x.rank === 2 ? "silver" : x.rank === 3 ? "bronze" : ""}>
                           <td className="col-1">{x.rank}</td>
-                          <td className="col-6"><a href={"https://twitter.com/" + x.handle} target="_blank">{x.name}</a></td>
+                          <td className="col-6"><a href={"https://twitter.com/" + x.handle} target="_blank" rel="noreferrer">{x.name}</a></td>
                           {typeof x.address === 'undefined' &&
                           <td className="col-2"><strike>{(x.score * 1000).toLocaleString()}</strike>*</td>
                           }
@@ -710,11 +714,11 @@ function Main() {
             <h5 className="mt-3">Event of the week</h5>
             <p>
               <Image src={Parrot2Logo} style={{'height': '1.2rem'}}/>
-              Tag <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> in your Dingocoin post for a <b>2X</b> reward cap.
+              Tag <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferrer">@TomBrady</a> in your Dingocoin post for a <b>2X</b> reward cap.
               <Image src={Parrot2Logo} style={{'height': '1.2rem'}}/>
               <br/>
               <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
-              Be the first to get <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferred">@TomBrady</a> to <i>retweet, quote, or reply</i> to your Dingocoin post, and win <b>5m Dingocoins</b>.
+              Be the first to get <a href="https://twitter.com/TomBrady" target="_blank" rel="noreferrer">@TomBrady</a> to <i>retweet, quote, or reply</i> to your Dingocoin post, and win <b>5m Dingocoins</b>.
               <Image src={Parrot1Logo} style={{'height': '1.2rem'}}/>
               <br/>
             </p>
@@ -751,7 +755,7 @@ function Main() {
                           <p>2) Prepare the transaction: Run <code>createrawtransaction [] {"\"{\\\"DMuchKingDingoSuchWi1dDogexxboXbKD\\\": XXXX, \\\"data\\\":\\\"YYYY\\\"}\""}</code> making sure to:
                             <ul>
                               <li>replace <code>XXXX</code> with the amount you want to burn;</li>
-                              <li>replace <code>YYYY</code> with a hex-encoding (<a href="https://www.online-toolz.com/tools/text-hex-convertor.php" target="_blank" rel="noreferred"><u>convert here</u></a>) of your ASCII text message. Your text message should have at most 75 characters.</li>
+                              <li>replace <code>YYYY</code> with a hex-encoding (<a href="https://www.online-toolz.com/tools/text-hex-convertor.php" target="_blank" rel="noreferrer"><u>convert here</u></a>) of your ASCII text message. Your text message should have at most 75 characters.</li>
                             </ul>
                           </p>
                           <p>3) Fund the transaction: Take the hex output of (2) and run <code>fundrawtransaction HEX-FROM-STEP-2</code></p>
@@ -759,7 +763,7 @@ function Main() {
                           <p>5) Send the transaction: Take the hex output of (4) and run <code>sendrawtransaction HEX-FROM-STEP-4</code></p>
                           <p>These steps burn message and your coins <i>permanently</i> onto Dingocoin's mainnet. Your burn should appear on this board within the next 15 minutes.</p>
                           <p><b>Can anyone steal the burned coins?</b></p>
-                          <p>The burn address was constructed arbitrarily without a private key, with nothing up our sleeves. Read what it says! The probability of anyone randomly generating the private key to this address is very near zero, so it is almost impossible for anyone to ever be able to claim the burned coins.<br/>In particular, we used <a href="https://github.com/joeuhren/generic-unspendable" target="_blank" rel="noreferred"><u>this tool</u></a> with arguments <code>./unspendable.py D MuchKingDingoSuchWi1dDogexx</code>. You can go ahead to regenerate this burn address in the same way for verification.</p>
+                          <p>The burn address was constructed arbitrarily without a private key, with nothing up our sleeves. Read what it says! The probability of anyone randomly generating the private key to this address is very near zero, so it is almost impossible for anyone to ever be able to claim the burned coins.<br/>In particular, we used <a href="https://github.com/joeuhren/generic-unspendable" target="_blank" rel="noreferrer"><u>this tool</u></a> with arguments <code>./unspendable.py D MuchKingDingoSuchWi1dDogexx</code>. You can go ahead to regenerate this burn address in the same way for verification.</p>
                         </Col>
                       </Row>
                     </Container>
@@ -771,7 +775,7 @@ function Main() {
           </Row>
           <Row>
             <Col>
-              <h3>Burn rankings</h3>
+              <h3>Burnboard</h3>
               <Table className="social-faucet-table" striped bordered responsive>
                 <thead>
                   <tr>
