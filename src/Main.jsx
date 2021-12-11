@@ -17,6 +17,7 @@ import {
   faLinux,
   faApple,
   faTwitter,
+  faInstagram,
   faTelegram,
   faReddit,
   faFacebook,
@@ -43,8 +44,7 @@ import SouthXchangeLogo from "./assets/img/southxchange.png";
 import MinerLogo from "./assets/img/transparent_miner.png";
 import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import BananaLogo from "./assets/img/happybanana.gif";
-import HotbitLogo from "./assets/img/hotbit.gif";
-import HotbitExLogo from "./assets/img/hotbitex.png";
+import HotbitLogo from "./assets/img/hotbitex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
 
 // Controls.
@@ -338,7 +338,6 @@ function Main() {
                   rel="noreferrer"
                   href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
                 >
-                  <img alt="" src={HotbitExLogo} />
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   target="_blank"
@@ -399,7 +398,7 @@ function Main() {
                 <br /> MUCH KING DINGO SUCH WILD DOGE
               </p>
             </Row>
-            <Row xs={2} md={2} lg={4} className="quick-actions">
+            <Row xs={2} md={4} lg={4} className="quick-actions">
               <Col>
                 <Button
                   className="popup-button"
@@ -457,7 +456,7 @@ function Main() {
                 </a>
               </Col>
             </Row>
-            <Row xs={5} md={5} lg={5} className="socials">
+            <Row xs={3} md={6} lg={6} className="socials">
               <Col className="socials-button-holder">
                 <a
                   target="_blank"
@@ -489,6 +488,15 @@ function Main() {
                 <a
                   target="_blank"
                   rel="noreferrer"
+                  href="https://www.instagram.com/dingocoin"
+                >
+                  <FontAwesomeIcon className="faicon" icon={faInstagram} />
+                </a>
+              </Col>
+              <Col className="socials-button-holder">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
                   href="https://www.reddit.com/r/dingocoin"
                 >
                   <FontAwesomeIcon className="faicon" icon={faReddit} />
@@ -507,10 +515,6 @@ function Main() {
           </Container>
         </div>
       </header>
-
-      <section>
-        <Image src={HotbitLogo} style={{ width: "100%" }} />
-      </section>
 
       <section className="section-b" id="about">
         <h2>ABOUT DINGOCOIN</h2>
@@ -538,7 +542,7 @@ function Main() {
               </p>
             </Col>
           </Row>
-          <Row xs={1} md={1} lg={3} className="projectFactsWrap">
+          <Row xs={1} md={3} lg={3} className="projectFactsWrap">
             <Col>
               <div className="item">
                 <p className="number">
@@ -571,7 +575,7 @@ function Main() {
               </div>
             </Col>
           </Row>
-          <Row xs={1} md={1} lg={4} className="projectFactsWrap">
+          <Row xs={1} md={2} lg={4} className="projectFactsWrap">
             <Col>
               <div className="item">
                 <p className="number">
@@ -1823,7 +1827,7 @@ function Main() {
                   href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
                 >
                   <Button variant="outline-primary">
-                    <img alt="" src={HotbitExLogo} />
+                    <img alt="" src={HotbitLogo} />
                   </Button>
                 </a>
               </Col>
