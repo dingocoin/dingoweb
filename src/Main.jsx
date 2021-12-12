@@ -290,7 +290,7 @@ function Main() {
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href="#projects">Projects</Nav.Link>
               <Nav.Link href="#wallets">Wallets</Nav.Link>
-              <Nav.Link href="#faucet">Social Faucet</Nav.Link>
+              <Nav.Link href="#faucet">Weekly Airdrop</Nav.Link>
               <Nav.Link href="#burnboard">Burnboard</Nav.Link>
               <Nav.Link href="#roadmap">Roadmap</Nav.Link>
               <NavDropdown className="navbar-important" title="Live Charts">
@@ -710,12 +710,11 @@ function Main() {
                 </div>
                 <a href="#faucet">
                   <Button className="popup-button" variant="primary">
-                    Dingocoin Social Faucet
+                    Dingocoin Weekly Airdrop
                   </Button>
                 </a>
                 <p>
-                  Earn Dingocoins simply by promoting Dingocoin on Twitter.{" "}
-                  <i>The ultimate version of airdrops.</i>
+                  Earn Dingocoins simply by promoting Dingocoin on Twitter.
                 </p>
               </div>
             </Col>
@@ -995,7 +994,7 @@ function Main() {
       </section>
 
       <section className="section-a" id="faucet">
-        <h2>DINGOCOIN SOCIAL FAUCET</h2>
+        <h2>DINGOCOIN WEEKLY AIRDROP</h2>
         <CustomDivider />
         <Container>
           <Row>
@@ -1021,7 +1020,7 @@ function Main() {
                       </li>
                       <li>
                         hashtags <code>#dingocoin</code> and{" "}
-                        <code>#socialfaucet</code>, and
+                        <code>#weeklyairdrop</code>, and
                       </li>
                       <li>
                         a hashtag with your Dingocoin address (e.g.{" "}
@@ -1033,11 +1032,6 @@ function Main() {
                       Retweet/quote-tweet such a post of someone else for
                       additional rewards (sent to your latest address, if any).
                     </p>
-                    <p>Below is an example tweet:</p>
-                    <TwitterTweetEmbed
-                      tweetId={"1457510685441732609"}
-                      options={{ height: 700 }}
-                    />
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
@@ -1093,7 +1087,7 @@ function Main() {
                     </p>
                     <p>
                       <b>
-                        Feeling generous? Fund our social faucet to keep it
+                        Feeling generous? Fund our weekly airdrop to keep it
                         running :){" "}
                         <code>DJAuG2t4PtUQhFQsTddK1rhDHgE3cFU5oW</code>
                       </b>
@@ -1681,7 +1675,7 @@ function Main() {
               <p>Play games using Dingocoin on Discord.</p>
             </li>
             <li className="event eventcompleted" data-date="Nov 2021">
-              <h3>Dingocoin Social Faucet released</h3>
+              <h3>Dingocoin Weekly Airdrop released</h3>
               <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
             </li>
             <li className="event eventcompleted" data-date="Nov 2021">
