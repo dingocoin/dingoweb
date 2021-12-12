@@ -202,7 +202,7 @@ function Main() {
   React.useEffect(() => {
     (async () => {
       // Retireve.
-      const { users, metrics, historyMetrics, tomBradyScore, address } =
+      const { users, metrics, historyMetrics, address } =
         await get("https://n4.dingocoin.org:8443/socialFaucet");
 
       // Collate.
