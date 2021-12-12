@@ -199,7 +199,6 @@ function Main() {
     []
   );
   const [socialFaucetView, setSocialFaucetView] = React.useState("weekly");
-  const [theTomBradyScore, setTheTomBradyScore] = React.useState(null);
   React.useEffect(() => {
     (async () => {
       // Retireve.
@@ -245,9 +244,6 @@ function Main() {
         historyRank[i].rank = i + 1;
       }
       setSocialFaucetHistoryRank(historyRank);
-
-      // Set Tom Brady Score.
-      setTheTomBradyScore(tomBradyScore);
     })();
   }, []);
 
@@ -1356,44 +1352,6 @@ function Main() {
                 />
               </InputGroup>
             </Col>
-          </Row>
-          <Row>
-            <h5 className="mt-3">Event of the week</h5>
-            <p>
-              <Image src={Parrot2Logo} style={{ height: "1.2rem" }} />
-              Tag{" "}
-              <a
-                href="https://twitter.com/TomBrady"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @TomBrady
-              </a>{" "}
-              in your Dingocoin post for a <b>2X</b> reward cap.
-              <Image src={Parrot2Logo} style={{ height: "1.2rem" }} />
-              <br />
-              <Image src={Parrot1Logo} style={{ height: "1.2rem" }} />
-              Be the first to get{" "}
-              <a
-                href="https://twitter.com/TomBrady"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @TomBrady
-              </a>{" "}
-              to <i>retweet, quote, or reply</i> to your Dingocoin post, and win{" "}
-              <b>5m Dingocoins</b>.
-              <Image src={Parrot1Logo} style={{ height: "1.2rem" }} />
-              <br />
-            </p>
-            <p>
-              {theTomBradyScore !== null && (
-                <span>
-                  Community's current <i>Tom Brady score</i> (total number of
-                  tags): <b>{theTomBradyScore}</b>
-                </span>
-              )}
-            </p>
           </Row>
         </Container>
       </section>
