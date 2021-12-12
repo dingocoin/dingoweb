@@ -239,7 +239,9 @@ function Main() {
           rank: null,
         });
       }
-      historyRank.sort((a, b) => b.score - a.score); // Sort descending.
+      historyRank.sort(
+        (a, b) => 0.5 * b.retweets + b.likes - (0.5 * a.retweets + a.likes)
+      ); // Sort descending.
       for (let i = 0; i < historyRank.length; i++) {
         historyRank[i].rank = i + 1;
       }
@@ -1131,10 +1133,7 @@ function Main() {
                         <th className="col-1">#</th>
                         <th className="col-7">User</th>
                         <th className="col-2">
-                          <span className="table-dingo">
-                            <img alt="" src={DingocoinLogo} />
-                          </span>{" "}
-                          earned
+                          Score
                         </th>
                         <th className="col-1">
                           <FontAwesomeIcon
@@ -1182,7 +1181,7 @@ function Main() {
                               </a>
                             </td>
                             <td className="col-2">
-                              {(x.score * 1000).toLocaleString()}
+                              {(0.5 * x.retweets + x.likes).toLocaleString()}
                             </td>
                             <td className="col-1">{x.retweets}</td>
                             <td className="col-1">{x.likes}</td>
@@ -1194,12 +1193,6 @@ function Main() {
                             <b>Total</b>
                           </td>
                           <td className="col-2">
-                            <b>
-                              {socialFaucetHistoryRank
-                                .map((x) => x.score * 1000)
-                                .reduce((a, b) => a + b, 0)
-                                .toLocaleString()}
-                            </b>
                           </td>
                           <td className="col-1">
                             <b>
