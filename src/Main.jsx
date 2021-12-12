@@ -1004,7 +1004,7 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-a" id="faucet">
+      <section className="section-a" id="airdrop">
         <h2>DINGOCOIN WEEKLY AIRDROP</h2>
         <CustomDivider />
         <Container>
