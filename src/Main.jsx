@@ -291,7 +291,7 @@ function Main() {
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href="#projects">Projects</Nav.Link>
               <Nav.Link href="#wallets">Wallets</Nav.Link>
-              <Nav.Link href="#faucet">Weekly Airdrop</Nav.Link>
+              <Nav.Link href="#airdrop">Weekly Airdrop</Nav.Link>
               <Nav.Link href="#burnboard">Burnboard</Nav.Link>
               <Nav.Link href="#roadmap">Roadmap</Nav.Link>
               <NavDropdown className="navbar-important" title="Live Charts">
@@ -338,7 +338,9 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                   href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
-                ></NavDropdown.Item>
+                >
+                  <img alt="" src={HotbitLogo} />
+                </NavDropdown.Item>
                 <NavDropdown.Item
                   target="_blank"
                   rel="noreferrer"
@@ -513,7 +515,9 @@ function Main() {
               </Col>
             </Row>
             <Row>
-              <h4 className="mb-0 mt-4">Season's Greetings from the Dingocoin Community!</h4>
+              <h4 className="mb-0 mt-4">
+                Season's Greetings from the Dingocoin Community!
+              </h4>
             </Row>
           </Container>
         </div>
@@ -717,7 +721,7 @@ function Main() {
                 <div className="logo-holder">
                   <Image src={SocialFaucetLogo} />
                 </div>
-                <a href="#faucet">
+                <a href="#airdrop">
                   <Button className="popup-button" variant="primary">
                     Dingocoin Weekly Airdrop
                   </Button>
@@ -1039,6 +1043,12 @@ function Main() {
                       Retweet/quote-tweet such a post of someone else for
                       additional rewards (sent to your latest address, if any).
                     </p>
+                    <p>Below is an example tweet:
+                    <TwitterTweetEmbed
+                      tweetId={"1470096073809084429"}
+                      options={{ height: 700 }}
+                    />
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
@@ -1358,6 +1368,7 @@ function Main() {
                   onChange={(event) => setFilterQuery(event.target.value)}
                 />
               </InputGroup>
+              <p className="mt-4"><b>Important update: we now require the <code>#weeklyairdrop</code> hashtag instead of <code>#socialfaucet</code>.</b></p>
             </Col>
           </Row>
         </Container>
