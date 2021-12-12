@@ -46,6 +46,8 @@ import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import BananaLogo from "./assets/img/happybanana.gif";
 import HotbitLogo from "./assets/img/hotbitex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
+import ChristmasVideo from "./assets/img/christmas.mp4";
+import ChristmasPreview from "./assets/img/christmaspreview.png";
 
 // Controls.
 import {
@@ -202,8 +204,9 @@ function Main() {
   React.useEffect(() => {
     (async () => {
       // Retireve.
-      const { users, metrics, historyMetrics, address } =
-        await get("https://n4.dingocoin.org:8443/socialFaucet");
+      const { users, metrics, historyMetrics, address } = await get(
+        "https://n4.dingocoin.org:8443/socialFaucet"
+      );
 
       // Collate.
       const rank = [];
@@ -335,8 +338,7 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                   href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
-                >
-                </NavDropdown.Item>
+                ></NavDropdown.Item>
                 <NavDropdown.Item
                   target="_blank"
                   rel="noreferrer"
@@ -510,9 +512,18 @@ function Main() {
                 </a>
               </Col>
             </Row>
+            <Row>
+              <h4 className="mb-0 mt-4">Season's Greetings from the Dingocoin Community!</h4>
+            </Row>
           </Container>
         </div>
       </header>
+
+      <section>
+        <video controls style={{ width: "100%" }} poster={ChristmasPreview}>
+          <source src={ChristmasVideo} />
+        </video>
+      </section>
 
       <section className="section-b" id="about">
         <h2>ABOUT DINGOCOIN</h2>
@@ -711,9 +722,7 @@ function Main() {
                     Dingocoin Weekly Airdrop
                   </Button>
                 </a>
-                <p>
-                  Earn Dingocoins simply by promoting Dingocoin on Twitter.
-                </p>
+                <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
               </div>
             </Col>
             <Col>
@@ -1132,9 +1141,7 @@ function Main() {
                       <tr>
                         <th className="col-1">#</th>
                         <th className="col-7">User</th>
-                        <th className="col-2">
-                          Score
-                        </th>
+                        <th className="col-2">Score</th>
                         <th className="col-1">
                           <FontAwesomeIcon
                             className="faicon"
@@ -1183,8 +1190,12 @@ function Main() {
                             <td className="col-2">
                               {(0.5 * x.retweets + x.likes).toFixed(1)}
                             </td>
-                            <td className="col-1">{x.retweets.toLocaleString()}</td>
-                            <td className="col-1">{x.likes.toLocaleString()}</td>
+                            <td className="col-1">
+                              {x.retweets.toLocaleString()}
+                            </td>
+                            <td className="col-1">
+                              {x.likes.toLocaleString()}
+                            </td>
                           </tr>
                         ))}
                       {filterText === "" && (
@@ -1192,8 +1203,7 @@ function Main() {
                           <td colSpan="2" className="col-7">
                             <b>Total</b>
                           </td>
-                          <td className="col-2">
-                          </td>
+                          <td className="col-2"></td>
                           <td className="col-1">
                             <b>
                               {socialFaucetHistoryRank
@@ -1294,8 +1304,12 @@ function Main() {
                             <td className="col-1">
                               {(0.5 * x.retweets + x.likes).toFixed(1)}
                             </td>
-                            <td className="col-1">{x.retweets.toLocaleString()}</td>
-                            <td className="col-1">{x.likes.toLocaleString()}</td>
+                            <td className="col-1">
+                              {x.retweets.toLocaleString()}
+                            </td>
+                            <td className="col-1">
+                              {x.likes.toLocaleString()}
+                            </td>
                           </tr>
                         ))}
                       {filterText === "" && (
