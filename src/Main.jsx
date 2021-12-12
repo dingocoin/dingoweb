@@ -1235,8 +1235,8 @@ function Main() {
                     <thead>
                       <tr>
                         <th className="col-1">#</th>
-                        <th className="col-7">User</th>
-                        <th className="col-1 table-dingo">
+                        <th className="col-6">User</th>
+                        <th className="col-2 table-dingo">
                           <span>
                             <img alt="" src={DingocoinLogo} />
                           </span>
