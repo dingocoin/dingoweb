@@ -1181,10 +1181,10 @@ function Main() {
                               </a>
                             </td>
                             <td className="col-2">
-                              {(0.5 * x.retweets + x.likes).toLocaleString()}
+                              {(0.5 * x.retweets + x.likes).toFixed(1)}
                             </td>
-                            <td className="col-1">{x.retweets}</td>
-                            <td className="col-1">{x.likes}</td>
+                            <td className="col-1">{x.retweets.toLocaleString()}</td>
+                            <td className="col-1">{x.likes.toLocaleString()}</td>
                           </tr>
                         ))}
                       {filterText === "" && (
@@ -1294,8 +1294,8 @@ function Main() {
                             <td className="col-1">
                               {(0.5 * x.retweets + x.likes).toFixed(1)}
                             </td>
-                            <td className="col-1">{x.retweets}</td>
-                            <td className="col-1">{x.likes}</td>
+                            <td className="col-1">{x.retweets.toLocaleString()}</td>
+                            <td className="col-1">{x.likes.toLocaleString()}</td>
                           </tr>
                         ))}
                       {filterText === "" && (
