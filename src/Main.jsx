@@ -230,6 +230,7 @@ function Main() {
       }
       setSocialFaucetRank(rank);
 
+      /*
       // Collate history.
       const historyRank = [];
       for (const userId of Object.keys(historyMetrics)) {
@@ -249,6 +250,7 @@ function Main() {
         historyRank[i].rank = i + 1;
       }
       setSocialFaucetHistoryRank(historyRank);
+      */
     })();
   }, []);
 
@@ -690,12 +692,17 @@ function Main() {
                 <div className="logo-holder">
                   <Image src={SOLLogo} />
                 </div>
-                <Button className="popup-button" variant="primary" disabled>
-                  SOL Wrap Custodian
-                </Button>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://wrap.dingocoin.org"
+                >
+                  <Button className="popup-button" variant="primary">
+                    SOL Wrap Custodian
+                  </Button>
+                </a>
                 <p>
-                  <i>Wrap</i> Dingocoins to wDingocoins on SOL securely (coming
-                  soon...).
+                  <i>Wrap</i> Dingocoins to wDingocoins on SOL securely.
                 </p>
               </div>
             </Col>
@@ -997,7 +1004,44 @@ function Main() {
 
               <div className="wallet-section">
                 <p>wDingocoin on Solana (SOL)</p>
-                <h5>Coming soon...</h5>
+                <Container>
+                  <Row>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon
+                          className="faicon"
+                          icon={faFileContract}
+                        />
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                        >
+                          <Button className="popup-button" variant="primary">
+                            SPL Token
+                          </Button>
+                        </a>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="wallet-download">
+                        <FontAwesomeIcon
+                          className="faicon"
+                          icon={faExchangeAlt}
+                        />
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href="https://wrap.dingocoin.org"
+                        >
+                          <Button className="popup-button" variant="primary">
+                            Wrap Custodian
+                          </Button>
+                        </a>
+                      </div>
+                    </Col>
+                  </Row>
+                </Container>
               </div>
             </Col>
           </Row>
@@ -1677,7 +1721,7 @@ function Main() {
                 </b>
               </p>
             </li>
-            <li className="event eventincomplete" data-date="~ Dec 2021">
+            <li className="event eventcompleted" data-date="Dec 2021">
               <p>Wrapped Dingocoin released on SOL</p>
               <p>Hold and trade Dingocoin on SOL.</p>
             </li>
