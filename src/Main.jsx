@@ -231,18 +231,21 @@ function Main() {
       }
       setSocialFaucetRank(rank);
 
-      /*
+
+      console.log(historyMetrics);
       // Collate history.
       const historyRank = [];
       for (const userId of Object.keys(historyMetrics)) {
-        historyRank.push({
-          name: users[userId].name,
-          handle: users[userId].screen_name,
-          score: historyMetrics[userId].score,
-          likes: historyMetrics[userId].like_count,
-          retweets: historyMetrics[userId].retweet_count,
-          rank: null,
-        });
+        if (userId in users) {
+          historyRank.push({
+            name: users[userId].name,
+            handle: users[userId].screen_name,
+            score: historyMetrics[userId].score,
+            likes: historyMetrics[userId].like_count,
+            retweets: historyMetrics[userId].retweet_count,
+            rank: null,
+          });
+        }
       }
       historyRank.sort(
         (a, b) => 0.5 * b.retweets + b.likes - (0.5 * a.retweets + a.likes)
@@ -251,7 +254,6 @@ function Main() {
         historyRank[i].rank = i + 1;
       }
       setSocialFaucetHistoryRank(historyRank);
-      */
     })();
   }, []);
 
@@ -1175,7 +1177,6 @@ function Main() {
           </Row>
           <Row>
             <Col>
-              {/*
               <DropdownButton
                 title={
                   socialFaucetView === "all-time"
@@ -1199,8 +1200,6 @@ function Main() {
                   This Week's Ranking
                 </Dropdown.Item>
               </DropdownButton>
-              */}
-              <h4>This Week's Ranking</h4>
               <div className="social-faucet-board">
                 {socialFaucetView === "all-time" && (
                   <Table
