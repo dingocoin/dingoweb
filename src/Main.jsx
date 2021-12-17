@@ -1175,6 +1175,7 @@ function Main() {
           </Row>
           <Row>
             <Col>
+              {/*
               <DropdownButton
                 title={
                   socialFaucetView === "all-time"
@@ -1198,6 +1199,8 @@ function Main() {
                   This Week's Ranking
                 </Dropdown.Item>
               </DropdownButton>
+              */}
+              <h4>This Week's Ranking</h4>
               <div className="social-faucet-board">
                 {socialFaucetView === "all-time" && (
                   <Table
