@@ -27,6 +27,7 @@ import {
 import BSCLogo from "./assets/img/bsc.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
 import CoinPaprikaLogo from "./assets/img/coinpaprika.png";
+import CoinMarketCapLogo from "./assets/img/coinmarketcap.png";
 import CratexIoLogo from "./assets/img/cratexio.png";
 import DelionDexLogo from "./assets/img/deliondex.png";
 import DexGuruLogo from "./assets/img/dex-guru.png";
@@ -308,6 +309,13 @@ function Main() {
                 <NavDropdown.Item
                   target="_blank"
                   rel="noreferrer"
+                  href="https://coinmarketcap.com/currencies/dingocoin/"
+                >
+                  <img alt="" src={CoinMarketCapLogo} />
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
                   href="https://www.coingecko.com/en/coins/dingocoin"
                 >
                   <img alt="" src={CoinGeckoLogo} />
@@ -515,6 +523,13 @@ function Main() {
                   <FontAwesomeIcon className="faicon" icon={faFacebook} />
                 </a>
               </Col>
+            </Row>
+            <Row>
+              <h3 className="mt-4">
+                <Image src={Parrot1Logo} style={{'height': '1.7rem'}}/>
+                WE ARE FINALLY LIVE ON COINMARKETCAP!
+                <Image src={Parrot1Logo} style={{'height': '1.7rem'}}/>
+              </h3>
             </Row>
             <Row>
               <h4 className="mb-0 mt-4">
@@ -1722,7 +1737,7 @@ function Main() {
               </p>
             </li>
             <li className="event eventcompleted" data-date="Dec 2021">
-              <p>Wrapped Dingocoin released on SOL</p>
+              <h3>Wrapped Dingocoin released on SOL</h3>
               <p>Hold and trade Dingocoin on SOL.</p>
             </li>
             <li className="event eventincomplete" data-date="~ Jan 2022">
@@ -1769,7 +1784,7 @@ function Main() {
                 <h5>Live Charts</h5>
               </Col>
             </Row>
-            <Row>
+            <Row xs={3} md={3} lg={3}>
               <Col>
                 <a
                   target="_blank"
@@ -1778,6 +1793,17 @@ function Main() {
                 >
                   <Button variant="outline-primary">
                     <img alt="" src={CoinPaprikaLogo} />
+                  </Button>
+                </a>
+              </Col>
+              <Col>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://coinmarketcap.com/currencies/dingocoin/"
+                >
+                  <Button variant="outline-primary">
+                    <img alt="" src={CoinMarketCapLogo} />
                   </Button>
                 </a>
               </Col>
@@ -1833,7 +1859,7 @@ function Main() {
                 <h5>Exchanges</h5>
               </Col>
             </Row>
-            <Row>
+            <Row xs={3} md={3} lg={3}>
               <Col>
                 <a
                   target="_blank"
