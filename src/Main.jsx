@@ -3,26 +3,20 @@ import React from "react";
 // Assets.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faExchangeAlt,
   faRobot,
-  faFileContract,
-  faPassport,
   faHeart,
   faRetweet,
   faSearch,
   faShoppingCart,
+  faPencilRuler
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faWindows,
-  faLinux,
-  faApple,
   faTwitter,
   faInstagram,
   faTelegram,
   faReddit,
   faFacebook,
   faDiscord,
-  faGooglePlay,
 } from "@fortawesome/free-brands-svg-icons";
 import BSCLogo from "./assets/img/bsc.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
@@ -49,6 +43,7 @@ import HotbitLogo from "./assets/img/hotbitex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
 import ChristmasVideo from "./assets/img/christmas.mp4";
 import ChristmasPreview from "./assets/img/christmaspreview.png";
+import WDingocoinLogo from "./assets/img/wdingocoin.png"
 
 // Controls.
 import {
@@ -294,11 +289,40 @@ function Main() {
           <Navbar.Collapse>
             <Nav className="ms-auto">
               <Nav.Link href="#about">About</Nav.Link>
-              <Nav.Link href="#projects">Projects</Nav.Link>
-              <Nav.Link href="#wallets">Wallets</Nav.Link>
+              <Nav.Link href="#ecosystem">Ecosystem</Nav.Link>
               <Nav.Link href="#airdrop">Weekly Airdrop</Nav.Link>
-              <Nav.Link href="#burnboard">Burnboard</Nav.Link>
               <Nav.Link href="#roadmap">Roadmap</Nav.Link>
+              <NavDropdown className="navbar-important" title="Resources">
+                <NavDropdown.Header>Resources</NavDropdown.Header>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
+                   href="/DingocoinWhitePaper.pdf"
+                >
+                  Whitepaper
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
+                   href="https://miningpoolstats.stream/dingocoin"
+                >
+                  Mining Info
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
+                   href="https://explorer.dingocoin.org/"
+                >
+                  Explorer (Official, with API)
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
+                   href="https://openchains.info/coin/dingocoin/blocks"
+                >
+                  Explorer (Open Chains)
+                </NavDropdown.Item>
+              </NavDropdown>
               <NavDropdown className="navbar-important" title="Live Charts">
                 <NavDropdown.Header>Live Charts</NavDropdown.Header>
                 <NavDropdown.Item
@@ -412,7 +436,7 @@ function Main() {
                 <br /> MUCH KING DINGO SUCH WILD DOGE
               </p>
             </Row>
-            <Row xs={2} md={4} lg={4} className="quick-actions">
+            <Row xs={1} md={1} lg={1} className="quick-actions">
               <Col>
                 <Button
                   className="popup-button"
@@ -423,51 +447,6 @@ function Main() {
                 >
                   Buy Dingocoin
                 </Button>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  href="https://miningpoolstats.stream/dingocoin"
-                  rel="noreferrer"
-                >
-                  <Button className="popup-button" variant="primary">
-                    Mine Dingocoin
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <Dropdown>
-                  <Dropdown.Toggle className="popup-button">
-                    Explorer
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://explorer.dingocoin.org"
-                    >
-                      Official (with API)
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://openchains.info/coin/dingocoin/blocks"
-                    >
-                      Open Chains
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  href="/DingocoinWhitePaper.pdf"
-                  rel="noreferrer"
-                >
-                  <Button className="popup-button" variant="primary">
-                    Whitepaper
-                  </Button>
-                </a>
               </Col>
             </Row>
             <Row xs={3} md={6} lg={6} className="socials">
@@ -527,11 +506,11 @@ function Main() {
               </Col>
             </Row>
             <Row>
-              <h3 className="mt-4">
+              <h4 className="mt-4">
                 <Image src={Parrot1Logo} style={{'height': '1.7rem'}}/>
                 WE ARE FINALLY LIVE ON COINMARKETCAP!
                 <Image src={Parrot1Logo} style={{'height': '1.7rem'}}/>
-              </h3>
+              </h4>
             </Row>
             <Row>
               <h4 className="mb-0 mt-4">
@@ -569,12 +548,12 @@ function Main() {
                 We believe in building community-driven projects around the
                 same, universal Dingocoin; establishing uses and thus concrete
                 value for Dingocoin, instead of overmarketing like the common
-                crypto Ponzis/scams. Have something fun in mind? Throw it out
+                crypto scams. Have something fun in mind? Throw it out
                 and we'll help.
               </p>
             </Col>
           </Row>
-          <Row xs={1} md={3} lg={3} className="projectFactsWrap">
+          <Row xs={2} md={2} lg={3} className="projectFactsWrap justify-content-center">
             <Col>
               <div className="item">
                 <p className="number">
@@ -607,7 +586,7 @@ function Main() {
               </div>
             </Col>
           </Row>
-          <Row xs={1} md={2} lg={4} className="projectFactsWrap">
+          <Row xs={2} md={2} lg={4} className="projectFactsWrap justify-content-center">
             <Col>
               <div className="item">
                 <p className="number">
@@ -656,178 +635,189 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-a" id="projects">
-        <h2>COMMUNITY-DRIVEN PROJECTS</h2>
+      <section className="section-a" id="ecosystem">
+        <h2>ECOSYSTEM</h2>
         <CustomDivider />
-        <p>
-          Designed and maintained by our very own community members. <br />
-          Have something fun in mind? Throw it out and we'll help.
-        </p>
-        <Container>
-          <Row xs={1} md={2} lg={3}>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={MinerLogo} />
+        <Container className="ecosystem-section">
+          <Row>
+            <h4>Dingocoin Infrastructure and Markets</h4>
+            <p>
+              Dingocoin exists <i>both</i> as a coin on its own blockchain, <i>and</i> as wrapped tokens (wDingocoin) on BSC and SOL. Our goal is to make Dingocoin highly accessible, allowing you to get Dingocoins from both centralized exchanges (CEX) and decentralized exchanges (DEX). They are exchangeable 1:1 at anytime, via our unique community-decentralized wrap custodians.
+            </p>
+            <Container>
+            <Row xs={1} md={2} lg={3} className="projects justify-content-center">
+              <Col>
+                <div className="project-card">
+                  <div className="logo-holder">
+                    <Image src={DingocoinLogo} />
+                  </div>
+                  <h5>Dingocoin</h5>
+                  <p>
+                    <a className="simple-link" onClick={() => {setExchangesModalShow(true);}}>Buy Dingocoin &#9658;</a>
+                    <br/>
+                    <a href="https://coinpaprika.com/coin/dingo-dingocoin/" target="_blank" rel="noreferrer" className="simple-link">Live chart &#9658;</a>
+                    <br/>
+                    <a href="https://github.com/dingocoin/dingocoin/releases/latest" target="_blank" rel="noreferrer" className="simple-link">Official wallets &#9658;</a>
+                    <br/>
+                    <a href="https://beehivewallet.link/" target="_blank" rel="noreferrer" className="simple-link">Unofficial wallets &#9658;</a>
+                    <br/>
+                    <a href="https://github.com/dingocoin/dingocoin" target="_blank" rel="noreferrer" className="simple-link">Source code &#9658;</a>
+                    <br/>
+                    <a href="https://miningpoolstats.stream/dingocoin" target="_blank" rel="noreferrer" className="simple-link">Mine Dingocoin &#9658;</a>
+                  </p>
                 </div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://github.com/dingocoin/dingocoin"
-                >
-                  <Button className="popup-button" variant="primary">
-                    Scrypt AuxPoW Blockchain
-                  </Button>
-                </a>
-                <p>
-                  Dingocoin is backed by its own open-source,
-                  community-maintained Scrypt AuxPoW blockchain.
-                </p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={BSCLogo} />
+              </Col>
+              <Col>
+                <div className="project-card">
+                  <div className="logo-holder">
+                    <Image src={WDingocoinLogo} />
+                    {" "}
+                    <Image src={BSCLogo} />
+                  </div>
+                  <h5>wDingocoin (BSC)</h5>
+                  <p>
+                    <a className="simple-link" onClick={() => {setExchangesModalShow(true);}}>Buy wDingocoin (BSC) &#9658;</a>
+                    <br/>
+                    <a href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4" target="_blank" rel="noreferrer" className="simple-link">Live chart &#9658;</a>
+                    <br/>
+                    <a href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4" target="_blank" rel="noreferrer" className="simple-link">Smart contract &#9658;</a>
+                    <br/>
+                    <a href="https://wrap.dingocoin.org" target="_blank" rel="noreferrer" className="simple-link">Wrap custodian &#9658;</a>
+                  </p>
                 </div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://wrap.dingocoin.org"
-                >
-                  <Button className="popup-button" variant="primary">
-                    BSC Wrap Custodian
-                  </Button>
-                </a>
-                <p>
-                  <i>Wrap</i> Dingocoins to wDingocoins on BSC securely.
-                </p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={SOLLogo} />
+              </Col>
+              <Col>
+                <div className="project-card">
+                  <div className="logo-holder">
+                    <Image src={WDingocoinLogo} />
+                    {" "}
+                    <Image src={SOLLogo} />
+                  </div>
+                  <h5>wDingocoin (SOL)</h5>
+                  <p>
+                    <a href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3" target="_blank" rel="noreferrer" className="simple-link">SPL token &#9658;</a>
+                    <br/>
+                    <a href="https://wrap.dingocoin.org" target="_blank" rel="noreferrer" className="simple-link">Wrap custodian &#9658;</a>
+                  </p>
                 </div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://wrap.dingocoin.org"
-                >
-                  <Button className="popup-button" variant="primary">
-                    SOL Wrap Custodian
-                  </Button>
-                </a>
-                <p>
-                  <i>Wrap</i> Dingocoins to wDingocoins on SOL securely.
-                </p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={DingosinoLogo} />
-                </div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://discord.gg/9advvJ4z5f"
-                >
-                  <Button className="popup-button" variant="primary">
-                    Dingosino
-                  </Button>
-                </a>
-                <p>Play games using Dingocoins on Discord.</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={SocialFaucetLogo} />
-                </div>
-                <a href="#airdrop">
-                  <Button className="popup-button" variant="primary">
-                    Dingocoin Weekly Airdrop
-                  </Button>
-                </a>
-                <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={RobloxLogo} />
-                </div>
-                <Button className="popup-button" variant="primary" disabled>
-                  Dingocoin City
-                </Button>
-                <p>
-                  Hang out with the Dingo Pack on Roblox. Purchase in-game
-                  accessories with Dingocoins (coming soon...).
-                </p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
-                </div>
-                <Button
-                  className="popup-button"
-                  variant="primary"
-                  onClick={() => {
-                    setMarketplaceModalShow(true);
-                  }}
-                >
-                  Dingocoin Marketplace
-                </Button>
-                <p>
-                  Purchase Dingocoin merchandise/NFTs designed and sold by
-                  community members.
-                </p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faRobot} />
-                </div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://discord.gg/y3J946HFQM"
-                >
-                  <Button className="popup-button" variant="primary">
-                    Discord Faucet/Tip Bot
-                  </Button>
-                </a>
-                <p>
-                  Get free sample Dingocoins. Tip Dingocoins to others easily.
-                </p>
-              </div>
-            </Col>
-            <Col>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faRobot} />
-                </div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://discord.gg/y3J946HFQM"
-                >
-                  <Button className="popup-button" variant="primary">
-                    Discord Price Bot
-                  </Button>
-                </a>
-                <p>
-                  Get live alerts for arbitrage opportunities across exchanges.
-                </p>
-              </div>
-            </Col>
+              </Col>
+            </Row>
+            </Container>
           </Row>
-          <Row className="community-art">
-            <CustomDivider />
+          <Row className="mt-4">
+            <h4>Community and Social</h4>
+            <p>
+              Dingocoin prides itself as a completely community-driven project. All innovation and development are contributed entirely by the community. The Dingocoin pack takes the growth of Dingocoin into its own hands, focusing on building progress <i>by actually doing work</i>. We do not sit around and wait for the impossible to happen, nor do we attempt to overmarket. The Dingocoin pack is wild and unstoppable. Have an idea? Join us today, throw it out and we'll help!
+            </p>
+            <Container>
+              <Row xs={1} md={2} lg={3} className="projects justify-content-center">
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <FontAwesomeIcon className="faicon" icon={faDiscord} style={{color: '#728ad6'}} />
+                      {" "}
+                      <FontAwesomeIcon className="faicon" icon={faTelegram} style={{color: '#0088CC'}} />
+                    </div>
+                    <h5>Community Channels</h5>
+                    <p>Join the Dingo disco.<br/>
+                      <a className="simple-link" href="https://discord.gg/y3J946HFQM" target="_blank" rel="noreferrer">
+                        Discord &#9658;
+                      </a><br/>
+                      <a className="simple-link" href="https://t.me/DingoCoinTalk" target="_blank" rel="noreferrer">
+                        Telegram &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <FontAwesomeIcon className="faicon" icon={faRobot} />
+                    </div>
+                    <h5>Discord Faucet/Tip Bot</h5>
+                    <p>Get free sample Dingocoins.<br/> Tip Dingocoins to others easily.<br/>
+                      <a className="simple-link" href="https://discord.gg/y3J946HFQM" target="_blank" rel="noreferrer">
+                        Discord &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <Image src={SocialFaucetLogo} />
+                    </div>
+                    <h5>Weekly Airdrop</h5>
+                    <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.<br/>
+                      <a className="simple-link" href="#airdrop">
+                        Participate now &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </Row>
+          <Row className="mt-4">
+            <h4>Fun and Art</h4>
+            <p>The Dingocoin community loves its fun and art. We are working on highly innovative games and platforms which use Dingocoin to function -- including a Discord game server; a unique Dingocoin-themed Roblox game that lets you purchase in-game accessories using Dingocoin; and a daring attempt to run a better, novel NFT platform on the Dingocoin blockchain. We also have a hyperactive community producing a constant stream of artwork, memes, and merchandise.</p>
+            <Container>
+            <Row xs={1} md={2} lg={3} className="projects justify-content-center">
+              <Col>
+                <div className="project-card">
+                  <div className="logo-holder">
+                    <Image src={DingosinoLogo} />
+                  </div>
+                  <h5>Dingosino</h5>
+                  <p>Play games using Dingocoins on Discord.<br/>
+                    <a className="simple-link" href="https://discord.gg/9advvJ4z5f" target="_blank" rel="noreferrer">
+                      Join now &#9658;
+                    </a>
+                  </p>
+                </div>
+              </Col>
+              <Col>
+                <div className="project-card">
+                  <div className="logo-holder">
+                    <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
+                  </div>
+                  <h5>Dingocoin Marketplace</h5>
+                  <p>Purchase Dingocoin merchandise/NFTs designed and sold by
+                  community members.
+                  <br/>
+                  <a className="simple-link" onClick={() => {setMarketplaceModalShow(true);}}>
+                      View merchandise &#9658;
+                    </a>
+                  </p>
+                </div>
+              </Col>
+              <Col>
+                <div className="project-card">
+                  <div className="logo-holder">
+                    <Image src={RobloxLogo} />
+                  </div>
+                  <h5>Dingocoin City</h5>
+                  <p>Hang out with the Dingo Pack on Roblox.<br/>Purchase in-game accessories with Dingocoins<br/>
+                    <i>(Coming soon...)</i>
+                  </p>
+                </div>
+              </Col>
+              <Col>
+                <div className="project-card">
+                  <div className="logo-holder">
+                    <FontAwesomeIcon className="faicon" icon={faPencilRuler} />
+                  </div>
+                  <h5>NFTs on Dingocoin</h5>
+                  <p>A daring project to run NFTs on-chain -- featuring decentralized, non-custodial marketplaces; with <i>truly privatizable</i> artwork, at ultra-low costs.
+                    <br/>
+                    <i>(Coming soon...)</i>
+                  </p>
+                </div>
+              </Col>
+            </Row>
+            </Container>
+          </Row>
+          <Row className="community-art justify-content-center" style={{'text-align': 'center'}}>
             <h3>
               <Image src={BananaLogo} />
               Community Art
@@ -878,194 +868,7 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-b" id="wallets">
-        <h2>DINGOCOIN WALLETS</h2>
-        <CustomDivider />
-        <Container>
-          <Row xs={1} md={1} lg={2}>
-            <Col>
-              <h3>Hold Dingocoins directly...</h3>
-
-              <div className="wallet-section">
-                <p>Official Mainnet Wallets</p>
-                <Container>
-                  <Row>
-                    <Col>
-                      <div className="wallet-download">
-                        <FontAwesomeIcon className="faicon" icon={faWindows} />
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://github.com/dingocoin/dingocoin/releases/latest"
-                        >
-                          <Button className="popup-button" variant="primary">
-                            Windows
-                          </Button>
-                        </a>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div className="wallet-download">
-                        <FontAwesomeIcon className="faicon" icon={faApple} />
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://github.com/dingocoin/dingocoin/releases/latest"
-                        >
-                          <Button className="popup-button" variant="primary">
-                            macOS
-                          </Button>
-                        </a>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div className="wallet-download">
-                        <FontAwesomeIcon className="faicon" icon={faLinux} />
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://github.com/dingocoin/dingocoin/releases/latest"
-                        >
-                          <Button className="popup-button" variant="primary">
-                            Linux
-                          </Button>
-                        </a>
-                      </div>
-                    </Col>
-                  </Row>
-                </Container>
-              </div>
-
-              <div className="wallet-section">
-                <p>Beehive Wallets (Unofficial)</p>
-                <Container>
-                  <Row>
-                    <Col>
-                      <div className="wallet-download">
-                        <FontAwesomeIcon className="faicon" icon={faPassport} />
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://beehivewallet.link/"
-                        >
-                          <Button className="popup-button" variant="primary">
-                            Web Wallet
-                          </Button>
-                        </a>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div className="wallet-download">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faGooglePlay}
-                        />
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"
-                        >
-                          <Button className="popup-button" variant="primary">
-                            Android
-                          </Button>
-                        </a>
-                      </div>
-                    </Col>
-                  </Row>
-                </Container>
-              </div>
-            </Col>
-            <Col>
-              <h3>... or hold wrapped wDingocoins.</h3>
-              <div className="wallet-section">
-                <p>wDingocoin on Binance Smart Chain (BSC)</p>
-                <Container>
-                  <Row>
-                    <Col>
-                      <div className="wallet-download">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faFileContract}
-                        />
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                        >
-                          <Button className="popup-button" variant="primary">
-                            Smart Contract
-                          </Button>
-                        </a>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div className="wallet-download">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faExchangeAlt}
-                        />
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://wrap.dingocoin.org"
-                        >
-                          <Button className="popup-button" variant="primary">
-                            Wrap Custodian
-                          </Button>
-                        </a>
-                      </div>
-                    </Col>
-                  </Row>
-                </Container>
-              </div>
-
-              <div className="wallet-section">
-                <p>wDingocoin on Solana (SOL)</p>
-                <Container>
-                  <Row>
-                    <Col>
-                      <div className="wallet-download">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faFileContract}
-                        />
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                        >
-                          <Button className="popup-button" variant="primary">
-                            SPL Token
-                          </Button>
-                        </a>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div className="wallet-download">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faExchangeAlt}
-                        />
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://wrap.dingocoin.org"
-                        >
-                          <Button className="popup-button" variant="primary">
-                            Wrap Custodian
-                          </Button>
-                        </a>
-                      </div>
-                    </Col>
-                  </Row>
-                </Container>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      <section className="section-a" id="airdrop">
+      <section className="section-b" id="airdrop">
         <h2>DINGOCOIN WEEKLY AIRDROP</h2>
         <CustomDivider />
         <Container>
@@ -1435,6 +1238,153 @@ function Main() {
         </Container>
       </section>
 
+      <section className="section-a" id="roadmap">
+        <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
+        <CustomDivider />
+        <p>
+          <i>Did you know?</i>
+          <br />
+          Autradex was the first exchange to list Dingocoin, and provided a
+          sacred trading ground for Dingocoin.
+          <br />
+          Unfortunately, Autradex sustained multiple 51% attacks, back when
+          Dingocoin was not as secure as it is now.
+          <br />
+          Autradex eventually had to close down, shouldering the cost of the
+          many attacks.
+          <br />
+          <i>
+            Please consider donating toward the Autradex developers, who carried
+            us when no one else could:
+          </i>
+          <br />
+          <code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code>
+        </p>
+        <Container>
+          <ul className="timeline">
+            <li className="event eventcompleted" data-date="Apr 1, 2021">
+              <h3>Birth of Dingocoin</h3>
+              <p>Initial deployment. Block reward set to 0 - 1,000,000.</p>
+            </li>
+            <li className="event eventcompleted" data-date="Apr 2021">
+              <h3>Block reward halved to 500,000</h3>
+              <p>5,000 Blocks Mined.</p>
+            </li>
+            <li className="event eventcompleted" data-date="Apr 2021">
+              <h3>Listed on Autradex</h3>
+            </li>
+            <li className="event eventcompleted" data-date="Apr 2021">
+              <h3>Listed on DelionDEX</h3>
+            </li>
+            <li className="event eventcompleted" data-date="May 2021">
+              <h3>Listed on Dex-Trade</h3>
+              <p>
+                Listing fee of <b>$2,500</b> raised by the community.
+              </p>
+            </li>
+            <li className="event eventcompleted" data-date="Jun 2021">
+              <h3>Block reward halved to 250,000</h3>
+              <p>100,000 Blocks Mined.</p>
+            </li>
+            <li className="event eventcompleted" data-date="Jul 2021">
+              <h3>Listed on Cratex</h3>
+            </li>
+            <li className="event eventcompleted" data-date="Aug 2021">
+              <h3>Wrapped Dingocoin released on BSC</h3>
+              <p>
+                Hold and trade Dingocoin on BSC.
+                <br />
+                <b>
+                  - <i>We hit a record $100,000 24H trading volume!</i> 🎉
+                </b>
+              </p>
+            </li>
+            <li className="event eventcompleted" data-date="Aug 2021">
+              <h3>Block reward halved to 125,000</h3>
+              <p>200,000 Blocks Mined.</p>
+            </li>
+            <li className="event eventcompleted" data-date="Aug 2021">
+              <h3>Listed on SouthXchange</h3>
+              <p>
+                Listing fee of <b>$5,000</b> raised by the community.
+              </p>
+            </li>
+            <li className="event eventcompleted" data-date="Sep 2021">
+              <h3>Max Re-org Length Activated</h3>
+              <p>
+                Protects against 51% attacks.
+                <br />
+                Confirmations on exchanges can now be reduced significantly.
+              </p>
+            </li>
+            <li className="event eventcompleted" data-date="Oct 2021">
+              <h3>Chain ID switch activated</h3>
+              <p>
+                Merged mining can now be done alongside Doge without conflict.
+                <br />
+                Increases exposure to miners via AuxPoW.
+                <br />
+                <b>
+                  -{" "}
+                  <i>
+                    We hit 1TH/s hashrate on the same day, 10x our past record!
+                  </i>{" "}
+                  🎉
+                </b>
+              </p>
+            </li>
+            <li className="event eventcompleted" data-date="Nov 2021">
+              <h3>Dingosino released on Discord</h3>
+              <p>Play games using Dingocoin on Discord.</p>
+            </li>
+            <li className="event eventcompleted" data-date="Nov 2021">
+              <h3>Dingocoin Weekly Airdrop released</h3>
+              <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
+            </li>
+            <li className="event eventcompleted" data-date="Nov 2021">
+              <h3>Block reward halved to 62,500</h3>
+              <p>300,000 Blocks Mined.</p>
+            </li>
+            <li className="event eventcompleted" data-date="Dec 2021">
+              <h3>Listed on Hotbit</h3>
+              <p>
+                Listing fee of <b>$50,000</b> raised by the community.
+                <br />
+                <b>
+                  - <i>We hit a record $380,000 24H trading volume!</i> 🎉
+                </b>
+                <br />
+                <b>
+                  -{" "}
+                  <i>
+                    We hit a record 1,500 Twitter followers, growing 5x
+                    overnight!
+                  </i>{" "}
+                  🎉
+                </b>
+              </p>
+            </li>
+            <li className="event eventcompleted" data-date="Dec 2021">
+              <h3>Wrapped Dingocoin released on SOL</h3>
+              <p>Hold and trade Dingocoin on SOL.</p>
+            </li>
+            <li className="event eventincomplete" data-date="~ Jan 2022">
+              <p>Block reward halved to 31,250</p>
+              <p>400,000 Blocks Mined.</p>
+            </li>
+            <li className="event eventincomplete" data-date="~ Apr 2022">
+              <p>Block reward halved to 15,625</p>
+              <p>500,000 Blocks Mined.</p>
+            </li>
+            <li className="event eventincomplete" data-date="~ Jun 2022">
+              <p>Block reward set permanentely to 10,000</p>
+              <p>600,000 Blocks Mined.</p>
+            </li>
+          </ul>
+        </Container>
+      </section>
+
+
       <section className="section-b" id="burnboard">
         <h2>DINGOCOIN BURNBOARD</h2>
         <CustomDivider />
@@ -1612,151 +1562,6 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-a" id="roadmap">
-        <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
-        <CustomDivider />
-        <p>
-          <i>Did you know?</i>
-          <br />
-          Autradex was the first exchange to list Dingocoin, and provided a
-          sacred trading ground for Dingocoin.
-          <br />
-          Unfortunately, Autradex sustained multiple 51% attacks, back when
-          Dingocoin was not as secure as it is now.
-          <br />
-          Autradex eventually had to close down, shouldering the cost of the
-          many attacks.
-          <br />
-          <i>
-            Please consider donating toward the Autradex developers, who carried
-            us when no one else could:
-          </i>
-          <br />
-          <code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code>
-        </p>
-        <Container>
-          <ul className="timeline">
-            <li className="event eventcompleted" data-date="Apr 1, 2021">
-              <h3>Birth of Dingocoin</h3>
-              <p>Initial deployment. Block reward set to 0 - 1,000,000.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Apr 2021">
-              <h3>Block reward halved to 500,000</h3>
-              <p>5,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Apr 2021">
-              <h3>Listed on Autradex</h3>
-            </li>
-            <li className="event eventcompleted" data-date="Apr 2021">
-              <h3>Listed on DelionDEX</h3>
-            </li>
-            <li className="event eventcompleted" data-date="May 2021">
-              <h3>Listed on Dex-Trade</h3>
-              <p>
-                Listing fee of <b>$2,500</b> raised by the community.
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Jun 2021">
-              <h3>Block reward halved to 250,000</h3>
-              <p>100,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Jul 2021">
-              <h3>Listed on Cratex</h3>
-            </li>
-            <li className="event eventcompleted" data-date="Aug 2021">
-              <h3>Wrapped Dingocoin released on BSC</h3>
-              <p>
-                Hold and trade Dingocoin on BSC.
-                <br />
-                <b>
-                  - <i>We hit a record $100,000 24H trading volume!</i> 🎉
-                </b>
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Aug 2021">
-              <h3>Block reward halved to 125,000</h3>
-              <p>200,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Aug 2021">
-              <h3>Listed on SouthXchange</h3>
-              <p>
-                Listing fee of <b>$5,000</b> raised by the community.
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Sep 2021">
-              <h3>Max Re-org Length Activated</h3>
-              <p>
-                Protects against 51% attacks.
-                <br />
-                Confirmations on exchanges can now be reduced significantly.
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Oct 2021">
-              <h3>Chain ID switch activated</h3>
-              <p>
-                Merged mining can now be done alongside Doge without conflict.
-                <br />
-                Increases exposure to miners via AuxPoW.
-                <br />
-                <b>
-                  -{" "}
-                  <i>
-                    We hit 1TH/s hashrate on the same day, 10x our past record!
-                  </i>{" "}
-                  🎉
-                </b>
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Nov 2021">
-              <h3>Dingosino released on Discord</h3>
-              <p>Play games using Dingocoin on Discord.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Nov 2021">
-              <h3>Dingocoin Weekly Airdrop released</h3>
-              <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Nov 2021">
-              <h3>Block reward halved to 62,500</h3>
-              <p>300,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Dec 2021">
-              <h3>Listed on Hotbit</h3>
-              <p>
-                Listing fee of <b>$50,000</b> raised by the community.
-                <br />
-                <b>
-                  - <i>We hit a record $380,000 24H trading volume!</i> 🎉
-                </b>
-                <br />
-                <b>
-                  -{" "}
-                  <i>
-                    We hit a record 1,500 Twitter followers, growing 5x
-                    overnight!
-                  </i>{" "}
-                  🎉
-                </b>
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Dec 2021">
-              <h3>Wrapped Dingocoin released on SOL</h3>
-              <p>Hold and trade Dingocoin on SOL.</p>
-            </li>
-            <li className="event eventincomplete" data-date="~ Jan 2022">
-              <p>Block reward halved to 31,250</p>
-              <p>400,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventincomplete" data-date="~ Apr 2022">
-              <p>Block reward halved to 15,625</p>
-              <p>500,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventincomplete" data-date="~ Jun 2022">
-              <p>Block reward set permanentely to 10,000</p>
-              <p>600,000 Blocks Mined.</p>
-            </li>
-          </ul>
-        </Container>
-      </section>
 
       <section className="section-footer">
         <h6>
@@ -1783,10 +1588,94 @@ function Main() {
           <Container className="exchangesModalSection">
             <Row>
               <Col>
+                <h5>Buy Dingocoin</h5>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
+                >
+                  <Button variant="outline-primary">
+                    <img alt="" src={HotbitLogo} />
+                  </Button>
+                </a>
+              </Col>
+              <Col>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://main.southxchange.com/Market/Book/DINGO/LTC"
+                >
+                  <Button variant="outline-primary">
+                    <img alt="" src={SouthXchangeLogo} />
+                  </Button>
+                </a>
+              </Col>
+              <Col>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://cratex.io/index.php?pair=DINGO/LTC"
+                >
+                  <Button variant="outline-primary">
+                    <img alt="" src={CratexIoLogo} />
+                  </Button>
+                </a>
+              </Col>
+              <Col>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://dex-trade.com/spot/trading/DINGOUSDT"
+                >
+                  <Button variant="outline-primary">
+                    <img alt="" src={DexTradeLogo} />
+                  </Button>
+                </a>
+              </Col>
+              <Col>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://dex.delion.online/market/DELION.DINGO_DOGE"
+                >
+                  <Button variant="outline-primary">
+                    <img alt="" src={DelionDexLogo} />
+                  </Button>
+                </a>
+              </Col>
+            </Row>
+          </Container>
+          <Container className="exchangesModalSection">
+            <Row>
+              <Col>
+                <h5>Buy wDingocoin (BSC)</h5>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+                >
+                  <Button variant="outline-primary">
+                    <img alt="" src={PancakeSwap} />
+                  </Button>
+                </a>
+              </Col>
+            </Row>
+          </Container>
+          <Container className="exchangesModalSection">
+            <Row>
+              <Col>
                 <h5>Live Charts</h5>
               </Col>
             </Row>
-            <Row xs={3} md={3} lg={3}>
+            <Row>
               <Col>
                 <a
                   target="_blank"
@@ -1850,81 +1739,6 @@ function Main() {
                 >
                   <Button variant="outline-primary">
                     <img alt="" src={PooCoinLogo} />
-                  </Button>
-                </a>
-              </Col>
-            </Row>
-          </Container>
-          <Container className="exchangesModalSection">
-            <Row>
-              <Col>
-                <h5>Exchanges</h5>
-              </Col>
-            </Row>
-            <Row xs={3} md={3} lg={3}>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={HotbitLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://main.southxchange.com/Market/Book/DINGO/LTC"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={SouthXchangeLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://cratex.io/index.php?pair=DINGO/LTC"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={CratexIoLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://dex-trade.com/spot/trading/DINGOUSDT"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={DexTradeLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://dex.delion.online/market/DELION.DINGO_DOGE"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={DelionDexLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={PancakeSwap} />
                   </Button>
                 </a>
               </Col>

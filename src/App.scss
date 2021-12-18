@@ -1,5 +1,5 @@
 $primary: #1e4151;
-$secondary: #f2ede0;
+$secondary: #FBF7E9;
 $secondary-alt: #ffffff;
 
 $theme-colors: (
@@ -21,6 +21,20 @@ h1, h2, h3, h4, h5, h6 {
 
 a:link {
   text-decoration: none;
+}
+
+a.simple-link {
+  color: #4CA4CD;
+  text-decoration: none;
+}
+
+a.simple-link:link {
+  color: #4CA4CD;
+  text-decoration: none;
+}
+
+a.simple-link:hover {
+  cursor: pointer;
 }
 
 
@@ -340,6 +354,10 @@ a:link {
 
 /* ===== PROJECTS ===== */
 
+.projects {
+  text-align: center;
+}
+
 .project-card {
   padding: 1rem;
   margin-top: 0.8rem;
@@ -363,10 +381,6 @@ a:link {
   width: 2.5rem;
   padding: 0;
   margin: 0;
-}
-
-.project-card p {
-  margin-top: 1.5rem;
 }
 
 
@@ -687,4 +701,8 @@ a:link {
     max-width: 100%;
     object-fit: initial;
   }
+}
+
+.ecosystem-section {
+  text-align: left;
 }
