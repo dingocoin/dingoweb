@@ -1118,7 +1118,7 @@ function Main() {
                     </p>
                     <p>
                       * The leaderboard is updated at the start of every hour.
-                      Rewards are paid out every Sunday 4AM, UTC. The
+                      Rewards are paid out some time on Sunday, UTC. The
                       leaderboard also resets at that time. Only retweets and
                       likes of tweets in the current week are scored.
                     </p>
@@ -1394,9 +1394,7 @@ function Main() {
               </InputGroup>
               <p className="mt-4">
                 <b>
-                  Important update: we now require the{" "}
-                  <code>#weeklyairdrop</code> hashtag instead of{" "}
-                  <code>#socialfaucet</code>.
+                  Event of the week: To celebrate <a href="https://www.abc.net.au/news/2021-12-18/wandi-returns-home-two-years-after-falling-from-the-sky/100703670" target="_blank" rel="noreferrer" className="simple-link">Wandi the Dingo's return</a>, get a <u>2x earning cap bonus</u> by:<br/> 1) mentioning <code>@Wandi_Dingo</code>, 2) linking <code>dingofoundation.org</code>, and 3) hashtaging <code>#WandiTheDingo</code>.
                 </b>
               </p>
             </Col>
