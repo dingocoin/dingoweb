@@ -533,7 +533,7 @@ function Main() {
         <Container className="ecosystem-section">
           <Row>
             <h4>Dingocoin Infrastructure and Markets</h4>
-            <p>
+            <p style={{ 'text-align': 'left' }}>
               Dingocoin exists <i>both</i> as a coin on its own secured blockchain,{" "}
               <i>and</i> as wrapped tokens (wDingocoin) on BSC and SOL. Our goal
               is to make Dingocoin highly accessible, allowing you to get
@@ -777,105 +777,8 @@ function Main() {
           </Row>
           <CustomDivider />
           <Row>
-            <h4>Community and Social</h4>
-            <p>
-              Dingocoin prides itself as a completely community-driven project.
-              All innovation and development are contributed entirely by the
-              community. The Dingocoin pack takes the growth of Dingocoin into
-              its own hands, focusing on building progress{" "}
-              <i>by actually doing work</i>. We do not sit around and wait for
-              the impossible to happen, nor do we attempt to overmarket. The
-              Dingocoin pack is wild and unstoppable. Have an idea? Join us
-              today, throw it out and we'll help!
-            </p>
-            <Container>
-              <Row
-                xs={1}
-                md={2}
-                lg={3}
-                className="projects justify-content-center"
-              >
-                <Col>
-                  <div className="project-card">
-                    <div className="logo-holder">
-                      <FontAwesomeIcon
-                        className="faicon"
-                        icon={faDiscord}
-                        style={{ color: "#728ad6" }}
-                      />{" "}
-                      <FontAwesomeIcon
-                        className="faicon"
-                        icon={faTelegram}
-                        style={{ color: "#0088CC" }}
-                      />
-                    </div>
-                    <h5>Community Channels</h5>
-                    <p>
-                      Join the Dingo disco.
-                      <br />
-                      <a
-                        className="simple-link"
-                        href="https://discord.gg/y3J946HFQM"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Discord &#9658;
-                      </a>
-                      <br />
-                      <a
-                        className="simple-link"
-                        href="https://t.me/DingoCoinTalk"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Telegram &#9658;
-                      </a>
-                    </p>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="project-card">
-                    <div className="logo-holder">
-                      <FontAwesomeIcon className="faicon" icon={faRobot} />
-                    </div>
-                    <h5>Discord Faucet/Tip Bot</h5>
-                    <p>
-                      Get free sample Dingocoins.
-                      <br /> Tip Dingocoins to others easily.
-                      <br />
-                      <a
-                        className="simple-link"
-                        href="https://discord.gg/y3J946HFQM"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Discord &#9658;
-                      </a>
-                    </p>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="project-card">
-                    <div className="logo-holder">
-                      <Image src={SocialFaucetLogo} />
-                    </div>
-                    <h5>Weekly Airdrop</h5>
-                    <p>
-                      Earn Dingocoins simply by promoting Dingocoin on Twitter.
-                      <br />
-                      <a className="simple-link" href="#airdrop">
-                        Participate now &#9658;
-                      </a>
-                    </p>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </Row>
-          <CustomDivider />
-          <Row>
             <h4>Fun and Art</h4>
-            <p>
+            <p style={{ 'text-align': 'left', 'text-align': 'justify' }}>
               The Dingocoin community loves its fun and art. We are working on
               highly innovative games and platforms which use Dingocoin to
               function -- including a Discord game server; a unique
@@ -973,15 +876,112 @@ function Main() {
             </Container>
           </Row>
           <CustomDivider />
+          <Row>
+            <h4>Community and Social</h4>
+            <p style={{ 'text-align': 'left', 'text-align': 'justify' }}>
+              Dingocoin prides itself as a completely community-driven project.
+              All innovation and development are contributed entirely by the
+              community. The Dingocoin pack takes the growth of Dingocoin into
+              its own hands, focusing on building progress{" "}
+              <i>by actually doing work</i>. We do not sit around and wait for
+              the impossible to happen, nor do we attempt to overmarket. The
+              Dingocoin pack is wild and unstoppable. Have an idea? Join us
+              today, throw it out and we'll help!
+            </p>
+            <Container>
+              <Row
+                xs={1}
+                md={2}
+                lg={3}
+                className="projects justify-content-center"
+              >
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <FontAwesomeIcon
+                        className="faicon"
+                        icon={faDiscord}
+                        style={{ color: "#728ad6" }}
+                      />{" "}
+                      <FontAwesomeIcon
+                        className="faicon"
+                        icon={faTelegram}
+                        style={{ color: "#0088CC" }}
+                      />
+                    </div>
+                    <h5>Community Channels</h5>
+                    <p>
+                      Join the Dingo disco.
+                      <br />
+                      <a
+                        className="simple-link"
+                        href="https://discord.gg/y3J946HFQM"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Discord &#9658;
+                      </a>
+                      <br />
+                      <a
+                        className="simple-link"
+                        href="https://t.me/DingoCoinTalk"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Telegram &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <FontAwesomeIcon className="faicon" icon={faRobot} />
+                    </div>
+                    <h5>Discord Faucet/Tip Bot</h5>
+                    <p>
+                      Get free sample Dingocoins.
+                      <br /> Tip Dingocoins to others easily.
+                      <br />
+                      <a
+                        className="simple-link"
+                        href="https://discord.gg/y3J946HFQM"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Discord &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <Image src={SocialFaucetLogo} />
+                    </div>
+                    <h5>Weekly Airdrop</h5>
+                    <p>
+                      Earn Dingocoins simply by promoting Dingocoin on Twitter.
+                      <br />
+                      <a className="simple-link" href="#airdrop">
+                        Participate now &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </Row>
+          <CustomDivider />
           <Row
             className="community-art justify-content-center"
             style={{ "text-align": "center" }}
           >
-            <h3>
-              <Image src={BananaLogo} />
+            <h4>
+              <Image src={BananaLogo}  style={{ height: "1.7rem" }}/>
               Community Art
-              <Image src={BananaLogo} />
-            </h3>
+              <Image src={BananaLogo}  style={{ height: "1.7rem" }}/>
+            </h4>
             <ul className="community-images mt-4">
               {communityImages.map((x, i) => (
                 <li key={i}>
