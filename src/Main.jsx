@@ -685,7 +685,7 @@ function Main() {
                 </Col>
               </Row>
               <Row
-                xs={2}
+                xs={1}
                 md={2}
                 lg={3}
                 className="projectFactsWrap justify-content-center"
