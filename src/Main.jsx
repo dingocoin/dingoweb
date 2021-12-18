@@ -157,7 +157,7 @@ function Main() {
   React.useEffect(() => {
     (async () => {
       // Get Dingocoin blockchain stats.
-      const dingoStats = await get("https://n4.dingocoin.org:8443/stats/dingo");
+      const dingoStats = await get("https://stats.dingocoin.org:8443/stats/dingo");
       // It's late and I'm too tired to do it properly. Please replace this eventually.
       const blockReward =
         dingoStats.height < 300000
@@ -182,7 +182,7 @@ function Main() {
 
       // Get market stats.
       const { volume, price, cap } = await get(
-        "https://n4.dingocoin.org:8443/stats/market"
+        "https://stats.dingocoin.org:8443/stats/market"
       );
 
       setDingoStats({
@@ -206,7 +206,7 @@ function Main() {
     (async () => {
       // Retireve.
       const { users, metrics, historyMetrics, address } = await get(
-        "https://n4.dingocoin.org:8443/socialFaucet"
+        "https://stats.dingocoin.org:8443/socialFaucet"
       );
 
       // Collate.
@@ -260,7 +260,7 @@ function Main() {
   const [burnBoardList, setBurnBoardList] = React.useState([]);
   React.useEffect(() => {
     (async () => {
-      const burnList = await get("https://n4.dingocoin.org:8443/burnBoard");
+      const burnList = await get("https://stats.dingocoin.org:8443/burnBoard");
       burnList.sort((a, b) => parseFloat(b.amount) - parseFloat(a.amount));
       for (let i = 0; i < burnList.length; i++) {
         burnList[i].rank = i + 1;
