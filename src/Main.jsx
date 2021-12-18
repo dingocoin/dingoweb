@@ -915,30 +915,6 @@ function Main() {
                 <Col>
                   <div className="project-card">
                     <div className="logo-holder">
-                      <FontAwesomeIcon
-                        className="faicon"
-                        icon={faShoppingCart}
-                      />
-                    </div>
-                    <h5>Dingocoin Marketplace</h5>
-                    <p>
-                      Purchase Dingocoin merchandise/NFTs designed and sold by
-                      community members.
-                      <br />
-                      <a
-                        className="simple-link"
-                        onClick={() => {
-                          setMarketplaceModalShow(true);
-                        }}
-                      >
-                        View merchandise &#9658;
-                      </a>
-                    </p>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="project-card">
-                    <div className="logo-holder">
                       <Image src={RobloxLogo} />
                     </div>
                     <h5>Dingocoin City</h5>
@@ -966,6 +942,30 @@ function Main() {
                       <i>truly privatizable</i> artwork, at ultra-low costs.
                       <br />
                       <i>(Coming soon...)</i>
+                    </p>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <FontAwesomeIcon
+                        className="faicon"
+                        icon={faShoppingCart}
+                      />
+                    </div>
+                    <h5>Dingocoin Marketplace</h5>
+                    <p>
+                      Purchase Dingocoin merchandise/NFTs designed and sold by
+                      community members.
+                      <br />
+                      <a
+                        className="simple-link"
+                        onClick={() => {
+                          setMarketplaceModalShow(true);
+                        }}
+                      >
+                        View merchandise &#9658;
+                      </a>
                     </p>
                   </div>
                 </Col>
