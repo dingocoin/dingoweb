@@ -534,7 +534,7 @@ function Main() {
           <Row>
             <h4>Dingocoin Infrastructure and Markets</h4>
             <p>
-              Dingocoin exists <i>both</i> as a coin on its own blockchain,{" "}
+              Dingocoin exists <i>both</i> as a coin on its own secured blockchain,{" "}
               <i>and</i> as wrapped tokens (wDingocoin) on BSC and SOL. Our goal
               is to make Dingocoin highly accessible, allowing you to get
               Dingocoins from both centralized exchanges (CEX) and decentralized
