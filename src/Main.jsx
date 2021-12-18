@@ -533,7 +533,7 @@ function Main() {
         <Container className="ecosystem-section">
           <Row>
             <h4>Dingocoin Infrastructure and Markets</h4>
-            <p style={{ 'text-align': 'left' }}>
+            <p style={{ 'text-align': 'justify' }}>
               Dingocoin exists <i>both</i> as a coin on its own secured blockchain,{" "}
               <i>and</i> as wrapped tokens (wDingocoin) on BSC and SOL. Our goal
               is to make Dingocoin highly accessible, allowing you to get
@@ -778,7 +778,7 @@ function Main() {
           <CustomDivider />
           <Row>
             <h4>Fun and Art</h4>
-            <p style={{ 'text-align': 'left', 'text-align': 'justify' }}>
+            <p style={{ 'text-align': 'justify' }}>
               The Dingocoin community loves its fun and art. We are working on
               highly innovative games and platforms which use Dingocoin to
               function -- including a Discord game server; a unique
@@ -878,7 +878,7 @@ function Main() {
           <CustomDivider />
           <Row>
             <h4>Community and Social</h4>
-            <p style={{ 'text-align': 'left', 'text-align': 'justify' }}>
+            <p style={{ 'text-align': 'justify' }}>
               Dingocoin prides itself as a completely community-driven project.
               All innovation and development are contributed entirely by the
               community. The Dingocoin pack takes the growth of Dingocoin into
