@@ -1130,7 +1130,7 @@ function Main() {
                       <b>
                         Feeling generous? Fund our weekly airdrop to keep it
                         running :){" "}
-                        <code>DJAuG2t4PtUQhFQsTddK1rhDHgE3cFU5oW</code>
+                        <code>DTE3TFVBy69od8XaRPVHoDfrucgMFjVzYc</code>
                       </b>
                     </p>
                   </Accordion.Body>
