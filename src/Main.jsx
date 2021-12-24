@@ -27,7 +27,6 @@ import DelionDexLogo from "./assets/img/deliondex.png";
 import DexGuruLogo from "./assets/img/dex-guru.png";
 import DexTradeLogo from "./assets/img/dextrade.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
-import DingocoinXmasLogo from "./assets/img/dingocoin-xmas.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
 import PancakeSwap from "./assets/img/pancakeswap.png";
 import Parrot1Logo from "./assets/img/parrot.gif";
@@ -552,7 +551,7 @@ function Main() {
                 <Col>
                   <div className="project-card">
                     <div className="logo-holder">
-                      <Image src={DingocoinXmasLogo} />
+                      <Image src={DingocoinLogo} />
                     </div>
                     <h5>Dingocoin</h5>
                     <p>
