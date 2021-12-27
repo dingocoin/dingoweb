@@ -292,7 +292,7 @@ function Main() {
           <Navbar.Collapse>
             <Nav className="ms-auto">
               <Nav.Link href="#ecosystem">Ecosystem</Nav.Link>
-              <Nav.Link href="#airdrop">Weekly Airdrop</Nav.Link>
+              <Nav.Link href="#airdrop">Airdrop</Nav.Link>
               <Nav.Link href="#roadmap">Roadmap</Nav.Link>
               <NavDropdown className="navbar-important" title="Resources">
                 <NavDropdown.Header>Resources</NavDropdown.Header>
@@ -420,6 +420,13 @@ function Main() {
                   href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
                 >
                   <img alt="" src={PancakeSwap} />
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://raydium.io/swap/?from=11111111111111111111111111111111&to=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                >
+                  <img alt="" src={RaydiumSwap} />
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -563,7 +570,7 @@ function Main() {
                           setExchangesModalShow(true);
                         }}
                       >
-                        Buy Dingocoin &#9658;
+                        Buy &#9658;
                       </a>
                       <br />
                       <a
@@ -608,7 +615,7 @@ function Main() {
                         rel="noreferrer"
                         className="simple-link"
                       >
-                        Mine Dingocoin &#9658;
+                        Mine &#9658;
                       </a>
                     </p>
                   </div>
@@ -626,7 +633,7 @@ function Main() {
                           setExchangesModalShow(true);
                         }}
                       >
-                        Buy wDingocoin (BSC) &#9658;
+                        Buy &#9658;
                       </a>
                       <br />
                       <a
@@ -671,7 +678,7 @@ function Main() {
                           setExchangesModalShow(true);
                         }}
                       >
-                        Buy wDingocoin (SOL) &#9658;
+                        Buy &#9658;
                       </a>
                       <br />
                       <a
