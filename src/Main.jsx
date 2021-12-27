@@ -29,6 +29,7 @@ import DexTradeLogo from "./assets/img/dextrade.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
 import PancakeSwap from "./assets/img/pancakeswap.png";
+import RaydiumSwap from "./assets/img/raydiumswap.png";
 import Parrot1Logo from "./assets/img/parrot.gif";
 import Parrot2Logo from "./assets/img/moonwalkingparrot.gif";
 import PooCoinLogo from "./assets/img/poocoin.png";
@@ -44,6 +45,7 @@ import CoinGeckoLogo from "./assets/img/coingecko.png";
 import ChristmasVideo from "./assets/img/christmas.mp4";
 import ChristmasPreview from "./assets/img/christmaspreview.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
+import BirdeyeLogo from "./assets/img/birdeye.png";
 
 // Controls.
 import {
@@ -367,6 +369,13 @@ function Main() {
                 >
                   <img alt="" src={PooCoinLogo} />
                 </NavDropdown.Item>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                >
+                  <img alt="" src={BirdeyeLogo} />
+                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className="navbar-important" title="Exchanges">
                 <NavDropdown.Header>Exchanges</NavDropdown.Header>
@@ -504,13 +513,6 @@ function Main() {
                   <FontAwesomeIcon className="faicon" icon={faFacebook} />
                 </a>
               </Col>
-            </Row>
-            <Row>
-              <h4 className="mt-4">
-                <Image src={Parrot1Logo} style={{ height: "1.7rem" }} />
-                WE ARE FINALLY LIVE ON COINMARKETCAP!
-                <Image src={Parrot1Logo} style={{ height: "1.7rem" }} />
-              </h4>
             </Row>
             <Row>
               <h4 className="mb-0 mt-4">
@@ -663,6 +665,24 @@ function Main() {
                     </div>
                     <h5>wDingocoin (SOL)</h5>
                     <p>
+                      <a
+                        className="simple-link"
+                        onClick={() => {
+                          setExchangesModalShow(true);
+                        }}
+                      >
+                        Buy wDingocoin (SOL) &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        Live chart &#9658;
+                      </a>
+                      <br />
                       <a
                         href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
                         target="_blank"
@@ -1814,11 +1834,12 @@ function Main() {
           <Container className="exchangesModalSection">
             <Row>
               <Col>
-                <h5>Buy wDingocoin (BSC)</h5>
+                <h5>Buy wDingocoin</h5>
               </Col>
             </Row>
             <Row>
               <Col>
+                <h6>BSC</h6>
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -1826,6 +1847,18 @@ function Main() {
                 >
                   <Button variant="outline-primary">
                     <img alt="" src={PancakeSwap} />
+                  </Button>
+                </a>
+              </Col>
+              <Col>
+                <h6>SOL</h6>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://raydium.io/swap/?from=11111111111111111111111111111111&to=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                >
+                  <Button variant="outline-primary">
+                    <img alt="" src={RaydiumSwap} />
                   </Button>
                 </a>
               </Col>
@@ -1901,6 +1934,17 @@ function Main() {
                 >
                   <Button variant="outline-primary">
                     <img alt="" src={PooCoinLogo} />
+                  </Button>
+                </a>
+              </Col>
+              <Col>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                >
+                  <Button variant="outline-primary">
+                    <img alt="" src={BirdeyeLogo} />
                   </Button>
                 </a>
               </Col>
