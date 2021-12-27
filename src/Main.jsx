@@ -1439,7 +1439,7 @@ function Main() {
           <br />
           <i>
             Please consider donating toward the Autradex developers, who carried
-            us when no one else could:
+            us when no one else would:
           </i>
           <br />
           <code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code>
