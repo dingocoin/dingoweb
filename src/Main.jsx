@@ -30,20 +30,15 @@ import DingocoinLogo from "./assets/img/dingocoin.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
 import PancakeSwap from "./assets/img/pancakeswap.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
-import Parrot1Logo from "./assets/img/parrot.gif";
-import Parrot2Logo from "./assets/img/moonwalkingparrot.gif";
 import PooCoinLogo from "./assets/img/poocoin.png";
 import RobloxLogo from "./assets/img/roblox.png";
 import SOLLogo from "./assets/img/sol.png";
 import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
-import MinerLogo from "./assets/img/transparent_miner.png";
 import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import BananaLogo from "./assets/img/happybanana.gif";
 import HotbitLogo from "./assets/img/hotbitex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
-import ChristmasVideo from "./assets/img/christmas.mp4";
-import ChristmasPreview from "./assets/img/christmaspreview.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
 
@@ -521,20 +516,9 @@ function Main() {
                 </a>
               </Col>
             </Row>
-            <Row>
-              <h4 className="mb-0 mt-4">
-                Season's Greetings from the Dingocoin Community!
-              </h4>
-            </Row>
           </Container>
         </div>
       </header>
-
-      <section>
-        <video controls style={{ width: "100%" }} poster={ChristmasPreview}>
-          <source src={ChristmasVideo} />
-        </video>
-      </section>
 
       <section className="section-b" id="ecosystem">
         <h2>ECOSYSTEM</h2>
@@ -542,13 +526,13 @@ function Main() {
         <Container className="ecosystem-section">
           <Row>
             <h4>Dingocoin Infrastructure and Markets</h4>
-            <p style={{ 'text-align': 'justify' }}>
-              Dingocoin exists <i>both</i> as a coin on its own secured blockchain,{" "}
-              <i>and</i> as wrapped tokens (wDingocoin) on BSC and SOL. Our goal
-              is to make Dingocoin highly accessible, allowing you to get
-              Dingocoins from both centralized exchanges (CEX) and decentralized
-              exchanges (DEX). They are exchangeable 1:1 at anytime, via our
-              unique community-decentralized wrap custodians.
+            <p style={{ "text-align": "justify" }}>
+              Dingocoin exists <i>both</i> as a coin on its own secured
+              blockchain, <i>and</i> as wrapped tokens (wDingocoin) on BSC and
+              SOL. Our goal is to make Dingocoin highly accessible, allowing you
+              to get Dingocoins from both centralized exchanges (CEX) and
+              decentralized exchanges (DEX). They are exchangeable 1:1 at
+              anytime, via our unique community-decentralized wrap custodians.
             </p>
             <Container>
               <Row
@@ -579,7 +563,7 @@ function Main() {
                         rel="noreferrer"
                         className="simple-link"
                       >
-                        Live chart &#9658;
+                        Chart &#9658;
                       </a>
                       <br />
                       <a
@@ -642,7 +626,7 @@ function Main() {
                         rel="noreferrer"
                         className="simple-link"
                       >
-                        Live chart &#9658;
+                        Chart &#9658;
                       </a>
                       <br />
                       <a
@@ -660,7 +644,7 @@ function Main() {
                         rel="noreferrer"
                         className="simple-link"
                       >
-                        Wrap custodian &#9658;
+                        Wrap &#9658;
                       </a>
                     </p>
                   </div>
@@ -687,7 +671,7 @@ function Main() {
                         rel="noreferrer"
                         className="simple-link"
                       >
-                        Live chart &#9658;
+                        Chart &#9658;
                       </a>
                       <br />
                       <a
@@ -705,7 +689,7 @@ function Main() {
                         rel="noreferrer"
                         className="simple-link"
                       >
-                        Wrap custodian &#9658;
+                        Wrap &#9658;
                       </a>
                     </p>
                   </div>
@@ -805,7 +789,7 @@ function Main() {
           <CustomDivider />
           <Row>
             <h4>Fun and Art</h4>
-            <p style={{ 'text-align': 'justify' }}>
+            <p style={{ "text-align": "justify" }}>
               The Dingocoin community loves its fun and art. We are working on
               highly innovative games and platforms which use Dingocoin to
               function -- including a Discord game server; a unique
@@ -837,7 +821,7 @@ function Main() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Join now &#9658;
+                        Join &#9658;
                       </a>
                     </p>
                   </div>
@@ -894,7 +878,7 @@ function Main() {
                           setMarketplaceModalShow(true);
                         }}
                       >
-                        View merchandise &#9658;
+                        View &#9658;
                       </a>
                     </p>
                   </div>
@@ -905,7 +889,7 @@ function Main() {
           <CustomDivider />
           <Row>
             <h4>Community and Social</h4>
-            <p style={{ 'text-align': 'justify' }}>
+            <p style={{ "text-align": "justify" }}>
               Dingocoin prides itself as a completely community-driven project.
               All innovation and development are contributed entirely by the
               community. The Dingocoin pack takes the growth of Dingocoin into
@@ -991,7 +975,7 @@ function Main() {
                       Earn Dingocoins simply by promoting Dingocoin on Twitter.
                       <br />
                       <a className="simple-link" href="#airdrop">
-                        Participate now &#9658;
+                        Participate &#9658;
                       </a>
                     </p>
                   </div>
@@ -1005,9 +989,9 @@ function Main() {
             style={{ "text-align": "center" }}
           >
             <h4>
-              <Image src={BananaLogo}  style={{ height: "1.7rem" }}/>
+              <Image src={BananaLogo} style={{ height: "1.7rem" }} />
               Community Art
-              <Image src={BananaLogo}  style={{ height: "1.7rem" }}/>
+              <Image src={BananaLogo} style={{ height: "1.7rem" }} />
             </h4>
             <ul className="community-images mt-4">
               {communityImages.map((x, i) => (
@@ -1421,7 +1405,19 @@ function Main() {
               </InputGroup>
               <p className="mt-4">
                 <b>
-                  Event of the week: To celebrate <a href="https://www.abc.net.au/news/2021-12-18/wandi-returns-home-two-years-after-falling-from-the-sky/100703670" target="_blank" rel="noreferrer" className="simple-link">Wandi the Dingo's return</a>, get a <u>2x earning cap bonus</u> by:<br/> 1) mentioning <code>@Wandi_Dingo</code>, 2) linking <code>dingofoundation.org</code>, and 3) hashtaging <code>#WandiTheDingo</code>.
+                  Event of the week: To celebrate{" "}
+                  <a
+                    href="https://www.abc.net.au/news/2021-12-18/wandi-returns-home-two-years-after-falling-from-the-sky/100703670"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="simple-link"
+                  >
+                    Wandi the Dingo's return
+                  </a>
+                  , get a <u>2x earning cap bonus</u> by:
+                  <br /> 1) mentioning <code>@Wandi_Dingo</code>, 2) linking{" "}
+                  <code>dingofoundation.org</code>, and 3) hashtaging{" "}
+                  <code>#WandiTheDingo</code>.
                 </b>
               </p>
             </Col>
@@ -1432,7 +1428,91 @@ function Main() {
       <section className="section-b" id="roadmap">
         <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
         <CustomDivider />
-        <p>
+        <Container>
+          <Row>
+            <ul className="timeline">
+              <li className="event eventcompleted" data-date="Apr, 2021">
+                <h3>
+                  <i>The Beginning</i>
+                </h3>
+                <p>
+                  - Birth of Dingocoin
+                  <br />
+                  - Block reward halved to 500,000
+                  <br />
+                  - Listed on Autradex
+                  <br />- Listed on DelionDEX
+                </p>
+              </li>
+              <li className="event eventcompleted" data-date="May - Jul, 2021">
+                <h3>
+                  <i>The Resistance</i>
+                </h3>
+                <p>
+                  - Listed on Dex-Trade
+                  <br />
+                  - Block reward halved to 250,000
+                  <br />- Listed on Cratex
+                </p>
+              </li>
+              <li className="event eventcompleted" data-date="Aug - Oct, 2021">
+                <h3>
+                  <i>The Upheaval</i>
+                </h3>
+                <p>
+                  - Wrapped Dingocoin released on BSC
+                  <br />
+                  - Block reward halved to 125,000
+                  <br />
+                  - Listed on SouthXchange
+                  <br />- Added to major merged mining pools
+                </p>
+              </li>
+              <li className="event eventcompleted" data-date="Nov - Dec, 2021">
+                <h3>
+                  <i>The Proclamation</i>
+                </h3>
+                <p>
+                  - Dingosino released on Discord
+                  <br />
+                  - Dingocoin Weekly Airdrop released
+                  <br />
+                  - Block reward halved to 62,500
+                  <br />
+                  - Listed on Hotbit
+                  <br />- Wrapped Dingocoin released on SOL
+                </p>
+              </li>
+              <li className="event eventcompleted" data-date="Jan - ?, 2022">
+                <h3>Be part of our history - join our journey now!</h3>
+                <p style={{ color: "#AAAAAA" }}>
+                  - Dingocoin merchandise
+                  <br />
+                  - Roblox Dingocoin City
+                  <br />
+                  - Multilinguistics
+                  <br />
+                  - Mobile wallets
+                  <br />
+                  - Browser extension wallets
+                  <br />
+                  - dApps on Dingocoin
+                  <br />
+                  - NFT platform on Dingocoin
+                  <br />
+                  - Many more major listings
+                  <br />
+                  - Block reward halving to 31,250
+                  <br />
+                  - Block reward halving to 15,625
+                  <br />- Block reward set permanentely to 10,000
+                </p>
+              </li>
+            </ul>
+          </Row>
+        </Container>
+        <CustomDivider />
+        <p className="mt-6">
           <i>Did you know?</i>
           <br />
           Autradex was the first exchange to list Dingocoin, and provided a
@@ -1441,138 +1521,10 @@ function Main() {
           Unfortunately, Autradex sustained multiple 51% attacks, back when
           Dingocoin was not as secure as it is now.
           <br />
-          Autradex eventually had to close down, shouldering the cost of the
-          many attacks.
-          <br />
-          <i>
-            Please consider donating toward the Autradex developers, who carried
-            us when no one else would:
-          </i>
+          <i>Please consider donating toward the Autradex developers:</i>
           <br />
           <code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code>
         </p>
-        <Container>
-          <ul className="timeline">
-            <li className="event eventcompleted" data-date="Apr 1, 2021">
-              <h3>Birth of Dingocoin</h3>
-              <p>Initial deployment. Block reward set to 0 - 1,000,000.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Apr 2021">
-              <h3>Block reward halved to 500,000</h3>
-              <p>5,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Apr 2021">
-              <h3>Listed on Autradex</h3>
-            </li>
-            <li className="event eventcompleted" data-date="Apr 2021">
-              <h3>Listed on DelionDEX</h3>
-            </li>
-            <li className="event eventcompleted" data-date="May 2021">
-              <h3>Listed on Dex-Trade</h3>
-              <p>
-                Listing fee of <b>$2,500</b> raised by the community.
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Jun 2021">
-              <h3>Block reward halved to 250,000</h3>
-              <p>100,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Jul 2021">
-              <h3>Listed on Cratex</h3>
-            </li>
-            <li className="event eventcompleted" data-date="Aug 2021">
-              <h3>Wrapped Dingocoin released on BSC</h3>
-              <p>
-                Hold and trade Dingocoin on BSC.
-                <br />
-                <b>
-                  - <i>We hit a record $100,000 24H trading volume!</i> 🎉
-                </b>
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Aug 2021">
-              <h3>Block reward halved to 125,000</h3>
-              <p>200,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Aug 2021">
-              <h3>Listed on SouthXchange</h3>
-              <p>
-                Listing fee of <b>$5,000</b> raised by the community.
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Sep 2021">
-              <h3>Max Re-org Length Activated</h3>
-              <p>
-                Protects against 51% attacks.
-                <br />
-                Confirmations on exchanges can now be reduced significantly.
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Oct 2021">
-              <h3>Chain ID switch activated</h3>
-              <p>
-                Merged mining can now be done alongside Doge without conflict.
-                <br />
-                Increases exposure to miners via AuxPoW.
-                <br />
-                <b>
-                  -{" "}
-                  <i>
-                    We hit 1TH/s hashrate on the same day, 10x our past record!
-                  </i>{" "}
-                  🎉
-                </b>
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Nov 2021">
-              <h3>Dingosino released on Discord</h3>
-              <p>Play games using Dingocoin on Discord.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Nov 2021">
-              <h3>Dingocoin Weekly Airdrop released</h3>
-              <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Nov 2021">
-              <h3>Block reward halved to 62,500</h3>
-              <p>300,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventcompleted" data-date="Dec 2021">
-              <h3>Listed on Hotbit</h3>
-              <p>
-                Listing fee of <b>$50,000</b> raised by the community.
-                <br />
-                <b>
-                  - <i>We hit a record $380,000 24H trading volume!</i> 🎉
-                </b>
-                <br />
-                <b>
-                  -{" "}
-                  <i>
-                    We hit a record 1,500 Twitter followers, growing 5x
-                    overnight!
-                  </i>{" "}
-                  🎉
-                </b>
-              </p>
-            </li>
-            <li className="event eventcompleted" data-date="Dec 2021">
-              <h3>Wrapped Dingocoin released on SOL</h3>
-              <p>Hold and trade Dingocoin on SOL.</p>
-            </li>
-            <li className="event eventincomplete" data-date="~ Jan 2022">
-              <p>Block reward halved to 31,250</p>
-              <p>400,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventincomplete" data-date="~ Apr 2022">
-              <p>Block reward halved to 15,625</p>
-              <p>500,000 Blocks Mined.</p>
-            </li>
-            <li className="event eventincomplete" data-date="~ Jun 2022">
-              <p>Block reward set permanentely to 10,000</p>
-              <p>600,000 Blocks Mined.</p>
-            </li>
-          </ul>
-        </Container>
       </section>
 
       <section className="section-a" id="burnboard">
