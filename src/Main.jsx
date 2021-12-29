@@ -1436,12 +1436,10 @@ function Main() {
                   <i>The Beginning</i>
                 </h3>
                 <p>
-                  - Birth of Dingocoin
-                  <br />
-                  - Block reward halved to 500,000
-                  <br />
-                  - Listed on Autradex
-                  <br />- Listed on DelionDEX
+                  - <b>Birth</b> of Dingocoin.
+                  <br />- <b>Halved</b> block reward to 500,000.
+                  <br />- <b>Listed</b> on Autradex.
+                  <br />- <b>Listed</b> on DelionDEX.
                 </p>
               </li>
               <li className="event eventcompleted" data-date="May - Jul, 2021">
@@ -1449,10 +1447,9 @@ function Main() {
                   <i>The Resistance</i>
                 </h3>
                 <p>
-                  - Listed on Dex-Trade
-                  <br />
-                  - Block reward halved to 250,000
-                  <br />- Listed on Cratex
+                  - <b>Listed</b> on Dex-Trade.
+                  <br />- <b>Halved</b> reward to 250,000.
+                  <br />- <b>Listed</b> on Cratex.
                 </p>
               </li>
               <li className="event eventcompleted" data-date="Aug - Oct, 2021">
@@ -1460,12 +1457,10 @@ function Main() {
                   <i>The Upheaval</i>
                 </h3>
                 <p>
-                  - Wrapped Dingocoin released on BSC
-                  <br />
-                  - Block reward halved to 125,000
-                  <br />
-                  - Listed on SouthXchange
-                  <br />- Added to major merged mining pools
+                  - <b>Released</b> Wrapped Dingocoin on BSC.
+                  <br />- <b>Halved</b> block reward to 125,000.
+                  <br />- <b>Listed</b> on SouthXchange.
+                  <br />- <b>Added</b> to major merged mining pools.
                 </p>
               </li>
               <li className="event eventcompleted" data-date="Nov - Dec, 2021">
@@ -1473,39 +1468,29 @@ function Main() {
                   <i>The Proclamation</i>
                 </h3>
                 <p>
-                  - Dingosino released on Discord
-                  <br />
-                  - Dingocoin Weekly Airdrop released
-                  <br />
-                  - Block reward halved to 62,500
-                  <br />
-                  - Listed on Hotbit
-                  <br />- Wrapped Dingocoin released on SOL
+                  - <b>Released</b> Dingosino on Discord.
+                  <br />- <b>Released</b> Dingocoin Weekly Airdrop.
+                  <br />- <b>Halved</b> block reward to 62,500.
+                  <br />- <b>Listed</b> on Hotbit.
+                  <br />- <b>Released</b> Wrapped Dingocoin on SOL.
                 </p>
               </li>
               <li className="event eventcompleted" data-date="Jan - ?, 2022">
                 <h3>Be part of our history - join our journey now!</h3>
                 <p style={{ color: "#AAAAAA" }}>
-                  - Dingocoin merchandise
-                  <br />
-                  - Roblox Dingocoin City
-                  <br />
-                  - Multilinguistics
-                  <br />
-                  - Mobile wallets
-                  <br />
-                  - Browser extension wallets
-                  <br />
-                  - dApps on Dingocoin
-                  <br />
-                  - NFT platform on Dingocoin
-                  <br />
-                  - Many more major listings
-                  <br />
-                  - Block reward halving to 31,250
-                  <br />
-                  - Block reward halving to 15,625
-                  <br />- Block reward set permanentely to 10,000
+                  <u>Projects in progress:</u>
+                  <br />- <b>Release</b> Dingocoin merchandise platform.
+                  <br />- <b>Release</b> Roblox Dingocoin City.
+                  <br />- <b>Release</b> Multilinguistics.
+                  <br />- <b>Release</b> Mobile wallets.
+                  <br />- <b>Release</b> Browser extension wallets.
+                  <br />- <b>Release</b> dApps on Dingocoin.
+                  <br />- <b>Release</b> NFT platform on Dingocoin.
+                  <br />- <b>List</b> on many more major exchanges.
+                  <br />- <b>Halve</b> block reward to 31,250.
+                  <br />- <b>Halve</b> block reward to 15,625.
+                  <br />- <b>Halve</b> block reward to 10,000 permanentely.
+                  <br /> (Have an project idea? Join us now!)
                 </p>
               </li>
             </ul>
