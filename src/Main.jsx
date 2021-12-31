@@ -35,6 +35,7 @@ import RobloxLogo from "./assets/img/roblox.png";
 import SOLLogo from "./assets/img/sol.png";
 import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
+import MerchFormulaRunLogo from "./assets/img/merch_formularun.png";
 import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import BananaLogo from "./assets/img/happybanana.gif";
 import HotbitLogo from "./assets/img/hotbitex.png";
@@ -1907,7 +1908,31 @@ function Main() {
           <Container className="marketplace-container">
             <Row>
               <Col>
-                <h5>Purchase NFTs</h5>
+                <h5>Merchandise</h5>
+              </Col>
+            </Row>
+            <Row xs={1} md={1} lg={1}>
+              <Col>
+                <div className="marketplace-card">
+                  <div className="logo-holder mb-2">
+                    <Image src={MerchFormulaRunLogo} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://dingocoinmerch.com/merch"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      FormulaRun's Store
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+            </Row>
+            <CustomDivider />
+            <Row>
+              <Col>
+                <h5>NFTs</h5>
               </Col>
             </Row>
             <Row xs={1} md={1} lg={1}>
@@ -1928,8 +1953,8 @@ function Main() {
                 </div>
               </Col>
             </Row>
+            <CustomDivider />
             <Row>
-              <CustomDivider />
               <p>
                 To list your own Dingocoin merchandise/NFT collection, hit us up
                 on our Discord channel.
