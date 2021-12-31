@@ -1403,23 +1403,6 @@ function Main() {
                   onChange={(event) => setFilterQuery(event.target.value)}
                 />
               </InputGroup>
-              <p className="mt-4">
-                <b>
-                  Event of the week: To celebrate{" "}
-                  <a
-                    href="https://www.abc.net.au/news/2021-12-18/wandi-returns-home-two-years-after-falling-from-the-sky/100703670"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="simple-link"
-                  >
-                    Wandi the Dingo's return
-                  </a>
-                  , get a <u>2x earning cap bonus</u> by:
-                  <br /> 1) mentioning <code>@Wandi_Dingo</code>, 2) linking{" "}
-                  <code>dingofoundation.org</code>, and 3) hashtaging{" "}
-                  <code>#WandiTheDingo</code>.
-                </b>
-              </p>
             </Col>
           </Row>
         </Container>
