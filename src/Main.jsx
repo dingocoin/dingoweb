@@ -1474,7 +1474,7 @@ function Main() {
                   <br />- <b>Halve</b> block reward to 31,250.
                   <br />- <b>Halve</b> block reward to 15,625.
                   <br />- <b>Halve</b> block reward to 10,000 permanentely.
-                  <br /> (Have an project idea? Join us now!)
+                  <br /> (Have a project idea? Join us now!)
                 </p>
               </li>
             </ul>
