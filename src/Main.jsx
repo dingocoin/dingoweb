@@ -42,6 +42,8 @@ import HotbitLogo from "./assets/img/hotbitex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
+import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
+import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
 
 // Controls.
 import {
@@ -1935,7 +1937,7 @@ function Main() {
                 <h5>NFTs</h5>
               </Col>
             </Row>
-            <Row xs={1} md={1} lg={1}>
+            <Row xs={1} md={3} lg={3}>
               <Col>
                 <div className="marketplace-card">
                   <div className="logo-holder mb-2">
@@ -1948,6 +1950,38 @@ function Main() {
                   >
                     <Button className="popup-button" variant="primary">
                       DingoCoin Collection #1
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+              <Col>
+                <div className="marketplace-card">
+                  <div className="logo-holder mb-2">
+                    <Image src={MerchCryptoDingosLogo} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://opensea.io/collection/cryptodingos"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      CryptoDingos
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+              <Col>
+                <div className="marketplace-card">
+                  <div className="logo-holder mb-2">
+                    <Image src={MerchDingocoinArtLogo} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://opensea.io/collection/dingocoinart"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      Dingocoin Art
                     </Button>
                   </a>
                 </div>
