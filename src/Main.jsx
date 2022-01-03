@@ -1,7 +1,5 @@
 import React from "react";
 
-// Routing
-import { useLocation } from "react-router-dom";
 // Controls.
 import {
   DropdownButton,
@@ -76,7 +74,12 @@ function shuffleArr(array) {
 }
 
 function Main() {
-  const location = useLocation();
+
+  const [location, setLocation] = React.useState(null);
+  React.useEffect(() => {
+    console.log(window.location.href);
+    console.log(window.location.pathname);
+  });
 
   const [communityImagesAuthors, setCommunityImagesAuthors] = React.useState(
     []
