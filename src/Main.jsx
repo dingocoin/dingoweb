@@ -2,16 +2,7 @@ import React from "react";
 
 // Controls.
 import {
-  DropdownButton,
-  Dropdown,
-  InputGroup,
-  FormControl,
-  Table,
-  Accordion,
   Button,
-  Navbar,
-  Nav,
-  NavDropdown,
   Container,
   Row,
   Col,
@@ -19,17 +10,14 @@ import {
   Image,
 } from "react-bootstrap";
 import CustomDivider from "./CustomDivider.jsx";
-import { TwitterTweetEmbed } from "react-twitter-embed";
 
 // Assets.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRobot,
-  faHeart,
-  faRetweet,
-  faSearch,
   faShoppingCart,
   faPencilRuler,
+  faDumpsterFire
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -74,13 +62,6 @@ function shuffleArr(array) {
 }
 
 function Main() {
-
-  const [location, setLocation] = React.useState(null);
-  React.useEffect(() => {
-    console.log(window.location.href);
-    console.log(window.location.pathname);
-  });
-
   const [communityImagesAuthors, setCommunityImagesAuthors] = React.useState(
     []
   );
@@ -199,84 +180,6 @@ function Main() {
     })();
   }, []);
 
-  const [socialFaucetRank, setSocialFaucetRank] = React.useState([]);
-  const [socialFaucetHistoryRank, setSocialFaucetHistoryRank] = React.useState(
-    []
-  );
-  const [socialFaucetView, setSocialFaucetView] = React.useState("weekly");
-  React.useEffect(() => {
-    (async () => {
-      // Retireve.
-      const { users, metrics, historyMetrics, address } = await get(
-        "https://stats.dingocoin.org:8443/socialFaucet"
-      );
-
-      // Collate.
-      const rank = [];
-      for (const userId of Object.keys(metrics)) {
-        rank.push({
-          name: users[userId].name,
-          handle: users[userId].screen_name,
-          score: metrics[userId].score,
-          likes: metrics[userId].like_count,
-          retweets: metrics[userId].retweet_count,
-          rank: null,
-          address: address[userId],
-        });
-      }
-      rank.sort(
-        (a, b) => 0.5 * b.retweets + b.likes - (0.5 * a.retweets + a.likes)
-      ); // Sort descending.
-      // Add rank index.
-      for (let i = 0; i < rank.length; i++) {
-        rank[i].rank = i + 1;
-      }
-      setSocialFaucetRank(rank);
-
-      // Collate history.
-      const historyRank = [];
-      for (const userId of Object.keys(historyMetrics)) {
-        if (userId in users) {
-          historyRank.push({
-            name: users[userId].name,
-            handle: users[userId].screen_name,
-            score: historyMetrics[userId].score,
-            likes: historyMetrics[userId].like_count,
-            retweets: historyMetrics[userId].retweet_count,
-            rank: null,
-          });
-        }
-      }
-      historyRank.sort(
-        (a, b) => 0.5 * b.retweets + b.likes - (0.5 * a.retweets + a.likes)
-      ); // Sort descending.
-      for (let i = 0; i < historyRank.length; i++) {
-        historyRank[i].rank = i + 1;
-      }
-      setSocialFaucetHistoryRank(historyRank);
-    })();
-  }, []);
-
-  const [burnBoardList, setBurnBoardList] = React.useState([]);
-  React.useEffect(() => {
-    (async () => {
-      const burnList = await get("https://stats.dingocoin.org:8443/burnBoard");
-      burnList.sort((a, b) => parseFloat(b.amount) - parseFloat(a.amount));
-      for (let i = 0; i < burnList.length; i++) {
-        burnList[i].rank = i + 1;
-      }
-      setBurnBoardList(burnList);
-    })();
-  }, []);
-
-  const [filterQuery, setFilterQuery] = React.useState("");
-  const [filterText, setFilterText] = React.useState("");
-
-  React.useEffect(() => {
-    const timeOutId = setTimeout(() => setFilterText(filterQuery), 500);
-    return () => clearTimeout(timeOutId);
-  }, [filterQuery]);
-
   const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
   const [artModalShow, setArtModalShow] = React.useState(false);
@@ -284,158 +187,6 @@ function Main() {
 
   return (
     <div>
-      <Navbar className="navbar" bg="dark" expand="lg" sticky="top">
-        <Container>
-          <Navbar.Brand href="#home" className="navbar-brand">
-            <img alt="" src={DingocoinLogo} />
-            <span>DINGOCOIN</span>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse>
-            <Nav className="ms-auto">
-              <Nav.Link href="#ecosystem">Ecosystem</Nav.Link>
-              <Nav.Link href="#airdrop">Airdrop</Nav.Link>
-              <Nav.Link href="#roadmap">Roadmap</Nav.Link>
-              <NavDropdown className="navbar-important" title="Resources">
-                <NavDropdown.Header>Resources</NavDropdown.Header>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="/DingocoinWhitePaper.pdf"
-                >
-                  Whitepaper
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://miningpoolstats.stream/dingocoin"
-                >
-                  Mining Info
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://explorer.dingocoin.org/"
-                >
-                  Explorer (Official, with API)
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://openchains.info/coin/dingocoin/blocks"
-                >
-                  Explorer (Open Chains)
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown className="navbar-important" title="Live Charts">
-                <NavDropdown.Header>Live Charts</NavDropdown.Header>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://coinpaprika.com/coin/dingo-dingocoin/"
-                >
-                  <img alt="" src={CoinPaprikaLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://coinmarketcap.com/currencies/dingocoin/"
-                >
-                  <img alt="" src={CoinMarketCapLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.coingecko.com/en/coins/dingocoin"
-                >
-                  <img alt="" src={CoinGeckoLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://coincodex.com/crypto/dingocoin/"
-                >
-                  <img alt="" src={CoinCodexLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"
-                >
-                  <img alt="" src={DexGuruLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
-                >
-                  <img alt="" src={PooCoinLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                >
-                  <img alt="" src={BirdeyeLogo} />
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown className="navbar-important" title="Exchanges">
-                <NavDropdown.Header>Exchanges</NavDropdown.Header>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
-                >
-                  <img alt="" src={HotbitLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://main.southxchange.com/Market/Book/DINGO/LTC"
-                >
-                  <img alt="" src={SouthXchangeLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://cratex.io/index.php?pair=DINGO/LTC"
-                >
-                  <img alt="" src={CratexIoLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://dex-trade.com/spot/trading/DINGOUSDT"
-                >
-                  <img alt="" src={DexTradeLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://dex.delion.online/market/DELION.DINGO_DOGE"
-                >
-                  <img alt="" src={DelionDexLogo} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                >
-                  <img alt="" src={PancakeSwap} />
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://raydium.io/swap/?from=11111111111111111111111111111111&to=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                >
-                  <img alt="" src={RaydiumSwap} />
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
       <header className="section-a" id="home">
         <div className="particles-container">
           <Container className="masthead">
@@ -532,7 +283,7 @@ function Main() {
         <CustomDivider />
         <Container className="ecosystem-section">
           <Row>
-            <h4>Dingocoin Infrastructure and Markets</h4>
+            <h4>Infrastructure and Markets</h4>
             <p style={{ textAlign: "justify" }}>
               Dingocoin exists <i>both</i> as a coin on its own secured
               blockchain, <i>and</i> as wrapped tokens (wDingocoin) on BSC and
@@ -795,16 +546,15 @@ function Main() {
           </Row>
           <CustomDivider />
           <Row>
-            <h4>Fun and Art</h4>
+            <h4>Community-driven Development</h4>
             <p style={{ textAlign: "justify" }}>
-              The Dingocoin community loves its fun and art. We are working on
-              highly innovative games and platforms which use Dingocoin to
-              function -- including a Discord game server; a unique
-              Dingocoin-themed Roblox game that lets you purchase in-game
-              accessories using Dingocoin; and a daring attempt to run a better,
-              novel NFT platform on the Dingocoin blockchain. We also have a
-              hyperactive community producing a constant stream of artwork,
-              memes, and merchandise.
+              Dingocoin prides itself as a completely community-driven project.
+              Check out our list of community contributions below. The Dingocoin
+              pack takes the growth of Dingocoin into its own hands, focusing on
+              building progress <i>by actually doing work</i>. We do not sit
+              around and wait for the impossible to happen, nor do we attempt to
+              overmarket. The Dingocoin pack is wild and unstoppable. Have an
+              idea? Join us today, throw it out and we'll help!
             </p>
             <Container>
               <Row
@@ -813,6 +563,21 @@ function Main() {
                 lg={3}
                 className="projects justify-content-center"
               >
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <Image src={SocialFaucetLogo} />
+                    </div>
+                    <h5>Weekly Airdrop</h5>
+                    <p>
+                      Earn Dingocoins simply by promoting Dingocoin on Twitter.
+                      <br />
+                      <a className="simple-link" href="/airdrop">
+                        Launch &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </Col>
                 <Col>
                   <div className="project-card">
                     <div className="logo-holder">
@@ -829,6 +594,24 @@ function Main() {
                         rel="noreferrer"
                       >
                         Join &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <FontAwesomeIcon
+                        className="faicon"
+                        icon={faDumpsterFire}
+                      />
+                    </div>
+                    <h5>Burnboard</h5>
+                    <p>
+                      Voluntarily burn your Dingocoins for fun, <i>because you can</i>.
+                      <br />
+                      <a className="simple-link" href="/burnboard">
+                        Launch &#9658;
                       </a>
                     </p>
                   </div>
@@ -890,67 +673,6 @@ function Main() {
                     </p>
                   </div>
                 </Col>
-              </Row>
-            </Container>
-          </Row>
-          <CustomDivider />
-          <Row>
-            <h4>Community and Social</h4>
-            <p style={{ textAlign: "justify" }}>
-              Dingocoin prides itself as a completely community-driven project.
-              All innovation and development are contributed entirely by the
-              community. The Dingocoin pack takes the growth of Dingocoin into
-              its own hands, focusing on building progress{" "}
-              <i>by actually doing work</i>. We do not sit around and wait for
-              the impossible to happen, nor do we attempt to overmarket. The
-              Dingocoin pack is wild and unstoppable. Have an idea? Join us
-              today, throw it out and we'll help!
-            </p>
-            <Container>
-              <Row
-                xs={1}
-                md={2}
-                lg={3}
-                className="projects justify-content-center"
-              >
-                <Col>
-                  <div className="project-card">
-                    <div className="logo-holder">
-                      <FontAwesomeIcon
-                        className="faicon"
-                        icon={faDiscord}
-                        style={{ color: "#728ad6" }}
-                      />{" "}
-                      <FontAwesomeIcon
-                        className="faicon"
-                        icon={faTelegram}
-                        style={{ color: "#0088CC" }}
-                      />
-                    </div>
-                    <h5>Community Channels</h5>
-                    <p>
-                      Join the Dingo disco.
-                      <br />
-                      <a
-                        className="simple-link"
-                        href="https://discord.gg/y3J946HFQM"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Discord &#9658;
-                      </a>
-                      <br />
-                      <a
-                        className="simple-link"
-                        href="https://t.me/DingoCoinTalk"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Telegram &#9658;
-                      </a>
-                    </p>
-                  </div>
-                </Col>
                 <Col>
                   <div className="project-card">
                     <div className="logo-holder">
@@ -968,21 +690,6 @@ function Main() {
                         rel="noreferrer"
                       >
                         Discord &#9658;
-                      </a>
-                    </p>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="project-card">
-                    <div className="logo-holder">
-                      <Image src={SocialFaucetLogo} />
-                    </div>
-                    <h5>Weekly Airdrop</h5>
-                    <p>
-                      Earn Dingocoins simply by promoting Dingocoin on Twitter.
-                      <br />
-                      <a className="simple-link" href="#airdrop">
-                        Participate &#9658;
                       </a>
                     </p>
                   </div>
@@ -1045,377 +752,7 @@ function Main() {
         </Container>
       </section>
 
-      <section className="section-a" id="airdrop">
-        <h2>DINGOCOIN WEEKLY AIRDROP</h2>
-        <CustomDivider />
-        <Container>
-          <Row>
-            <p>Earn Dingocoins simply by promoting Dingocoin on Twitter.</p>
-          </Row>
-          <Row xs={1} md={1} lg={2} className="mb-4 mt-3">
-            <Col>
-              <Accordion>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>
-                    <h5>How to participate?</h5>
-                  </Accordion.Header>
-                  <Accordion.Body className="social-faucet-instructions">
-                    <p>
-                      Simply post on Twitter advertising Dingocoin. This can be
-                      a <b>tweet</b>, a <b>quote-tweet</b>, or a <b>reply</b> to
-                      another tweet.
-                    </p>
-                    <p>In your post, include all of:</p>
-                    <ol>
-                      <li>
-                        a link to <code>dingocoin.org</code>,
-                      </li>
-                      <li>
-                        hashtags <code>#dingocoin</code> and{" "}
-                        <code>#weeklyairdrop</code>, and
-                      </li>
-                      <li>
-                        a hashtag with your Dingocoin address (e.g.{" "}
-                        <code>#DQBx7G4aozdqYFCv2dU4kacaEcPzwg8dkZ</code>). Your
-                        rewards will be sent here.
-                      </li>
-                    </ol>
-                    <p>
-                      Retweet/quote-tweet such a post of someone else for
-                      additional rewards (sent to your latest address, if any).
-                    </p>
-                    <p>
-                      Below is an example tweet:
-                      <TwitterTweetEmbed
-                        tweetId={"1470096073809084429"}
-                        options={{ height: 700 }}
-                      />
-                    </p>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-            </Col>
-            <Col>
-              <Accordion>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>
-                    <h5>Rewards and payouts</h5>
-                  </Accordion.Header>
-                  <Accordion.Body className="social-faucet-instructions">
-                    <p>Get rewarded based on your activity:</p>
-                    <ul>
-                      <li>
-                        1 like on your post (including liking your own) = 1,000
-                        Dingocoin
-                      </li>
-                      <li>
-                        1 retweet/quote-retweet on your post = 500 Dingocoin
-                      </li>
-                      <li>
-                        Retweet/quote-retweet someone else's post = 500
-                        Dingocoin
-                      </li>
-                      <li>
-                        Retweeting/quote-retweeting your own post = no reward
-                      </li>
-                    </ul>
-                    <p>
-                      * Each user can earn up to 20,000 Dingocoins per week. Top
-                      3 users for the week can earn up to 100,000 for that week!
-                    </p>
-                    <p>
-                      * Please ensure that you have a tweet in the current week
-                      associating your Twitter account to a Dingocoin reward
-                      address.
-                    </p>
-                    <p>
-                      * Your posts might be filtered away by Twitter if your
-                      account or activity is deemed too obscure or spammy.
-                      Please try increasing the number of followers, to wait for
-                      your account to mature, and/or to not spam too blatantly.
-                    </p>
-                    <p>
-                      * The leaderboard is updated at the start of every hour.
-                      Rewards are paid out some time on Sunday, UTC. The
-                      leaderboard also resets at that time. Only retweets and
-                      likes of tweets in the current week are scored.
-                    </p>
-                    <p>
-                      * Rates are not fixed. May have to adjust in case we fly
-                      to the moon.
-                    </p>
-                    <p>
-                      <b>
-                        Feeling generous? Fund our weekly airdrop to keep it
-                        running :){" "}
-                        <code>DTE3TFVBy69od8XaRPVHoDfrucgMFjVzYc</code>
-                      </b>
-                    </p>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <DropdownButton
-                title={
-                  socialFaucetView === "all-time"
-                    ? "All-time Ranking"
-                    : "This Week's Ranking"
-                }
-                className="mb-2"
-              >
-                <Dropdown.Item
-                  onClick={() => {
-                    setSocialFaucetView("all-time");
-                  }}
-                >
-                  All-time Ranking
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setSocialFaucetView("weekly");
-                  }}
-                >
-                  This Week's Ranking
-                </Dropdown.Item>
-              </DropdownButton>
-              <div className="social-faucet-board">
-                {socialFaucetView === "all-time" && (
-                  <Table
-                    className="social-faucet-table"
-                    striped
-                    bordered
-                    responsive
-                  >
-                    <thead>
-                      <tr>
-                        <th className="col-1">#</th>
-                        <th className="col-7">User</th>
-                        <th className="col-2">Score</th>
-                        <th className="col-1">
-                          <FontAwesomeIcon
-                            className="faicon"
-                            icon={faRetweet}
-                          />
-                        </th>
-                        <th className="col-1">
-                          <FontAwesomeIcon className="faicon" icon={faHeart} />
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {socialFaucetHistoryRank
-                        .filter(
-                          (x) =>
-                            x.name
-                              .toLowerCase()
-                              .includes(filterText.toLowerCase()) ||
-                            x.handle
-                              .toLowerCase()
-                              .includes(filterText.toLowerCase())
-                        )
-                        .map((x) => (
-                          <tr
-                            key={x.rank}
-                            className={
-                              x.rank === 1
-                                ? "gold"
-                                : x.rank === 2
-                                ? "silver"
-                                : x.rank === 3
-                                ? "bronze"
-                                : ""
-                            }
-                          >
-                            <td className="col-1">{x.rank}</td>
-                            <td className="col-7">
-                              <a
-                                href={"https://twitter.com/" + x.handle}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                {x.name}
-                              </a>
-                            </td>
-                            <td className="col-2">
-                              {(0.5 * x.retweets + x.likes).toFixed(1)}
-                            </td>
-                            <td className="col-1">
-                              {x.retweets.toLocaleString()}
-                            </td>
-                            <td className="col-1">
-                              {x.likes.toLocaleString()}
-                            </td>
-                          </tr>
-                        ))}
-                      {filterText === "" && (
-                        <tr>
-                          <td colSpan="2" className="col-7">
-                            <b>Total</b>
-                          </td>
-                          <td className="col-2"></td>
-                          <td className="col-1">
-                            <b>
-                              {socialFaucetHistoryRank
-                                .map((x) => x.retweets)
-                                .reduce((a, b) => a + b, 0)
-                                .toLocaleString()}
-                            </b>
-                          </td>
-                          <td className="col-1">
-                            <b>
-                              {socialFaucetHistoryRank
-                                .map((x) => x.likes)
-                                .reduce((a, b) => a + b, 0)
-                                .toLocaleString()}
-                            </b>
-                          </td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </Table>
-                )}
-                {socialFaucetView === "weekly" && (
-                  <Table
-                    className="social-faucet-table"
-                    striped
-                    bordered
-                    responsive
-                  >
-                    <thead>
-                      <tr>
-                        <th className="col-1">#</th>
-                        <th className="col-6">User</th>
-                        <th className="col-2 table-dingo">
-                          <span>
-                            <img alt="" src={DingocoinLogo} />
-                          </span>
-                          &nbsp;earned
-                        </th>
-                        <th className="col-1">Score</th>
-                        <th className="col-1">
-                          <FontAwesomeIcon
-                            className="faicon"
-                            icon={faRetweet}
-                          />
-                        </th>
-                        <th className="col-1">
-                          <FontAwesomeIcon className="faicon" icon={faHeart} />
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {socialFaucetRank
-                        .filter(
-                          (x) =>
-                            x.name
-                              .toLowerCase()
-                              .includes(filterText.toLowerCase()) ||
-                            x.handle
-                              .toLowerCase()
-                              .includes(filterText.toLowerCase())
-                        )
-                        .map((x) => (
-                          <tr
-                            key={x.rank}
-                            className={
-                              x.rank === 1
-                                ? "gold"
-                                : x.rank === 2
-                                ? "silver"
-                                : x.rank === 3
-                                ? "bronze"
-                                : ""
-                            }
-                          >
-                            <td className="col-1">{x.rank}</td>
-                            <td className="col-6">
-                              <a
-                                href={"https://twitter.com/" + x.handle}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                {x.name}
-                              </a>
-                            </td>
-                            {typeof x.address === "undefined" && (
-                              <td className="col-2">
-                                <strike>
-                                  {(x.score * 1000).toLocaleString()}
-                                </strike>
-                                *
-                              </td>
-                            )}
-                            {typeof x.address !== "undefined" && (
-                              <td className="col-2">
-                                {(x.score * 1000).toLocaleString()}
-                              </td>
-                            )}
-                            <td className="col-1">
-                              {(0.5 * x.retweets + x.likes).toFixed(1)}
-                            </td>
-                            <td className="col-1">
-                              {x.retweets.toLocaleString()}
-                            </td>
-                            <td className="col-1">
-                              {x.likes.toLocaleString()}
-                            </td>
-                          </tr>
-                        ))}
-                      {filterText === "" && (
-                        <tr>
-                          <td colSpan="2" className="col-7">
-                            <b>Total</b>
-                          </td>
-                          <td className="col-2">
-                            <b>
-                              {socialFaucetRank
-                                .map((x) => x.score * 1000)
-                                .reduce((a, b) => a + b, 0)
-                                .toLocaleString()}
-                            </b>
-                          </td>
-                          <td className="col-1"></td>
-                          <td className="col-1">
-                            <b>
-                              {socialFaucetRank
-                                .map((x) => x.retweets)
-                                .reduce((a, b) => a + b, 0)
-                                .toLocaleString()}
-                            </b>
-                          </td>
-                          <td className="col-1">
-                            <b>
-                              {socialFaucetRank
-                                .map((x) => x.likes)
-                                .reduce((a, b) => a + b, 0)
-                                .toLocaleString()}
-                            </b>
-                          </td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </Table>
-                )}
-              </div>
-              <InputGroup className="mt-0">
-                <InputGroup.Text id="basic-addon1">
-                  <FontAwesomeIcon className="faicon" icon={faSearch} />
-                </InputGroup.Text>
-                <FormControl
-                  placeholder="Search user/handle..."
-                  value={filterQuery}
-                  onChange={(event) => setFilterQuery(event.target.value)}
-                />
-              </InputGroup>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      <section className="section-b" id="roadmap">
+      <section className="section-a" id="roadmap">
         <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
         <CustomDivider />
         <Container>
@@ -1500,190 +837,6 @@ function Main() {
           <br />
           <code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code>
         </p>
-      </section>
-
-      <section className="section-a" id="burnboard">
-        <h2>DINGOCOIN BURNBOARD</h2>
-        <CustomDivider />
-        <Container>
-          <Row>
-            <Col>
-              <p>
-                Voluntarily burn your Dingocoins for fun.
-                <br />
-                Rise to the top <i>because you can</i>.<br />
-                <i>The ultimate answer to "but do you have burn mechanics?"</i>
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Accordion>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>
-                    <h5>How to participate?</h5>
-                  </Accordion.Header>
-                  <Accordion.Body className="social-faucet-instructions">
-                    <Container>
-                      <Row>
-                        <Col>
-                          <p>
-                            <b>Burning without a message</b>
-                          </p>
-                          <p>
-                            To burn your coins without leaving a message, simply
-                            send your coins to our burn address,{" "}
-                            <code>DMuchKingDingoSuchWi1dDogexxboXbKD</code>
-                          </p>
-                          <p>
-                            <b>Burning with a message</b>
-                          </p>
-                          <p>
-                            Leaving a message is trickier. You need to manually
-                            sign and send a special transaction containing the
-                            message, as follows:
-                          </p>
-                          <p>
-                            1) Open up the "Debug window" in your Dingocoin
-                            wallet and go to the "Console".
-                          </p>
-                          <p>
-                            2) Prepare the transaction: Run{" "}
-                            <code>
-                              createrawtransaction []{" "}
-                              {
-                                '"{\\"DMuchKingDingoSuchWi1dDogexxboXbKD\\": XXXX, \\"data\\":\\"YYYY\\"}"'
-                              }
-                            </code>{" "}
-                            making sure to:
-                            <ul>
-                              <li>
-                                replace <code>XXXX</code> with the amount you
-                                want to burn;
-                              </li>
-                              <li>
-                                replace <code>YYYY</code> with a hex-encoding (
-                                <a
-                                  href="https://www.online-toolz.com/tools/text-hex-convertor.php"
-                                  target="_blank"
-                                  rel="noreferrer"
-                                >
-                                  <u>convert here</u>
-                                </a>
-                                ) of your ASCII text message. Your text message
-                                should have at most 75 characters.
-                              </li>
-                            </ul>
-                          </p>
-                          <p>
-                            3) Fund the transaction: Take the hex output of (2)
-                            and run{" "}
-                            <code>fundrawtransaction HEX-FROM-STEP-2</code>
-                          </p>
-                          <p>
-                            4) Sign the transaction: Take the hex output of (3)
-                            and run{" "}
-                            <code>signrawtransaction HEX-FROM-STEP-3</code>
-                          </p>
-                          <p>
-                            5) Send the transaction: Take the hex output of (4)
-                            and run{" "}
-                            <code>sendrawtransaction HEX-FROM-STEP-4</code>
-                          </p>
-                          <p>
-                            These steps burn message and your coins{" "}
-                            <i>permanently</i> onto Dingocoin's mainnet. Your
-                            burn should appear on this board within the next 15
-                            minutes.
-                          </p>
-                          <p>
-                            <b>Can anyone steal the burned coins?</b>
-                          </p>
-                          <p>
-                            The burn address was constructed arbitrarily without
-                            a private key, with nothing up our sleeves. Read
-                            what it says! The probability of anyone randomly
-                            generating the private key to this address is very
-                            near zero, so it is almost impossible for anyone to
-                            ever be able to claim the burned coins.
-                            <br />
-                            In particular, we used{" "}
-                            <a
-                              href="https://github.com/joeuhren/generic-unspendable"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              <u>this tool</u>
-                            </a>{" "}
-                            with arguments{" "}
-                            <code>
-                              ./unspendable.py D MuchKingDingoSuchWi1dDogexx
-                            </code>
-                            . You can go ahead to regenerate this burn address
-                            in the same way for verification.
-                          </p>
-                        </Col>
-                      </Row>
-                    </Container>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-              <br />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <h3>Burnboard</h3>
-              <Table
-                className="social-faucet-table"
-                striped
-                bordered
-                responsive
-              >
-                <thead>
-                  <tr>
-                    <th className="col-2">#</th>
-                    <th className="col-5">Burn Amount</th>
-                    <th className="col-5">Message</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {burnBoardList.map((x) => (
-                    <tr
-                      key={x.rank}
-                      className={
-                        x.rank === 1
-                          ? "gold"
-                          : x.rank === 2
-                          ? "silver"
-                          : x.rank === 3
-                          ? "bronze"
-                          : ""
-                      }
-                    >
-                      <td className="col-2">{x.rank}</td>
-                      <td className="col-5">
-                        {parseFloat(x.amount).toLocaleString()}
-                      </td>
-                      <td className="col-5">
-                        {x.data === null
-                          ? ""
-                          : Buffer.from(x.data, "hex").toString("ascii")}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      <section className="section-footer">
-        <h6>
-          Copyright © The Dingocoin Project 2021 | Multisig Community Donations:{" "}
-          <code>A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP</code>{" "}
-        </h6>
       </section>
 
       <Modal
