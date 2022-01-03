@@ -705,3 +705,15 @@ a.simple-link:hover {
   }
 }
 
+.privacy {
+  h1,h2,h3,h4,h5,h6 {
+    text-align: left;
+  }
+  p {
+    text-align: justify;
+    margin-bottom: 3rem;
+  }
+  ul {
+    margin-bottom: 0;
+  }
+}

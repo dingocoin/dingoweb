@@ -4,6 +4,7 @@ import React from "react";
 import Main from "./Main";
 import Airdrop from "./Airdrop";
 import Burnboard from "./Burnboard";
+import Privacy from "./Privacy";
 import ReactGA from "react-ga";
 
 // Controls.
@@ -186,6 +187,13 @@ function App() {
                 >
                   Explorer (Open Chains)
                 </NavDropdown.Item>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
+                  href="/privacy"
+                >
+                  Privacy Policy
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
@@ -193,7 +201,8 @@ function App() {
       </Navbar>
 
       {(location === "/airdrop" && <Airdrop />) ||
-        (location === "/burnboard" && <Burnboard />) || <Main />}
+          (location === "/burnboard" && <Burnboard />) ||
+        (location === "/privacy" && <Privacy/>) || <Main />}
 
       <section className="section-footer">
         <h6>
