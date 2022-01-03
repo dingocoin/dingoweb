@@ -1,5 +1,28 @@
 import React from "react";
 
+// Routing
+import { useLocation } from "react-router-dom";
+// Controls.
+import {
+  DropdownButton,
+  Dropdown,
+  InputGroup,
+  FormControl,
+  Table,
+  Accordion,
+  Button,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Container,
+  Row,
+  Col,
+  Modal,
+  Image,
+} from "react-bootstrap";
+import CustomDivider from "./CustomDivider.jsx";
+import { TwitterTweetEmbed } from "react-twitter-embed";
+
 // Assets.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -45,27 +68,6 @@ import BirdeyeLogo from "./assets/img/birdeye.png";
 import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
 import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
 
-// Controls.
-import {
-  DropdownButton,
-  Dropdown,
-  InputGroup,
-  FormControl,
-  Table,
-  Accordion,
-  Button,
-  Navbar,
-  Nav,
-  NavDropdown,
-  Container,
-  Row,
-  Col,
-  Modal,
-  Image,
-} from "react-bootstrap";
-import CustomDivider from "./CustomDivider.jsx";
-import { TwitterTweetEmbed } from "react-twitter-embed";
-
 function shuffleArr(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var rand = Math.floor(Math.random() * (i + 1));
@@ -74,6 +76,8 @@ function shuffleArr(array) {
 }
 
 function Main() {
+  const location = useLocation();
+
   const [communityImagesAuthors, setCommunityImagesAuthors] = React.useState(
     []
   );
@@ -113,8 +117,6 @@ function Main() {
         importedImages.push(images(imgPath));
       }
     }
-
-    console.log(importedImages);
 
     setCommunityImages(
       importedImages.map((x) => {
@@ -228,7 +230,6 @@ function Main() {
       }
       setSocialFaucetRank(rank);
 
-      console.log(historyMetrics);
       // Collate history.
       const historyRank = [];
       for (const userId of Object.keys(historyMetrics)) {
@@ -529,7 +530,7 @@ function Main() {
         <Container className="ecosystem-section">
           <Row>
             <h4>Dingocoin Infrastructure and Markets</h4>
-            <p style={{ "text-align": "justify" }}>
+            <p style={{ textAlign: "justify" }}>
               Dingocoin exists <i>both</i> as a coin on its own secured
               blockchain, <i>and</i> as wrapped tokens (wDingocoin) on BSC and
               SOL. Our goal is to make Dingocoin highly accessible, allowing you
@@ -792,7 +793,7 @@ function Main() {
           <CustomDivider />
           <Row>
             <h4>Fun and Art</h4>
-            <p style={{ "text-align": "justify" }}>
+            <p style={{ textAlign: "justify" }}>
               The Dingocoin community loves its fun and art. We are working on
               highly innovative games and platforms which use Dingocoin to
               function -- including a Discord game server; a unique
@@ -892,7 +893,7 @@ function Main() {
           <CustomDivider />
           <Row>
             <h4>Community and Social</h4>
-            <p style={{ "text-align": "justify" }}>
+            <p style={{ textAlign: "justify" }}>
               Dingocoin prides itself as a completely community-driven project.
               All innovation and development are contributed entirely by the
               community. The Dingocoin pack takes the growth of Dingocoin into
@@ -989,7 +990,7 @@ function Main() {
           <CustomDivider />
           <Row
             className="community-art justify-content-center"
-            style={{ "text-align": "center" }}
+            style={{ textAlign: "center" }}
           >
             <h4>
               <Image src={BananaLogo} style={{ height: "1.7rem" }} />
