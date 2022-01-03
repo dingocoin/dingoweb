@@ -1,14 +1,7 @@
 import React from "react";
 
 // Controls.
-import {
-  Button,
-  Container,
-  Row,
-  Col,
-  Modal,
-  Image,
-} from "react-bootstrap";
+import { Button, Container, Row, Col, Modal, Image } from "react-bootstrap";
 import CustomDivider from "./CustomDivider.jsx";
 
 // Assets.
@@ -17,7 +10,7 @@ import {
   faRobot,
   faShoppingCart,
   faPencilRuler,
-  faDumpsterFire
+  faDumpsterFire,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -568,13 +561,13 @@ function Main() {
                     <div className="logo-holder">
                       <Image src={SocialFaucetLogo} />
                     </div>
-                    <h5>Weekly Airdrop</h5>
+                    <a href="/airdrop">
+                      <Button className="popup-button" variant="primary">
+                        Weekly Airdrop
+                      </Button>
+                    </a>
                     <p>
                       Earn Dingocoins simply by promoting Dingocoin on Twitter.
-                      <br />
-                      <a className="simple-link" href="/airdrop">
-                        Launch &#9658;
-                      </a>
                     </p>
                   </div>
                 </Col>
@@ -583,19 +576,16 @@ function Main() {
                     <div className="logo-holder">
                       <Image src={DingosinoLogo} />
                     </div>
-                    <h5>Dingosino</h5>
-                    <p>
-                      Play games using Dingocoins on Discord.
-                      <br />
-                      <a
-                        className="simple-link"
-                        href="https://discord.gg/9advvJ4z5f"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Join &#9658;
-                      </a>
-                    </p>
+                    <a
+                      href="https://discord.gg/9advvJ4z5f"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button className="popup-button" variant="primary">
+                        Dingosino
+                      </Button>
+                    </a>
+                    <p>Play games using Dingocoins on Discord.</p>
                   </div>
                 </Col>
                 <Col>
@@ -606,13 +596,14 @@ function Main() {
                         icon={faDumpsterFire}
                       />
                     </div>
-                    <h5>Burnboard</h5>
+                    <a href="/burnboard">
+                      <Button className="popup-button" variant="primary">
+                        Burnboard
+                      </Button>
+                    </a>
                     <p>
-                      Voluntarily burn your Dingocoins for fun, <i>because you can</i>.
-                      <br />
-                      <a className="simple-link" href="/burnboard">
-                        Launch &#9658;
-                      </a>
+                      Voluntarily burn your Dingocoins for fun,{" "}
+                      <i>because you can</i>.
                     </p>
                   </div>
                 </Col>
@@ -657,19 +648,16 @@ function Main() {
                         icon={faShoppingCart}
                       />
                     </div>
-                    <h5>Dingocoin Marketplace</h5>
+                    <Button
+                      className="popup-button"
+                      variant="primary"
+                      onClick={() => setMarketplaceModalShow(true)}
+                    >
+                      Marketplace
+                    </Button>
                     <p>
                       Purchase Dingocoin merchandise/NFTs designed and sold by
                       community members.
-                      <br />
-                      <a
-                        className="simple-link"
-                        onClick={() => {
-                          setMarketplaceModalShow(true);
-                        }}
-                      >
-                        View &#9658;
-                      </a>
                     </p>
                   </div>
                 </Col>
@@ -678,19 +666,18 @@ function Main() {
                     <div className="logo-holder">
                       <FontAwesomeIcon className="faicon" icon={faRobot} />
                     </div>
-                    <h5>Discord Faucet/Tip Bot</h5>
+                    <a
+                      href="https://discord.gg/y3J946HFQM"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button className="popup-button" variant="primary">
+                        Discord Faucet/Tip Bot
+                      </Button>
+                    </a>
                     <p>
                       Get free sample Dingocoins.
                       <br /> Tip Dingocoins to others easily.
-                      <br />
-                      <a
-                        className="simple-link"
-                        href="https://discord.gg/y3J946HFQM"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Discord &#9658;
-                      </a>
                     </p>
                   </div>
                 </Col>

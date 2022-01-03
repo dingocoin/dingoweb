@@ -34,7 +34,7 @@ function Burnboard() {
 
   return (
     <section className="section-a" id="burnboard">
-      <h2>DINGOCOIN BURNBOARD</h2>
+      <h2>BURNBOARD</h2>
       <CustomDivider />
       <Container>
         <Row>
