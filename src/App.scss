@@ -360,8 +360,6 @@ a.simple-link:hover {
 
 .project-card {
   padding: 1rem;
-  margin-top: 0.8rem;
-  margin-bottom: 0rem;
 }
 
 .project-card .logo-holder {
@@ -381,6 +379,10 @@ a.simple-link:hover {
   width: 2.5rem;
   padding: 0;
   margin: 0;
+}
+
+.project-card button {
+  margin-bottom: 1rem;
 }
 
 

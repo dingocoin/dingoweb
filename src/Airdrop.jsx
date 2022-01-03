@@ -105,7 +105,7 @@ function Airdrop() {
 
   return (<div>
       <section className="section-a" id="airdrop">
-        <h2>DINGOCOIN WEEKLY AIRDROP</h2>
+        <h2>WEEKLY AIRDROP</h2>
         <CustomDivider />
         <Container>
           <Row>
