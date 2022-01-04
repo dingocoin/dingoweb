@@ -802,16 +802,18 @@ function Main() {
                   <br />- <b>Released</b> Wrapped Dingocoin on SOL.
                 </p>
               </li>
-              <li className="event eventcompleted" data-date="Jan - ?, 2022">
+              <li className="event eventcompleted" data-date="Jan - Present, 2022">
                 <h3>Be part of our history - join our journey now!</h3>
                 <p>
                   - <b>Released</b> Merchandise platform.
                   <br />- <b>Released</b> Staking program.
                   <br />- <b>Released</b> Browser extension wallets.
                 </p>
+              </li>
+              <li className="event incomplete" data-date="In progress...">
+                <h3 style={{color: "#AAAAAA"}}>In progress...</h3>
                 <p style={{ color: "#AAAAAA" }}>
-                  <u>Projects in progress:</u>
-                  <br />- <b>Release</b> Roblox Dingocoin City.
+                  - <b>Release</b> Roblox Dingocoin City.
                   <br />- <b>Release</b> Multilinguistics.
                   <br />- <b>Release</b> Mobile wallets.
                   <br />- <b>Release</b> dApps on Dingocoin.
@@ -820,6 +822,7 @@ function Main() {
                   <br />- <b>Halve</b> block reward to 31,250.
                   <br />- <b>Halve</b> block reward to 15,625.
                   <br />- <b>Halve</b> block reward to 10,000 permanentely.
+                  <br />- <i>peristeri is typing...</i>
                   <br /> (Have a project idea? Join us now!)
                 </p>
               </li>
