@@ -54,7 +54,7 @@ function Stake() {
       setCurrentList(stakedCurrent);
 
       const stakedNext = Object.entries(
-        await get("https://stats.dingocoin.org:8443/stake/current")
+        await get("https://stats.dingocoin.org:8443/stake/next")
       ).map((x) => {
         return {
           address: x[0],
