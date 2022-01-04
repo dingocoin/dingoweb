@@ -204,11 +204,9 @@ function Stake() {
               </div>
             </Col>
           </Row>
-                {view === 'current' &&
-                <Row>
-                  <p>Current interval reward pool: <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.<br/>Interval ending in <b>{terminalBlocks} blocks</b>.</p>
-                </Row>
-                }
+          <Row>
+            <p>Current interval reward pool: <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.<br/>Interval ending in <b>{terminalBlocks} blocks</b>.</p>
+          </Row>
         </Container>
       </section>
     </div>
