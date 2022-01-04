@@ -45,7 +45,7 @@ function Stake() {
         currentTotal += a;
         return { address: x[0], amount: a };
       });
-      stakedCurrent.sort((a, b) => b.value - a.value);
+      stakedCurrent.sort((a, b) => b.amount - a.amount);
       for (let i = 0; i < stakedCurrent.length; i++) {
         stakedCurrent[i].rank = i + 1;
         stakedCurrent[i].earn =
@@ -61,7 +61,7 @@ function Stake() {
           amount: parseInt(BigInt(x[1]) / BigInt("100000000")),
         };
       });
-      stakedNext.sort((a, b) => b.value - a.value);
+      stakedNext.sort((a, b) => b.amount - a.amount);
       for (let i = 0; i < stakedNext.length; i++) {
         stakedNext[i].rank = i + 1;
       }
