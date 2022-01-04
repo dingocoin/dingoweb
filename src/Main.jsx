@@ -12,6 +12,7 @@ import {
   faPencilRuler,
   faDumpsterFire,
   faFistRaised,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -20,6 +21,12 @@ import {
   faReddit,
   faFacebook,
   faDiscord,
+  faChrome,
+  faFirefoxBrowser,
+  faWindows,
+  faApple,
+  faLinux,
+  faAndroid,
 } from "@fortawesome/free-brands-svg-icons";
 import BSCLogo from "./assets/img/bsc.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
@@ -174,6 +181,7 @@ function Main() {
     })();
   }, []);
 
+  const [walletsModalShow, setWalletsModalShow] = React.useState(false);
   const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
   const [artModalShow, setArtModalShow] = React.useState(false);
@@ -319,21 +327,12 @@ function Main() {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/dingocoin/dingocoin/releases/latest"
-                        target="_blank"
-                        rel="noreferrer"
                         className="simple-link"
+                        onClick={() => {
+                          setWalletsModalShow(true);
+                        }}
                       >
-                        Official wallets &#9658;
-                      </a>
-                      <br />
-                      <a
-                        href="https://beehivewallet.link/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="simple-link"
-                      >
-                        Unofficial wallets &#9658;
+                        Wallets &#9658;
                       </a>
                       <br />
                       <a
@@ -808,13 +807,13 @@ function Main() {
                 <p>
                   - <b>Released</b> Merchandise platform.
                   <br />- <b>Released</b> Staking program.
+                  <br />- <b>Released</b> Browser extension wallets.
                 </p>
                 <p style={{ color: "#AAAAAA" }}>
                   <u>Projects in progress:</u>
                   <br />- <b>Release</b> Roblox Dingocoin City.
                   <br />- <b>Release</b> Multilinguistics.
                   <br />- <b>Release</b> Mobile wallets.
-                  <br />- <b>Release</b> Browser extension wallets.
                   <br />- <b>Release</b> dApps on Dingocoin.
                   <br />- <b>Release</b> NFT platform on Dingocoin.
                   <br />- <b>List</b> on many more major exchanges.
@@ -842,6 +841,184 @@ function Main() {
           <code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code>
         </p>
       </section>
+
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={walletsModalShow}
+        onHide={() => {
+          setWalletsModalShow(false);
+        }}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Dingocoin Wallets
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container
+            className="marketplace-container"
+            style={{ maxWidth: "30rem" }}
+          >
+            <Row>
+              <Col>
+                <h5 className="mb-2">Full Node Desktop Wallets</h5>
+              </Col>
+            </Row>
+            <Row xs={2} md={2} lg={3} className="justify-content-center">
+              <Col>
+                <div className="marketplace-card mb-4">
+                  <div className="logo-holder mb-2">
+                    <FontAwesomeIcon className="faicon" icon={faWindows} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://github.com/dingocoin/dingocoin/releases/latest"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      Windows
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+              <Col>
+                <div className="marketplace-card mb-4">
+                  <div className="logo-holder mb-2">
+                    <FontAwesomeIcon className="faicon" icon={faApple} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://github.com/dingocoin/dingocoin/releases/latest"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      macOS
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+              <Col>
+                <div className="marketplace-card mb-4">
+                  <div className="logo-holder mb-2">
+                    <FontAwesomeIcon className="faicon" icon={faLinux} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://github.com/dingocoin/dingocoin/releases/latest"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      Linux
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+          <Container
+            className="marketplace-container"
+            style={{ maxWidth: "20rem" }}
+          >
+            <Row>
+              <Col>
+                <h5 className="mb-2">Browser Extension Wallets</h5>
+              </Col>
+            </Row>
+            <Row xs={2} md={2} lg={2} className="justify-content-center">
+              <Col>
+                <div className="marketplace-card mb-4">
+                  <div className="logo-holder mb-2">
+                    <FontAwesomeIcon className="faicon" icon={faChrome} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      Chrome
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+              <Col>
+                <div className="marketplace-card mb-4">
+                  <div className="logo-holder mb-2">
+                    <FontAwesomeIcon
+                      className="faicon"
+                      icon={faFirefoxBrowser}
+                    />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      Firefox
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+          <Container
+            className="marketplace-container"
+            style={{ maxWidth: "20rem" }}
+          >
+            <Row>
+              <Col>
+                <h5 className="mb-2">Unofficial Wallets</h5>
+              </Col>
+            </Row>
+            <Row xs={2} md={2} lg={2} className="justify-content-center">
+              <Col>
+                <div className="marketplace-card mb-4">
+                  <div className="logo-holder mb-2">
+                    <FontAwesomeIcon className="faicon" icon={faGlobe} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://beehivewallet.link/"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      Web
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+              <Col>
+                <div className="marketplace-card mb-4">
+                  <div className="logo-holder mb-2">
+                    <FontAwesomeIcon className="faicon" icon={faAndroid} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      Android
+                    </Button>
+                  </a>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            onClick={() => {
+              setWalletsModalShow(false);
+            }}
+          >
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
       <Modal
         size="lg"
@@ -922,6 +1099,7 @@ function Main() {
               </Col>
             </Row>
           </Container>
+          <CustomDivider />
           <Container className="exchangesModalSection">
             <Row>
               <Col>
@@ -955,6 +1133,7 @@ function Main() {
               </Col>
             </Row>
           </Container>
+          <CustomDivider />
           <Container className="exchangesModalSection">
             <Row>
               <Col>
