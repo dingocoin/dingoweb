@@ -242,10 +242,11 @@ function Stake() {
           </Row>
           <Row>
             <p className="mt-4">
-              Current interval reward pool:{" "}
-              <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.<br />
-              Top 3 addresses get a <b>5x reward bonus</b>.<br />
-              Interval ending in <b>{terminalBlocks} blocks</b>.
+              Interval ending in <b>{terminalBlocks} blocks</b>.<br/>
+              1st place reward: <b>{(500000).toLocaleString()} Dingocoins</b>.<br />
+              2nd place reward: <b>{(300000).toLocaleString()} Dingocoins</b>.<br />
+              3rd place reward: <b>{(200000).toLocaleString()} Dingocoins</b>.<br />
+              Remaining places: {(1000000).toLocaleString()} Dingocoins split evenly based on staked amount.
             </p>
           </Row>
         </Container>
