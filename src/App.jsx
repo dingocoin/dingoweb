@@ -5,6 +5,7 @@ import Main from "./Main";
 import Airdrop from "./Airdrop";
 import Burnboard from "./Burnboard";
 import Privacy from "./Privacy";
+import Stake from "./Stake";
 import ReactGA from "react-ga";
 
 // Controls.
@@ -54,6 +55,7 @@ function App() {
             >
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/airdrop">Airdrop</Nav.Link>
+              <Nav.Link href="/stake">Stake</Nav.Link>
               <Nav.Link href="/burnboard">Burnboard</Nav.Link>
               <NavDropdown className="navbar-important" title="Links">
                 <NavDropdown.Header>Live Charts</NavDropdown.Header>
@@ -202,7 +204,9 @@ function App() {
 
       {(location === "/airdrop" && <Airdrop />) ||
           (location === "/burnboard" && <Burnboard />) ||
-        (location === "/privacy" && <Privacy/>) || <Main />}
+          (location === "/privacy" && <Privacy/>) ||
+          (location === "/stake" && <Stake/>) ||
+        <Main />}
 
       <section className="section-footer">
         <h6>
