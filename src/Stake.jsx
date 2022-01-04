@@ -111,6 +111,9 @@ function Stake() {
                       be automatically sent to your staking address (these
                       rewards compound toward the subsequent intervals).
                     </p>
+                    <p>
+                      5) Top 3 addresses get a <b>5x reward bonus</b>.
+                    </p>
                     <br />
                     <p>
                       * Your funds need to be deposited before the start of each
