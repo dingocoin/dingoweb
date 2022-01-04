@@ -92,11 +92,6 @@ function Stake() {
                   </Accordion.Header>
                   <Accordion.Body className="social-faucet-instructions">
                     <p>
-                      A fixed reward pool is allocated for every interval
-                      (10,000 blocks). It is split among addresses according to
-                      how much is staked in each address.
-                    </p>
-                    <p>
                       1) Send <b>exactly 1,000,000</b> Dingocoins (no more, no
                       less; see (3)) to any address of yours.
                     </p>
@@ -107,7 +102,7 @@ function Stake() {
                       (Tip: use a separate wallet for staked funds).
                     </p>
                     <p>
-                      4) Wait for the end of the next interval and rewards will
+                      4) Wait for the end of the next interval (every 10,000 blocks) and rewards will
                       be automatically sent to your staking address.
                     </p>
                     <br />
