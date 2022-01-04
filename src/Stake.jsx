@@ -89,7 +89,7 @@ function Stake() {
                     <h5>How to participate?</h5>
                   </Accordion.Header>
                   <Accordion.Body className="social-faucet-instructions">
-                    <p>A fixed reward pool is allocated for every interval (10,000 blocks). You earn proportinal to how much you stake.</p>
+                    <p>A fixed reward pool is allocated for every interval (10,000 blocks). You earn proportional to how much you stake.</p>
                     <p>1) Send <b>exactly 1,000,000</b> Dingocoins (no more, no less; see (3)) to any address of yours.</p>
                     <p>2) Don't spend from that address.</p>
                     <p>3) Repeat for as many 1,000,000 deposits as you would like. Make sure not to spend from your staking address (tip: use a separate wallet for staked funds).</p>
