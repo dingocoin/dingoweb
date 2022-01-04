@@ -123,9 +123,9 @@ function Stake() {
                     <p>
                       * Spending from your staking address will invalidate all
                       staked funds, and you will need to re-deposit all funds.
-                      You will also forfeit your earnings for the week.
+                      You will also forfeit your earnings for the interval.
                     </p>
-                    <p>* Reward pool is subject to weekly changes.</p>
+                    <p>* Reward pool is subject to changes between every interval.</p>
                     <p>
                       * Rewards take up to 48 hours to dispense after each
                       interval.
