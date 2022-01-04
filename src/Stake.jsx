@@ -111,9 +111,6 @@ function Stake() {
                       be automatically sent to your staking address (these
                       rewards compound toward the subsequent intervals).
                     </p>
-                    <p>
-                      5) Top 3 addresses get a <b>5x reward bonus</b>.
-                    </p>
                     <br />
                     <p>
                       * Your funds need to be deposited before the start of each
@@ -243,7 +240,8 @@ function Stake() {
             <p>
               Current interval reward pool:{" "}
               <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.<br />
-              Interval ending in <b>{terminalBlocks} blocks</b>.
+              Top 3 addresses get a <b>5x reward bonus</b>.
+              Interval ending in <b>{terminalBlocks} blocks</b>.<br/>
             </p>
           </Row>
         </Container>
