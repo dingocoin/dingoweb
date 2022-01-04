@@ -210,7 +210,7 @@ function App() {
 
       <section className="section-footer">
         <h6>
-          Copyright © The Dingocoin Project 2021 | Multisig Community Donations:{" "}
+          Copyright © The Dingocoin Project 2021 - 2022 | Multisig Community Donations:{" "}
           <code>A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP</code>{" "}
         </h6>
       </section>
