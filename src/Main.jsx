@@ -807,6 +807,7 @@ function Main() {
                 <h3>Be part of our history - join our journey now!</h3>
                 <p>
                   - <b>Released</b> Merchandise platform.
+                  - <b>Released</b> Staking program.
                 </p>
                 <p style={{ color: "#AAAAAA" }}>
                   <u>Projects in progress:</u>
@@ -817,7 +818,6 @@ function Main() {
                   <br />- <b>Release</b> Browser extension wallets.
                   <br />- <b>Release</b> dApps on Dingocoin.
                   <br />- <b>Release</b> NFT platform on Dingocoin.
-                  <br />- <b>Release</b> Staking program.
                   <br />- <b>List</b> on many more major exchanges.
                   <br />- <b>Halve</b> block reward to 31,250.
                   <br />- <b>Halve</b> block reward to 15,625.
