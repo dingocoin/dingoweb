@@ -186,7 +186,7 @@ function Stake() {
                           }
                         >
                           <td className="col-1">{x.rank}</td>
-                          <td className="col-5">{x.address}</td>
+                          <td className="col-5">{'...' + x.address.slice(20)}</td>
                           <td className="col-3">{x.amount.toLocaleString()}</td>
                           <td className="col-3">
                             {Math.floor(x.earn).toLocaleString()}
@@ -225,7 +225,7 @@ function Stake() {
                           }
                         >
                           <td className="col-1">{x.rank}</td>
-                          <td className="col-7">{x.address}</td>
+                          <td className="col-7">{'...' + x.address.slice(20)}</td>
                           <td className="col-4">{x.amount.toLocaleString()}</td>
                         </tr>
                       ))}
