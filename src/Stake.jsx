@@ -109,7 +109,7 @@ function Stake() {
                     <p>
                       4) Wait for the end of the next interval and rewards will
                       be automatically sent to your staking address (these
-                      rewards compound toward the next interval).
+                      rewards compound toward the subsequent intervals).
                     </p>
                     <br />
                     <p>
