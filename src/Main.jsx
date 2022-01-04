@@ -807,11 +807,10 @@ function Main() {
                 <h3>Be part of our history - join our journey now!</h3>
                 <p>
                   - <b>Released</b> Merchandise platform.
-                  - <b>Released</b> Staking program.
+                  <br />- <b>Released</b> Staking program.
                 </p>
                 <p style={{ color: "#AAAAAA" }}>
                   <u>Projects in progress:</u>
-                  <br />- <b>Release</b> Dingocoin merchandise platform.
                   <br />- <b>Release</b> Roblox Dingocoin City.
                   <br />- <b>Release</b> Multilinguistics.
                   <br />- <b>Release</b> Mobile wallets.
