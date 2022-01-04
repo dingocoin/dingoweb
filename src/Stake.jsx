@@ -212,7 +212,7 @@ function Stake() {
                       </tr>
                     </thead>
                     <tbody>
-                      {currentList.map((x) => (
+                      {nextList.map((x) => (
                         <tr
                           key={x.rank}
                           className={
