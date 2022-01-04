@@ -241,7 +241,7 @@ function Stake() {
             </Col>
           </Row>
           <Row>
-            <p className="mt-2">
+            <p className="mt-4">
               Current interval reward pool:{" "}
               <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.<br />
               Top 3 addresses get a <b>5x reward bonus</b>.<br />
