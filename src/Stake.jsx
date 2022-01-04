@@ -240,8 +240,8 @@ function Stake() {
             <p>
               Current interval reward pool:{" "}
               <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.<br />
-              Top 3 addresses get a <b>5x reward bonus</b>.
-              Interval ending in <b>{terminalBlocks} blocks</b>.<br/>
+              Top 3 addresses get a <b>5x reward bonus</b>.<br/>
+              Interval ending in <b>{terminalBlocks} blocks</b>.
             </p>
           </Row>
         </Container>
