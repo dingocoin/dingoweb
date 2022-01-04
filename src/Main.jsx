@@ -11,6 +11,7 @@ import {
   faShoppingCart,
   faPencilRuler,
   faDumpsterFire,
+  faFistRaised,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -586,6 +587,19 @@ function Main() {
                       </Button>
                     </a>
                     <p>Play games using Dingocoins on Discord.</p>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="project-card">
+                    <div className="logo-holder">
+                      <FontAwesomeIcon className="faicon" icon={faFistRaised} />
+                    </div>
+                    <a href="/stake">
+                      <Button className="popup-button" variant="primary">
+                        Stake Dingocoins
+                      </Button>
+                    </a>
+                    <p>Simply #KeepYourDingoInYourPants and get rewarded.</p>
                   </div>
                 </Col>
                 <Col>
