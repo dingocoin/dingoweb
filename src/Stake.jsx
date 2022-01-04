@@ -205,18 +205,7 @@ function Stake() {
                     responsive
                   >
                     <thead>
-                      <tr
-                        key={x.rank}
-                        className={
-                          x.rank === 1
-                            ? "gold"
-                            : x.rank === 2
-                            ? "silver"
-                            : x.rank === 3
-                            ? "bronze"
-                            : ""
-                        }
-                      >
+                      <tr>
                         <th className="col-1">#</th>
                         <th className="col-7">Address</th>
                         <th className="col-4">Staked</th>
