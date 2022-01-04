@@ -93,8 +93,8 @@ function Stake() {
                   <Accordion.Body className="social-faucet-instructions">
                     <p>
                       A fixed reward pool is allocated for every interval
-                      (10,000 blocks). You earn proportional to how much you
-                      stake.
+                      (10,000 blocks). It is split among addresses according to
+                      how much is staked in each address.
                     </p>
                     <p>
                       1) Send <b>exactly 1,000,000</b> Dingocoins (no more, no
@@ -116,7 +116,8 @@ function Stake() {
                       interval for it to be counted for that interval.
                     </p>
                     <p>
-                      * Deposited funds and rewards carry over to subsequent intervals{" "}
+                      * Deposited funds and rewards carry over to subsequent
+                      intervals{" "}
                       <i>as long as you keep your Dingocoins in your pants</i>.
                     </p>
                     <p>
@@ -186,7 +187,9 @@ function Stake() {
                           }
                         >
                           <td className="col-1">{x.rank}</td>
-                          <td className="col-5">{'...' + x.address.slice(20)}</td>
+                          <td className="col-5">
+                            {"..." + x.address.slice(20)}
+                          </td>
                           <td className="col-3">{x.amount.toLocaleString()}</td>
                           <td className="col-3">
                             {Math.floor(x.earn).toLocaleString()}
@@ -225,7 +228,9 @@ function Stake() {
                           }
                         >
                           <td className="col-1">{x.rank}</td>
-                          <td className="col-7">{'...' + x.address.slice(20)}</td>
+                          <td className="col-7">
+                            {"..." + x.address.slice(20)}
+                          </td>
                           <td className="col-4">{x.amount.toLocaleString()}</td>
                         </tr>
                       ))}
@@ -239,7 +244,7 @@ function Stake() {
             <p className="mt-2">
               Current interval reward pool:{" "}
               <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.<br />
-              Top 3 addresses get a <b>5x reward bonus</b>.<br/>
+              Top 3 addresses get a <b>5x reward bonus</b>.<br />
               Interval ending in <b>{terminalBlocks} blocks</b>.
             </p>
           </Row>
