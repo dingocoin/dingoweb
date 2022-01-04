@@ -108,8 +108,7 @@ function Stake() {
                     </p>
                     <p>
                       4) Wait for the end of the next interval and rewards will
-                      be automatically sent to your staking address (these
-                      rewards compound toward the subsequent intervals).
+                      be automatically sent to your staking address.
                     </p>
                     <br />
                     <p>
@@ -117,7 +116,7 @@ function Stake() {
                       interval for it to be counted for that interval.
                     </p>
                     <p>
-                      * Deposited funds carry over to subsequent intervals{" "}
+                      * Deposited funds and rewards carry over to subsequent intervals{" "}
                       <i>as long as you keep your Dingocoins in your pants</i>.
                     </p>
                     <p>
@@ -125,7 +124,7 @@ function Stake() {
                       staked funds, and you will need to re-deposit all funds.
                       You will also forfeit your earnings for the week.
                     </p>
-                    <p>* Reward pool is subject to weekly changes weekly.</p>
+                    <p>* Reward pool is subject to weekly changes.</p>
                     <p>
                       * Rewards take up to 48 hours to dispense after each
                       interval.
