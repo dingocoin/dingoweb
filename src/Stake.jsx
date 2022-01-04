@@ -37,26 +37,29 @@ function Stake() {
   const [view, setView] = React.useState("next");
   React.useEffect(() => {
     (async () => {
-
       let currentTotal = 0;
       const stakedCurrent = Object.entries(
         await get("https://stats.dingocoin.org:8443/stake/current")
       ).map((x) => {
-        const a = parseInt(BigInt(x[1]) / BigInt('100000000'));
+        const a = parseInt(BigInt(x[1]) / BigInt("100000000"));
         currentTotal += a;
         return { address: x[0], amount: a };
       });
       stakedCurrent.sort((a, b) => b.value - a.value);
       for (let i = 0; i < stakedCurrent.length; i++) {
         stakedCurrent[i].rank = i + 1;
-        stakedCurrent[i].earn = stakedCurrent[i].amount * STAKE_REWARD / currentTotal;
+        stakedCurrent[i].earn =
+          (stakedCurrent[i].amount * STAKE_REWARD) / currentTotal;
       }
       setCurrentList(stakedCurrent);
 
       const stakedNext = Object.entries(
         await get("https://stats.dingocoin.org:8443/stake/current")
       ).map((x) => {
-        return { address: x[0], amount: parseInt(BigInt(x[1]) / BigInt('100000000')) };
+        return {
+          address: x[0],
+          amount: parseInt(BigInt(x[1]) / BigInt("100000000")),
+        };
       });
       stakedNext.sort((a, b) => b.value - a.value);
       for (let i = 0; i < stakedNext.length; i++) {
@@ -67,8 +70,7 @@ function Stake() {
       const dingoStats = await get(
         "https://stats.dingocoin.org:8443/stats/dingo"
       );
-      setTerminalBlocks(STAKE_INTERVAL - dingoStats.height % STAKE_INTERVAL);
-
+      setTerminalBlocks(STAKE_INTERVAL - (dingoStats.height % STAKE_INTERVAL));
     })();
   }, []);
 
@@ -89,17 +91,45 @@ function Stake() {
                     <h5>How to participate?</h5>
                   </Accordion.Header>
                   <Accordion.Body className="social-faucet-instructions">
-                    <p>A fixed reward pool is allocated for every interval (10,000 blocks). You earn proportional to how much you stake.</p>
-                    <p>1) Send <b>exactly 1,000,000</b> Dingocoins (no more, no less; see (3)) to any address of yours.</p>
+                    <p>
+                      A fixed reward pool is allocated for every interval
+                      (10,000 blocks). You earn proportional to how much you
+                      stake.
+                    </p>
+                    <p>
+                      1) Send <b>exactly 1,000,000</b> Dingocoins (no more, no
+                      less; see (3)) to any address of yours.
+                    </p>
                     <p>2) Don't spend from that address.</p>
-                    <p>3) Repeat for as many 1,000,000 deposits as you would like. Make sure not to spend from your staking address (Tip: use a separate wallet for staked funds).</p>
-                    <p>4) Wait for the end of the next interval and rewards will be automatically sent to your staking address (these rewards compound toward the next interval).</p>
-                    <br/>
-                    <p>* Your funds need to be deposited before the start of each interval for it to be counted for that interval.</p>
-                    <p>* Deposited funds carry over to subsequent intervals <i>as long as you keep your Dingocoins in your pants</i>.</p>
-                    <p>* Spending from your staking address will invalidate all staked funds, and you will need to re-deposit all funds. You will also forfeit your earnings for the week.</p>
+                    <p>
+                      3) Repeat for as many 1,000,000 deposits as you would
+                      like. Make sure not to spend from your staking address
+                      (Tip: use a separate wallet for staked funds).
+                    </p>
+                    <p>
+                      4) Wait for the end of the next interval and rewards will
+                      be automatically sent to your staking address (these
+                      rewards compound toward the next interval).
+                    </p>
+                    <br />
+                    <p>
+                      * Your funds need to be deposited before the start of each
+                      interval for it to be counted for that interval.
+                    </p>
+                    <p>
+                      * Deposited funds carry over to subsequent intervals{" "}
+                      <i>as long as you keep your Dingocoins in your pants</i>.
+                    </p>
+                    <p>
+                      * Spending from your staking address will invalidate all
+                      staked funds, and you will need to re-deposit all funds.
+                      You will also forfeit your earnings for the week.
+                    </p>
                     <p>* Reward pool is subject to weekly changes weekly.</p>
-                    <p>* Rewards take up to 48 hours to dispense after each interval.</p>
+                    <p>
+                      * Rewards take up to 48 hours to dispense after each
+                      interval.
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
@@ -159,7 +189,9 @@ function Stake() {
                           <td className="col-1">{x.rank}</td>
                           <td className="col-5">{x.address}</td>
                           <td className="col-3">{x.amount.toLocaleString()}</td>
-                          <td className="col-3">{Math.floor(x.earn).toLocaleString()}</td>
+                          <td className="col-3">
+                            {Math.floor(x.earn).toLocaleString()}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -173,7 +205,18 @@ function Stake() {
                     responsive
                   >
                     <thead>
-                      <tr>
+                      <tr
+                        key={x.rank}
+                        className={
+                          x.rank === 1
+                            ? "gold"
+                            : x.rank === 2
+                            ? "silver"
+                            : x.rank === 3
+                            ? "bronze"
+                            : ""
+                        }
+                      >
                         <th className="col-1">#</th>
                         <th className="col-7">Address</th>
                         <th className="col-4">Staked</th>
@@ -205,7 +248,11 @@ function Stake() {
             </Col>
           </Row>
           <Row>
-            <p>Current interval reward pool: <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.<br/>Interval ending in <b>{terminalBlocks} blocks</b>.</p>
+            <p>
+              Current interval reward pool:{" "}
+              <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.<br />
+              Interval ending in <b>{terminalBlocks} blocks</b>.
+            </p>
           </Row>
         </Container>
       </section>
