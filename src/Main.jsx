@@ -625,13 +625,21 @@ function Main() {
                     <div className="logo-holder">
                       <Image src={RobloxLogo} />
                     </div>
-                    <h5>Dingocoin City</h5>
+                    <a
+                      href="https://www.roblox.com/games/8019728893/Dingo-Coin-City"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button className="popup-button" variant="primary">
+                        Dingocoin City
+                      </Button>
+                    </a>
                     <p>
                       Hang out with the Dingo Pack on Roblox.
                       <br />
                       Purchase in-game accessories with Dingocoins
                       <br />
-                      <i>(Coming soon...)</i>
+                      <i>(Beta).</i>
                     </p>
                   </div>
                 </Col>
@@ -802,19 +810,22 @@ function Main() {
                   <br />- <b>Released</b> Wrapped Dingocoin on SOL.
                 </p>
               </li>
-              <li className="event eventcompleted" data-date="Jan - Present, 2022">
+              <li
+                className="event eventcompleted"
+                data-date="Jan - Present, 2022"
+              >
                 <h3>Be part of our history - join our journey now!</h3>
                 <p>
                   - <b>Released</b> Merchandise platform.
                   <br />- <b>Released</b> Staking program.
                   <br />- <b>Released</b> Browser extension wallets.
+                  <br />- <b>Released</b> Roblox Dingocoin City.
                 </p>
               </li>
               <li className="event incomplete" data-date="In progress...">
-                <h3 style={{color: "#AAAAAA"}}>In progress...</h3>
+                <h3 style={{ color: "#AAAAAA" }}>In progress...</h3>
                 <p style={{ color: "#AAAAAA" }}>
-                  - <b>Release</b> Roblox Dingocoin City.
-                  <br />- <b>Release</b> Multilinguistics.
+                  - <b>Release</b> Multilinguistics.
                   <br />- <b>Release</b> Mobile wallets.
                   <br />- <b>Release</b> dApps on Dingocoin.
                   <br />- <b>Release</b> NFT platform on Dingocoin.
