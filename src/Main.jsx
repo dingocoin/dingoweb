@@ -293,10 +293,8 @@ function Main() {
       </header>
 
       <section className="section-b" id="ecosystem">
-        <FadeInSection>
-          <h2>ECOSYSTEM</h2>
-          <CustomDivider />
-        </FadeInSection>
+        <h2>ECOSYSTEM</h2>
+        <CustomDivider />
         <Container className="ecosystem-section">
           <Row>
             <FadeInSection>
