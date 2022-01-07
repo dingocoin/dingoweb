@@ -293,8 +293,10 @@ function Main() {
       </header>
 
       <section className="section-b" id="ecosystem">
-        <h2>ECOSYSTEM</h2>
-        <CustomDivider />
+        <FadeInSection>
+          <h2>ECOSYSTEM</h2>
+          <CustomDivider />
+        </FadeInSection>
         <Container className="ecosystem-section">
           <Row>
             <FadeInSection>
@@ -681,9 +683,9 @@ function Main() {
               </FadeInSection>
             </Container>
           </Row>
-          <CustomDivider />
           <Row>
             <FadeInSection>
+              <CustomDivider />
               <h4>Community-driven Development</h4>
               <p style={{ textAlign: "justify" }}>
                 Dingocoin prides itself as a completely community-driven
@@ -930,8 +932,10 @@ function Main() {
       </section>
 
       <section className="section-a" id="roadmap">
-        <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
-        <CustomDivider />
+        <FadeInSection>
+          <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
+          <CustomDivider />
+        </FadeInSection>
         <Container>
           <Row>
             <ul className="timeline">
