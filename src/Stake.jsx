@@ -268,9 +268,9 @@ function Stake() {
                 Current round ending in <b>{terminalBlocks} blocks</b>.<br />
                 1st place reward: <b>{(500000).toLocaleString()} Dingocoins</b>.
                 <br />
-                2nd place reward: <b>{(350000).toLocaleString()} Dingocoins</b>.
+                2nd place reward: <b>{(400000).toLocaleString()} Dingocoins</b>.
                 <br />
-                3rd place reward: <b>{(250000).toLocaleString()} Dingocoins</b>.
+                3rd place reward: <b>{(350000).toLocaleString()} Dingocoins</b>.
                 <br />
                 Remaining places: {(1000000).toLocaleString()} Dingocoins split
                 evenly based on staked amount.
