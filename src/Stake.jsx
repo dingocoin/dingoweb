@@ -54,9 +54,9 @@ function Stake() {
           i === 0
             ? 500000
             : i === 1
-            ? 350000
+            ? 400000
             : i === 2
-            ? 250000
+            ? 350000
             : (stakedCurrent[i].amount * STAKE_REWARD) / currentSubTotal;
       }
       setCurrentList(stakedCurrent);
