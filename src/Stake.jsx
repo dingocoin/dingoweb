@@ -37,35 +37,49 @@ function Stake() {
   const [view, setView] = React.useState("next");
   React.useEffect(() => {
     (async () => {
-      let currentTotal = 0;
       const stakedCurrent = Object.entries(
         await get("https://stats.dingocoin.org:8443/stake/current")
       ).map((x) => {
         const a = parseInt(BigInt(x[1]) / BigInt("100000000"));
-        currentTotal += a;
         return { address: x[0], amount: a };
       });
       stakedCurrent.sort((a, b) => b.amount - a.amount);
+      let currentSubTotal = 0;
+      for (let i = 3; i < stakedCurrent.length; i++) {
+        currentSubTotal += stakedCurrent[i].amount;
+      }
       for (let i = 0; i < stakedCurrent.length; i++) {
         stakedCurrent[i].rank = i + 1;
         stakedCurrent[i].earn =
-          (stakedCurrent[i].amount * STAKE_REWARD) / currentTotal;
+          i === 0
+            ? 500000
+            : i === 1
+            ? 350000
+            : i === 2
+            ? 250000
+            : (stakedCurrent[i].amount * STAKE_REWARD) / currentSubTotal;
       }
       setCurrentList(stakedCurrent);
 
-      const stakedNext = Object.entries(
-        await get("https://stats.dingocoin.org:8443/stake/next")
-      ).map((x) => {
-        return {
-          address: x[0],
-          amount: parseInt(BigInt(x[1]) / BigInt("100000000")),
-        };
-      });
-      stakedNext.sort((a, b) => b.amount - a.amount);
-      for (let i = 0; i < stakedNext.length; i++) {
-        stakedNext[i].rank = i + 1;
+      const stakedAmount = await get(
+        "https://stats.dingocoin.org:8443/stake/amount"
+      );
+      const stakedScore = await get(
+        "https://stats.dingocoin.org:8443/stake/score"
+      );
+      const staked = [];
+      for (const k of Object.keys(stakedAmount)) {
+        staked.push({
+          address: k,
+          amount: parseInt(BigInt(stakedAmount[k]) / BigInt("100000000")),
+          score: parseInt(BigInt(stakedScore[k])),
+        });
       }
-      setNextList(stakedNext);
+      staked.sort((a, b) => b.amount - a.amount);
+      for (let i = 0; i < staked.length; i++) {
+        staked[i].rank = i + 1;
+      }
+      setNextList(staked);
 
       const dingoStats = await get(
         "https://stats.dingocoin.org:8443/stats/dingo"
@@ -92,38 +106,64 @@ function Stake() {
                   </Accordion.Header>
                   <Accordion.Body className="social-faucet-instructions">
                     <p>
-                      1) Send <b>exactly 1,000,000</b> Dingocoins (no more, no
-                      less; see (3)) to any address of yours.
+                      Every round, a fixed reward pool is split evenly based on
+                      how many staking points each address earns.
+                    </p>
+                    <p>
+                      1) Deposit <b>an exact amount</b> of Dingocoins (no more, no
+                      less; see (3)) to any address of yours. Earn points
+                      depending on the exact amount deposited:
+                      <ul>
+                        <li>
+                          <b>100,000 Dingocoins:</b> 1 point.
+                        </li>
+                        <li>
+                          <b>1,000,000 Dingocoins:</b> 5 points.
+                        </li>
+                        <li>
+                          <b>10,000,000 Dingocoins:</b> 10 points.
+                        </li>
+                        <li>
+                          <b>100,000,000 Dingocoins:</b> 50 points.
+                        </li>
+                        <li>
+                          <b>1,000,000,000 Dingocoins:</b> 100 points.
+                        </li>
+                      </ul>
                     </p>
                     <p>2) Don't spend from that address.</p>
                     <p>
-                      3) Repeat for as many 1,000,000 deposits as you would
-                      like. Make sure not to spend from your staking address
-                      (Tip: use a separate wallet for staked funds).
+                      3) Repeat for as many deposits as you would like. You can
+                      mix the deposit sizes. Make sure not to spend from your
+                      staking address (Tip: use a separate wallet for staked
+                      funds).
                     </p>
                     <p>
-                      4) Wait for the end of the next interval (every 10,000 blocks) and rewards will
-                      be automatically sent to your staking address.
+                      4) Wait for the end of the next round (every 10,000
+                      blocks) and rewards will be automatically sent to your
+                      staking address.
                     </p>
                     <br />
                     <p>
                       * Your funds need to be deposited before the start of each
-                      interval for it to be counted for that interval.
+                      round for it to be counted for that round.
                     </p>
                     <p>
                       * Deposited funds and rewards carry over to subsequent
-                      intervals{" "}
+                      rounds{" "}
                       <i>as long as you keep your Dingocoins in your pants</i>.
                     </p>
                     <p>
                       * Spending from your staking address will invalidate all
                       staked funds, and you will need to re-deposit all funds.
-                      You will also forfeit your earnings for the interval.
+                      You will also forfeit your earnings for the round.
                     </p>
-                    <p>* Reward pool is subject to changes between every interval.</p>
+                    <p>
+                      * Reward pool is subject to changes between every round.
+                    </p>
                     <p>
                       * Rewards take up to 48 hours to dispense after each
-                      interval.
+                      round.
                     </p>
                   </Accordion.Body>
                 </Accordion.Item>
@@ -133,7 +173,7 @@ function Stake() {
           <Row>
             <Col>
               <DropdownButton
-                title={view === "next" ? "Next Interval" : "Current Interval"}
+                title={view === "next" ? "Next Round" : "Current Round"}
                 className="mb-2"
               >
                 <Dropdown.Item
@@ -141,14 +181,14 @@ function Stake() {
                     setView("current");
                   }}
                 >
-                  Current Interval
+                  Current Round
                 </Dropdown.Item>
                 <Dropdown.Item
                   onClick={() => {
                     setView("next");
                   }}
                 >
-                  Next Interval
+                  Next Round
                 </Dropdown.Item>
               </DropdownButton>
               <div className="social-faucet-board">
@@ -182,9 +222,7 @@ function Stake() {
                           }
                         >
                           <td className="col-1">{x.rank}</td>
-                          <td className="col-5">
-                            {x.address}
-                          </td>
+                          <td className="col-5">{x.address}</td>
                           <td className="col-3">{x.amount.toLocaleString()}</td>
                           <td className="col-3">
                             {Math.floor(x.earn).toLocaleString()}
@@ -204,29 +242,18 @@ function Stake() {
                     <thead>
                       <tr>
                         <th className="col-1">#</th>
-                        <th className="col-7">Address</th>
-                        <th className="col-4">Staked</th>
+                        <th className="col-5">Address</th>
+                        <th className="col-3">Staked</th>
+                        <th className="col-3">Score</th>
                       </tr>
                     </thead>
                     <tbody>
                       {nextList.map((x) => (
-                        <tr
-                          key={x.rank}
-                          className={
-                            x.rank === 1
-                              ? "gold"
-                              : x.rank === 2
-                              ? "silver"
-                              : x.rank === 3
-                              ? "bronze"
-                              : ""
-                          }
-                        >
+                        <tr key={x.rank}>
                           <td className="col-1">{x.rank}</td>
-                          <td className="col-7">
-                            {x.address}
-                          </td>
-                          <td className="col-4">{x.amount.toLocaleString()}</td>
+                          <td className="col-5">{x.address}</td>
+                          <td className="col-3">{x.amount.toLocaleString()}</td>
+                          <td className="col-3">{x.score.toLocaleString()}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -236,13 +263,25 @@ function Stake() {
             </Col>
           </Row>
           <Row>
-            <p className="mt-4">
-              Interval ending in <b>{terminalBlocks} blocks</b>.<br/>
-              1st place reward: <b>{(500000).toLocaleString()} Dingocoins</b>.<br />
-              2nd place reward: <b>{(300000).toLocaleString()} Dingocoins</b>.<br />
-              3rd place reward: <b>{(200000).toLocaleString()} Dingocoins</b>.<br />
-              Remaining places: {(1000000).toLocaleString()} Dingocoins split evenly based on staked amount.
-            </p>
+            {view === "current" && (
+              <p className="mt-4">
+                Current round ending in <b>{terminalBlocks} blocks</b>.<br />
+                1st place reward: <b>{(500000).toLocaleString()} Dingocoins</b>.
+                <br />
+                2nd place reward: <b>{(350000).toLocaleString()} Dingocoins</b>.
+                <br />
+                3rd place reward: <b>{(250000).toLocaleString()} Dingocoins</b>.
+                <br />
+                Remaining places: {(1000000).toLocaleString()} Dingocoins split
+                evenly based on staked amount.
+              </p>
+            )}
+            {view === "next" && (
+              <p className="mt-4">
+                Next round starting in <b>{terminalBlocks} blocks</b>.<br />
+                Reward pool: <b>{(2000000).toLocaleString()} Dingocoins</b>.
+              </p>
+            )}
           </Row>
         </Container>
       </section>
