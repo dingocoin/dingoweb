@@ -313,7 +313,7 @@ function Stake() {
           <Row>
             {view === "current" && (
               <p className="mt-4">
-                Current round ending in <b>{terminalBlocks} blocks</b>.<br />
+                Current round ending in: <b>{terminalBlocks} blocks</b>.<br />
                 1st place reward: <b>{(500000).toLocaleString()} Dingocoins</b>.
                 <br />
                 2nd place reward: <b>{(400000).toLocaleString()} Dingocoins</b>.
@@ -326,7 +326,7 @@ function Stake() {
             )}
             {view === "next" && (
               <p className="mt-4">
-                Next round starting in <b>{terminalBlocks} blocks</b>.<br />
+                Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
                 Reward pool: <b>{(2000000).toLocaleString()} Dingocoins</b>.
               </p>
             )}
