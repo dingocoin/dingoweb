@@ -351,7 +351,7 @@ function Airdrop() {
                           <span>
                             <img alt="" src={DingocoinLogo} />
                           </span>
-                          &nbsp;earned
+                          &nbsp;Earned
                         </th>
                         <th className="col-1">Score</th>
                         <th className="col-1">

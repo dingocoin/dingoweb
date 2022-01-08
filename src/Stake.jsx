@@ -14,6 +14,7 @@ import {
 import CustomDivider from "./CustomDivider.jsx";
 
 // Assets.
+import DingocoinLogo from "./assets/img/dingocoin.png";
 
 import BigInt from "big-integer";
 
@@ -110,8 +111,8 @@ function Stake() {
                       how many staking points each address earns.
                     </p>
                     <p>
-                      1) Deposit <b>an exact amount</b> of Dingocoins (no more, no
-                      less; see (3)) to any address of yours. Earn points
+                      1) Deposit <b>an exact amount</b> of Dingocoins (no more,
+                      no less; see (3)) to any address of yours. Earn points
                       depending on the exact amount deposited:
                       <ul>
                         <li>
@@ -203,8 +204,18 @@ function Stake() {
                       <tr>
                         <th className="col-1">#</th>
                         <th className="col-5">Address</th>
-                        <th className="col-3">Staked</th>
-                        <th className="col-3">To Earn</th>
+                        <th className="col-3 table-dingo">
+                          <span>
+                            <img alt="" src={DingocoinLogo} />
+                          </span>
+                          &nbsp;Staked
+                        </th>
+                        <th className="col-3 table-dingo">
+                          <span>
+                            <img alt="" src={DingocoinLogo} />
+                          </span>
+                          &nbsp;To Earn
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -229,6 +240,21 @@ function Stake() {
                           </td>
                         </tr>
                       ))}
+                      <tr>
+                        <td colSpan="2" className="col-7">
+                          <b>Total</b>
+                        </td>
+                        <td className="col-3">
+                          <b>
+                            {currentList
+                              .map((x) => x.amount)
+                              .reduce((a, b) => a + b, 0)
+                              .toLocaleString()}
+                          </b>
+                        </td>
+                        <td className="col-3">
+                        </td>
+                      </tr>
                     </tbody>
                   </Table>
                 )}
@@ -243,8 +269,15 @@ function Stake() {
                       <tr>
                         <th className="col-1">#</th>
                         <th className="col-5">Address</th>
-                        <th className="col-3">Staked</th>
-                        <th className="col-3">Score</th>
+                        <th className="col-3 table-dingo">
+                          <span>
+                            <img alt="" src={DingocoinLogo} />
+                          </span>
+                          &nbsp;Staked
+                        </th>
+                        <th className="col-3 table-dingo">
+                          Score
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -256,6 +289,21 @@ function Stake() {
                           <td className="col-3">{x.score.toLocaleString()}</td>
                         </tr>
                       ))}
+                      <tr>
+                        <td colSpan="2" className="col-7">
+                          <b>Total</b>
+                        </td>
+                        <td className="col-3">
+                          <b>
+                            {nextList
+                              .map((x) => x.amount)
+                              .reduce((a, b) => a + b, 0)
+                              .toLocaleString()}
+                          </b>
+                        </td>
+                        <td className="col-3">
+                        </td>
+                      </tr>
                     </tbody>
                   </Table>
                 )}
