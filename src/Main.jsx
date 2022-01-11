@@ -1029,6 +1029,7 @@ function Main() {
                     <br />- <b>Released</b> Staking program.
                     <br />- <b>Released</b> Browser extension wallets.
                     <br />- <b>Released</b> Roblox Dingocoin City.
+                    <br />- <b>Released</b> Dingo Diggers.
                   </p>
                 </li>
               </FadeInSection>
