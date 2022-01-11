@@ -54,9 +54,10 @@ function App() {
               style={{ maxHeight: "300px" }}
             >
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/airdrop">Airdrop</Nav.Link>
               <Nav.Link href="/stake">Stake</Nav.Link>
+              <Nav.Link href="/airdrop">Airdrop</Nav.Link>
               <Nav.Link href="/burnboard">Burnboard</Nav.Link>
+              <Nav.Link href="https://wrap.dingocoin.org">Wrap</Nav.Link>
               <NavDropdown className="navbar-important" title="Links">
                 <NavDropdown.Header>Live Charts</NavDropdown.Header>
                 <NavDropdown.Item

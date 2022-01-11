@@ -48,6 +48,7 @@ import DexGuruLogo from "./assets/img/dex-guru.png";
 import DexTradeLogo from "./assets/img/dextrade.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
+import DingodiggersLogo from "./assets/img/dingodigger.png";
 import PancakeSwap from "./assets/img/pancakeswap.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
 import PooCoinLogo from "./assets/img/poocoin.png";
@@ -707,6 +708,24 @@ function Main() {
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
+                        <FontAwesomeIcon
+                          className="faicon"
+                          icon={faFistRaised}
+                        />
+                      </div>
+                      <a href="/stake">
+                        <Button className="popup-button" variant="primary">
+                          Stake Dingocoins
+                        </Button>
+                      </a>
+                      <p>Simply #KeepYourDingoInYourPants and get rewarded.</p>
+                    </div>
+                  </Col>
+                </FadeInSection>
+                <FadeInSection>
+                  <Col>
+                    <div className="project-card">
+                      <div className="logo-holder">
                         <Image src={SocialFaucetLogo} />
                       </div>
                       <a href="/airdrop">
@@ -744,45 +763,6 @@ function Main() {
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faFistRaised}
-                        />
-                      </div>
-                      <a href="/stake">
-                        <Button className="popup-button" variant="primary">
-                          Stake Dingocoins
-                        </Button>
-                      </a>
-                      <p>Simply #KeepYourDingoInYourPants and get rewarded.</p>
-                    </div>
-                  </Col>
-                </FadeInSection>
-                <FadeInSection>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faDumpsterFire}
-                        />
-                      </div>
-                      <a href="/burnboard">
-                        <Button className="popup-button" variant="primary">
-                          Burnboard
-                        </Button>
-                      </a>
-                      <p>
-                        Voluntarily burn your Dingocoins for fun,{" "}
-                        <i>because you can</i>.
-                      </p>
-                    </div>
-                  </Col>
-                </FadeInSection>
-                <FadeInSection>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
                         <Image src={RobloxLogo} />
                       </div>
                       <a
@@ -801,6 +781,25 @@ function Main() {
                         <br />
                         <i>(Beta).</i>
                       </p>
+                    </div>
+                  </Col>
+                </FadeInSection>
+                <FadeInSection>
+                  <Col>
+                    <div className="project-card">
+                      <div className="logo-holder">
+                        <Image src={DingodiggersLogo} />
+                      </div>
+                      <a
+                        href="https://discord.gg/fka9pZXxPB"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Button className="popup-button" variant="primary">
+                          Dingo Diggers
+                        </Button>
+                      </a>
+                      <p>Easily Earn Dingo Mining Rewards.</p>
                     </div>
                   </Col>
                 </FadeInSection>
@@ -865,6 +864,27 @@ function Main() {
                       <p>
                         Get free sample Dingocoins.
                         <br /> Tip Dingocoins to others easily.
+                      </p>
+                    </div>
+                  </Col>
+                </FadeInSection>
+                <FadeInSection>
+                  <Col>
+                    <div className="project-card">
+                      <div className="logo-holder">
+                        <FontAwesomeIcon
+                          className="faicon"
+                          icon={faDumpsterFire}
+                        />
+                      </div>
+                      <a href="/burnboard">
+                        <Button className="popup-button" variant="primary">
+                          Burnboard
+                        </Button>
+                      </a>
+                      <p>
+                        Voluntarily burn your Dingocoins for fun,{" "}
+                        <i>because you can</i>.
                       </p>
                     </div>
                   </Col>
