@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.61b95444.chunk.css",
-    "main.js": "/static/js/main.c3a0f48c.chunk.js",
-    "main.js.map": "/static/js/main.c3a0f48c.chunk.js.map",
+    "main.js": "/static/js/main.b9ed8f55.chunk.js",
+    "main.js.map": "/static/js/main.b9ed8f55.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.e56a434a.chunk.js": "/static/js/2.e56a434a.chunk.js",
@@ -69,6 +69,7 @@
     "static/media/deliondex.b1f720d1.png": "/static/media/deliondex.b1f720d1.png",
     "static/media/dex-guru.67d58c8a.png": "/static/media/dex-guru.67d58c8a.png",
     "static/media/App.scss": "/static/media/dingocoin.15331900.png",
+    "static/media/dingodigger.d5f3dcb9.png": "/static/media/dingodigger.d5f3dcb9.png",
     "static/media/dingosino.797e49ac.png": "/static/media/dingosino.797e49ac.png",
     "static/media/happybanana.4c79f6e8.gif": "/static/media/happybanana.4c79f6e8.gif",
     "static/media/merch_dingocoinart.c042c5ca.png": "/static/media/merch_dingocoinart.c042c5ca.png",
@@ -84,6 +85,6 @@
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.e56a434a.chunk.js",
     "static/css/main.61b95444.chunk.css",
-    "static/js/main.c3a0f48c.chunk.js"
+    "static/js/main.b9ed8f55.chunk.js"
   ]
 }
