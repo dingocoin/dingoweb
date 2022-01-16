@@ -41,7 +41,11 @@ function Stake() {
       const currentStaked = Object.entries(
         await get("https://stats.dingocoin.org:8443/stake/current")
       ).map((x) => {
-        return { address: x[0], amount: parseInt(BigInt(x[1].amount) / BigInt("100000000")), score: parseInt(x[1].score) };
+        return {
+          address: x[0],
+          amount: parseInt(BigInt(x[1].amount) / BigInt("100000000")),
+          score: parseInt(x[1].score),
+        };
       });
       currentStaked.sort((a, b) => b.amount - a.amount);
       let currentStakedTotalScore = 0;
@@ -50,14 +54,21 @@ function Stake() {
         currentStakedTotalScore += currentStaked[i].score;
       }
       for (let i = 0; i < currentStaked.length; i++) {
-        currentStaked[i].earn = Math.floor(parseFloat(currentStaked[i].score) * STAKE_REWARD / currentStakedTotalScore);
+        currentStaked[i].earn = Math.floor(
+          (parseFloat(currentStaked[i].score) * STAKE_REWARD) /
+            currentStakedTotalScore
+        );
       }
       setCurrentList(currentStaked);
 
       const staked = Object.entries(
         await get("https://stats.dingocoin.org:8443/stake/next")
       ).map((x) => {
-        return { address: x[0], amount: parseInt(BigInt(x[1].amount) / BigInt("100000000")), score: parseInt(x[1].score) };
+        return {
+          address: x[0],
+          amount: parseInt(BigInt(x[1].amount) / BigInt("100000000")),
+          score: parseInt(x[1].score),
+        };
       });
       staked.sort((a, b) => b.amount - a.amount);
       for (let i = 0; i < staked.length; i++) {
@@ -203,9 +214,7 @@ function Stake() {
                     </thead>
                     <tbody>
                       {currentList.map((x) => (
-                        <tr
-                          key={x.rank}
-                        >
+                        <tr key={x.rank}>
                           <td className="col-1">{x.rank}</td>
                           <td className="col-5">{x.address}</td>
                           <td className="col-3">{x.amount.toLocaleString()}</td>
@@ -226,8 +235,7 @@ function Stake() {
                               .toLocaleString()}
                           </b>
                         </td>
-                        <td className="col-3">
-                        </td>
+                        <td className="col-3"></td>
                       </tr>
                     </tbody>
                   </Table>
@@ -249,9 +257,7 @@ function Stake() {
                           </span>
                           &nbsp;Staked
                         </th>
-                        <th className="col-3 table-dingo">
-                          Score
-                        </th>
+                        <th className="col-3 table-dingo">Score</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -275,8 +281,7 @@ function Stake() {
                               .toLocaleString()}
                           </b>
                         </td>
-                        <td className="col-3">
-                        </td>
+                        <td className="col-3"></td>
                       </tr>
                     </tbody>
                   </Table>
@@ -285,25 +290,10 @@ function Stake() {
             </Col>
           </Row>
           <Row>
-            {view === "current" && (
-              <p className="mt-4">
-                Current round ending in: <b>{terminalBlocks} blocks</b>.<br />
-                1st place reward: <b>{(500000).toLocaleString()} Dingocoins</b>.
-                <br />
-                2nd place reward: <b>{(400000).toLocaleString()} Dingocoins</b>.
-                <br />
-                3rd place reward: <b>{(350000).toLocaleString()} Dingocoins</b>.
-                <br />
-                Remaining places: {(1000000).toLocaleString()} Dingocoins split
-                evenly based on staked amount.
-              </p>
-            )}
-            {view === "next" && (
-              <p className="mt-4">
-                Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
-                Reward pool: <b>{(2000000).toLocaleString()} Dingocoins</b>.
-              </p>
-            )}
+            <p className="mt-4">
+              Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
+              Reward pool: <b>{(2000000).toLocaleString()} Dingocoins</b>.
+            </p>
           </Row>
         </Container>
       </section>
