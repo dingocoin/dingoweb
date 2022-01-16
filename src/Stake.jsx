@@ -18,7 +18,7 @@ import DingocoinLogo from "./assets/img/dingocoin.png";
 
 import BigInt from "big-integer";
 
-const STAKE_REWARD = 1000000; // 2 Million.
+const STAKE_REWARD = 2000000; // 2 Million.
 const STAKE_INTERVAL = 10000; // 10k blocks.
 
 function Stake() {
@@ -38,44 +38,27 @@ function Stake() {
   const [view, setView] = React.useState("next");
   React.useEffect(() => {
     (async () => {
-      const stakedCurrent = Object.entries(
+      const currentStaked = Object.entries(
         await get("https://stats.dingocoin.org:8443/stake/current")
       ).map((x) => {
-        const a = parseInt(BigInt(x[1]) / BigInt("100000000"));
-        return { address: x[0], amount: a };
+        return { address: x[0], amount: parseInt(BigInt(x[1].amount) / BigInt("100000000")), score: parseInt(x[1].score) };
       });
-      stakedCurrent.sort((a, b) => b.amount - a.amount);
-      let currentSubTotal = 0;
-      for (let i = 3; i < stakedCurrent.length; i++) {
-        currentSubTotal += stakedCurrent[i].amount;
+      currentStaked.sort((a, b) => b.amount - a.amount);
+      let currentStakedTotalScore = 0;
+      for (let i = 0; i < currentStaked.length; i++) {
+        currentStaked[i].rank = i + 1;
+        currentStakedTotalScore += currentStaked[i].score;
       }
-      for (let i = 0; i < stakedCurrent.length; i++) {
-        stakedCurrent[i].rank = i + 1;
-        stakedCurrent[i].earn =
-          i === 0
-            ? 500000
-            : i === 1
-            ? 400000
-            : i === 2
-            ? 350000
-            : (stakedCurrent[i].amount * STAKE_REWARD) / currentSubTotal;
+      for (let i = 0; i < currentStaked.length; i++) {
+        currentStaked[i].earn = Math.floor(parseFloat(currentStaked[i].score) * STAKE_REWARD / currentStakedTotalScore);
       }
-      setCurrentList(stakedCurrent);
+      setCurrentList(currentStaked);
 
-      const stakedAmount = await get(
-        "https://stats.dingocoin.org:8443/stake/amount"
-      );
-      const stakedScore = await get(
-        "https://stats.dingocoin.org:8443/stake/score"
-      );
-      const staked = [];
-      for (const k of Object.keys(stakedAmount)) {
-        staked.push({
-          address: k,
-          amount: parseInt(BigInt(stakedAmount[k]) / BigInt("100000000")),
-          score: parseInt(BigInt(stakedScore[k])),
-        });
-      }
+      const staked = Object.entries(
+        await get("https://stats.dingocoin.org:8443/stake/next")
+      ).map((x) => {
+        return { address: x[0], amount: parseInt(BigInt(x[1].amount) / BigInt("100000000")), score: parseInt(x[1].score) };
+      });
       staked.sort((a, b) => b.amount - a.amount);
       for (let i = 0; i < staked.length; i++) {
         staked[i].rank = i + 1;
@@ -222,15 +205,6 @@ function Stake() {
                       {currentList.map((x) => (
                         <tr
                           key={x.rank}
-                          className={
-                            x.rank === 1
-                              ? "gold"
-                              : x.rank === 2
-                              ? "silver"
-                              : x.rank === 3
-                              ? "bronze"
-                              : ""
-                          }
                         >
                           <td className="col-1">{x.rank}</td>
                           <td className="col-5">{x.address}</td>
