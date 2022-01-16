@@ -65,6 +65,9 @@ import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
 import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
 import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
+import Panic1Logo from "./assets/img/panic.png";
+import Panic2Logo from "./assets/img/panic_inverted.png";
+import HappyBananaLogo from "./assets/img/happybanana.gif";
 
 function shuffleArr(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -659,9 +662,11 @@ function Main() {
                   <Col>
                     <div className="item">
                       <p className="number">
+                        <img alt="" src={Panic2Logo} />
                         {dingoStats === null
                           ? "-"
                           : dingoStats.blockReward.toLocaleString()}
+                        <img alt="" src={Panic1Logo} />
                       </p>
                       <span></span>
                       <p>Current block reward</p>
@@ -670,9 +675,11 @@ function Main() {
                   <Col>
                     <div className="item">
                       <p className="number">
+                        <img alt="" src={HappyBananaLogo} />
                         {dingoStats === null
                           ? "-"
                           : dingoStats.blocksToHalving.toLocaleString()}
+                        <img alt="" src={HappyBananaLogo} />
                       </p>
                       <span></span>
                       <p>Blocks to next halving</p>
