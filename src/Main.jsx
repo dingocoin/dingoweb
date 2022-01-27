@@ -65,9 +65,6 @@ import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
 import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
 import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
-import Panic1Logo from "./assets/img/panic.png";
-import Panic2Logo from "./assets/img/panic_inverted.png";
-import HappyBananaLogo from "./assets/img/happybanana.gif";
 
 function shuffleArr(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -662,11 +659,9 @@ function Main() {
                   <Col>
                     <div className="item">
                       <p className="number">
-                        <img alt="" src={Panic2Logo} />
                         {dingoStats === null
                           ? "-"
                           : dingoStats.blockReward.toLocaleString()}
-                        <img alt="" src={Panic1Logo} />
                       </p>
                       <span></span>
                       <p>Current block reward</p>
@@ -675,11 +670,9 @@ function Main() {
                   <Col>
                     <div className="item">
                       <p className="number">
-                        <img alt="" src={HappyBananaLogo} />
                         {dingoStats === null
                           ? "-"
                           : dingoStats.blocksToHalving.toLocaleString()}
-                        <img alt="" src={HappyBananaLogo} />
                       </p>
                       <span></span>
                       <p>Blocks to next halving</p>
@@ -1037,6 +1030,7 @@ function Main() {
                     <br />- <b>Released</b> Browser extension wallets.
                     <br />- <b>Released</b> Roblox Dingocoin City.
                     <br />- <b>Released</b> Dingo Diggers.
+                    <br />- <b>Halved</b> block reward to 31,250.
                   </p>
                 </li>
               </FadeInSection>
@@ -1049,7 +1043,6 @@ function Main() {
                     <br />- <b>Release</b> dApps on Dingocoin.
                     <br />- <b>Release</b> NFT platform on Dingocoin.
                     <br />- <b>List</b> on many more major exchanges.
-                    <br />- <b>Halve</b> block reward to 31,250.
                     <br />- <b>Halve</b> block reward to 15,625.
                     <br />- <b>Halve</b> block reward to 10,000 permanentely.
                     <br />- <i>peristeri is typing...</i>
