@@ -37,6 +37,10 @@ a.simple-link:hover {
   cursor: pointer;
 }
 
+.container {
+  max-width: 900px;
+}
+
 
 /* ===== NAV BAR ===== */
 
@@ -193,8 +197,7 @@ a.simple-link:hover {
 
 /* ===== Socials ===== */
 .socials {
-  margin: 1rem auto;
-  margin-top: 2rem;
+  margin: 0 auto;
   justify-content: center;
   max-width: 30rem;
   a {
@@ -259,7 +262,7 @@ a.simple-link:hover {
 }
 
 .masthead .masthead-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 300;
   margin: 0;
   padding: 0;
@@ -569,7 +572,7 @@ a.simple-link:hover {
 }
 
 .projectFactsWrap .item p.number{
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0;
   img {
     display: inline-block;
