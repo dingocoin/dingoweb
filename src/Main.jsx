@@ -302,12 +302,12 @@ function Main() {
             <FadeInSection>
               <h4>Infrastructure and Markets</h4>
               <p style={{ textAlign: "justify", "margin-top": "1rem" }}>
-                Dingocoin is more accessible than any other cryptocurrency in
-                existence. Our first-of-its-kind browser extension wallet allows
-                you to hold Dingocoins right in your browser. Our unique
-                wrapping system bridges Dingocoin to the token worlds, allowing
-                you to carry Dingocoins on BSC and SOL. Hold and trade however
-                you want, wherever you want.
+                The ease of holding Dingocoin is unparalleled by any other
+                cryptocurrency in existence. Our first-of-its-kind browser
+                extension wallet allows you to hold Dingocoins right in your
+                browser. Our unique wrapping system bridges Dingocoin to the
+                token worlds, allowing you to carry Dingocoins on BSC and SOL.
+                Hold and trade however you want, wherever you want.
               </p>
             </FadeInSection>
             <Container>
