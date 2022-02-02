@@ -23,6 +23,7 @@ import {
   faDumpsterFire,
   faFistRaised,
   faGlobe,
+  faMoneyBillWave,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -215,7 +216,7 @@ function Main() {
               </Col>
             </Row>
             <Row>
-              <p className="masthead-title">
+              <p className="masthead-title mt-2">
                 Dingocoin is an open-source peer-to-peer digital currency.
                 <br /> MUCH KING DINGO SUCH WILD DOGE
               </p>
@@ -297,16 +298,16 @@ function Main() {
         <h2>ECOSYSTEM</h2>
         <CustomDivider />
         <Container className="ecosystem-section">
-          <Row>
+          <Row xs={1} md={1} lg={1} className="justify-content-center">
             <FadeInSection>
               <h4>Infrastructure and Markets</h4>
-              <p style={{ textAlign: "justify" }}>
-                Dingocoin exists <i>both</i> as a coin on its own secured
-                blockchain, <i>and</i> as wrapped tokens (wDingocoin) on BSC and
-                SOL. Our goal is to make Dingocoin highly accessible, allowing
-                you to get Dingocoins from both centralized exchanges (CEX) and
-                decentralized exchanges (DEX). They are exchangeable 1:1 at
-                anytime, via our unique community-decentralized wrap custodians.
+              <p style={{ textAlign: "justify", "margin-top": "1rem" }}>
+                Dingocoin is more accessible than any cryptocurrency in
+                existence. Our first-of-its-kind browser extension wallet allows
+                you to hold Dingocoins right in your browser. Our unique
+                wrapping system bridges Dingocoin to the token worlds, allowing
+                you to carry Dingocoins on BSC and SOL. Hold and trade however
+                you want, wherever you want.
               </p>
             </FadeInSection>
             <Container>
@@ -685,16 +686,12 @@ function Main() {
           <Row>
             <FadeInSection>
               <CustomDivider />
-              <h4>Community-driven Development</h4>
-              <p style={{ textAlign: "justify" }}>
-                Dingocoin prides itself as a completely community-driven
-                project. Check out our list of community contributions below.
-                The Dingocoin pack takes the growth of Dingocoin into its own
-                hands, focusing on building progress{" "}
-                <i>by actually doing work</i>. We do not sit around and wait for
-                the impossible to happen, nor do we attempt to overmarket. The
-                Dingocoin pack is wild and unstoppable. Have an idea? Join us
-                today, throw it out and we'll help!
+              <h4>Community-driven Utilities</h4>
+              <p style={{ textAlign: "justify", "margin-top": "1rem" }}>
+                Dingocoin's community is more hardworking than any coin in
+                existence. We actively build utility, instead of loafing for the
+                moon. Anyone can contribute -- simply hop onto our Discord
+                channel and share your ideas.
               </p>
             </FadeInSection>
             <Container>
@@ -814,9 +811,27 @@ function Main() {
                       </div>
                       <h5>NFTs on Dingocoin</h5>
                       <p>
-                        A daring project to run NFTs on-chain -- featuring
-                        decentralized, non-custodial marketplaces; with{" "}
-                        <i>truly privatizable</i> artwork, at ultra-low costs.
+                        On-chain NFTs -- featuring decentralized, non-custodial
+                        marketplaces; with <i>truly privatizable</i> artwork.
+                        <br />
+                        <i>(Coming soon...)</i>
+                      </p>
+                    </div>
+                  </Col>
+                </FadeInSection>
+                <FadeInSection>
+                  <Col>
+                    <div className="project-card">
+                      <div className="logo-holder">
+                        <FontAwesomeIcon
+                          className="faicon"
+                          icon={faMoneyBillWave}
+                        />
+                      </div>
+                      <h5>Dingocoin Dividends</h5>
+                      <p>
+                        A unique system to redistribute profits (e.g. from NFTs)
+                        back to stakers.
                         <br />
                         <i>(Coming soon...)</i>
                       </p>
@@ -1052,21 +1067,23 @@ function Main() {
               </FadeInSection>
             </ul>
           </Row>
+          <CustomDivider />
+          <Row>
+            <p className="mt-6">
+              <i>Did you know?</i>
+              <br />
+              Autradex was the first exchange to list Dingocoin, and provided a
+              sacred trading ground for Dingocoin.
+              <br />
+              Unfortunately, Autradex sustained multiple 51% attacks, back when
+              Dingocoin was not as secure as it is now.
+              <br />
+              <i>Please consider donating toward the Autradex developers:</i>
+              <br />
+              <code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code>
+            </p>
+          </Row>
         </Container>
-        <CustomDivider />
-        <p className="mt-6">
-          <i>Did you know?</i>
-          <br />
-          Autradex was the first exchange to list Dingocoin, and provided a
-          sacred trading ground for Dingocoin.
-          <br />
-          Unfortunately, Autradex sustained multiple 51% attacks, back when
-          Dingocoin was not as secure as it is now.
-          <br />
-          <i>Please consider donating toward the Autradex developers:</i>
-          <br />
-          <code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code>
-        </p>
       </section>
 
       <Modal
