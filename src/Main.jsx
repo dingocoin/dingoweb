@@ -302,7 +302,7 @@ function Main() {
             <FadeInSection>
               <h4>Infrastructure and Markets</h4>
               <p style={{ textAlign: "justify", "margin-top": "1rem" }}>
-                Dingocoin is more accessible than any cryptocurrency in
+                Dingocoin is more accessible than any other cryptocurrency in
                 existence. Our first-of-its-kind browser extension wallet allows
                 you to hold Dingocoins right in your browser. Our unique
                 wrapping system bridges Dingocoin to the token worlds, allowing
@@ -688,8 +688,8 @@ function Main() {
               <CustomDivider />
               <h4>Community-driven Utilities</h4>
               <p style={{ textAlign: "justify", "margin-top": "1rem" }}>
-                Dingocoin's community is more hardworking than any coin in
-                existence. We actively build utility, instead of loafing for the
+                Dingocoin's community works hard to contribute to the growth of
+                the coin. We actively build utility, instead of loafing for the
                 moon. Anyone can contribute -- simply hop onto our Discord
                 channel and share your ideas.
               </p>
