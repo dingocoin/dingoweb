@@ -305,7 +305,7 @@ function Main() {
         <Container className="ecosystem-section">
           <Row xs={1} md={1} lg={1} className="justify-content-center">
             <FadeInSection>
-              <div className="logo-holder">
+              <div className="banner-holder">
                 <FontAwesomeIcon className="faicon" icon={faProjectDiagram} />
               </div>
               <h4 className="my-2">Infrastructure</h4>
@@ -318,7 +318,7 @@ function Main() {
               </p>
               {!infrastructureShow && (
                 <Button
-                  className="popup-button mt-1"
+                  className="popup-button mb-4"
                   variant="primary"
                   onClick={() => setInfrastructureShow(true)}
                 >
@@ -581,8 +581,8 @@ function Main() {
           </Row>
           <Row>
             <FadeInSection>
-              <div className="mt-5">
-                <div className="logo-holder">
+              <div className="mt-5 mb-4">
+                <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
                 </div>
                 <h4 className="my-2">Community-driven Utilities</h4>
@@ -594,7 +594,7 @@ function Main() {
                 </p>
                 {!utilitiesShow && (
                   <Button
-                    className="popup-button mt-1"
+                    className="popup-button"
                     variant="primary"
                     onClick={() => setUtilitiesShow(true)}
                   >

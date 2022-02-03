@@ -357,12 +357,11 @@ a.simple-link:hover {
   box-shadow: none !important;
 }
 
-.ecosystem-section .logo-holder {
+.ecosystem-section .banner-holder {
   img, .faicon {
-    width: 2.5rem;
+    width: 6rem;
     padding: 0;
-    margin: 0.25rem;
-    font-size: 2.5rem;
+    font-size: 6rem;
     vertical-align: 0 !important;
     color: $primary;
   }
