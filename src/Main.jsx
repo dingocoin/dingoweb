@@ -25,6 +25,7 @@ import {
   faGlobe,
   faMoneyBillWave,
   faUserAstronaut,
+  faProjectDiagram,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -305,19 +306,15 @@ function Main() {
           <Row xs={1} md={1} lg={1} className="justify-content-center">
             <FadeInSection>
               <div className="logo-holder">
-                <Image src={DingocoinLogo} />
-                <FontAwesomeIcon className="faicon" icon={faChrome} />
-                <FontAwesomeIcon className="faicon" icon={faFirefoxBrowser} />
-                <Image src={WDingocoinLogo} />
-                <Image src={BSCLogo} /> <Image src={SOLLogo} />
+                <FontAwesomeIcon className="faicon" icon={faProjectDiagram} />
               </div>
-              <h4 className="my-2">Infrastructure and Markets</h4>
+              <h4 className="my-2">Infrastructure</h4>
               <p style={{ textAlign: "justify" }}>
-                The ease of holding Dingocoin is unparalleled. Our
-                first-of-its-kind browser extension wallet lets you hold
-                Dingocoins right in your browser. Our unique wrapping system
-                allows you to carry wrapped Dingocoins on BSC and SOL. Hold and
-                trade however you want, wherever you want.
+                The ease of holding Dingocoin is unparalleled. Our pioneering
+                browser extension wallet lets you hold Dingocoin right in your
+                browser. Our unique wrapping system lets you carry Dingocoin
+                on BSC and SOL. Hold and trade however you want, wherever you
+                want.
               </p>
               {!infrastructureShow && (
                 <Button
@@ -332,274 +329,165 @@ function Main() {
             {infrastructureShow && (
               <Container>
                 <Row
-                  xs={1}
-                  md={2}
+                  xs={2}
+                  md={3}
                   lg={3}
                   className="projects justify-content-center"
                 >
                   <Col>
                     <div className="project-card">
-                      {isMd && (
-                        <Dropdown variant="primary" className="text-center">
-                          <Dropdown.Toggle>Dingocoin</Dropdown.Toggle>
-                          <Dropdown.Menu>
-                            <Dropdown.Item
-                              onClick={() => {
-                                setExchangesModalShow(true);
-                              }}
-                            >
-                              Buy
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              href="https://coinpaprika.com/coin/dingo-dingocoin/"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Chart
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              onClick={() => {
-                                setWalletsModalShow(true);
-                              }}
-                            >
-                              Wallets
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              href="https://github.com/dingocoin/dingocoin"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Source code
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              href="https://miningpoolstats.stream/dingocoin"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Mine
-                            </Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
-                      )}
-                      {!isMd && (
-                        <div>
-                          <h5>Dingocoin</h5>
-                          <p>
-                            <a
-                              className="simple-link"
-                              onClick={() => {
-                                setExchangesModalShow(true);
-                              }}
-                            >
-                              Buy &#9658;
-                            </a>
-                            <br />
-                            <a
-                              href="https://coinpaprika.com/coin/dingo-dingocoin/"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="simple-link"
-                            >
-                              Chart &#9658;
-                            </a>
-                            <br />
-                            <a
-                              className="simple-link"
-                              onClick={() => {
-                                setWalletsModalShow(true);
-                              }}
-                            >
-                              Wallets &#9658;
-                            </a>
-                            <br />
-                            <a
-                              href="https://github.com/dingocoin/dingocoin"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="simple-link"
-                            >
-                              Source code &#9658;
-                            </a>
-                            <br />
-                            <a
-                              href="https://miningpoolstats.stream/dingocoin"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="simple-link"
-                            >
-                              Mine &#9658;
-                            </a>
-                          </p>
+                      <div>
+                        <div className="logo-holder">
+                          <Image src={DingocoinLogo} />
                         </div>
-                      )}
+                        <h5>Dingocoin</h5>
+                        <p>
+                          <a
+                            className="simple-link"
+                            onClick={() => {
+                              setExchangesModalShow(true);
+                            }}
+                          >
+                            Buy &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://coinpaprika.com/coin/dingo-dingocoin/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Chart &#9658;
+                          </a>
+                          <br />
+                          <a
+                            className="simple-link"
+                            onClick={() => {
+                              setWalletsModalShow(true);
+                            }}
+                          >
+                            Wallets &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://github.com/dingocoin/dingocoin"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Source code &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://miningpoolstats.stream/dingocoin"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Mine &#9658;
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </Col>
                   <Col>
                     <div className="project-card">
-                      {isMd && (
-                        <Dropdown variant="primary" className="text-center">
-                          <Dropdown.Toggle>wDingocoin (BSC)</Dropdown.Toggle>
-                          <Dropdown.Menu>
-                            <Dropdown.Item
-                              onClick={() => {
-                                setExchangesModalShow(true);
-                              }}
-                            >
-                              Buy
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Chart
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Smart contract
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              href="https://wrap.dingocoin.org"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Wrap
-                            </Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
-                      )}
-                      {!isMd && (
-                        <div>
-                          <h5>wDingocoin (BSC)</h5>
-                          <p>
-                            <a
-                              className="simple-link"
-                              onClick={() => {
-                                setExchangesModalShow(true);
-                              }}
-                            >
-                              Buy &#9658;
-                            </a>
-                            <br />
-                            <a
-                              href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="simple-link"
-                            >
-                              Chart &#9658;
-                            </a>
-                            <br />
-                            <a
-                              href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="simple-link"
-                            >
-                              Smart contract &#9658;
-                            </a>
-                            <br />
-                            <a
-                              href="https://wrap.dingocoin.org"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="simple-link"
-                            >
-                              Wrap &#9658;
-                            </a>
-                          </p>
+                      <div>
+                        <div className="logo-holder">
+                          <Image src={WDingocoinLogo} /> <Image src={BSCLogo} />
                         </div>
-                      )}
+                        <h5>wDingocoin (BSC)</h5>
+                        <p>
+                          <a
+                            className="simple-link"
+                            onClick={() => {
+                              setExchangesModalShow(true);
+                            }}
+                          >
+                            Buy &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Chart &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Smart contract &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://wrap.dingocoin.org"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Wrap &#9658;
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </Col>
                   <Col>
                     <div className="project-card">
-                      {isMd && (
-                        <Dropdown variant="primary" className="text-center">
-                          <Dropdown.Toggle>wDingocoin (SOL)</Dropdown.Toggle>
-                          <Dropdown.Menu>
-                            <Dropdown.Item
-                              onClick={() => {
-                                setExchangesModalShow(true);
-                              }}
-                            >
-                              Buy
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Chart
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              SPL Token
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                              href="https://wrap.dingocoin.org"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Wrap
-                            </Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
-                      )}
-                      {!isMd && (
-                        <div>
-                          <h5>wDingocoin (SOL)</h5>
-                          <p>
-                            <a
-                              className="simple-link"
-                              onClick={() => {
-                                setExchangesModalShow(true);
-                              }}
-                            >
-                              Buy &#9658;
-                            </a>
-                            <br />
-                            <a
-                              href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="simple-link"
-                            >
-                              Chart &#9658;
-                            </a>
-                            <br />
-                            <a
-                              href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="simple-link"
-                            >
-                              SPL token &#9658;
-                            </a>
-                            <br />
-                            <a
-                              href="https://wrap.dingocoin.org"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="simple-link"
-                            >
-                              Wrap &#9658;
-                            </a>
-                          </p>
+                      <div>
+                        <div className="logo-holder">
+                          <Image src={WDingocoinLogo} /> <Image src={SOLLogo} />
                         </div>
-                      )}
+                        <h5>wDingocoin (SOL)</h5>
+                        <p>
+                          <a
+                            className="simple-link"
+                            onClick={() => {
+                              setExchangesModalShow(true);
+                            }}
+                          >
+                            Buy &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Chart &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            SPL token &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://wrap.dingocoin.org"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Wrap &#9658;
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </Col>
                 </Row>
                 <Row
-                  xs={1}
-                  md={2}
+                  xs={2}
+                  md={3}
                   lg={3}
                   className="projectFactsWrap justify-content-center"
                 >
@@ -638,7 +526,7 @@ function Main() {
                   </Col>
                 </Row>
                 <Row
-                  xs={1}
+                  xs={2}
                   md={2}
                   lg={4}
                   className="projectFactsWrap justify-content-center"
@@ -698,10 +586,10 @@ function Main() {
                   <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
                 </div>
                 <h4 className="my-2">Community-driven Utilities</h4>
-                <p style={{ textAlign: "justify"}}>
-                  Dingocoin's community works hard to contribute to the growth
-                  of the coin. We actively build utility, instead of loafing for
-                  the moon. Anyone can contribute -- simply hop onto our Discord
+                <p style={{ textAlign: "justify" }}>
+                  Dingocoin's community works hard to contribute to growing the
+                  coin. We actively build utility, instead of loafing for the
+                  moon. Anyone can contribute -- simply hop onto our Discord
                   channel and share your ideas.
                 </p>
                 {!utilitiesShow && (
