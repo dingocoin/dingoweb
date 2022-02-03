@@ -24,6 +24,7 @@ import {
   faFistRaised,
   faGlobe,
   faMoneyBillWave,
+  faUserAstronaut,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -195,6 +196,9 @@ function Main() {
     })();
   }, []);
 
+  const [infrastructureShow, setInfrastructureShow] = React.useState(false);
+  const [utilitiesShow, setUtilitiesShow] = React.useState(false);
+
   const [walletsModalShow, setWalletsModalShow] = React.useState(false);
   const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
@@ -300,18 +304,33 @@ function Main() {
         <Container className="ecosystem-section">
           <Row xs={1} md={1} lg={1} className="justify-content-center">
             <FadeInSection>
-              <h4>Infrastructure and Markets</h4>
-              <p style={{ textAlign: "justify", "margin-top": "1rem" }}>
-                The ease of holding Dingocoin is unparalleled by any other
-                cryptocurrency in existence. Our first-of-its-kind browser
-                extension wallet allows you to hold Dingocoins right in your
-                browser. Our unique wrapping system bridges Dingocoin to the
-                token worlds, allowing you to carry Dingocoins on BSC and SOL.
-                Hold and trade however you want, wherever you want.
+              <div className="logo-holder">
+                <Image src={DingocoinLogo} />
+                <FontAwesomeIcon className="faicon" icon={faChrome} />
+                <FontAwesomeIcon className="faicon" icon={faFirefoxBrowser} />
+                <Image src={WDingocoinLogo} />
+                <Image src={BSCLogo} /> <Image src={SOLLogo} />
+              </div>
+              <h4 className="my-2">Infrastructure and Markets</h4>
+              <p style={{ textAlign: "justify" }}>
+                The ease of holding Dingocoin is unparalleled. Our
+                first-of-its-kind browser extension wallet lets you hold
+                Dingocoins right in your browser. Our unique wrapping system
+                allows you to carry wrapped Dingocoins on BSC and SOL. Hold and
+                trade however you want, wherever you want.
               </p>
+              {!infrastructureShow && (
+                <Button
+                  className="popup-button mt-1"
+                  variant="primary"
+                  onClick={() => setInfrastructureShow(true)}
+                >
+                  See More
+                </Button>
+              )}
             </FadeInSection>
-            <Container>
-              <FadeInSection>
+            {infrastructureShow && (
+              <Container>
                 <Row
                   xs={1}
                   md={2}
@@ -320,9 +339,6 @@ function Main() {
                 >
                   <Col>
                     <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={DingocoinLogo} />
-                      </div>
                       {isMd && (
                         <Dropdown variant="primary" className="text-center">
                           <Dropdown.Toggle>Dingocoin</Dropdown.Toggle>
@@ -420,9 +436,6 @@ function Main() {
                   </Col>
                   <Col>
                     <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={WDingocoinLogo} /> <Image src={BSCLogo} />
-                      </div>
                       {isMd && (
                         <Dropdown variant="primary" className="text-center">
                           <Dropdown.Toggle>wDingocoin (BSC)</Dropdown.Toggle>
@@ -504,9 +517,6 @@ function Main() {
                   </Col>
                   <Col>
                     <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={WDingocoinLogo} /> <Image src={SOLLogo} />
-                      </div>
                       {isMd && (
                         <Dropdown variant="primary" className="text-center">
                           <Dropdown.Toggle>wDingocoin (SOL)</Dropdown.Toggle>
@@ -587,8 +597,6 @@ function Main() {
                     </div>
                   </Col>
                 </Row>
-              </FadeInSection>
-              <FadeInSection>
                 <Row
                   xs={1}
                   md={2}
@@ -680,28 +688,41 @@ function Main() {
                     </div>
                   </Col>
                 </Row>
-              </FadeInSection>
-            </Container>
+              </Container>
+            )}
           </Row>
           <Row>
             <FadeInSection>
-              <CustomDivider />
-              <h4>Community-driven Utilities</h4>
-              <p style={{ textAlign: "justify", "margin-top": "1rem" }}>
-                Dingocoin's community works hard to contribute to the growth of
-                the coin. We actively build utility, instead of loafing for the
-                moon. Anyone can contribute -- simply hop onto our Discord
-                channel and share your ideas.
-              </p>
+              <div className="mt-5">
+                <div className="logo-holder">
+                  <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
+                </div>
+                <h4 className="my-2">Community-driven Utilities</h4>
+                <p style={{ textAlign: "justify"}}>
+                  Dingocoin's community works hard to contribute to the growth
+                  of the coin. We actively build utility, instead of loafing for
+                  the moon. Anyone can contribute -- simply hop onto our Discord
+                  channel and share your ideas.
+                </p>
+                {!utilitiesShow && (
+                  <Button
+                    className="popup-button mt-1"
+                    variant="primary"
+                    onClick={() => setUtilitiesShow(true)}
+                  >
+                    See More
+                  </Button>
+                )}
+              </div>
             </FadeInSection>
-            <Container>
-              <Row
-                xs={1}
-                md={2}
-                lg={3}
-                className="projects justify-content-center"
-              >
-                <FadeInSection>
+            {utilitiesShow && (
+              <Container>
+                <Row
+                  xs={1}
+                  md={2}
+                  lg={3}
+                  className="projects justify-content-center"
+                >
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -718,8 +739,6 @@ function Main() {
                       <p>Simply #KeepYourDingoInYourPants and get rewarded.</p>
                     </div>
                   </Col>
-                </FadeInSection>
-                <FadeInSection>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -736,8 +755,6 @@ function Main() {
                       </p>
                     </div>
                   </Col>
-                </FadeInSection>
-                <FadeInSection>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -755,8 +772,6 @@ function Main() {
                       <p>Play games using Dingocoins on Discord.</p>
                     </div>
                   </Col>
-                </FadeInSection>
-                <FadeInSection>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -780,8 +795,6 @@ function Main() {
                       </p>
                     </div>
                   </Col>
-                </FadeInSection>
-                <FadeInSection>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -799,8 +812,6 @@ function Main() {
                       <p>Easily Earn Dingo Mining Rewards.</p>
                     </div>
                   </Col>
-                </FadeInSection>
-                <FadeInSection>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -818,8 +829,6 @@ function Main() {
                       </p>
                     </div>
                   </Col>
-                </FadeInSection>
-                <FadeInSection>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -837,8 +846,6 @@ function Main() {
                       </p>
                     </div>
                   </Col>
-                </FadeInSection>
-                <FadeInSection>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -860,8 +867,6 @@ function Main() {
                       </p>
                     </div>
                   </Col>
-                </FadeInSection>
-                <FadeInSection>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -882,8 +887,6 @@ function Main() {
                       </p>
                     </div>
                   </Col>
-                </FadeInSection>
-                <FadeInSection>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -903,64 +906,58 @@ function Main() {
                       </p>
                     </div>
                   </Col>
-                </FadeInSection>
-              </Row>
-            </Container>
-          </Row>
-          <FadeInSection>
-            <CustomDivider />
-            <Row
-              className="community-art justify-content-center"
-              style={{ textAlign: "center" }}
-            >
-              <h4>
-                <Image src={BananaLogo} style={{ height: "1.7rem" }} />
-                Community Art
-                <Image src={BananaLogo} style={{ height: "1.7rem" }} />
-              </h4>
-              <ul className="community-images mt-4">
-                {communityImages.map((x, i) => (
-                  <li key={i}>
-                    {x.image.default.endsWith(".mp4") && (
-                      <video
-                        controls
-                        height="200"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setSelectedArt(x);
-                          setArtModalShow(true);
+                </Row>
+                <CustomDivider />
+
+                <h4>
+                  <Image src={BananaLogo} style={{ height: "1.7rem" }} />
+                  Community Art
+                  <Image src={BananaLogo} style={{ height: "1.7rem" }} />
+                </h4>
+                <ul className="community-images mt-4">
+                  {communityImages.map((x, i) => (
+                    <li key={i}>
+                      {x.image.default.endsWith(".mp4") && (
+                        <video
+                          controls
+                          height="200"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setSelectedArt(x);
+                            setArtModalShow(true);
+                          }}
+                        >
+                          <source src={x.image.default} />
+                        </video>
+                      )}
+                      {!x.image.default.endsWith(".mp4") && (
+                        <Image
+                          src={x.image.default}
+                          onClick={() => {
+                            setSelectedArt(x);
+                            setArtModalShow(true);
+                          }}
+                        ></Image>
+                      )}
+                    </li>
+                  ))}
+                  {!loadAllCommunityImages && (
+                    <li key="9999">
+                      <Button
+                        className="popup-button"
+                        variant="primary"
+                        onClick={() => {
+                          setLoadAllCommunityImages(true);
                         }}
                       >
-                        <source src={x.image.default} />
-                      </video>
-                    )}
-                    {!x.image.default.endsWith(".mp4") && (
-                      <Image
-                        src={x.image.default}
-                        onClick={() => {
-                          setSelectedArt(x);
-                          setArtModalShow(true);
-                        }}
-                      ></Image>
-                    )}
-                  </li>
-                ))}
-                {!loadAllCommunityImages && (
-                  <li key="9999">
-                    <Button
-                      className="popup-button"
-                      variant="primary"
-                      onClick={() => {
-                        setLoadAllCommunityImages(true);
-                      }}
-                    >
-                      Load All
-                    </Button>
-                  </li>
-                )}
-              </ul>
-            </Row>
-          </FadeInSection>
+                        Load All
+                      </Button>
+                    </li>
+                  )}
+                </ul>
+              </Container>
+            )}
+          </Row>
         </Container>
       </section>
 
@@ -1055,8 +1052,9 @@ function Main() {
                   <p style={{ color: "#AAAAAA" }}>
                     - <b>Release</b> Multilinguistics.
                     <br />- <b>Release</b> Mobile wallets.
-                    <br />- <b>Release</b> dApps on Dingocoin.
                     <br />- <b>Release</b> NFT platform on Dingocoin.
+                    <br />- <b>Release</b> Dividends and sharestaking.
+                    <br />- <b>Release</b> dApps on Dingocoin.
                     <br />- <b>List</b> on many more major exchanges.
                     <br />- <b>Halve</b> block reward to 15,625.
                     <br />- <b>Halve</b> block reward to 10,000 permanentely.
