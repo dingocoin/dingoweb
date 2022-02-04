@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.e935c5c2.chunk.css",
-    "main.js": "/static/js/main.df9f8267.chunk.js",
-    "main.js.map": "/static/js/main.df9f8267.chunk.js.map",
+    "main.js": "/static/js/main.707d1539.chunk.js",
+    "main.js.map": "/static/js/main.707d1539.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.46c80bd3.chunk.js": "/static/js/2.46c80bd3.chunk.js",
@@ -71,6 +71,7 @@
     "static/media/App.scss": "/static/media/dingocoin.15331900.png",
     "static/media/dingodigger.d5f3dcb9.png": "/static/media/dingodigger.d5f3dcb9.png",
     "static/media/dingosino.797e49ac.png": "/static/media/dingosino.797e49ac.png",
+    "static/media/exbitron.f8db04b6.png": "/static/media/exbitron.f8db04b6.png",
     "static/media/happybanana.4c79f6e8.gif": "/static/media/happybanana.4c79f6e8.gif",
     "static/media/merch_dingocoinart.c042c5ca.png": "/static/media/merch_dingocoinart.c042c5ca.png",
     "static/media/merch_formularun.601a7a16.png": "/static/media/merch_formularun.601a7a16.png",
@@ -79,12 +80,13 @@
     "static/media/socialfaucet.7855d1e6.png": "/static/media/socialfaucet.7855d1e6.png",
     "static/media/sol.b826535d.png": "/static/media/sol.b826535d.png",
     "static/media/southxchange.2d1f6024.png": "/static/media/southxchange.2d1f6024.png",
+    "static/media/udonex.6347ca29.png": "/static/media/udonex.6347ca29.png",
     "static/media/wdingocoin.b75f159c.png": "/static/media/wdingocoin.b75f159c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.46c80bd3.chunk.js",
     "static/css/main.e935c5c2.chunk.css",
-    "static/js/main.df9f8267.chunk.js"
+    "static/js/main.707d1539.chunk.js"
   ]
 }
