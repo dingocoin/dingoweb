@@ -12,21 +12,23 @@ import ReactGA from "react-ga";
 import { Navbar, Nav, NavDropdown, Container, Row } from "react-bootstrap";
 
 // Assets.
+import BirdeyeLogo from "./assets/img/birdeye.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
-import CoinPaprikaLogo from "./assets/img/coinpaprika.png";
+import CoinGeckoLogo from "./assets/img/coingecko.png";
 import CoinMarketCapLogo from "./assets/img/coinmarketcap.png";
+import CoinPaprikaLogo from "./assets/img/coinpaprika.png";
 import CratexIoLogo from "./assets/img/cratexio.png";
 import DelionDexLogo from "./assets/img/deliondex.png";
 import DexGuruLogo from "./assets/img/dex-guru.png";
 import DexTradeLogo from "./assets/img/dextrade.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
-import PancakeSwap from "./assets/img/pancakeswap.png";
-import RaydiumSwap from "./assets/img/raydiumswap.png";
-import PooCoinLogo from "./assets/img/poocoin.png";
-import SouthXchangeLogo from "./assets/img/southxchange.png";
+import ExbitronLogo from "./assets/img/exbitron.png";
 import HotbitLogo from "./assets/img/hotbitex.png";
-import CoinGeckoLogo from "./assets/img/coingecko.png";
-import BirdeyeLogo from "./assets/img/birdeye.png";
+import PancakeSwap from "./assets/img/pancakeswap.png";
+import PooCoinLogo from "./assets/img/poocoin.png";
+import RaydiumSwap from "./assets/img/raydiumswap.png";
+import SouthXchangeLogo from "./assets/img/southxchange.png";
+import UdonexLogo from "./assets/img/udonex.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
@@ -139,6 +141,20 @@ function App() {
                   href="https://cratex.io/index.php?pair=DINGO/LTC"
                 >
                   <img alt="" src={CratexIoLogo} />
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.exbitron.com/trading/dingousdt"
+                >
+                  <img alt="" src={ExbitronLogo} />
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://ex.udonex.com/market/dingousdt"
+                >
+                  <img alt="" src={UdonexLogo} />
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   target="_blank"
