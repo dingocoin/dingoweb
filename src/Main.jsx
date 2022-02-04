@@ -1,15 +1,7 @@
 import React from "react";
 
 // Controls.
-import {
-  Button,
-  Container,
-  Row,
-  Col,
-  Modal,
-  Image,
-  Dropdown,
-} from "react-bootstrap";
+import { Button, Container, Row, Col, Modal, Image } from "react-bootstrap";
 import CustomDivider from "./CustomDivider";
 import { useMediaQuery } from "react-responsive";
 import FadeInSection from "./FadeInSection";
@@ -28,12 +20,6 @@ import {
   faProjectDiagram,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faTwitter,
-  faInstagram,
-  faTelegram,
-  faReddit,
-  faFacebook,
-  faDiscord,
   faChrome,
   faFirefoxBrowser,
   faWindows,
@@ -226,74 +212,25 @@ function Main() {
                 <br /> MUCH KING DINGO SUCH WILD DOGE
               </p>
             </Row>
-            <Row xs={1} md={1} lg={1} className="quick-actions">
-              <Col>
-                <Button
-                  className="popup-button"
-                  variant="primary"
-                  onClick={() => {
-                    setExchangesModalShow(true);
-                  }}
-                >
-                  Buy Dingocoin
-                </Button>
-              </Col>
-            </Row>
-            <Row xs={3} md={6} lg={6} className="socials">
-              <Col className="socials-button-holder">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://discord.gg/y3J946HFQM"
-                >
-                  <FontAwesomeIcon className="faicon" icon={faDiscord} />
-                </a>
-              </Col>
-              <Col className="socials-button-holder">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://t.me/DingoCoinTalk"
-                >
-                  <FontAwesomeIcon className="faicon" icon={faTelegram} />
-                </a>
-              </Col>
-              <Col className="socials-button-holder">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://twitter.com/dingocoincrypto"
-                >
-                  <FontAwesomeIcon className="faicon" icon={faTwitter} />
-                </a>
-              </Col>
-              <Col className="socials-button-holder">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.instagram.com/dingocoin"
-                >
-                  <FontAwesomeIcon className="faicon" icon={faInstagram} />
-                </a>
-              </Col>
-              <Col className="socials-button-holder">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.reddit.com/r/dingocoin"
-                >
-                  <FontAwesomeIcon className="faicon" icon={faReddit} />
-                </a>
-              </Col>
-              <Col className="socials-button-holder">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.facebook.com/Dingocoin.org/"
-                >
-                  <FontAwesomeIcon className="faicon" icon={faFacebook} />
-                </a>
-              </Col>
+            <Row className="quick-actions flex-wrap justify-content-md-center">
+              <Button
+                className="popup-button px-4 py-2"
+                variant="primary"
+                onClick={() => {
+                  setWalletsModalShow(true);
+                }}
+              >
+                Get Wallet
+              </Button>
+              <Button
+                className="popup-button px-4 py-2"
+                variant="primary"
+                onClick={() => {
+                  setExchangesModalShow(true);
+                }}
+              >
+                Buy Dingocoin
+              </Button>
             </Row>
           </Container>
         </div>
@@ -312,9 +249,8 @@ function Main() {
               <p style={{ textAlign: "justify" }}>
                 The ease of holding Dingocoin is unparalleled. Our pioneering
                 browser extension wallet lets you hold Dingocoin right in your
-                browser. Our unique wrapping system lets you carry Dingocoin
-                on BSC and SOL. Hold and trade however you want, wherever you
-                want.
+                browser. Our unique wrapping system lets you carry Dingocoin on
+                BSC and SOL. Hold and trade however you want, wherever you want.
               </p>
               {!infrastructureShow && (
                 <Button
@@ -996,55 +932,49 @@ function Main() {
                 <h5 className="mb-2">Full Node Desktop Wallets</h5>
               </Col>
             </Row>
-            <Row xs={2} md={2} lg={3} className="justify-content-center">
-              <Col>
-                <div className="marketplace-card mb-4">
-                  <div className="logo-holder mb-2">
-                    <FontAwesomeIcon className="faicon" icon={faWindows} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://github.com/dingocoin/dingocoin/releases/latest"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      Windows
-                    </Button>
-                  </a>
+            <Row className="marketplace-container justify-content-md-center">
+              <div className="marketplace-card mb-4">
+                <div className="logo-holder mb-2">
+                  <FontAwesomeIcon className="faicon" icon={faWindows} />
                 </div>
-              </Col>
-              <Col>
-                <div className="marketplace-card mb-4">
-                  <div className="logo-holder mb-2">
-                    <FontAwesomeIcon className="faicon" icon={faApple} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://github.com/dingocoin/dingocoin/releases/latest"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      macOS
-                    </Button>
-                  </a>
+                <a
+                  target="_blank"
+                  href="https://github.com/dingocoin/dingocoin/releases/latest"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    Windows
+                  </Button>
+                </a>
+              </div>
+              <div className="marketplace-card mb-4">
+                <div className="logo-holder mb-2">
+                  <FontAwesomeIcon className="faicon" icon={faApple} />
                 </div>
-              </Col>
-              <Col>
-                <div className="marketplace-card mb-4">
-                  <div className="logo-holder mb-2">
-                    <FontAwesomeIcon className="faicon" icon={faLinux} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://github.com/dingocoin/dingocoin/releases/latest"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      Linux
-                    </Button>
-                  </a>
+                <a
+                  target="_blank"
+                  href="https://github.com/dingocoin/dingocoin/releases/latest"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    macOS
+                  </Button>
+                </a>
+              </div>
+              <div className="marketplace-card mb-4">
+                <div className="logo-holder mb-2">
+                  <FontAwesomeIcon className="faicon" icon={faLinux} />
                 </div>
-              </Col>
+                <a
+                  target="_blank"
+                  href="https://github.com/dingocoin/dingocoin/releases/latest"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    Linux
+                  </Button>
+                </a>
+              </div>
             </Row>
           </Container>
           <Container
@@ -1056,42 +986,35 @@ function Main() {
                 <h5 className="mb-2">Browser Extension Wallets</h5>
               </Col>
             </Row>
-            <Row xs={2} md={2} lg={2} className="justify-content-center">
-              <Col>
-                <div className="marketplace-card mb-4">
-                  <div className="logo-holder mb-2">
-                    <FontAwesomeIcon className="faicon" icon={faChrome} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      Chrome
-                    </Button>
-                  </a>
+            <Row className="marketplace-container justify-content-md-center">
+              <div className="marketplace-card mb-4">
+                <div className="logo-holder mb-2">
+                  <FontAwesomeIcon className="faicon" icon={faChrome} />
                 </div>
-              </Col>
-              <Col>
-                <div className="marketplace-card mb-4">
-                  <div className="logo-holder mb-2">
-                    <FontAwesomeIcon
-                      className="faicon"
-                      icon={faFirefoxBrowser}
-                    />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      Firefox
-                    </Button>
-                  </a>
+                <a
+                  target="_blank"
+                  href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    Chrome
+                  </Button>
+                </a>
+              </div>
+              <div className="marketplace-card mb-4">
+                <div className="logo-holder mb-2">
+                  <FontAwesomeIcon className="faicon" icon={faFirefoxBrowser} />
                 </div>
-              </Col>
+                <a
+                  target="_blank"
+                  href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    Firefox
+                  </Button>
+                </a>
+              </div>
             </Row>
           </Container>
           <Container
@@ -1103,39 +1026,35 @@ function Main() {
                 <h5 className="mb-2">Unofficial Wallets</h5>
               </Col>
             </Row>
-            <Row xs={2} md={2} lg={2} className="justify-content-center">
-              <Col>
-                <div className="marketplace-card mb-4">
-                  <div className="logo-holder mb-2">
-                    <FontAwesomeIcon className="faicon" icon={faGlobe} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://beehivewallet.link/"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      Web
-                    </Button>
-                  </a>
+            <Row className="marketplace-container justify-content-md-center">
+              <div className="marketplace-card mb-4">
+                <div className="logo-holder mb-2">
+                  <FontAwesomeIcon className="faicon" icon={faGlobe} />
                 </div>
-              </Col>
-              <Col>
-                <div className="marketplace-card mb-4">
-                  <div className="logo-holder mb-2">
-                    <FontAwesomeIcon className="faicon" icon={faAndroid} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      Android
-                    </Button>
-                  </a>
+                <a
+                  target="_blank"
+                  href="https://beehivewallet.link/"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    Web
+                  </Button>
+                </a>
+              </div>
+              <div className="marketplace-card mb-4">
+                <div className="logo-holder mb-2">
+                  <FontAwesomeIcon className="faicon" icon={faAndroid} />
                 </div>
-              </Col>
+                <a
+                  target="_blank"
+                  href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    Android
+                  </Button>
+                </a>
+              </div>
             </Row>
           </Container>
         </Modal.Body>
@@ -1171,62 +1090,52 @@ function Main() {
                 <h5>Buy Dingocoin</h5>
               </Col>
             </Row>
-            <Row>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={HotbitLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://main.southxchange.com/Market/Book/DINGO/LTC"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={SouthXchangeLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://cratex.io/index.php?pair=DINGO/LTC"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={CratexIoLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://dex-trade.com/spot/trading/DINGOUSDT"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={DexTradeLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://dex.delion.online/market/DELION.DINGO_DOGE"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={DelionDexLogo} />
-                  </Button>
-                </a>
-              </Col>
+            <Row className="justify-content-md-center">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={HotbitLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://main.southxchange.com/Market/Book/DINGO/LTC"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={SouthXchangeLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://cratex.io/index.php?pair=DINGO/LTC"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={CratexIoLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://dex-trade.com/spot/trading/DINGOUSDT"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={DexTradeLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://dex.delion.online/market/DELION.DINGO_DOGE"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={DelionDexLogo} />
+                </Button>
+              </a>
             </Row>
           </Container>
           <CustomDivider />
@@ -1237,30 +1146,24 @@ function Main() {
               </Col>
             </Row>
             <Row>
-              <Col>
-                <h6>BSC</h6>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={PancakeSwap} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <h6>SOL</h6>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://raydium.io/swap/?from=11111111111111111111111111111111&to=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={RaydiumSwap} />
-                  </Button>
-                </a>
-              </Col>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={PancakeSwap} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://raydium.io/swap/?from=11111111111111111111111111111111&to=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={RaydiumSwap} />
+                </Button>
+              </a>
             </Row>
           </Container>
           <CustomDivider />
@@ -1271,83 +1174,69 @@ function Main() {
               </Col>
             </Row>
             <Row>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://coinpaprika.com/coin/dingo-dingocoin/"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={CoinPaprikaLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://coinmarketcap.com/currencies/dingocoin/"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={CoinMarketCapLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.coingecko.com/en/coins/dingocoin"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={CoinGeckoLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://coincodex.com/crypto/dingocoin/"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={CoinCodexLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={DexGuruLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={PooCoinLogo} />
-                  </Button>
-                </a>
-              </Col>
-              <Col>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                >
-                  <Button variant="outline-primary">
-                    <img alt="" src={BirdeyeLogo} />
-                  </Button>
-                </a>
-              </Col>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://coinpaprika.com/coin/dingo-dingocoin/"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={CoinPaprikaLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://coinmarketcap.com/currencies/dingocoin/"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={CoinMarketCapLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.coingecko.com/en/coins/dingocoin"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={CoinGeckoLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://coincodex.com/crypto/dingocoin/"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={CoinCodexLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={DexGuruLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={PooCoinLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={BirdeyeLogo} />
+                </Button>
+              </a>
             </Row>
           </Container>
         </Modal.Body>
