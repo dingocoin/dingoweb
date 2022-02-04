@@ -1,15 +1,8 @@
 import React from "react";
-import {
-  Table,
-  Accordion,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Table, Accordion, Container, Row, Col } from "react-bootstrap";
 import CustomDivider from "./CustomDivider.jsx";
 
 function Burnboard() {
-
   async function get(link) {
     const controller = new AbortController();
     return (
@@ -201,6 +194,22 @@ function Burnboard() {
               </tbody>
             </Table>
           </Col>
+        </Row>
+        <CustomDivider />
+        <Row>
+          <p className="mt-6">
+            <i>Did you know?</i>
+            <br />
+            Autradex was the first exchange to list Dingocoin, and provided a
+            sacred trading ground for Dingocoin.
+            <br />
+            Unfortunately, Autradex sustained multiple 51% attacks, back when
+            Dingocoin was not as secure as it is now.
+            <br />
+            <i>Please consider donating toward the Autradex developers:</i>
+            <br />
+            <code>DDEG5hGGaMPQVTqqBoeGcXLXdDrYauRRxi</code>
+          </p>
         </Row>
       </Container>
     </section>
