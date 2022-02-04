@@ -28,32 +28,34 @@ import {
   faAndroid,
 } from "@fortawesome/free-brands-svg-icons";
 import BSCLogo from "./assets/img/bsc.png";
+import BananaLogo from "./assets/img/happybanana.gif";
+import BirdeyeLogo from "./assets/img/birdeye.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
-import CoinPaprikaLogo from "./assets/img/coinpaprika.png";
+import CoinGeckoLogo from "./assets/img/coingecko.png";
 import CoinMarketCapLogo from "./assets/img/coinmarketcap.png";
+import CoinPaprikaLogo from "./assets/img/coinpaprika.png";
 import CratexIoLogo from "./assets/img/cratexio.png";
 import DelionDexLogo from "./assets/img/deliondex.png";
 import DexGuruLogo from "./assets/img/dex-guru.png";
 import DexTradeLogo from "./assets/img/dextrade.png";
+import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
-import DingosinoLogo from "./assets/img/dingosino.png";
 import DingodiggersLogo from "./assets/img/dingodigger.png";
+import DingosinoLogo from "./assets/img/dingosino.png";
+import ExbitronLogo from "./assets/img/exbitron.png";
+import HotbitLogo from "./assets/img/hotbitex.png";
+import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
+import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
+import MerchFormulaRunLogo from "./assets/img/merch_formularun.png";
 import PancakeSwap from "./assets/img/pancakeswap.png";
-import RaydiumSwap from "./assets/img/raydiumswap.png";
 import PooCoinLogo from "./assets/img/poocoin.png";
+import RaydiumSwap from "./assets/img/raydiumswap.png";
 import RobloxLogo from "./assets/img/roblox.png";
 import SOLLogo from "./assets/img/sol.png";
 import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
-import MerchFormulaRunLogo from "./assets/img/merch_formularun.png";
-import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
-import BananaLogo from "./assets/img/happybanana.gif";
-import HotbitLogo from "./assets/img/hotbitex.png";
-import CoinGeckoLogo from "./assets/img/coingecko.png";
+import UdonexLogo from "./assets/img/udonex.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
-import BirdeyeLogo from "./assets/img/birdeye.png";
-import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
-import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
 
 function shuffleArr(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -472,7 +474,7 @@ function Main() {
                       <p className="number">
                         {dingoStats === null
                           ? "-"
-                          : dingoStats.supply.toLocaleString()}
+                            : ((Math.floor(dingoStats.supply / 10000000) / 100).toLocaleString() + ' B')}
                       </p>
                       <span></span>
                       <p>Dingocoin supply</p>
@@ -867,6 +869,8 @@ function Main() {
                     <br />- <b>Released</b> Roblox Dingocoin City.
                     <br />- <b>Released</b> Dingo Diggers.
                     <br />- <b>Halved</b> block reward to 31,250.
+                    <br />- <b>Listed</b> on Udonex.
+                    <br />- <b>Listed</b> on Exbitron.
                   </p>
                 </li>
               </FadeInSection>
@@ -1091,6 +1095,24 @@ function Main() {
               >
                 <Button variant="outline-primary">
                   <img alt="" src={SouthXchangeLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.exbitron.com/trading/dingousdt"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={ExbitronLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://ex.udonex.com/market/dingousdt"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={UdonexLogo} />
                 </Button>
               </a>
               <a
