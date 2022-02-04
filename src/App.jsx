@@ -9,7 +9,7 @@ import Stake from "./Stake";
 import ReactGA from "react-ga";
 
 // Controls.
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container, Row } from "react-bootstrap";
 
 // Assets.
 import CoinCodexLogo from "./assets/img/coincodex.png";
@@ -27,6 +27,15 @@ import SouthXchangeLogo from "./assets/img/southxchange.png";
 import HotbitLogo from "./assets/img/hotbitex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTwitter,
+  faInstagram,
+  faTelegram,
+  faReddit,
+  faFacebook,
+  faDiscord,
+} from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   ReactGA.initialize("UA-210617812-1");
@@ -203,16 +212,70 @@ function App() {
       </Navbar>
 
       {(location === "/airdrop" && <Airdrop />) ||
-          (location === "/burnboard" && <Burnboard />) ||
-          (location === "/privacy" && <Privacy/>) ||
-          (location === "/stake" && <Stake/>) ||
-        <Main />}
+        (location === "/burnboard" && <Burnboard />) ||
+        (location === "/privacy" && <Privacy />) ||
+        (location === "/stake" && <Stake />) || <Main />}
 
       <section className="section-footer">
-        <h6>
-          © The Dingocoin Project 2021 - 2022 | Multisig Community Donations:{" "}
-          <code>A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP</code>{" "}
-        </h6>
+        <Container>
+          <Row>
+            <span>
+              <b>© The Dingocoin Project 2021 - 2022</b>
+            </span>
+          </Row>
+          <Row className="socials justify-content-md-center">
+            <div className="mt-2">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://discord.gg/y3J946HFQM"
+                className="socials-button"
+              >
+                <FontAwesomeIcon className="faicon" icon={faDiscord} />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://t.me/DingoCoinTalk"
+                className="socials-button"
+              >
+                <FontAwesomeIcon className="faicon" icon={faTelegram} />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://twitter.com/dingocoincrypto"
+                className="socials-button"
+              >
+                <FontAwesomeIcon className="faicon" icon={faTwitter} />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.instagram.com/dingocoin"
+                className="socials-button"
+              >
+                <FontAwesomeIcon className="faicon" icon={faInstagram} />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.reddit.com/r/dingocoin"
+                className="socials-button"
+              >
+                <FontAwesomeIcon className="faicon" icon={faReddit} />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.facebook.com/Dingocoin.org/"
+                className="socials-button"
+              >
+                <FontAwesomeIcon className="faicon" icon={faFacebook} />
+              </a>
+            </div>
+          </Row>
+        </Container>
       </section>
     </div>
   );

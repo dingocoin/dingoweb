@@ -194,52 +194,30 @@ a.simple-link:hover {
 /* ===== Socials ===== */
 .socials {
   margin: 0 auto;
-  justify-content: center;
-  max-width: 30rem;
-  a {
-    position: relative;
-    width: 3.5rem;
-    height: 3.5rem;
-    display: block;
-    text-align: center;
-    margin: 0.5rem auto;
-    border-radius: 50%;
-    padding: 0.4rem;
-    box-sizing: border-box;
-    text-decoration: none;
-    box-shadow: 0rem 0.6rem 0.9rem rgba(0,0,0,0.3);
-    transition: .3s;
-    background: linear-gradient(0deg, #ccc, #fff)
+  .socials-button {
+    display: inline;
+    margin: 1rem;
+    .faicon{
+      width: 2rem;
+      height: 2rem;
+    }
   }
-  a:hover {
-    box-shadow: 0rem 0.1rem 0.15rem rgba(0,0,0,0.3);
-  }
-  a .faicon {
-    padding: 0.5rem;
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: linear-gradient(0deg, #fff, #ccc);
-    color: #fff;
-    border-radius: 50%;
-    transition: .3s;
-  }
-  .socials-button-holder:nth-child(1) a .faicon {
+  .socials-button:nth-child(1) .faicon {
     color: #728ad6;
   }
-  .socials-button-holder:nth-child(2) a .faicon {
+  .socials-button:nth-child(2) .faicon {
     color: #0088CC;
   }
-  .socials-button-holder:nth-child(3) a .faicon {
+  .socials-button:nth-child(3) .faicon {
     color: #0dace9;
   }
-  .socials-button-holder:nth-child(4) a .faicon {
+  .socials-button:nth-child(4) .faicon {
     color: #ba248d;
   }
-  .socials-button-holder:nth-child(5) a .faicon {
+  .socials-button:nth-child(5) .faicon {
     color: #fe4824;
   }
-  .socials-button-holder:nth-child(6) a .faicon {
+  .socials-button:nth-child(6) .faicon {
     color: #3b5a95;
   }
 }
@@ -248,7 +226,16 @@ a.simple-link:hover {
   margin: 1rem auto;
   max-width: 52rem;
   .popup-button {
+
     margin-top: 1rem;
+    width: auto;
+    display: inline-flex;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
   }
 }
 
@@ -303,11 +290,14 @@ a.simple-link:hover {
 }
 
 .section-footer {
-  padding: 1.5rem;
+  padding: 1.0rem;
   background-color: $primary;
-}
-.section-footer h6 {
-  color: $secondary !important;
+  .container {
+    max-width: 900px;
+  }
+  span {
+    color: $secondary !important;
+  }
 }
 
 .divider-custom {
@@ -359,9 +349,9 @@ a.simple-link:hover {
 
 .ecosystem-section .banner-holder {
   img, .faicon {
-    width: 6rem;
+    width: 5rem;
     padding: 0;
-    font-size: 6rem;
+    font-size: 5rem;
     vertical-align: 0 !important;
     color: $primary;
   }
@@ -575,6 +565,13 @@ a.simple-link:hover {
   margin: 0.3rem 0.5rem;
 }
 
+.exchangesModalSection .row  {
+  justify-content: center;
+  a {
+    width: auto;
+  }
+}
+
 
 /* ===== Counter ===== */
 .projectFactsWrap .item{
@@ -657,27 +654,30 @@ a.simple-link:hover {
 
 .marketplace-container {
   text-align: center;
+  justify-content: center;
 }
 
-.marketplace-card .logo-holder {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0;
-}
+.marketplace-card {
+  width: auto;
+  .logo-holder {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  .faicon {
+    color: $primary;
+    font-size: 2.5rem;
+    padding: 0;
+    margin: 0;
+  }
+  img {
+    width: 5rem;
+    padding: 0;
+    margin: 0;
+    border: 2px solid rgb(229, 232, 235);
+    border-radius: 50%;
+  }
 
-.marketplace-card .faicon {
-  color: $primary;
-  font-size: 2.5rem;
-  padding: 0;
-  margin: 0;
-}
-
-.marketplace-card img {
-  width: 5rem;
-  padding: 0;
-  margin: 0;
-  border: 2px solid rgb(229, 232, 235);
-  border-radius: 50%;
 }
 
 .community-art h3 img {
