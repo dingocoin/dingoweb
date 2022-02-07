@@ -53,7 +53,7 @@ function App() {
     <div className="App">
       <Navbar className="navbar" bg="dark" expand="lg" sticky="top">
         <Container>
-          <Navbar.Brand href="/" className="navbar-brand">
+          <Navbar.Brand href="/" className="navbar-brand align-items-center">
             <img alt="" src={DingocoinLogo} />
             <span>DINGOCOIN</span>
           </Navbar.Brand>
