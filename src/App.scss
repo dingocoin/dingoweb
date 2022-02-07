@@ -43,6 +43,7 @@ a.simple-link:hover {
 .navbar {
   background-color: $primary;
   z-index: 1000;
+  height: 4rem;
 }
 
 .navbar-brand img {
@@ -50,14 +51,17 @@ a.simple-link:hover {
   padding-right: 10px;
 }
 
-.navbar-brand span {
-  color: $secondary;
-  font-weight: 700 !important;
-}
-
-.navbar-brand span.navbar-brand-subtitle {
-  color: $secondary-alt;
-  font-weight: 350 !important;
+.navbar-brand {
+  display: flex;
+  span {
+    color: $secondary;
+    font-weight: 700 !important;
+    margin-right: 0.5rem;
+  }
+  span.navbar-brand-subtitle {
+    color: $secondary-alt;
+    font-weight: 350 !important;
+  }
 }
 
 .navbar .nav-link {
