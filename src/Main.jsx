@@ -210,7 +210,7 @@ function Main() {
             </Row>
             <Row>
               <p className="masthead-title mt-2">
-                Dingocoin is an open-source peer-to-peer digital currency.
+                Join the wild pack that gets the work <i><b>done</b></i>.
                 <br /> MUCH KING DINGO SUCH WILD DOGE
               </p>
             </Row>
