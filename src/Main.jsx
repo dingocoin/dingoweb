@@ -210,9 +210,13 @@ function Main() {
             </Row>
             <Row>
               <p className="masthead-title mt-2">
-                Join the wild pack that gets the work <i><b>done</b></i>.
-                <br /> MUCH KING DINGO SUCH WILD DOGE
+                Join the wild pack that gets the work{" "}
+                <i>
+                  done
+                </i>
+                .
               </p>
+              <p> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
             <Row className="quick-actions flex-wrap justify-content-md-center">
               <Button
@@ -474,7 +478,9 @@ function Main() {
                       <p className="number">
                         {dingoStats === null
                           ? "-"
-                            : ((Math.floor(dingoStats.supply / 10000000) / 100).toLocaleString() + ' B')}
+                          : (
+                              Math.floor(dingoStats.supply / 10000000) / 100
+                            ).toLocaleString() + " B"}
                       </p>
                       <span></span>
                       <p>Dingocoin supply</p>
@@ -789,7 +795,7 @@ function Main() {
 
       <section className="section-a" id="roadmap">
         <FadeInSection>
-          <h2>ROADMAP - MILESTONES AND UPCOMING PLANS</h2>
+          <h2>ROADMAP</h2>
           <CustomDivider />
         </FadeInSection>
         <Container>

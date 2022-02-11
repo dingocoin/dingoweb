@@ -21,7 +21,6 @@ h4,
 h5,
 h6 {
   color: $primary;
-  font-weight: 700 !important;
 }
 
 a:link {
@@ -791,7 +790,7 @@ a.simple-link:hover {
 
 .fade-in-section {
   opacity: 0;
-  transform: translateY(15vh);
+  transform: translateY(10vh);
   transition: opacity 0.6s ease-out, transform 0.8s ease-out;
 }
 .fade-in-section.is-visible {
