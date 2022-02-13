@@ -18,6 +18,7 @@ import {
   faMoneyBillWave,
   faUserAstronaut,
   faProjectDiagram,
+  faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faChrome,
@@ -28,6 +29,7 @@ import {
   faAndroid,
 } from "@fortawesome/free-brands-svg-icons";
 import BSCLogo from "./assets/img/bsc.png";
+import DingetteLogo from "./assets/img/dingette.png";
 import BananaLogo from "./assets/img/happybanana.gif";
 import BirdeyeLogo from "./assets/img/birdeye.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
@@ -56,6 +58,7 @@ import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
 import UdonexLogo from "./assets/img/udonex.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
+import DingocoinNFTPlatformLogo from "./assets/img/dingocoinnftplatform.png";
 
 function shuffleArr(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -67,56 +70,6 @@ function shuffleArr(array) {
 function Main() {
   const isXs = useMediaQuery({ query: `(max-width: 767px)` });
   const isMd = useMediaQuery({ query: `(max-width: 991px)` });
-  const [communityImagesAuthors, setCommunityImagesAuthors] = React.useState(
-    []
-  );
-  const [communityImagesKeys, setCommunityImagesKeys] = React.useState([]);
-  const [loadAllCommunityImages, setLoadAllCommunityImages] =
-    React.useState(false);
-  const [communityImages, setCommunityImages] = React.useState([]);
-
-  React.useEffect(() => {
-    const authors = require("./assets/img/community/authors");
-    let keys = Object.keys(authors);
-    shuffleArr(keys);
-    setCommunityImagesAuthors(authors);
-    setCommunityImagesKeys(keys);
-  }, []);
-
-  React.useEffect(() => {
-    if (
-      communityImagesAuthors.length === 0 ||
-      communityImagesKeys.length === 0
-    ) {
-      return;
-    }
-
-    const importKeys = loadAllCommunityImages
-      ? communityImagesKeys
-      : communityImagesKeys.slice(0, 10);
-    const images = require.context(
-      "./assets/img/community",
-      false,
-      /\.(png|jpe?g|svg|gif|mp4)$/
-    );
-    const importedImages = [];
-    for (const k of importKeys) {
-      const imgPath = images.keys().find((x) => x.includes(k));
-      if (typeof imgPath !== "undefined") {
-        importedImages.push(images(imgPath));
-      }
-    }
-
-    setCommunityImages(
-      importedImages.map((x) => {
-        return {
-          image: x,
-          author:
-            communityImagesAuthors[x.default.split("/").pop().split(".")[0]],
-        };
-      })
-    );
-  }, [communityImagesAuthors, communityImagesKeys, loadAllCommunityImages]);
 
   async function get(link) {
     const controller = new AbortController();
@@ -209,12 +162,8 @@ function Main() {
               </Col>
             </Row>
             <Row>
-              <p className="masthead-title mt-2">
-                Join the wild pack that gets the work{" "}
-                <i>
-                  done
-                </i>
-                .
+              <p className="masthead-title my-2">
+                Join the wild pack that gets the work <i>done</i>.
               </p>
               <p> MUCH KING DINGO SUCH WILD DOGE</p>
             </Row>
@@ -243,298 +192,357 @@ function Main() {
       </header>
 
       <section className="section-b" id="ecosystem">
-        <h2>ECOSYSTEM</h2>
+        <h1>ECOSYSTEM</h1>
         <CustomDivider />
         <Container className="ecosystem-section">
           <Row xs={1} md={1} lg={1} className="justify-content-center">
             <FadeInSection>
-              <div className="banner-holder">
-                <FontAwesomeIcon className="faicon" icon={faProjectDiagram} />
+              <div className="mb-5">
+                <div className="banner-holder">
+                  <FontAwesomeIcon className="faicon" icon={faProjectDiagram} />
+                </div>
+                <h4>Infrastructure</h4>
+                <p style={{ textAlign: "justify" }}>
+                  Hold Dingocoin right in your browser. Wrap your coins and
+                  carry them on BSC and SOL. Or just keep them in your Dingocoin
+                  desktop wallet. Dingocoin's infrastructure triumphs over any
+                  other cryptocurrency, hands down. With Dingocoin, you can do
+                  whatever you want, wherever you want, with near zero
+                  transaction fees.
+                </p>
+                {!infrastructureShow && (
+                  <Button
+                    className="popup-button mb-4 px-4"
+                    variant="primary"
+                    onClick={() => setInfrastructureShow(true)}
+                  >
+                    See More
+                  </Button>
+                )}
+                {infrastructureShow && (
+                  <Container>
+                    <Row
+                      xs={2}
+                      md={3}
+                      lg={3}
+                      className="projects justify-content-center"
+                    >
+                      <Col>
+                        <div className="project-card">
+                          <div>
+                            <div className="logo-holder">
+                              <Image src={DingocoinLogo} />
+                            </div>
+                            <h5>Dingocoin</h5>
+                            <p>
+                              <a
+                                className="simple-link"
+                                onClick={() => {
+                                  setExchangesModalShow(true);
+                                }}
+                              >
+                                Buy &#9658;
+                              </a>
+                              <br />
+                              <a
+                                href="https://coinpaprika.com/coin/dingo-dingocoin/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="simple-link"
+                              >
+                                Chart &#9658;
+                              </a>
+                              <br />
+                              <a
+                                className="simple-link"
+                                onClick={() => {
+                                  setWalletsModalShow(true);
+                                }}
+                              >
+                                Wallets &#9658;
+                              </a>
+                              <br />
+                              <a
+                                href="https://github.com/dingocoin/dingocoin"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="simple-link"
+                              >
+                                Source &#9658;
+                              </a>
+                              <br />
+                              <a
+                                href="https://miningpoolstats.stream/dingocoin"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="simple-link"
+                              >
+                                Mine &#9658;
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="project-card">
+                          <div>
+                            <div className="logo-holder">
+                              <Image src={WDingocoinLogo} />{" "}
+                              <Image src={BSCLogo} />
+                            </div>
+                            <h5>wDingocoin (BSC)</h5>
+                            <p>
+                              <a
+                                className="simple-link"
+                                onClick={() => {
+                                  setExchangesModalShow(true);
+                                }}
+                              >
+                                Buy &#9658;
+                              </a>
+                              <br />
+                              <a
+                                href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="simple-link"
+                              >
+                                Chart &#9658;
+                              </a>
+                              <br />
+                              <a
+                                href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="simple-link"
+                              >
+                                Contract &#9658;
+                              </a>
+                              <br />
+                              <a
+                                href="https://wrap.dingocoin.org"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="simple-link"
+                              >
+                                Wrap &#9658;
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="project-card">
+                          <div>
+                            <div className="logo-holder">
+                              <Image src={WDingocoinLogo} />{" "}
+                              <Image src={SOLLogo} />
+                            </div>
+                            <h5>wDingocoin (SOL)</h5>
+                            <p>
+                              <a
+                                className="simple-link"
+                                onClick={() => {
+                                  setExchangesModalShow(true);
+                                }}
+                              >
+                                Buy &#9658;
+                              </a>
+                              <br />
+                              <a
+                                href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="simple-link"
+                              >
+                                Chart &#9658;
+                              </a>
+                              <br />
+                              <a
+                                href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="simple-link"
+                              >
+                                SPL &#9658;
+                              </a>
+                              <br />
+                              <a
+                                href="https://wrap.dingocoin.org"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="simple-link"
+                              >
+                                Wrap &#9658;
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row
+                      xs={2}
+                      md={3}
+                      lg={3}
+                      className="projectFactsWrap justify-content-center"
+                    >
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoPrice === null
+                              ? "-"
+                              : "$" + dingoPrice.toFixed(7)}
+                          </p>
+                          <span></span>
+                          <p>Dingocoin price</p>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoCap === null
+                              ? "-"
+                              : "$" + Math.floor(dingoCap).toLocaleString()}
+                          </p>
+                          <span></span>
+                          <p>Dingocoin marketcap</p>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoVolume === null
+                              ? "-"
+                              : "$" + Math.floor(dingoVolume).toLocaleString()}
+                          </p>
+                          <span></span>
+                          <p>24h volume</p>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row
+                      xs={2}
+                      md={2}
+                      lg={4}
+                      className="projectFactsWrap justify-content-center"
+                    >
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoStats === null
+                              ? "-"
+                              : (
+                                  Math.floor(dingoStats.supply / 10000000) / 100
+                                ).toLocaleString() + " B"}
+                          </p>
+                          <span></span>
+                          <p>Dingocoin supply</p>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoStats === null
+                              ? "-"
+                              : dingoStats.blocks.toLocaleString()}
+                          </p>
+                          <span></span>
+                          <p>Blocks mined</p>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoStats === null
+                              ? "-"
+                              : dingoStats.blockReward.toLocaleString()}
+                          </p>
+                          <span></span>
+                          <p>Current block reward</p>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoStats === null
+                              ? "-"
+                              : dingoStats.blocksToHalving.toLocaleString()}
+                          </p>
+                          <span></span>
+                          <p>Blocks to next halving</p>
+                        </div>
+                      </Col>
+                    </Row>
+                  </Container>
+                )}
               </div>
-              <h4 className="my-2">Infrastructure</h4>
-              <p style={{ textAlign: "justify" }}>
-                The ease of holding Dingocoin is unparalleled. Our pioneering
-                browser extension wallet lets you hold Dingocoin right in your
-                browser. Our unique wrapping system lets you carry Dingocoin on
-                BSC and SOL. Hold and trade however you want, wherever you want.
-              </p>
-              {!infrastructureShow && (
-                <Button
-                  className="popup-button mb-4"
-                  variant="primary"
-                  onClick={() => setInfrastructureShow(true)}
-                >
-                  See More
-                </Button>
-              )}
             </FadeInSection>
-            {infrastructureShow && (
-              <Container>
-                <Row
-                  xs={2}
-                  md={3}
-                  lg={3}
-                  className="projects justify-content-center"
-                >
-                  <Col>
-                    <div className="project-card">
-                      <div>
-                        <div className="logo-holder">
-                          <Image src={DingocoinLogo} />
-                        </div>
-                        <h5>Dingocoin</h5>
-                        <p>
-                          <a
-                            className="simple-link"
-                            onClick={() => {
-                              setExchangesModalShow(true);
-                            }}
-                          >
-                            Buy &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://coinpaprika.com/coin/dingo-dingocoin/"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Chart &#9658;
-                          </a>
-                          <br />
-                          <a
-                            className="simple-link"
-                            onClick={() => {
-                              setWalletsModalShow(true);
-                            }}
-                          >
-                            Wallets &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://github.com/dingocoin/dingocoin"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Source code &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://miningpoolstats.stream/dingocoin"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Mine &#9658;
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div>
-                        <div className="logo-holder">
-                          <Image src={WDingocoinLogo} /> <Image src={BSCLogo} />
-                        </div>
-                        <h5>wDingocoin (BSC)</h5>
-                        <p>
-                          <a
-                            className="simple-link"
-                            onClick={() => {
-                              setExchangesModalShow(true);
-                            }}
-                          >
-                            Buy &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Chart &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Smart contract &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://wrap.dingocoin.org"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Wrap &#9658;
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div>
-                        <div className="logo-holder">
-                          <Image src={WDingocoinLogo} /> <Image src={SOLLogo} />
-                        </div>
-                        <h5>wDingocoin (SOL)</h5>
-                        <p>
-                          <a
-                            className="simple-link"
-                            onClick={() => {
-                              setExchangesModalShow(true);
-                            }}
-                          >
-                            Buy &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Chart &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            SPL token &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://wrap.dingocoin.org"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Wrap &#9658;
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-                </Row>
-                <Row
-                  xs={2}
-                  md={3}
-                  lg={3}
-                  className="projectFactsWrap justify-content-center"
-                >
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoPrice === null
-                          ? "-"
-                          : "$" + dingoPrice.toFixed(7)}
-                      </p>
-                      <span></span>
-                      <p>Dingocoin price</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoCap === null
-                          ? "-"
-                          : "$" + Math.floor(dingoCap).toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>Dingocoin marketcap</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoVolume === null
-                          ? "-"
-                          : "$" + Math.floor(dingoVolume).toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>24h volume</p>
-                    </div>
-                  </Col>
-                </Row>
-                <Row
-                  xs={2}
-                  md={2}
-                  lg={4}
-                  className="projectFactsWrap justify-content-center"
-                >
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoStats === null
-                          ? "-"
-                          : (
-                              Math.floor(dingoStats.supply / 10000000) / 100
-                            ).toLocaleString() + " B"}
-                      </p>
-                      <span></span>
-                      <p>Dingocoin supply</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoStats === null
-                          ? "-"
-                          : dingoStats.blocks.toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>Blocks mined</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoStats === null
-                          ? "-"
-                          : dingoStats.blockReward.toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>Current block reward</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoStats === null
-                          ? "-"
-                          : dingoStats.blocksToHalving.toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>Blocks to next halving</p>
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
-            )}
           </Row>
           <Row>
             <FadeInSection>
-              <div className="mt-5 mb-4">
+              <div className="my-5">
+                <div className="banner-holder">
+                  <Image src={DingocoinNFTPlatformLogo} />
+                </div>
+                <h4>Dingocoin NFT Platform</h4>
+                <p style={{ textAlign: "justify" }}>
+                  Experience the next generation of NFTs. Create and trade NFTs
+                  on Dingocoin's chain. Our <i>cryptographically unique</i> NFTs
+                  ensure that your content can never be used twice. Trading is
+                  done entirely on-chain -- you receive your earnings and
+                  royalties immediately. The best part? Do everything with{" "}
+                  {"<$0.01"} gas fees. <i>(Coming really soon...)</i>
+                </p>
+                <Button
+                  className="popup-button px-4"
+                  variant="primary"
+                  disabled
+                >
+                  Visit NFT Platform
+                </Button>
+              </div>
+            </FadeInSection>
+          </Row>
+          <Row>
+            <FadeInSection>
+              <div className="my-5">
+                <div className="banner-holder">
+                  <FontAwesomeIcon className="faicon" icon={faChartLine} />
+                </div>
+                <h4>Earn Dividends on Dingocoin</h4>
+                <p style={{ textAlign: "justify" }}>
+                  If you hold Dingocoin, you are entitled to a dividend, just
+                  like holding a share of a company. All profits from the
+                  Dingocoin network, including NFT platform fees (and future
+                  income sources), are divided to its holders; and all
+                  accounting is public. To collect your dividend you need to
+                  stake your Dingocoins according to the dividend instructions,
+                  so that we know where to pay the dividend. You can always
+                  unstake at any point in time. <i>(Coming really soon...)</i>
+                </p>
+                <Button
+                  className="popup-button px-4"
+                  variant="primary"
+                  disabled
+                >
+                  Stake Now
+                </Button>
+              </div>
+            </FadeInSection>
+          </Row>
+          <Row>
+            <FadeInSection>
+              <div className="mt-5">
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
                 </div>
-                <h4 className="my-2">Community-driven Utilities</h4>
+                <h4>Community-driven Utilities</h4>
                 <p style={{ textAlign: "justify" }}>
-                  Dingocoin's community works hard to contribute to growing the
-                  coin. We actively build utility, instead of loafing for the
-                  moon. Anyone can contribute -- simply hop onto our Discord
-                  channel and share your ideas.
+                  Dingocoin's community works hard to grow the coin. No more
+                  waiting for things to happen - Dingocoin lets you take things
+                  into your own hands. We actively build utility, instead of
+                  loafing for the moon. Anyone can contribute -- simply hop onto
+                  our Discord channel and share your ideas.
                 </p>
                 {!utilitiesShow && (
                   <Button
@@ -555,22 +563,6 @@ function Main() {
                   lg={3}
                   className="projects justify-content-center"
                 >
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faFistRaised}
-                        />
-                      </div>
-                      <a href="/stake">
-                        <Button className="popup-button" variant="primary">
-                          Stake Dingocoins
-                        </Button>
-                      </a>
-                      <p>Simply #KeepYourDingoInYourPants and get rewarded.</p>
-                    </div>
-                  </Col>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -647,35 +639,18 @@ function Main() {
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faPencilRuler}
-                        />
+                        <Image src={DingetteLogo} />
                       </div>
-                      <h5>NFTs on Dingocoin</h5>
-                      <p>
-                        On-chain NFTs -- featuring decentralized, non-custodial
-                        marketplaces; with <i>truly privatizable</i> artwork.
-                        <br />
-                        <i>(Coming soon...)</i>
-                      </p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faMoneyBillWave}
-                        />
-                      </div>
-                      <h5>Dingocoin Dividends</h5>
-                      <p>
-                        A unique system to redistribute profits (e.g. from NFTs)
-                        back to stakers.
-                        <br />
-                        <i>(Coming soon...)</i>
-                      </p>
+                      <a
+                        href="https://www.reddit.com/user/Dingo-Is-My-Man/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Button className="popup-button" variant="primary">
+                          Dingette's Channel
+                        </Button>
+                      </a>
+                      <p>UwU? What's this? Our very own fan-lady??? OwO</p>
                     </div>
                   </Col>
                   <Col>
@@ -739,54 +714,6 @@ function Main() {
                     </div>
                   </Col>
                 </Row>
-                <CustomDivider />
-
-                <h4>
-                  <Image src={BananaLogo} style={{ height: "1.7rem" }} />
-                  Community Art
-                  <Image src={BananaLogo} style={{ height: "1.7rem" }} />
-                </h4>
-                <ul className="community-images mt-4">
-                  {communityImages.map((x, i) => (
-                    <li key={i}>
-                      {x.image.default.endsWith(".mp4") && (
-                        <video
-                          controls
-                          height="200"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setSelectedArt(x);
-                            setArtModalShow(true);
-                          }}
-                        >
-                          <source src={x.image.default} />
-                        </video>
-                      )}
-                      {!x.image.default.endsWith(".mp4") && (
-                        <Image
-                          src={x.image.default}
-                          onClick={() => {
-                            setSelectedArt(x);
-                            setArtModalShow(true);
-                          }}
-                        ></Image>
-                      )}
-                    </li>
-                  ))}
-                  {!loadAllCommunityImages && (
-                    <li key="9999">
-                      <Button
-                        className="popup-button"
-                        variant="primary"
-                        onClick={() => {
-                          setLoadAllCommunityImages(true);
-                        }}
-                      >
-                        Load All
-                      </Button>
-                    </li>
-                  )}
-                </ul>
               </Container>
             )}
           </Row>
@@ -795,7 +722,7 @@ function Main() {
 
       <section className="section-a" id="roadmap">
         <FadeInSection>
-          <h2>ROADMAP</h2>
+          <h1>ROADMAP</h1>
           <CustomDivider />
         </FadeInSection>
         <Container>
@@ -867,7 +794,9 @@ function Main() {
                   className="event eventcompleted"
                   data-date="Jan - Present, 2022"
                 >
-                  <h3>Be part of our history - join our journey now!</h3>
+                  <h3>
+                    <i>The Boomshakalaka</i>
+                  </h3>
                   <p>
                     - <b>Released</b> Merchandise platform.
                     <br />- <b>Released</b> Staking program.
@@ -877,6 +806,8 @@ function Main() {
                     <br />- <b>Halved</b> block reward to 31,250.
                     <br />- <b>Listed</b> on Udonex.
                     <br />- <b>Listed</b> on Exbitron.
+                    <br />- <b>Released</b> Dingocoin NFT platform.
+                    <br />- <b>Released</b> Dividends for staking.
                   </p>
                 </li>
               </FadeInSection>
@@ -886,9 +817,6 @@ function Main() {
                   <p style={{ color: "#AAAAAA" }}>
                     - <b>Release</b> Multilinguistics.
                     <br />- <b>Release</b> Mobile wallets.
-                    <br />- <b>Release</b> NFT platform on Dingocoin.
-                    <br />- <b>Release</b> Dividends and sharestaking.
-                    <br />- <b>Release</b> dApps on Dingocoin.
                     <br />- <b>List</b> on many more major exchanges.
                     <br />- <b>Halve</b> block reward to 15,625.
                     <br />- <b>Halve</b> block reward to 10,000 permanentely.

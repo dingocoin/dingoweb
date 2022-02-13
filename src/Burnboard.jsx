@@ -26,8 +26,8 @@ function Burnboard() {
   }, []);
 
   return (
-    <section className="section-a" id="burnboard">
-      <h2>BURNBOARD</h2>
+    <section className="section-a min-height-fill" id="burnboard">
+      <h1>BURNBOARD</h1>
       <CustomDivider />
       <Container>
         <Row>
