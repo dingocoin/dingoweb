@@ -104,8 +104,8 @@ function Airdrop() {
   }, [filterQuery]);
 
   return (<div>
-      <section className="section-a" id="airdrop">
-        <h2>WEEKLY AIRDROP</h2>
+      <section className="section-a min-height-fill" id="airdrop">
+        <h1>WEEKLY AIRDROP</h1>
         <CustomDivider />
         <Container>
           <Row>

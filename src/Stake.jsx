@@ -85,8 +85,8 @@ function Stake() {
 
   return (
     <div>
-      <section className="section-a" id="airdrop">
-        <h2>STAKE DINGOCOINS</h2>
+      <section className="section-a min-height-fill" id="airdrop">
+        <h1>STAKE DINGOCOINS</h1>
         <CustomDivider />
         <Container>
           <Row>
