@@ -381,7 +381,7 @@ function Main() {
                       </Col>
                     </Row>
                     <Row
-                      xs={2}
+                      xs={1}
                       md={3}
                       lg={3}
                       className="projectFactsWrap justify-content-center"
@@ -489,14 +489,13 @@ function Main() {
                   Experience the next generation of NFTs. Create and trade NFTs
                   on Dingocoin's chain. Our <i>cryptographically unique</i> NFTs
                   ensure that your content can never be used twice. Trading is
-                  done entirely on-chain -- you receive your earnings and
+                  done entirely on-chain - you receive your earnings and
                   royalties immediately. The best part? Do everything with{" "}
-                  {"<$0.01"} gas fees. <i>(Coming really soon...)</i>
+                  {"<$0.001"} gas fees.
                 </p>
                 <Button
                   className="popup-button px-4"
                   variant="primary"
-                  disabled
                 >
                   Visit NFT Platform
                 </Button>
@@ -511,19 +510,15 @@ function Main() {
                 </div>
                 <h4>Earn Dividends on Dingocoin</h4>
                 <p style={{ textAlign: "justify" }}>
-                  If you hold Dingocoin, you are entitled to a dividend, just
-                  like holding a share of a company. All profits from the
-                  Dingocoin network, including NFT platform fees (and future
-                  income sources), are divided to its holders; and all
-                  accounting is public. To collect your dividend you need to
-                  stake your Dingocoins according to the dividend instructions,
-                  so that we know where to pay the dividend. You can always
-                  unstake at any point in time. <i>(Coming really soon...)</i>
+                  If you hold Dingocoin, you are entitled to a dividend on
+                  profits, just like holding a share of a company. To collect
+                  your dividend you need to stake your Dingocoins according to
+                  the dividend instructions, so that we know where to pay the
+                  dividend - you can always unstake at any point in time.{" "}
                 </p>
                 <Button
                   className="popup-button px-4"
                   variant="primary"
-                  disabled
                 >
                   Stake Now
                 </Button>
@@ -546,7 +541,7 @@ function Main() {
                 </p>
                 {!utilitiesShow && (
                   <Button
-                    className="popup-button"
+                    className="popup-button px-4"
                     variant="primary"
                     onClick={() => setUtilitiesShow(true)}
                   >
@@ -800,7 +795,7 @@ function Main() {
                   <p>
                     - <b>Released</b> Merchandise platform.
                     <br />- <b>Released</b> Staking program.
-                    <br />- <b>Released</b> Browser extension wallets.
+                    <br />- <b>Released</b> Browser wallets.
                     <br />- <b>Released</b> Roblox Dingocoin City.
                     <br />- <b>Released</b> Dingo Diggers.
                     <br />- <b>Halved</b> block reward to 31,250.
@@ -905,7 +900,7 @@ function Main() {
           >
             <Row>
               <Col>
-                <h5 className="mb-2">Browser Extension Wallets</h5>
+                <h5 className="mb-2">Browser Wallets</h5>
               </Col>
             </Row>
             <Row className="marketplace-container justify-content-md-center">
@@ -1306,44 +1301,6 @@ function Main() {
         </Modal.Footer>
       </Modal>
 
-      <Modal
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        show={artModalShow}
-        onHide={() => {
-          setArtModalShow(false);
-        }}
-      >
-        <Modal.Header closeButton></Modal.Header>
-        <Modal.Body>
-          <Container className="art-container">
-            <Row className="mb-2">
-              <Col>
-                {selectedArt && (
-                  <h4>
-                    (Author: <b>{selectedArt.author}</b>)
-                  </h4>
-                )}
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                {selectedArt !== null &&
-                  selectedArt.image.default.endsWith(".mp4") && (
-                    <video controls>
-                      <source src={selectedArt.image.default} />
-                    </video>
-                  )}
-                {selectedArt !== null &&
-                  !selectedArt.image.default.endsWith(".mp4") && (
-                    <Image src={selectedArt.image.default} />
-                  )}
-              </Col>
-            </Row>
-          </Container>
-        </Modal.Body>
-      </Modal>
     </div>
   );
 }
