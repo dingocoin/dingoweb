@@ -58,6 +58,7 @@ function TrailmapContribute() {
         <li>The_Rudist - Community Artist</li>
         <li>ChrissySydney - Community Artist</li>
         <li>formularun - Community Artist</li>
+        <li>Bunty - Community Artist</li>
         <li>UrbanMiner - Community Artist</li>
         <li>hhvivek - Node Custodian</li>
         <li>s15a - Node Custodian</li>
@@ -66,6 +67,7 @@ function TrailmapContribute() {
         <li>jeff and friends - Listing Ninja</li>
         <li>Kapital - Listing Ninja</li>
         <li>Fang - Listing Ninja</li>
+        <li>CactusJab - Listing Ninja</li>
         <li>
           Everyone Else - Contributing and Supporting the #dingopack in every
           which way
