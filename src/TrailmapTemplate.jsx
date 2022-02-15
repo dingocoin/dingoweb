@@ -22,7 +22,7 @@ function TrailmapTemplate(props) {
       <h1>DINGOCOIN TRAILMAP</h1>
       <CustomDivider />
       <Container>
-        <div style={{ textAlign: "justify" }}>
+        <div className="trailmap-content">
           <h4>{entry[1].toUpperCase()}</h4>
           <ul>
             {ENTRIES.map((x) => (
