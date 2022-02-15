@@ -6,11 +6,11 @@ import { useLocation } from "react-router-dom";
 const ENTRIES = [
   ["/trailmap", "Prologue"],
   ["/trailmap/manifesto", "Our manifesto"],
+  ["/trailmap/contribute", "How to get involved?"],
   ["/trailmap/sdks", "Project: Dingocoin NextGen"],
   ["/trailmap/browserwallet", "Project: Dingocoin browser wallet"],
   ["/trailmap/nftplatform", "Project: Dingocoin NFT platform"],
   ["/trailmap/multilinguistics", "Project: Dingocoin in every language"],
-  ["/trailmap/contribute", "How to get involved?"],
 ];
 
 function TrailmapTemplate(props) {
