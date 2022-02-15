@@ -10,7 +10,7 @@ const ENTRIES = [
   ["/trailmap/browserwallet", "Project: Dingocoin browser wallet"],
   ["/trailmap/nftplatform", "Project: Dingocoin NFT platform"],
   ["/trailmap/multilinguistics", "Project: Dingocoin in every language"],
-  ["/trailmap/contribute", "How do I get involved?"],
+  ["/trailmap/contribute", "How to get involved?"],
 ];
 
 function TrailmapTemplate(props) {
