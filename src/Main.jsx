@@ -162,7 +162,7 @@ function Main() {
               </Col>
             </Row>
             <Row>
-              <p className="masthead-title my-2">
+              <p className="masthead-title mt-4 mb-2">
                 Join the wild pack that gets the work <i>done</i>.
               </p>
               <p> MUCH KING DINGO SUCH WILD DOGE</p>
@@ -175,7 +175,7 @@ function Main() {
                   setWalletsModalShow(true);
                 }}
               >
-                Get Wallet
+                Get wallet
               </Button>
               <Button
                 className="popup-button px-4 py-2"
@@ -185,6 +185,15 @@ function Main() {
                 }}
               >
                 Buy Dingocoin
+              </Button>
+              <Button
+                className="popup-button px-4 py-2"
+                variant="primary"
+                onClick={() => {
+                  window.location = "/trailmap";
+                }}
+              >
+                Trailmap
               </Button>
             </Row>
           </Container>
@@ -216,7 +225,7 @@ function Main() {
                     variant="primary"
                     onClick={() => setInfrastructureShow(true)}
                   >
-                    See More
+                    See more
                   </Button>
                 )}
                 {infrastructureShow && (
@@ -493,12 +502,15 @@ function Main() {
                   royalties immediately. The best part? Do everything with{" "}
                   {"<$0.001"} gas fees.
                 </p>
-                <Button
-                  className="popup-button px-4"
-                  variant="primary"
+                <a
+                  href="https://nft.dingocoin.org"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  Visit NFT Platform
-                </Button>
+                  <Button className="popup-button px-4" variant="primary">
+                    Visit NFT platform
+                  </Button>
+                </a>
               </div>
             </FadeInSection>
           </Row>
@@ -514,13 +526,15 @@ function Main() {
                   profits, just like holding a share of a company. To collect
                   your dividend you need to stake your Dingocoins according to
                   the dividend instructions, so that we know where to pay the
-                  dividend - you can always unstake at any point in time.{" "}
+                  dividend - you can always unstake at any point in time (
+                  <i>coming really soon...</i>).{" "}
                 </p>
                 <Button
                   className="popup-button px-4"
                   variant="primary"
+                  disabled
                 >
-                  Stake Now
+                  Stake now
                 </Button>
               </div>
             </FadeInSection>
@@ -545,7 +559,7 @@ function Main() {
                     variant="primary"
                     onClick={() => setUtilitiesShow(true)}
                   >
-                    See More
+                    See more
                   </Button>
                 )}
               </div>
@@ -859,7 +873,7 @@ function Main() {
                   href="https://github.com/dingocoin/dingocoin/releases/latest"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Windows
                   </Button>
                 </a>
@@ -873,7 +887,7 @@ function Main() {
                   href="https://github.com/dingocoin/dingocoin/releases/latest"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     macOS
                   </Button>
                 </a>
@@ -887,7 +901,7 @@ function Main() {
                   href="https://github.com/dingocoin/dingocoin/releases/latest"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Linux
                   </Button>
                 </a>
@@ -913,7 +927,7 @@ function Main() {
                   href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Chrome
                   </Button>
                 </a>
@@ -927,7 +941,7 @@ function Main() {
                   href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Firefox
                   </Button>
                 </a>
@@ -953,8 +967,8 @@ function Main() {
                   href="https://beehivewallet.link/"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
-                    Web
+                  <Button className="popup-button px-4" variant="primary">
+                    Beehive
                   </Button>
                 </a>
               </div>
@@ -967,7 +981,7 @@ function Main() {
                   href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Android
                   </Button>
                 </a>
@@ -1300,7 +1314,6 @@ function Main() {
           </Button>
         </Modal.Footer>
       </Modal>
-
     </div>
   );
 }

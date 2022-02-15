@@ -42,11 +42,35 @@ function TrailmapPrologue() {
         </p>
         <p>
           The easiest-use wallet in existence is another brave step to destroy
-          boundaries in the adoption of Dingocoin. Our non-custodial browser wallet
-          is a one-click installation (beta versions have been launched for
-          Chrome and Firefox). Download the wallet (should link to download
-          pages), tweet for an airdrop here: https://dingocoin.org/airdrop and
-          you are one of us!
+          boundaries in the adoption of Dingocoin. Our non-custodial browser
+          wallet is a one-click installation (
+          <a
+            className="simple-link"
+            href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Chrome
+          </a>{" "}
+          and{" "}
+          <a
+            className="simple-link"
+            href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Firefox
+          </a>
+          ). Download the wallet,{" "}
+          <a
+            className="simple-link"
+            href="https://www.dingocoin.org/airdrop"
+            target="_blank"
+            rel="noreferrer"
+          >
+            tweet for an airdrop
+          </a>{" "}
+          and you are one of us!
         </p>
         <p>
           Game integration with Roblox has been completed, and you can hold and
@@ -59,17 +83,16 @@ function TrailmapPrologue() {
         </p>
         <p>
           Our foundational initiatives to ease integration of Dingocoin with
-          anything else consists of Dingocoin Next Generation Protocols,
-          Libraries, SDKs and APIs and our Decentralized Application platform.
-          Dingocoin Next Generation Protocols, Libraries, SDKs and APIs opens up
-          new oppurtunities for payment providers, retailers, NFT artists, Game
-          developers, Social Platforms and many more for quick integration of
-          Dingocoin into their infrastructure through scalable backend
-          solutions. A proposed Dingocoin Keyring App and Sdk will ensure rapid
-          developments of apps that can transact over the chain using webwallet
-          API and without holding user keys – a completely trustless model. The
-          Decentralized Application platform allows you to run secure
-          applications on the Dingocoin blockchain.
+          anything else consists of the Dingocoin NextGen framework, Libraries,
+          SDKs and APIs. Dingocoin NextGen framework, Libraries, SDKs and APIs
+          opens up new oppurtunities for payment providers, retailers, NFT
+          artists, Game developers, Social Platforms and many more for quick
+          integration of Dingocoin into their infrastructure through scalable
+          backend solutions. A proposed Dingocoin Keyring App and Sdk will
+          ensure rapid developments of apps that can transact over the chain
+          using webwallet API and without holding user keys – a completely
+          trustless model. The Decentralized Application platform allows you to
+          run secure applications on the Dingocoin blockchain.
         </p>
 
         <h4 className="mt-4">THE COMMUNITY JOURNEY</h4>

@@ -1,9 +1,15 @@
 import React from "react";
+import {Image} from "react-bootstrap";
 import TrailmapTemplate from "./TrailmapTemplate";
+import Manifesto1Logo from "./assets/img/manifesto1.png"
+import Manifesto2Logo from "./assets/img/manifesto2.jpg"
 
 function TrailmapManifesto() {
   return (
     <TrailmapTemplate>
+      <div className="manifesto-images">
+        <Image src={Manifesto2Logo}/>
+      </div>
       <h4 className="mt-4">THE DINGOCOIN MANIFESTO</h4>
       <p>
         We are Dingocoin, a wild crypto-movement, exploring new territory and
@@ -35,6 +41,9 @@ function TrailmapManifesto() {
       <p>
         We are free, warm and creative, and spreading happiness is our success.
       </p>
+      <div className="manifesto-images">
+        <Image src={Manifesto1Logo}/>
+      </div>
     </TrailmapTemplate>
   );
 }

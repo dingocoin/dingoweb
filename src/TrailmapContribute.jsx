@@ -35,48 +35,46 @@ function TrailmapContribute() {
         Below you will find some of our community members and their main focus
         at the time:
       </p>
-      <ul>
-        <li>PlainOldJim - Community Voice, Dingocoin</li>
+      <ul className="mb-1">
+        <li>PlainOldJim - Community Voice</li>
         <li>
-          LuckyDingo - Community Builder, Dingocoin * Project contact, Dingocoin
-          Protocols, libraries, SDKs and APIs
+          LuckyDingo - Community Builder, Dingocoin Protocols, libraries, SDKs
+          and APIs
         </li>
         <li>
-          Rayson Kaelbling - Community dApp Developer, Dingocoin * Project
-          contact, Decentralized application platform, NFT platform and Next
+          Rayson Kaelbling - Community dApp Developer, NFT platform and Next
           Generation Web Wallet
         </li>
+        <li>Boomshakalaka - Game Development Master, Game integration</li>
+        <li>Urgo - Community Core Developer</li>
         <li>
-          Boomshakalaka - Game Development Master, Dingocoin * Project contact,
-          Game integration
+          Farsider350 - Community Core Developer, Next Generation Web Wallet
         </li>
-        <li>Urgo - Community Core Developer, Dingocoin</li>
-        <li>
-          Farsider350 - Community Core Developer, Dingocoin * Project contact,
-          Next Generation Web Wallet
-        </li>
-        <li>Twinky - Community Core Developer, Dingocoin</li>
-        <li>
-          peristeri - Every Language Master, Dingocoin * Project contact,
-          Dingocoin in every language
-        </li>
-        <li>Captain Loki - Mined, Not Minted - Dingocoin</li>
-        <li>Ricky Vaughn - Mined, Not Minted - Dingocoin</li>
-        <li>Anxhu - Community Artist, Dingocoin</li>
-        <li>The_Rudist - Community Artist, Dingocoin</li>
-        <li>ChrissySydney - Community Artist, Dingocoin</li>
-        <li>hhvivek - Node Custodian, Dingocoin</li>
-        <li>s15a - Node Custodian, Dingocoin</li>
-        <li>Sean - Node Custodian, Dingocoin</li>
-        <li>XxTrevXx - Node Custodian and Trusted Walleteer, Dingocoin</li>
-        <li>jeff and friends - Listing Ninja, Dingocoin</li>
-        <li>Kapital - Listing Ninja, Dingocoin</li>
-        <li>Fang - Listing Ninja, Dingocoin</li>
+        <li>Twinky - Community Core Developer</li>
+        <li>peristeri - Every Language Master, Dingocoin in every language</li>
+        <li>Captain Loki - Mined, Not Minted</li>
+        <li>Ricky Vaughn - Mined, Not Minted</li>
+        <li>Anxhu - Community Artist</li>
+        <li>The_Rudist - Community Artist</li>
+        <li>ChrissySydney - Community Artist</li>
+        <li>formularun - Community Artist</li>
+        <li>UrbanMiner - Community Artist</li>
+        <li>hhvivek - Node Custodian</li>
+        <li>s15a - Node Custodian</li>
+        <li>Sean - Node Custodian</li>
+        <li>XxTrevXx - Node Custodian and Trusted Walleteer</li>
+        <li>jeff and friends - Listing Ninja</li>
+        <li>Kapital - Listing Ninja</li>
+        <li>Fang - Listing Ninja</li>
         <li>
           Everyone Else - Contributing and Supporting the #dingopack in every
           which way
         </li>
       </ul>
+      <p>
+        (If you have contributed but are missing from this list, please PM
+        Rayson on Discord to get it updated)
+      </p>
     </TrailmapTemplate>
   );
 }
