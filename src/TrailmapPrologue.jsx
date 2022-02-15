@@ -91,8 +91,7 @@ function TrailmapPrologue() {
           backend solutions. A proposed Dingocoin Keyring App and Sdk will
           ensure rapid developments of apps that can transact over the chain
           using webwallet API and without holding user keys – a completely
-          trustless model. The Decentralized Application platform allows you to
-          run secure applications on the Dingocoin blockchain.
+          trustless model.
         </p>
 
         <h4 className="mt-4">THE COMMUNITY JOURNEY</h4>
