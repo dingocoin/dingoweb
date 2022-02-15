@@ -162,7 +162,7 @@ function Main() {
               </Col>
             </Row>
             <Row>
-              <p className="masthead-title my-2">
+              <p className="masthead-title mt-4 mb-2">
                 Join the wild pack that gets the work <i>done</i>.
               </p>
               <p> MUCH KING DINGO SUCH WILD DOGE</p>
@@ -175,7 +175,7 @@ function Main() {
                   setWalletsModalShow(true);
                 }}
               >
-                Get Wallet
+                Get wallet
               </Button>
               <Button
                 className="popup-button px-4 py-2"
@@ -185,6 +185,15 @@ function Main() {
                 }}
               >
                 Buy Dingocoin
+              </Button>
+              <Button
+                className="popup-button px-4 py-2"
+                variant="primary"
+                onClick={() => {
+                  window.location = "/trailmap";
+                }}
+              >
+                Trailmap
               </Button>
             </Row>
           </Container>
@@ -216,7 +225,7 @@ function Main() {
                     variant="primary"
                     onClick={() => setInfrastructureShow(true)}
                   >
-                    See More
+                    See more
                   </Button>
                 )}
                 {infrastructureShow && (
@@ -381,7 +390,7 @@ function Main() {
                       </Col>
                     </Row>
                     <Row
-                      xs={2}
+                      xs={1}
                       md={3}
                       lg={3}
                       className="projectFactsWrap justify-content-center"
@@ -489,17 +498,19 @@ function Main() {
                   Experience the next generation of NFTs. Create and trade NFTs
                   on Dingocoin's chain. Our <i>cryptographically unique</i> NFTs
                   ensure that your content can never be used twice. Trading is
-                  done entirely on-chain -- you receive your earnings and
+                  done entirely on-chain - you receive your earnings and
                   royalties immediately. The best part? Do everything with{" "}
-                  {"<$0.01"} gas fees. <i>(Coming really soon...)</i>
+                  {"<$0.001"} gas fees.
                 </p>
-                <Button
-                  className="popup-button px-4"
-                  variant="primary"
-                  disabled
+                <a
+                  href="https://nft.dingocoin.org"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  Visit NFT Platform
-                </Button>
+                  <Button className="popup-button px-4" variant="primary">
+                    Visit NFT platform
+                  </Button>
+                </a>
               </div>
             </FadeInSection>
           </Row>
@@ -511,21 +522,19 @@ function Main() {
                 </div>
                 <h4>Earn Dividends on Dingocoin</h4>
                 <p style={{ textAlign: "justify" }}>
-                  If you hold Dingocoin, you are entitled to a dividend, just
-                  like holding a share of a company. All profits from the
-                  Dingocoin network, including NFT platform fees (and future
-                  income sources), are divided to its holders; and all
-                  accounting is public. To collect your dividend you need to
-                  stake your Dingocoins according to the dividend instructions,
-                  so that we know where to pay the dividend. You can always
-                  unstake at any point in time. <i>(Coming really soon...)</i>
+                  If you hold Dingocoin, you are entitled to a dividend on
+                  profits, just like holding a share of a company. To collect
+                  your dividend you need to stake your Dingocoins according to
+                  the dividend instructions, so that we know where to pay the
+                  dividend - you can always unstake at any point in time (
+                  <i>coming really soon...</i>).{" "}
                 </p>
                 <Button
                   className="popup-button px-4"
                   variant="primary"
                   disabled
                 >
-                  Stake Now
+                  Stake now
                 </Button>
               </div>
             </FadeInSection>
@@ -546,11 +555,11 @@ function Main() {
                 </p>
                 {!utilitiesShow && (
                   <Button
-                    className="popup-button"
+                    className="popup-button px-4"
                     variant="primary"
                     onClick={() => setUtilitiesShow(true)}
                   >
-                    See More
+                    See more
                   </Button>
                 )}
               </div>
@@ -800,7 +809,7 @@ function Main() {
                   <p>
                     - <b>Released</b> Merchandise platform.
                     <br />- <b>Released</b> Staking program.
-                    <br />- <b>Released</b> Browser extension wallets.
+                    <br />- <b>Released</b> Browser wallets.
                     <br />- <b>Released</b> Roblox Dingocoin City.
                     <br />- <b>Released</b> Dingo Diggers.
                     <br />- <b>Halved</b> block reward to 31,250.
@@ -864,7 +873,7 @@ function Main() {
                   href="https://github.com/dingocoin/dingocoin/releases/latest"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Windows
                   </Button>
                 </a>
@@ -878,7 +887,7 @@ function Main() {
                   href="https://github.com/dingocoin/dingocoin/releases/latest"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     macOS
                   </Button>
                 </a>
@@ -892,7 +901,7 @@ function Main() {
                   href="https://github.com/dingocoin/dingocoin/releases/latest"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Linux
                   </Button>
                 </a>
@@ -905,7 +914,7 @@ function Main() {
           >
             <Row>
               <Col>
-                <h5 className="mb-2">Browser Extension Wallets</h5>
+                <h5 className="mb-2">Browser Wallets</h5>
               </Col>
             </Row>
             <Row className="marketplace-container justify-content-md-center">
@@ -918,7 +927,7 @@ function Main() {
                   href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Chrome
                   </Button>
                 </a>
@@ -932,7 +941,7 @@ function Main() {
                   href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Firefox
                   </Button>
                 </a>
@@ -958,8 +967,8 @@ function Main() {
                   href="https://beehivewallet.link/"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
-                    Web
+                  <Button className="popup-button px-4" variant="primary">
+                    Beehive
                   </Button>
                 </a>
               </div>
@@ -972,7 +981,7 @@ function Main() {
                   href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Android
                   </Button>
                 </a>
@@ -1304,45 +1313,6 @@ function Main() {
             Close
           </Button>
         </Modal.Footer>
-      </Modal>
-
-      <Modal
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        show={artModalShow}
-        onHide={() => {
-          setArtModalShow(false);
-        }}
-      >
-        <Modal.Header closeButton></Modal.Header>
-        <Modal.Body>
-          <Container className="art-container">
-            <Row className="mb-2">
-              <Col>
-                {selectedArt && (
-                  <h4>
-                    (Author: <b>{selectedArt.author}</b>)
-                  </h4>
-                )}
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                {selectedArt !== null &&
-                  selectedArt.image.default.endsWith(".mp4") && (
-                    <video controls>
-                      <source src={selectedArt.image.default} />
-                    </video>
-                  )}
-                {selectedArt !== null &&
-                  !selectedArt.image.default.endsWith(".mp4") && (
-                    <Image src={selectedArt.image.default} />
-                  )}
-              </Col>
-            </Row>
-          </Container>
-        </Modal.Body>
       </Modal>
     </div>
   );

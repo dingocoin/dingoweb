@@ -6,8 +6,13 @@ import Airdrop from "./Airdrop";
 import Burnboard from "./Burnboard";
 import Privacy from "./Privacy";
 import Stake from "./Stake";
-import Manifesto from "./Manifesto";
-import Trailmap from "./Trailmap";
+import TrailmapNextGen from "./TrailmapNextGen";
+import TrailmapBrowserWallet from "./TrailmapBrowserWallet";
+import TrailmapContribute from "./TrailmapContribute";
+import TrailmapManifesto from "./TrailmapManifesto";
+import TrailmapMultilinguistics from "./TrailmapMultilinguistics";
+import TrailmapNFTPlatform from "./TrailmapNFTPlatform";
+import TrailmapPrologue from "./TrailmapPrologue";
 import ReactGA from "react-ga";
 
 // Controls.
@@ -71,7 +76,6 @@ function App() {
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/stake">Stake</Nav.Link>
                 <Nav.Link href="/airdrop">Airdrop</Nav.Link>
-                {/*
                 <Nav.Link
                   href="https://nft.dingocoin.org"
                   target="_blank"
@@ -79,7 +83,6 @@ function App() {
                 >
                   NFT Platform
                 </Nav.Link>
-                */}
                 <Nav.Link
                   href="https://wrap.dingocoin.org"
                   target="_blank"
@@ -87,6 +90,7 @@ function App() {
                 >
                   Wrap
                 </Nav.Link>
+                <Nav.Link href="/trailmap">Trailmap</Nav.Link>
                 <NavDropdown className="navbar-important" title="Links">
                   <NavDropdown.Header>Live Charts</NavDropdown.Header>
                   <NavDropdown.Item
@@ -205,16 +209,6 @@ function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Header>Resources</NavDropdown.Header>
-                  <NavDropdown.Item href="/manifesto">
-                    Manifesto
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="/DingocoinWhitePaper.pdf"
-                  >
-                    Whitepaper
-                  </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
@@ -250,8 +244,15 @@ function App() {
           <Route path="/burnboard" element={<Burnboard />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/stake" element={<Stake />} />
-          <Route path="/manifesto" element={<Manifesto />} />
-          <Route path="/trailmap" element={<Trailmap />} />
+          <Route path="/trailmap">
+            <Route path="multilinguistics" element={<TrailmapMultilinguistics />} />
+            <Route path="manifesto" element={<TrailmapManifesto />} />
+            <Route path="contribute" element={<TrailmapContribute />} />
+            <Route path="browserwallet" element={<TrailmapBrowserWallet />} />
+            <Route path="nftplatform" element={<TrailmapNFTPlatform />} />
+            <Route path="sdks" element={<TrailmapNextGen />} />
+            <Route path="" element={<TrailmapPrologue />} />
+          </Route>
           <Route path="/" element={<Main />} />
           <Route path="*" element={<Main />} />
         </Routes>
