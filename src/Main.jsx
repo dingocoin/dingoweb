@@ -25,7 +25,6 @@ import {
   faAndroid,
 } from "@fortawesome/free-brands-svg-icons";
 import BSCLogo from "./assets/img/bsc.png";
-import DingetteLogo from "./assets/img/dingette.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
@@ -35,8 +34,10 @@ import CratexIoLogo from "./assets/img/cratexio.png";
 import DelionDexLogo from "./assets/img/deliondex.png";
 import DexGuruLogo from "./assets/img/dex-guru.png";
 import DexTradeLogo from "./assets/img/dextrade.png";
+import DingetteLogo from "./assets/img/dingette.png";
 import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
+import DingocoinNFTPlatformLogo from "./assets/img/dingocoinnftplatform.png";
 import DingodiggersLogo from "./assets/img/dingodigger.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
 import ExbitronLogo from "./assets/img/exbitron.png";
@@ -53,7 +54,7 @@ import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
 import UdonexLogo from "./assets/img/udonex.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
-import DingocoinNFTPlatformLogo from "./assets/img/dingocoinnftplatform.png";
+import XTCOMLogo from "./assets/img/xtcom.png";
 
 function Main() {
   async function get(link) {
@@ -133,54 +134,65 @@ function Main() {
   return (
     <div>
       <header className="section-a" id="home">
-        <div className="particles-container">
-          <Container className="masthead">
-            <Row>
-              <Col>
-                <div className="isometric-holder">
-                  <div
-                    className={loaded ? "isometric" : "isometric preload"}
-                  ></div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <p className="masthead-title mt-4 mb-2">
-                Join the wild pack that gets the work <i>done</i>.
-              </p>
-              <p> MUCH KING DINGO SUCH WILD DOGE</p>
-            </Row>
-            <Row className="quick-actions flex-wrap justify-content-md-center">
-              <Button
-                className="popup-button px-4 py-2"
-                variant="primary"
-                onClick={() => {
-                  setWalletsModalShow(true);
-                }}
-              >
-                Get wallet
-              </Button>
-              <Button
-                className="popup-button px-4 py-2"
-                variant="primary"
-                onClick={() => {
-                  setExchangesModalShow(true);
-                }}
-              >
-                Buy Dingocoin
-              </Button>
-              <Button
-                className="popup-button px-4 py-2"
-                variant="primary"
-                onClick={() => {
-                  window.location = "/trailmap";
-                }}
-              >
-                Trailmap
-              </Button>
-            </Row>
-          </Container>
-        </div>
+        <Container className="masthead">
+          <Row>
+            <Col>
+              <div className="isometric-holder">
+                <div
+                  className={loaded ? "isometric" : "isometric preload"}
+                ></div>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <p className="masthead-title mt-4 mb-2">
+              Join the wild pack that gets the work <i>done</i>.
+            </p>
+            <p> MUCH KING DINGO SUCH WILD DOGE</p>
+          </Row>
+          <Row className="quick-actions flex-wrap justify-content-md-center">
+            <Button
+              className="popup-button px-4 py-2"
+              variant="primary"
+              onClick={() => {
+                setWalletsModalShow(true);
+              }}
+            >
+              Get wallet
+            </Button>
+            <Button
+              className="popup-button px-4 py-2"
+              variant="primary"
+              onClick={() => {
+                setExchangesModalShow(true);
+              }}
+            >
+              Buy Dingocoin
+            </Button>
+            <Button
+              className="popup-button px-4 py-2"
+              variant="primary"
+              onClick={() => {
+                window.location = "/trailmap";
+              }}
+            >
+              Trailmap
+            </Button>
+          </Row>
+        </Container>
+        <p className="mt-4">
+          We are{" "}
+          <a
+            className="simple-link"
+            href="https://www.xt.com/trade/dingo_usdt"
+            target="_blank"
+            rel="noreferrer"
+          >
+            listed on XT.com
+          </a>
+          !<br />
+          Deposits open 18 Feb, 4AM, UTC+0.
+        </p>
       </header>
 
       <section className="section-b" id="ecosystem">
@@ -642,7 +654,10 @@ function Main() {
                           Dingette's Channel
                         </Button>
                       </a>
-                      <p>UwU? What's this? Our very own fan-lady growing the pack??? OwO</p>
+                      <p>
+                        UwU? What's this? Our very own fan-lady growing the
+                        pack??? OwO
+                      </p>
                     </div>
                   </Col>
                   <Col>
@@ -726,10 +741,10 @@ function Main() {
                     <i>The Beginning</i>
                   </h3>
                   <p>
-                    - <b>Birth</b> of Dingocoin.
-                    <br />- <b>Halved</b> block reward to 500,000.
-                    <br />- <b>Listed</b> on Autradex.
-                    <br />- <b>Listed</b> on DelionDEX.
+                    - <b>Birth</b> of Dingocoin
+                    <br />- <b>Halved</b> block reward to 500,000
+                    <br />- <b>Listed</b> on Autradex
+                    <br />- <b>Listed</b> on DelionDEX
                   </p>
                 </li>
               </FadeInSection>
@@ -742,9 +757,9 @@ function Main() {
                     <i>The Resistance</i>
                   </h3>
                   <p>
-                    - <b>Listed</b> on Dex-Trade.
-                    <br />- <b>Halved</b> reward to 250,000.
-                    <br />- <b>Listed</b> on Cratex.
+                    - <b>Listed</b> on Dex-Trade
+                    <br />- <b>Halved</b> reward to 250,000
+                    <br />- <b>Listed</b> on Cratex
                   </p>
                 </li>
               </FadeInSection>
@@ -757,10 +772,10 @@ function Main() {
                     <i>The Upheaval</i>
                   </h3>
                   <p>
-                    - <b>Released</b> Wrapped Dingocoin on BSC.
-                    <br />- <b>Halved</b> block reward to 125,000.
-                    <br />- <b>Listed</b> on SouthXchange.
-                    <br />- <b>Added</b> to major merged mining pools.
+                    - <b>Released</b> Wrapped Dingocoin on BSC
+                    <br />- <b>Halved</b> block reward to 125,000
+                    <br />- <b>Listed</b> on SouthXchange
+                    <br />- <b>Added</b> to major merged mining pools
                   </p>
                 </li>
               </FadeInSection>
@@ -773,11 +788,11 @@ function Main() {
                     <i>The Proclamation</i>
                   </h3>
                   <p>
-                    - <b>Released</b> Dingosino on Discord.
-                    <br />- <b>Released</b> Dingocoin Weekly Airdrop.
-                    <br />- <b>Halved</b> block reward to 62,500.
-                    <br />- <b>Listed</b> on Hotbit.
-                    <br />- <b>Released</b> Wrapped Dingocoin on SOL.
+                    - <b>Released</b> Dingosino on Discord
+                    <br />- <b>Released</b> Dingocoin Weekly Airdrop
+                    <br />- <b>Halved</b> block reward to 62,500
+                    <br />- <b>Listed</b> on Hotbit
+                    <br />- <b>Released</b> Wrapped Dingocoin on SOL
                   </p>
                 </li>
               </FadeInSection>
@@ -790,25 +805,33 @@ function Main() {
                     <i>The Boomshakalaka</i>
                   </h3>
                   <p>
-                    - <b>Released</b> Merchandise platform.
-                    <br />- <b>Released</b> Staking program.
-                    <br />- <b>Released</b> Browser wallets.
-                    <br />- <b>Released</b> Roblox Dingocoin City.
-                    <br />- <b>Released</b> Dingo Diggers.
-                    <br />- <b>Halved</b> block reward to 31,250.
-                    <br />- <b>Listed</b> on Udonex.
-                    <br />- <b>Listed</b> on Exbitron.
-                    <br />- <b>Released</b> Dingocoin NFT platform.
-                    <br />- <b>Released</b> Dividends for staking.
+                    - <b>Released</b> Merchandise platform
+                    <br />- <b>Released</b> Staking program
+                    <br />- <b>Released</b> Browser wallets
+                    <br />- <b>Released</b> Roblox Dingocoin City
+                    <br />- <b>Released</b> Dingo Diggers
+                    <br />- <b>Halved</b> block reward to 31,250
+                    <br />- <b>Listed</b> on Udonex
+                    <br />- <b>Listed</b> on Exbitron
+                    <br />- <b>Released</b> Dingocoin NFT platform
+                    <br />- <b>Released</b> Dividends for staking
+                    <br />- <b>Listed</b> on XT.com
                   </p>
                 </li>
               </FadeInSection>
               <FadeInSection>
                 <li className="event incomplete" data-date="In progress...">
-                  <a href="/trailmap" className="simple-link" target="_blank" rel="noreferrer">See our complete Trailmap here</a>
+                  <a
+                    href="/trailmap"
+                    className="simple-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Click to see more in our Trailmap
+                  </a>
                   <p style={{ color: "#AAAAAA" }}>
-                    - <b>Halve</b> block reward to 15,625.
-                    <br />- <b>Halve</b> block reward to 10,000 permanentely.
+                    - <b>Halve</b> block reward to 15,625
+                    <br />- <b>Halve</b> block reward to 10,000 permanentely
                   </p>
                 </li>
               </FadeInSection>
@@ -1000,6 +1023,15 @@ function Main() {
               </Col>
             </Row>
             <Row className="justify-content-md-center">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.xt.com/trade/dingo_usdt"
+              >
+                <Button variant="outline-primary">
+                  <img alt="" src={XTCOMLogo} />
+                </Button>
+              </a>
               <a
                 target="_blank"
                 rel="noreferrer"

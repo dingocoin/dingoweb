@@ -37,6 +37,7 @@ import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
 import UdonexLogo from "./assets/img/udonex.png";
+import XTCOMLogo from "./assets/img/xtcom.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
@@ -148,6 +149,13 @@ function App() {
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
+                    href="https://www.xt.com/trade/dingo_usdt"
+                  >
+                    <img alt="" src={XTCOMLogo} />
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    target="_blank"
+                    rel="noreferrer"
                     href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
                   >
                     <img alt="" src={HotbitLogo} />
@@ -246,11 +254,17 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/stake" element={<Stake />} />
           <Route path="/trailmap">
-            <Route path="multilinguistics" element={<TrailmapMultilinguistics />} />
+            <Route
+              path="multilinguistics"
+              element={<TrailmapMultilinguistics />}
+            />
             <Route path="manifesto" element={<TrailmapManifesto />} />
             <Route path="contribute" element={<TrailmapContribute />} />
             <Route path="browserwallet" element={<TrailmapBrowserWallet />} />
-            <Route path="exchangelistings" element={<TrailmapExchangeListings />} />
+            <Route
+              path="exchangelistings"
+              element={<TrailmapExchangeListings />}
+            />
             <Route path="nftplatform" element={<TrailmapNFTPlatform />} />
             <Route path="nextgen" element={<TrailmapNextGen />} />
             <Route path="" element={<TrailmapPrologue />} />
