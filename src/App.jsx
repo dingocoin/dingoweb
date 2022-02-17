@@ -252,7 +252,7 @@ function App() {
             <Route path="browserwallet" element={<TrailmapBrowserWallet />} />
             <Route path="exchangelistings" element={<TrailmapExchangeListings />} />
             <Route path="nftplatform" element={<TrailmapNFTPlatform />} />
-            <Route path="sdks" element={<TrailmapNextGen />} />
+            <Route path="nextgen" element={<TrailmapNextGen />} />
             <Route path="" element={<TrailmapPrologue />} />
           </Route>
           <Route path="/" element={<Main />} />

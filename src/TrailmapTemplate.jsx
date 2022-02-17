@@ -7,7 +7,7 @@ const ENTRIES = [
   ["/trailmap", "Prologue"],
   ["/trailmap/manifesto", "Our manifesto"],
   ["/trailmap/contribute", "How to get involved?"],
-  ["/trailmap/sdks", "Project: Dingocoin NextGen"],
+  ["/trailmap/nextgen", "Project: Dingocoin NextGen"],
   ["/trailmap/browserwallet", "Project: Dingocoin browser wallet"],
   ["/trailmap/nftplatform", "Project: Dingocoin NFT platform"],
   ["/trailmap/multilinguistics", "Project: Dingocoin in every language"],
