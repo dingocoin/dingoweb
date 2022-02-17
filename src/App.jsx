@@ -8,6 +8,7 @@ import Privacy from "./Privacy";
 import Stake from "./Stake";
 import TrailmapNextGen from "./TrailmapNextGen";
 import TrailmapBrowserWallet from "./TrailmapBrowserWallet";
+import TrailmapExchangeListings from "./TrailmapExchangeListings";
 import TrailmapContribute from "./TrailmapContribute";
 import TrailmapManifesto from "./TrailmapManifesto";
 import TrailmapMultilinguistics from "./TrailmapMultilinguistics";
@@ -249,6 +250,7 @@ function App() {
             <Route path="manifesto" element={<TrailmapManifesto />} />
             <Route path="contribute" element={<TrailmapContribute />} />
             <Route path="browserwallet" element={<TrailmapBrowserWallet />} />
+            <Route path="exchangelistings" element={<TrailmapExchangeListings />} />
             <Route path="nftplatform" element={<TrailmapNFTPlatform />} />
             <Route path="sdks" element={<TrailmapNextGen />} />
             <Route path="" element={<TrailmapPrologue />} />

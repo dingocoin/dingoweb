@@ -11,6 +11,7 @@ const ENTRIES = [
   ["/trailmap/browserwallet", "Project: Dingocoin browser wallet"],
   ["/trailmap/nftplatform", "Project: Dingocoin NFT platform"],
   ["/trailmap/multilinguistics", "Project: Dingocoin in every language"],
+  ["/trailmap/exchangelistings", "Exchange listings"],
 ];
 
 function TrailmapTemplate(props) {

@@ -3,7 +3,6 @@ import React from "react";
 // Controls.
 import { Button, Container, Row, Col, Modal, Image } from "react-bootstrap";
 import CustomDivider from "./CustomDivider";
-import { useMediaQuery } from "react-responsive";
 import FadeInSection from "./FadeInSection";
 
 // Assets.
@@ -11,11 +10,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRobot,
   faShoppingCart,
-  faPencilRuler,
   faDumpsterFire,
-  faFistRaised,
   faGlobe,
-  faMoneyBillWave,
   faUserAstronaut,
   faProjectDiagram,
   faChartLine,
@@ -30,7 +26,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import BSCLogo from "./assets/img/bsc.png";
 import DingetteLogo from "./assets/img/dingette.png";
-import BananaLogo from "./assets/img/happybanana.gif";
 import BirdeyeLogo from "./assets/img/birdeye.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
@@ -60,17 +55,7 @@ import UdonexLogo from "./assets/img/udonex.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import DingocoinNFTPlatformLogo from "./assets/img/dingocoinnftplatform.png";
 
-function shuffleArr(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var rand = Math.floor(Math.random() * (i + 1));
-    [array[i], array[rand]] = [array[rand], array[i]];
-  }
-}
-
 function Main() {
-  const isXs = useMediaQuery({ query: `(max-width: 767px)` });
-  const isMd = useMediaQuery({ query: `(max-width: 991px)` });
-
   async function get(link) {
     const controller = new AbortController();
     return (
@@ -144,8 +129,6 @@ function Main() {
   const [walletsModalShow, setWalletsModalShow] = React.useState(false);
   const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
-  const [artModalShow, setArtModalShow] = React.useState(false);
-  const [selectedArt, setSelectedArt] = React.useState(null);
 
   return (
     <div>
@@ -496,11 +479,11 @@ function Main() {
                 <h4>Dingocoin NFT Platform</h4>
                 <p style={{ textAlign: "justify" }}>
                   Experience the next generation of NFTs. Create and trade NFTs
-                  on Dingocoin's chain. Our <i>cryptographically unique</i> NFTs
-                  ensure that your content can never be used twice. Trading is
-                  done entirely on-chain - you receive your earnings and
-                  royalties immediately. The best part? Do everything with{" "}
-                  {"<$0.001"} gas fees.
+                  on Dingocoin's chain. Create and trade NFTS with {"<$0.001"}{" "}
+                  gas fees. Trading is done entirely on-chain - you receive your
+                  earnings and royalties immediately. Our{" "}
+                  <i>cryptographically unique</i> NFTs ensure that your content
+                  can never be used twice.
                 </p>
                 <a
                   href="https://nft.dingocoin.org"
@@ -659,7 +642,7 @@ function Main() {
                           Dingette's Channel
                         </Button>
                       </a>
-                      <p>UwU? What's this? Our very own fan-lady??? OwO</p>
+                      <p>UwU? What's this? Our very own fan-lady growing the pack??? OwO</p>
                     </div>
                   </Col>
                   <Col>
@@ -822,15 +805,10 @@ function Main() {
               </FadeInSection>
               <FadeInSection>
                 <li className="event incomplete" data-date="In progress...">
-                  <h3 style={{ color: "#AAAAAA" }}>In progress...</h3>
+                  <a href="/trailmap" className="simple-link" target="_blank" rel="noreferrer">See our complete Trailmap here</a>
                   <p style={{ color: "#AAAAAA" }}>
-                    - <b>Release</b> Multilinguistics.
-                    <br />- <b>Release</b> Mobile wallets.
-                    <br />- <b>List</b> on many more major exchanges.
-                    <br />- <b>Halve</b> block reward to 15,625.
+                    - <b>Halve</b> block reward to 15,625.
                     <br />- <b>Halve</b> block reward to 10,000 permanentely.
-                    <br />- <i>peristeri is typing...</i>
-                    <br /> (Have a project idea? Join us now!)
                   </p>
                 </li>
               </FadeInSection>
