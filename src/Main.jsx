@@ -180,7 +180,7 @@ function Main() {
             </Button>
           </Row>
         </Container>
-        <p className="mt-4">
+        <p style={{fontSize: "2rem", marginTop: "3rem"}}>
           We are{" "}
           <a
             className="simple-link"
@@ -190,8 +190,8 @@ function Main() {
           >
             listed on XT.com
           </a>
-          !<br />
-          Deposits open 18 Feb, 4AM, UTC+0.
+          .<br />
+          Trading now open!
         </p>
       </header>
 
