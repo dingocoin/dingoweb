@@ -183,7 +183,7 @@ function Main() {
         </Container>
       </header>
 
-      <video autoPlay muted style={{width: "100%", height: "auto"}}>
+      <video autoPlay muted style={{maxWidth: "100%", maxHeight: "100%"}}>
         <source src={XTListingVideo} type="video/mp4"/>
       </video>
 
