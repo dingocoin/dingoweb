@@ -55,6 +55,7 @@ import SouthXchangeLogo from "./assets/img/southxchange.png";
 import UdonexLogo from "./assets/img/udonex.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
+import XTListingVideo from "./assets/img/xtlisting.mp4";
 
 function Main() {
   async function get(link) {
@@ -194,6 +195,10 @@ function Main() {
           Trading now open!
         </p>
       </header>
+
+      <video autoPlay muted>
+        <source src={XTListingVideo} type="video/mp4"/>
+      </video>
 
       <section className="section-b" id="ecosystem">
         <h1>ECOSYSTEM</h1>
