@@ -181,19 +181,6 @@ function Main() {
             </Button>
           </Row>
         </Container>
-        <p style={{fontSize: "2rem", marginTop: "3rem"}}>
-          We are{" "}
-          <a
-            className="simple-link"
-            href="https://www.xt.com/trade/dingo_usdt"
-            target="_blank"
-            rel="noreferrer"
-          >
-            listed on XT.com
-          </a>
-          .<br />
-          Trading now open!
-        </p>
       </header>
 
       <video autoPlay muted>
