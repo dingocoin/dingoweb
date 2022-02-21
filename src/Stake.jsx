@@ -83,11 +83,14 @@ function Stake() {
     })();
   }, []);
 
+
   return (
     <div>
       <section className="section-a min-height-fill" id="airdrop">
         <h1>STAKE DINGOCOINS</h1>
         <CustomDivider />
+        <p>Staking is currently undergoing maintenance. Please check back soon.</p>
+        {/*
         <Container>
           <Row>
             <p>Simply #KeepYourDingoInYourPants and get rewarded.</p>
@@ -296,6 +299,7 @@ function Stake() {
             </p>
           </Row>
         </Container>
+        */}
       </section>
     </div>
   );
