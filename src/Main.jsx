@@ -183,10 +183,6 @@ function Main() {
         </Container>
       </header>
 
-      <video autoPlay muted style={{maxWidth: "100%", maxHeight: "100%"}}>
-        <source src={XTListingVideo} type="video/mp4"/>
-      </video>
-
       <section className="section-b" id="ecosystem">
         <h1>ECOSYSTEM</h1>
         <CustomDivider />
