@@ -503,7 +503,7 @@ function Main() {
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faChartLine} />
                 </div>
-                <h4>Earn Dividends on Dingocoin</h4>
+                <h4>Earn staking rewards</h4>
                 <p style={{ textAlign: "justify" }}>
                   If you hold Dingocoin, you are entitled to a dividend on
                   profits, just like holding a share of a company. To collect
@@ -512,13 +512,11 @@ function Main() {
                   dividend - you can always unstake at any point in time (
                   <i>coming really soon...</i>).{" "}
                 </p>
-                <Button
-                  className="popup-button px-4"
-                  variant="primary"
-                  disabled
-                >
-                  Stake now
-                </Button>
+                <a href="/stake">
+                  <Button className="popup-button px-4" variant="primary">
+                    Stake now
+                  </Button>
+                </a>
               </div>
             </FadeInSection>
           </Row>
@@ -528,7 +526,7 @@ function Main() {
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
                 </div>
-                <h4>Community-driven Utilities</h4>
+                <h4>Community-driven utilities</h4>
                 <p style={{ textAlign: "justify" }}>
                   Dingocoin's community works hard to grow the coin. No more
                   waiting for things to happen - Dingocoin lets you take things

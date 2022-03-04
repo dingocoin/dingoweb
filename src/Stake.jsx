@@ -35,6 +35,7 @@ function Stake() {
   const [currentList, setCurrentList] = React.useState([]);
   const [nextList, setNextList] = React.useState([]);
   const [terminalBlocks, setTerminalBlocks] = React.useState([]);
+  const [nextTerminalHeight, setNextTerminalHeight] = React.useState(null);
   const [view, setView] = React.useState("next");
   React.useEffect(() => {
     (async () => {
@@ -80,6 +81,7 @@ function Stake() {
         "https://stats.dingocoin.org:8443/stats/dingo"
       );
       setTerminalBlocks(STAKE_INTERVAL - (dingoStats.height % STAKE_INTERVAL));
+      setNextTerminalHeight(dingoStats.height + STAKE_INTERVAL - (dingoStats.height % STAKE_INTERVAL));
     })();
   }, []);
 
@@ -89,8 +91,6 @@ function Stake() {
       <section className="section-a min-height-fill" id="airdrop">
         <h1>STAKE DINGOCOINS</h1>
         <CustomDivider />
-        <p>Staking is currently undergoing maintenance. Please check back soon.</p>
-        {/*
         <Container>
           <Row>
             <p>Simply #KeepYourDingoInYourPants and get rewarded.</p>
@@ -105,61 +105,24 @@ function Stake() {
                   <Accordion.Body className="social-faucet-instructions">
                     <p>
                       Every round, a fixed reward pool is split evenly based on
-                      how many staking points each address earns.
+                      how many coins you have staked.
                     </p>
                     <p>
-                      1) Deposit <b>an exact amount</b> of Dingocoins (no more,
-                      no less; see (3)) to any address of yours. Earn points
-                      depending on the exact amount deposited:
-                      <ul>
-                        <li>
-                          <b>100,000 Dingocoins:</b> 1 point.
-                        </li>
-                        <li>
-                          <b>1,000,000 Dingocoins:</b> 5 points.
-                        </li>
-                        <li>
-                          <b>10,000,000 Dingocoins:</b> 10 points.
-                        </li>
-                        <li>
-                          <b>100,000,000 Dingocoins:</b> 50 points.
-                        </li>
-                        <li>
-                          <b>1,000,000,000 Dingocoins:</b> 100 points.
-                        </li>
-                      </ul>
-                    </p>
-                    <p>2) Don't spend from that address.</p>
-                    <p>
-                      3) Repeat for as many deposits as you would like. You can
-                      mix the deposit sizes. Make sure not to spend from your
-                      staking address (Tip: use a separate wallet for staked
-                      funds).
-                    </p>
-                    <p>
-                      4) Wait for the end of the next round (every 10,000
-                      blocks) and rewards will be automatically sent to your
-                      staking address.
+                      1) Each round lasts 10K blocks. To earn staking rewards, your coins must be staked for the entire round.<br/>
+                      2) Stake coins by sending exact multiples of 100,000 DINGO to any address of yours.<br/>
+                      3) Don't spend from that address until the round ends.
                     </p>
                     <br />
                     <p>
+                      FAQ:<br/>
                       * Your funds need to be deposited before the start of each
-                      round for it to be counted for that round.
-                    </p>
-                    <p>
-                      * Deposited funds and rewards carry over to subsequent
-                      rounds{" "}
-                      <i>as long as you keep your Dingocoins in your pants</i>.
-                    </p>
-                    <p>
+                      round for it to be counted for that round.<br/>
+                      * Deposited funds carry over to subsequent
+                      rounds as long as they are not spent.<br/>
                       * Spending from your staking address will invalidate all
                       staked funds, and you will need to re-deposit all funds.
-                      You will also forfeit your earnings for the round.
-                    </p>
-                    <p>
-                      * Reward pool is subject to changes between every round.
-                    </p>
-                    <p>
+                      You will also forfeit your earnings for the round.<br/>
+                      * Reward pool is subject to changes between every round.<br/>
                       * Rewards take up to 48 hours to dispense after each
                       round.
                     </p>
@@ -174,6 +137,7 @@ function Stake() {
                 title={view === "next" ? "Next Round" : "Current Round"}
                 className="mb-2"
               >
+                {/*
                 <Dropdown.Item
                   onClick={() => {
                     setView("current");
@@ -181,6 +145,7 @@ function Stake() {
                 >
                   Current Round
                 </Dropdown.Item>
+                */}
                 <Dropdown.Item
                   onClick={() => {
                     setView("next");
@@ -260,7 +225,6 @@ function Stake() {
                           </span>
                           &nbsp;Staked
                         </th>
-                        <th className="col-3 table-dingo">Score</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -269,7 +233,6 @@ function Stake() {
                           <td className="col-1">{x.rank}</td>
                           <td className="col-5">{x.address}</td>
                           <td className="col-3">{x.amount.toLocaleString()}</td>
-                          <td className="col-3">{x.score.toLocaleString()}</td>
                         </tr>
                       ))}
                       <tr>
@@ -284,7 +247,6 @@ function Stake() {
                               .toLocaleString()}
                           </b>
                         </td>
-                        <td className="col-3"></td>
                       </tr>
                     </tbody>
                   </Table>
@@ -294,12 +256,12 @@ function Stake() {
           </Row>
           <Row>
             <p className="mt-4">
+              Current round payouts: height <b>{nextTerminalHeight}</b>.<br />
               Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
               Reward pool: <b>{(2000000).toLocaleString()} Dingocoins</b>.
             </p>
           </Row>
         </Container>
-        */}
       </section>
     </div>
   );
