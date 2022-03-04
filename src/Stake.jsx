@@ -256,7 +256,7 @@ function Stake() {
           </Row>
           <Row>
             <p className="mt-4">
-              Current round payouts: height <b>{nextTerminalHeight}</b>.<br />
+              {/*Current round payout at: height <b>{nextTerminalHeight}</b>.<br />*/}
               Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
               Reward pool: <b>{(2000000).toLocaleString()} Dingocoins</b>.
             </p>
