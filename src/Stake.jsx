@@ -137,7 +137,6 @@ function Stake() {
                 title={view === "next" ? "Next Round" : "Current Round"}
                 className="mb-2"
               >
-                {/*
                 <Dropdown.Item
                   onClick={() => {
                     setView("current");
@@ -145,7 +144,6 @@ function Stake() {
                 >
                   Current Round
                 </Dropdown.Item>
-                */}
                 <Dropdown.Item
                   onClick={() => {
                     setView("next");
@@ -256,7 +254,6 @@ function Stake() {
           </Row>
           <Row>
             <p className="mt-4">
-              {/*Current round payout at: height <b>{nextTerminalHeight}</b>.<br />*/}
               Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
               Reward pool: <b>{(2000000).toLocaleString()} Dingocoins</b>.
             </p>
