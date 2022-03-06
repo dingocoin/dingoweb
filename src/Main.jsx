@@ -509,8 +509,7 @@ function Main() {
                   profits, just like holding a share of a company. To collect
                   your dividend you need to stake your Dingocoins according to
                   the dividend instructions, so that we know where to pay the
-                  dividend - you can always unstake at any point in time (
-                  <i>coming really soon...</i>).{" "}
+                  dividend - you can always unstake at any point in time.
                 </p>
                 <a href="/stake">
                   <Button className="popup-button px-4" variant="primary">
