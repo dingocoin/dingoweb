@@ -81,10 +81,13 @@ function Stake() {
         "https://stats.dingocoin.org:8443/stats/dingo"
       );
       setTerminalBlocks(STAKE_INTERVAL - (dingoStats.height % STAKE_INTERVAL));
-      setNextTerminalHeight(dingoStats.height + STAKE_INTERVAL - (dingoStats.height % STAKE_INTERVAL));
+      setNextTerminalHeight(
+        dingoStats.height +
+          STAKE_INTERVAL -
+          (dingoStats.height % STAKE_INTERVAL)
+      );
     })();
   }, []);
-
 
   return (
     <div>
@@ -108,22 +111,34 @@ function Stake() {
                       how many coins you have staked.
                     </p>
                     <p>
-                      1) Each round lasts 10K blocks. To earn staking rewards, your coins must be staked for the entire round.<br/>
-                      2) Stake coins by sending exact multiples of 100,000 DINGO to any address of yours.<br/>
+                      1) Each round lasts 10K blocks. To earn staking rewards,
+                      your coins must be staked for the entire round.
+                      <br />
+                      2) Stake coins by sending exact multiples of 100,000 DINGO
+                      to any address of yours.
+                      <br />
                       3) Don't spend from that address until the round ends.
                     </p>
                     <br />
                     <p>
-                      FAQ:<br/>
+                      FAQ:
+                      <br />
                       * Your funds need to be deposited before the start of each
-                      round for it to be counted for that round.<br/>
-                      * Deposited funds carry over to subsequent
-                      rounds as long as they are not spent.<br/>
+                      round for it to be counted for that round.
+                      <br />
+                      * Sending N counts of 100,000 DINGO transactions count the
+                      same as sending a single (N * 100,000) DINGO transaction.
+                      You can use the latter to save time.
+                      <br />
+                      * Deposited funds carry over to subsequent rounds as long
+                      as they are not spent.
+                      <br />
                       * Spending from your staking address will invalidate all
                       staked funds, and you will need to re-deposit all funds.
-                      You will also forfeit your earnings for the round.<br/>
-                      * Reward pool is subject to changes between every round.<br/>
-                      * Rewards take up to 48 hours to dispense after each
+                      You will also forfeit your earnings for the round.
+                      <br />
+                      * Reward pool is subject to changes between every round.
+                      <br />* Rewards take up to 48 hours to dispense after each
                       round.
                     </p>
                   </Accordion.Body>
