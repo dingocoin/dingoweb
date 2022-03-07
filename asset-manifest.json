@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.5d9d8d64.chunk.css",
-    "main.js": "/static/js/main.214c2300.chunk.js",
-    "main.js.map": "/static/js/main.214c2300.chunk.js.map",
+    "main.js": "/static/js/main.9be74d90.chunk.js",
+    "main.js.map": "/static/js/main.9be74d90.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.77f25f0f.chunk.js": "/static/js/2.77f25f0f.chunk.js",
@@ -32,7 +32,6 @@
     "static/media/socialfaucet.7855d1e6.png": "/static/media/socialfaucet.7855d1e6.png",
     "static/media/sol.b826535d.png": "/static/media/sol.b826535d.png",
     "static/media/southxchange.2d1f6024.png": "/static/media/southxchange.2d1f6024.png",
-    "static/media/udonex.6347ca29.png": "/static/media/udonex.6347ca29.png",
     "static/media/wdingocoin.b75f159c.png": "/static/media/wdingocoin.b75f159c.png",
     "static/media/xtlisting.f05cb5a9.mp4": "/static/media/xtlisting.f05cb5a9.mp4"
   },
@@ -40,6 +39,6 @@
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.77f25f0f.chunk.js",
     "static/css/main.5d9d8d64.chunk.css",
-    "static/js/main.214c2300.chunk.js"
+    "static/js/main.9be74d90.chunk.js"
   ]
 }
