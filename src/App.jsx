@@ -36,7 +36,6 @@ import PancakeSwap from "./assets/img/pancakeswap.png";
 import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
-import UdonexLogo from "./assets/img/udonex.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -180,13 +179,6 @@ function App() {
                     href="https://www.exbitron.com/trading/dingousdt"
                   >
                     <img alt="" src={ExbitronLogo} />
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://ex.udonex.com/market/dingousdt"
-                  >
-                    <img alt="" src={UdonexLogo} />
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"

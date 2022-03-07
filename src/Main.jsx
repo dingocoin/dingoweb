@@ -52,7 +52,6 @@ import RobloxLogo from "./assets/img/roblox.png";
 import SOLLogo from "./assets/img/sol.png";
 import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
-import UdonexLogo from "./assets/img/udonex.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
 import XTListingVideo from "./assets/img/xtlisting.mp4";
@@ -796,7 +795,6 @@ function Main() {
                     <br />- <b>Released</b> Roblox Dingocoin City
                     <br />- <b>Released</b> Dingo Diggers
                     <br />- <b>Halved</b> block reward to 31,250
-                    <br />- <b>Listed</b> on Udonex
                     <br />- <b>Listed</b> on Exbitron
                     <br />- <b>Released</b> Dingocoin NFT platform
                     <br />- <b>Released</b> Dividends for staking
@@ -1042,15 +1040,6 @@ function Main() {
               >
                 <Button variant="outline-primary">
                   <img alt="" src={ExbitronLogo} />
-                </Button>
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://ex.udonex.com/market/dingousdt"
-              >
-                <Button variant="outline-primary">
-                  <img alt="" src={UdonexLogo} />
                 </Button>
               </a>
               <a
