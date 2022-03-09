@@ -212,7 +212,7 @@ function Main() {
                     setWalletsModalShow(true);
                   }}
                 >
-                  Get wallet
+                  View wallets
                 </Button>
               </div>
             </FadeInSection>
