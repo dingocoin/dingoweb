@@ -18,7 +18,7 @@ import {
   faChartLine,
   faWallet,
   faCaretDown,
-  faChevronDown
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faChrome,
@@ -547,10 +547,8 @@ function Main() {
                 </div>
                 <h4 className="mt-3">4. Play games</h4>
                 <p className="text-center">
-                  Weekly airdrops, Discord and Roblox games, socials, and other
-                  tools. Explore the various utilities developed by the
-                  community. Or better yet, contribute yourself - we rely on
-                  everyone's fresh ideas.
+                  Play games on Discord and Roblox using Dingocoin. Have fun and
+                  hang out with the pack.
                 </p>
                 {!gamesShow && (
                   <Button
@@ -644,7 +642,7 @@ function Main() {
                 <h4 className="mt-3">5. Stake Dingocoins</h4>
                 <p className="text-center">
                   Stake your Dingocoins and earn weekly rewards. Staking rewards
-                  are funded by NFT platform revenue - you earn more whenever we
+                  are funded by NFT revenue - you earn more whenever we
                   get more users!
                 </p>
                 <a href="/stake">
