@@ -14,7 +14,9 @@ import {
   faGlobe,
   faUserAstronaut,
   faProjectDiagram,
+  faGamepad,
   faChartLine,
+  faWallet,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faChrome,
@@ -126,6 +128,7 @@ function Main() {
   }, []);
 
   const [infrastructureShow, setInfrastructureShow] = React.useState(false);
+  const [gamesShow, setGamesShow] = React.useState(false);
   const [utilitiesShow, setUtilitiesShow] = React.useState(false);
 
   const [walletsModalShow, setWalletsModalShow] = React.useState(false);
@@ -184,23 +187,43 @@ function Main() {
       </header>
 
       <section className="section-b" id="ecosystem">
-        <h1>ECOSYSTEM</h1>
+        <h1>GET STARTED</h1>
+        <p className="text-muted">Explore Dingocoin today.</p>
         <CustomDivider />
-        <Container className="ecosystem-section">
+        <Container className="ecosystem-section" style={{ maxWidth: "50rem" }}>
           <Row xs={1} md={1} lg={1} className="justify-content-center">
             <FadeInSection>
               <div className="mb-5">
                 <div className="banner-holder">
-                  <FontAwesomeIcon className="faicon" icon={faProjectDiagram} />
+                  <FontAwesomeIcon className="faicon" icon={faWallet} />
                 </div>
-                <h4>Infrastructure</h4>
-                <p style={{ textAlign: "justify" }}>
-                  Hold Dingocoin right in your browser. Wrap your coins and
-                  carry them on BSC and SOL. Or just keep them in your Dingocoin
-                  desktop wallet. Dingocoin's infrastructure triumphs over any
-                  other cryptocurrency, hands down. With Dingocoin, you can do
-                  whatever you want, wherever you want, with near zero
-                  transaction fees.
+                <h4 className="mt-3">1. Get wallet</h4>
+                <p className="text-center">
+                  You need a <i>wallet</i> to hold Dingocoins. Take less than a
+                  minute to install our browser wallets, and you're set. Or if
+                  you prefer, get a classic desktop wallet.
+                </p>
+                <Button
+                  className="popup-button px-4 py-2"
+                  variant="primary"
+                  onClick={() => {
+                    setWalletsModalShow(true);
+                  }}
+                >
+                  Get wallet
+                </Button>
+              </div>
+            </FadeInSection>
+            <FadeInSection>
+              <div className="mb-5 mt-4">
+                <div className="banner-holder">
+                  <FontAwesomeIcon className="faicon" icon={faChartLine} />
+                </div>
+                <h4 className="mt-3">2. Trade Dingocoin</h4>
+                <p className="text-center">
+                  Buy and sell Dingocoin. Explore Dingocoin prices. Wrap your
+                  coins and trade on BSC and SOL. With Dingocoin, you can do
+                  whatever you want, wherever you want.
                 </p>
                 {!infrastructureShow && (
                   <Button
@@ -469,23 +492,25 @@ function Main() {
                 )}
               </div>
             </FadeInSection>
-          </Row>
-          <Row>
             <FadeInSection>
-              <div className="my-5">
-                <ul className="cards-container mt-4">
-                  <a href="https://nft.dingocoin.org/nft/DCDN5VjdUskiJGZ7LgWNHPNbXfPophZgyc" target="_blank">
+              <div className="mt-4 mb-5">
+                <ul
+                  className="cards-container"
+                  style={{ marginBottom: "1.5rem" }}
+                >
+                  <a
+                    href="https://nft.dingocoin.org/nft/DCDN5VjdUskiJGZ7LgWNHPNbXfPophZgyc"
+                    target="_blank"
+                  >
                     <NFTCard address={"DCDN5VjdUskiJGZ7LgWNHPNbXfPophZgyc"} />
                   </a>
                 </ul>
-                <h4>Dingocoin NFT Platform</h4>
-                <p style={{ textAlign: "justify" }}>
+                <h4>3. Explore NFT Platform</h4>
+                <p className="text-center">
                   Experience the next generation of NFTs. Create and trade NFTs
-                  on Dingocoin's chain. Create and trade NFTS with {"<$0.001"}{" "}
-                  gas fees. Trading is done entirely on-chain - you receive your
-                  earnings and royalties immediately. Our{" "}
-                  <i>cryptographically unique</i> NFTs ensure that your content
-                  can never be used twice.
+                  on our very own NFT platform. Pay less than {"<$0.001"} gas
+                  fees. Trading is done entirely on-chain - you receive
+                  earnings immediately.
                 </p>
                 <a
                   href="https://nft.dingocoin.org"
@@ -498,55 +523,30 @@ function Main() {
                 </a>
               </div>
             </FadeInSection>
-          </Row>
-          <Row>
             <FadeInSection>
-              <div className="my-5">
+              <div className="mt-4 mb-5">
                 <div className="banner-holder">
-                  <FontAwesomeIcon className="faicon" icon={faChartLine} />
+                  <FontAwesomeIcon className="faicon" icon={faGamepad} />
                 </div>
-                <h4>Earn staking rewards</h4>
-                <p style={{ textAlign: "justify" }}>
-                  If you hold Dingocoin, you are entitled to a dividend on
-                  profits, just like holding a share of a company. To collect
-                  your dividend you need to stake your Dingocoins according to
-                  the dividend instructions, so that we know where to pay the
-                  dividend - you can always unstake at any point in time.
+                <h4 className="mt-3">4. Play games</h4>
+                <p className="text-center">
+                  Weekly airdrops, Discord and Roblox games, socials, and other
+                  tools. Explore the various utilities developed by the
+                  community. Or better yet, contribute yourself - we rely on
+                  everyone's fresh ideas.
                 </p>
-                <a href="/stake">
-                  <Button className="popup-button px-4" variant="primary">
-                    Stake now
-                  </Button>
-                </a>
-              </div>
-            </FadeInSection>
-          </Row>
-          <Row>
-            <FadeInSection>
-              <div className="mt-5">
-                <div className="banner-holder">
-                  <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
-                </div>
-                <h4>Community-driven utilities</h4>
-                <p style={{ textAlign: "justify" }}>
-                  Dingocoin's community works hard to grow the coin. No more
-                  waiting for things to happen - Dingocoin lets you take things
-                  into your own hands. We actively build utility, instead of
-                  loafing for the moon. Anyone can contribute -- simply hop onto
-                  our Discord channel and share your ideas.
-                </p>
-                {!utilitiesShow && (
+                {!gamesShow && (
                   <Button
                     className="popup-button px-4"
                     variant="primary"
-                    onClick={() => setUtilitiesShow(true)}
+                    onClick={() => setGamesShow(true)}
                   >
                     See more
                   </Button>
                 )}
               </div>
             </FadeInSection>
-            {utilitiesShow && (
+            {gamesShow && (
               <Container>
                 <Row
                   xs={1}
@@ -554,22 +554,6 @@ function Main() {
                   lg={3}
                   className="projects justify-content-center"
                 >
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={SocialFaucetLogo} />
-                      </div>
-                      <a href="/airdrop">
-                        <Button className="popup-button" variant="primary">
-                          Weekly Airdrop
-                        </Button>
-                      </a>
-                      <p>
-                        Earn Dingocoins simply by promoting Dingocoin on
-                        Twitter.
-                      </p>
-                    </div>
-                  </Col>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -627,6 +611,73 @@ function Main() {
                       <p>Easily Earn Dingo Mining Rewards.</p>
                     </div>
                   </Col>
+                </Row>
+              </Container>
+            )}
+            <FadeInSection>
+              <div className="mt-4 mb-5">
+                <div className="banner-holder">
+                  <FontAwesomeIcon className="faicon" icon={faChartLine} />
+                </div>
+                <h4 className="mt-3">5. Stake Dingocoins</h4>
+                <p className="text-center">
+                  Stake your Dingocoins and earn weekly rewards. Staking rewards
+                  are funded by NFT platform revenue - you earn more whenever we
+                  get more users!
+                </p>
+                <a href="/stake">
+                  <Button className="popup-button px-4" variant="primary">
+                    Stake now
+                  </Button>
+                </a>
+              </div>
+            </FadeInSection>
+            <FadeInSection>
+              <div className="mt-4 mb-5">
+                <div className="banner-holder">
+                  <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
+                </div>
+                <h4 className="mt-3">6. Explore community utilities</h4>
+                <p className="text-center">
+                  Weekly airdrops, socials, and other tools. Explore the various
+                  utilities developed by the community. Or better yet,
+                  contribute yourself - we rely on everyone's ideas.
+                </p>
+                {!utilitiesShow && (
+                  <Button
+                    className="popup-button px-4"
+                    variant="primary"
+                    onClick={() => setUtilitiesShow(true)}
+                  >
+                    See more
+                  </Button>
+                )}
+              </div>
+            </FadeInSection>
+            {utilitiesShow && (
+              <Container>
+                <Row
+                  xs={1}
+                  md={2}
+                  lg={3}
+                  className="projects justify-content-center"
+                >
+                  <Col>
+                    <div className="project-card">
+                      <div className="logo-holder">
+                        <Image src={SocialFaucetLogo} />
+                      </div>
+                      <a href="/airdrop">
+                        <Button className="popup-button" variant="primary">
+                          Weekly Airdrop
+                        </Button>
+                      </a>
+                      <p>
+                        Earn Dingocoins simply by promoting Dingocoin on
+                        Twitter.
+                      </p>
+                    </div>
+                  </Col>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -679,7 +730,7 @@ function Main() {
                         rel="noreferrer"
                       >
                         <Button className="popup-button" variant="primary">
-                          Discord Faucet/Tip Bot
+                          Discord Faucet/Tips
                         </Button>
                       </a>
                       <p>
@@ -843,11 +894,51 @@ function Main() {
         <Modal.Body>
           <Container
             className="marketplace-container"
+            style={{ maxWidth: "20rem" }}
+          >
+            <Row>
+              <Col>
+                <h5 className="mb-3">Browser Wallets</h5>
+              </Col>
+            </Row>
+            <Row className="marketplace-container justify-content-md-center">
+              <div className="marketplace-card mb-4">
+                <div className="logo-holder mb-2">
+                  <FontAwesomeIcon className="faicon" icon={faChrome} />
+                </div>
+                <a
+                  target="_blank"
+                  href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button px-4" variant="primary">
+                    Chrome
+                  </Button>
+                </a>
+              </div>
+              <div className="marketplace-card mb-4">
+                <div className="logo-holder mb-2">
+                  <FontAwesomeIcon className="faicon" icon={faFirefoxBrowser} />
+                </div>
+                <a
+                  target="_blank"
+                  href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button px-4" variant="primary">
+                    Firefox
+                  </Button>
+                </a>
+              </div>
+            </Row>
+          </Container>
+          <Container
+            className="marketplace-container"
             style={{ maxWidth: "30rem" }}
           >
             <Row>
               <Col>
-                <h5 className="mb-2">Full Node Desktop Wallets</h5>
+                <h5 className="mb-3">Full Node Desktop Wallets</h5>
               </Col>
             </Row>
             <Row className="marketplace-container justify-content-md-center">
@@ -901,47 +992,7 @@ function Main() {
           >
             <Row>
               <Col>
-                <h5 className="mb-2">Browser Wallets</h5>
-              </Col>
-            </Row>
-            <Row className="marketplace-container justify-content-md-center">
-              <div className="marketplace-card mb-4">
-                <div className="logo-holder mb-2">
-                  <FontAwesomeIcon className="faicon" icon={faChrome} />
-                </div>
-                <a
-                  target="_blank"
-                  href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
-                  rel="noreferrer"
-                >
-                  <Button className="popup-button px-4" variant="primary">
-                    Chrome
-                  </Button>
-                </a>
-              </div>
-              <div className="marketplace-card mb-4">
-                <div className="logo-holder mb-2">
-                  <FontAwesomeIcon className="faicon" icon={faFirefoxBrowser} />
-                </div>
-                <a
-                  target="_blank"
-                  href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
-                  rel="noreferrer"
-                >
-                  <Button className="popup-button px-4" variant="primary">
-                    Firefox
-                  </Button>
-                </a>
-              </div>
-            </Row>
-          </Container>
-          <Container
-            className="marketplace-container"
-            style={{ maxWidth: "20rem" }}
-          >
-            <Row>
-              <Col>
-                <h5 className="mb-2">Unofficial Wallets</h5>
+                <h5 className="mb-3">Unofficial Wallets</h5>
               </Col>
             </Row>
             <Row className="marketplace-container justify-content-md-center">
