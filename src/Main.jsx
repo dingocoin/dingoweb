@@ -17,6 +17,8 @@ import {
   faGamepad,
   faChartLine,
   faWallet,
+  faCaretDown,
+  faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faChrome,
@@ -214,8 +216,13 @@ function Main() {
                 </Button>
               </div>
             </FadeInSection>
+            <div className="guide">
+              <span>
+                <FontAwesomeIcon icon={faChevronDown} />
+              </span>
+            </div>
             <FadeInSection>
-              <div className="mb-5 mt-4">
+              <div className="mb-5 mt-5">
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faChartLine} />
                 </div>
@@ -492,8 +499,13 @@ function Main() {
                 )}
               </div>
             </FadeInSection>
+            <div className="guide">
+              <span>
+                <FontAwesomeIcon icon={faChevronDown} />
+              </span>
+            </div>
             <FadeInSection>
-              <div className="mt-4 mb-5">
+              <div className="mt-5 mb-5">
                 <ul
                   className="cards-container"
                   style={{ marginBottom: "1.5rem" }}
@@ -509,8 +521,8 @@ function Main() {
                 <p className="text-center">
                   Experience the next generation of NFTs. Create and trade NFTs
                   on our very own NFT platform. Pay less than {"<$0.001"} gas
-                  fees. Trading is done entirely on-chain - you receive
-                  earnings immediately.
+                  fees. Trading is done entirely on-chain - you receive earnings
+                  immediately.
                 </p>
                 <a
                   href="https://nft.dingocoin.org"
@@ -523,8 +535,13 @@ function Main() {
                 </a>
               </div>
             </FadeInSection>
+            <div className="guide">
+              <span>
+                <FontAwesomeIcon icon={faChevronDown} />
+              </span>
+            </div>
             <FadeInSection>
-              <div className="mt-4 mb-5">
+              <div className="mt-5 mb-5">
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faGamepad} />
                 </div>
@@ -614,8 +631,13 @@ function Main() {
                 </Row>
               </Container>
             )}
+            <div className="guide">
+              <span>
+                <FontAwesomeIcon icon={faChevronDown} />
+              </span>
+            </div>
             <FadeInSection>
-              <div className="mt-4 mb-5">
+              <div className="mt-5 mb-5">
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faChartLine} />
                 </div>
@@ -632,8 +654,13 @@ function Main() {
                 </a>
               </div>
             </FadeInSection>
+            <div className="guide">
+              <span>
+                <FontAwesomeIcon icon={faChevronDown} />
+              </span>
+            </div>
             <FadeInSection>
-              <div className="mt-4 mb-5">
+              <div className="mt-5 mb-5">
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
                 </div>
