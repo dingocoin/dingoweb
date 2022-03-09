@@ -216,11 +216,13 @@ function Main() {
                 </Button>
               </div>
             </FadeInSection>
-            <div className="guide">
-              <span>
-                <FontAwesomeIcon icon={faChevronDown} />
-              </span>
-            </div>
+            <FadeInSection>
+              <div className="guide">
+                <span>
+                  <FontAwesomeIcon icon={faChevronDown} />
+                </span>
+              </div>
+            </FadeInSection>
             <FadeInSection>
               <div className="mb-5 mt-5">
                 <div className="banner-holder">
@@ -499,11 +501,13 @@ function Main() {
                 )}
               </div>
             </FadeInSection>
-            <div className="guide">
-              <span>
-                <FontAwesomeIcon icon={faChevronDown} />
-              </span>
-            </div>
+            <FadeInSection>
+              <div className="guide">
+                <span>
+                  <FontAwesomeIcon icon={faChevronDown} />
+                </span>
+              </div>
+            </FadeInSection>
             <FadeInSection>
               <div className="mt-5 mb-5">
                 <ul
@@ -535,11 +539,13 @@ function Main() {
                 </a>
               </div>
             </FadeInSection>
-            <div className="guide">
-              <span>
-                <FontAwesomeIcon icon={faChevronDown} />
-              </span>
-            </div>
+            <FadeInSection>
+              <div className="guide">
+                <span>
+                  <FontAwesomeIcon icon={faChevronDown} />
+                </span>
+              </div>
+            </FadeInSection>
             <FadeInSection>
               <div className="mt-5 mb-5">
                 <div className="banner-holder">
@@ -629,11 +635,13 @@ function Main() {
                 </Row>
               </Container>
             )}
-            <div className="guide">
-              <span>
-                <FontAwesomeIcon icon={faChevronDown} />
-              </span>
-            </div>
+            <FadeInSection>
+              <div className="guide">
+                <span>
+                  <FontAwesomeIcon icon={faChevronDown} />
+                </span>
+              </div>
+            </FadeInSection>
             <FadeInSection>
               <div className="mt-5 mb-5">
                 <div className="banner-holder">
@@ -642,8 +650,8 @@ function Main() {
                 <h4 className="mt-3">5. Stake Dingocoins</h4>
                 <p className="text-center">
                   Stake your Dingocoins and earn weekly rewards. Staking rewards
-                  are funded by NFT revenue - you earn more whenever we
-                  get more users!
+                  are funded by NFT revenue - you earn more whenever we get more
+                  users!
                 </p>
                 <a href="/stake">
                   <Button className="popup-button px-4" variant="primary">
@@ -652,11 +660,13 @@ function Main() {
                 </a>
               </div>
             </FadeInSection>
-            <div className="guide">
-              <span>
-                <FontAwesomeIcon icon={faChevronDown} />
-              </span>
-            </div>
+            <FadeInSection>
+              <div className="guide">
+                <span>
+                  <FontAwesomeIcon icon={faChevronDown} />
+                </span>
+              </div>
+            </FadeInSection>
             <FadeInSection>
               <div className="mt-5 mb-5">
                 <div className="banner-holder">
