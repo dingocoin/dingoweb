@@ -55,6 +55,7 @@ import SouthXchangeLogo from "./assets/img/southxchange.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
 import XTListingVideo from "./assets/img/xtlisting.mp4";
+import NFTCard from "./NftCard.jsx";
 
 function Main() {
   async function get(link) {
@@ -472,9 +473,11 @@ function Main() {
           <Row>
             <FadeInSection>
               <div className="my-5">
-                <div className="banner-holder">
-                  <Image src={DingocoinNFTPlatformLogo} />
-                </div>
+                <ul className="cards-container mt-4">
+                  <a href="https://nft.dingocoin.org/nft/DCDN5VjdUskiJGZ7LgWNHPNbXfPophZgyc" target="_blank">
+                    <NFTCard address={"DCDN5VjdUskiJGZ7LgWNHPNbXfPophZgyc"} />
+                  </a>
+                </ul>
                 <h4>Dingocoin NFT Platform</h4>
                 <p style={{ textAlign: "justify" }}>
                   Experience the next generation of NFTs. Create and trade NFTs

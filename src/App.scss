@@ -1,6 +1,8 @@
 $primary: #1e4151;
 $secondary: #fbf7e9;
 $secondary-alt: #ffffff;
+$light-border: #bbbbbb;
+$dark-border: $primary;
 
 $theme-colors: (
   "primary": $primary,
@@ -807,5 +809,96 @@ a.simple-link:hover {
   text-align: left;
   p {
     text-align: justify;
+  }
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, max-content));
+  grid-gap: 0.5rem;
+  justify-content: center;
+  padding: initial;
+
+  .nft-card {
+    display: list-item;
+    list-style-type: none;
+    width: 15rem;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: 1px solid $light-border;
+    border-radius: 0.4rem;
+
+    &:hover,
+    &:active {
+      border: 1px solid $dark-border;
+    }
+
+    hr {
+      margin: 0;
+    }
+
+    .header-box {
+      min-width: 15rem;
+      min-height: calc(15rem - 1.5px);
+      position: relative;
+      text-align: left;
+      .spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 50;
+      }
+      img {
+        position: absolute;
+        top: calc(50%);
+        left: calc(50% - 1px);
+        transform: translate(-50%, -50%);
+        margin: 0;
+        border: none;
+        border-radius: 0.4rem;
+        width: calc(100% - 1.5px);
+        height: auto;
+        background-color: white;
+        z-index: 100;
+      }
+    }
+    .card-title {
+      font-size: 1rem !important;
+      color: #000000;
+      font-weight: 400 !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0.3rem;
+    }
+    .card-subtitle {
+      font-family: "Inconsolata";
+      font-size: 0.75rem !important;
+      font-weight: 400 !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-text {
+      margin-top: 0.9rem;
+      text-align: center;
+      line-height: 1.05;
+      .card-price {
+        color: $primary;
+        font-size: 1.5rem;
+        font-weight: 600 !important;
+      }
+      .card-price-subtitle {
+        font-size: 0.75rem;
+        font-weight: 300;
+      }
+    }
+    .card-sub-body {
+      padding: 0.2rem 1rem;
+      text-align: left;
+      font-size: 0.9rem;
+    }
   }
 }
