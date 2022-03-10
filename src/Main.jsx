@@ -199,14 +199,14 @@ function Main() {
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faWallet} />
                 </div>
-                <h4 className="mt-3">1. Get wallet</h4>
+                <h4 className="mt-3 mb-4">1. Get wallet</h4>
                 <p className="text-center">
                   You need a <i>wallet</i> to hold Dingocoins. Take less than a
                   minute to install our browser wallets, and you're set. Or if
                   you prefer, get a classic desktop wallet.
                 </p>
                 <Button
-                  className="popup-button px-4 py-2"
+                  className="popup-button px-4 py-2 mt-2"
                   variant="primary"
                   onClick={() => {
                     setWalletsModalShow(true);
@@ -228,7 +228,7 @@ function Main() {
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faChartLine} />
                 </div>
-                <h4 className="mt-3">2. Trade Dingocoin</h4>
+                <h4 className="mt-3 mb-4">2. Trade Dingocoin</h4>
                 <p className="text-center">
                   Buy and sell Dingocoin. Explore Dingocoin prices. Wrap your
                   coins and trade on BSC and SOL. With Dingocoin, you can do
@@ -236,7 +236,7 @@ function Main() {
                 </p>
                 {!infrastructureShow && (
                   <Button
-                    className="popup-button mb-4 px-4"
+                    className="popup-button mb-4 px-4 mt-2"
                     variant="primary"
                     onClick={() => setInfrastructureShow(true)}
                   >
@@ -512,7 +512,7 @@ function Main() {
               <div className="mt-5 mb-5">
                 <ul
                   className="cards-container"
-                  style={{ marginBottom: "1.5rem" }}
+                  style={{ marginBottom: "2rem" }}
                 >
                   <a
                     href="https://nft.dingocoin.org/nft/DCDN5VjdUskiJGZ7LgWNHPNbXfPophZgyc"
@@ -521,7 +521,7 @@ function Main() {
                     <NFTCard address={"DCDN5VjdUskiJGZ7LgWNHPNbXfPophZgyc"} />
                   </a>
                 </ul>
-                <h4>3. Explore NFT Platform</h4>
+                <h4 className="mb-4">3. Explore NFT Platform</h4>
                 <p className="text-center">
                   Experience the next generation of NFTs. Create and trade NFTs
                   on our very own NFT platform. Pay less than {"<$0.001"} gas
@@ -533,7 +533,7 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4" variant="primary">
+                  <Button className="popup-button px-4 mt-2" variant="primary">
                     Visit NFT platform
                   </Button>
                 </a>
@@ -551,14 +551,14 @@ function Main() {
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faGamepad} />
                 </div>
-                <h4 className="mt-3">4. Play games</h4>
+                <h4 className="mt-3 mb-4">4. Play games</h4>
                 <p className="text-center">
                   Play games on Discord and Roblox using Dingocoin. Have fun and
                   hang out with the pack.
                 </p>
                 {!gamesShow && (
                   <Button
-                    className="popup-button px-4"
+                    className="popup-button px-4 mt-2"
                     variant="primary"
                     onClick={() => setGamesShow(true)}
                   >
@@ -647,14 +647,14 @@ function Main() {
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faChartLine} />
                 </div>
-                <h4 className="mt-3">5. Stake Dingocoins</h4>
+                <h4 className="mt-3 mb-4">5. Stake Dingocoins</h4>
                 <p className="text-center">
                   Stake your Dingocoins and earn weekly rewards. Staking rewards
                   are funded by NFT revenue - you earn more whenever we get more
                   users!
                 </p>
                 <a href="/stake">
-                  <Button className="popup-button px-4" variant="primary">
+                  <Button className="popup-button px-4 mt-2" variant="primary">
                     Stake now
                   </Button>
                 </a>
@@ -672,7 +672,7 @@ function Main() {
                 <div className="banner-holder">
                   <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
                 </div>
-                <h4 className="mt-3">6. Explore community utilities</h4>
+                <h4 className="mt-3 mb-4">6. Explore community utilities</h4>
                 <p className="text-center">
                   Weekly airdrops, socials, and other tools. Explore the various
                   utilities developed by the community. Or better yet,
@@ -680,7 +680,7 @@ function Main() {
                 </p>
                 {!utilitiesShow && (
                   <Button
-                    className="popup-button px-4"
+                    className="popup-button px-4 mt-2"
                     variant="primary"
                     onClick={() => setUtilitiesShow(true)}
                   >
