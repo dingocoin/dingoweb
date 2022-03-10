@@ -59,6 +59,11 @@ import SouthXchangeLogo from "./assets/img/southxchange.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
 import XTListingVideo from "./assets/img/xtlisting.mp4";
+import WalletChrome from "./assets/img/wallet_chrome.png";
+import WalletFirefox from "./assets/img/wallet_firefox.png";
+import WalletWindows from "./assets/img/wallet_windows.png";
+import WalletApple from "./assets/img/wallet_apple.png";
+import WalletLinux from "./assets/img/wallet_linux.png";
 import NFTCard from "./NftCard.jsx";
 
 function Main() {
@@ -928,7 +933,7 @@ function Main() {
         </Modal.Header>
         <Modal.Body>
           <Container
-            className="marketplace-container"
+            className="wallets-container"
             style={{ maxWidth: "20rem" }}
           >
             <Row>
@@ -936,10 +941,10 @@ function Main() {
                 <h5 className="mb-3">Browser Wallets</h5>
               </Col>
             </Row>
-            <Row className="marketplace-container justify-content-md-center">
-              <div className="marketplace-card mb-4">
+            <Row className="wallets-container justify-content-md-center">
+              <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
-                  <FontAwesomeIcon className="faicon" icon={faChrome} />
+                  <Image src={WalletChrome} />
                 </div>
                 <a
                   target="_blank"
@@ -951,9 +956,9 @@ function Main() {
                   </Button>
                 </a>
               </div>
-              <div className="marketplace-card mb-4">
+              <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
-                  <FontAwesomeIcon className="faicon" icon={faFirefoxBrowser} />
+                  <Image src={WalletFirefox} />
                 </div>
                 <a
                   target="_blank"
@@ -968,7 +973,7 @@ function Main() {
             </Row>
           </Container>
           <Container
-            className="marketplace-container"
+            className="wallets-container"
             style={{ maxWidth: "30rem" }}
           >
             <Row>
@@ -976,10 +981,10 @@ function Main() {
                 <h5 className="mb-3">Full Node Desktop Wallets</h5>
               </Col>
             </Row>
-            <Row className="marketplace-container justify-content-md-center">
-              <div className="marketplace-card mb-4">
+            <Row className="wallets-container justify-content-md-center">
+              <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
-                  <FontAwesomeIcon className="faicon" icon={faWindows} />
+                  <Image src={WalletWindows} />
                 </div>
                 <a
                   target="_blank"
@@ -991,9 +996,9 @@ function Main() {
                   </Button>
                 </a>
               </div>
-              <div className="marketplace-card mb-4">
+              <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
-                  <FontAwesomeIcon className="faicon" icon={faApple} />
+                  <Image src={WalletApple} />
                 </div>
                 <a
                   target="_blank"
@@ -1005,9 +1010,9 @@ function Main() {
                   </Button>
                 </a>
               </div>
-              <div className="marketplace-card mb-4">
+              <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
-                  <FontAwesomeIcon className="faicon" icon={faLinux} />
+                  <Image src={WalletLinux} />
                 </div>
                 <a
                   target="_blank"
@@ -1022,7 +1027,7 @@ function Main() {
             </Row>
           </Container>
           <Container
-            className="marketplace-container"
+            className="wallets-container"
             style={{ maxWidth: "20rem" }}
           >
             <Row>
@@ -1030,8 +1035,8 @@ function Main() {
                 <h5 className="mb-3">Unofficial Wallets</h5>
               </Col>
             </Row>
-            <Row className="marketplace-container justify-content-md-center">
-              <div className="marketplace-card mb-4">
+            <Row className="wallets-container justify-content-md-center">
+              <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
                   <FontAwesomeIcon className="faicon" icon={faGlobe} />
                 </div>
@@ -1045,7 +1050,7 @@ function Main() {
                   </Button>
                 </a>
               </div>
-              <div className="marketplace-card mb-4">
+              <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
                   <FontAwesomeIcon className="faicon" icon={faAndroid} />
                 </div>
@@ -1315,7 +1320,7 @@ function Main() {
             <CustomDivider />
             <Row>
               <Col>
-                <h5>NFTs</h5>
+                <h5>NFTs (OpenSea)</h5>
               </Col>
             </Row>
             <Row xs={1} md={3} lg={3}>

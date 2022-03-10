@@ -739,7 +739,7 @@ a.simple-link:hover {
     margin: 0;
   }
   img {
-    width: 5rem;
+    height: 5rem;
     padding: 0;
     margin: 0;
     border: 2px solid rgb(229, 232, 235);
@@ -905,4 +905,29 @@ a.simple-link:hover {
 .guide {
   font-size: 2rem;
   color: $primary;
+}
+
+.wallets-container {
+  text-align: center;
+  justify-content: center;
+}
+
+.wallets-card {
+  width: auto;
+  .logo-holder {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  .faicon {
+    color: $primary;
+    font-size: 2.5rem;
+    padding: 0;
+    margin: 0;
+  }
+  img {
+    height: 5rem;
+    padding: 0;
+    margin: 0;
+  }
 }
