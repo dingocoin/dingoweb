@@ -166,7 +166,7 @@ function Main() {
             limit: 20,
             offset: 0,
           })
-        ).results
+        ).results.filter((x) => x !== 'DNMy76bZG4eEJ8T37G5HVodGm2FQg6Qdt8')
       );
     })();
   }, []);
@@ -593,7 +593,7 @@ function Main() {
                       items={previewNfts}
                       itemTemplate={(x) => (
                         <li key={x}>
-                          <a href={`/nft/${x}`}>
+                          <a href={`https://nft.dingocoin.org/nft/${x}`} target="_blank">
                             <NFTCard address={x} />
                           </a>
                         </li>
