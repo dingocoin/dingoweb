@@ -285,6 +285,14 @@ a.simple-link:hover {
 }
 
 /* ===== SECTIONS ===== */
+.section-header-mobile {
+  padding: 1.5rem 1.5rem;
+  background-color: $secondary;
+  .container {
+    max-width: 900px;
+  }
+}
+
 .section-a {
   padding: 4rem 1.5rem;
   background-color: $secondary;

@@ -65,6 +65,7 @@ import WalletWindows from "./assets/img/wallet_windows.png";
 import WalletApple from "./assets/img/wallet_apple.png";
 import WalletLinux from "./assets/img/wallet_linux.png";
 import NFTCard from "./NftCard.jsx";
+import PromoVideo from "./assets/img/promo.gif";
 
 function Main() {
   async function get(link) {
@@ -144,8 +145,49 @@ function Main() {
 
   return (
     <div>
-      <header className="section-a" id="home">
+      <div className=" d-block d-sm-block d-md-none d-lg-none d-xl-none">
+        <Image style={{ width: "100%" }} src={PromoVideo} />
+        <header
+          className="section-header-mobile"
+          id="home"
+        >
+          <div className="d-flex flex-column">
+            <Button
+              className="popup-button px-4 py-2 my-2"
+              variant="primary"
+              onClick={() => {
+                setWalletsModalShow(true);
+              }}
+            >
+              Get wallet
+            </Button>
+            <Button
+              className="popup-button px-4 py-2 my-2"
+              variant="primary"
+              onClick={() => {
+                setExchangesModalShow(true);
+              }}
+            >
+              Buy Dingocoin
+            </Button>
+            <Button
+              className="popup-button px-4 py-2 my-2"
+              variant="primary"
+              onClick={() => {
+                window.location = "/trailmap";
+              }}
+            >
+              Trailmap
+            </Button>
+          </div>
+        </header>
+      </div>
+      <header
+        className="section-a d-none d-sm-none d-md-block d-lg-block d-xl-block"
+        id="home"
+      >
         <Container className="masthead">
+          {/*
           <Row>
             <Col>
               <div className="isometric-holder">
@@ -161,7 +203,11 @@ function Main() {
             </p>
             <p> MUCH KING DINGO SUCH WILD DOGE</p>
           </Row>
-          <Row className="quick-actions flex-wrap justify-content-md-center">
+          */}
+          <Row>
+            <Image style={{ width: "100%" }} src={PromoVideo} />
+          </Row>
+          <Row className="quick-actions justify-content-md-center">
             <Button
               className="popup-button px-4 py-2"
               variant="primary"
