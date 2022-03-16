@@ -819,94 +819,86 @@ a.simple-link:hover {
   }
 }
 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, max-content));
-  grid-gap: 0.5rem;
-  justify-content: center;
-  padding: initial;
+.nft-card {
+  display: list-item;
+  list-style-type: none;
+  width: 15rem;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border: 1px solid $light-border;
+  border-radius: 0.4rem;
 
-  .nft-card {
-    display: list-item;
-    list-style-type: none;
-    width: 15rem;
-    padding: 0;
+  &:hover,
+  &:active {
+    border: 1px solid $dark-border;
+  }
+
+  hr {
     margin: 0;
-    background-color: white;
-    border: 1px solid $light-border;
-    border-radius: 0.4rem;
+  }
 
-    &:hover,
-    &:active {
-      border: 1px solid $dark-border;
+  .header-box {
+    min-width: 15rem;
+    min-height: calc(15rem - 1.5px);
+    position: relative;
+    text-align: left;
+    .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 50;
     }
-
-    hr {
+    img {
+      position: absolute;
+      top: calc(50%);
+      left: calc(50% - 1px);
+      transform: translate(-50%, -50%);
       margin: 0;
+      border: none;
+      border-radius: 0.4rem;
+      width: calc(100% - 1.5px);
+      height: auto;
+      background-color: white;
+      z-index: 100;
     }
-
-    .header-box {
-      min-width: 15rem;
-      min-height: calc(15rem - 1.5px);
-      position: relative;
-      text-align: left;
-      .spinner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 50;
-      }
-      img {
-        position: absolute;
-        top: calc(50%);
-        left: calc(50% - 1px);
-        transform: translate(-50%, -50%);
-        margin: 0;
-        border: none;
-        border-radius: 0.4rem;
-        width: calc(100% - 1.5px);
-        height: auto;
-        background-color: white;
-        z-index: 100;
-      }
+  }
+  .card-title {
+    font-size: 1rem !important;
+    color: #000000;
+    font-weight: 400 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.3rem;
+  }
+  .card-subtitle {
+    font-family: "Inconsolata";
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-text {
+    margin-top: 0.9rem;
+    text-align: center;
+    line-height: 1.05;
+    .card-price {
+      color: $primary;
+      font-size: 1.5rem;
+      font-weight: 600 !important;
     }
-    .card-title {
-      font-size: 1rem !important;
-      color: #000000;
-      font-weight: 400 !important;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-bottom: 0.3rem;
+    .card-price-subtitle {
+      font-size: 0.75rem;
+      font-weight: 300;
     }
-    .card-subtitle {
-      font-family: "Inconsolata";
-      font-size: 0.75rem !important;
-      font-weight: 400 !important;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .card-text {
-      margin-top: 0.9rem;
-      text-align: center;
-      line-height: 1.05;
-      .card-price {
-        color: $primary;
-        font-size: 1.5rem;
-        font-weight: 600 !important;
-      }
-      .card-price-subtitle {
-        font-size: 0.75rem;
-        font-weight: 300;
-      }
-    }
-    .card-sub-body {
-      padding: 0.2rem 1rem;
-      text-align: left;
-      font-size: 0.9rem;
-    }
+  }
+  .card-sub-body {
+    padding: 0.2rem 1rem;
+    text-align: left;
+    font-size: 0.9rem;
   }
 }
 
@@ -937,5 +929,112 @@ a.simple-link:hover {
     height: 5rem;
     padding: 0;
     margin: 0;
+  }
+}
+
+.side-scroll {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-evenly;
+  left: 0;
+  margin: 0 auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  position: relative;
+  top: 0;
+  width: 100%;
+
+  .control {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    color: $primary;
+    border: 1px solid $light-border;
+    outline: none;
+    box-shadow: none !important;
+    z-index: 10000;
+  }
+
+  .float-left {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+  }
+
+  .float-right {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+
+  /* Horizontal scrolling/snapping styles */
+  .scroll-off {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .scroll-on {
+    scroll-snap-type: x mandatory;
+    position: relative;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  ul {
+    display: flex;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: auto;
+    margin: 0.25rem;
+  }
+  li.active {
+    background: lightblue;
+  }
+
+  @media (max-width: 576px) {
+    .scroll-on {
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
+    li {
+      scroll-snap-stop: always;
+      scroll-snap-align: center;
+    }
   }
 }

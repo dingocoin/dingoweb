@@ -1,9 +1,21 @@
 import React from "react";
 
+//API.
+import { queryNft } from "./nftApi";
+
 // Controls.
-import { Button, Container, Row, Col, Modal, Image } from "react-bootstrap";
+import {
+  Button,
+  Spinner,
+  Container,
+  Row,
+  Col,
+  Modal,
+  Image,
+} from "react-bootstrap";
 import CustomDivider from "./CustomDivider";
 import FadeInSection from "./FadeInSection";
+import SideScroller from "./SideScroller";
 
 // Assets.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -143,14 +155,27 @@ function Main() {
   const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
 
+  const [previewNfts, setPreviewNfts] = React.useState(null);
+  React.useEffect(() => {
+    (async () => {
+      setPreviewNfts(
+        (
+          await queryNft({
+            key: "tradeVolume",
+            direction: "DESC",
+            limit: 20,
+            offset: 0,
+          })
+        ).results
+      );
+    })();
+  }, []);
+
   return (
     <div>
       <div className=" d-block d-sm-block d-md-none d-lg-none d-xl-none">
         <Image style={{ width: "100%" }} src={PromoVideo} />
-        <header
-          className="section-header-mobile"
-          id="home"
-        >
+        <header className="section-header-mobile" id="home">
           <div className="d-flex flex-column">
             <Button
               className="popup-button px-4 py-2 my-2"
@@ -561,17 +586,29 @@ function Main() {
             </FadeInSection>
             <FadeInSection>
               <div className="mt-5 mb-5">
-                <ul
-                  className="cards-container"
-                  style={{ marginBottom: "2rem" }}
-                >
-                  <a
-                    href="https://nft.dingocoin.org/nft/DCDN5VjdUskiJGZ7LgWNHPNbXfPophZgyc"
-                    target="_blank"
+                {previewNfts !== null && (
+                  <div className="mb-4">
+                    <SideScroller
+                      defaultHeight="24.8rem"
+                      items={previewNfts}
+                      itemTemplate={(x) => (
+                        <li key={x}>
+                          <a href={`/nft/${x}`}>
+                            <NFTCard address={x} />
+                          </a>
+                        </li>
+                      )}
+                    />
+                  </div>
+                )}
+                {previewNfts === null && (
+                  <div
+                    className="mb-4 d-flex flex-row"
+                    style={{ height: "24.8rem" }}
                   >
-                    <NFTCard address={"DCDN5VjdUskiJGZ7LgWNHPNbXfPophZgyc"} />
-                  </a>
-                </ul>
+                    <Spinner animation="border" className="m-auto" />
+                  </div>
+                )}
                 <h4 className="mb-4">3. Explore NFT Platform</h4>
                 <p className="text-center">
                   Experience the next generation of NFTs. Create and trade NFTs
