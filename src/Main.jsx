@@ -77,7 +77,7 @@ import WalletWindows from "./assets/img/wallet_windows.png";
 import WalletApple from "./assets/img/wallet_apple.png";
 import WalletLinux from "./assets/img/wallet_linux.png";
 import NFTCard from "./NftCard.jsx";
-import PromoVideo from "./assets/img/promo.gif";
+import PromoVideo from "./assets/img/promo.mp4";
 
 function Main() {
   async function get(link) {
@@ -166,7 +166,7 @@ function Main() {
             limit: 20,
             offset: 0,
           })
-        ).results.filter((x) => x !== 'DNMy76bZG4eEJ8T37G5HVodGm2FQg6Qdt8')
+        ).results.filter((x) => x !== "DNMy76bZG4eEJ8T37G5HVodGm2FQg6Qdt8")
       );
     })();
   }, []);
@@ -174,7 +174,7 @@ function Main() {
   return (
     <div>
       <div className=" d-block d-sm-block d-md-none d-lg-none d-xl-none">
-        <Image style={{ width: "100%" }} src={PromoVideo} />
+        <video style={{ width: "100%" }} loop src={PromoVideo} autoPlay muted />
         <header className="section-header-mobile" id="home">
           <div className="d-flex flex-column">
             <Button
@@ -230,7 +230,7 @@ function Main() {
           </Row>
           */}
           <Row>
-            <Image style={{ width: "100%" }} src={PromoVideo} />
+            <video src={PromoVideo} autoPlay muted loop />
           </Row>
           <Row className="quick-actions justify-content-md-center">
             <Button
@@ -593,7 +593,10 @@ function Main() {
                       items={previewNfts}
                       itemTemplate={(x) => (
                         <li key={x}>
-                          <a href={`https://nft.dingocoin.org/nft/${x}`} target="_blank">
+                          <a
+                            href={`https://nft.dingocoin.org/nft/${x}`}
+                            target="_blank"
+                          >
                             <NFTCard address={x} />
                           </a>
                         </li>
