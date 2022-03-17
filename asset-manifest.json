@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.4ac6ca26.chunk.css",
-    "main.js": "/static/js/main.c46c2238.chunk.js",
-    "main.js.map": "/static/js/main.c46c2238.chunk.js.map",
+    "main.js": "/static/js/main.78476496.chunk.js",
+    "main.js.map": "/static/js/main.78476496.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.79fb0de6.chunk.js": "/static/js/2.79fb0de6.chunk.js",
@@ -27,7 +27,7 @@
     "static/media/manifesto2.bf57f5c2.jpg": "/static/media/manifesto2.bf57f5c2.jpg",
     "static/media/merch_dingocoinart.c042c5ca.png": "/static/media/merch_dingocoinart.c042c5ca.png",
     "static/media/merch_formularun.601a7a16.png": "/static/media/merch_formularun.601a7a16.png",
-    "static/media/promo.46d7b3da.gif": "/static/media/promo.46d7b3da.gif",
+    "static/media/promo.8079b464.mp4": "/static/media/promo.8079b464.mp4",
     "static/media/raydiumswap.69e20618.png": "/static/media/raydiumswap.69e20618.png",
     "static/media/roblox.cafe3aa9.png": "/static/media/roblox.cafe3aa9.png",
     "static/media/socialfaucet.7855d1e6.png": "/static/media/socialfaucet.7855d1e6.png",
@@ -45,6 +45,6 @@
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.79fb0de6.chunk.js",
     "static/css/main.4ac6ca26.chunk.css",
-    "static/js/main.c46c2238.chunk.js"
+    "static/js/main.78476496.chunk.js"
   ]
 }
