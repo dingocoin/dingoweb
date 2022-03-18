@@ -100,8 +100,8 @@ function NFTCard(props) {
         </Card.Title>
         <Card.Subtitle className="text-start">
           {(collection === undefined || profile === undefined) && <span>&nbsp;</span>}
-          {collection !== undefined && collection !== null && (<div><b>In</b> <span className="text-muted">{collection.name}</span></div>)}
-          {profile !== undefined && profile !== null && (<div><b>By</b> <span className="text-muted">{profile.name || profile.address}</span></div>)}
+          {collection !== undefined && collection !== null && (<div><b>In</b> <a className="simple-link" href={`/collection/${collection.handle}`}>{collection.name}</a></div>)}
+          {profile !== undefined && profile !== null && (<div><b>By</b> <a className="simple-link" href={`/profile/${profile.address}`}>{profile.name || profile.address}</a></div>)}
         </Card.Subtitle>
         <Card.Text>
           <span className="card-price">
