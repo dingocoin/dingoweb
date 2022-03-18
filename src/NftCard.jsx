@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {
   getItemCollection,
-} from "./api";
+} from "./nftApi";
 import {
   getCollection,
   getProfile
