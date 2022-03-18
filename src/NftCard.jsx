@@ -7,6 +7,21 @@ import {
   faCashRegister,
   faExchangeAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  getItemCollection,
+} from "./api";
+import {
+  getCollection,
+  getProfile
+} from "./storage";
+
+const nameOrAddress = (x) => {
+  if (x.name === null || x.name === undefined || x.name.trim() === "") {
+    return x.address;
+  } else {
+    return x.name;
+  }
+};
 
 function NFTCard(props) {
   const domRef = React.useRef();
@@ -14,6 +29,8 @@ function NFTCard(props) {
   const [previewLink, setPreviewLink] = React.useState(null);
   const [name, setName] = React.useState(null);
   const [stats, setStats] = React.useState(null);
+  const [collection, setCollection] = React.useState(undefined);
+  const [profile, setProfile] = React.useState(undefined);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -41,6 +58,26 @@ function NFTCard(props) {
         setPreviewLink(previewLink);
         setName(meta === null ? null : meta.name);
         setStats(state === null ? null : state.stats);
+
+        const collectionHandle = (
+          await getItemCollection({
+            address: props.address
+          })
+        ).handle;
+        if (collectionHandle === null) {
+          setCollection(null);
+          let profile = await getProfile(state.creator);
+          if (profile === null) {
+            profile = {};
+          }
+          profile.address = state.creator;
+          setProfile(profile);
+        } else {
+          const collection = await getCollection(collectionHandle);
+          collection.handle = collectionHandle;
+          setCollection(collection);
+          setProfile(null);
+        }
       }
     })();
   }, [props.address, isVisible]);
@@ -52,8 +89,7 @@ function NFTCard(props) {
     >
       <div className="header-box">
         <div className="spinner">
-          <div className="spinner-border text-primary" role="status">
-          </div>
+          <div className="spinner-border text-primary" role="status"></div>
         </div>
         <Card.Img variant="top" src={previewLink} loading="lazy"></Card.Img>
       </div>
@@ -62,7 +98,11 @@ function NFTCard(props) {
         <Card.Title className="text-start">
           {name === null ? "-" : name === "" ? "Unnamed NFT" : name}
         </Card.Title>
-        <Card.Subtitle className="text-start text-muted">{props.address}</Card.Subtitle>
+        <Card.Subtitle className="text-start">
+          {(collection === undefined || profile === undefined) && <span>&nbsp;</span>}
+          {collection !== undefined && collection !== null && (<div><b>In</b> <span className="text-muted">{collection.name}</span></div>)}
+          {profile !== undefined && profile !== null && (<div><b>By</b> <span className="text-muted">{profile.name || profile.address}</span></div>)}
+        </Card.Subtitle>
         <Card.Text>
           <span className="card-price">
             {stats === null ? "-" : satoshiToLocaleString(stats.price)}
