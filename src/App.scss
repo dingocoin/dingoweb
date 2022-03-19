@@ -47,7 +47,7 @@ a.simple-link:hover {
 
 .navbar {
   background-color: $primary;
-  z-index: 1000;
+  z-index: 10000;
   min-height: 4rem;
 
   .navbar-brand img {
@@ -957,7 +957,7 @@ a.simple-link:hover {
     border: 1px solid $light-border;
     outline: none;
     box-shadow: none !important;
-    z-index: 10000;
+    z-index: 1000;
   }
 
   .float-left {
