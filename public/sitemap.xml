@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dingocoin.org</loc>
-    <lastmod>2022-03-19</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/stake</loc>
+    <priority>0.99</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/airdrop</loc>
+    <priority>0.98</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/trailmap</loc>
+    <priority>0.97</priority>
   </url>
 </urlset>
