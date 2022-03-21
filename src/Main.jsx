@@ -810,7 +810,7 @@ function Main() {
                             ? "-"
                             : toLocaleString(
                                 Math.floor(
-                                  (dingoStats.blocks - 380000) / 10000
+                                  (dingoStats.blocks - 390000) / 10000
                                 ) * 2000000
                               )}
                         </p>
