@@ -2,6 +2,7 @@ import React from "react";
 
 //API.
 import { queryNft } from "./nftApi";
+import { satoshiToLocaleString, toLocaleString } from "./utils";
 
 // Controls.
 import {
@@ -102,6 +103,9 @@ function Main() {
   const [dingoPrice, setDingoPrice] = React.useState(null);
   const [dingoVolume, setDingoVolume] = React.useState(null);
   const [dingoCap, setDingoCap] = React.useState(null);
+
+  const [totalStaked, setTotalStaked] = React.useState(null);
+
   React.useEffect(() => {
     (async () => {
       // Get Dingocoin blockchain stats.
@@ -144,6 +148,12 @@ function Main() {
       setDingoVolume(volume);
       setDingoPrice(price);
       setDingoCap(cap);
+
+      // Get stake stats.
+      const { totalStaked } = await get(
+        "https://stats.dingocoin.org:8443/stake/stats"
+      );
+      setTotalStaked(totalStaked);
     })();
   }, []);
 
@@ -272,17 +282,17 @@ function Main() {
           <Row xs={1} md={1} lg={1} className="justify-content-center">
             <FadeInSection>
               <div className="mb-5">
-                <div className="banner-holder">
+                <div className="banner-holder mb-4">
                   <FontAwesomeIcon className="faicon" icon={faWallet} />
                 </div>
-                <h4 className="mt-3 mb-4">1. Get wallet</h4>
-                <p className="text-center">
+                <h4 className="mb-4">1. Get wallet</h4>
+                <p className="text-center mb-4">
                   You need a <i>wallet</i> to hold Dingocoins. Take less than a
                   minute to install our browser wallets, and you're set. Or if
                   you prefer, get a classic desktop wallet.
                 </p>
                 <Button
-                  className="popup-button px-4 py-2 mt-2"
+                  className="popup-button px-4"
                   variant="primary"
                   onClick={() => {
                     setWalletsModalShow(true);
@@ -293,26 +303,70 @@ function Main() {
               </div>
             </FadeInSection>
             <FadeInSection>
-              <div className="guide">
+              <div className="guide mb-5">
                 <span>
                   <FontAwesomeIcon icon={faChevronDown} />
                 </span>
               </div>
             </FadeInSection>
             <FadeInSection>
-              <div className="mb-5 mt-5">
-                <div className="banner-holder">
+              <div className="mb-5">
+                <div className="banner-holder mb-4">
                   <FontAwesomeIcon className="faicon" icon={faChartLine} />
                 </div>
-                <h4 className="mt-3 mb-4">2. Trade Dingocoin</h4>
-                <p className="text-center">
+                <h4 className="mb-4">2. Trade Dingocoin</h4>
+                <p className="text-center mb-4">
                   Buy and sell Dingocoin. Explore Dingocoin prices. Wrap your
                   coins and trade on BSC and SOL. With Dingocoin, you can do
                   whatever you want, wherever you want.
                 </p>
                 {!infrastructureShow && (
+                  <Container className="mb-4">
+                    <Row
+                      xs={1}
+                      md={3}
+                      lg={3}
+                      className="projectFactsWrap justify-content-center"
+                    >
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoPrice === null
+                              ? "-"
+                              : "$" + dingoPrice.toFixed(7)}
+                          </p>
+                          <span></span>
+                          <p>Dingocoin price</p>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoCap === null
+                              ? "-"
+                              : "$" + Math.floor(dingoCap).toLocaleString()}
+                          </p>
+                          <span></span>
+                          <p>Dingocoin marketcap</p>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="item">
+                          <p className="number">
+                            {dingoVolume === null
+                              ? "-"
+                              : "$" + Math.floor(dingoVolume).toLocaleString()}
+                          </p>
+                          <span></span>
+                          <p>24h volume</p>
+                        </div>
+                      </Col>
+                    </Row>
+                  </Container>
+                )}
+                {!infrastructureShow && (
                   <Button
-                    className="popup-button mb-4 px-4 mt-2"
+                    className="popup-button px-4"
                     variant="primary"
                     onClick={() => setInfrastructureShow(true)}
                   >
@@ -325,7 +379,7 @@ function Main() {
                       xs={2}
                       md={3}
                       lg={3}
-                      className="projects justify-content-center"
+                      className="projects mb-4 justify-content-center"
                     >
                       <Col>
                         <div className="project-card">
@@ -613,7 +667,7 @@ function Main() {
                   </div>
                 )}
                 <h4 className="mb-4">3. Explore NFT Platform</h4>
-                <p className="text-center">
+                <p className="text-center mb-4">
                   Experience the next generation of NFTs. Create and trade NFTs
                   on our very own NFT platform. Pay less than {"<$0.001"} gas
                   fees. Trading is done entirely on-chain - you receive earnings
@@ -624,7 +678,7 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4 mt-2" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Visit NFT platform
                   </Button>
                 </a>
@@ -639,17 +693,17 @@ function Main() {
             </FadeInSection>
             <FadeInSection>
               <div className="mt-5 mb-5">
-                <div className="banner-holder">
+                <div className="banner-holder mb-4">
                   <FontAwesomeIcon className="faicon" icon={faGamepad} />
                 </div>
-                <h4 className="mt-3 mb-4">4. Play games</h4>
-                <p className="text-center">
+                <h4 className="mb-4">4. Play games</h4>
+                <p className="text-center mb-4">
                   Play games on Discord and Roblox using Dingocoin. Have fun and
                   hang out with the pack.
                 </p>
                 {!gamesShow && (
                   <Button
-                    className="popup-button px-4 mt-2"
+                    className="popup-button px-4"
                     variant="primary"
                     onClick={() => setGamesShow(true)}
                   >
@@ -700,8 +754,6 @@ function Main() {
                       <p>
                         Hang out with the Dingo Pack on Roblox.
                         <br />
-                        Purchase in-game accessories with Dingocoins
-                        <br />
                         <i>(Beta).</i>
                       </p>
                     </div>
@@ -735,17 +787,52 @@ function Main() {
             </FadeInSection>
             <FadeInSection>
               <div className="mt-5 mb-5">
-                <div className="banner-holder">
+                <div className="banner-holder mb-4">
                   <FontAwesomeIcon className="faicon" icon={faChartLine} />
                 </div>
-                <h4 className="mt-3 mb-4">5. Stake Dingocoins</h4>
-                <p className="text-center">
+                <h4 className="mb-4">5. Stake Dingocoins</h4>
+                <p className="text-center mb-4">
                   Stake your Dingocoins and earn weekly rewards. Staking rewards
                   are funded by NFT revenue - you earn more whenever we get more
                   users!
                 </p>
+                <Container className="mb-4">
+                  <Row
+                    xs={1}
+                    md={3}
+                    lg={3}
+                    className="projectFactsWrap justify-content-center"
+                  >
+                    <Col>
+                      <div className="item">
+                        <p className="number">
+                          {dingoStats === null
+                            ? "-"
+                            : toLocaleString(
+                                Math.floor(
+                                  (dingoStats.blocks - 380000) / 10000
+                                ) * 2000000
+                              )}
+                        </p>
+                        <span></span>
+                        <p>Rewards paid out</p>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="item">
+                        <p className="number">
+                          {totalStaked === null
+                            ? "-"
+                            : satoshiToLocaleString(totalStaked)}
+                        </p>
+                        <span></span>
+                        <p>Dingocoins staked</p>
+                      </div>
+                    </Col>
+                  </Row>
+                </Container>
                 <a href="/stake">
-                  <Button className="popup-button px-4 mt-2" variant="primary">
+                  <Button className="popup-button px-4" variant="primary">
                     Stake now
                   </Button>
                 </a>
@@ -760,18 +847,18 @@ function Main() {
             </FadeInSection>
             <FadeInSection>
               <div className="mt-5 mb-5">
-                <div className="banner-holder">
+                <div className="banner-holder mb-4">
                   <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
                 </div>
-                <h4 className="mt-3 mb-4">6. Explore community utilities</h4>
-                <p className="text-center">
+                <h4 className="mb-4">6. Explore community utilities</h4>
+                <p className="text-center mb-4">
                   Weekly airdrops, socials, and other tools. Explore the various
                   utilities developed by the community. Or better yet,
                   contribute yourself - we rely on everyone's ideas.
                 </p>
                 {!utilitiesShow && (
                   <Button
-                    className="popup-button px-4 mt-2"
+                    className="popup-button px-4"
                     variant="primary"
                     onClick={() => setUtilitiesShow(true)}
                   >
