@@ -215,6 +215,7 @@ function Main() {
               Trailmap
             </Button>
           </div>
+          <p style={{color: "red"}}>Dingocoin's network is currently undergoing temporary maintenance. Please avoid any transactions until further notice.</p>
         </header>
       </div>
       <header
