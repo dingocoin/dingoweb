@@ -166,6 +166,7 @@ function Main() {
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
 
   const [previewNfts, setPreviewNfts] = React.useState(null);
+  /*
   React.useEffect(() => {
     (async () => {
       setPreviewNfts(
@@ -180,6 +181,7 @@ function Main() {
       );
     })();
   }, []);
+  */
 
   return (
     <div>
@@ -215,7 +217,6 @@ function Main() {
               Trailmap
             </Button>
           </div>
-          <p style={{color: "red"}}>Dingocoin's network is currently undergoing temporary maintenance. Please avoid any transactions until further notice.</p>
         </header>
       </div>
       <header
@@ -276,6 +277,12 @@ function Main() {
       </header>
 
       <section className="section-b" id="ecosystem">
+        <p style={{ color: "red", fontSize: "1.5rem", marginBottom: "2rem"}}>
+          <b>
+            Dingocoin's network is currently undergoing temporary maintenance.<br/>
+            Please avoid any transactions until further notice.<br/>
+          We apologize for any inconvenience caused, and will be back really soon.</b>
+    </p>
         <h1>GET STARTED</h1>
         <p className="text-muted">Explore Dingocoin today.</p>
         <CustomDivider />
