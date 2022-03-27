@@ -277,12 +277,25 @@ function Main() {
       </header>
 
       <section className="section-b" id="ecosystem">
-        <p style={{ color: "red", fontSize: "1.5rem", marginBottom: "2rem"}}>
+        <p style={{ color: "red", fontSize: "1.5rem", marginBottom: "2rem" }}>
+          On March 26 CST, the Dingocoin network was unintendedly split into two
+          at height 487283.
+          <br />
           <b>
-            Dingocoin's network is currently undergoing temporary maintenance.<br/>
-            Please avoid any transactions until further notice.<br/>
-          We apologize for any inconvenience caused, and will be back really soon.</b>
-    </p>
+            To make sure you continue to use the right chain, please update your
+            wallet version immediately{" "}
+            <a
+              href="https://github.com/dingocoin/dingocoin/releases/tag/v1.16.0.4"
+              className="simple-link"
+              target="_blank"
+            >
+              here
+            </a>
+            .<br />
+          </b>
+          There are additional instructions in the link you must follow. <br />
+          <u>Please make sure to follow them closely.</u>
+        </p>
         <h1>GET STARTED</h1>
         <p className="text-muted">Explore Dingocoin today.</p>
         <CustomDivider />
