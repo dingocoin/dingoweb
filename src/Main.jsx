@@ -282,19 +282,16 @@ function Main() {
           at height 487283.
           <br />
           <b>
-            To make sure you continue to use the right chain, please update your
-            wallet version immediately{" "}
+            If you are using a full node wallet, please{" "}
             <a
               href="https://github.com/dingocoin/dingocoin/releases/tag/v1.16.0.4"
               className="simple-link"
               target="_blank"
             >
-              here
+              update your wallet immediately
             </a>
-            .<br />
+            ,<br/> and follow all the listed instructions closely.
           </b>
-          There are additional instructions in the link you must follow. <br />
-          <u>Please make sure to follow them closely.</u>
         </p>
         <h1>GET STARTED</h1>
         <p className="text-muted">Explore Dingocoin today.</p>
