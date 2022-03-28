@@ -166,7 +166,6 @@ function Main() {
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
 
   const [previewNfts, setPreviewNfts] = React.useState(null);
-  /*
   React.useEffect(() => {
     (async () => {
       setPreviewNfts(
@@ -181,7 +180,6 @@ function Main() {
       );
     })();
   }, []);
-  */
 
   return (
     <div>
