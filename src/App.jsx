@@ -2,7 +2,6 @@ import "./App.scss";
 import React from "react";
 
 import Main from "./Main";
-import Airdrop from "./Airdrop";
 import Burnboard from "./Burnboard";
 import Privacy from "./Privacy";
 import Stake from "./Stake";
@@ -76,7 +75,7 @@ function App() {
               >
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/stake">Stake</Nav.Link>
-                <Nav.Link href="/airdrop">Airdrop</Nav.Link>
+                <Nav.Link href="https://twitter.com/dingocoincrypto">Airdrop</Nav.Link>
                 <Nav.Link
                   href="https://nft.dingocoin.org"
                   target="_blank"
@@ -241,7 +240,6 @@ function App() {
         </Navbar>
 
         <Routes>
-          <Route path="/airdrop" element={<Airdrop />} />
           <Route path="/burnboard" element={<Burnboard />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/stake" element={<Stake />} />
