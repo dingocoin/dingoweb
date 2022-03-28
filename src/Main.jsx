@@ -278,8 +278,7 @@ function Main() {
 
       <section className="section-b" id="ecosystem">
         <p style={{ color: "red", fontSize: "1.5rem", marginBottom: "2rem" }}>
-          On March 26 CST, the Dingocoin network was unintendedly split into two
-          at height 487283.
+          On March 26 CST, a <b>mandatory</b> full node wallet update was announced.
           <br />
           <b>
             If you are using a full node wallet, please{" "}
