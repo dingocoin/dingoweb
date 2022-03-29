@@ -895,7 +895,7 @@ function Main() {
                       <div className="logo-holder">
                         <Image src={SocialFaucetLogo} />
                       </div>
-                      <a href="https://twitter.com/dingocoincrypto">
+                      <a href="/airdrop">
                         <Button className="popup-button" variant="primary">
                           Weekly Airdrop
                         </Button>

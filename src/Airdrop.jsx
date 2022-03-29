@@ -27,6 +27,7 @@ import DingocoinLogo from "./assets/img/dingocoin.png";
 
 function Airdrop() {
 
+  /*
   async function get(link) {
     const controller = new AbortController();
     return (
@@ -102,10 +103,13 @@ function Airdrop() {
     const timeOutId = setTimeout(() => setFilterText(filterQuery), 500);
     return () => clearTimeout(timeOutId);
   }, [filterQuery]);
+  */
 
   return (<div>
       <section className="section-a min-height-fill" id="airdrop">
         <h1>WEEKLY AIRDROP</h1>
+        <p>Weekly airdrops have been moved to our <a href="https://twitter.com/dingocoincrypto" target="_blank" className="simple-link">official Twitter</a> for a more interactive and fun experience.<br/>Check us out today!</p>
+        {/*
         <CustomDivider />
         <Container>
           <Row>
@@ -472,6 +476,7 @@ function Airdrop() {
             </Col>
           </Row>
         </Container>
+          */}
       </section>
 
   </div>);
