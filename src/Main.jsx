@@ -79,6 +79,7 @@ import WalletApple from "./assets/img/wallet_apple.png";
 import WalletLinux from "./assets/img/wallet_linux.png";
 import NFTCard from "./NftCard.jsx";
 import PromoVideo from "./assets/img/promo.mp4";
+import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
 
 function Main() {
   async function get(link) {
@@ -1487,8 +1488,7 @@ function Main() {
                 <h5>Merchandise</h5>
               </Col>
             </Row>
-            <Row xs={1} md={1} lg={1}>
-              <Col>
+            <div className="d-flex flex-row justify-content-center flex-wrap">
                 <div className="marketplace-card">
                   <div className="logo-holder mb-2">
                     <Image src={MerchFormulaRunLogo} />
@@ -1503,16 +1503,14 @@ function Main() {
                     </Button>
                   </a>
                 </div>
-              </Col>
-            </Row>
+            </div>
             <CustomDivider />
             <Row>
               <Col>
                 <h5>NFTs (OpenSea)</h5>
               </Col>
             </Row>
-            <Row xs={1} md={3} lg={3}>
-              <Col>
+            <div className="d-flex flex-row justify-content-center flex-wrap">
                 <div className="marketplace-card">
                   <div className="logo-holder mb-2">
                     <Image src={DingocoinCollection1Logo} />
@@ -1527,8 +1525,6 @@ function Main() {
                     </Button>
                   </a>
                 </div>
-              </Col>
-              <Col>
                 <div className="marketplace-card">
                   <div className="logo-holder mb-2">
                     <Image src={MerchCryptoDingosLogo} />
@@ -1543,8 +1539,6 @@ function Main() {
                     </Button>
                   </a>
                 </div>
-              </Col>
-              <Col>
                 <div className="marketplace-card">
                   <div className="logo-holder mb-2">
                     <Image src={MerchDingocoinArtLogo} />
@@ -1559,8 +1553,21 @@ function Main() {
                     </Button>
                   </a>
                 </div>
-              </Col>
-            </Row>
+                <div className="marketplace-card">
+                  <div className="logo-holder mb-2">
+                    <Image src={DoucheyDingoesLogo} />
+                  </div>
+                  <a
+                    target="_blank"
+                    href="https://opensea.io/collection/douchey-dingos"
+                    rel="noreferrer"
+                  >
+                    <Button className="popup-button" variant="primary">
+                      Douchey Dingos
+                    </Button>
+                  </a>
+                </div>
+            </div>
             <CustomDivider />
             <Row>
               <p>
