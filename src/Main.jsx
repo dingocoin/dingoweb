@@ -13,6 +13,7 @@ import {
   Col,
   Modal,
   Image,
+  ProgressBar,
 } from "react-bootstrap";
 import CustomDivider from "./CustomDivider";
 import FadeInSection from "./FadeInSection";
@@ -54,7 +55,6 @@ import DexTradeLogo from "./assets/img/dextrade.png";
 import DingetteLogo from "./assets/img/dingette.png";
 import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
-import DingocoinNFTPlatformLogo from "./assets/img/dingocoinnftplatform.png";
 import DingodiggersLogo from "./assets/img/dingodigger.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
 import ExbitronLogo from "./assets/img/exbitron.png";
@@ -71,15 +71,14 @@ import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
-import XTListingVideo from "./assets/img/xtlisting.mp4";
 import WalletChrome from "./assets/img/wallet_chrome.png";
 import WalletFirefox from "./assets/img/wallet_firefox.png";
 import WalletWindows from "./assets/img/wallet_windows.png";
 import WalletApple from "./assets/img/wallet_apple.png";
 import WalletLinux from "./assets/img/wallet_linux.png";
 import NFTCard from "./NftCard.jsx";
-import PromoVideo from "./assets/img/promo.mp4";
 import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
+import BirthdayLogo from "./assets/img/birthday.mp4";
 
 function Main() {
   async function get(link) {
@@ -184,46 +183,8 @@ function Main() {
 
   return (
     <div>
-      <div className=" d-block d-sm-block d-md-none d-lg-none d-xl-none">
-        <video style={{ width: "100%" }} loop src={PromoVideo} autoPlay muted />
-        <header className="section-header-mobile" id="home">
-          <div className="d-flex flex-column">
-            <Button
-              className="popup-button px-4 py-2 my-2"
-              variant="primary"
-              onClick={() => {
-                setWalletsModalShow(true);
-              }}
-            >
-              Get wallet
-            </Button>
-            <Button
-              className="popup-button px-4 py-2 my-2"
-              variant="primary"
-              onClick={() => {
-                setExchangesModalShow(true);
-              }}
-            >
-              Buy Dingocoin
-            </Button>
-            <Button
-              className="popup-button px-4 py-2 my-2"
-              variant="primary"
-              onClick={() => {
-                window.location = "/trailmap";
-              }}
-            >
-              Trailmap
-            </Button>
-          </div>
-        </header>
-      </div>
-      <header
-        className="section-a d-none d-sm-none d-md-block d-lg-block d-xl-block"
-        id="home"
-      >
+      <header className="section-a" id="home">
         <Container className="masthead">
-          {/*
           <Row>
             <Col>
               <div className="isometric-holder">
@@ -239,11 +200,7 @@ function Main() {
             </p>
             <p> MUCH KING DINGO SUCH WILD DOGE</p>
           </Row>
-          */}
-          <Row>
-            <video src={PromoVideo} autoPlay muted loop />
-          </Row>
-          <Row className="quick-actions justify-content-md-center">
+          <Row className="quick-actions flex-wrap justify-content-md-center">
             <Button
               className="popup-button px-4 py-2"
               variant="primary"
@@ -272,25 +229,31 @@ function Main() {
               Trailmap
             </Button>
           </Row>
+          <Row>
+            <div className="mt-4">
+              <p>
+                <b>
+                  Raising community funds for BitMart <u>and</u> LBank listings
+                  <br />
+                  Donate today to our multisig marketing fund:{" "}
+                  <code>A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP</code>
+                </b>
+              </p>
+              <ProgressBar
+                style={{height: "2rem"}}
+                now={90}
+                label={<b>USD $180,000 / $200,000</b>}
+                animated
+                stripped
+              />
+            </div>
+          </Row>
         </Container>
       </header>
 
+      <video style={{ width: "100%" }} loop src={BirthdayLogo} autoPlay muted />
+
       <section className="section-b" id="ecosystem">
-        <p style={{ color: "red", fontSize: "1.5rem", marginBottom: "2rem" }}>
-          On March 26 CST, a <b>mandatory</b> full node wallet update was announced.
-          <br />
-          <b>
-            If you are using a full node wallet, please{" "}
-            <a
-              href="https://github.com/dingocoin/dingocoin/releases/tag/v1.16.0.4"
-              className="simple-link"
-              target="_blank"
-            >
-              update your wallet immediately
-            </a>
-            ,<br/> and follow all the listed instructions closely.
-          </b>
-        </p>
         <h1>GET STARTED</h1>
         <p className="text-muted">Explore Dingocoin today.</p>
         <CustomDivider />
@@ -1489,20 +1452,20 @@ function Main() {
               </Col>
             </Row>
             <div className="d-flex flex-row justify-content-center flex-wrap">
-                <div className="marketplace-card">
-                  <div className="logo-holder mb-2">
-                    <Image src={MerchFormulaRunLogo} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://dingocoinmerch.com/merch"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      FormulaRun's Store
-                    </Button>
-                  </a>
+              <div className="marketplace-card">
+                <div className="logo-holder mb-2">
+                  <Image src={MerchFormulaRunLogo} />
                 </div>
+                <a
+                  target="_blank"
+                  href="https://dingocoinmerch.com/merch"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    FormulaRun's Store
+                  </Button>
+                </a>
+              </div>
             </div>
             <CustomDivider />
             <Row>
@@ -1511,62 +1474,62 @@ function Main() {
               </Col>
             </Row>
             <div className="d-flex flex-row justify-content-center flex-wrap">
-                <div className="marketplace-card">
-                  <div className="logo-holder mb-2">
-                    <Image src={DingocoinCollection1Logo} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://opensea.io/collection/dingocoin1"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      DingoCoin Collection #1
-                    </Button>
-                  </a>
+              <div className="marketplace-card">
+                <div className="logo-holder mb-2">
+                  <Image src={DingocoinCollection1Logo} />
                 </div>
-                <div className="marketplace-card">
-                  <div className="logo-holder mb-2">
-                    <Image src={MerchCryptoDingosLogo} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://opensea.io/collection/cryptodingos"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      CryptoDingos
-                    </Button>
-                  </a>
+                <a
+                  target="_blank"
+                  href="https://opensea.io/collection/dingocoin1"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    DingoCoin Collection #1
+                  </Button>
+                </a>
+              </div>
+              <div className="marketplace-card">
+                <div className="logo-holder mb-2">
+                  <Image src={MerchCryptoDingosLogo} />
                 </div>
-                <div className="marketplace-card">
-                  <div className="logo-holder mb-2">
-                    <Image src={MerchDingocoinArtLogo} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://opensea.io/collection/dingocoinart"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      Dingocoin Art
-                    </Button>
-                  </a>
+                <a
+                  target="_blank"
+                  href="https://opensea.io/collection/cryptodingos"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    CryptoDingos
+                  </Button>
+                </a>
+              </div>
+              <div className="marketplace-card">
+                <div className="logo-holder mb-2">
+                  <Image src={MerchDingocoinArtLogo} />
                 </div>
-                <div className="marketplace-card">
-                  <div className="logo-holder mb-2">
-                    <Image src={DoucheyDingoesLogo} />
-                  </div>
-                  <a
-                    target="_blank"
-                    href="https://opensea.io/collection/douchey-dingos"
-                    rel="noreferrer"
-                  >
-                    <Button className="popup-button" variant="primary">
-                      Douchey Dingos
-                    </Button>
-                  </a>
+                <a
+                  target="_blank"
+                  href="https://opensea.io/collection/dingocoinart"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    Dingocoin Art
+                  </Button>
+                </a>
+              </div>
+              <div className="marketplace-card">
+                <div className="logo-holder mb-2">
+                  <Image src={DoucheyDingoesLogo} />
                 </div>
+                <a
+                  target="_blank"
+                  href="https://opensea.io/collection/douchey-dingos"
+                  rel="noreferrer"
+                >
+                  <Button className="popup-button" variant="primary">
+                    Douchey Dingos
+                  </Button>
+                </a>
+              </div>
             </div>
             <CustomDivider />
             <Row>
