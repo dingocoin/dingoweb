@@ -42,10 +42,9 @@ function TrailmapContribute() {
           and APIs
         </li>
         <li>
-          Rayson Kaelbling - Community dApp Developer, NFT platform and Next
-          Generation Web Wallet
+          Rayson Kaelbling - NFT platform and Next Generation Web Wallet
         </li>
-        <li>Boomshakalaka - Game Development Master, Game integration</li>
+        <li>Boomshakalaka - Game Development Master, Game integration, Banana</li>
         <li>Urgo - Community Core Developer</li>
         <li>
           Farsider350 - Community Core Developer, Next Generation Web Wallet
@@ -57,17 +56,18 @@ function TrailmapContribute() {
         <li>Anxhu - Community Artist</li>
         <li>The_Rudist - Community Artist</li>
         <li>ChrissySydney - Community Artist</li>
-        <li>formularun - Community Artist</li>
+        <li>formularun - Community Builder, Community Artist</li>
         <li>Bunty - Community Artist</li>
         <li>UrbanMiner - Community Artist</li>
         <li>hhvivek - Node Custodian</li>
         <li>s15a - Node Custodian</li>
         <li>Sean - Node Custodian</li>
         <li>XxTrevXx - Node Custodian and Trusted Walleteer</li>
+        <li>Bolo - Fauceteer</li>
         <li>jeff and friends - Listing Ninja</li>
         <li>Kapital - Listing Ninja</li>
         <li>Fang - Listing Ninja</li>
-        <li>CactusJab - Listing Ninja</li>
+        <li>CactusJab - Listing Ninja, Community Artist</li>
         <li>
           Everyone Else - Contributing and Supporting the #dingopack in every
           which way
