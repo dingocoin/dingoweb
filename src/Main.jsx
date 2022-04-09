@@ -2,7 +2,6 @@ import React from "react";
 
 //API.
 import { queryNft } from "./nftApi";
-import { satoshiToLocaleString, toLocaleString } from "./utils";
 
 // Controls.
 import {
@@ -24,22 +23,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRobot,
   faShoppingCart,
-  faDumpsterFire,
   faGlobe,
   faUserAstronaut,
-  faProjectDiagram,
   faGamepad,
   faChartLine,
   faWallet,
-  faCaretDown,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faChrome,
-  faFirefoxBrowser,
-  faWindows,
-  faApple,
-  faLinux,
   faAndroid,
 } from "@fortawesome/free-brands-svg-icons";
 import BSCLogo from "./assets/img/bsc.png";
@@ -56,6 +47,7 @@ import DingetteLogo from "./assets/img/dingette.png";
 import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
 import DingodiggersLogo from "./assets/img/dingodigger.png";
+import DingominerLogo from "./assets/img/dingominer.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
 import ExbitronLogo from "./assets/img/exbitron.png";
 import HotbitLogo from "./assets/img/hotbitex.png";
@@ -79,6 +71,7 @@ import WalletLinux from "./assets/img/wallet_linux.png";
 import NFTCard from "./NftCard.jsx";
 import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
 import BirthdayLogo from "./assets/img/birthday.mp4";
+import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
 
 function Main() {
   async function get(link) {
@@ -240,7 +233,7 @@ function Main() {
                 </b>
               </p>
               <ProgressBar
-                style={{height: "2rem"}}
+                style={{ height: "2rem" }}
                 now={90}
                 label={<b>USD $180,000 / $200,000</b>}
                 animated
@@ -675,10 +668,10 @@ function Main() {
                 <div className="banner-holder mb-4">
                   <FontAwesomeIcon className="faicon" icon={faGamepad} />
                 </div>
-                <h4 className="mb-4">4. Play games</h4>
+                <h4 className="mb-4">4. Games and Activities</h4>
                 <p className="text-center mb-4">
-                  Play games on Discord and Roblox using Dingocoin. Have fun and
-                  hang out with the pack.
+                  Participate in community-developed
+                  games and activities. Hang out, have fun, and possibly earn Dingocoins.
                 </p>
                 {!gamesShow && (
                   <Button
@@ -699,6 +692,23 @@ function Main() {
                   lg={3}
                   className="projects justify-content-center"
                 >
+                  <Col>
+                    <div className="project-card">
+                      <div className="logo-holder">
+                        <Image src={DingodiggersLogo} />
+                      </div>
+                      <a
+                        href="https://discord.gg/fka9pZXxPB"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Button className="popup-button" variant="primary">
+                          Dingo Diggers
+                        </Button>
+                      </a>
+                      <p>Easily Earn Dingo Mining Rewards.</p>
+                    </div>
+                  </Col>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -731,27 +741,67 @@ function Main() {
                         </Button>
                       </a>
                       <p>
-                        Hang out with the Dingo Pack on Roblox.
-                        <br />
-                        <i>(Beta).</i>
+                        Hang out with the Dingo Pack on Roblox <i>(Beta).</i>
                       </p>
                     </div>
                   </Col>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
-                        <Image src={DingodiggersLogo} />
+                        <Image src={DingominerLogo} />
                       </div>
                       <a
-                        href="https://discord.gg/fka9pZXxPB"
+                        href="http://miner.dingocoin.org/"
                         target="_blank"
                         rel="noreferrer"
                       >
                         <Button className="popup-button" variant="primary">
-                          Dingo Diggers
+                          Dingo Miner
                         </Button>
                       </a>
-                      <p>Easily Earn Dingo Mining Rewards.</p>
+                      <p>Learn the ropes of mining with our Dingo Miner game.</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="project-card">
+                      <div className="logo-holder">
+                        <FontAwesomeIcon
+                          className="faicon"
+                          icon={faChartLine}
+                        />
+                      </div>
+                      <a href="/stake">
+                        <Button className="popup-button" variant="primary">
+                          Stake Dingocoins
+                        </Button>
+                      </a>
+                      <p>Earn weekly rewards just for holding Dingocoins.</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="project-card">
+                      <div className="logo-holder">
+                        <Image src={SocialFaucetLogo} />
+                      </div>
+                      <a href="https://twitter.com/dingocoincrypto">
+                        <Button className="popup-button" variant="primary">
+                          Weekly Airdrop
+                        </Button>
+                      </a>
+                      <p>Earn Dingocoins in our weekly Twitter airdrops.</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="project-card">
+                      <div className="logo-holder">
+                        <Image src={CryptoGrenadeLogo} />
+                      </div>
+                      <a href="https://cryptogrenade.xyz/">
+                        <Button className="popup-button" variant="primary">
+                          CG's Faucet Platform
+                        </Button>
+                      </a>
+                      <p>Cryptogrenade's faucet platform - Paid to click, shortlinks, referral rewards.</p>
                     </div>
                   </Col>
                 </Row>
@@ -767,71 +817,11 @@ function Main() {
             <FadeInSection>
               <div className="mt-5 mb-5">
                 <div className="banner-holder mb-4">
-                  <FontAwesomeIcon className="faicon" icon={faChartLine} />
-                </div>
-                <h4 className="mb-4">5. Stake Dingocoins</h4>
-                <p className="text-center mb-4">
-                  Stake your Dingocoins and earn weekly rewards. Staking rewards
-                  are funded by NFT revenue - you earn more whenever we get more
-                  users!
-                </p>
-                <Container className="mb-4">
-                  <Row
-                    xs={1}
-                    md={3}
-                    lg={3}
-                    className="projectFactsWrap justify-content-center"
-                  >
-                    <Col>
-                      <div className="item">
-                        <p className="number">
-                          {dingoStats === null
-                            ? "-"
-                            : toLocaleString(
-                                Math.floor(
-                                  (dingoStats.blocks - 390000) / 10000
-                                ) * 2000000
-                              )}
-                        </p>
-                        <span></span>
-                        <p>Rewards paid out</p>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div className="item">
-                        <p className="number">
-                          {totalStaked === null
-                            ? "-"
-                            : satoshiToLocaleString(totalStaked)}
-                        </p>
-                        <span></span>
-                        <p>Dingocoins staked</p>
-                      </div>
-                    </Col>
-                  </Row>
-                </Container>
-                <a href="/stake">
-                  <Button className="popup-button px-4" variant="primary">
-                    Stake now
-                  </Button>
-                </a>
-              </div>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="guide">
-                <span>
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </span>
-              </div>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="mt-5 mb-5">
-                <div className="banner-holder mb-4">
                   <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
                 </div>
-                <h4 className="mb-4">6. Explore community utilities</h4>
+                <h4 className="mb-4">5. Explore community utilities</h4>
                 <p className="text-center mb-4">
-                  Weekly airdrops, socials, and other tools. Explore the various
+                  Socials, and other tools. Explore the various
                   utilities developed by the community. Or better yet,
                   contribute yourself - we rely on everyone's ideas.
                 </p>
@@ -854,22 +844,6 @@ function Main() {
                   lg={3}
                   className="projects justify-content-center"
                 >
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={SocialFaucetLogo} />
-                      </div>
-                      <a href="/airdrop">
-                        <Button className="popup-button" variant="primary">
-                          Weekly Airdrop
-                        </Button>
-                      </a>
-                      <p>
-                        Earn Dingocoins simply by promoting Dingocoin on
-                        Twitter.
-                      </p>
-                    </div>
-                  </Col>
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -931,6 +905,7 @@ function Main() {
                       </p>
                     </div>
                   </Col>
+                  {/*
                   <Col>
                     <div className="project-card">
                       <div className="logo-holder">
@@ -950,6 +925,7 @@ function Main() {
                       </p>
                     </div>
                   </Col>
+                  */}
                 </Row>
               </Container>
             )}
@@ -1029,7 +1005,7 @@ function Main() {
               <FadeInSection>
                 <li
                   className="event eventcompleted"
-                  data-date="Jan - Present, 2022"
+                  data-date="Jan - Mar, 2022"
                 >
                   <h3>
                     <i>The Boomshakalaka</i>
@@ -1049,6 +1025,20 @@ function Main() {
                 </li>
               </FadeInSection>
               <FadeInSection>
+                <li
+                  className="event eventcompleted"
+                  data-date="Apr - Present, 2022"
+                >
+                  <h3>
+                    <i>The Expansion</i>
+                  </h3>
+                  <p>
+                    - <b>Happy Birthday, Dingocoin!</b>
+                    <br/> - <b>Halve</b> block reward to 15,625
+                  </p>
+                </li>
+              </FadeInSection>
+              <FadeInSection>
                 <li className="event incomplete" data-date="In progress...">
                   <a
                     href="/trailmap"
@@ -1059,7 +1049,6 @@ function Main() {
                     Click to see more in our Trailmap
                   </a>
                   <p style={{ color: "#AAAAAA" }}>
-                    - <b>Halve</b> block reward to 15,625
                     <br />- <b>Halve</b> block reward to 10,000 permanentely
                   </p>
                 </li>
