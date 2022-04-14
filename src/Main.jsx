@@ -244,8 +244,6 @@ function Main() {
         </Container>
       </header>
 
-      <video style={{ width: "100%" }} loop src={BirthdayLogo} autoPlay muted />
-
       <section className="section-b" id="ecosystem">
         <h1>GET STARTED</h1>
         <p className="text-muted">Explore Dingocoin today.</p>
