@@ -794,7 +794,7 @@ function Main() {
                       <div className="logo-holder">
                         <Image src={CryptoGrenadeLogo} />
                       </div>
-                      <a href="https://cryptogrenade.xyz/">
+                      <a href="https://cryptogrenade.xyz/" target="_blank">
                         <Button className="popup-button" variant="primary">
                           CG's Faucet Platform
                         </Button>
