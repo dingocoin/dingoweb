@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.c2070f1a.chunk.css",
-    "main.js": "/static/js/main.8fdf1e8f.chunk.js",
-    "main.js.map": "/static/js/main.8fdf1e8f.chunk.js.map",
+    "main.css": "/static/css/main.cd67afaa.chunk.css",
+    "main.js": "/static/js/main.7cc307bb.chunk.js",
+    "main.js.map": "/static/js/main.7cc307bb.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.c7211be0.chunk.js": "/static/js/2.c7211be0.chunk.js",
     "static/js/2.c7211be0.chunk.js.map": "/static/js/2.c7211be0.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.c2070f1a.chunk.css.map": "/static/css/main.c2070f1a.chunk.css.map",
+    "static/css/main.cd67afaa.chunk.css.map": "/static/css/main.cd67afaa.chunk.css.map",
     "static/js/2.c7211be0.chunk.js.LICENSE.txt": "/static/js/2.c7211be0.chunk.js.LICENSE.txt",
     "static/media/birdeye.bf1ea32e.png": "/static/media/birdeye.bf1ea32e.png",
     "static/media/birthday.50da1579.mp4": "/static/media/birthday.50da1579.mp4",
+    "static/media/btok.3e8ab30d.png": "/static/media/btok.3e8ab30d.png",
     "static/media/coincodex.8839b857.png": "/static/media/coincodex.8839b857.png",
     "static/media/coingecko.7f110fd8.png": "/static/media/coingecko.7f110fd8.png",
     "static/media/coinmarketcap.0c39f339.png": "/static/media/coinmarketcap.0c39f339.png",
@@ -45,7 +46,7 @@
   "entrypoints": [
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.c7211be0.chunk.js",
-    "static/css/main.c2070f1a.chunk.css",
-    "static/js/main.8fdf1e8f.chunk.js"
+    "static/css/main.cd67afaa.chunk.css",
+    "static/js/main.7cc307bb.chunk.js"
   ]
 }
