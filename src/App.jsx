@@ -17,7 +17,16 @@ import TrailmapPrologue from "./TrailmapPrologue";
 import ReactGA from "react-ga";
 
 // Controls.
-import { Navbar, Nav, NavDropdown, Container, Row } from "react-bootstrap";
+import {
+  Modal,
+  Button,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Container,
+  Row,
+  Image,
+} from "react-bootstrap";
 
 // Assets.
 import BirdeyeLogo from "./assets/img/birdeye.png";
@@ -45,8 +54,10 @@ import {
   faReddit,
   faFacebook,
   faDiscord,
+  faWeixin,
 } from "@fortawesome/free-brands-svg-icons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import WechatInvite from "./assets/img/wechatinvite.png";
 
 function App() {
   ReactGA.initialize("UA-210617812-1");
@@ -57,6 +68,8 @@ function App() {
     setLocation(window.location.pathname);
   }, []);
   React.useEffect(() => {}, [location]);
+
+  const [wechatModalShow, setWechatModalShow] = React.useState(false);
 
   return (
     <Router>
@@ -263,7 +276,6 @@ function App() {
           <Route path="*" element={<Main />} />
         </Routes>
 
-
         <section className="section-footer">
           <Container>
             <Row>
@@ -289,6 +301,12 @@ function App() {
                 >
                   <FontAwesomeIcon className="faicon" icon={faTelegram} />
                 </a>
+                <div
+                  onClick={() => setWechatModalShow(true)}
+                  className="socials-button"
+                >
+                  <FontAwesomeIcon className="faicon" icon={faWeixin} />
+                </div>
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -325,6 +343,25 @@ function App() {
             </Row>
           </Container>
         </section>
+
+        <Modal
+          size="md"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+          show={wechatModalShow}
+          onHide={() => {
+            setWechatModalShow(false);
+          }}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              Dingocoin WeChat Invite
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Image style={{width: "100%", height: "auto"}} src={WechatInvite} />
+          </Modal.Body>
+        </Modal>
       </div>
     </Router>
   );

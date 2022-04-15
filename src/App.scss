@@ -207,6 +207,7 @@ a.simple-link:hover {
 .socials {
   margin: 0 auto;
   .socials-button {
+    cursor: pointer;
     display: inline;
     margin: 1rem;
     .faicon {
@@ -221,15 +222,18 @@ a.simple-link:hover {
     color: #0088cc;
   }
   .socials-button:nth-child(3) .faicon {
-    color: #0dace9;
+    color: #29bd00;
   }
   .socials-button:nth-child(4) .faicon {
-    color: #ba248d;
+    color: #0dace9;
   }
   .socials-button:nth-child(5) .faicon {
-    color: #fe4824;
+    color: #ba248d;
   }
   .socials-button:nth-child(6) .faicon {
+    color: #fe4824;
+  }
+  .socials-button:nth-child(7) .faicon {
     color: #3b5a95;
   }
 }
