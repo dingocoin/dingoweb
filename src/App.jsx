@@ -58,6 +58,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WechatInvite from "./assets/img/wechatinvite.png";
+import BtokLogo from "./assets/img/btok.png";
 
 function App() {
   ReactGA.initialize("UA-210617812-1");
@@ -307,6 +308,14 @@ function App() {
                 >
                   <FontAwesomeIcon className="faicon" icon={faWeixin} />
                 </div>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://ss.transgot.cn/dingocoin_chian"
+                  className="socials-button"
+                >
+                  <Image src={BtokLogo}/>
+                </a>
                 <a
                   target="_blank"
                   rel="noreferrer"

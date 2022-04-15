@@ -208,11 +208,19 @@ a.simple-link:hover {
   margin: 0 auto;
   .socials-button {
     cursor: pointer;
-    display: inline;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
     margin: 1rem;
+    padding: 0;
     .faicon {
-      width: 2rem;
-      height: 2rem;
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      vertical-align: -2px;
     }
   }
   .socials-button:nth-child(1) .faicon {
@@ -224,16 +232,16 @@ a.simple-link:hover {
   .socials-button:nth-child(3) .faicon {
     color: #29bd00;
   }
-  .socials-button:nth-child(4) .faicon {
+  .socials-button:nth-child(5) .faicon {
     color: #0dace9;
   }
-  .socials-button:nth-child(5) .faicon {
+  .socials-button:nth-child(6) .faicon {
     color: #ba248d;
   }
-  .socials-button:nth-child(6) .faicon {
+  .socials-button:nth-child(7) .faicon {
     color: #fe4824;
   }
-  .socials-button:nth-child(7) .faicon {
+  .socials-button:nth-child(8) .faicon {
     color: #3b5a95;
   }
 }
