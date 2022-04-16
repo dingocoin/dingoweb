@@ -234,8 +234,8 @@ function Main() {
               </p>
               <ProgressBar
                 style={{ height: "2rem" }}
-                now={90}
-                label={<b>USD $180,000 / $200,000</b>}
+                now={100 * 192730 / 200000}
+                label={<b>USD $192,730 / $200,000</b>}
                 animated
                 stripped
               />
