@@ -8,6 +8,24 @@ function TrailmapPrologue() {
   return (
     <TrailmapTemplate>
       <div>
+        <h4 className="mt-4">THE KNOWN PATH</h4>
+        <Image
+          className="my-2"
+          src={TrailmapImage}
+          style={{ width: "100%", height: "auto" }}
+        />
+
+        <h4 className="mt-4">THE DINGOCOIN DO-OCRACY</h4>
+        <p>
+          Dingocoin is a community-driven open-source project and its direction
+          is formed by the many contributors to the various projects of the
+          Dingocoin blockchain and ecosystem.
+        </p>
+        <Image
+          className="my-2"
+          src={ContributeImage}
+          style={{ width: "100%", height: "auto" }}
+        />
         <h4 className="mt-4">WHAT IS THE DINGOCOIN TRAILMAP?</h4>
         <p>
           Dingocoin is inviting all to contribute to its development. Head over
@@ -121,25 +139,6 @@ function TrailmapPrologue() {
           powerful allies on our side, as well as a growing number of people
           eager to contribute development time to these open-source projects.
         </p>
-
-        <h4 className="mt-4">THE KNOWN PATH</h4>
-        <Image
-          className="my-2"
-          src={TrailmapImage}
-          style={{ width: "100%", height: "auto" }}
-        />
-
-        <h4 className="mt-4">THE DINGOCOIN DO-OCRACY</h4>
-        <p>
-          Dingocoin is a community-driven open-source project and its direction
-          is formed by the many contributors to the various projects of the
-          Dingocoin blockchain and ecosystem.
-        </p>
-        <Image
-          className="my-2"
-          src={ContributeImage}
-          style={{ width: "100%", height: "auto" }}
-        />
       </div>
     </TrailmapTemplate>
   );
