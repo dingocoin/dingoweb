@@ -2,7 +2,6 @@ import "./App.scss";
 import React from "react";
 
 import Main from "./Main";
-import Airdrop from "./Airdrop";
 import Burnboard from "./Burnboard";
 import Privacy from "./Privacy";
 import Stake from "./Stake";
@@ -14,18 +13,16 @@ import TrailmapManifesto from "./TrailmapManifesto";
 import TrailmapMultilinguistics from "./TrailmapMultilinguistics";
 import TrailmapNFTPlatform from "./TrailmapNFTPlatform";
 import TrailmapPrologue from "./TrailmapPrologue";
+import TrailmapDingoTip from "./TrailmapDingoTip";
 import ReactGA from "react-ga";
 
 // Controls.
 import {
-  Modal,
-  Button,
   Navbar,
   Nav,
   NavDropdown,
   Container,
   Row,
-  Image,
 } from "react-bootstrap";
 
 // Assets.
@@ -54,11 +51,8 @@ import {
   faReddit,
   faFacebook,
   faDiscord,
-  faWeixin,
 } from "@fortawesome/free-brands-svg-icons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import WechatInvite from "./assets/img/wechatinvite.png";
-import BtokLogo from "./assets/img/btok.png";
 
 function App() {
   ReactGA.initialize("UA-210617812-1");
@@ -69,8 +63,6 @@ function App() {
     setLocation(window.location.pathname);
   }, []);
   React.useEffect(() => {}, [location]);
-
-  const [wechatModalShow, setWechatModalShow] = React.useState(false);
 
   return (
     <Router>
@@ -264,6 +256,7 @@ function App() {
             />
             <Route path="manifesto" element={<TrailmapManifesto />} />
             <Route path="contribute" element={<TrailmapContribute />} />
+            <Route path="dingotip" element={<TrailmapDingoTip />} />
             <Route path="browserwallet" element={<TrailmapBrowserWallet />} />
             <Route
               path="exchangelistings"
@@ -302,20 +295,6 @@ function App() {
                 >
                   <FontAwesomeIcon className="faicon" icon={faTelegram} />
                 </a>
-                <div
-                  onClick={() => setWechatModalShow(true)}
-                  className="socials-button"
-                >
-                  <FontAwesomeIcon className="faicon" icon={faWeixin} />
-                </div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://ss.transgot.cn/dingocoin_chian"
-                  className="socials-button"
-                >
-                  <Image src={BtokLogo}/>
-                </a>
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -352,25 +331,6 @@ function App() {
             </Row>
           </Container>
         </section>
-
-        <Modal
-          size="md"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-          show={wechatModalShow}
-          onHide={() => {
-            setWechatModalShow(false);
-          }}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-              Dingocoin WeChat Invite
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Image style={{width: "100%", height: "auto"}} src={WechatInvite} />
-          </Modal.Body>
-        </Modal>
       </div>
     </Router>
   );

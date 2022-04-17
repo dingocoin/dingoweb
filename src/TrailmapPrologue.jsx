@@ -1,10 +1,14 @@
 import React from "react";
 import TrailmapTemplate from "./TrailmapTemplate";
+import {Image} from "react-bootstrap";
+import  TrailmapImage from "./assets/img/trailmap.png";
+
 
 function TrailmapPrologue() {
   return (
     <TrailmapTemplate>
       <div>
+        <Image src={TrailmapImage} style={{width: "100%", height: "auto"}}/>
         <h4 className="mt-4">WHAT IS THE DINGOCOIN TRAILMAP?</h4>
         <p>
           Dingocoin is a community-driven open-source project and its direction
