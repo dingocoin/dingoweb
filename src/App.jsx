@@ -14,6 +14,7 @@ import TrailmapManifesto from "./TrailmapManifesto";
 import TrailmapMultilinguistics from "./TrailmapMultilinguistics";
 import TrailmapNFTPlatform from "./TrailmapNFTPlatform";
 import TrailmapPrologue from "./TrailmapPrologue";
+import TrailmapDingoTip from "./TrailmapDingoTip";
 import ReactGA from "react-ga";
 
 // Controls.
@@ -270,6 +271,7 @@ function App() {
               element={<TrailmapExchangeListings />}
             />
             <Route path="nftplatform" element={<TrailmapNFTPlatform />} />
+            <Route path="dingotip" element={<TrailmapDingoTip />} />
             <Route path="nextgen" element={<TrailmapNextGen />} />
             <Route path="" element={<TrailmapPrologue />} />
           </Route>
