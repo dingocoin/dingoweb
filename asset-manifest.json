@@ -1,22 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.d07c8d87.chunk.css",
-    "main.js": "/static/js/main.3393ebf4.chunk.js",
-    "main.js.map": "/static/js/main.3393ebf4.chunk.js.map",
+    "main.js": "/static/js/main.258507d3.chunk.js",
+    "main.js.map": "/static/js/main.258507d3.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
-    "static/js/2.b3c72079.chunk.js": "/static/js/2.b3c72079.chunk.js",
-    "static/js/2.b3c72079.chunk.js.map": "/static/js/2.b3c72079.chunk.js.map",
+    "static/js/2.6fbcc617.chunk.js": "/static/js/2.6fbcc617.chunk.js",
+    "static/js/2.6fbcc617.chunk.js.map": "/static/js/2.6fbcc617.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.d07c8d87.chunk.css.map": "/static/css/main.d07c8d87.chunk.css.map",
-    "static/js/2.b3c72079.chunk.js.LICENSE.txt": "/static/js/2.b3c72079.chunk.js.LICENSE.txt",
+    "static/js/2.6fbcc617.chunk.js.LICENSE.txt": "/static/js/2.6fbcc617.chunk.js.LICENSE.txt",
     "static/media/birdeye.bf1ea32e.png": "/static/media/birdeye.bf1ea32e.png",
-    "static/media/birthday.50da1579.mp4": "/static/media/birthday.50da1579.mp4",
     "static/media/btok.3e8ab30d.png": "/static/media/btok.3e8ab30d.png",
     "static/media/coincodex.8839b857.png": "/static/media/coincodex.8839b857.png",
     "static/media/coingecko.7f110fd8.png": "/static/media/coingecko.7f110fd8.png",
     "static/media/coinmarketcap.0c39f339.png": "/static/media/coinmarketcap.0c39f339.png",
-    "static/media/contribute.801abb1c.png": "/static/media/contribute.801abb1c.png",
+    "static/media/contribute.bc901374.svg": "/static/media/contribute.bc901374.svg",
     "static/media/cratexio.d52369fa.png": "/static/media/cratexio.d52369fa.png",
     "static/media/deliondex.b1f720d1.png": "/static/media/deliondex.b1f720d1.png",
     "static/media/dex-guru.67d58c8a.png": "/static/media/dex-guru.67d58c8a.png",
@@ -25,6 +24,7 @@
     "static/media/dingodigger.d5f3dcb9.png": "/static/media/dingodigger.d5f3dcb9.png",
     "static/media/dingominer.1c6a2018.png": "/static/media/dingominer.1c6a2018.png",
     "static/media/dingosino.797e49ac.png": "/static/media/dingosino.797e49ac.png",
+    "static/media/dingotip.e548b076.svg": "/static/media/dingotip.e548b076.svg",
     "static/media/doucheydingos.474bbff9.gif": "/static/media/doucheydingos.474bbff9.gif",
     "static/media/exbitron.f8db04b6.png": "/static/media/exbitron.f8db04b6.png",
     "static/media/manifesto1.f61ef57d.png": "/static/media/manifesto1.f61ef57d.png",
@@ -36,7 +36,7 @@
     "static/media/socialfaucet.7855d1e6.png": "/static/media/socialfaucet.7855d1e6.png",
     "static/media/sol.b826535d.png": "/static/media/sol.b826535d.png",
     "static/media/southxchange.2d1f6024.png": "/static/media/southxchange.2d1f6024.png",
-    "static/media/trailmap.d3a84aae.png": "/static/media/trailmap.d3a84aae.png",
+    "static/media/trailmap.a272b4d6.svg": "/static/media/trailmap.a272b4d6.svg",
     "static/media/wallet_apple.3b6db98c.png": "/static/media/wallet_apple.3b6db98c.png",
     "static/media/wallet_chrome.c09e218f.png": "/static/media/wallet_chrome.c09e218f.png",
     "static/media/wallet_firefox.91020ec6.png": "/static/media/wallet_firefox.91020ec6.png",
@@ -47,8 +47,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f7b3b2ed.js",
-    "static/js/2.b3c72079.chunk.js",
+    "static/js/2.6fbcc617.chunk.js",
     "static/css/main.d07c8d87.chunk.css",
-    "static/js/main.3393ebf4.chunk.js"
+    "static/js/main.258507d3.chunk.js"
   ]
 }
