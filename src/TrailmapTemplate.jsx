@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 const ENTRIES = [
   ["/trailmap", "Prologue"],
   ["/trailmap/manifesto", "Our manifesto"],
-  ["/trailmap/contribute", "Getting involved"],
+  ["/trailmap/contribute", "How to get involved?"],
   ["/trailmap/dingotip", "Project: DingoTip"],
   ["/trailmap/nextgen", "Project: Dingocoin NextGen"],
   ["/trailmap/browserwallet", "Project: Dingocoin browser wallet"],

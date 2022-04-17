@@ -68,9 +68,8 @@ import WalletApple from "./assets/img/wallet_apple.png";
 import WalletLinux from "./assets/img/wallet_linux.png";
 import NFTCard from "./NftCard.jsx";
 import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
-import BirthdayLogo from "./assets/img/birthday.mp4";
 import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
-import TrailmapImage from "./assets/img/trailmap.png";
+import TrailmapImage from "./assets/img/trailmap.svg";
 
 function Main() {
   async function get(link) {

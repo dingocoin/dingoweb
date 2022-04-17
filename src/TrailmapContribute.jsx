@@ -1,7 +1,7 @@
 import React from "react";
 import TrailmapTemplate from "./TrailmapTemplate";
 import {Image} from "react-bootstrap"
-import ContributionImage from "./assets/img/contribute.png";
+import ContributionImage from "./assets/img/contribute.svg";
 
 function TrailmapContribute() {
   return (
@@ -33,7 +33,7 @@ function TrailmapContribute() {
       </p>
 
       <h4 className="mt-4">CONTRIBUTIONS LIST</h4>
-      <Image src={ContributionImage} style={{width: "100%", height: "auto"}}/>
+      <Image className="mt-2" src={ContributionImage} style={{width: "100%", height: "auto"}}/>
     </TrailmapTemplate>
   );
 }
