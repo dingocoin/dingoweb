@@ -30,9 +30,7 @@ import {
   faWallet,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faAndroid,
-} from "@fortawesome/free-brands-svg-icons";
+import { faAndroid } from "@fortawesome/free-brands-svg-icons";
 import BSCLogo from "./assets/img/bsc.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
@@ -72,6 +70,7 @@ import NFTCard from "./NftCard.jsx";
 import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
 import BirthdayLogo from "./assets/img/birthday.mp4";
 import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
+import TrailmapImage from "./assets/img/trailmap.png";
 
 function Main() {
   async function get(link) {
@@ -234,7 +233,7 @@ function Main() {
               </p>
               <ProgressBar
                 style={{ height: "2rem" }}
-                now={100 * 192730 / 200000}
+                now={(100 * 192730) / 200000}
                 label={<b>USD $192,730 / $200,000</b>}
                 animated
                 stripped
@@ -668,8 +667,8 @@ function Main() {
                 </div>
                 <h4 className="mb-4">4. Games and Activities</h4>
                 <p className="text-center mb-4">
-                  Participate in community-developed
-                  games and activities. Hang out, have fun, and possibly earn Dingocoins.
+                  Participate in community-developed games and activities. Hang
+                  out, have fun, and possibly earn Dingocoins.
                 </p>
                 {!gamesShow && (
                   <Button
@@ -757,7 +756,9 @@ function Main() {
                           Dingo Miner
                         </Button>
                       </a>
-                      <p>Learn the ropes of mining with our Dingo Miner game.</p>
+                      <p>
+                        Learn the ropes of mining with our Dingo Miner game.
+                      </p>
                     </div>
                   </Col>
                   <Col>
@@ -799,7 +800,10 @@ function Main() {
                           CG's Faucet Platform
                         </Button>
                       </a>
-                      <p>Cryptogrenade's faucet platform - Paid to click, shortlinks, referral rewards.</p>
+                      <p>
+                        Cryptogrenade's faucet platform - Paid to click,
+                        shortlinks, referral rewards.
+                      </p>
                     </div>
                   </Col>
                 </Row>
@@ -819,9 +823,9 @@ function Main() {
                 </div>
                 <h4 className="mb-4">5. Explore community utilities</h4>
                 <p className="text-center mb-4">
-                  Socials, and other tools. Explore the various
-                  utilities developed by the community. Or better yet,
-                  contribute yourself - we rely on everyone's ideas.
+                  Socials, and other tools. Explore the various utilities
+                  developed by the community. Or better yet, contribute yourself
+                  - we rely on everyone's ideas.
                 </p>
                 {!utilitiesShow && (
                   <Button
@@ -938,7 +942,7 @@ function Main() {
         </FadeInSection>
         <Container>
           <Row>
-            <ul className="timeline">
+            <ul className="timeline mb-4">
               <FadeInSection>
                 <li className="event eventcompleted" data-date="Apr, 2021">
                   <h3>
@@ -1032,26 +1036,32 @@ function Main() {
                   </h3>
                   <p>
                     - <b>Happy Birthday, Dingocoin!</b>
-                    <br/> - <b>Halve</b> block reward to 15,625
-                  </p>
-                </li>
-              </FadeInSection>
-              <FadeInSection>
-                <li className="event incomplete" data-date="In progress...">
-                  <a
-                    href="/trailmap"
-                    className="simple-link"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Click to see more in our Trailmap
-                  </a>
-                  <p style={{ color: "#AAAAAA" }}>
-                    <br />- <b>Halve</b> block reward to 10,000 permanentely
+                    <br /> - <b>Halve</b> block reward to 15,625
                   </p>
                 </li>
               </FadeInSection>
             </ul>
+          </Row>
+
+          <Row>
+            <FadeInSection>
+              <h2 className="mt-4">What's next?</h2>
+              <CustomDivider />
+              <Image
+                src={TrailmapImage}
+                style={{ width: "100%", height: "auto" }}
+              />
+              <p className="mt-2">
+                <a
+                  href="/trailmap"
+                  className="simple-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <b>Click to see more in our Trailmap</b>
+                </a>
+              </p>
+            </FadeInSection>
           </Row>
         </Container>
       </section>
