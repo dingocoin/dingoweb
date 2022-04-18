@@ -70,6 +70,7 @@ import NFTCard from "./NftCard.jsx";
 import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
 import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
 import TrailmapImage from "./assets/img/trailmap.svg";
+import WhyBuyImage from "./assets/img/whybuy.svg";
 
 function Main() {
   async function get(link) {
@@ -930,6 +931,19 @@ function Main() {
                 </Row>
               </Container>
             )}
+          </Row>
+          <Row>
+            <h1 className="mt-5">DO YOUR OWN RESEARCH</h1>
+            <p className="text-muted">
+              <b>&gt; 10x</b> the developments, yet <b>&lt; 0.02%</b> of the
+              market cap.
+              <br />
+              <i>
+                Such undervalued very potential <b>5000x</b> much wow.
+              </i>
+            </p>
+            <CustomDivider />
+            <Image className="mt-2" src={WhyBuyImage} />
           </Row>
         </Container>
       </section>
