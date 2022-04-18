@@ -944,7 +944,7 @@ function Main() {
                 </i>
               </p>
               <CustomDivider />
-              <Image className="mt-2" src={WhyBuyImage} />
+              <Image style={{width: "100%", height: "auto"}} className="mt-2" src={WhyBuyImage} />
             </FadeInSection>
           </Row>
         </Container>
