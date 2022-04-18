@@ -933,17 +933,19 @@ function Main() {
             )}
           </Row>
           <Row>
-            <h1 className="mt-5">DO YOUR OWN RESEARCH</h1>
-            <p className="text-muted">
-              <b>&gt; 10x</b> the developments, yet <b>&lt; 0.02%</b> of the
-              market cap.
-              <br />
-              <i>
-                Such undervalued very potential <b>5000x</b> much wow.
-              </i>
-            </p>
-            <CustomDivider />
-            <Image className="mt-2" src={WhyBuyImage} />
+            <FadeInSection>
+              <h1 className="mt-5">DO YOUR OWN RESEARCH</h1>
+              <p className="text-muted">
+                <b>&gt; 10x</b> the developments, yet <b>&lt; 0.02%</b> of the
+                market cap.
+                <br />
+                <i>
+                  Such undervalued very potential <b>5000x</b> much wow.
+                </i>
+              </p>
+              <CustomDivider />
+              <Image className="mt-2" src={WhyBuyImage} />
+            </FadeInSection>
           </Row>
         </Container>
       </section>
