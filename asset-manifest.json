@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.437b58f8.chunk.css",
-    "main.js": "/static/js/main.a40fd7b6.chunk.js",
-    "main.js.map": "/static/js/main.a40fd7b6.chunk.js.map",
+    "main.js": "/static/js/main.d58fc082.chunk.js",
+    "main.js.map": "/static/js/main.d58fc082.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.7f83ec9e.chunk.js": "/static/js/2.7f83ec9e.chunk.js",
@@ -43,12 +43,13 @@
     "static/media/wallet_linux.a3687e9b.png": "/static/media/wallet_linux.a3687e9b.png",
     "static/media/wallet_windows.4f4f5db9.png": "/static/media/wallet_windows.4f4f5db9.png",
     "static/media/wdingocoin.b75f159c.png": "/static/media/wdingocoin.b75f159c.png",
-    "static/media/wechatinvite.25408f42.png": "/static/media/wechatinvite.25408f42.png"
+    "static/media/wechatinvite.25408f42.png": "/static/media/wechatinvite.25408f42.png",
+    "static/media/whybuy.838c8c2f.svg": "/static/media/whybuy.838c8c2f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.7f83ec9e.chunk.js",
     "static/css/main.437b58f8.chunk.css",
-    "static/js/main.a40fd7b6.chunk.js"
+    "static/js/main.d58fc082.chunk.js"
   ]
 }
