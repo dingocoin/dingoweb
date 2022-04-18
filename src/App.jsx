@@ -365,6 +365,40 @@ function App() {
                 <span>International Community</span>
               </div>
               <div>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://t.me/DingoChinese"
+                  className="socials-button-labelled"
+                >
+                  <div className="inner">
+                    <FontAwesomeIcon
+                      className="faicon"
+                      icon={faTelegram}
+                      style={{ color: "#0088cc" }}
+                    />
+                    <div className="inner-text">
+                      <span>中文</span>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://t.me/+78qzpTUQ3xphZWU0"
+                  className="socials-button-labelled"
+                >
+                  <div className="inner">
+                    <FontAwesomeIcon
+                      className="faicon"
+                      icon={faTelegram}
+                      style={{ color: "#0088cc" }}
+                    />
+                    <div className="inner-text">
+                      <span>فارسی</span>
+                    </div>
+                  </div>
+                </a>
                 <div
                   onClick={() => setWechatModalShow(true)}
                   className="socials-button"
