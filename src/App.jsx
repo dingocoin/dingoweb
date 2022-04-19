@@ -385,6 +385,23 @@ function App() {
                 <a
                   target="_blank"
                   rel="noreferrer"
+                  href="https://t.me/DingocoinBharat"
+                  className="socials-button-labelled"
+                >
+                  <div className="inner">
+                    <FontAwesomeIcon
+                      className="faicon"
+                      icon={faTelegram}
+                      style={{ color: "#0088cc" }}
+                    />
+                    <div className="inner-text">
+                      <span>हिंदी</span>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
                   href="https://t.me/+78qzpTUQ3xphZWU0"
                   className="socials-button-labelled"
                 >
