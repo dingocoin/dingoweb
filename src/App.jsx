@@ -402,7 +402,7 @@ function App() {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://t.me/+78qzpTUQ3xphZWU0"
+                  href="https://t.me/Dingocoinpersian"
                   className="socials-button-labelled"
                 >
                   <div className="inner">
