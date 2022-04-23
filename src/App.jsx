@@ -284,7 +284,7 @@ function App() {
                     <div className="inline-logo-holder">
                       <Image src={NftLogo} />
                     </div>{" "}
-                    NFT Platform
+                    Dingocoin NFT Platform
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
