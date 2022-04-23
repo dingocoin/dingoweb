@@ -2,7 +2,6 @@ import "./App.scss";
 import React from "react";
 
 import Main from "./Main";
-import Airdrop from "./Airdrop";
 import Burnboard from "./Burnboard";
 import Privacy from "./Privacy";
 import Stake from "./Stake";
@@ -20,7 +19,6 @@ import ReactGA from "react-ga";
 // Controls.
 import {
   Modal,
-  Button,
   Navbar,
   Nav,
   NavDropdown,
@@ -31,13 +29,11 @@ import {
 
 // Assets.
 import BirdeyeLogo from "./assets/img/birdeye.png";
-import CoinCodexLogo from "./assets/img/coincodex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
 import CoinMarketCapLogo from "./assets/img/coinmarketcap.png";
 import CoinPaprikaLogo from "./assets/img/coinpaprika.png";
 import CratexIoLogo from "./assets/img/cratexio.png";
 import DelionDexLogo from "./assets/img/deliondex.png";
-import DexGuruLogo from "./assets/img/dex-guru.png";
 import DexTradeLogo from "./assets/img/dextrade.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
 import ExbitronLogo from "./assets/img/exbitron.png";
@@ -52,7 +48,6 @@ import FirefoxLogo from "./assets/img/firefox.png";
 import WindowsLogo from "./assets/img/windows.png";
 import MacOsLogo from "./assets/img/macos.png";
 import UbuntuLogo from "./assets/img/ubuntu.png";
-import AndroidLogo from "./assets/img/android.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
 import RobloxLogo from "./assets/img/roblox.png";
 import DingominerLogo from "./assets/img/dingominer.png";
@@ -68,15 +63,7 @@ import {
   faWeixin,
 } from "@fortawesome/free-brands-svg-icons";
 import {
-  faRobot,
-  faShoppingCart,
-  faGlobe,
-  faUserAstronaut,
-  faGamepad,
   faChartLine,
-  faWallet,
-  faChevronDown,
-  faRunning,
   faHammer,
   faMicroscope,
   faUserSecret,
