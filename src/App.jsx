@@ -47,6 +47,16 @@ import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
+import GoogleChromeLogo from "./assets/img/googlechrome.png";
+import FirefoxLogo from "./assets/img/firefox.png";
+import WindowsLogo from "./assets/img/windows.png";
+import MacOsLogo from "./assets/img/macos.png";
+import UbuntuLogo from "./assets/img/ubuntu.png";
+import AndroidLogo from "./assets/img/android.png";
+import DingosinoLogo from "./assets/img/dingosino.png";
+import RobloxLogo from "./assets/img/roblox.png";
+import DingominerLogo from "./assets/img/dingominer.png";
+import NftLogo from "./assets/img/dingocoinnftplatform.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
@@ -57,9 +67,26 @@ import {
   faDiscord,
   faWeixin,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faRobot,
+  faShoppingCart,
+  faGlobe,
+  faUserAstronaut,
+  faGamepad,
+  faChartLine,
+  faWallet,
+  faChevronDown,
+  faRunning,
+  faHammer,
+  faMicroscope,
+  faUserSecret,
+} from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WechatInvite from "./assets/img/wechatinvite.png";
 import BtokLogo from "./assets/img/btok.png";
+import DingodiggersLogo from "./assets/img/dingodigger.png";
+import SocialFaucetLogo from "./assets/img/socialfaucet.png";
+import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
 
 function App() {
   ReactGA.initialize("UA-210617812-1");
@@ -89,146 +116,346 @@ function App() {
                 navbarScroll
                 style={{ maxHeight: "300px" }}
               >
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/stake">Stake</Nav.Link>
-                <Nav.Link
-                  href="https://nft.dingocoin.org"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  NFT Platform
+                <Nav.Link href="/">
+                  Home
                 </Nav.Link>
-                <Nav.Link
-                  href="https://wrap.dingocoin.org"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Wrap
-                </Nav.Link>
-                <Nav.Link href="/trailmap">Trailmap</Nav.Link>
-                <NavDropdown className="navbar-important" title="Links">
+                <NavDropdown className="navbar-important" title="$DINGO">
+                  <NavDropdown.Header>Wallets</NavDropdown.Header>
+                  <div className="d-flex flex-wrap navbar-panel justify-content-center">
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
+                    >
+                      <img alt="" src={GoogleChromeLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
+                    >
+                      <img alt="" src={FirefoxLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://github.com/dingocoin/dingocoin/releases/latest"
+                    >
+                      <img alt="" src={WindowsLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://github.com/dingocoin/dingocoin/releases/latest"
+                    >
+                      <img alt="" src={MacOsLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://github.com/dingocoin/dingocoin/releases/latest"
+                    >
+                      <img alt="" src={UbuntuLogo} />
+                    </NavDropdown.Item>
+                  </div>
+                  <NavDropdown.Header>Wallets (Unofficial)</NavDropdown.Header>
+                  <div className="d-flex flex-wrap navbar-panel justify-content-center">
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://beehivewallet.link/"
+                    >
+                      <span>Beehive (Web)</span>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"
+                    >
+                      <span>Beehive (Android)</span>
+                    </NavDropdown.Item>
+                  </div>
                   <NavDropdown.Header>Live Charts</NavDropdown.Header>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://coinpaprika.com/coin/dingo-dingocoin/"
-                  >
-                    <img alt="" src={CoinPaprikaLogo} />
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://coinmarketcap.com/currencies/dingocoin/"
-                  >
-                    <img alt="" src={CoinMarketCapLogo} />
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.coingecko.com/en/coins/dingocoin"
-                  >
-                    <img alt="" src={CoinGeckoLogo} />
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://coincodex.com/crypto/dingocoin/"
-                  >
-                    <img alt="" src={CoinCodexLogo} />
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"
-                  >
-                    <img alt="" src={DexGuruLogo} />
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
-                  >
-                    <img alt="" src={PooCoinLogo} />
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                  >
-                    <img alt="" src={BirdeyeLogo} />
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
+                  <div className="d-flex flex-wrap navbar-panel justify-content-center">
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://coinmarketcap.com/currencies/dingocoin/"
+                    >
+                      <img alt="" src={CoinMarketCapLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://coinpaprika.com/coin/dingo-dingocoin/"
+                    >
+                      <img alt="" src={CoinPaprikaLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.coingecko.com/en/coins/dingocoin"
+                    >
+                      <img alt="" src={CoinGeckoLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
+                    >
+                      <img alt="" src={PooCoinLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                    >
+                      <img alt="" src={BirdeyeLogo} />
+                    </NavDropdown.Item>
+                  </div>
                   <NavDropdown.Header>Exchanges</NavDropdown.Header>
+                  <div className="d-flex flex-wrap navbar-panel justify-content-center">
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.xt.com/trade/dingo_usdt"
+                    >
+                      <img alt="" src={XTCOMLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
+                    >
+                      <img alt="" src={HotbitLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://main.southxchange.com/Market/Book/DINGO/LTC"
+                    >
+                      <img alt="" src={SouthXchangeLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://cratex.io/index.php?pair=DINGO/LTC"
+                    >
+                      <img alt="" src={CratexIoLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.exbitron.com/trading/dingousdt"
+                    >
+                      <img alt="" src={ExbitronLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://dex-trade.com/spot/trading/DINGOUSDT"
+                    >
+                      <img alt="" src={DexTradeLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://dex.delion.online/market/DELION.DINGO_DOGE"
+                    >
+                      <img alt="" src={DelionDexLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+                    >
+                      <img alt="" src={PancakeSwap} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://raydium.io/swap/?from=11111111111111111111111111111111&to=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                    >
+                      <img alt="" src={RaydiumSwap} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://wrap.dingocoin.org"
+                    >
+                      <span>Wrap Custodian</span>
+                    </NavDropdown.Item>
+                  </div>
+                </NavDropdown>
+                <NavDropdown className="navbar-important" title="Community">
+                  <NavDropdown.Header>Fun and Activities</NavDropdown.Header>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
-                    href="https://www.xt.com/trade/dingo_usdt"
+                    href="https://nft.dingocoin.org/"
                   >
-                    <img alt="" src={XTCOMLogo} />
+                    <div className="inline-logo-holder">
+                      <Image src={NftLogo} />
+                    </div>{" "}
+                    NFT Platform
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
-                    href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
+                    href="https://discord.gg/fka9pZXxPB"
                   >
-                    <img alt="" src={HotbitLogo} />
+                    <div className="inline-logo-holder">
+                      <Image src={DingodiggersLogo} />
+                    </div>{" "}
+                    <span>Dingo Diggers</span>
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
-                    href="https://main.southxchange.com/Market/Book/DINGO/LTC"
+                    href="https://discord.gg/9advvJ4z5f"
                   >
-                    <img alt="" src={SouthXchangeLogo} />
+                    <div className="inline-logo-holder">
+                      <Image src={DingosinoLogo} />
+                    </div>{" "}
+                    Dingosino
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
-                    href="https://cratex.io/index.php?pair=DINGO/LTC"
+                    href="https://www.roblox.com/games/8019728893/Dingo-Coin-City"
                   >
-                    <img alt="" src={CratexIoLogo} />
+                    <div className="inline-logo-holder">
+                      <Image src={RobloxLogo} />
+                    </div>{" "}
+                    Dingocoin City (Roblox)
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
-                    href="https://www.exbitron.com/trading/dingousdt"
+                    href="http://miner.dingocoin.org/"
                   >
-                    <img alt="" src={ExbitronLogo} />
+                    <div className="inline-logo-holder">
+                      <Image src={DingominerLogo} />
+                    </div>{" "}
+                    Dingo Miner
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    href="/stake"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon icon={faChartLine} />
+                    </div>{" "}
+                    Stake Dingocoins
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
-                    href="https://dex-trade.com/spot/trading/DINGOUSDT"
+                    href="https://twitter.com/dingocoincrypto"
                   >
-                    <img alt="" src={DexTradeLogo} />
+                    <div className="inline-logo-holder">
+                      <Image src={SocialFaucetLogo} />
+                    </div>{" "}
+                    Weekly Airdrops (Twitter)
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
-                    href="https://dex.delion.online/market/DELION.DINGO_DOGE"
+                    href="https://cryptogrenade.xyz/"
                   >
-                    <img alt="" src={DelionDexLogo} />
+                    <div className="inline-logo-holder">
+                      <Image src={CryptoGrenadeLogo} />
+                    </div>{" "}
+                    CG's Faucet Platform
+                  </NavDropdown.Item>
+                  <NavDropdown.Header>Chats and Socials</NavDropdown.Header>
+                  <NavDropdown.Item
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://discord.gg/y3J946HFQM"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        icon={faDiscord}
+                        style={{ color: "#728ad6" }}
+                      />
+                    </div>{" "}
+                    Discord
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
-                    href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+                    href="https://t.me/DingoCoinTalk"
                   >
-                    <img alt="" src={PancakeSwap} />
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        icon={faTelegram}
+                        style={{ color: "#0088cc" }}
+                      />
+                    </div>{" "}
+                    Telegram
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
-                    href="https://raydium.io/swap/?from=11111111111111111111111111111111&to=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                    href="https://twitter.com/dingocoincrypto"
                   >
-                    <img alt="" src={RaydiumSwap} />
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        icon={faTwitter}
+                        style={{ color: "#0dace9" }}
+                      />
+                    </div>{" "}
+                    Twitter
                   </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Header>Resources</NavDropdown.Header>
+                  <NavDropdown.Item
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.instagram.com/dingocoin"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        style={{ color: "#ba248d" }}
+                      />
+                    </div>{" "}
+                    Instagram
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.reddit.com/r/dingocoin"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        icon={faReddit}
+                        style={{ color: "#fe4824" }}
+                      />
+                    </div>{" "}
+                    Reddit
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.facebook.com/Dingocoin.org/"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        icon={faFacebook}
+                        style={{ color: "#3b5a95" }}
+                      />
+                    </div>{" "}
+                    Facebook
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown className="navbar-important" title="Resources">
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
                     href="https://miningpoolstats.stream/dingocoin"
                   >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon icon={faHammer} />
+                    </div>{" "}
                     Mining Info
                   </NavDropdown.Item>
                   <NavDropdown.Item
@@ -236,19 +463,31 @@ function App() {
                     rel="noreferrer"
                     href="https://explorer.dingocoin.org/"
                   >
-                    Explorer (Official, with API)
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon icon={faMicroscope} />
+                    </div>{" "}
+                    Explorer (Official; API)
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
                     rel="noreferrer"
                     href="https://openchains.info/coin/dingocoin/blocks"
                   >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon icon={faMicroscope} />
+                    </div>{" "}
                     Explorer (Open Chains)
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/privacy">
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon icon={faUserSecret} />
+                    </div>{" "}
                     Privacy Policy
                   </NavDropdown.Item>
                 </NavDropdown>
+                <Nav.Link href="/trailmap">
+                  Trailmap
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
