@@ -1349,7 +1349,7 @@ function Main() {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://raydium.io/swap/?from=11111111111111111111111111111111&to=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3&outputAmount=0&fixed=in"
               >
                 <Button variant="outline-primary">
                   <img alt="" src={RaydiumSwap} />
