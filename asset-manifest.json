@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.28debde1.chunk.css",
-    "main.js": "/static/js/main.d47f5f57.chunk.js",
-    "main.js.map": "/static/js/main.d47f5f57.chunk.js.map",
+    "main.js": "/static/js/main.e2c81029.chunk.js",
+    "main.js.map": "/static/js/main.e2c81029.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.02b046c7.chunk.js": "/static/js/2.02b046c7.chunk.js",
@@ -46,7 +46,7 @@
     "static/media/wallet_linux.a3687e9b.png": "/static/media/wallet_linux.a3687e9b.png",
     "static/media/wallet_windows.4f4f5db9.png": "/static/media/wallet_windows.4f4f5db9.png",
     "static/media/wdingocoin.b75f159c.png": "/static/media/wdingocoin.b75f159c.png",
-    "static/media/wechatinvite.25408f42.png": "/static/media/wechatinvite.25408f42.png",
+    "static/media/wechatinvite.b9b75d13.png": "/static/media/wechatinvite.b9b75d13.png",
     "static/media/whybuy.838c8c2f.svg": "/static/media/whybuy.838c8c2f.svg",
     "static/media/windows.6d71d37d.png": "/static/media/windows.6d71d37d.png"
   },
@@ -54,6 +54,6 @@
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.02b046c7.chunk.js",
     "static/css/main.28debde1.chunk.css",
-    "static/js/main.d47f5f57.chunk.js"
+    "static/js/main.e2c81029.chunk.js"
   ]
 }
