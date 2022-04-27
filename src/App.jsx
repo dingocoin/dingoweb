@@ -628,6 +628,23 @@ function App() {
                 <a
                   target="_blank"
                   rel="noreferrer"
+                  href="https://t.me/DingoCoin_VietNam"
+                  className="socials-button-labelled"
+                >
+                  <div className="inner">
+                    <FontAwesomeIcon
+                      className="faicon"
+                      icon={faTelegram}
+                      style={{ color: "#0088cc" }}
+                    />
+                    <div className="inner-text">
+                      <span>tiếng Việt</span>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
                   href="https://t.me/Dingocoinpersian"
                   className="socials-button-labelled"
                 >
