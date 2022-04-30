@@ -669,14 +669,6 @@ function App() {
                     style={{ color: "#29bd00" }}
                   />
                 </div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://ss.transgot.cn/dingocoin_chian"
-                  className="socials-button"
-                >
-                  <Image src={BtokLogo} />
-                </a>
               </div>
             </Row>
           </Container>
