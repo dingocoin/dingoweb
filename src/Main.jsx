@@ -333,7 +333,6 @@ function Main() {
                     </Row>
                   </Container>
                 )}
-                <p style={{color: "red"}}><b>Warning: DO NOT TRADE AT UDONEX/UDONTRADE</b><br/>It is known to be a scam exchange.<br/>Many members have lost access to the coins they have deposited.</p>
                 {!infrastructureShow && (
                   <Button
                     className="popup-button px-4"
