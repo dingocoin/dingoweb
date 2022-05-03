@@ -71,6 +71,7 @@ import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
 import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
 import TrailmapImage from "./assets/img/trailmap.svg";
 import WhyBuyImage from "./assets/img/whybuy.svg";
+import ParrotImage from "./assets/img/parrot.gif";
 
 function Main() {
   async function get(link) {
@@ -223,21 +224,14 @@ function Main() {
           </Row>
           <Row>
             <div className="mt-4">
-              <p>
+              <Image src={ParrotImage} />
+              <p style={{ color: "blue", marginTop: "1rem" }}>
                 <b>
-                  Raising community funds for BitMart <u>and</u> LBank listings
+                  Listing on BitMart <u>and</u> LBank confirmed!
                   <br />
-                  Donate today to our multisig marketing fund:{" "}
-                  <code>A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP</code>
+                  Deposits open May 3, 8PM (UTC+8)
                 </b>
               </p>
-              <ProgressBar
-                style={{ height: "2rem" }}
-                now={(100 * 192730) / 200000}
-                label={<b>USD $192,730 / $200,000</b>}
-                animated
-                stripped
-              />
             </div>
           </Row>
         </Container>
@@ -944,7 +938,11 @@ function Main() {
                 </i>
               </p>
               <CustomDivider />
-              <Image style={{width: "100%", height: "auto"}} className="mt-2" src={WhyBuyImage} />
+              <Image
+                style={{ width: "100%", height: "auto" }}
+                className="mt-2"
+                src={WhyBuyImage}
+              />
             </FadeInSection>
           </Row>
         </Container>
