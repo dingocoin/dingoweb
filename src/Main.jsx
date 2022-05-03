@@ -227,7 +227,23 @@ function Main() {
               <Image src={ParrotImage} />
               <p style={{ color: "blue", marginTop: "1rem" }}>
                 <b>
-                  Listing on BitMart <u>and</u> LBank confirmed!
+                  Listing on{" "}
+                  <a
+                    href="https://support.bmx.fund/hc/en-us/articles/5617984226587"
+                    target="_blank"
+                    class="simple-link"
+                  >
+                    <u>BitMart</u>
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="https://twitter.com/LBank_Exchange/status/1519978555844796416?cxt=HHwWgIC59a-chpgqAAAA"
+                    target="_blank"
+                    className="simple-link"
+                  >
+                    <u>LBank</u>
+                  </a>{" "}
+                  confirmed!
                   <br />
                   Deposits open May 3, 8PM (UTC+8)
                 </b>
