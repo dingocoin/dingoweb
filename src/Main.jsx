@@ -227,7 +227,7 @@ function Main() {
               <Image src={ParrotImage} />
               <p style={{ color: "blue", marginTop: "1rem" }}>
                 <b>
-                  Listing on{" "}
+                  Listings on{" "}
                   <a
                     href="https://support.bmx.fund/hc/en-us/articles/5617984226587"
                     target="_blank"
