@@ -1480,15 +1480,15 @@ function Main() {
             <div className="d-flex flex-row justify-content-center flex-wrap">
               <div className="marketplace-card">
                 <div className="logo-holder mb-2">
-                  <Image src={MerchFormulaRunLogo} />
+                  <Image src={MerchDingocoinArtLogo} />
                 </div>
                 <a
                   target="_blank"
-                  href="https://dingocoinmerch.com/merch"
+                  href="https://dingomerch.creator-spring.com"
                   rel="noreferrer"
                 >
                   <Button className="popup-button" variant="primary">
-                    FormulaRun's Store
+                    ! Amandum's Store
                   </Button>
                 </a>
               </div>
