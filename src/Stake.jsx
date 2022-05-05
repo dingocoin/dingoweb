@@ -18,7 +18,7 @@ import DingocoinLogo from "./assets/img/dingocoin.png";
 
 import BigInt from "big-integer";
 
-const STAKE_REWARD = 2000000; // 2 Million.
+const STAKE_REWARD = 1000000; // 2 Million.
 const STAKE_INTERVAL = 10000; // 10k blocks.
 
 function Stake() {
@@ -270,7 +270,7 @@ function Stake() {
           <Row>
             <p className="mt-4">
               Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
-              Reward pool: <b>{(2000000).toLocaleString()} Dingocoins</b>.
+              Reward pool: <b>{(1000000).toLocaleString()} Dingocoins</b>.
             </p>
           </Row>
         </Container>
