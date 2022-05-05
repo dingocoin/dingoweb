@@ -244,8 +244,7 @@ function Main() {
                     className="simple-link"
                   >
                     <u>LBank</u>
-                  </a>{" "}
-                  confirmed!
+                  </a>
                 </b>
               </p>
             </div>
