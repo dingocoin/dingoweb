@@ -61,6 +61,8 @@ import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
+import LBankLogo from "./assets/img/lbanklogo.png";
+import BitmartLogo from "./assets/img/bitmartlogo.png";
 import WalletChrome from "./assets/img/wallet_chrome.png";
 import WalletFirefox from "./assets/img/wallet_firefox.png";
 import WalletWindows from "./assets/img/wallet_windows.png";
@@ -1066,6 +1068,8 @@ function Main() {
                   <p>
                     - <b>Happy Birthday, Dingocoin!</b>
                     <br /> - <b>Halve</b> block reward to 15,625
+                    <br />- <b>Listed</b> on LBank
+                    <br />- <b>Listed</b> on BitMart
                   </p>
                 </li>
               </FadeInSection>
@@ -1281,9 +1285,27 @@ function Main() {
               <a
                 target="_blank"
                 rel="noreferrer"
+                href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
+              >
+                <Button variant="outline">
+                  <img alt="" src={BitmartLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.lbank.info/exchange/dingo/usdt"
+              >
+                <Button variant="outline">
+                  <img alt="" src={LBankLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
                 href="https://www.xt.com/trade/dingo_usdt"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={XTCOMLogo} />
                 </Button>
               </a>
@@ -1292,7 +1314,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={HotbitLogo} />
                 </Button>
               </a>
@@ -1301,7 +1323,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://main.southxchange.com/Market/Book/DINGO/LTC"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={SouthXchangeLogo} />
                 </Button>
               </a>
@@ -1310,7 +1332,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://www.exbitron.com/trading/dingousdt"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={ExbitronLogo} />
                 </Button>
               </a>
@@ -1319,7 +1341,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://cratex.io/index.php?pair=DINGO/LTC"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={CratexIoLogo} />
                 </Button>
               </a>
@@ -1328,7 +1350,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://dex-trade.com/spot/trading/DINGOUSDT"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={DexTradeLogo} />
                 </Button>
               </a>
@@ -1337,7 +1359,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://dex.delion.online/market/DELION.DINGO_DOGE"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={DelionDexLogo} />
                 </Button>
               </a>
@@ -1356,7 +1378,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={PancakeSwap} />
                 </Button>
               </a>
@@ -1365,7 +1387,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3&outputAmount=0&fixed=in"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={RaydiumSwap} />
                 </Button>
               </a>
@@ -1384,7 +1406,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://coinpaprika.com/coin/dingo-dingocoin/"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={CoinPaprikaLogo} />
                 </Button>
               </a>
@@ -1393,7 +1415,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://coinmarketcap.com/currencies/dingocoin/"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={CoinMarketCapLogo} />
                 </Button>
               </a>
@@ -1402,7 +1424,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://www.coingecko.com/en/coins/dingocoin"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={CoinGeckoLogo} />
                 </Button>
               </a>
@@ -1411,7 +1433,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://coincodex.com/crypto/dingocoin/"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={CoinCodexLogo} />
                 </Button>
               </a>
@@ -1420,7 +1442,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={DexGuruLogo} />
                 </Button>
               </a>
@@ -1429,7 +1451,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={PooCoinLogo} />
                 </Button>
               </a>
@@ -1438,7 +1460,7 @@ function Main() {
                 rel="noreferrer"
                 href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
               >
-                <Button variant="outline-primary">
+                <Button variant="outline">
                   <img alt="" src={BirdeyeLogo} />
                 </Button>
               </a>

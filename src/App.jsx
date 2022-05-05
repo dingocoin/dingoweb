@@ -43,6 +43,8 @@ import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
+import LBankLogo from "./assets/img/lbanklogo.png";
+import BitmartLogo from "./assets/img/bitmartlogo.png";
 import GoogleChromeLogo from "./assets/img/googlechrome.png";
 import FirefoxLogo from "./assets/img/firefox.png";
 import WindowsLogo from "./assets/img/windows.png";
@@ -202,6 +204,20 @@ function App() {
                   </div>
                   <NavDropdown.Header>Exchanges</NavDropdown.Header>
                   <div className="d-flex flex-wrap navbar-panel justify-content-center">
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
+                    >
+                      <img alt="" src={BitmartLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.lbank.info/exchange/dingo/usdt"
+                    >
+                      <img alt="" src={LBankLogo} />
+                    </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
                       rel="noreferrer"
