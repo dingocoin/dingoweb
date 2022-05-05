@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.28debde1.chunk.css",
-    "main.js": "/static/js/main.a17dd093.chunk.js",
-    "main.js.map": "/static/js/main.a17dd093.chunk.js.map",
+    "main.js": "/static/js/main.a28047a7.chunk.js",
+    "main.js.map": "/static/js/main.a28047a7.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.0fb02801.chunk.js": "/static/js/2.0fb02801.chunk.js",
@@ -29,6 +29,7 @@
     "static/media/doucheydingos.474bbff9.gif": "/static/media/doucheydingos.474bbff9.gif",
     "static/media/exbitron.f8db04b6.png": "/static/media/exbitron.f8db04b6.png",
     "static/media/firefox.3ac76cfd.png": "/static/media/firefox.3ac76cfd.png",
+    "static/media/lbanklogo.ad1085ee.png": "/static/media/lbanklogo.ad1085ee.png",
     "static/media/macos.f33ee2ae.png": "/static/media/macos.f33ee2ae.png",
     "static/media/manifesto1.f61ef57d.png": "/static/media/manifesto1.f61ef57d.png",
     "static/media/manifesto2.bf57f5c2.jpg": "/static/media/manifesto2.bf57f5c2.jpg",
@@ -55,6 +56,6 @@
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.0fb02801.chunk.js",
     "static/css/main.28debde1.chunk.css",
-    "static/js/main.a17dd093.chunk.js"
+    "static/js/main.a28047a7.chunk.js"
   ]
 }
