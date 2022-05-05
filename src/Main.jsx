@@ -229,9 +229,9 @@ function Main() {
               <Image src={ParrotImage} />
               <p style={{ color: "blue", marginTop: "1rem" }}>
                 <b>
-                  Listings on{" "}
+                  We are listed on{" "}
                   <a
-                    href="https://support.bmx.fund/hc/en-us/articles/5617984226587"
+                    href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
                     target="_blank"
                     class="simple-link"
                   >
@@ -239,15 +239,13 @@ function Main() {
                   </a>{" "}
                   and{" "}
                   <a
-                    href="https://twitter.com/LBank_Exchange/status/1519978555844796416?cxt=HHwWgIC59a-chpgqAAAA"
+                    href="https://www.lbank.info/exchange/dingo/usdt"
                     target="_blank"
                     className="simple-link"
                   >
                     <u>LBank</u>
                   </a>{" "}
                   confirmed!
-                  <br />
-                  Deposits open May 3, 8PM (UTC+8)
                 </b>
               </p>
             </div>
