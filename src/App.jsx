@@ -675,16 +675,6 @@ function App() {
                     </div>
                   </div>
                 </a>
-                <div
-                  onClick={() => setWechatModalShow(true)}
-                  className="socials-button"
-                >
-                  <FontAwesomeIcon
-                    className="faicon"
-                    icon={faWeixin}
-                    style={{ color: "#29bd00" }}
-                  />
-                </div>
               </div>
             </Row>
           </Container>
