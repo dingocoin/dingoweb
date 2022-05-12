@@ -270,7 +270,7 @@ function Stake() {
           <Row>
             <p className="mt-4">
               Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
-              Reward pool: <b>{(1000000).toLocaleString()} Dingocoins</b>.
+              Reward pool: <b>{(STAKE_REWARD).toLocaleString()} Dingocoins</b>.
             </p>
           </Row>
         </Container>
