@@ -18,7 +18,7 @@ import DingocoinLogo from "./assets/img/dingocoin.png";
 
 import BigInt from "big-integer";
 
-const STAKE_REWARD = 1000000; // 2 Million.
+const STAKE_REWARD = 750000; // 2 Million.
 const STAKE_INTERVAL = 10000; // 10k blocks.
 
 function Stake() {
