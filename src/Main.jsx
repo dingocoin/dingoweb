@@ -837,7 +837,7 @@ function Main() {
             </div>
           </FadeInSection>
           <FadeInSection>
-            <div className="d-flex flex-column">
+            <div className="mt-5 d-flex flex-column">
               {previewNfts !== null && (
                 <div className="mt-1">
                   <SideScroller
