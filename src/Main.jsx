@@ -218,7 +218,7 @@ function Main() {
           <div className="d-lg-none">
             <div className="d-flex flex-column py-5">
               <Image
-                className="logo my-auto mx-auto"
+                className="logo-mobile my-auto mx-auto"
                 src={DingocoinAnimatedLogo}
               />
               <div className="d-flex flex-column me-auto mt-4 mb-auto">
