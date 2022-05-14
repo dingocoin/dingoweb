@@ -265,6 +265,8 @@ a.simple-link:hover {
 }
 
 .masthead {
+  padding-left: 1rem;
+  padding-right: 1rem;
   background: $primary;
   color: $light;
   .title {
@@ -283,6 +285,8 @@ a.simple-link:hover {
 }
 
 .accessibility {
+  padding-left: 1rem;
+  padding-right: 1rem;
   background: $secondary;
   .description {
     .title {
@@ -298,7 +302,7 @@ a.simple-link:hover {
         height: auto;
       }
       .demo {
-        height: 3.5rem;
+        height: 2.5rem;
         width: auto;
       }
     }
@@ -312,6 +316,8 @@ a.simple-link:hover {
 }
 
 .listings {
+  padding-left: 1rem;
+  padding-right: 1rem;
   background: $secondary;
   .description {
     .title {
@@ -341,6 +347,8 @@ a.simple-link:hover {
 }
 
 .community {
+  padding-left: 1rem;
+  padding-right: 1rem;
   background: $secondary;
   .description {
     .title {
@@ -356,7 +364,7 @@ a.simple-link:hover {
         height: auto;
       }
       .demo {
-        height: 3.5rem;
+        height: 2.5rem;
         width: auto;
       }
     }
@@ -370,6 +378,8 @@ a.simple-link:hover {
 }
 
 .dyor {
+  padding-left: 1rem;
+  padding-right: 1rem;
   .description {
     .title {
       max-width: 50%;

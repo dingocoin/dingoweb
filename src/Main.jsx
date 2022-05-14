@@ -283,7 +283,7 @@ function Main() {
                   DingoTip, you will be able to send coins directly across phone
                   numbers.
                 </p>
-                <div className="d-flex flex-row mt-2 justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start">
+                <div className="d-flex flex-row mt-2 justify-content-center justify-content-lg-start justify-content-xl-start">
                   <Button
                     className="btn-primary px-4 py-2"
                     onClick={() => setWalletsModalShow(true)}
@@ -330,7 +330,7 @@ function Main() {
                   listing rampage is planned to continue, with the final goal
                   clear and near - top 5, then top 3, then Binance.
                 </p>
-                <div className="d-flex flex-row mt-2 justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start">
+                <div className="d-flex flex-row mt-2 justify-content-center justify-content-md-center justify-content-lg-start justify-content-xl-start">
                   <Button
                     className="btn-primary me-3 px-4 py-2"
                     onClick={() => setExchangesModalShow(true)}
@@ -881,7 +881,7 @@ function Main() {
       <section className="dyor">
         <Container className="py-5">
           <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
-            <div className="d-flex flex-column title ms-auto">
+            <div className="d-flex flex-column title">
               <FadeInSection>
                 <h2 className="text-primary mb-4 text-center">
                   Severely undervalued - Do Your Own Research
@@ -1074,7 +1074,7 @@ function Main() {
                 <h5 className="mb-3">Browser Wallets</h5>
               </Col>
             </Row>
-            <Row className="wallets-container justify-content-md-center">
+            <Row className="wallets-container justify-content-center">
               <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
                   <Image src={WalletChrome} />
@@ -1114,7 +1114,7 @@ function Main() {
                 <h5 className="mb-3">Full Node Desktop Wallets</h5>
               </Col>
             </Row>
-            <Row className="wallets-container justify-content-md-center">
+            <Row className="wallets-container justify-content-center">
               <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
                   <Image src={WalletWindows} />
@@ -1165,7 +1165,7 @@ function Main() {
                 <h5 className="mb-3">Unofficial Wallets</h5>
               </Col>
             </Row>
-            <Row className="wallets-container justify-content-md-center">
+            <Row className="wallets-container justify-content-center">
               <div className="wallets-card mb-4">
                 <div className="logo-holder mb-2">
                   <FontAwesomeIcon className="faicon" icon={faGlobe} />
@@ -1229,7 +1229,7 @@ function Main() {
                 <h5>Buy Dingocoin</h5>
               </Col>
             </Row>
-            <Row className="justify-content-md-center">
+            <Row className="justify-content-center">
               <a
                 target="_blank"
                 rel="noreferrer"
