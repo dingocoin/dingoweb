@@ -188,7 +188,7 @@ function Main() {
             <div className="d-flex flex-row py-5">
               <div className="d-flex flex-column me-auto my-5">
                 <h1 className="title text-left">
-                  Community Development for Worldwide Adoption
+                  Community Development. Worldwide Adoption.
                 </h1>
                 <p className="lead mt-4 mb-5 text-left ms-0 me-auto">
                   Dingocoin is the most successful cryptocurrency fork of
@@ -339,7 +339,7 @@ function Main() {
                   </Button>
                   {!infrastructureShow && (
                     <Button
-                      className="btn-primary me-3 px-4 py-2"
+                      className="btn-primary px-4 py-2"
                       onClick={() => setInfrastructureShow(true)}
                     >
                       Technical Details
@@ -855,15 +855,18 @@ function Main() {
                   <Spinner animation="border" className="m-auto" />
                 </div>
               )}
-              <a
-                href="https://nft.dingocoin.org"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Button className="mt-3 mx-auto px-4 py-2" variant="primary">
-                  Dingocoin NFT platform
-                </Button>
-              </a>
+              <div className="d-flex flex-row">
+                <a
+                  className="mx-auto mt-3"
+                  href="https://nft.dingocoin.org"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Button className="px-4 py-2" variant="primary">
+                    Dingocoin NFT platform
+                  </Button>
+                </a>
+              </div>
               <p className="text-center mt-3">
                 Experience the next generation of NFTs. Create and trade NFTs on
                 our very own NFT platform. Pay less than {"<$0.001"} gas fees.
