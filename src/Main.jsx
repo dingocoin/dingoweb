@@ -223,7 +223,7 @@ function Main() {
               />
               <div className="d-flex flex-column me-auto mt-4 mb-auto">
                 <h1 className="title text-center">
-                  Community Development for Worldwide Adoption
+                  Community Development. Worldwide Adoption.
                 </h1>
                 <p className="lead mt-4 text-center mx-auto">
                   Dingocoin is the most successful cryptocurrency fork of
