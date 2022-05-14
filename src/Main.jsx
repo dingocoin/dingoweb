@@ -1278,6 +1278,15 @@ function Main() {
               <a
                 target="_blank"
                 rel="noreferrer"
+                href="https://wallet.autradex.systems/"
+              >
+                <Button variant="outline">
+                  <img alt="" src={AutradexLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
                 href="https://www.exbitron.com/trading/dingousdt"
               >
                 <Button variant="outline">

@@ -28,6 +28,7 @@ import {
 } from "react-bootstrap";
 
 // Assets.
+import AutradexLogo from "./assets/img/autradex.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
 import CoinMarketCapLogo from "./assets/img/coinmarketcap.png";
@@ -69,6 +70,7 @@ import {
   faHammer,
   faMicroscope,
   faUserSecret,
+  faComment
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WechatInvite from "./assets/img/wechatinvite.png";
@@ -238,6 +240,13 @@ function App() {
                       href="https://main.southxchange.com/Market/Book/DINGO/LTC"
                     >
                       <img alt="" src={SouthXchangeLogo} />
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://wallet.autradex.systems/"
+                    >
+                      <img alt="" src={AutradexLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
@@ -449,6 +458,18 @@ function App() {
                     </div>{" "}
                     Facebook
                   </NavDropdown.Item>
+                  <NavDropdown.Item
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfBw1SJJWcM1eLY_1oFS9iNdKn7fJapKl5zqwraP1TSvXu5VA/viewform?usp=sf_link"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        icon={faComment}
+                      />
+                    </div>{" "}
+                    Feedback
+                  </NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown className="navbar-important" title="Resources">
                   <NavDropdown.Item
@@ -460,6 +481,16 @@ function App() {
                       <FontAwesomeIcon icon={faHammer} />
                     </div>{" "}
                     Mining Info
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://docs.google.com/presentation/d/1HSe8sbY6HtCS7rUwpw5UkjguVKy4KJPRlfQ0apgCfDM/edit?usp=sharing"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon icon={faHammer} />
+                    </div>{" "}
+                    Mining Guide
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
