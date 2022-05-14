@@ -253,9 +253,9 @@ function Main() {
                 src={DingocoinAnimatedLogo}
               />
               <div className="d-flex flex-column me-auto mt-4 mb-auto">
-                <h1 className="title text-center">
+                <h2 className="title text-center">
                   Community Development. Worldwide Adoption.
-                </h1>
+                </h2>
                 <p className="lead mt-2 text-center mx-auto">
                   Dingocoin is the most successful cryptocurrency fork of
                   Dogecoin, with revolutionary innovations and unstoppable

@@ -14,7 +14,15 @@ $theme-colors: (
 
 .App {
   background-color: $secondary;
-  font-family: "Arvo", sans-serif;
+  font-family: "Lato";
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .nav-item, button {
+  font-family: "Arvo" !important;
+}
+
+.nav-item .dropdown-item {
+  font-family: "Lato" !important;
 }
 
 a:link {
