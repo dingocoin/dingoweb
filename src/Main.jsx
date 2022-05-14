@@ -193,7 +193,7 @@ function Main() {
                 <p className="lead mt-4 mb-5 text-left ms-0 me-auto">
                   Dingocoin is the most successful cryptocurrency fork of
                   Dogecoin, with revolutionary innovations and unstoppable
-                  developments; building an enthusiastic community, to bring
+                  developments. Building an enthusiastic community, we bring
                   utility and fun to world.
                 </p>
                 <div className="mb-5 d-flex flex-row me-auto">
@@ -228,7 +228,7 @@ function Main() {
                 <p className="lead mt-4 text-center mx-auto">
                   Dingocoin is the most successful cryptocurrency fork of
                   Dogecoin, with revolutionary innovations and unstoppable
-                  developments; building an enthusiastic community, to bring
+                  developments. Building an enthusiastic community, we bring
                   utility and fun to world.
                 </p>
                 <div className="d-flex flex-row mx-auto mt-5">
