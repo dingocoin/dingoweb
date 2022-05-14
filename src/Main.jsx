@@ -396,164 +396,155 @@ function Main() {
               </Container>
             )}
             {infrastructureShow && (
+              <div className="d-flex flex-row flex-wrap justify-content-center">
+                <div className="project-card">
+                  <div>
+                    <div className="logo-holder">
+                      <Image src={DingocoinLogo} />
+                    </div>
+                    <h5>Dingocoin</h5>
+                    <p>
+                      <a
+                        className="simple-link"
+                        onClick={() => {
+                          setExchangesModalShow(true);
+                        }}
+                      >
+                        Buy &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://coinpaprika.com/coin/dingo-dingocoin/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        Chart &#9658;
+                      </a>
+                      <br />
+                      <a
+                        className="simple-link"
+                        onClick={() => {
+                          setWalletsModalShow(true);
+                        }}
+                      >
+                        Wallets &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/dingocoin/dingocoin"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        Source &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://miningpoolstats.stream/dingocoin"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        Mine &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div className="project-card">
+                  <div>
+                    <div className="logo-holder">
+                      <Image src={WDingocoinLogo} /> <Image src={BSCLogo} />
+                    </div>
+                    <h5>wDingocoin (BSC)</h5>
+                    <p>
+                      <a
+                        className="simple-link"
+                        onClick={() => {
+                          setExchangesModalShow(true);
+                        }}
+                      >
+                        Buy &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        Chart &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        Contract &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://wrap.dingocoin.org"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        Wrap &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div className="project-card">
+                  <div>
+                    <div className="logo-holder">
+                      <Image src={WDingocoinLogo} /> <Image src={SOLLogo} />
+                    </div>
+                    <h5>wDingocoin (SOL)</h5>
+                    <p>
+                      <a
+                        className="simple-link"
+                        onClick={() => {
+                          setExchangesModalShow(true);
+                        }}
+                      >
+                        Buy &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        Chart &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        SPL &#9658;
+                      </a>
+                      <br />
+                      <a
+                        href="https://wrap.dingocoin.org"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="simple-link"
+                      >
+                        Wrap &#9658;
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+            {infrastructureShow && (
               <Container>
-                <Row
-                  xs={2}
-                  md={3}
-                  lg={3}
-                  className="projects justify-content-center"
-                >
-                  <Col>
-                    <div className="project-card">
-                      <div>
-                        <div className="logo-holder">
-                          <Image src={DingocoinLogo} />
-                        </div>
-                        <h5>Dingocoin</h5>
-                        <p>
-                          <a
-                            className="simple-link"
-                            onClick={() => {
-                              setExchangesModalShow(true);
-                            }}
-                          >
-                            Buy &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://coinpaprika.com/coin/dingo-dingocoin/"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Chart &#9658;
-                          </a>
-                          <br />
-                          <a
-                            className="simple-link"
-                            onClick={() => {
-                              setWalletsModalShow(true);
-                            }}
-                          >
-                            Wallets &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://github.com/dingocoin/dingocoin"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Source &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://miningpoolstats.stream/dingocoin"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Mine &#9658;
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div>
-                        <div className="logo-holder">
-                          <Image src={WDingocoinLogo} /> <Image src={BSCLogo} />
-                        </div>
-                        <h5>wDingocoin (BSC)</h5>
-                        <p>
-                          <a
-                            className="simple-link"
-                            onClick={() => {
-                              setExchangesModalShow(true);
-                            }}
-                          >
-                            Buy &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Chart &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Contract &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://wrap.dingocoin.org"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Wrap &#9658;
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div>
-                        <div className="logo-holder">
-                          <Image src={WDingocoinLogo} /> <Image src={SOLLogo} />
-                        </div>
-                        <h5>wDingocoin (SOL)</h5>
-                        <p>
-                          <a
-                            className="simple-link"
-                            onClick={() => {
-                              setExchangesModalShow(true);
-                            }}
-                          >
-                            Buy &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Chart &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            SPL &#9658;
-                          </a>
-                          <br />
-                          <a
-                            href="https://wrap.dingocoin.org"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="simple-link"
-                          >
-                            Wrap &#9658;
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-                </Row>
                 <Row
                   xs={1}
                   md={3}
