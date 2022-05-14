@@ -855,9 +855,15 @@ function Main() {
                   <Spinner animation="border" className="m-auto" />
                 </div>
               )}
-              <Button className="mt-3 mx-auto px-4 py-2" variant="primary">
-                Dingocoin NFT platform
-              </Button>
+              <a
+                href="https://nft.dingocoin.org"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Button className="mt-3 mx-auto px-4 py-2" variant="primary">
+                  Dingocoin NFT platform
+                </Button>
+              </a>
               <p className="text-center mt-3">
                 Experience the next generation of NFTs. Create and trade NFTs on
                 our very own NFT platform. Pay less than {"<$0.001"} gas fees.
