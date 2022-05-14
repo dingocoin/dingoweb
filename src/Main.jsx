@@ -78,6 +78,37 @@ import XTCOMLogo from "./assets/img/xtcom.png";
 import { faAndroid } from "@fortawesome/free-brands-svg-icons";
 import NftLogo from "./assets/img/dingocoinnftplatform.png";
 
+function AccessibilityPreview() {
+  return (
+    <div className="d-flex flex-row flex-wrap justify-content-center">
+      <Image className="demo mx-3" src={WalletChrome} />
+      <Image className="demo mx-3" src={WalletFirefox} />
+      <Image className="demo mx-3" src={WalletWindows} />
+      <Image className="demo mx-3" src={WalletApple} />
+      <Image className="demo mx-3" src={WalletLinux} />
+    </div>
+  );
+}
+
+function ListingsPreview() {
+  return (
+    <div className="d-flex flex-row flex-wrap justify-content-center">
+      <Image className="demo mx-3 my-3" src={BitmartLogo} />
+      <Image className="demo mx-3 my-3" src={LBankLogo} />
+      <Image className="demo mx-3 my-3" src={XTCOMLogo} />
+      <Image className="demo mx-3 my-3" src={HotbitLogo} />
+      <Image className="demo mx-3 my-3" src={SouthXchangeLogo} />
+      <Image className="demo mx-3 my-3" src={AutradexLogo} />
+      <Image className="demo mx-3 my-3" src={CratexIoLogo} />
+      <Image className="demo mx-3 my-3" src={ExbitronLogo} />
+      <Image className="demo mx-3 my-3" src={DexTradeLogo} />
+      <Image className="demo mx-3 my-3" src={DelionDexLogo} />
+      <Image className="demo mx-3 my-3" src={PancakeSwap} />
+      <Image className="demo mx-3 my-3" src={RaydiumSwap} />
+    </div>
+  );
+}
+
 function Main() {
   async function get(link) {
     const controller = new AbortController();
@@ -252,23 +283,19 @@ function Main() {
       </header>
 
       <section className="accessibility">
-        <Container className="py-5">
+        <Container className="py-2 py-lg-5 mt-2 mt-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description">
             <div className="d-flex flex-column title">
               <FadeInSection>
-                <h2 className="text-primary mb-4 text-center">
+                <h2 className="text-primary text-center px-0 px-lg-1">
                   Setting the Gold Standard for accessibility
                 </h2>
-                <div className="d-flex flex-row flex-wrap justify-content-center">
-                  <Image className="demo mx-3" src={WalletChrome} />
-                  <Image className="demo mx-3" src={WalletFirefox} />
-                  <Image className="demo mx-3" src={WalletWindows} />
-                  <Image className="demo mx-3" src={WalletApple} />
-                  <Image className="demo mx-3" src={WalletLinux} />
+                <div className="mt-2 d-none d-lg-block">
+                  <AccessibilityPreview />
                 </div>
               </FadeInSection>
             </div>
-            <div className="d-flex flex-column lead mt-3">
+            <div className="d-flex flex-column lead px-0 px-lg-1">
               <FadeInSection>
                 <p>
                   Dingocoin provides accessibility unparalleled by similar meme
@@ -298,14 +325,14 @@ function Main() {
       </section>
 
       <section className="listings">
-        <Container className="py-5">
+        <Container className="py-2 py-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
-            <div className="d-flex flex-column title">
+            <div className="d-flex flex-column title px-0 px-lg-1">
               <FadeInSection>
-                <h2 className="text-primary mb-4 text-center">
+                <h2 className="text-primary text-center">
                   A highly ambitious growth strategy
                 </h2>
-                <div className="d-flex flex-row flex-wrap justify-content-center">
+                <div className="mt-2 d-flex flex-row flex-wrap justify-content-center">
                   <Image className="demo mx-3 my-3" src={BitmartLogo} />
                   <Image className="demo mx-3 my-3" src={LBankLogo} />
                   <Image className="demo mx-3 my-3" src={XTCOMLogo} />
@@ -321,14 +348,14 @@ function Main() {
                 </div>
               </FadeInSection>
             </div>
-            <div className="d-flex flex-column lead mb-4 mt-3">
+            <div className="d-flex flex-column lead mb-4 px-0 px-lg-1">
               <FadeInSection>
                 <p>
                   Dingocoin aims to make itself highly available to everyone in
-                  the world. We have had 12 listings in just a single year of
-                  age, a rate hardly matched by similar meme currencies. Our
-                  listing rampage is planned to continue, with the final goal
-                  clear and near - top 5, then top 3, then Binance.
+                  the world. With 12 listings in just one year of age, our
+                  expansion is matched by no oter meme currencies. Our listing
+                  rampage is planned to continue, with the final goal clear and
+                  near - top 5, then top 3, then Binance.
                 </p>
                 <div className="d-flex flex-row mt-2 justify-content-center justify-content-md-center justify-content-lg-start justify-content-xl-start">
                   <Button
@@ -352,48 +379,33 @@ function Main() {
 
           <FadeInSection>
             {!infrastructureShow && (
-              <Container>
-                <Row
-                  xs={1}
-                  md={3}
-                  lg={3}
-                  className="projectFactsWrap justify-content-center"
-                >
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoPrice === null
-                          ? "-"
-                          : "$" + dingoPrice.toFixed(7)}
-                      </p>
-                      <span></span>
-                      <p>Dingocoin price</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoCap === null
-                          ? "-"
-                          : "$" + Math.floor(dingoCap).toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>Dingocoin marketcap</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoVolume === null
-                          ? "-"
-                          : "$" + Math.floor(dingoVolume).toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>24h volume</p>
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
+              <div className="d-flex flex-row flex-wrap justify-content-center projectFactsWrap">
+                <div className="item">
+                  <p className="number">
+                    {dingoPrice === null ? "-" : "$" + dingoPrice.toFixed(7)}
+                  </p>
+                  <span></span>
+                  <p>Dingocoin price</p>
+                </div>
+                <div className="item">
+                  <p className="number">
+                    {dingoCap === null
+                      ? "-"
+                      : "$" + Math.floor(dingoCap).toLocaleString()}
+                  </p>
+                  <span></span>
+                  <p>Dingocoin marketcap</p>
+                </div>
+                <div className="item">
+                  <p className="number">
+                    {dingoVolume === null
+                      ? "-"
+                      : "$" + Math.floor(dingoVolume).toLocaleString()}
+                  </p>
+                  <span></span>
+                  <p>24h volume</p>
+                </div>
+              </div>
             )}
             {infrastructureShow && (
               <div className="d-flex flex-row flex-wrap justify-content-center">
@@ -544,115 +556,89 @@ function Main() {
               </div>
             )}
             {infrastructureShow && (
-              <Container>
-                <Row
-                  xs={1}
-                  md={3}
-                  lg={3}
-                  className="projectFactsWrap justify-content-center"
-                >
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoPrice === null
-                          ? "-"
-                          : "$" + dingoPrice.toFixed(7)}
-                      </p>
-                      <span></span>
-                      <p>Dingocoin price</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoCap === null
-                          ? "-"
-                          : "$" + Math.floor(dingoCap).toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>Dingocoin marketcap</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoVolume === null
-                          ? "-"
-                          : "$" + Math.floor(dingoVolume).toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>24h volume</p>
-                    </div>
-                  </Col>
-                </Row>
-                <Row
-                  xs={2}
-                  md={2}
-                  lg={4}
-                  className="projectFactsWrap justify-content-center"
-                >
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoStats === null
-                          ? "-"
-                          : (
-                              Math.floor(dingoStats.supply / 10000000) / 100
-                            ).toLocaleString() + " B"}
-                      </p>
-                      <span></span>
-                      <p>Dingocoin supply</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoStats === null
-                          ? "-"
-                          : dingoStats.blocks.toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>Blocks mined</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoStats === null
-                          ? "-"
-                          : dingoStats.blockReward.toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>Current block reward</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="item">
-                      <p className="number">
-                        {dingoStats === null
-                          ? "-"
-                          : dingoStats.blocksToHalving.toLocaleString()}
-                      </p>
-                      <span></span>
-                      <p>Blocks to next halving</p>
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
+              <div>
+                <div className="d-flex flex-row flex-wrap justify-content-center projectFactsWrap">
+                  <div className="item">
+                    <p className="number">
+                      {dingoPrice === null ? "-" : "$" + dingoPrice.toFixed(7)}
+                    </p>
+                    <span></span>
+                    <p>Dingocoin price</p>
+                  </div>
+                  <div className="item">
+                    <p className="number">
+                      {dingoCap === null
+                        ? "-"
+                        : "$" + Math.floor(dingoCap).toLocaleString()}
+                    </p>
+                    <span></span>
+                    <p>Dingocoin marketcap</p>
+                  </div>
+                  <div className="item">
+                    <p className="number">
+                      {dingoVolume === null
+                        ? "-"
+                        : "$" + Math.floor(dingoVolume).toLocaleString()}
+                    </p>
+                    <span></span>
+                    <p>24h volume</p>
+                  </div>
+                </div>
+                <div className="d-flex flex-row flex-wrap justify-content-center projectFactsWrap">
+                  <div className="item">
+                    <p className="number">
+                      {dingoStats === null
+                        ? "-"
+                        : (
+                            Math.floor(dingoStats.supply / 10000000) / 100
+                          ).toLocaleString() + " B"}
+                    </p>
+                    <span></span>
+                    <p>Dingocoin supply</p>
+                  </div>
+                  <div className="item">
+                    <p className="number">
+                      {dingoStats === null
+                        ? "-"
+                        : dingoStats.blocks.toLocaleString()}
+                    </p>
+                    <span></span>
+                    <p>Blocks mined</p>
+                  </div>
+                  <div className="item">
+                    <p className="number">
+                      {dingoStats === null
+                        ? "-"
+                        : dingoStats.blockReward.toLocaleString()}
+                    </p>
+                    <span></span>
+                    <p>Current block reward</p>
+                  </div>
+                  <div className="item">
+                    <p className="number">
+                      {dingoStats === null
+                        ? "-"
+                        : dingoStats.blocksToHalving.toLocaleString()}
+                    </p>
+                    <span></span>
+                    <p>Blocks to next halving</p>
+                  </div>
+                </div>
+              </div>
             )}
           </FadeInSection>
         </Container>
       </section>
 
       <section className="community">
-        <Container className="py-5">
+        <Container className="py-2 py-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
             <div className="d-flex flex-column title">
               <FadeInSection>
-                <h2 className="text-primary mb-4 text-center">
+                <h2 className="text-primary text-center">
                   Non-stop community developments
                 </h2>
-                <div className="d-flex flex-row flex-wrap justify-content-center mb-4">
+                <div className="mt-2 flex-row flex-wrap justify-content-center mb-4 d-none d-lg-flex">
                   <Image className="demo mx-3" src={NftLogo} />
                   <Image className="demo mx-3" src={DingodiggersLogo} />
                   <Image className="demo mx-3" src={DingosinoLogo} />
@@ -661,14 +647,15 @@ function Main() {
                 </div>
               </FadeInSection>
             </div>
-            <div className="d-flex flex-column lead mt-3">
+            <div className="d-flex flex-column lead">
               <FadeInSection>
                 <p>
                   The Dingocoin community always finds new ideas for Dingocoin.
-                  From our very own NFT platform, to Discord and Roblox games,
-                  to staking, airdrops, and faucets - explore the galore of
-                  games, utilities, and activities produced by our very own
-                  members. Even better, contribute your own ideas!
+                  We build legitimate value and purpose into Dingocoin - from
+                  our very own NFT platform, to Discord and Roblox games, to
+                  staking, airdrops, and faucet. Explore the galore of games,
+                  utilities, and activities produced by our very own members.
+                  Even better, contribute your own ideas!
                 </p>
               </FadeInSection>
             </div>
@@ -828,7 +815,7 @@ function Main() {
             </div>
           </FadeInSection>
           <FadeInSection>
-            <div className="mt-5 d-flex flex-column">
+            <div className="mt-3 d-flex flex-column">
               {previewNfts !== null && (
                 <div className="mt-1">
                   <SideScroller
@@ -879,16 +866,16 @@ function Main() {
       </section>
 
       <section className="dyor">
-        <Container className="py-5">
+        <Container className="py-2 py-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
             <div className="d-flex flex-column title">
               <FadeInSection>
-                <h2 className="text-primary mb-4 text-center">
+                <h2 className="text-primary text-center">
                   Severely undervalued - Do Your Own Research
                 </h2>
               </FadeInSection>
             </div>
-            <div className="d-flex flex-column lead mt-3">
+            <div className="d-flex flex-column lead">
               <FadeInSection>
                 <p>
                   We have <b>&gt; 10x</b> the developments of similar meme
@@ -904,7 +891,6 @@ function Main() {
           <FadeInSection>
             <Image
               style={{ width: "100%", height: "auto" }}
-              className="mt-2"
               src={WhyBuyImage}
             />
           </FadeInSection>

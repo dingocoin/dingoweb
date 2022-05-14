@@ -343,7 +343,7 @@ a.simple-link:hover {
         height: auto;
       }
       .demo {
-        height: 1.5rem;
+        height: 1rem;
         width: auto;
       }
     }
@@ -467,9 +467,9 @@ a.simple-link:hover {
 
 .project-card {
   text-align: center;
-  padding: 1rem;
-  width: 18rem;
-  height: 16rem;
+  width: 16rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .project-card .logo-holder {
@@ -677,6 +677,7 @@ a.simple-link:hover {
   text-align: center;
   padding: 1rem;
   margin: 0rem;
+  width: 10rem;
 }
 
 .projectFactsWrap .item p.number {
