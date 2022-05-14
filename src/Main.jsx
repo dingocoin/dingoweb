@@ -30,50 +30,53 @@ import {
   faWallet,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
-import { faAndroid } from "@fortawesome/free-brands-svg-icons";
+import AutradexLogo from "./assets/img/autradex.png";
 import BSCLogo from "./assets/img/bsc.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
+import BitmartLogo from "./assets/img/bitmartlogo.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
 import CoinGeckoLogo from "./assets/img/coingecko.png";
 import CoinMarketCapLogo from "./assets/img/coinmarketcap.png";
 import CoinPaprikaLogo from "./assets/img/coinpaprika.png";
 import CratexIoLogo from "./assets/img/cratexio.png";
+import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
 import DelionDexLogo from "./assets/img/deliondex.png";
 import DexGuruLogo from "./assets/img/dex-guru.png";
 import DexTradeLogo from "./assets/img/dextrade.png";
 import DingetteLogo from "./assets/img/dingette.png";
+import DingocoinAnimatedLogo from "./assets/img/dingocoin-rotate.gif";
 import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
 import DingodiggersLogo from "./assets/img/dingodigger.png";
 import DingominerLogo from "./assets/img/dingominer.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
+import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
 import ExbitronLogo from "./assets/img/exbitron.png";
 import HotbitLogo from "./assets/img/hotbitex.png";
+import LBankLogo from "./assets/img/lbanklogo.png";
 import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
 import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
 import MerchFormulaRunLogo from "./assets/img/merch_formularun.png";
+import NFTCard from "./NftCard.jsx";
 import PancakeSwap from "./assets/img/pancakeswap.png";
+import ParrotImage from "./assets/img/parrot.gif";
 import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
 import RobloxLogo from "./assets/img/roblox.png";
 import SOLLogo from "./assets/img/sol.png";
 import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
+import TrailmapImage from "./assets/img/trailmap.svg";
 import WDingocoinLogo from "./assets/img/wdingocoin.png";
-import XTCOMLogo from "./assets/img/xtcom.png";
-import LBankLogo from "./assets/img/lbanklogo.png";
-import BitmartLogo from "./assets/img/bitmartlogo.png";
+import WalletApple from "./assets/img/wallet_apple.png";
 import WalletChrome from "./assets/img/wallet_chrome.png";
 import WalletFirefox from "./assets/img/wallet_firefox.png";
-import WalletWindows from "./assets/img/wallet_windows.png";
-import WalletApple from "./assets/img/wallet_apple.png";
 import WalletLinux from "./assets/img/wallet_linux.png";
-import NFTCard from "./NftCard.jsx";
-import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
-import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
-import TrailmapImage from "./assets/img/trailmap.svg";
+import WalletWindows from "./assets/img/wallet_windows.png";
 import WhyBuyImage from "./assets/img/whybuy.svg";
-import ParrotImage from "./assets/img/parrot.gif";
+import XTCOMLogo from "./assets/img/xtcom.png";
+import { faAndroid } from "@fortawesome/free-brands-svg-icons";
+import NftLogo from "./assets/img/dingocoinnftplatform.png";
 
 function Main() {
   async function get(link) {
@@ -178,794 +181,741 @@ function Main() {
 
   return (
     <div>
-      <header className="section-a" id="home">
-        <Container className="masthead">
-          <Row>
-            <Col>
-              <div className="isometric-holder">
-                <div
-                  className={loaded ? "isometric" : "isometric preload"}
-                ></div>
+      <header id="home" className="masthead">
+        <Container>
+          {/* Desktop view */}
+          <div className="d-none d-lg-block">
+            <div className="d-flex flex-row py-5">
+              <div className="d-flex flex-column me-auto my-5">
+                <h1 className="title text-left">
+                  Community Development for Worldwide Adoption
+                </h1>
+                <p className="lead mt-4 mb-5 text-left ms-0 me-auto">
+                  Dingocoin is the most successful cryptocurrency fork of
+                  Dogecoin, with revolutionary innovations and unstoppable
+                  developments; building an enthusiastic community, to bring
+                  utility and fun to world.
+                </p>
+                <div className="mb-5 d-flex flex-row me-auto">
+                  <Button
+                    className="btn-light me-3 px-4 py-2"
+                    onClick={() => setWalletsModalShow(true)}
+                  >
+                    Get Wallet
+                  </Button>
+                  <Button
+                    className="btn-light ms-3 px-4 py-2"
+                    onClick={() => setExchangesModalShow(true)}
+                  >
+                    Trade Dingocoin
+                  </Button>
+                </div>
               </div>
-            </Col>
-          </Row>
-          <Row>
-            <p className="masthead-title mt-4 mb-2">
-              Join the wild pack that gets the work <i>done</i>.
-            </p>
-            <p> MUCH KING DINGO SUCH WILD DOGE</p>
-          </Row>
-          <Row className="quick-actions flex-wrap justify-content-md-center">
-            <Button
-              className="popup-button px-4 py-2"
-              variant="primary"
-              onClick={() => {
-                setWalletsModalShow(true);
-              }}
-            >
-              Get wallet
-            </Button>
-            <Button
-              className="popup-button px-4 py-2"
-              variant="primary"
-              onClick={() => {
-                setExchangesModalShow(true);
-              }}
-            >
-              Buy Dingocoin
-            </Button>
-            <Button
-              className="popup-button px-4 py-2"
-              variant="primary"
-              onClick={() => {
-                window.location = "/trailmap";
-              }}
-            >
-              Trailmap
-            </Button>
-          </Row>
-          <Row>
-            <div className="mt-4">
-              <Image src={ParrotImage} />
-              <p style={{ color: "blue", marginTop: "1rem" }}>
-                <b>
-                  We are listed on{" "}
-                  <a
-                    href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
-                    target="_blank"
-                    class="simple-link"
-                  >
-                    <u>BitMart</u>
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="https://www.lbank.info/exchange/dingo/usdt"
-                    target="_blank"
-                    className="simple-link"
-                  >
-                    <u>LBank</u>
-                  </a>
-                </b>
-              </p>
+              <Image className="logo my-auto" src={DingocoinAnimatedLogo} />
             </div>
-          </Row>
+          </div>
+          {/* Mobile */}
+          <div className="d-lg-none">
+            <div className="d-flex flex-column py-5">
+              <Image
+                className="logo my-auto mx-auto"
+                src={DingocoinAnimatedLogo}
+              />
+              <div className="d-flex flex-column me-auto mt-4 mb-auto">
+                <h1 className="title text-center">
+                  Community Development for Worldwide Adoption
+                </h1>
+                <p className="lead mt-4 text-center mx-auto">
+                  Dingocoin is the most successful cryptocurrency fork of
+                  Dogecoin, with revolutionary innovations and unstoppable
+                  developments; building an enthusiastic community, to bring
+                  utility and fun to world.
+                </p>
+                <div className="d-flex flex-row mx-auto mt-5">
+                  <Button
+                    className="btn-light me-3 px-4 py-2"
+                    onClick={() => setWalletsModalShow(true)}
+                  >
+                    Get Wallet
+                  </Button>
+                  <Button
+                    className="btn-light ms-3 px-4 py-2"
+                    onClick={() => setExchangesModalShow(true)}
+                  >
+                    Trade Dingocoin
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
         </Container>
       </header>
 
-      <section className="section-b" id="ecosystem">
-        <h1>GET STARTED</h1>
-        <p className="text-muted">Explore Dingocoin today.</p>
-        <CustomDivider />
-        <Container className="ecosystem-section" style={{ maxWidth: "50rem" }}>
-          <Row xs={1} md={1} lg={1} className="justify-content-center">
-            <FadeInSection>
-              <div className="mb-5">
-                <div className="banner-holder mb-4">
-                  <FontAwesomeIcon className="faicon" icon={faWallet} />
+      <section className="accessibility">
+        <Container className="py-5">
+          <div className="d-flex flex-row flex-wrap pt-5 description">
+            <div className="d-flex flex-column title">
+              <FadeInSection>
+                <h2 className="text-primary mb-4 text-center">
+                  Setting the Gold Standard for accessibility
+                </h2>
+                <div className="d-flex flex-row flex-wrap justify-content-center">
+                  <Image className="demo mx-3" src={WalletChrome} />
+                  <Image className="demo mx-3" src={WalletFirefox} />
+                  <Image className="demo mx-3" src={WalletWindows} />
+                  <Image className="demo mx-3" src={WalletApple} />
+                  <Image className="demo mx-3" src={WalletLinux} />
                 </div>
-                <h4 className="mb-4">1. Get wallet</h4>
-                <p className="text-center mb-4">
-                  You need a <i>wallet</i> to hold Dingocoins. Take less than a
-                  minute to install our browser wallets, and you're set. Or if
-                  you prefer, get a classic desktop wallet.
+              </FadeInSection>
+            </div>
+            <div className="d-flex flex-column lead mt-3">
+              <FadeInSection>
+                <p>
+                  Dingocoin provides accessibility unparalleled by similar meme
+                  coins. Combining community innovations with modern Web3
+                  technologies, Dingocoin lets you do whatver you want, wherever
+                  you want.
                 </p>
-                <Button
-                  className="popup-button px-4"
-                  variant="primary"
-                  onClick={() => {
-                    setWalletsModalShow(true);
-                  }}
-                >
-                  View wallets
-                </Button>
-              </div>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="guide mb-5">
-                <span>
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </span>
-              </div>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="mb-5">
-                <div className="banner-holder mb-4">
-                  <FontAwesomeIcon className="faicon" icon={faChartLine} />
-                </div>
-                <h4 className="mb-4">2. Trade Dingocoin</h4>
-                <p className="text-center mb-4">
-                  Buy and sell Dingocoin. Explore Dingocoin prices. Wrap your
-                  coins and trade on BSC and SOL. With Dingocoin, you can do
-                  whatever you want, wherever you want.
+                <p>
+                  Our browser wallet lets you hold mainnet Dingocoin securely
+                  right in your browser. Our wrapped tokens lets you hold
+                  wrapped Dingocoins on BSC and SOL. With our upcoming mobile
+                  DingoTip, you will be able to send coins directly across phone
+                  numbers.
                 </p>
-                {!infrastructureShow && (
-                  <Container className="mb-4">
-                    <Row
-                      xs={1}
-                      md={3}
-                      lg={3}
-                      className="projectFactsWrap justify-content-center"
-                    >
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoPrice === null
-                              ? "-"
-                              : "$" + dingoPrice.toFixed(7)}
-                          </p>
-                          <span></span>
-                          <p>Dingocoin price</p>
-                        </div>
-                      </Col>
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoCap === null
-                              ? "-"
-                              : "$" + Math.floor(dingoCap).toLocaleString()}
-                          </p>
-                          <span></span>
-                          <p>Dingocoin marketcap</p>
-                        </div>
-                      </Col>
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoVolume === null
-                              ? "-"
-                              : "$" + Math.floor(dingoVolume).toLocaleString()}
-                          </p>
-                          <span></span>
-                          <p>24h volume</p>
-                        </div>
-                      </Col>
-                    </Row>
-                  </Container>
-                )}
-                {!infrastructureShow && (
+                <div className="d-flex flex-row mt-2 justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start">
                   <Button
-                    className="popup-button px-4"
-                    variant="primary"
-                    onClick={() => setInfrastructureShow(true)}
+                    className="btn-primary px-4 py-2"
+                    onClick={() => setWalletsModalShow(true)}
                   >
-                    See more
+                    Get wallet
                   </Button>
-                )}
-                {infrastructureShow && (
-                  <Container>
-                    <Row
-                      xs={2}
-                      md={3}
-                      lg={3}
-                      className="projects mb-4 justify-content-center"
-                    >
-                      <Col>
-                        <div className="project-card">
-                          <div>
-                            <div className="logo-holder">
-                              <Image src={DingocoinLogo} />
-                            </div>
-                            <h5>Dingocoin</h5>
-                            <p>
-                              <a
-                                className="simple-link"
-                                onClick={() => {
-                                  setExchangesModalShow(true);
-                                }}
-                              >
-                                Buy &#9658;
-                              </a>
-                              <br />
-                              <a
-                                href="https://coinpaprika.com/coin/dingo-dingocoin/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="simple-link"
-                              >
-                                Chart &#9658;
-                              </a>
-                              <br />
-                              <a
-                                className="simple-link"
-                                onClick={() => {
-                                  setWalletsModalShow(true);
-                                }}
-                              >
-                                Wallets &#9658;
-                              </a>
-                              <br />
-                              <a
-                                href="https://github.com/dingocoin/dingocoin"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="simple-link"
-                              >
-                                Source &#9658;
-                              </a>
-                              <br />
-                              <a
-                                href="https://miningpoolstats.stream/dingocoin"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="simple-link"
-                              >
-                                Mine &#9658;
-                              </a>
-                            </p>
-                          </div>
-                        </div>
-                      </Col>
-                      <Col>
-                        <div className="project-card">
-                          <div>
-                            <div className="logo-holder">
-                              <Image src={WDingocoinLogo} />{" "}
-                              <Image src={BSCLogo} />
-                            </div>
-                            <h5>wDingocoin (BSC)</h5>
-                            <p>
-                              <a
-                                className="simple-link"
-                                onClick={() => {
-                                  setExchangesModalShow(true);
-                                }}
-                              >
-                                Buy &#9658;
-                              </a>
-                              <br />
-                              <a
-                                href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="simple-link"
-                              >
-                                Chart &#9658;
-                              </a>
-                              <br />
-                              <a
-                                href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="simple-link"
-                              >
-                                Contract &#9658;
-                              </a>
-                              <br />
-                              <a
-                                href="https://wrap.dingocoin.org"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="simple-link"
-                              >
-                                Wrap &#9658;
-                              </a>
-                            </p>
-                          </div>
-                        </div>
-                      </Col>
-                      <Col>
-                        <div className="project-card">
-                          <div>
-                            <div className="logo-holder">
-                              <Image src={WDingocoinLogo} />{" "}
-                              <Image src={SOLLogo} />
-                            </div>
-                            <h5>wDingocoin (SOL)</h5>
-                            <p>
-                              <a
-                                className="simple-link"
-                                onClick={() => {
-                                  setExchangesModalShow(true);
-                                }}
-                              >
-                                Buy &#9658;
-                              </a>
-                              <br />
-                              <a
-                                href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="simple-link"
-                              >
-                                Chart &#9658;
-                              </a>
-                              <br />
-                              <a
-                                href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="simple-link"
-                              >
-                                SPL &#9658;
-                              </a>
-                              <br />
-                              <a
-                                href="https://wrap.dingocoin.org"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="simple-link"
-                              >
-                                Wrap &#9658;
-                              </a>
-                            </p>
-                          </div>
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row
-                      xs={1}
-                      md={3}
-                      lg={3}
-                      className="projectFactsWrap justify-content-center"
-                    >
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoPrice === null
-                              ? "-"
-                              : "$" + dingoPrice.toFixed(7)}
-                          </p>
-                          <span></span>
-                          <p>Dingocoin price</p>
-                        </div>
-                      </Col>
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoCap === null
-                              ? "-"
-                              : "$" + Math.floor(dingoCap).toLocaleString()}
-                          </p>
-                          <span></span>
-                          <p>Dingocoin marketcap</p>
-                        </div>
-                      </Col>
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoVolume === null
-                              ? "-"
-                              : "$" + Math.floor(dingoVolume).toLocaleString()}
-                          </p>
-                          <span></span>
-                          <p>24h volume</p>
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row
-                      xs={2}
-                      md={2}
-                      lg={4}
-                      className="projectFactsWrap justify-content-center"
-                    >
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoStats === null
-                              ? "-"
-                              : (
-                                  Math.floor(dingoStats.supply / 10000000) / 100
-                                ).toLocaleString() + " B"}
-                          </p>
-                          <span></span>
-                          <p>Dingocoin supply</p>
-                        </div>
-                      </Col>
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoStats === null
-                              ? "-"
-                              : dingoStats.blocks.toLocaleString()}
-                          </p>
-                          <span></span>
-                          <p>Blocks mined</p>
-                        </div>
-                      </Col>
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoStats === null
-                              ? "-"
-                              : dingoStats.blockReward.toLocaleString()}
-                          </p>
-                          <span></span>
-                          <p>Current block reward</p>
-                        </div>
-                      </Col>
-                      <Col>
-                        <div className="item">
-                          <p className="number">
-                            {dingoStats === null
-                              ? "-"
-                              : dingoStats.blocksToHalving.toLocaleString()}
-                          </p>
-                          <span></span>
-                          <p>Blocks to next halving</p>
-                        </div>
-                      </Col>
-                    </Row>
-                  </Container>
-                )}
-              </div>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="guide">
-                <span>
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </span>
-              </div>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="mt-5 mb-5">
-                {previewNfts !== null && (
-                  <div className="mb-4">
-                    <SideScroller
-                      defaultHeight="24.8rem"
-                      items={previewNfts}
-                      itemTemplate={(x) => (
-                        <li key={x}>
-                          <a
-                            href={`https://nft.dingocoin.org/nft/${x}`}
-                            target="_blank"
-                          >
-                            <NFTCard address={x} />
-                          </a>
-                        </li>
-                      )}
-                    />
-                  </div>
-                )}
-                {previewNfts === null && (
-                  <div
-                    className="mb-4 d-flex flex-row"
-                    style={{ height: "24.8rem" }}
-                  >
-                    <Spinner animation="border" className="m-auto" />
-                  </div>
-                )}
-                <h4 className="mb-4">3. Explore NFT Platform</h4>
-                <p className="text-center mb-4">
-                  Experience the next generation of NFTs. Create and trade NFTs
-                  on our very own NFT platform. Pay less than {"<$0.001"} gas
-                  fees. Trading is done entirely on-chain - you receive earnings
-                  immediately.
+                </div>
+              </FadeInSection>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="listings">
+        <Container className="py-5">
+          <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
+            <div className="d-flex flex-column title">
+              <FadeInSection>
+                <h2 className="text-primary mb-4 text-center">
+                  A highly ambitious growth strategy
+                </h2>
+                <div className="d-flex flex-row flex-wrap justify-content-center">
+                  <Image className="demo mx-3 my-3" src={BitmartLogo} />
+                  <Image className="demo mx-3 my-3" src={LBankLogo} />
+                  <Image className="demo mx-3 my-3" src={XTCOMLogo} />
+                  <Image className="demo mx-3 my-3" src={HotbitLogo} />
+                  <Image className="demo mx-3 my-3" src={SouthXchangeLogo} />
+                  <Image className="demo mx-3 my-3" src={AutradexLogo} />
+                  <Image className="demo mx-3 my-3" src={CratexIoLogo} />
+                  <Image className="demo mx-3 my-3" src={ExbitronLogo} />
+                  <Image className="demo mx-3 my-3" src={DexTradeLogo} />
+                  <Image className="demo mx-3 my-3" src={DelionDexLogo} />
+                  <Image className="demo mx-3 my-3" src={PancakeSwap} />
+                  <Image className="demo mx-3 my-3" src={RaydiumSwap} />
+                </div>
+              </FadeInSection>
+            </div>
+            <div className="d-flex flex-column lead mb-4 mt-3">
+              <FadeInSection>
+                <p>
+                  Dingocoin aims to make itself highly available to everyone in
+                  the world. We have had 12 listings in just a single year of
+                  age, a rate hardly matched by similar meme currencies. Our
+                  listing rampage is planned to continue, with the final goal
+                  clear and near - top 5, then top 3, then Binance.
                 </p>
+                <div className="d-flex flex-row mt-2 justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start">
+                  <Button
+                    className="btn-primary me-3 px-4 py-2"
+                    onClick={() => setExchangesModalShow(true)}
+                  >
+                    Trade Dingocoin
+                  </Button>
+                  {!infrastructureShow && (
+                    <Button
+                      className="btn-primary me-3 px-4 py-2"
+                      onClick={() => setInfrastructureShow(true)}
+                    >
+                      Technical Details
+                    </Button>
+                  )}
+                </div>
+              </FadeInSection>
+            </div>
+          </div>
+
+          <FadeInSection>
+            {!infrastructureShow && (
+              <Container>
+                <Row
+                  xs={1}
+                  md={3}
+                  lg={3}
+                  className="projectFactsWrap justify-content-center"
+                >
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoPrice === null
+                          ? "-"
+                          : "$" + dingoPrice.toFixed(7)}
+                      </p>
+                      <span></span>
+                      <p>Dingocoin price</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoCap === null
+                          ? "-"
+                          : "$" + Math.floor(dingoCap).toLocaleString()}
+                      </p>
+                      <span></span>
+                      <p>Dingocoin marketcap</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoVolume === null
+                          ? "-"
+                          : "$" + Math.floor(dingoVolume).toLocaleString()}
+                      </p>
+                      <span></span>
+                      <p>24h volume</p>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            )}
+            {infrastructureShow && (
+              <Container>
+                <Row
+                  xs={2}
+                  md={3}
+                  lg={3}
+                  className="projects justify-content-center"
+                >
+                  <Col>
+                    <div className="project-card">
+                      <div>
+                        <div className="logo-holder">
+                          <Image src={DingocoinLogo} />
+                        </div>
+                        <h5>Dingocoin</h5>
+                        <p>
+                          <a
+                            className="simple-link"
+                            onClick={() => {
+                              setExchangesModalShow(true);
+                            }}
+                          >
+                            Buy &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://coinpaprika.com/coin/dingo-dingocoin/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Chart &#9658;
+                          </a>
+                          <br />
+                          <a
+                            className="simple-link"
+                            onClick={() => {
+                              setWalletsModalShow(true);
+                            }}
+                          >
+                            Wallets &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://github.com/dingocoin/dingocoin"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Source &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://miningpoolstats.stream/dingocoin"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Mine &#9658;
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="project-card">
+                      <div>
+                        <div className="logo-holder">
+                          <Image src={WDingocoinLogo} /> <Image src={BSCLogo} />
+                        </div>
+                        <h5>wDingocoin (BSC)</h5>
+                        <p>
+                          <a
+                            className="simple-link"
+                            onClick={() => {
+                              setExchangesModalShow(true);
+                            }}
+                          >
+                            Buy &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Chart &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://bscscan.com/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Contract &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://wrap.dingocoin.org"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Wrap &#9658;
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="project-card">
+                      <div>
+                        <div className="logo-holder">
+                          <Image src={WDingocoinLogo} /> <Image src={SOLLogo} />
+                        </div>
+                        <h5>wDingocoin (SOL)</h5>
+                        <p>
+                          <a
+                            className="simple-link"
+                            onClick={() => {
+                              setExchangesModalShow(true);
+                            }}
+                          >
+                            Buy &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Chart &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://solscan.io/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            SPL &#9658;
+                          </a>
+                          <br />
+                          <a
+                            href="https://wrap.dingocoin.org"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="simple-link"
+                          >
+                            Wrap &#9658;
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+                <Row
+                  xs={1}
+                  md={3}
+                  lg={3}
+                  className="projectFactsWrap justify-content-center"
+                >
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoPrice === null
+                          ? "-"
+                          : "$" + dingoPrice.toFixed(7)}
+                      </p>
+                      <span></span>
+                      <p>Dingocoin price</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoCap === null
+                          ? "-"
+                          : "$" + Math.floor(dingoCap).toLocaleString()}
+                      </p>
+                      <span></span>
+                      <p>Dingocoin marketcap</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoVolume === null
+                          ? "-"
+                          : "$" + Math.floor(dingoVolume).toLocaleString()}
+                      </p>
+                      <span></span>
+                      <p>24h volume</p>
+                    </div>
+                  </Col>
+                </Row>
+                <Row
+                  xs={2}
+                  md={2}
+                  lg={4}
+                  className="projectFactsWrap justify-content-center"
+                >
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoStats === null
+                          ? "-"
+                          : (
+                              Math.floor(dingoStats.supply / 10000000) / 100
+                            ).toLocaleString() + " B"}
+                      </p>
+                      <span></span>
+                      <p>Dingocoin supply</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoStats === null
+                          ? "-"
+                          : dingoStats.blocks.toLocaleString()}
+                      </p>
+                      <span></span>
+                      <p>Blocks mined</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoStats === null
+                          ? "-"
+                          : dingoStats.blockReward.toLocaleString()}
+                      </p>
+                      <span></span>
+                      <p>Current block reward</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="item">
+                      <p className="number">
+                        {dingoStats === null
+                          ? "-"
+                          : dingoStats.blocksToHalving.toLocaleString()}
+                      </p>
+                      <span></span>
+                      <p>Blocks to next halving</p>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            )}
+          </FadeInSection>
+        </Container>
+      </section>
+
+      <section className="community">
+        <Container className="py-5">
+          <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
+            <div className="d-flex flex-column title">
+              <FadeInSection>
+                <h2 className="text-primary mb-4 text-center">
+                  Non-stop community developments
+                </h2>
+                <div className="d-flex flex-row flex-wrap justify-content-center mb-4">
+                  <Image className="demo mx-3" src={NftLogo} />
+                  <Image className="demo mx-3" src={DingodiggersLogo} />
+                  <Image className="demo mx-3" src={DingosinoLogo} />
+                  <Image className="demo mx-3" src={RobloxLogo} />
+                  <Image className="demo mx-3" src={DingominerLogo} />
+                </div>
+              </FadeInSection>
+            </div>
+            <div className="d-flex flex-column lead mt-3">
+              <FadeInSection>
+                <p>
+                  The Dingocoin community always finds new ideas for Dingocoin.
+                  From our very own NFT platform, to Discord and Roblox games,
+                  to staking, airdrops, and faucets - explore the galore of
+                  games, utilities, and activies produced by our very own
+                  members. Even better, contribute your own ideas!
+                </p>
+              </FadeInSection>
+            </div>
+          </div>
+          <FadeInSection>
+            <div className="d-flex flex-row flex-wrap justify-content-center">
+              <div className="project-card">
+                <div className="logo-holder">
+                  <Image src={DingodiggersLogo} />
+                </div>
                 <a
-                  href="https://nft.dingocoin.org"
+                  href="https://discord.gg/fka9pZXxPB"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4" variant="primary">
-                    Visit NFT platform
+                  <Button className="px-4 py-2" variant="primary">
+                    Dingo Diggers
                   </Button>
                 </a>
+                <p>Easily Earn Dingo Mining Rewards.</p>
               </div>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="guide">
-                <span>
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </span>
-              </div>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="mt-5 mb-5">
-                <div className="banner-holder mb-4">
-                  <FontAwesomeIcon className="faicon" icon={faGamepad} />
+              <div className="project-card">
+                <div className="logo-holder">
+                  <Image src={DingosinoLogo} />
                 </div>
-                <h4 className="mb-4">4. Games and Activities</h4>
-                <p className="text-center mb-4">
-                  Participate in community-developed games and activities. Hang
-                  out, have fun, and possibly earn Dingocoins.
-                </p>
-                {!gamesShow && (
-                  <Button
-                    className="popup-button px-4"
-                    variant="primary"
-                    onClick={() => setGamesShow(true)}
-                  >
-                    See more
-                  </Button>
-                )}
-              </div>
-            </FadeInSection>
-            {gamesShow && (
-              <Container>
-                <Row
-                  xs={1}
-                  md={2}
-                  lg={3}
-                  className="projects justify-content-center"
+                <a
+                  href="https://discord.gg/9advvJ4z5f"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={DingodiggersLogo} />
-                      </div>
-                      <a
-                        href="https://discord.gg/fka9pZXxPB"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Button className="popup-button" variant="primary">
-                          Dingo Diggers
-                        </Button>
-                      </a>
-                      <p>Easily Earn Dingo Mining Rewards.</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={DingosinoLogo} />
-                      </div>
-                      <a
-                        href="https://discord.gg/9advvJ4z5f"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Button className="popup-button" variant="primary">
-                          Dingosino
-                        </Button>
-                      </a>
-                      <p>Play games using Dingocoins on Discord.</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={RobloxLogo} />
-                      </div>
-                      <a
-                        href="https://www.roblox.com/games/8019728893/Dingo-Coin-City"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Button className="popup-button" variant="primary">
-                          Dingocoin City
-                        </Button>
-                      </a>
-                      <p>
-                        Hang out with the Dingo Pack on Roblox <i>(Beta).</i>
-                      </p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={DingominerLogo} />
-                      </div>
-                      <a
-                        href="http://miner.dingocoin.org/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Button className="popup-button" variant="primary">
-                          Dingo Miner
-                        </Button>
-                      </a>
-                      <p>
-                        Learn the ropes of mining with our Dingo Miner game.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faChartLine}
-                        />
-                      </div>
-                      <a href="/stake">
-                        <Button className="popup-button" variant="primary">
-                          Stake Dingocoins
-                        </Button>
-                      </a>
-                      <p>Earn weekly rewards just for holding Dingocoins.</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={SocialFaucetLogo} />
-                      </div>
-                      <a href="https://twitter.com/dingocoincrypto">
-                        <Button className="popup-button" variant="primary">
-                          Weekly Airdrop
-                        </Button>
-                      </a>
-                      <p>Earn Dingocoins in our weekly Twitter airdrops.</p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={CryptoGrenadeLogo} />
-                      </div>
-                      <a href="https://cryptogrenade.xyz/" target="_blank">
-                        <Button className="popup-button" variant="primary">
-                          CG's Faucet Platform
-                        </Button>
-                      </a>
-                      <p>
-                        Cryptogrenade's faucet platform - Paid to click,
-                        shortlinks, referral rewards.
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
-            )}
-            <FadeInSection>
-              <div className="guide">
-                <span>
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </span>
+                  <Button className="px-4 py-2" variant="primary">
+                    Dingosino
+                  </Button>
+                </a>
+                <p>Play games using Dingocoins on Discord.</p>
               </div>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="mt-5 mb-5">
-                <div className="banner-holder mb-4">
-                  <FontAwesomeIcon className="faicon" icon={faUserAstronaut} />
+              <div className="project-card">
+                <div className="logo-holder">
+                  <Image src={RobloxLogo} />
                 </div>
-                <h4 className="mb-4">5. Explore community utilities</h4>
-                <p className="text-center mb-4">
-                  Socials, and other tools. Explore the various utilities
-                  developed by the community. Or better yet, contribute yourself
-                  - we rely on everyone's ideas.
-                </p>
-                {!utilitiesShow && (
-                  <Button
-                    className="popup-button px-4"
-                    variant="primary"
-                    onClick={() => setUtilitiesShow(true)}
-                  >
-                    See more
-                  </Button>
-                )}
-              </div>
-            </FadeInSection>
-            {utilitiesShow && (
-              <Container>
-                <Row
-                  xs={1}
-                  md={2}
-                  lg={3}
-                  className="projects justify-content-center"
+                <a
+                  href="https://www.roblox.com/games/8019728893/Dingo-Coin-City"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <Image src={DingetteLogo} />
-                      </div>
-                      <a
-                        href="https://www.reddit.com/user/Dingo-Is-My-Man/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Button className="popup-button" variant="primary">
-                          Dingette's Channel
-                        </Button>
-                      </a>
-                      <p>
-                        UwU? What's this? Our very own fan-lady growing the
-                        pack??? OwO
-                      </p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faShoppingCart}
-                        />
-                      </div>
-                      <Button
-                        className="popup-button"
-                        variant="primary"
-                        onClick={() => setMarketplaceModalShow(true)}
-                      >
-                        Marketplace
-                      </Button>
-                      <p>
-                        Purchase Dingocoin merchandise/NFTs designed and sold by
-                        community members.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <FontAwesomeIcon className="faicon" icon={faRobot} />
-                      </div>
-                      <a
-                        href="https://discord.gg/y3J946HFQM"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Button className="popup-button" variant="primary">
-                          Discord Faucet/Tips
-                        </Button>
-                      </a>
-                      <p>
-                        Get free sample Dingocoins.
-                        <br /> Tip Dingocoins to others easily.
-                      </p>
-                    </div>
-                  </Col>
-                  {/*
-                  <Col>
-                    <div className="project-card">
-                      <div className="logo-holder">
-                        <FontAwesomeIcon
-                          className="faicon"
-                          icon={faDumpsterFire}
-                        />
-                      </div>
-                      <a href="/burnboard">
-                        <Button className="popup-button" variant="primary">
-                          Burnboard
-                        </Button>
-                      </a>
-                      <p>
-                        Voluntarily burn your Dingocoins for fun,{" "}
-                        <i>because you can</i>.
-                      </p>
-                    </div>
-                  </Col>
-                  */}
-                </Row>
-              </Container>
-            )}
-          </Row>
-          <Row>
-            <FadeInSection>
-              <h1 className="mt-5">DO YOUR OWN RESEARCH</h1>
-              <p className="text-muted">
-                <b>&gt; 10x</b> the developments, yet <b>&lt; 0.02%</b> of the
-                market cap.
-                <br />
-                <i>
-                  Such undervalued very potential <b>5000x</b> much wow.
-                </i>
+                  <Button className="px-4 py-2" variant="primary">
+                    Dingocoin City
+                  </Button>
+                </a>
+                <p>
+                  Hang out with the Dingo Pack on Roblox <i>(Beta).</i>
+                </p>
+              </div>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <Image src={DingominerLogo} />
+                </div>
+                <a
+                  href="http://miner.dingocoin.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button className="px-4 py-2" variant="primary">
+                    Dingo Miner
+                  </Button>
+                </a>
+                <p>Learn the ropes of mining with our Dingo Miner game.</p>
+              </div>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <FontAwesomeIcon className="faicon" icon={faChartLine} />
+                </div>
+                <a href="/stake">
+                  <Button className="px-4 py-2" variant="primary">
+                    Stake Dingocoins
+                  </Button>
+                </a>
+                <p>Earn weekly rewards just for holding Dingocoins.</p>
+              </div>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <Image src={SocialFaucetLogo} />
+                </div>
+                <a href="https://twitter.com/dingocoincrypto">
+                  <Button className="px-4 py-2" variant="primary">
+                    Weekly Airdrop
+                  </Button>
+                </a>
+                <p>Earn Dingocoins in our weekly Twitter airdrops.</p>
+              </div>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <Image src={CryptoGrenadeLogo} />
+                </div>
+                <a href="https://cryptogrenade.xyz/" target="_blank">
+                  <Button className="px-4 py-2" variant="primary">
+                    CG's Faucet Platform
+                  </Button>
+                </a>
+                <p>
+                  Cryptogrenade's faucet platform - Paid to click, shortlinks,
+                  referral rewards.
+                </p>
+              </div>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <Image src={DingetteLogo} />
+                </div>
+                <a
+                  href="https://www.reddit.com/user/Dingo-Is-My-Man/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button className="px-4 py-2" variant="primary">
+                    Dingette's Channel
+                  </Button>
+                </a>
+                <p>
+                  UwU? What's this? Our very own fan-lady growing the pack???
+                  OwO
+                </p>
+              </div>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
+                </div>
+                <Button
+                  className="px-4 py-2"
+                  variant="primary"
+                  onClick={() => setMarketplaceModalShow(true)}
+                >
+                  Marketplace
+                </Button>
+                <p>
+                  Purchase Dingocoin merchandise/NFTs designed and sold by
+                  community members.
+                </p>
+              </div>
+              <div className="project-card">
+                <div className="logo-holder">
+                  <FontAwesomeIcon className="faicon" icon={faRobot} />
+                </div>
+                <a
+                  href="https://discord.gg/y3J946HFQM"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button className="px-4 py-2" variant="primary">
+                    Discord Faucet/Tips
+                  </Button>
+                </a>
+                <p>
+                  Get free sample Dingocoins.
+                  <br /> Tip Dingocoins to others easily.
+                </p>
+              </div>
+            </div>
+          </FadeInSection>
+          <FadeInSection>
+            <div className="d-flex flex-column">
+              {previewNfts !== null && (
+                <div className="mt-1">
+                  <SideScroller
+                    defaultHeight="24.8rem"
+                    items={previewNfts}
+                    itemTemplate={(x) => (
+                      <li key={x}>
+                        <a
+                          href={`https://nft.dingocoin.org/nft/${x}`}
+                          target="_blank"
+                        >
+                          <NFTCard address={x} />
+                        </a>
+                      </li>
+                    )}
+                  />
+                </div>
+              )}
+              {previewNfts === null && (
+                <div
+                  className="mt-1 d-flex flex-row"
+                  style={{ height: "24.8rem" }}
+                >
+                  <Spinner animation="border" className="m-auto" />
+                </div>
+              )}
+              <Button className="mt-3 mx-auto px-4 py-2" variant="primary">
+                Dingocoin NFT platform
+              </Button>
+              <p className="text-center mt-3">
+                Experience the next generation of NFTs. Create and trade NFTs on
+                our very own NFT platform. Pay less than {"<$0.001"} gas fees.
+                Trading is done entirely on-chain - you receive earnings
+                immediately.
               </p>
-              <CustomDivider />
-              <Image
-                style={{ width: "100%", height: "auto" }}
-                className="mt-2"
-                src={WhyBuyImage}
-              />
-            </FadeInSection>
-          </Row>
+            </div>
+          </FadeInSection>
+        </Container>
+      </section>
+
+      <section className="dyor">
+        <Container className="py-5">
+          <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
+            <div className="d-flex flex-column title ms-auto">
+              <FadeInSection>
+                <h2 className="text-primary mb-4 text-center">
+                  Severely undervalued - Do Your Own Research
+                </h2>
+              </FadeInSection>
+            </div>
+            <div className="d-flex flex-column lead mt-3">
+              <FadeInSection>
+                <p>
+                  We have <b>&gt; 10x</b> the developments of similar meme
+                  currencies, yet merely <b>&lt; 0.02%</b> the market cap. As it
+                  stands, Dingocoin is one of the most severely undervalued
+                  developments, with potential price increases of <b>5000x</b>{" "}
+                  based on market cap alone. Nonetheless, the community will
+                  stop at nothing to develop the coin.
+                </p>
+              </FadeInSection>
+            </div>
+          </div>
+          <FadeInSection>
+            <Image
+              style={{ width: "100%", height: "auto" }}
+              className="mt-2"
+              src={WhyBuyImage}
+            />
+          </FadeInSection>
         </Container>
       </section>
 
       <section className="section-a" id="roadmap">
         <FadeInSection>
-          <h1>ROADMAP</h1>
+          <h1 className="mt-5 text-center text-primary">
+            <b>Roadmap</b>
+          </h1>
           <CustomDivider />
         </FadeInSection>
         <Container>
@@ -1075,22 +1025,26 @@ function Main() {
 
           <Row>
             <FadeInSection>
-              <h2 className="mt-4">What's next?</h2>
+              <h1 className="text-center text-primary mt-5">
+                <b>What's next?</b>
+              </h1>
               <CustomDivider />
               <Image
                 src={TrailmapImage}
                 style={{ width: "100%", height: "auto" }}
               />
-              <p className="mt-2">
+              <div className="d-flex flex-row">
                 <a
                   href="/trailmap"
-                  className="simple-link"
+                  className="simple-link mx-auto"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <b>Click to see more in our Trailmap</b>
+                  <Button className="mt-4 mb-5 px-4 py-2">
+                    See our Trailmap
+                  </Button>
                 </a>
-              </p>
+              </div>
             </FadeInSection>
           </Row>
         </Container>
@@ -1130,7 +1084,7 @@ function Main() {
                   href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4" variant="primary">
+                  <Button className="popup-button px-4 py-2" variant="primary">
                     Chrome
                   </Button>
                 </a>
@@ -1144,7 +1098,7 @@ function Main() {
                   href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4" variant="primary">
+                  <Button className="popup-button px-4 py-2" variant="primary">
                     Firefox
                   </Button>
                 </a>
@@ -1170,7 +1124,7 @@ function Main() {
                   href="https://github.com/dingocoin/dingocoin/releases/latest"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4" variant="primary">
+                  <Button className="popup-button px-4 py-2" variant="primary">
                     Windows
                   </Button>
                 </a>
@@ -1184,7 +1138,7 @@ function Main() {
                   href="https://github.com/dingocoin/dingocoin/releases/latest"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4" variant="primary">
+                  <Button className="popup-button px-4 py-2" variant="primary">
                     macOS
                   </Button>
                 </a>
@@ -1198,17 +1152,14 @@ function Main() {
                   href="https://github.com/dingocoin/dingocoin/releases/latest"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4" variant="primary">
+                  <Button className="popup-button px-4 py-2" variant="primary">
                     Linux
                   </Button>
                 </a>
               </div>
             </Row>
           </Container>
-          <Container
-            className="wallets-container"
-            style={{ maxWidth: "20rem" }}
-          >
+          <Container className="wallets-container">
             <Row>
               <Col>
                 <h5 className="mb-3">Unofficial Wallets</h5>
@@ -1224,7 +1175,7 @@ function Main() {
                   href="https://beehivewallet.link/"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4" variant="primary">
+                  <Button className="popup-button px-4 py-2" variant="primary">
                     Beehive
                   </Button>
                 </a>
@@ -1238,7 +1189,7 @@ function Main() {
                   href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button px-4" variant="primary">
+                  <Button className="popup-button px-4 py-2" variant="primary">
                     Android
                   </Button>
                 </a>
@@ -1506,7 +1457,7 @@ function Main() {
                   href="https://dingomerch.creator-spring.com"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="px-4 py-2" variant="primary">
                     ! Amandum's Store
                   </Button>
                 </a>
@@ -1528,7 +1479,7 @@ function Main() {
                   href="https://opensea.io/collection/dingocoin1"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="px-4 py-2" variant="primary">
                     DingoCoin Collection #1
                   </Button>
                 </a>
@@ -1542,7 +1493,7 @@ function Main() {
                   href="https://opensea.io/collection/cryptodingos"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="px-4 py-2" variant="primary">
                     CryptoDingos
                   </Button>
                 </a>
@@ -1556,7 +1507,7 @@ function Main() {
                   href="https://opensea.io/collection/dingocoinart"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="px-4 py-2" variant="primary">
                     Dingocoin Art
                   </Button>
                 </a>
@@ -1570,7 +1521,7 @@ function Main() {
                   href="https://opensea.io/collection/douchey-dingos"
                   rel="noreferrer"
                 >
-                  <Button className="popup-button" variant="primary">
+                  <Button className="px-4 py-2" variant="primary">
                     Douchey Dingos
                   </Button>
                 </a>

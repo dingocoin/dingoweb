@@ -1,28 +1,20 @@
 $primary: #1e4151;
 $secondary: #fbf7e9;
-$secondary-alt: #ffffff;
+$light: #ffffff;
 $light-border: #bbbbbb;
 $dark-border: $primary;
 
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
+  "light": $light,
 );
 
 @import "~bootstrap/scss/bootstrap";
 
 .App {
-  text-align: center;
+  background-color: $secondary;
   font-family: "Arvo", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $primary;
 }
 
 a:link {
@@ -63,7 +55,7 @@ a.simple-link:hover {
       margin-right: 0.5rem;
     }
     span.navbar-brand-subtitle {
-      color: $secondary-alt;
+      color: $light;
       font-weight: 350 !important;
     }
   }
@@ -106,7 +98,7 @@ a.simple-link:hover {
 /* https://codepen.io/Aakash_codes/pen/LYWYvGp */
 .isometric-holder {
   position: relative;
-  width: 100%;
+  width: 20rem;
   height: 24rem;
 }
 .isometric {
@@ -130,7 +122,7 @@ a.simple-link:hover {
   position: absolute;
   bottom: -1.5rem;
   left: 0;
-  background: linear-gradient($secondary-alt, $primary);
+  background: linear-gradient($light, $primary);
   transform-origin: top;
   transform: skewX(-45deg) scaleY(0.5);
   transition: 0.5s;
@@ -142,7 +134,7 @@ a.simple-link:hover {
   position: absolute;
   top: 0.732rem;
   left: -0.732rem;
-  background: linear-gradient(to left, $secondary-alt, $primary);
+  background: linear-gradient(to left, $light, $primary);
   transform-origin: left;
   transform: skewY(-45deg) scaleX(0.5);
   transition: 0.5s;
@@ -193,7 +185,7 @@ a.simple-link:hover {
     position: absolute;
     bottom: -1rem;
     left: 0;
-    background: linear-gradient($secondary-alt, $primary);
+    background: linear-gradient($light, $primary);
     transform-origin: top;
     transform: skewX(-45deg) scaleY(0.5);
     transition: 0.5s;
@@ -205,7 +197,7 @@ a.simple-link:hover {
     position: absolute;
     top: 0.488rem;
     left: -0.488rem;
-    background: linear-gradient(to left, $secondary-alt, $primary);
+    background: linear-gradient(to left, $light, $primary);
     transform-origin: left;
     transform: skewY(-45deg) scaleX(0.5);
     transition: 0.5s;
@@ -272,71 +264,142 @@ a.simple-link:hover {
   }
 }
 
-.masthead .masthead-avatar {
-  width: 20rem;
-  padding: 2rem;
-}
-
-.masthead .masthead-title {
-  font-size: 1.8rem;
-  font-weight: 300;
-  margin: 0;
-  padding: 0;
-}
-
-.masthead .warning {
-  a,
-  p,
-  h5 {
-    color: red !important;
+.masthead {
+  background: $primary;
+  color: $light;
+  .title {
+    max-width: 40rem;
+    font-weight: bold;
+    line-height: 150%;
+  }
+  .lead {
+    max-width: 30rem;
+    line-height: 170%;
+  }
+  .logo {
+    width: 25rem;
+    height: 25rem;
   }
 }
 
-.fundraising {
-  margin: 1rem;
-}
-
-.fundraising span {
-  vertical-align: bottom;
-}
-
-.fundraising img {
-  height: 3rem;
-  width: 3rem;
-  margin: 0 0.5rem;
-}
-
-/* ===== SECTIONS ===== */
-.section-header-mobile {
-  padding: 1.5rem 1.5rem;
-  background-color: $secondary;
-  .container {
-    max-width: 900px;
+.accessibility {
+  background: $secondary;
+  .description {
+    .title {
+      width: 50%;
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+      h2 {
+        font-weight: bold;
+      }
+      .faicon {
+        width: 5rem;
+        height: auto;
+      }
+      .demo {
+        height: 3.5rem;
+        width: auto;
+      }
+    }
+    .lead {
+      width: 50%;
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+    }
   }
 }
 
-.section-a {
-  padding: 4rem 1.5rem;
-  background-color: $secondary;
-  .container {
-    max-width: 900px;
+.listings {
+  background: $secondary;
+  .description {
+    .title {
+      width: 50%;
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+      h2 {
+        font-weight: bold;
+      }
+      .faicon {
+        width: 5rem;
+        height: auto;
+      }
+      .demo {
+        height: 1.5rem;
+        width: auto;
+      }
+    }
+    .lead {
+      width: 50%;
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+    }
   }
 }
 
-.section-b {
-  padding: 4rem 1.5rem;
-  background-color: $secondary-alt;
-  .container {
-    max-width: 900px;
+.community {
+  background: $secondary;
+  .description {
+    .title {
+      width: 50%;
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+      h2 {
+        font-weight: bold;
+      }
+      .faicon {
+        width: 5rem;
+        height: auto;
+      }
+      .demo {
+        height: 3.5rem;
+        width: auto;
+      }
+    }
+    .lead {
+      width: 50%;
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.dyor {
+  .description {
+    .title {
+      max-width: 50%;
+      @media (max-width: 991px) {
+        max-width: 100%;
+      }
+      h2 {
+        font-weight: bold;
+      }
+      .faicon {
+        width: 5rem;
+        height: auto;
+      }
+      .demo {
+        height: 3.5rem;
+        width: auto;
+      }
+    }
+    .lead {
+      max-width: 50%;
+      @media (max-width: 991px) {
+        max-width: 100%;
+      }
+    }
   }
 }
 
 .section-footer {
   padding: 1rem;
   background-color: $primary;
-  .container {
-    max-width: 900px;
-  }
   span {
     color: $secondary !important;
   }
@@ -374,67 +437,14 @@ a.simple-link:hover {
   color: #fff !important;
 }
 
-/* ===== POPUP BUTTON ===== */
-.popup-button,
-.popup-button:focus {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.75rem;
-  box-shadow: -0.05rem 0.3rem 0 darken($primary, 7%),
-    0 0.375rem 0.375rem 0.075rem $primary;
-}
-.popup-button:hover {
-  box-shadow: -0.05rem 0.3rem 0 darken($primary, 7%),
-    0 0.375rem 0.7rem 0.15rem $primary;
-}
-.popup-button:active,
-.popup-button:link {
-  box-shadow: none !important;
-}
-
-.popup-link,
-.popup-link:focus {
-  button {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.75rem;
-    box-shadow: -0.05rem 0.3rem 0 darken($primary, 7%),
-      0 0.375rem 0.375rem 0.075rem $primary;
-  }
-}
-.popup-link:hover {
-  button {
-    box-shadow: -0.05rem 0.3rem 0 darken($primary, 7%),
-      0 0.375rem 0.7rem 0.15rem $primary;
-  }
-}
-.popup-link:active,
-.popup-link:link {
-  button {
-    box-shadow: none !important;
-  }
-}
-
-.ecosystem-section .banner-holder {
-  img,
-  .faicon {
-    width: 5rem;
-    padding: 0;
-    font-size: 5rem;
-    vertical-align: 0 !important;
-    color: $primary;
-  }
-  width: 100%;
-}
 
 /* ===== PROJECTS ===== */
 
-.projects {
-  text-align: center;
-}
-
 .project-card {
+  text-align: center;
   padding: 1rem;
+  width: 18rem;
+  height: 16rem;
 }
 
 .project-card .logo-holder {

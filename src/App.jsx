@@ -521,7 +521,7 @@ function App() {
           <Route path="*" element={<Main />} />
         </Routes>
 
-        <section className="section-footer">
+        <section className="section-footer text-center">
           <Container>
             <Row>
               <span>

@@ -5,7 +5,7 @@ import CustomDivider from "./CustomDivider.jsx";
 function Privacy() {
   return (
     <section className="section-a" id="privacy">
-      <h2>PRIVACY POLICY</h2>
+      <h1 className="text-primary mt-5 text-center">PRIVACY POLICY</h1>
       <CustomDivider />
       <Container>
         <Row className="privacy">

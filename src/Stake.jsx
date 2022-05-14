@@ -92,7 +92,7 @@ function Stake() {
   return (
     <div>
       <section className="section-a min-height-fill" id="airdrop">
-        <h1>STAKE DINGOCOINS</h1>
+        <h1 className="mt-5 text-primary text-center">STAKE DINGOCOINS</h1>
         <CustomDivider />
         <Container>
           <Row>

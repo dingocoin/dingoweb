@@ -21,7 +21,7 @@ function TrailmapTemplate(props) {
 
   return (
     <section className="section-a min-height-fill">
-      <h1>DINGOCOIN TRAILMAP</h1>
+      <h1 className="text-primary mt-5 text-center">DINGOCOIN TRAILMAP</h1>
       <CustomDivider />
       <Container>
         <div className="trailmap-content">
