@@ -676,7 +676,7 @@ function Main() {
                   The Dingocoin community always finds new ideas for Dingocoin.
                   From our very own NFT platform, to Discord and Roblox games,
                   to staking, airdrops, and faucets - explore the galore of
-                  games, utilities, and activies produced by our very own
+                  games, utilities, and activities produced by our very own
                   members. Even better, contribute your own ideas!
                 </p>
               </FadeInSection>
