@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.46ed1698.chunk.css",
-    "main.js": "/static/js/main.cd2b60ee.chunk.js",
-    "main.js.map": "/static/js/main.cd2b60ee.chunk.js.map",
+    "main.css": "/static/css/main.c2a00051.chunk.css",
+    "main.js": "/static/js/main.854486fc.chunk.js",
+    "main.js.map": "/static/js/main.854486fc.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f7b3b2ed.js",
     "runtime-main.js.map": "/static/js/runtime-main.f7b3b2ed.js.map",
     "static/js/2.e78d0781.chunk.js": "/static/js/2.e78d0781.chunk.js",
     "static/js/2.e78d0781.chunk.js.map": "/static/js/2.e78d0781.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.46ed1698.chunk.css.map": "/static/css/main.46ed1698.chunk.css.map",
+    "static/css/main.c2a00051.chunk.css.map": "/static/css/main.c2a00051.chunk.css.map",
     "static/js/2.e78d0781.chunk.js.LICENSE.txt": "/static/js/2.e78d0781.chunk.js.LICENSE.txt",
     "static/media/birdeye.bf1ea32e.png": "/static/media/birdeye.bf1ea32e.png",
     "static/media/btok.3e8ab30d.png": "/static/media/btok.3e8ab30d.png",
@@ -55,7 +55,7 @@
   "entrypoints": [
     "static/js/runtime-main.f7b3b2ed.js",
     "static/js/2.e78d0781.chunk.js",
-    "static/css/main.46ed1698.chunk.css",
-    "static/js/main.cd2b60ee.chunk.js"
+    "static/css/main.c2a00051.chunk.css",
+    "static/js/main.854486fc.chunk.js"
   ]
 }
