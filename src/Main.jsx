@@ -221,7 +221,7 @@ function Main() {
                 <h1 className="title text-left">
                   Community Development. Worldwide Adoption.
                 </h1>
-                <p className="lead mt-4 mb-5 text-left ms-0 me-auto">
+                <p className="lead mt-4 mb-4 text-left ms-0 me-auto">
                   Dingocoin is the most successful cryptocurrency fork of
                   Dogecoin, with revolutionary innovations and unstoppable
                   developments. Building an enthusiastic community, we bring
@@ -256,13 +256,13 @@ function Main() {
                 <h1 className="title text-center">
                   Community Development. Worldwide Adoption.
                 </h1>
-                <p className="lead mt-4 text-center mx-auto">
+                <p className="lead mt-2 text-center mx-auto">
                   Dingocoin is the most successful cryptocurrency fork of
                   Dogecoin, with revolutionary innovations and unstoppable
                   developments. Building an enthusiastic community, we bring
                   utility and fun to world.
                 </p>
-                <div className="d-flex flex-row mx-auto mt-5">
+                <div className="d-flex flex-row mx-auto mt-2">
                   <Button
                     className="btn-light me-3 px-4 py-2"
                     onClick={() => setWalletsModalShow(true)}
@@ -283,12 +283,12 @@ function Main() {
       </header>
 
       <section className="accessibility">
-        <Container className="py-2 py-lg-5 mt-2 mt-lg-5">
+        <Container className="py-3 py-lg-5 mt-2 mt-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description">
             <div className="d-flex flex-column title">
               <FadeInSection>
                 <h2 className="text-primary text-center px-0 px-lg-1">
-                  Setting the Gold Standard for accessibility
+                  The Gold Standard for accessibility
                 </h2>
                 <div className="mt-2 d-none d-lg-block">
                   <AccessibilityPreview />
@@ -325,7 +325,7 @@ function Main() {
       </section>
 
       <section className="listings">
-        <Container className="py-2 py-lg-5">
+        <Container className="py-3 py-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
             <div className="d-flex flex-column title px-0 px-lg-1">
               <FadeInSection>
@@ -353,7 +353,7 @@ function Main() {
                 <p>
                   Dingocoin aims to make itself highly available to everyone in
                   the world. With 12 listings in just one year of age, our
-                  expansion is matched by no oter meme currencies. Our listing
+                  expansion is matched by no other meme currencies. Our listing
                   rampage is planned to continue, with the final goal clear and
                   near - top 5, then top 3, then Binance.
                 </p>
@@ -631,7 +631,7 @@ function Main() {
       </section>
 
       <section className="community">
-        <Container className="py-2 py-lg-5">
+        <Container className="py-3 py-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
             <div className="d-flex flex-column title">
               <FadeInSection>
@@ -866,7 +866,7 @@ function Main() {
       </section>
 
       <section className="dyor">
-        <Container className="py-2 py-lg-5">
+        <Container className="py-3 py-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
             <div className="d-flex flex-column title">
               <FadeInSection>
