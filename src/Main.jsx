@@ -232,7 +232,7 @@ function Main() {
                     className="btn-light me-3 px-4 py-2"
                     onClick={() => setWalletsModalShow(true)}
                   >
-                    Get Wallet
+                    Get wallet
                   </Button>
                   <Button
                     className="btn-light ms-3 px-4 py-2"
@@ -850,7 +850,7 @@ function Main() {
                   target="_blank"
                 >
                   <Button className="px-4 py-2" variant="primary">
-                    Dingocoin NFT platform
+                    Dingocoin NFT Platform
                   </Button>
                 </a>
               </div>
