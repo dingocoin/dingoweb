@@ -318,7 +318,7 @@ function Main() {
                 <p>
                   Dingocoin aims to make itself highly available to everyone in
                   the world. With 12 listings in just one year of age, our
-                  expansion is matched by no other meme currencies. Our listing
+                  expansion is matched by no other meme currency. Our listing
                   rampage is planned to continue, with the final goal clear and
                   near - top 5, then top 3, then Binance.
                 </p>
@@ -854,7 +854,7 @@ function Main() {
                   We have <b>&gt; 10x</b> the developments of similar meme
                   currencies, yet merely <b>&lt; 0.02%</b> the market cap. As it
                   stands, Dingocoin is one of the most severely undervalued
-                  developments, with potential price increases of <b>5000x</b>{" "}
+                  projects, with potential price increases of <b>5000x</b>{" "}
                   based on market cap alone. Nonetheless, the community will
                   stop at nothing to develop the coin.
                 </p>
