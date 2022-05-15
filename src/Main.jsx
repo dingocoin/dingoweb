@@ -1001,7 +1001,7 @@ function Main() {
                   <p>
                     - <b>Happy Birthday, Dingocoin!</b>
                     <br /> - <b>Halve</b> block reward to 15,625
-                    <br />- <b>Listed</b> on LBank
+                    <br />- <b>Listed</b> on LBan k
                     <br />- <b>Listed</b> on BitMart
                   </p>
                 </li>
