@@ -671,7 +671,7 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     Dingo Diggers
                   </Button>
                 </a>
@@ -686,7 +686,7 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     Dingosino
                   </Button>
                 </a>
@@ -701,7 +701,7 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     Dingocoin City
                   </Button>
                 </a>
@@ -718,7 +718,7 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     Dingo Miner
                   </Button>
                 </a>
@@ -729,7 +729,7 @@ function Main() {
                   <FontAwesomeIcon className="faicon" icon={faChartLine} />
                 </div>
                 <a href="/stake">
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     Stake Dingocoins
                   </Button>
                 </a>
@@ -740,7 +740,7 @@ function Main() {
                   <Image src={SocialFaucetLogo} />
                 </div>
                 <a href="https://twitter.com/dingocoincrypto">
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     Weekly Airdrop
                   </Button>
                 </a>
@@ -751,7 +751,7 @@ function Main() {
                   <Image src={CryptoGrenadeLogo} />
                 </div>
                 <a href="https://cryptogrenade.xyz/" target="_blank">
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     CG's Faucet Platform
                   </Button>
                 </a>
@@ -769,7 +769,7 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     Dingette's Channel
                   </Button>
                 </a>
@@ -784,7 +784,7 @@ function Main() {
                 </div>
                 <Button
                   className="px-4 py-2"
-                  variant="primary"
+                  variant="outline-primary"
                   onClick={() => setMarketplaceModalShow(true)}
                 >
                   Marketplace
@@ -803,7 +803,7 @@ function Main() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     Discord Faucet/Tips
                   </Button>
                 </a>
@@ -849,7 +849,7 @@ function Main() {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <Button className="px-4 py-2" variant="primary">
+                  <Button className="px-4 py-2" variant="outline-primary">
                     Dingocoin NFT Platform
                   </Button>
                 </a>
