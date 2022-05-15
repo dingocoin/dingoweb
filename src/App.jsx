@@ -63,7 +63,6 @@ import {
   faReddit,
   faFacebook,
   faDiscord,
-  faWeixin,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faChartLine,
@@ -74,7 +73,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WechatInvite from "./assets/img/wechatinvite.png";
-import BtokLogo from "./assets/img/btok.png";
 import DingodiggersLogo from "./assets/img/dingodigger.png";
 import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";

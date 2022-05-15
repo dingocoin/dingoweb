@@ -12,7 +12,6 @@ import {
   Col,
   Modal,
   Image,
-  ProgressBar,
 } from "react-bootstrap";
 import CustomDivider from "./CustomDivider";
 import FadeInSection from "./FadeInSection";
@@ -24,11 +23,7 @@ import {
   faRobot,
   faShoppingCart,
   faGlobe,
-  faUserAstronaut,
-  faGamepad,
   faChartLine,
-  faWallet,
-  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import AutradexLogo from "./assets/img/autradex.png";
 import BSCLogo from "./assets/img/bsc.png";
@@ -56,10 +51,9 @@ import HotbitLogo from "./assets/img/hotbitex.png";
 import LBankLogo from "./assets/img/lbanklogo.png";
 import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
 import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
-import MerchFormulaRunLogo from "./assets/img/merch_formularun.png";
 import NFTCard from "./NftCard.jsx";
+import NftLogo from "./assets/img/dingocoinnftplatform.png";
 import PancakeSwap from "./assets/img/pancakeswap.png";
-import ParrotImage from "./assets/img/parrot.gif";
 import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
 import RobloxLogo from "./assets/img/roblox.png";
@@ -76,7 +70,6 @@ import WalletWindows from "./assets/img/wallet_windows.png";
 import WhyBuyImage from "./assets/img/whybuy.svg";
 import XTCOMLogo from "./assets/img/xtcom.png";
 import { faAndroid } from "@fortawesome/free-brands-svg-icons";
-import NftLogo from "./assets/img/dingocoinnftplatform.png";
 
 function AccessibilityPreview() {
   return (
@@ -86,25 +79,6 @@ function AccessibilityPreview() {
       <Image className="demo mx-3" src={WalletWindows} />
       <Image className="demo mx-3" src={WalletApple} />
       <Image className="demo mx-3" src={WalletLinux} />
-    </div>
-  );
-}
-
-function ListingsPreview() {
-  return (
-    <div className="d-flex flex-row flex-wrap justify-content-center">
-      <Image className="demo mx-3 my-3" src={BitmartLogo} />
-      <Image className="demo mx-3 my-3" src={LBankLogo} />
-      <Image className="demo mx-3 my-3" src={XTCOMLogo} />
-      <Image className="demo mx-3 my-3" src={HotbitLogo} />
-      <Image className="demo mx-3 my-3" src={SouthXchangeLogo} />
-      <Image className="demo mx-3 my-3" src={AutradexLogo} />
-      <Image className="demo mx-3 my-3" src={CratexIoLogo} />
-      <Image className="demo mx-3 my-3" src={ExbitronLogo} />
-      <Image className="demo mx-3 my-3" src={DexTradeLogo} />
-      <Image className="demo mx-3 my-3" src={DelionDexLogo} />
-      <Image className="demo mx-3 my-3" src={PancakeSwap} />
-      <Image className="demo mx-3 my-3" src={RaydiumSwap} />
     </div>
   );
 }
@@ -119,13 +93,6 @@ function Main() {
       })
     ).json();
   }
-
-  const [loaded, setLoaded] = React.useState(false);
-  React.useEffect(() => {
-    setTimeout(function () {
-      setLoaded(true);
-    }, 2500);
-  }, []);
 
   const [dingoStats, setDingoStats] = React.useState(null);
 
@@ -187,8 +154,6 @@ function Main() {
   }, []);
 
   const [infrastructureShow, setInfrastructureShow] = React.useState(false);
-  const [gamesShow, setGamesShow] = React.useState(false);
-  const [utilitiesShow, setUtilitiesShow] = React.useState(false);
 
   const [walletsModalShow, setWalletsModalShow] = React.useState(false);
   const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
@@ -690,7 +655,9 @@ function Main() {
                     Dingosino
                   </Button>
                 </a>
-                <p className="text-muted">Play games using Dingocoins on Discord.</p>
+                <p className="text-muted">
+                  Play games using Dingocoins on Discord.
+                </p>
               </div>
               <div className="project-card">
                 <div className="logo-holder">
@@ -722,7 +689,9 @@ function Main() {
                     Dingo Miner
                   </Button>
                 </a>
-                <p className="text-muted">Learn the ropes of mining with our Dingo Miner game.</p>
+                <p className="text-muted">
+                  Learn the ropes of mining with our Dingo Miner game.
+                </p>
               </div>
               <div className="project-card">
                 <div className="logo-holder">
@@ -733,7 +702,9 @@ function Main() {
                     Stake Dingocoins
                   </Button>
                 </a>
-                <p className="text-muted">Earn weekly rewards just for holding Dingocoins.</p>
+                <p className="text-muted">
+                  Earn weekly rewards just for holding Dingocoins.
+                </p>
               </div>
               <div className="project-card">
                 <div className="logo-holder">
@@ -744,7 +715,9 @@ function Main() {
                     Weekly Airdrop
                   </Button>
                 </a>
-                <p className="text-muted">Earn Dingocoins in our weekly Twitter airdrops.</p>
+                <p className="text-muted">
+                  Earn Dingocoins in our weekly Twitter airdrops.
+                </p>
               </div>
               <div className="project-card">
                 <div className="logo-holder">
@@ -889,10 +862,13 @@ function Main() {
             </div>
           </div>
           <FadeInSection>
-            <Image
-              style={{ width: "100%", height: "auto" }}
-              src={WhyBuyImage}
-            />
+            <div className="d-flex flex-column">
+              <Image
+                className="mx-auto"
+                style={{ maxWidth: "100%" }}
+                src={WhyBuyImage}
+              />
+            </div>
           </FadeInSection>
         </Container>
       </section>

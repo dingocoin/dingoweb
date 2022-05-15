@@ -286,7 +286,7 @@ a.simple-link:hover {
     max-width: 30rem;
     line-height: 170%;
     @media (max-width: 991px) {
-      text-align: justify !important;
+      text-align: center !important;
       font-size: 1rem;
     }
   }
@@ -326,7 +326,6 @@ a.simple-link:hover {
       width: 50%;
       @media (max-width: 991px) {
         width: 100%;
-        text-align: justify !important;
         font-size: 1rem;
       }
     }
@@ -359,7 +358,6 @@ a.simple-link:hover {
       width: 50%;
       @media (max-width: 991px) {
         width: 100%;
-        text-align: justify !important;
         font-size: 1rem;
       }
     }
@@ -392,7 +390,6 @@ a.simple-link:hover {
       width: 50%;
       @media (max-width: 991px) {
         width: 100%;
-        text-align: justify !important;
         font-size: 1rem;
       }
     }
@@ -424,7 +421,6 @@ a.simple-link:hover {
       max-width: 50%;
       @media (max-width: 991px) {
         max-width: 100%;
-        text-align: justify !important;
         font-size: 1rem;
       }
     }
