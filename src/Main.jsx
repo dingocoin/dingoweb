@@ -385,7 +385,7 @@ function Main() {
                     {dingoPrice === null ? "-" : "$" + dingoPrice.toFixed(7)}
                   </p>
                   <span></span>
-                  <p>Dingocoin price</p>
+                  <p className="text-muted">Dingocoin Price</p>
                 </div>
                 <div className="item">
                   <p className="number">
@@ -394,7 +394,7 @@ function Main() {
                       : "$" + Math.floor(dingoCap).toLocaleString()}
                   </p>
                   <span></span>
-                  <p>Dingocoin marketcap</p>
+                  <p className="text-muted">Marketcap</p>
                 </div>
                 <div className="item">
                   <p className="number">
@@ -403,7 +403,7 @@ function Main() {
                       : "$" + Math.floor(dingoVolume).toLocaleString()}
                   </p>
                   <span></span>
-                  <p>24h volume</p>
+                  <p className="text-muted">24h volume</p>
                 </div>
               </div>
             )}
@@ -675,7 +675,7 @@ function Main() {
                     Dingo Diggers
                   </Button>
                 </a>
-                <p>Easily Earn Dingo Mining Rewards.</p>
+                <p className="text-muted">Easily Earn Dingo Mining Rewards.</p>
               </div>
               <div className="project-card">
                 <div className="logo-holder">
@@ -690,7 +690,7 @@ function Main() {
                     Dingosino
                   </Button>
                 </a>
-                <p>Play games using Dingocoins on Discord.</p>
+                <p className="text-muted">Play games using Dingocoins on Discord.</p>
               </div>
               <div className="project-card">
                 <div className="logo-holder">
@@ -705,7 +705,7 @@ function Main() {
                     Dingocoin City
                   </Button>
                 </a>
-                <p>
+                <p className="text-muted">
                   Hang out with the Dingo Pack on Roblox <i>(Beta).</i>
                 </p>
               </div>
@@ -722,7 +722,7 @@ function Main() {
                     Dingo Miner
                   </Button>
                 </a>
-                <p>Learn the ropes of mining with our Dingo Miner game.</p>
+                <p className="text-muted">Learn the ropes of mining with our Dingo Miner game.</p>
               </div>
               <div className="project-card">
                 <div className="logo-holder">
@@ -733,7 +733,7 @@ function Main() {
                     Stake Dingocoins
                   </Button>
                 </a>
-                <p>Earn weekly rewards just for holding Dingocoins.</p>
+                <p className="text-muted">Earn weekly rewards just for holding Dingocoins.</p>
               </div>
               <div className="project-card">
                 <div className="logo-holder">
@@ -744,7 +744,7 @@ function Main() {
                     Weekly Airdrop
                   </Button>
                 </a>
-                <p>Earn Dingocoins in our weekly Twitter airdrops.</p>
+                <p className="text-muted">Earn Dingocoins in our weekly Twitter airdrops.</p>
               </div>
               <div className="project-card">
                 <div className="logo-holder">
@@ -755,7 +755,7 @@ function Main() {
                     CG's Faucet Platform
                   </Button>
                 </a>
-                <p>
+                <p className="text-muted">
                   Cryptogrenade's faucet platform - Paid to click, shortlinks,
                   referral rewards.
                 </p>
@@ -773,7 +773,7 @@ function Main() {
                     Dingette's Channel
                   </Button>
                 </a>
-                <p>
+                <p className="text-muted">
                   UwU? What's this? Our very own fan-lady growing the pack???
                   OwO
                 </p>
@@ -789,7 +789,7 @@ function Main() {
                 >
                   Marketplace
                 </Button>
-                <p>
+                <p className="text-muted">
                   Purchase Dingocoin merchandise/NFTs designed and sold by
                   community members.
                 </p>
@@ -807,7 +807,7 @@ function Main() {
                     Discord Faucet/Tips
                   </Button>
                 </a>
-                <p>
+                <p className="text-muted">
                   Get free sample Dingocoins.
                   <br /> Tip Dingocoins to others easily.
                 </p>
@@ -854,7 +854,7 @@ function Main() {
                   </Button>
                 </a>
               </div>
-              <p className="text-center mt-3">
+              <p className="text-center mt-3 text-muted">
                 Experience the next generation of NFTs. Create and trade NFTs on
                 our very own NFT platform. Pay less than {"<$0.001"} gas fees.
                 Trading is done entirely on-chain - you receive earnings
