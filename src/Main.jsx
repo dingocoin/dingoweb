@@ -563,7 +563,7 @@ function Main() {
                       {dingoPrice === null ? "-" : "$" + dingoPrice.toFixed(7)}
                     </p>
                     <span></span>
-                    <p>Dingocoin price</p>
+                    <p className="text-muted">Dingocoin price</p>
                   </div>
                   <div className="item">
                     <p className="number">
@@ -572,7 +572,7 @@ function Main() {
                         : "$" + Math.floor(dingoCap).toLocaleString()}
                     </p>
                     <span></span>
-                    <p>Dingocoin marketcap</p>
+                    <p className="text-muted">Marketcap</p>
                   </div>
                   <div className="item">
                     <p className="number">
@@ -581,7 +581,7 @@ function Main() {
                         : "$" + Math.floor(dingoVolume).toLocaleString()}
                     </p>
                     <span></span>
-                    <p>24h volume</p>
+                    <p className="text-muted">24h volume</p>
                   </div>
                 </div>
                 <div className="d-flex flex-row flex-wrap justify-content-center projectFactsWrap">
@@ -594,7 +594,7 @@ function Main() {
                           ).toLocaleString() + " B"}
                     </p>
                     <span></span>
-                    <p>Dingocoin supply</p>
+                    <p className="text-muted">Dingocoin supply</p>
                   </div>
                   <div className="item">
                     <p className="number">
@@ -603,7 +603,7 @@ function Main() {
                         : dingoStats.blocks.toLocaleString()}
                     </p>
                     <span></span>
-                    <p>Blocks mined</p>
+                    <p className="text-muted">Blocks mined</p>
                   </div>
                   <div className="item">
                     <p className="number">
@@ -612,7 +612,7 @@ function Main() {
                         : dingoStats.blockReward.toLocaleString()}
                     </p>
                     <span></span>
-                    <p>Current block reward</p>
+                    <p className="text-muted">Current block reward</p>
                   </div>
                   <div className="item">
                     <p className="number">
@@ -621,7 +621,7 @@ function Main() {
                         : dingoStats.blocksToHalving.toLocaleString()}
                     </p>
                     <span></span>
-                    <p>Blocks to next halving</p>
+                    <p className="text-muted">Blocks to next halving</p>
                   </div>
                 </div>
               </div>
