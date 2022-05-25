@@ -305,7 +305,7 @@ function Main() {
                   >
                     <Button variant="outline">
                       <img
-                        className="demo mx-3 my-3"
+                        className="demo "
                         alt=""
                         src={BitmartLogo}
                       />
@@ -317,7 +317,7 @@ function Main() {
                     href="https://www.lbank.info/exchange/dingo/usdt"
                   >
                     <Button variant="outline">
-                      <img className="demo mx-3 my-3" alt="" src={LBankLogo} />
+                      <img className="demo " alt="" src={LBankLogo} />
                     </Button>
                   </a>
                   <a
@@ -326,7 +326,7 @@ function Main() {
                     href="https://www.xt.com/trade/dingo_usdt"
                   >
                     <Button variant="outline">
-                      <img className="demo mx-3 my-3" alt="" src={XTCOMLogo} />
+                      <img className="demo " alt="" src={XTCOMLogo} />
                     </Button>
                   </a>
                   <a
@@ -335,7 +335,7 @@ function Main() {
                     href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
                   >
                     <Button variant="outline">
-                      <img className="demo mx-3 my-3" alt="" src={HotbitLogo} />
+                      <img className="demo " alt="" src={HotbitLogo} />
                     </Button>
                   </a>
                   <a
@@ -345,7 +345,7 @@ function Main() {
                   >
                     <Button variant="outline">
                       <img
-                        className="demo mx-3 my-3"
+                        className="demo "
                         alt=""
                         src={SouthXchangeLogo}
                       />
@@ -358,7 +358,7 @@ function Main() {
                   >
                     <Button variant="outline">
                       <img
-                        className="demo mx-3 my-3"
+                        className="demo "
                         alt=""
                         src={AutradexLogo}
                       />
@@ -371,7 +371,7 @@ function Main() {
                   >
                     <Button variant="outline">
                       <img
-                        className="demo mx-3 my-3"
+                        className="demo "
                         alt=""
                         src={ExbitronLogo}
                       />
@@ -384,7 +384,7 @@ function Main() {
                   >
                     <Button variant="outline">
                       <img
-                        className="demo mx-3 my-3"
+                        className="demo "
                         alt=""
                         src={CratexIoLogo}
                       />
@@ -397,7 +397,7 @@ function Main() {
                   >
                     <Button variant="outline">
                       <img
-                        className="demo mx-3 my-3"
+                        className="demo "
                         alt=""
                         src={DexTradeLogo}
                       />
@@ -410,7 +410,7 @@ function Main() {
                   >
                     <Button variant="outline">
                       <img
-                        className="demo mx-3 my-3"
+                        className="demo "
                         alt=""
                         src={DelionDexLogo}
                       />
@@ -423,7 +423,7 @@ function Main() {
                   >
                     <Button variant="outline">
                       <img
-                        className="demo mx-3 my-3"
+                        className="demo "
                         alt=""
                         src={PancakeSwap}
                       />
@@ -436,7 +436,7 @@ function Main() {
                   >
                     <Button variant="outline">
                       <img
-                        className="demo mx-3 my-3"
+                        className="demo "
                         alt=""
                         src={RaydiumSwap}
                       />
