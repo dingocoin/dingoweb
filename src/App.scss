@@ -987,7 +987,7 @@ a.simple-link:hover {
     margin: 0;
   }
   img {
-    height: 5rem;
+    height: 4rem;
     padding: 0;
     margin: 0;
   }
@@ -1105,4 +1105,8 @@ a.simple-link:hover {
   padding-right: 0.25rem;
   height: 1rem;
   width: 1rem;
+}
+
+.modal-content {
+  max-height: 80% !important;
 }

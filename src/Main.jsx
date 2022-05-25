@@ -298,18 +298,150 @@ function Main() {
                   A highly ambitious growth strategy
                 </h2>
                 <div className="mt-2 d-flex flex-row flex-wrap justify-content-center">
-                  <Image className="demo mx-3 my-3" src={BitmartLogo} />
-                  <Image className="demo mx-3 my-3" src={LBankLogo} />
-                  <Image className="demo mx-3 my-3" src={XTCOMLogo} />
-                  <Image className="demo mx-3 my-3" src={HotbitLogo} />
-                  <Image className="demo mx-3 my-3" src={SouthXchangeLogo} />
-                  <Image className="demo mx-3 my-3" src={AutradexLogo} />
-                  <Image className="demo mx-3 my-3" src={CratexIoLogo} />
-                  <Image className="demo mx-3 my-3" src={ExbitronLogo} />
-                  <Image className="demo mx-3 my-3" src={DexTradeLogo} />
-                  <Image className="demo mx-3 my-3" src={DelionDexLogo} />
-                  <Image className="demo mx-3 my-3" src={PancakeSwap} />
-                  <Image className="demo mx-3 my-3" src={RaydiumSwap} />
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
+                  >
+                    <Button variant="outline">
+                      <img
+                        className="demo mx-3 my-3"
+                        alt=""
+                        src={BitmartLogo}
+                      />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.lbank.info/exchange/dingo/usdt"
+                  >
+                    <Button variant="outline">
+                      <img className="demo mx-3 my-3" alt="" src={LBankLogo} />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.xt.com/trade/dingo_usdt"
+                  >
+                    <Button variant="outline">
+                      <img className="demo mx-3 my-3" alt="" src={XTCOMLogo} />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
+                  >
+                    <Button variant="outline">
+                      <img className="demo mx-3 my-3" alt="" src={HotbitLogo} />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://main.southxchange.com/Market/Book/DINGO/LTC"
+                  >
+                    <Button variant="outline">
+                      <img
+                        className="demo mx-3 my-3"
+                        alt=""
+                        src={SouthXchangeLogo}
+                      />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://wallet.autradex.systems/"
+                  >
+                    <Button variant="outline">
+                      <img
+                        className="demo mx-3 my-3"
+                        alt=""
+                        src={AutradexLogo}
+                      />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.exbitron.com/trading/dingousdt"
+                  >
+                    <Button variant="outline">
+                      <img
+                        className="demo mx-3 my-3"
+                        alt=""
+                        src={ExbitronLogo}
+                      />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://cratex.io/index.php?pair=DINGO/LTC"
+                  >
+                    <Button variant="outline">
+                      <img
+                        className="demo mx-3 my-3"
+                        alt=""
+                        src={CratexIoLogo}
+                      />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://dex-trade.com/spot/trading/DINGOUSDT"
+                  >
+                    <Button variant="outline">
+                      <img
+                        className="demo mx-3 my-3"
+                        alt=""
+                        src={DexTradeLogo}
+                      />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://dex.delion.online/market/DELION.DINGO_DOGE"
+                  >
+                    <Button variant="outline">
+                      <img
+                        className="demo mx-3 my-3"
+                        alt=""
+                        src={DelionDexLogo}
+                      />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+                  >
+                    <Button variant="outline">
+                      <img
+                        className="demo mx-3 my-3"
+                        alt=""
+                        src={PancakeSwap}
+                      />
+                    </Button>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3&outputAmount=0&fixed=in"
+                  >
+                    <Button variant="outline">
+                      <img
+                        className="demo mx-3 my-3"
+                        alt=""
+                        src={RaydiumSwap}
+                      />
+                    </Button>
+                  </a>
                 </div>
               </FadeInSection>
             </div>
@@ -854,9 +986,9 @@ function Main() {
                   We have <b>&gt; 10x</b> the developments of similar meme
                   currencies, yet merely <b>&lt; 0.02%</b> the market cap. As it
                   stands, Dingocoin is one of the most severely undervalued
-                  projects, with potential price increases of <b>5000x</b>{" "}
-                  based on market cap alone. Nonetheless, the community will
-                  stop at nothing to develop the coin.
+                  projects, with potential price increases of <b>5000x</b> based
+                  on market cap alone. Nonetheless, the community will stop at
+                  nothing to develop the coin.
                 </p>
               </FadeInSection>
             </div>
@@ -1020,6 +1152,7 @@ function Main() {
         onHide={() => {
           setWalletsModalShow(false);
         }}
+        scrollable={true}
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
@@ -1178,6 +1311,7 @@ function Main() {
         onHide={() => {
           setExchangesModalShow(false);
         }}
+        scrollable={true}
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
@@ -1405,6 +1539,7 @@ function Main() {
         onHide={() => {
           setMarketplaceModalShow(false);
         }}
+        scrollable={true}
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
