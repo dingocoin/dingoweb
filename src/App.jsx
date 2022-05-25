@@ -510,6 +510,16 @@ function App() {
                     </div>{" "}
                     Explorer (Open Chains)
                   </NavDropdown.Item>
+                  <NavDropdown.Item
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.dingochain.info/"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon icon={faMicroscope} />
+                    </div>{" "}
+                    Explorer (Mirror)
+                  </NavDropdown.Item>
                   <NavDropdown.Item href="/privacy">
                     <div className="inline-logo-holder">
                       <FontAwesomeIcon icon={faUserSecret} />
