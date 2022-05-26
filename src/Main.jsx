@@ -247,6 +247,7 @@ function Main() {
         </Container>
       </header>
 
+      {/*
       <section className="accessibility">
         <Container className="py-3 py-lg-5 mt-2 mt-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description">
@@ -288,166 +289,237 @@ function Main() {
           </div>
         </Container>
       </section>
+      */}
 
+      <section className="community">
+        <Container className="py-3 py-lg-5">
+          <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
+            <div className="d-flex flex-column lead mx-auto">
+              <FadeInSection>
+                <h2 className="text-primary text-center">
+                  Non-stop developments
+                </h2>
+                <p className="text-muted text-center mt-2 mb-4">
+                  Dingocoin is all about building utility and fun. Explore the
+                  community's creations today. Even better, contribute your own
+                  ideas!
+                </p>
+              </FadeInSection>
+            </div>
+          </div>
+          <FadeInSection>
+            <div className="d-flex flex-row flex-wrap justify-content-center">
+              <a
+                href="https://discord.gg/fka9pZXxPB"
+                target="_blank"
+                rel="noreferrer"
+                className="project-card d-flex flex-row"
+              >
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <Image src={DingodiggersLogo} />
+                  </div>
+                  <h5 className="text-primary">Dingo Diggers</h5>
+                  <p className="text-muted">
+                    Easily Earn Dingo Mining Rewards.
+                  </p>
+                </div>
+              </a>
+              <a
+                href="https://discord.gg/9advvJ4z5f"
+                target="_blank"
+                rel="noreferrer"
+                className="project-card d-flex"
+              >
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <Image src={DingosinoLogo} />
+                  </div>
+                  <h5 className="text-primary">Dingosino</h5>
+                  <p className="text-muted">
+                    Play games using Dingocoins on Discord.
+                  </p>
+                </div>
+              </a>
+              <a
+                href="https://www.roblox.com/games/8019728893/Dingo-Coin-City"
+                target="_blank"
+                rel="noreferrer"
+                className="project-card d-flex"
+              >
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <Image src={RobloxLogo} />
+                  </div>
+                  <h5 className="text-primary">Dingocoin City</h5>
+                  <p className="text-muted">
+                    Hang out with the Dingo Pack on Roblox <i>(Beta).</i>
+                  </p>
+                </div>
+              </a>
+              <a
+                href="http://miner.dingocoin.org/"
+                target="_blank"
+                rel="noreferrer"
+                className="project-card d-flex"
+              >
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <Image src={DingominerLogo} />
+                  </div>
+                  <h5 className="text-primary">Dingo Miner</h5>
+                  <p className="text-muted">
+                    Learn the ropes of mining with our Dingo Miner game.
+                  </p>
+                </div>
+              </a>
+              <a href="/stake" className="project-card d-flex">
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <FontAwesomeIcon className="faicon" icon={faChartLine} />
+                  </div>
+                  <h5 className="text-primary">Stake Dingocoins</h5>
+                  <p className="text-muted">
+                    Earn weekly rewards just for holding Dingocoins.
+                  </p>
+                </div>
+              </a>
+              <a
+                href="https://twitter.com/dingocoincrypto"
+                className="project-card d-flex"
+              >
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <Image src={SocialFaucetLogo} />
+                  </div>
+                  <h5 className="text-primary">Weekly Airdrop</h5>
+                  <p className="text-muted">
+                    Earn Dingocoins in our weekly Twitter airdrops.
+                  </p>
+                </div>
+              </a>
+              <a
+                href="https://cryptogrenade.xyz/"
+                target="_blank"
+                className="project-card d-flex"
+              >
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <Image src={CryptoGrenadeLogo} />
+                  </div>
+                  <h5 className="text-primary">CG's Faucet Platform</h5>
+                  <p className="text-muted">
+                    Cryptogrenade's faucet platform - Paid to click, shortlinks,
+                    referral rewards.
+                  </p>
+                </div>
+              </a>
+              <a
+                href="https://www.reddit.com/user/Dingo-Is-My-Man/"
+                target="_blank"
+                rel="noreferrer"
+                className="project-card d-flex"
+              >
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <Image src={DingetteLogo} />
+                  </div>
+                  <h5 className="text-primary">Dingette's Channel</h5>
+                  <p className="text-muted">
+                    UwU? What's this? Our very own fan-lady growing the pack???
+                    OwO
+                  </p>
+                </div>
+              </a>
+              <div
+                className="project-card d-flex"
+                onClick={() => setMarketplaceModalShow(true)}
+              >
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
+                  </div>
+                  <h5 className="text-primary">Marketplace</h5>
+                  <p className="text-muted">
+                    Purchase merchandise/NFTs created by our community members.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://discord.gg/y3J946HFQM"
+                target="_blank"
+                rel="noreferrer"
+                className="project-card d-flex"
+              >
+                <div className="mt-3 mb-auto mx-auto">
+                  <div className="logo-holder">
+                    <FontAwesomeIcon className="faicon" icon={faRobot} />
+                  </div>
+                  <h5>Discord Faucet/Tips</h5>
+                  <p className="text-muted">
+                    Get free sample Dingocoins.
+                    <br /> Tip Dingocoins to others easily.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </FadeInSection>
+          <FadeInSection>
+            <div className="mt-3 d-flex flex-column">
+              {previewNfts !== null && (
+                <div className="mt-1">
+                  <SideScroller
+                    defaultHeight="24.8rem"
+                    items={previewNfts}
+                    itemTemplate={(x) => (
+                      <li key={x}>
+                        <a
+                          href={`https://nft.dingocoin.org/nft/${x}`}
+                          target="_blank"
+                        >
+                          <NFTCard address={x} />
+                        </a>
+                      </li>
+                    )}
+                  />
+                </div>
+              )}
+              {previewNfts === null && (
+                <div
+                  className="mt-1 d-flex flex-row"
+                  style={{ height: "24.8rem" }}
+                >
+                  <Spinner animation="border" className="m-auto" />
+                </div>
+              )}
+              <div className="d-flex flex-row">
+                <a
+                  className="mx-auto mt-3"
+                  href="https://nft.dingocoin.org"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Button className="px-4 py-2" variant="outline-primary">
+                    Dingocoin NFT Platform
+                  </Button>
+                </a>
+              </div>
+              <p className="text-center mt-3 text-muted">
+                Create and trade NFTs on our very own NFT platform.
+              </p>
+            </div>
+          </FadeInSection>
+        </Container>
+      </section>
+
+      {/*
       <section className="listings">
         <Container className="py-3 py-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
-            <div className="d-flex flex-column title px-0 px-lg-1">
+            <div className="d-flex flex-column lead mb-4 px-0 px-lg-1 mx-auto">
               <FadeInSection>
-                <h2 className="text-primary text-center">
-                  A highly ambitious growth strategy
-                </h2>
-                <div className="mt-2 d-flex flex-row flex-wrap justify-content-center">
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
-                  >
-                    <Button variant="outline">
-                      <img
-                        className="demo "
-                        alt=""
-                        src={BitmartLogo}
-                      />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.lbank.info/exchange/dingo/usdt"
-                  >
-                    <Button variant="outline">
-                      <img className="demo " alt="" src={LBankLogo} />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.xt.com/trade/dingo_usdt"
-                  >
-                    <Button variant="outline">
-                      <img className="demo " alt="" src={XTCOMLogo} />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
-                  >
-                    <Button variant="outline">
-                      <img className="demo " alt="" src={HotbitLogo} />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://main.southxchange.com/Market/Book/DINGO/LTC"
-                  >
-                    <Button variant="outline">
-                      <img
-                        className="demo "
-                        alt=""
-                        src={SouthXchangeLogo}
-                      />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://wallet.autradex.systems/"
-                  >
-                    <Button variant="outline">
-                      <img
-                        className="demo "
-                        alt=""
-                        src={AutradexLogo}
-                      />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.exbitron.com/trading/dingousdt"
-                  >
-                    <Button variant="outline">
-                      <img
-                        className="demo "
-                        alt=""
-                        src={ExbitronLogo}
-                      />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://cratex.io/index.php?pair=DINGO/LTC"
-                  >
-                    <Button variant="outline">
-                      <img
-                        className="demo "
-                        alt=""
-                        src={CratexIoLogo}
-                      />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://dex-trade.com/spot/trading/DINGOUSDT"
-                  >
-                    <Button variant="outline">
-                      <img
-                        className="demo "
-                        alt=""
-                        src={DexTradeLogo}
-                      />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://dex.delion.online/market/DELION.DINGO_DOGE"
-                  >
-                    <Button variant="outline">
-                      <img
-                        className="demo "
-                        alt=""
-                        src={DelionDexLogo}
-                      />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
-                  >
-                    <Button variant="outline">
-                      <img
-                        className="demo "
-                        alt=""
-                        src={PancakeSwap}
-                      />
-                    </Button>
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3&outputAmount=0&fixed=in"
-                  >
-                    <Button variant="outline">
-                      <img
-                        className="demo "
-                        alt=""
-                        src={RaydiumSwap}
-                      />
-                    </Button>
-                  </a>
-                </div>
-              </FadeInSection>
-            </div>
-            <div className="d-flex flex-column lead mb-4 px-0 px-lg-1">
-              <FadeInSection>
-                <p>
+                <h2 className="text-primary text-center">Such availability</h2>
+                <p className="text-muted text-center mt-2 mb-4">
                   Dingocoin aims to make itself highly available to everyone in
                   the world. With 12 listings in just one year of age, our
                   expansion is matched by no other meme currency. Our listing
@@ -455,12 +527,6 @@ function Main() {
                   near - top 5, then top 3, then Binance.
                 </p>
                 <div className="d-flex flex-row mt-2 justify-content-center justify-content-md-center justify-content-lg-start justify-content-xl-start">
-                  <Button
-                    className="btn-primary me-3 px-4 py-2"
-                    onClick={() => setExchangesModalShow(true)}
-                  >
-                    Trade Dingocoin
-                  </Button>
                   {!infrastructureShow && (
                     <Button
                       className="btn-primary px-4 py-2"
@@ -723,253 +789,123 @@ function Main() {
                 </div>
               </div>
             )}
-          </FadeInSection>
-        </Container>
-      </section>
 
-      <section className="community">
-        <Container className="py-3 py-lg-5">
-          <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
-            <div className="d-flex flex-column title">
-              <FadeInSection>
-                <h2 className="text-primary text-center">
-                  Non-stop community developments
-                </h2>
-                <div className="mt-2 flex-row flex-wrap justify-content-center mb-4 d-none d-lg-flex">
-                  <Image className="demo mx-3" src={NftLogo} />
-                  <Image className="demo mx-3" src={DingodiggersLogo} />
-                  <Image className="demo mx-3" src={DingosinoLogo} />
-                  <Image className="demo mx-3" src={RobloxLogo} />
-                  <Image className="demo mx-3" src={DingominerLogo} />
-                </div>
-              </FadeInSection>
-            </div>
-            <div className="d-flex flex-column lead">
-              <FadeInSection>
-                <p>
-                  The Dingocoin community always finds new ideas for Dingocoin.
-                  We build legitimate value and purpose into Dingocoin - from
-                  our very own NFT platform, to Discord and Roblox games, to
-                  staking, airdrops, and faucet. Explore the galore of games,
-                  utilities, and activities produced by our very own members.
-                  Even better, contribute your own ideas!
-                </p>
-              </FadeInSection>
-            </div>
-          </div>
-          <FadeInSection>
-            <div className="d-flex flex-row flex-wrap justify-content-center">
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={DingodiggersLogo} />
-                </div>
-                <a
-                  href="https://discord.gg/fka9pZXxPB"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    Dingo Diggers
-                  </Button>
-                </a>
-                <p className="text-muted">Easily Earn Dingo Mining Rewards.</p>
-              </div>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={DingosinoLogo} />
-                </div>
-                <a
-                  href="https://discord.gg/9advvJ4z5f"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    Dingosino
-                  </Button>
-                </a>
-                <p className="text-muted">
-                  Play games using Dingocoins on Discord.
-                </p>
-              </div>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={RobloxLogo} />
-                </div>
-                <a
-                  href="https://www.roblox.com/games/8019728893/Dingo-Coin-City"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    Dingocoin City
-                  </Button>
-                </a>
-                <p className="text-muted">
-                  Hang out with the Dingo Pack on Roblox <i>(Beta).</i>
-                </p>
-              </div>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={DingominerLogo} />
-                </div>
-                <a
-                  href="http://miner.dingocoin.org/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    Dingo Miner
-                  </Button>
-                </a>
-                <p className="text-muted">
-                  Learn the ropes of mining with our Dingo Miner game.
-                </p>
-              </div>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faChartLine} />
-                </div>
-                <a href="/stake">
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    Stake Dingocoins
-                  </Button>
-                </a>
-                <p className="text-muted">
-                  Earn weekly rewards just for holding Dingocoins.
-                </p>
-              </div>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={SocialFaucetLogo} />
-                </div>
-                <a href="https://twitter.com/dingocoincrypto">
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    Weekly Airdrop
-                  </Button>
-                </a>
-                <p className="text-muted">
-                  Earn Dingocoins in our weekly Twitter airdrops.
-                </p>
-              </div>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={CryptoGrenadeLogo} />
-                </div>
-                <a href="https://cryptogrenade.xyz/" target="_blank">
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    CG's Faucet Platform
-                  </Button>
-                </a>
-                <p className="text-muted">
-                  Cryptogrenade's faucet platform - Paid to click, shortlinks,
-                  referral rewards.
-                </p>
-              </div>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <Image src={DingetteLogo} />
-                </div>
-                <a
-                  href="https://www.reddit.com/user/Dingo-Is-My-Man/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    Dingette's Channel
-                  </Button>
-                </a>
-                <p className="text-muted">
-                  UwU? What's this? Our very own fan-lady growing the pack???
-                  OwO
-                </p>
-              </div>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
-                </div>
-                <Button
-                  className="px-4 py-2"
-                  variant="outline-primary"
-                  onClick={() => setMarketplaceModalShow(true)}
-                >
-                  Marketplace
+            <div className="mt-2 d-flex flex-row flex-wrap justify-content-center">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={BitmartLogo} />
                 </Button>
-                <p className="text-muted">
-                  Purchase Dingocoin merchandise/NFTs designed and sold by
-                  community members.
-                </p>
-              </div>
-              <div className="project-card">
-                <div className="logo-holder">
-                  <FontAwesomeIcon className="faicon" icon={faRobot} />
-                </div>
-                <a
-                  href="https://discord.gg/y3J946HFQM"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    Discord Faucet/Tips
-                  </Button>
-                </a>
-                <p className="text-muted">
-                  Get free sample Dingocoins.
-                  <br /> Tip Dingocoins to others easily.
-                </p>
-              </div>
-            </div>
-          </FadeInSection>
-          <FadeInSection>
-            <div className="mt-3 d-flex flex-column">
-              {previewNfts !== null && (
-                <div className="mt-1">
-                  <SideScroller
-                    defaultHeight="24.8rem"
-                    items={previewNfts}
-                    itemTemplate={(x) => (
-                      <li key={x}>
-                        <a
-                          href={`https://nft.dingocoin.org/nft/${x}`}
-                          target="_blank"
-                        >
-                          <NFTCard address={x} />
-                        </a>
-                      </li>
-                    )}
-                  />
-                </div>
-              )}
-              {previewNfts === null && (
-                <div
-                  className="mt-1 d-flex flex-row"
-                  style={{ height: "24.8rem" }}
-                >
-                  <Spinner animation="border" className="m-auto" />
-                </div>
-              )}
-              <div className="d-flex flex-row">
-                <a
-                  className="mx-auto mt-3"
-                  href="https://nft.dingocoin.org"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <Button className="px-4 py-2" variant="outline-primary">
-                    Dingocoin NFT Platform
-                  </Button>
-                </a>
-              </div>
-              <p className="text-center mt-3 text-muted">
-                Experience the next generation of NFTs. Create and trade NFTs on
-                our very own NFT platform. Pay less than {"<$0.001"} gas fees.
-                Trading is done entirely on-chain - you receive earnings
-                immediately.
-              </p>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.lbank.info/exchange/dingo/usdt"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={LBankLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.xt.com/trade/dingo_usdt"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={XTCOMLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={HotbitLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://main.southxchange.com/Market/Book/DINGO/LTC"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={SouthXchangeLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://wallet.autradex.systems/"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={AutradexLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.exbitron.com/trading/dingousdt"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={ExbitronLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://cratex.io/index.php?pair=DINGO/LTC"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={CratexIoLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://dex-trade.com/spot/trading/DINGOUSDT"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={DexTradeLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://dex.delion.online/market/DELION.DINGO_DOGE"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={DelionDexLogo} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={PancakeSwap} />
+                </Button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3&outputAmount=0&fixed=in"
+              >
+                <Button variant="outline">
+                  <img className="demo " alt="" src={RaydiumSwap} />
+                </Button>
+              </a>
             </div>
           </FadeInSection>
         </Container>
       </section>
+      */}
 
+      {/*
       <section className="dyor">
         <Container className="py-3 py-lg-5">
           <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
@@ -1004,8 +940,9 @@ function Main() {
           </FadeInSection>
         </Container>
       </section>
+      */}
 
-      <section className="section-a" id="roadmap">
+      <section className="section-a mb-5" id="roadmap">
         <FadeInSection>
           <h1 className="mt-5 text-center text-primary">
             <b>Roadmap</b>
@@ -1117,6 +1054,7 @@ function Main() {
             </ul>
           </Row>
 
+          {/*
           <Row>
             <FadeInSection>
               <h1 className="text-center text-primary mt-5">
@@ -1141,6 +1079,7 @@ function Main() {
               </div>
             </FadeInSection>
           </Row>
+          */}
         </Container>
       </section>
 

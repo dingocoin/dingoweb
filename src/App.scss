@@ -17,7 +17,16 @@ $theme-colors: (
   font-family: "Lato";
 }
 
-h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .nav-item, button {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.nav-link,
+.nav-item,
+button {
   font-family: "Arvo" !important;
 }
 
@@ -349,18 +358,22 @@ a.simple-link:hover {
         width: 5rem;
         height: auto;
       }
-      .demo {
-        height: 1rem;
-        width: auto;
-      }
     }
     .lead {
+      h2 {
+        font-size: 2.5rem;
+      }
       width: 50%;
       @media (max-width: 991px) {
         width: 100%;
         font-size: 1rem;
       }
     }
+  }
+
+  .demo {
+    height: 1rem;
+    width: auto;
   }
 }
 
@@ -387,6 +400,9 @@ a.simple-link:hover {
       }
     }
     .lead {
+      h2 {
+        font-size: 2.5rem;
+      }
       width: 50%;
       @media (max-width: 991px) {
         width: 100%;
@@ -472,8 +488,19 @@ a.simple-link:hover {
 .project-card {
   text-align: center;
   width: 16rem;
+  height: 12rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  border: 1px solid $light-border;
+  border-radius: 5px;
+  margin: 0.35rem;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid $primary;
+  }
+
+  transition: border 0.1s linear;
 }
 
 .project-card .logo-holder {
