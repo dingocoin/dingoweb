@@ -1436,7 +1436,6 @@ function Main() {
               </a>
             </Row>
           </Container>
-          <CustomDivider />
           <Container className="exchangesModalSection">
             <Row>
               <Col>
