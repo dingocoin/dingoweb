@@ -297,7 +297,7 @@ function Main() {
             <div className="d-flex flex-column lead mx-auto">
               <FadeInSection>
                 <h2 className="text-primary text-center">
-                  Non-stop developments
+                  Non-stop development
                 </h2>
                 <p className="text-muted text-center mt-2 mb-4">
                   Dingocoin is all about building utility and fun. Explore the
