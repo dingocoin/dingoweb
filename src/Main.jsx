@@ -310,7 +310,7 @@ function Main() {
           <FadeInSection>
             <div className="d-flex flex-row flex-wrap justify-content-center">
               <a
-                href="https://discord.gg/fka9pZXxPB"
+                href="https://discord.gg/y3J946HFQM"
                 target="_blank"
                 rel="noreferrer"
                 className="project-card d-flex flex-row"
@@ -326,7 +326,7 @@ function Main() {
                 </div>
               </a>
               <a
-                href="https://discord.gg/9advvJ4z5f"
+                href="https://discord.gg/y3J946HFQM"
                 target="_blank"
                 rel="noreferrer"
                 className="project-card d-flex"
