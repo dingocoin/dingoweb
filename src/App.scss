@@ -487,13 +487,14 @@ a.simple-link:hover {
 
 .project-card {
   text-align: center;
-  width: 16rem;
-  height: 12.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-radius: 5px;
+  width: 18rem;
+  height: 14rem;
+  border-radius: 0.4rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin: 0.35rem;
-  background: darken($secondary, 10%);
+  background: darken($secondary, 5%);
   border: 1px solid darken($secondary, 5%);
 
   &:hover {

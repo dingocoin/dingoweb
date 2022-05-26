@@ -26,7 +26,6 @@ import {
   faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
 import AutradexLogo from "./assets/img/autradex.png";
-import BSCLogo from "./assets/img/bsc.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
 import BitmartLogo from "./assets/img/bitmartlogo.png";
 import CoinCodexLogo from "./assets/img/coincodex.png";
@@ -41,7 +40,6 @@ import DexTradeLogo from "./assets/img/dextrade.png";
 import DingetteLogo from "./assets/img/dingette.png";
 import DingocoinAnimatedLogo from "./assets/img/dingocoin-rotate.gif";
 import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
-import DingocoinLogo from "./assets/img/dingocoin.png";
 import DingodiggersLogo from "./assets/img/dingodigger.png";
 import DingominerLogo from "./assets/img/dingominer.png";
 import DingosinoLogo from "./assets/img/dingosino.png";
@@ -52,22 +50,17 @@ import LBankLogo from "./assets/img/lbanklogo.png";
 import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
 import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
 import NFTCard from "./NftCard.jsx";
-import NftLogo from "./assets/img/dingocoinnftplatform.png";
 import PancakeSwap from "./assets/img/pancakeswap.png";
 import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
 import RobloxLogo from "./assets/img/roblox.png";
-import SOLLogo from "./assets/img/sol.png";
 import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
-import TrailmapImage from "./assets/img/trailmap.svg";
-import WDingocoinLogo from "./assets/img/wdingocoin.png";
 import WalletApple from "./assets/img/wallet_apple.png";
 import WalletChrome from "./assets/img/wallet_chrome.png";
 import WalletFirefox from "./assets/img/wallet_firefox.png";
 import WalletLinux from "./assets/img/wallet_linux.png";
 import WalletWindows from "./assets/img/wallet_windows.png";
-import WhyBuyImage from "./assets/img/whybuy.svg";
 import XTCOMLogo from "./assets/img/xtcom.png";
 import { faAndroid } from "@fortawesome/free-brands-svg-icons";
 
@@ -315,7 +308,7 @@ function Main() {
                 rel="noreferrer"
                 className="project-card d-flex flex-row"
               >
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <Image src={DingodiggersLogo} />
                   </div>
@@ -331,7 +324,7 @@ function Main() {
                 rel="noreferrer"
                 className="project-card d-flex"
               >
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <Image src={DingosinoLogo} />
                   </div>
@@ -347,7 +340,7 @@ function Main() {
                 rel="noreferrer"
                 className="project-card d-flex"
               >
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <Image src={RobloxLogo} />
                   </div>
@@ -363,7 +356,7 @@ function Main() {
                 rel="noreferrer"
                 className="project-card d-flex"
               >
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <Image src={DingominerLogo} />
                   </div>
@@ -374,7 +367,7 @@ function Main() {
                 </div>
               </a>
               <a href="/stake" className="project-card d-flex">
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <FontAwesomeIcon className="faicon" icon={faChartLine} />
                   </div>
@@ -388,7 +381,7 @@ function Main() {
                 href="https://twitter.com/dingocoincrypto"
                 className="project-card d-flex"
               >
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <Image src={SocialFaucetLogo} />
                   </div>
@@ -403,7 +396,7 @@ function Main() {
                 target="_blank"
                 className="project-card d-flex"
               >
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <Image src={CryptoGrenadeLogo} />
                   </div>
@@ -420,7 +413,7 @@ function Main() {
                 rel="noreferrer"
                 className="project-card d-flex"
               >
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <Image src={DingetteLogo} />
                   </div>
@@ -435,7 +428,7 @@ function Main() {
                 className="project-card d-flex"
                 onClick={() => setMarketplaceModalShow(true)}
               >
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <FontAwesomeIcon className="faicon" icon={faShoppingCart} />
                   </div>
@@ -451,7 +444,7 @@ function Main() {
                 rel="noreferrer"
                 className="project-card d-flex"
               >
-                <div className="mt-3 mb-auto mx-auto">
+                <div className="mb-auto mx-auto">
                   <div className="logo-holder">
                     <FontAwesomeIcon className="faicon" icon={faRobot} />
                   </div>
