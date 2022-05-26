@@ -491,9 +491,10 @@ a.simple-link:hover {
   height: 12rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  border: 1px solid $light-border;
   border-radius: 5px;
   margin: 0.35rem;
+  background: darken($secondary, 10%);
+  border: 1px solid darken($secondary, 5%);
 
   &:hover {
     cursor: pointer;
