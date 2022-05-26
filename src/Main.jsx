@@ -1416,16 +1416,6 @@ function Main() {
                   <img alt="" src={DelionDexLogo} />
                 </Button>
               </a>
-            </Row>
-          </Container>
-          <CustomDivider />
-          <Container className="exchangesModalSection">
-            <Row>
-              <Col>
-                <h5>Buy wDingocoin</h5>
-              </Col>
-            </Row>
-            <Row>
               <a
                 target="_blank"
                 rel="noreferrer"
