@@ -69,7 +69,7 @@ import {
   faHammer,
   faMicroscope,
   faUserSecret,
-  faComment
+  faComment,
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WechatInvite from "./assets/img/wechatinvite.png";
@@ -105,9 +105,7 @@ function App() {
                 navbarScroll
                 style={{ maxHeight: "300px" }}
               >
-                <Nav.Link href="/">
-                  Home
-                </Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
                 <NavDropdown className="navbar-important" title="$DINGO">
                   <NavDropdown.Header>Wallets</NavDropdown.Header>
                   <div className="d-flex flex-wrap navbar-panel justify-content-center">
@@ -349,9 +347,7 @@ function App() {
                     </div>{" "}
                     Dingo Miner
                   </NavDropdown.Item>
-                  <NavDropdown.Item
-                    href="/stake"
-                  >
+                  <NavDropdown.Item href="/stake">
                     <div className="inline-logo-holder">
                       <FontAwesomeIcon icon={faChartLine} />
                     </div>{" "}
@@ -462,9 +458,7 @@ function App() {
                     href="https://docs.google.com/forms/d/e/1FAIpQLSfBw1SJJWcM1eLY_1oFS9iNdKn7fJapKl5zqwraP1TSvXu5VA/viewform?usp=sf_link"
                   >
                     <div className="inline-logo-holder">
-                      <FontAwesomeIcon
-                        icon={faComment}
-                      />
+                      <FontAwesomeIcon icon={faComment} />
                     </div>{" "}
                     Feedback
                   </NavDropdown.Item>
@@ -527,9 +521,7 @@ function App() {
                     Privacy Policy
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="/trailmap">
-                  Trailmap
-                </Nav.Link>
+                <Nav.Link href="/trailmap">Trailmap</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -714,6 +706,14 @@ function App() {
                     </div>
                   </div>
                 </a>
+              </div>
+              <div className="mt-3">
+                <span>Multisig Marketing Funds</span>
+                <p className="text-muted">
+                  <b>
+                    A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP
+                  </b>
+                </p>
               </div>
             </Row>
           </Container>
