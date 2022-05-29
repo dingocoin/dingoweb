@@ -1,14 +1,7 @@
 import React from "react";
-import { Container, Row, Button } from "react-bootstrap";
-import CustomDivider from "./CustomDivider.jsx";
+import { Container, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChrome,
-  faFirefox,
-  faWindows,
-  faApple,
-  faUbuntu,
-  faAndroid,
   faTwitter,
   faInstagram,
   faTelegram,
@@ -16,15 +9,15 @@ import {
   faFacebook,
   faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
-import { faBaby, faGlobe, faComment } from "@fortawesome/free-solid-svg-icons";
+import { faComment } from "@fortawesome/free-solid-svg-icons";
 
 function Community() {
   return (
     <section className="community min-height-fill">
       <Container className="py-3 py-lg-5 d-flex flex-column">
-        <h1>Community</h1>
+        <h1 className="mt-4">Community</h1>
 
-        <div className="d-flex flex-row flex-wrap justify-content-center">
+        <div className="d-flex flex-row flex-wrap justify-content-start">
           <a
             href="https://discord.gg/y3J946HFQM"
             rel="noreferrer"
@@ -112,7 +105,7 @@ function Community() {
         </div>
 
         <h2>International</h2>
-        <div className="d-flex flex-row flex-wrap justify-content-center">
+        <div className="d-flex flex-row flex-wrap justify-content-start">
           <a
             href="https://t.me/DingoChinese"
             rel="noreferrer"

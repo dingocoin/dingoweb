@@ -2,7 +2,6 @@ import "./App.scss";
 import React from "react";
 
 import Main from "./Main";
-import Burnboard from "./Burnboard";
 import Privacy from "./Privacy";
 import Stake from "./Stake";
 import Wallets from "./Wallets";
@@ -48,36 +47,19 @@ import SouthXchangeLogo from "./assets/img/southxchange.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
 import LBankLogo from "./assets/img/lbanklogo.png";
 import BitmartLogo from "./assets/img/bitmartlogo.png";
-import GoogleChromeLogo from "./assets/img/googlechrome.png";
-import FirefoxLogo from "./assets/img/firefox.png";
-import WindowsLogo from "./assets/img/windows.png";
-import MacOsLogo from "./assets/img/macos.png";
-import UbuntuLogo from "./assets/img/ubuntu.png";
-import DingosinoLogo from "./assets/img/dingosino.png";
-import RobloxLogo from "./assets/img/roblox.png";
-import DingominerLogo from "./assets/img/dingominer.png";
-import NftLogo from "./assets/img/dingocoinnftplatform.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTwitter,
-  faInstagram,
-  faTelegram,
-  faReddit,
-  faFacebook,
-  faDiscord,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faChartLine,
   faHammer,
   faMicroscope,
   faUserSecret,
-  faComment,
+  faWallet,
+  faUsers,
+  faShapes,
+  faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WechatInvite from "./assets/img/wechatinvite.png";
-import DingodiggersLogo from "./assets/img/dingodigger.png";
-import SocialFaucetLogo from "./assets/img/socialfaucet.png";
-import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
+import Projects from "./Projects";
 
 function App() {
   ReactGA.initialize("UA-210617812-1");
@@ -110,60 +92,15 @@ function App() {
                 <Nav.Link href="/">Home</Nav.Link>
                 <NavDropdown className="navbar-important" title="$DINGO">
                   <NavDropdown.Header>Wallets</NavDropdown.Header>
-                  <div className="d-flex flex-wrap navbar-panel justify-content-center">
-                    <NavDropdown.Item
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
-                    >
-                      <img alt="" src={GoogleChromeLogo} />
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://addons.mozilla.org/en-US/firefox/addon/dingocoin-wallet/"
-                    >
-                      <img alt="" src={FirefoxLogo} />
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://github.com/dingocoin/dingocoin/releases/latest"
-                    >
-                      <img alt="" src={WindowsLogo} />
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://github.com/dingocoin/dingocoin/releases/latest"
-                    >
-                      <img alt="" src={MacOsLogo} />
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://github.com/dingocoin/dingocoin/releases/latest"
-                    >
-                      <img alt="" src={UbuntuLogo} />
-                    </NavDropdown.Item>
-                  </div>
-                  <NavDropdown.Header>Wallets (Unofficial)</NavDropdown.Header>
-                  <div className="d-flex flex-wrap navbar-panel justify-content-center">
-                    <NavDropdown.Item
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://beehivewallet.link/"
-                    >
-                      <span>Beehive (Web)</span>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://play.google.com/store/apps/details?id=com.beehive.beehivemulti_coinwallet"
-                    >
-                      <span>Beehive (Android)</span>
-                    </NavDropdown.Item>
-                  </div>
+                  <NavDropdown.Item href="/wallets">
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        className="text-primary"
+                        icon={faWallet}
+                      />
+                    </div>{" "}
+                    Get Wallet
+                  </NavDropdown.Item>
                   <NavDropdown.Header>Live Charts</NavDropdown.Header>
                   <div className="d-flex flex-wrap navbar-panel justify-content-center">
                     <NavDropdown.Item
@@ -298,171 +235,40 @@ function App() {
                   </div>
                 </NavDropdown>
                 <NavDropdown className="navbar-important" title="Community">
-                  <NavDropdown.Header>Fun and Activities</NavDropdown.Header>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://nft.dingocoin.org/"
-                  >
+                  <NavDropdown.Header>
+                    Utilities, Activities, and Fun
+                  </NavDropdown.Header>
+                  <NavDropdown.Item href="/projects">
                     <div className="inline-logo-holder">
-                      <Image src={NftLogo} />
+                      <FontAwesomeIcon
+                        icon={faShapes}
+                        className="text-primary"
+                      />
                     </div>{" "}
-                    Dingocoin NFT Platform
+                    Tour Projects
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    href="https://dev.dingocoin.org"
                     target="_blank"
                     rel="noreferrer"
-                    href="https://discord.gg/fka9pZXxPB"
                   >
                     <div className="inline-logo-holder">
-                      <Image src={DingodiggersLogo} />
+                      <FontAwesomeIcon
+                        icon={faLaptopCode}
+                        className="text-primary"
+                      />
                     </div>{" "}
-                    <span>Dingo Diggers</span>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://discord.gg/9advvJ4z5f"
-                  >
-                    <div className="inline-logo-holder">
-                      <Image src={DingosinoLogo} />
-                    </div>{" "}
-                    Dingosino
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.roblox.com/games/8019728893/Dingo-Coin-City"
-                  >
-                    <div className="inline-logo-holder">
-                      <Image src={RobloxLogo} />
-                    </div>{" "}
-                    Dingocoin City (Roblox)
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="http://miner.dingocoin.org/"
-                  >
-                    <div className="inline-logo-holder">
-                      <Image src={DingominerLogo} />
-                    </div>{" "}
-                    Dingo Miner
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/stake">
-                    <div className="inline-logo-holder">
-                      <FontAwesomeIcon icon={faChartLine} />
-                    </div>{" "}
-                    Stake Dingocoins
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://twitter.com/dingocoincrypto"
-                  >
-                    <div className="inline-logo-holder">
-                      <Image src={SocialFaucetLogo} />
-                    </div>{" "}
-                    Weekly Airdrops (Twitter)
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://cryptogrenade.xyz/"
-                  >
-                    <div className="inline-logo-holder">
-                      <Image src={CryptoGrenadeLogo} />
-                    </div>{" "}
-                    CG's Faucet Platform
+                    Start Developing
                   </NavDropdown.Item>
                   <NavDropdown.Header>Chats and Socials</NavDropdown.Header>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://discord.gg/y3J946HFQM"
-                  >
+                  <NavDropdown.Item href="/community">
                     <div className="inline-logo-holder">
                       <FontAwesomeIcon
-                        icon={faDiscord}
-                        style={{ color: "#728ad6" }}
+                        icon={faUsers}
+                        className="text-primary"
                       />
                     </div>{" "}
-                    Discord
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://t.me/DingoCoinTalk"
-                  >
-                    <div className="inline-logo-holder">
-                      <FontAwesomeIcon
-                        icon={faTelegram}
-                        style={{ color: "#0088cc" }}
-                      />
-                    </div>{" "}
-                    Telegram
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://twitter.com/dingocoincrypto"
-                  >
-                    <div className="inline-logo-holder">
-                      <FontAwesomeIcon
-                        icon={faTwitter}
-                        style={{ color: "#0dace9" }}
-                      />
-                    </div>{" "}
-                    Twitter
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.instagram.com/dingocoin"
-                  >
-                    <div className="inline-logo-holder">
-                      <FontAwesomeIcon
-                        icon={faInstagram}
-                        style={{ color: "#ba248d" }}
-                      />
-                    </div>{" "}
-                    Instagram
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.reddit.com/r/dingocoin"
-                  >
-                    <div className="inline-logo-holder">
-                      <FontAwesomeIcon
-                        icon={faReddit}
-                        style={{ color: "#fe4824" }}
-                      />
-                    </div>{" "}
-                    Reddit
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.facebook.com/Dingocoin.org/"
-                  >
-                    <div className="inline-logo-holder">
-                      <FontAwesomeIcon
-                        icon={faFacebook}
-                        style={{ color: "#3b5a95" }}
-                      />
-                    </div>{" "}
-                    Facebook
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfBw1SJJWcM1eLY_1oFS9iNdKn7fJapKl5zqwraP1TSvXu5VA/viewform?usp=sf_link"
-                  >
-                    <div className="inline-logo-holder">
-                      <FontAwesomeIcon icon={faComment} />
-                    </div>{" "}
-                    Feedback
+                    Discover the Community
                   </NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown className="navbar-important" title="Resources">
@@ -471,7 +277,7 @@ function App() {
                     rel="noreferrer"
                     href="https://miningpoolstats.stream/dingocoin"
                   >
-                    <div className="inline-logo-holder">
+                    <div className="inline-logo-holder text-primary">
                       <FontAwesomeIcon icon={faHammer} />
                     </div>{" "}
                     Mining Info
@@ -481,7 +287,7 @@ function App() {
                     rel="noreferrer"
                     href="https://docs.google.com/presentation/d/1HSe8sbY6HtCS7rUwpw5UkjguVKy4KJPRlfQ0apgCfDM/edit?usp=sharing"
                   >
-                    <div className="inline-logo-holder">
+                    <div className="inline-logo-holder text-primary">
                       <FontAwesomeIcon icon={faHammer} />
                     </div>{" "}
                     Mining Guide
@@ -491,7 +297,7 @@ function App() {
                     rel="noreferrer"
                     href="https://explorer.dingocoin.org/"
                   >
-                    <div className="inline-logo-holder">
+                    <div className="inline-logo-holder text-primary">
                       <FontAwesomeIcon icon={faMicroscope} />
                     </div>{" "}
                     Explorer (Official; API)
@@ -501,7 +307,7 @@ function App() {
                     rel="noreferrer"
                     href="https://openchains.info/coin/dingocoin/blocks"
                   >
-                    <div className="inline-logo-holder">
+                    <div className="inline-logo-holder text-primary">
                       <FontAwesomeIcon icon={faMicroscope} />
                     </div>{" "}
                     Explorer (Open Chains)
@@ -511,13 +317,13 @@ function App() {
                     rel="noreferrer"
                     href="https://www.dingochain.info/"
                   >
-                    <div className="inline-logo-holder">
+                    <div className="inline-logo-holder text-primary">
                       <FontAwesomeIcon icon={faMicroscope} />
                     </div>{" "}
                     Explorer (Mirror)
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/privacy">
-                    <div className="inline-logo-holder">
+                    <div className="inline-logo-holder text-primary">
                       <FontAwesomeIcon icon={faUserSecret} />
                     </div>{" "}
                     Privacy Policy
@@ -532,7 +338,7 @@ function App() {
         <Routes>
           <Route path="/wallets" element={<Wallets />} />
           <Route path="/community" element={<Community />} />
-          <Route path="/burnboard" element={<Burnboard />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/stake" element={<Stake />} />
           <Route path="/trailmap">
@@ -564,160 +370,12 @@ function App() {
               </span>
             </Row>
             <Row className="socials justify-content-md-center">
-              {/*
-              <div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://discord.gg/y3J946HFQM"
-                  className="socials-button"
-                >
-                  <FontAwesomeIcon
-                    className="faicon"
-                    icon={faDiscord}
-                    style={{ color: "#728ad6" }}
-                  />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://t.me/DingoCoinTalk"
-                  className="socials-button"
-                >
-                  <FontAwesomeIcon
-                    className="faicon"
-                    icon={faTelegram}
-                    style={{ color: "#0088cc" }}
-                  />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://twitter.com/dingocoincrypto"
-                  className="socials-button"
-                >
-                  <FontAwesomeIcon
-                    className="faicon"
-                    icon={faTwitter}
-                    style={{ color: "#0dace9" }}
-                  />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.instagram.com/dingocoin"
-                  className="socials-button"
-                >
-                  <FontAwesomeIcon
-                    className="faicon"
-                    icon={faInstagram}
-                    style={{ color: "#ba248d" }}
-                  />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.reddit.com/r/dingocoin"
-                  className="socials-button"
-                >
-                  <FontAwesomeIcon
-                    className="faicon"
-                    icon={faReddit}
-                    style={{ color: "#fe4824" }}
-                  />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.facebook.com/Dingocoin.org/"
-                  className="socials-button"
-                >
-                  <FontAwesomeIcon
-                    className="faicon"
-                    icon={faFacebook}
-                    style={{ color: "#3b5a95" }}
-                  />
-                </a>
-              </div>
-              <div className="mt-3">
-                <span>International Community</span>
-              </div>
-              <div>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://t.me/DingoChinese"
-                  className="socials-button-labelled"
-                >
-                  <div className="inner">
-                    <FontAwesomeIcon
-                      className="faicon"
-                      icon={faTelegram}
-                      style={{ color: "#0088cc" }}
-                    />
-                    <div className="inner-text">
-                      <span>中文</span>
-                    </div>
-                  </div>
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://t.me/DingocoinBharat"
-                  className="socials-button-labelled"
-                >
-                  <div className="inner">
-                    <FontAwesomeIcon
-                      className="faicon"
-                      icon={faTelegram}
-                      style={{ color: "#0088cc" }}
-                    />
-                    <div className="inner-text">
-                      <span>हिंदी</span>
-                    </div>
-                  </div>
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://t.me/DingoCoin_VietNam"
-                  className="socials-button-labelled"
-                >
-                  <div className="inner">
-                    <FontAwesomeIcon
-                      className="faicon"
-                      icon={faTelegram}
-                      style={{ color: "#0088cc" }}
-                    />
-                    <div className="inner-text">
-                      <span>tiếng Việt</span>
-                    </div>
-                  </div>
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://t.me/Dingocoinpersian"
-                  className="socials-button-labelled"
-                >
-                  <div className="inner">
-                    <FontAwesomeIcon
-                      className="faicon"
-                      icon={faTelegram}
-                      style={{ color: "#0088cc" }}
-                    />
-                    <div className="inner-text">
-                      <span>فارسی</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              */}
               <div className="mt-3">
                 <span>Multisig Marketing Fund</span>
                 <br />
                 <b>
                   <a
+                    rel="noreferrer"
                     href="https://openchains.info/coin/dingocoin/address/A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP"
                     target="_blank"
                     className="simple-link"

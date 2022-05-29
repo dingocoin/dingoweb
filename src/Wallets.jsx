@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Row, Button } from "react-bootstrap";
-import CustomDivider from "./CustomDivider.jsx";
+import { Container, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChrome,
@@ -10,16 +9,16 @@ import {
   faUbuntu,
   faAndroid,
 } from "@fortawesome/free-brands-svg-icons";
-import { faBaby, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 function Wallets() {
   return (
     <section className="wallets min-height-fill">
       <Container className="py-3 py-lg-5 d-flex flex-column">
-        <h1>Wallets</h1>
+        <h1 className="mt-4">Wallets</h1>
 
         <h2>Browser</h2>
-        <div className="d-flex flex-row flex-wrap justify-content-center">
+        <div className="d-flex flex-row flex-wrap justify-content-start">
           <a
             href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
             rel="noreferrer"
@@ -48,7 +47,7 @@ function Wallets() {
 
         <h2>Mobile</h2>
         <span className="subtitle">(Coming soon...)</span>
-        <div className="d-flex flex-row flex-wrap justify-content-center">
+        <div className="d-flex flex-row flex-wrap justify-content-start">
           <Button className="btn-light" disabled>
             <div className="d-flex flex-column">
               <FontAwesomeIcon className="icon" icon={faAndroid} />
@@ -64,7 +63,7 @@ function Wallets() {
         </div>
 
         <h2>Desktop (Full-node)</h2>
-        <div className="d-flex flex-row flex-wrap justify-content-center">
+        <div className="d-flex flex-row flex-wrap justify-content-start">
           <a
             href="https://github.com/dingocoin/dingocoin/releases/latest"
             rel="noreferrer"
@@ -104,7 +103,7 @@ function Wallets() {
         </div>
 
         <h2>Unofficial (Beehive)</h2>
-        <div className="d-flex flex-row flex-wrap justify-content-center">
+        <div className="d-flex flex-row flex-wrap justify-content-start">
           <a
             href="https://beehivewallet.link/"
             rel="noreferrer"

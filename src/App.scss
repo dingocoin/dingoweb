@@ -8,7 +8,7 @@ $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
   "light": $light,
-  "dark": #2B5C73
+  "dark": #2b5c73,
 );
 
 $enable-shadows: true;
@@ -279,7 +279,7 @@ a.simple-link:hover {
       background-color: white;
     }
 
-    transition: background-color 0.2s;
+    transition: background-color 0.1s;
   }
 
   .cell-md {
@@ -301,7 +301,7 @@ a.simple-link:hover {
       background-color: white;
     }
 
-    transition: background-color 0.2s;
+    transition: background-color 0.1s;
   }
 }
 
@@ -356,8 +356,12 @@ a.simple-link:hover {
       @extend .btn-outline-primary;
       padding: 0;
       width: 6rem;
+      height: 2.5rem;
       margin-top: 1.5rem;
       font-size: 1.5rem;
+      .icon {
+        @extend .align-middle;
+      }
     }
 
     .logo {
@@ -385,28 +389,32 @@ a.simple-link:hover {
     font-size: 3.5rem;
     color: $white;
     font-weight: bold;
-    text-align: center;
   }
 
   h2 {
-    margin-top: 4rem;
+    margin-top: 2rem;
     font-size: 1.5rem;
     color: $white;
-    text-align: center;
     margin-bottom: 1rem;
   }
-
   .subtitle {
     margin-top: -1rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
     color: $muted;
-    text-align: center;
+  }
+  @media (max-width: 991px) {
+    h1,
+    h2,
+    .subtitle {
+      text-align: center;
+    }
   }
 
   button {
     @extend .px-4;
-    margin: 1rem;
+    margin-left: 0rem;
+    margin-right: 1rem;
     color: $primary;
     height: 6rem;
     width: 12rem;
@@ -437,29 +445,34 @@ a.simple-link:hover {
     font-size: 3.5rem;
     color: $white;
     font-weight: bold;
-    text-align: center;
     margin-bottom: 2rem;
   }
 
   h2 {
-    margin-top: 5rem;
+    margin-top: 2rem;
     font-size: 1.5rem;
     color: $white;
-    text-align: center;
     margin-bottom: 1.5rem;
   }
-
   .subtitle {
     margin-top: -1rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
     color: $muted;
-    text-align: center;
+  }
+  @media (max-width: 991px) {
+    h1,
+    h2,
+    .subtitle {
+      text-align: center;
+    }
   }
 
   button {
     @extend .px-4;
-    margin: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    margin-right: 1rem;
     color: $primary;
     height: 6rem;
     width: 12rem;
@@ -480,6 +493,112 @@ a.simple-link:hover {
       font-size: 1.2rem;
       font-family: "Lato";
     }
+  }
+}
+
+.projects {
+  background: $secondary;
+
+  h1 {
+    font-size: 3.5rem;
+    color: $primary;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .subtitle {
+    @extend .text-center;
+    @extend .text-muted;
+    text-align: center;
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, -webkit-max-content));
+    grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
+    grid-gap: 0.5rem;
+    justify-content: center;
+    padding: initial;
+  }
+
+  .project-card {
+    @extend .shadow-sm;
+    display: list-item;
+    list-style-type: none;
+    text-align: center;
+    height: 14rem;
+    border-radius: 0.4rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0.35rem;
+    background: darken($secondary, 5%);
+    border: 1px solid darken($secondary, 5%);
+
+    &:hover {
+      @extend .shadow;
+      cursor: pointer;
+      background: white;
+    }
+
+    transition: box-shadow 0.1s linear, background 0.1s;
+  }
+
+  .develop {
+    background: $primary;
+    color: white;
+    &:hover {
+      @extend .shadow;
+      cursor: pointer;
+      background: lighten($primary, 5%);
+      button {
+        @extend :hover;
+      }
+    }
+
+    button {
+      @extend .border-2;
+      @extend .rounded-pill;
+      padding: 0;
+      width: 6rem;
+      height: 2.5rem;
+      margin-top: 0.5rem;
+      font-size: 1.5rem;
+      .icon {
+        @extend .align-middle;
+      }
+    }
+  }
+
+  .project-card .logo-holder {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+
+  .project-card .faicon {
+    color: $primary;
+    font-size: 2.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .project-card.develop .faicon {
+    color: white;
+  }
+
+  .project-card img {
+    width: 2.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .project-card button {
+    margin-bottom: 1rem;
   }
 }
 
@@ -524,49 +643,6 @@ a.simple-link:hover {
 }
 
 /* ===== PROJECTS ===== */
-
-.project-card {
-  text-align: center;
-  width: 18rem;
-  height: 14rem;
-  border-radius: 0.4rem;
-  padding-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin: 0.35rem;
-  background: darken($secondary, 5%);
-  border: 1px solid darken($secondary, 5%);
-
-  &:hover {
-    cursor: pointer;
-    border: 1px solid $primary;
-  }
-
-  transition: border 0.1s linear;
-}
-
-.project-card .logo-holder {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0;
-}
-
-.project-card .faicon {
-  color: $primary;
-  font-size: 2.5rem;
-  padding: 0;
-  margin: 0;
-}
-
-.project-card img {
-  width: 2.5rem;
-  padding: 0;
-  margin: 0;
-}
-
-.project-card button {
-  margin-bottom: 1rem;
-}
 
 /* ===== WALLETS ===== */
 .wallet-section {
@@ -782,83 +858,6 @@ a.simple-link:hover {
   }
 }
 
-.social-faucet-board {
-  text-align: center;
-  max-height: 25rem;
-  overflow-y: auto;
-  p {
-    margin-bottom: 0;
-  }
-}
-.table-dingo {
-  img {
-    height: 1rem;
-    width: 1rem;
-    vertical-align: text-top;
-  }
-  span {
-    white-space: nowrap;
-  }
-}
-
-.social-faucet-table tbody .gold {
-  background-image: linear-gradient(
-    135deg,
-    yellow,
-    gold,
-    yellow,
-    gold,
-    yellow,
-    gold,
-    yellow,
-    gold
-  );
-  background-size: 1000% 1000%;
-  animation: diagonalGrad 1s linear infinite;
-}
-.social-faucet-table tbody .silver {
-  background-image: linear-gradient(
-    135deg,
-    silver,
-    grey,
-    silver,
-    grey,
-    silver,
-    grey,
-    silver,
-    grey
-  );
-  background-size: 1000% 1000%;
-  animation: diagonalGrad 4s linear infinite;
-}
-.social-faucet-table tbody .bronze {
-  background-image: linear-gradient(
-    135deg,
-    #cd7f32,
-    brown,
-    #cd7f32,
-    brown,
-    #cd7f32,
-    brown,
-    #cd7f32,
-    brown
-  );
-  background-size: 1000% 1000%;
-  animation: diagonalGrad 8s linear infinite;
-}
-@keyframes diagonalGrad {
-  0% {
-    background-position: 2% 2%;
-  }
-  100% {
-    background-position: 95% 95%;
-  }
-}
-
-.social-faucet-instructions {
-  text-align: left;
-}
-
 .marketplace-container {
   text-align: center;
   justify-content: center;
@@ -884,23 +883,6 @@ a.simple-link:hover {
     margin: 0;
     border: 2px solid rgb(229, 232, 235);
     border-radius: 50%;
-  }
-}
-
-.community-art h3 img {
-  height: 2rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.art-container {
-  text-align: center;
-  img,
-  video {
-    margin: 0 auto;
-    max-height: 70vh;
-    max-width: 100%;
-    object-fit: initial;
   }
 }
 
@@ -1037,7 +1019,6 @@ a.simple-link:hover {
   color: $primary;
 }
 
-
 .side-scroll {
   align-items: center;
   display: flex;
@@ -1149,9 +1130,86 @@ a.simple-link:hover {
   display: inline;
   padding-right: 0.25rem;
   height: 1rem;
-  width: 1rem;
+  width: 1rem !important;
 }
 
 .modal-content {
   max-height: 80% !important;
+}
+
+.social-faucet-board {
+  text-align: center;
+  max-height: 25rem;
+  overflow-y: auto;
+  p {
+    margin-bottom: 0;
+  }
+}
+.table-dingo {
+  img {
+    height: 1rem;
+    width: 1rem;
+    vertical-align: text-top;
+  }
+  span {
+    white-space: nowrap;
+  }
+}
+
+.social-faucet-table tbody .gold {
+  background-image: linear-gradient(
+    135deg,
+    yellow,
+    gold,
+    yellow,
+    gold,
+    yellow,
+    gold,
+    yellow,
+    gold
+  );
+  background-size: 1000% 1000%;
+  animation: diagonalGrad 1s linear infinite;
+}
+.social-faucet-table tbody .silver {
+  background-image: linear-gradient(
+    135deg,
+    silver,
+    grey,
+    silver,
+    grey,
+    silver,
+    grey,
+    silver,
+    grey
+  );
+  background-size: 1000% 1000%;
+  animation: diagonalGrad 4s linear infinite;
+}
+.social-faucet-table tbody .bronze {
+  background-image: linear-gradient(
+    135deg,
+    #cd7f32,
+    brown,
+    #cd7f32,
+    brown,
+    #cd7f32,
+    brown,
+    #cd7f32,
+    brown
+  );
+  background-size: 1000% 1000%;
+  animation: diagonalGrad 8s linear infinite;
+}
+@keyframes diagonalGrad {
+  0% {
+    background-position: 2% 2%;
+  }
+  100% {
+    background-position: 95% 95%;
+  }
+}
+
+.social-faucet-instructions {
+  text-align: left;
 }
