@@ -34,7 +34,7 @@ function Projects() {
       <Container className="py-3 py-lg-5 d-flex flex-column mt-4">
         <h1 className="mt-4">Projects</h1>
         <span className="subtitle">
-          Showcasing projects completed by the community.
+          Explore projects completed by the community.
         </span>
 
         <h2>Fun</h2>
