@@ -223,10 +223,10 @@ function Main() {
               <div className="d-flex flex-column">
                 <div>
                   <span>
-                    <b>Modern wallets</b>,
+                    <b>Modern wallets.</b>
                   </span>
                   <span className="ms-1">
-                    exposing Dingocoin to the Web, Browser, and Mobile.
+                    Access Dingocoin from the Web, Browser, Mobile, and Desktop.
                   </span>
                 </div>
                 <div className="d-flex flex-row mt-auto">
@@ -248,11 +248,11 @@ function Main() {
               <div className="d-flex flex-column">
                 <div>
                   <span>
-                    <b>Utilities, activities, and fun</b>,
+                    <b>Utilities, activities, and fun.</b>
                   </span>
                   <span className="ms-1">
                     <br />
-                    building practical projects for Dingocoin.
+                    Build practical projects for Dingocoin.
                   </span>
                 </div>
                 <div className="d-flex flex-row mt-auto">
@@ -273,10 +273,10 @@ function Main() {
               <div className="d-flex flex-column">
                 <div>
                   <span>
-                    <b>Community driven</b>,
+                    <b>Community driven.</b>
                   </span>
                   <span className="ms-1">
-                    bringing out the most resilient and unexpected ideas.
+                    Bring out the most resilient and unexpected ideas.
                   </span>
                 </div>
                 <div className="d-flex flex-row mt-auto">
@@ -300,10 +300,10 @@ function Main() {
               <div className="d-flex flex-column">
                 <div>
                   <span>
-                    <b>Modern wallets</b>,
+                    <b>Modern wallets.</b>
                   </span>
                   <span className="ms-1">
-                    exposing Dingocoin to the Web, Browser, and Mobile.
+                    Access Dingocoin from the Web, Browser, Mobile, and Desktop.
                   </span>
                 </div>
                 <div className="d-flex flex-row mt-auto">
@@ -325,10 +325,10 @@ function Main() {
               <div className="d-flex flex-column">
                 <div>
                   <span>
-                    <b>Utilities, activities, and fun</b>,
+                    <b>Utilities, activities, and fun.</b>
                   </span>
                   <span className="ms-1">
-                    building practical projects for Dingocoin.
+                    Build practical projects for Dingocoin.
                   </span>
                 </div>
                 <div className="d-flex flex-row mt-auto">
@@ -349,10 +349,10 @@ function Main() {
               <div className="d-flex flex-column">
                 <div>
                   <span>
-                    <b>Community driven</b>,
+                    <b>Community driven.</b>
                   </span>
                   <span className="ms-1">
-                    bringing out the most resilient and unexpected ideas.
+                    Bring out the most resilient and unexpected ideas.
                   </span>
                 </div>
                 <div className="d-flex flex-row mt-auto">
