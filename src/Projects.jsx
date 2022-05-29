@@ -6,6 +6,8 @@ import {
   faShoppingCart,
   faRobot,
   faArrowRight,
+  faLaptopCode,
+  faWindowRestore,
 } from "@fortawesome/free-solid-svg-icons";
 import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
 import DingetteLogo from "./assets/img/dingette.png";
@@ -19,6 +21,10 @@ import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
 import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
 import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
 import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
+import NFTLogo from "./assets/img/dingocoinnftplatform.png";
+import BSCLogo from "./assets/img/bsc.png";
+import SOLLogo from "./assets/img/sol.png";
+import { faChrome } from "@fortawesome/free-brands-svg-icons";
 
 function Projects() {
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);
@@ -28,9 +34,25 @@ function Projects() {
       <Container className="py-3 py-lg-5 d-flex flex-column mt-4">
         <h1 className="mt-4">Projects</h1>
         <span className="subtitle">
-          Utilities, fun, and activites.<br/>Showcasing projects completed by the community.
+          Showcasing projects completed by the community.
         </span>
+
+        <h2>Fun</h2>
         <div className="cards-container">
+          <a
+            href="https://nft.dingocoin.org"
+            target="_blank"
+            rel="noreferrer"
+            className="project-card d-flex flex-row"
+          >
+            <div className="mb-auto mx-auto">
+              <div className="logo-holder">
+                <Image src={NFTLogo} />
+              </div>
+              <h5 className="text-primary">NFT Platform</h5>
+              <p className="text-muted">Trade NFTs on the Dingocoin mainnet.</p>
+            </div>
+          </a>
           <a
             href="https://discord.gg/y3J946HFQM"
             target="_blank"
@@ -93,48 +115,6 @@ function Projects() {
               </p>
             </div>
           </a>
-          <a href="/stake" className="project-card d-flex">
-            <div className="mb-auto mx-auto">
-              <div className="logo-holder">
-                <FontAwesomeIcon className="faicon" icon={faChartLine} />
-              </div>
-              <h5 className="text-primary">Stake Dingocoins</h5>
-              <p className="text-muted">
-                Earn weekly rewards just for holding Dingocoins.
-              </p>
-            </div>
-          </a>
-          <a
-            href="https://twitter.com/dingocoincrypto"
-            className="project-card d-flex"
-          >
-            <div className="mb-auto mx-auto">
-              <div className="logo-holder">
-                <Image src={SocialFaucetLogo} />
-              </div>
-              <h5 className="text-primary">Weekly Airdrop</h5>
-              <p className="text-muted">
-                Earn Dingocoins in our weekly Twitter airdrops.
-              </p>
-            </div>
-          </a>
-          <a
-            rel="noreferrer"
-            href="https://cryptogrenade.xyz/"
-            target="_blank"
-            className="project-card d-flex"
-          >
-            <div className="mb-auto mx-auto">
-              <div className="logo-holder">
-                <Image src={CryptoGrenadeLogo} />
-              </div>
-              <h5 className="text-primary">CG's Faucet Platform</h5>
-              <p className="text-muted">
-                Cryptogrenade's faucet platform - Paid to click, shortlinks,
-                referral rewards.
-              </p>
-            </div>
-          </a>
           <a
             href="https://www.reddit.com/user/Dingo-Is-My-Man/"
             target="_blank"
@@ -190,12 +170,105 @@ function Projects() {
           >
             <div className="mb-auto mx-auto">
               <div className="logo-holder">
-                <FontAwesomeIcon className="faicon" icon={faRobot} />
+                <FontAwesomeIcon className="faicon" icon={faLaptopCode} />
               </div>
               <h5>Start developing your own project!</h5>
               <Button className="btn-outline-light rounded-pill">
                 <FontAwesomeIcon className="icon" icon={faArrowRight} />
               </Button>
+            </div>
+          </a>
+        </div>
+
+        <h2>Activities</h2>
+        <div className="cards-container">
+          <a
+            href="https://twitter.com/dingocoincrypto"
+            className="project-card d-flex"
+          >
+            <div className="mb-auto mx-auto">
+              <div className="logo-holder">
+                <Image src={SocialFaucetLogo} />
+              </div>
+              <h5 className="text-primary">Weekly Airdrop</h5>
+              <p className="text-muted">
+                Earn Dingocoins in our weekly Twitter airdrops.
+              </p>
+            </div>
+          </a>
+          <a href="/stake" className="project-card d-flex">
+            <div className="mb-auto mx-auto">
+              <div className="logo-holder">
+                <FontAwesomeIcon className="faicon" icon={faChartLine} />
+              </div>
+              <h5 className="text-primary">Stake Dingocoins</h5>
+              <p className="text-muted">
+                Earn weekly rewards just for holding Dingocoins.
+              </p>
+            </div>
+          </a>
+          <a
+            rel="noreferrer"
+            href="https://cryptogrenade.xyz/"
+            target="_blank"
+            className="project-card d-flex"
+          >
+            <div className="mb-auto mx-auto">
+              <div className="logo-holder">
+                <Image src={CryptoGrenadeLogo} />
+              </div>
+              <h5 className="text-primary">CG's Faucet Platform</h5>
+              <p className="text-muted">
+                Cryptogrenade's faucet platform - Paid to click, shortlinks,
+                referral rewards.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <h2>Utilities</h2>
+        <div className="cards-container">
+          <a
+            href="https://dingocoin.org/wallets"
+            className="project-card d-flex"
+          >
+            <div className="mb-auto mx-auto">
+              <div className="logo-holder">
+                <FontAwesomeIcon className="faicon" icon={faWindowRestore} />
+              </div>
+              <h5 className="text-primary">Browser Wallet</h5>
+              <p className="text-muted">
+                Hold and send Dingocoins right in your browser. Interact with
+                the web.
+              </p>
+            </div>
+          </a>
+          <a
+            rel="noreferrer"
+            href="https://wrap.dingocoin.org"
+            target="_blank"
+            className="project-card d-flex"
+          >
+            <div className="mb-auto mx-auto">
+              <div className="logo-holder">
+                <Image src={SOLLogo} />
+              </div>
+              <h5 className="text-primary">SOL Wrap</h5>
+              <p className="text-muted">Wrapped Dingocoin on the SOL chain.</p>
+            </div>
+          </a>
+          <a
+            rel="noreferrer"
+            href="https://wrap.dingocoin.org"
+            target="_blank"
+            className="project-card d-flex"
+          >
+            <div className="mb-auto mx-auto">
+              <div className="logo-holder">
+                <Image src={BSCLogo} />
+              </div>
+              <h5 className="text-primary">BSC Wrap</h5>
+              <p className="text-muted">Wrapped Dingocoin on the BSC chain.</p>
             </div>
           </a>
         </div>

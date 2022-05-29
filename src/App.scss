@@ -506,6 +506,12 @@ a.simple-link:hover {
     text-align: center;
   }
 
+  h2 {
+    @extend .mb-4;
+    font-size: 2.5rem;
+    color: $primary;
+  }
+
   .subtitle {
     @extend .text-center;
     @extend .text-muted;
@@ -517,11 +523,12 @@ a.simple-link:hover {
   }
 
   .cards-container {
+    @extend .mb-5;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, -webkit-max-content));
-    grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
-    grid-gap: 0.5rem;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-gap: 1rem;
+    justify-content: left;
     padding: initial;
   }
 
@@ -535,9 +542,9 @@ a.simple-link:hover {
     padding-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    margin: 0.35rem;
-    background: darken($secondary, 5%);
-    border: 1px solid darken($secondary, 5%);
+    background: darken($secondary, 10%);
+    border: 1px solid darken($secondary, 10%);
+
 
     &:hover {
       @extend .shadow;
