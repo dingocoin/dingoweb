@@ -191,7 +191,7 @@ function Main() {
       </header>
 
       <section className="features">
-        <Container className="py-3 py-lg-5 mt-4">
+        <Container className="py-5 mt-5">
           <h2 className="mb-3">Building Adoption</h2>
           <span className="subtitle mx-auto">
             Dingocoin believes in utility and fun for all. With a community focused
@@ -202,7 +202,7 @@ function Main() {
           <div className="d-flex">
             <a href="/projects" className="mx-auto">
               <Button
-                className="rounded-pill px-5 py-2 mt-4"
+                className="rounded-pill px-5 py-2 mt-5 mb-5"
                 style={{ fontSize: "1.3rem" }}
               >
                 <span>Tour Projects</span>
@@ -367,9 +367,9 @@ function Main() {
       </section>
 
       <section className="ecosystem">
-        <Container className="py-3 py-lg-5 mt-3 mb-5">
-          <h2>Join the wild Dingocoin ecosystem</h2>
-          <div className="d-flex flex-row flex-wrap justify-content-center mt-4">
+        <Container className="py-5 mt-5 mb-5">
+          <h2>Join our wild ecosystem</h2>
+          <div className="d-flex flex-row flex-wrap justify-content-center mt-5">
             <a href="/community" className="card d-flex flex-column rounded">
               <h3 className="text-left">Community</h3>
               <span>Discover the Dingocoin community. Hang out, have fun.</span>
