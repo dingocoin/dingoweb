@@ -224,6 +224,22 @@ function Projects() {
               </p>
             </div>
           </a>
+          <a
+            href="https://dev.dingocoin.org"
+            target="_blank"
+            rel="noreferrer"
+            className="project-card develop d-flex"
+          >
+            <div className="mb-auto mx-auto">
+              <div className="logo-holder">
+                <FontAwesomeIcon className="faicon" icon={faLaptopCode} />
+              </div>
+              <h5>Start developing your own project!</h5>
+              <Button className="btn-outline-light rounded-pill">
+                <FontAwesomeIcon className="icon" icon={faArrowRight} />
+              </Button>
+            </div>
+          </a>
         </div>
 
         <h2>Utilities</h2>
@@ -269,6 +285,22 @@ function Projects() {
               </div>
               <h5 className="text-primary">BSC Wrap</h5>
               <p className="text-muted">Wrapped Dingocoin on the BSC chain.</p>
+            </div>
+          </a>
+          <a
+            href="https://dev.dingocoin.org"
+            target="_blank"
+            rel="noreferrer"
+            className="project-card develop d-flex"
+          >
+            <div className="mb-auto mx-auto">
+              <div className="logo-holder">
+                <FontAwesomeIcon className="faicon" icon={faLaptopCode} />
+              </div>
+              <h5>Start developing your own project!</h5>
+              <Button className="btn-outline-light rounded-pill">
+                <FontAwesomeIcon className="icon" icon={faArrowRight} />
+              </Button>
             </div>
           </a>
         </div>
