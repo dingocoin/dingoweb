@@ -194,7 +194,7 @@ function Main() {
         <Container className="py-3 py-lg-5 mt-4">
           <h2 className="mb-3">Building Adoption</h2>
           <span className="subtitle mx-auto">
-            Dingocoin believes utility and fun for all. With a community focused
+            Dingocoin believes in utility and fun for all. With a community focused
             on building practical and meaningful applications, we strive to make
             Dingocoin the digital currency that is adopted everywhere.
           </span>
