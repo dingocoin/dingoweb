@@ -4,27 +4,13 @@ import React from "react";
 import { queryNft } from "./nftApi";
 
 // Controls.
-import {
-  Button,
-  Spinner,
-  Container,
-  Row,
-  Col,
-  Modal,
-  Image,
-} from "react-bootstrap";
+import { Button, Container, Row, Col, Modal, Image } from "react-bootstrap";
 import CustomDivider from "./CustomDivider";
-import FadeInSection from "./FadeInSection";
-import SideScroller from "./SideScroller";
 
 // Assets.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faRobot,
-  faShoppingCart,
   faGlobe,
-  faChartLine,
-  faLongArrowAltRight,
   faLaptopCode,
   faArrowRight,
   faUsers,
@@ -34,13 +20,8 @@ import {
   faMobileAlt,
   faWindowRestore,
   faShapes,
-  faCircle,
-  faSquare,
-  faPlay,
   faBullhorn,
   faGamepad,
-  faUserAlt,
-  faChild,
   faUserAstronaut,
   faBaby,
 } from "@fortawesome/free-solid-svg-icons";
@@ -52,28 +33,20 @@ import CoinGeckoLogo from "./assets/img/coingecko.png";
 import CoinMarketCapLogo from "./assets/img/coinmarketcap.png";
 import CoinPaprikaLogo from "./assets/img/coinpaprika.png";
 import CratexIoLogo from "./assets/img/cratexio.png";
-import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
 import DelionDexLogo from "./assets/img/deliondex.png";
 import DexGuruLogo from "./assets/img/dex-guru.png";
 import DexTradeLogo from "./assets/img/dextrade.png";
-import DingetteLogo from "./assets/img/dingette.png";
 import DingocoinAnimatedLogo from "./assets/img/dingocoin-rotate.gif";
 import DingocoinCollection1Logo from "./assets/img/dingocoincollection1.png";
-import DingodiggersLogo from "./assets/img/dingodigger.png";
-import DingominerLogo from "./assets/img/dingominer.png";
-import DingosinoLogo from "./assets/img/dingosino.png";
 import DoucheyDingoesLogo from "./assets/img/doucheydingos.gif";
 import ExbitronLogo from "./assets/img/exbitron.png";
 import HotbitLogo from "./assets/img/hotbitex.png";
 import LBankLogo from "./assets/img/lbanklogo.png";
 import MerchCryptoDingosLogo from "./assets/img/merch_cryptodingos.png";
 import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
-import NFTCard from "./NftCard.jsx";
 import PancakeSwap from "./assets/img/pancakeswap.png";
 import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
-import RobloxLogo from "./assets/img/roblox.png";
-import SocialFaucetLogo from "./assets/img/socialfaucet.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
 import WalletApple from "./assets/img/wallet_apple.png";
 import WalletChrome from "./assets/img/wallet_chrome.png";
@@ -205,12 +178,13 @@ function Main() {
                   utility and fun to world.
                 </p>
                 <div className="mb-5 d-flex flex-row me-auto">
-                  <Button
-                    className="btn-light me-3 px-4 py-2"
-                    onClick={() => setWalletsModalShow(true)}
-                  >
-                    Get wallet
-                  </Button>
+                  <a href="/wallets">
+                    <Button
+                      className="btn-light me-3 px-4 py-2"
+                    >
+                      Get wallet
+                    </Button>
+                  </a>
                   <Button
                     className="btn-light ms-3 px-4 py-2"
                     onClick={() => setExchangesModalShow(true)}
@@ -352,7 +326,8 @@ function Main() {
                     <b>Utilities, activities, and fun</b>,
                   </span>
                   <span className="ms-1">
-                    <br/>showcasing practical projects for Dingocoin.
+                    <br />
+                    showcasing practical projects for Dingocoin.
                   </span>
                 </div>
                 <div className="d-flex flex-row mt-auto">
@@ -467,7 +442,7 @@ function Main() {
       </section>
 
       <section className="ecosystem">
-        <Container className="py-3 py-lg-5 mt-4">
+        <Container className="py-3 py-lg-5 mt-4 mb-5">
           <h2>Join the wild Dingocoin ecosystem</h2>
           <div className="d-flex flex-row flex-wrap justify-content-center mt-4">
             <a
@@ -492,9 +467,7 @@ function Main() {
               className="card d-flex flex-column rounded"
             >
               <h3 className="text-left">Development Forum</h3>
-              <span>
-                Propose, discuss, and build projects for Dingocoin.
-              </span>
+              <span>Propose, discuss, and build projects for Dingocoin.</span>
               <Button>
                 <FontAwesomeIcon className="icon" icon={faArrowRight} />
               </Button>
@@ -503,9 +476,7 @@ function Main() {
               </div>
             </a>
             <a
-              href="https://discord.gg/y3J946HFQM"
-              target="_blank"
-              rel="noreferrer"
+              href="/wallets"
               className="card d-flex flex-column rounded"
             >
               <h3 className="text-left">Get Wallet</h3>

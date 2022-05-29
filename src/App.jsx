@@ -5,6 +5,8 @@ import Main from "./Main";
 import Burnboard from "./Burnboard";
 import Privacy from "./Privacy";
 import Stake from "./Stake";
+import Wallets from "./Wallets";
+import Community from "./Community";
 import TrailmapNextGen from "./TrailmapNextGen";
 import TrailmapBrowserWallet from "./TrailmapBrowserWallet";
 import TrailmapExchangeListings from "./TrailmapExchangeListings";
@@ -528,6 +530,8 @@ function App() {
         </Navbar>
 
         <Routes>
+          <Route path="/wallets" element={<Wallets />} />
+          <Route path="/community" element={<Community />} />
           <Route path="/burnboard" element={<Burnboard />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/stake" element={<Stake />} />
