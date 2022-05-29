@@ -355,12 +355,9 @@ a.simple-link:hover {
       @extend .btn;
       @extend .btn-outline-primary;
       padding: 0;
-      width: 6rem;
+      width: 5.5rem;
       margin-top: 1.5rem;
-      font-size: 1.5rem;
-      .icon {
-        @extend .align-middle;
-      }
+      font-size: 1.3rem;
     }
 
     .logo {
