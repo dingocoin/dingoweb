@@ -17,7 +17,7 @@ function Community() {
       <Container className="py-3 py-lg-5 d-flex flex-column">
         <h1 className="mt-4">Community</h1>
 
-        <div className="d-flex flex-row flex-wrap justify-content-start">
+        <div className="d-flex flex-row flex-wrap justify-content-lg-start justify-content-center">
           <a
             href="https://discord.gg/y3J946HFQM"
             rel="noreferrer"
@@ -30,11 +30,7 @@ function Community() {
               </div>
             </Button>
           </a>
-          <a
-            href="https://t.me/DingoCoinTalk"
-            rel="noreferrer"
-            target="_blank"
-          >
+          <a href="https://t.me/DingoCoinTalk" rel="noreferrer" target="_blank">
             <Button className="btn-light">
               <div className="d-flex flex-column">
                 <FontAwesomeIcon className="icon" icon={faTelegram} />
@@ -105,12 +101,8 @@ function Community() {
         </div>
 
         <h2>International</h2>
-        <div className="d-flex flex-row flex-wrap justify-content-start">
-          <a
-            href="https://t.me/DingoChinese"
-            rel="noreferrer"
-            target="_blank"
-          >
+        <div className="d-flex flex-row flex-wrap justify-content-lg-start justify-content-center">
+          <a href="https://t.me/DingoChinese" rel="noreferrer" target="_blank">
             <Button className="btn-light">
               <div className="d-flex flex-column">
                 <FontAwesomeIcon className="icon" icon={faTelegram} />
@@ -155,7 +147,6 @@ function Community() {
             </Button>
           </a>
         </div>
-
       </Container>
     </section>
   );

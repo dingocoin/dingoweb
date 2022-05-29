@@ -18,7 +18,7 @@ function Wallets() {
         <h1 className="mt-4">Wallets</h1>
 
         <h2>Browser</h2>
-        <div className="d-flex flex-row flex-wrap justify-content-start">
+        <div className="d-flex flex-row flex-wrap justify-content-lg-start justify-content-center">
           <a
             href="https://chrome.google.com/webstore/detail/dingocoin-wallet/kfapifmeobcllcbdjmgnkbfbcokmdkmf"
             rel="noreferrer"
@@ -47,7 +47,7 @@ function Wallets() {
 
         <h2>Mobile</h2>
         <span className="subtitle">(Coming soon...)</span>
-        <div className="d-flex flex-row flex-wrap justify-content-start">
+        <div className="d-flex flex-row flex-wrap justify-content-lg-start justify-content-center">
           <Button className="btn-light" disabled>
             <div className="d-flex flex-column">
               <FontAwesomeIcon className="icon" icon={faAndroid} />
@@ -63,7 +63,7 @@ function Wallets() {
         </div>
 
         <h2>Desktop (Full-node)</h2>
-        <div className="d-flex flex-row flex-wrap justify-content-start">
+        <div className="d-flex flex-row flex-wrap justify-content-lg-start justify-content-center">
           <a
             href="https://github.com/dingocoin/dingocoin/releases/latest"
             rel="noreferrer"
@@ -103,7 +103,7 @@ function Wallets() {
         </div>
 
         <h2>Unofficial (Beehive)</h2>
-        <div className="d-flex flex-row flex-wrap justify-content-start">
+        <div className="d-flex flex-row flex-wrap justify-content-lg-start justify-content-center">
           <a
             href="https://beehivewallet.link/"
             rel="noreferrer"
