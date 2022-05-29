@@ -24,6 +24,25 @@ import {
   faShoppingCart,
   faGlobe,
   faChartLine,
+  faLongArrowAltRight,
+  faLaptopCode,
+  faArrowRight,
+  faUsers,
+  faWallet,
+  faPeopleCarry,
+  faLaptop,
+  faMobileAlt,
+  faWindowRestore,
+  faShapes,
+  faCircle,
+  faSquare,
+  faPlay,
+  faBullhorn,
+  faGamepad,
+  faUserAlt,
+  faChild,
+  faUserAstronaut,
+  faBaby,
 } from "@fortawesome/free-solid-svg-icons";
 import AutradexLogo from "./assets/img/autradex.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
@@ -284,22 +303,222 @@ function Main() {
       </section>
       */}
 
-      <section className="community">
-        <Container className="py-3 py-lg-5">
-          <div className="d-flex flex-row flex-wrap pt-5 description mb-2">
-            <div className="d-flex flex-column lead mx-auto">
-              <FadeInSection>
-                <h2 className="text-primary text-center">
-                  Non-stop development
-                </h2>
-                <p className="text-muted text-center mt-2 mb-4">
-                  Dingocoin is all about building utility and fun. Explore the
-                  community's creations today. Even better, contribute your own
-                  ideas!
-                </p>
-              </FadeInSection>
+      <section className="features">
+        <Container className="py-3 py-lg-5 mt-4">
+          <h2 className="mb-3">Building adoption</h2>
+          <span className="subtitle mx-auto">
+            Dingocoin believes utility and fun for all. With a community focused
+            on building practical and meaningful applications, we strive to make
+            Dingocoin the digital currency that is adopted everywhere.
+          </span>
+
+          <div className="d-none d-lg-flex flex-row mt-5">
+            <div
+              className="cell d-flex ms-auto"
+              style={{
+                borderWidth: "1px 0px 1px 1px",
+                borderStyle: "solid",
+                borderRadius: "5px 0px 0px 5px",
+              }}
+            >
+              <div className="d-flex flex-column">
+                <div>
+                  <span>
+                    <b>Modern wallets</b>,
+                  </span>
+                  <span className="ms-1">
+                    exposing Dingocoin to the Web, Browser, and Mobile.
+                  </span>
+                </div>
+                <div className="d-flex flex-row mt-auto">
+                  <FontAwesomeIcon className="icon" icon={faGlobe} />
+                  <FontAwesomeIcon className="icon" icon={faWindowRestore} />
+                  <FontAwesomeIcon className="icon" icon={faMobileAlt} />
+                  <FontAwesomeIcon className="icon" icon={faLaptop} />
+                </div>
+              </div>
+            </div>
+            <div
+              className="cell d-flex"
+              style={{
+                borderWidth: "1px 1px 1px 1px",
+                borderStyle: "solid",
+                borderRadius: "0px 0px 0px 0px",
+              }}
+            >
+              <div className="d-flex flex-column">
+                <div>
+                  <span>
+                    <b>Utilities, activities, and fun</b>,
+                  </span>
+                  <span className="ms-1">
+                    <br/>showcasing practical projects for Dingocoin.
+                  </span>
+                </div>
+                <div className="d-flex flex-row mt-auto">
+                  <FontAwesomeIcon className="icon" icon={faShapes} />
+                  <FontAwesomeIcon className="icon" icon={faBullhorn} />
+                  <FontAwesomeIcon className="icon" icon={faGamepad} />
+                </div>
+              </div>
+            </div>
+            <div
+              className="cell me-auto d-flex"
+              style={{
+                borderWidth: "1px 1px 1px 0px",
+                borderStyle: "solid",
+                borderRadius: "0px 5px 5px 0px",
+              }}
+            >
+              <div className="d-flex flex-column">
+                <div>
+                  <span>
+                    <b>Community driven</b>,
+                  </span>
+                  <span className="ms-1">
+                    bringing out the most resilient and unexpected ideas.
+                  </span>
+                </div>
+                <div className="d-flex flex-row mt-auto">
+                  <FontAwesomeIcon className="icon" icon={faPeopleCarry} />
+                  <FontAwesomeIcon className="icon" icon={faBaby} />
+                  <FontAwesomeIcon className="icon" icon={faUserAstronaut} />
+                </div>
+              </div>
             </div>
           </div>
+
+          <div className="d-flex d-lg-none flex-column mt-4">
+            <div
+              className="cell-md d-flex ms-auto"
+              style={{
+                borderWidth: "1px 1px 0px 1px",
+                borderStyle: "solid",
+                borderRadius: "5px 5px 0px 0px",
+              }}
+            >
+              <div className="d-flex flex-column">
+                <div>
+                  <span>
+                    <b>Modern wallets</b>,
+                  </span>
+                  <span className="ms-1">
+                    exposing Dingocoin to the Web, Browser, and Mobile.
+                  </span>
+                </div>
+                <div className="d-flex flex-row mt-auto">
+                  <FontAwesomeIcon className="icon" icon={faGlobe} />
+                  <FontAwesomeIcon className="icon" icon={faWindowRestore} />
+                  <FontAwesomeIcon className="icon" icon={faMobileAlt} />
+                  <FontAwesomeIcon className="icon" icon={faLaptop} />
+                </div>
+              </div>
+            </div>
+            <div
+              className="cell-md d-flex"
+              style={{
+                borderWidth: "1px 1px 1px 1px",
+                borderStyle: "solid",
+                borderRadius: "0px 0px 0px 0px",
+              }}
+            >
+              <div className="d-flex flex-column">
+                <div>
+                  <span>
+                    <b>Utilities, activities, and fun</b>,
+                  </span>
+                  <span className="ms-1">
+                    showcasing practical projects for Dingocoin.
+                  </span>
+                </div>
+                <div className="d-flex flex-row mt-auto">
+                  <FontAwesomeIcon className="icon" icon={faShapes} />
+                  <FontAwesomeIcon className="icon" icon={faBullhorn} />
+                  <FontAwesomeIcon className="icon" icon={faGamepad} />
+                </div>
+              </div>
+            </div>
+            <div
+              className="cell-md me-auto d-flex"
+              style={{
+                borderWidth: "0px 1px 1px 1px",
+                borderStyle: "solid",
+                borderRadius: "0px 0px 5px 5px",
+              }}
+            >
+              <div className="d-flex flex-column">
+                <div>
+                  <span>
+                    <b>Community driven</b>,
+                  </span>
+                  <span className="ms-1">
+                    bringing out the most resilient and unexpected ideas.
+                  </span>
+                </div>
+                <div className="d-flex flex-row mt-auto">
+                  <FontAwesomeIcon className="icon" icon={faPeopleCarry} />
+                  <FontAwesomeIcon className="icon" icon={faBaby} />
+                  <FontAwesomeIcon className="icon" icon={faUserAstronaut} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="ecosystem">
+        <Container className="py-3 py-lg-5 mt-4">
+          <h2>Join the wild Dingocoin ecosystem</h2>
+          <div className="d-flex flex-row flex-wrap justify-content-center mt-4">
+            <a
+              href="https://discord.gg/y3J946HFQM"
+              target="_blank"
+              rel="noreferrer"
+              className="card d-flex flex-column rounded"
+            >
+              <h3 className="text-left">Community</h3>
+              <span>Discover the Dingocoin community. Hang out, have fun.</span>
+              <Button>
+                <FontAwesomeIcon className="icon" icon={faArrowRight} />{" "}
+              </Button>
+              <div className="d-flex mt-auto">
+                <FontAwesomeIcon className="logo" icon={faUsers} />
+              </div>
+            </a>
+            <a
+              href="https://dev.dingocoin.org"
+              target="_blank"
+              rel="noreferrer"
+              className="card d-flex flex-column rounded"
+            >
+              <h3 className="text-left">Development Forum</h3>
+              <span>
+                Propose, discuss, and build projects for Dingocoin.
+              </span>
+              <Button>
+                <FontAwesomeIcon className="icon" icon={faArrowRight} />
+              </Button>
+              <div className="d-flex mt-auto">
+                <FontAwesomeIcon className="logo" icon={faLaptopCode} />{" "}
+              </div>
+            </a>
+            <a
+              href="https://discord.gg/y3J946HFQM"
+              target="_blank"
+              rel="noreferrer"
+              className="card d-flex flex-column rounded"
+            >
+              <h3 className="text-left">Get Wallet</h3>
+              <span>Start your journey with Dingocoin today.</span>
+              <Button>
+                <FontAwesomeIcon className="icon" icon={faArrowRight} />{" "}
+              </Button>
+              <div className="d-flex mt-auto">
+                <FontAwesomeIcon className="logo" icon={faWallet} />
+              </div>
+            </a>
+          </div>
+          {/*
           <FadeInSection>
             <div className="d-flex flex-row flex-wrap justify-content-center">
               <a
@@ -457,6 +676,8 @@ function Main() {
               </a>
             </div>
           </FadeInSection>
+          */}
+          {/*
           <FadeInSection>
             <div className="mt-3 d-flex flex-column">
               {previewNfts !== null && (
@@ -502,6 +723,7 @@ function Main() {
               </p>
             </div>
           </FadeInSection>
+          */}
         </Container>
       </section>
 
@@ -935,6 +1157,7 @@ function Main() {
       </section>
       */}
 
+      {/*
       <section className="section-a mb-5" id="roadmap">
         <FadeInSection>
           <h1 className="mt-5 text-center text-primary">
@@ -1047,34 +1270,9 @@ function Main() {
             </ul>
           </Row>
 
-          {/*
-          <Row>
-            <FadeInSection>
-              <h1 className="text-center text-primary mt-5">
-                <b>What's next?</b>
-              </h1>
-              <CustomDivider />
-              <Image
-                src={TrailmapImage}
-                style={{ width: "100%", height: "auto" }}
-              />
-              <div className="d-flex flex-row">
-                <a
-                  href="/trailmap"
-                  className="simple-link mx-auto"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button className="mt-4 mb-5 px-4 py-2">
-                    See our Trailmap
-                  </Button>
-                </a>
-              </div>
-            </FadeInSection>
-          </Row>
-          */}
         </Container>
       </section>
+      */}
 
       <Modal
         size="lg"

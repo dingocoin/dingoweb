@@ -560,6 +560,7 @@ function App() {
               </span>
             </Row>
             <Row className="socials justify-content-md-center">
+              {/*
               <div>
                 <a
                   target="_blank"
@@ -707,11 +708,16 @@ function App() {
                   </div>
                 </a>
               </div>
+              */}
               <div className="mt-3">
                 <span>Multisig Marketing Fund</span>
-                <br/>
+                <br />
                 <b>
-                <a href="https://openchains.info/coin/dingocoin/address/A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP" target="_blank" className="simple-link">
+                  <a
+                    href="https://openchains.info/coin/dingocoin/address/A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP"
+                    target="_blank"
+                    className="simple-link"
+                  >
                     A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP
                   </a>
                 </b>
