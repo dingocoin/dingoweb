@@ -162,9 +162,6 @@ function Main() {
                 </div>
                 <div className="d-flex flex-row mt-auto">
                   <FontAwesomeIcon className="icon" icon={faGlobe} />
-                  <FontAwesomeIcon className="icon" icon={faWindowRestore} />
-                  <FontAwesomeIcon className="icon" icon={faMobileAlt} />
-                  <FontAwesomeIcon className="icon" icon={faLaptop} />
                 </div>
               </div>
             </div>
@@ -188,8 +185,6 @@ function Main() {
                 </div>
                 <div className="d-flex flex-row mt-auto">
                   <FontAwesomeIcon className="icon" icon={faShapes} />
-                  <FontAwesomeIcon className="icon" icon={faBullhorn} />
-                  <FontAwesomeIcon className="icon" icon={faGamepad} />
                 </div>
               </div>
             </div>
@@ -212,8 +207,6 @@ function Main() {
                 </div>
                 <div className="d-flex flex-row mt-auto">
                   <FontAwesomeIcon className="icon" icon={faPeopleCarry} />
-                  <FontAwesomeIcon className="icon" icon={faBaby} />
-                  <FontAwesomeIcon className="icon" icon={faUserAstronaut} />
                 </div>
               </div>
             </div>
@@ -239,9 +232,6 @@ function Main() {
                 </div>
                 <div className="d-flex flex-row mt-auto">
                   <FontAwesomeIcon className="icon" icon={faGlobe} />
-                  <FontAwesomeIcon className="icon" icon={faWindowRestore} />
-                  <FontAwesomeIcon className="icon" icon={faMobileAlt} />
-                  <FontAwesomeIcon className="icon" icon={faLaptop} />
                 </div>
               </div>
             </div>
@@ -264,8 +254,6 @@ function Main() {
                 </div>
                 <div className="d-flex flex-row mt-auto">
                   <FontAwesomeIcon className="icon" icon={faShapes} />
-                  <FontAwesomeIcon className="icon" icon={faBullhorn} />
-                  <FontAwesomeIcon className="icon" icon={faGamepad} />
                 </div>
               </div>
             </div>
@@ -288,8 +276,6 @@ function Main() {
                 </div>
                 <div className="d-flex flex-row mt-auto">
                   <FontAwesomeIcon className="icon" icon={faPeopleCarry} />
-                  <FontAwesomeIcon className="icon" icon={faBaby} />
-                  <FontAwesomeIcon className="icon" icon={faUserAstronaut} />
                 </div>
               </div>
             </div>

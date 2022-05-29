@@ -266,7 +266,7 @@ a.simple-link:hover {
     padding: 2rem;
     width: 20rem;
     height: 15rem;
-    background-color: $secondary;
+    background-color: lighten($secondary, 3%);
     .icon {
       font-size: 2rem;
       margin-right: 1rem;
@@ -288,7 +288,7 @@ a.simple-link:hover {
     height: 10.5rem;
     width: 100%;
     padding: 1.5rem;
-    background-color: $secondary;
+    background-color: lighten($secondary, 3%);
     .icon {
       font-size: 2rem;
       margin-right: 1rem;
