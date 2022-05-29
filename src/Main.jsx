@@ -252,7 +252,7 @@ function Main() {
                   </span>
                   <span className="ms-1">
                     <br />
-                    showcasing practical projects for Dingocoin.
+                    building practical projects for Dingocoin.
                   </span>
                 </div>
                 <div className="d-flex flex-row mt-auto">
@@ -328,7 +328,7 @@ function Main() {
                     <b>Utilities, activities, and fun</b>,
                   </span>
                   <span className="ms-1">
-                    showcasing practical projects for Dingocoin.
+                    building practical projects for Dingocoin.
                   </span>
                 </div>
                 <div className="d-flex flex-row mt-auto">
