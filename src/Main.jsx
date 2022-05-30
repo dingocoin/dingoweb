@@ -176,7 +176,7 @@ function Main() {
               <div className="d-flex flex-column">
                 <div>
                   <span>
-                    <b>Utilities, activities, and fun.</b>
+                    <b>Services, games, activities.</b>
                   </span>
                   <span className="ms-1">
                     <br />
@@ -246,7 +246,7 @@ function Main() {
               <div className="d-flex flex-column">
                 <div>
                   <span>
-                    <b>Utilities, activities, and fun.</b>
+                    <b>Services, games, activities.</b>
                   </span>
                   <span className="ms-1">
                     Build practical projects for Dingocoin.

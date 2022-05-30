@@ -37,7 +37,7 @@ function Projects() {
           Explore projects completed by the community.
         </span>
 
-        <h2>Fun</h2>
+        <h2>Games</h2>
         <div className="cards-container">
           <a
             href="https://nft.dingocoin.org"
@@ -242,7 +242,7 @@ function Projects() {
           </a>
         </div>
 
-        <h2>Utilities</h2>
+        <h2>Services</h2>
         <div className="cards-container">
           <a
             href="https://dingocoin.org/wallets"
