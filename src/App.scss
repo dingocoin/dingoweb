@@ -549,6 +549,11 @@ a.simple-link:hover {
     background: darken($secondary, 10%);
     border: 1px solid darken($secondary, 10%);
 
+    @media (max-width: 991px) {
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+      margin-bottom: 0.5rem
+    }
 
     &:hover {
       @extend .shadow;

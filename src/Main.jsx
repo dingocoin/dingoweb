@@ -212,9 +212,9 @@ function Main() {
             </div>
           </div>
 
-          <div className="d-flex d-lg-none flex-column mt-4">
+          <div className="d-flex d-lg-none flex-column mt-4 px-2">
             <div
-              className="cell-md d-flex ms-auto"
+              className="cell-md d-flex mx-auto"
               style={{
                 borderWidth: "1px 1px 0px 1px",
                 borderStyle: "solid",
@@ -236,7 +236,7 @@ function Main() {
               </div>
             </div>
             <div
-              className="cell-md d-flex"
+              className="cell-md d-flex mx-auto"
               style={{
                 borderWidth: "1px 1px 1px 1px",
                 borderStyle: "solid",
@@ -258,7 +258,7 @@ function Main() {
               </div>
             </div>
             <div
-              className="cell-md me-auto d-flex"
+              className="cell-md mx-auto d-flex"
               style={{
                 borderWidth: "0px 1px 1px 1px",
                 borderStyle: "solid",
