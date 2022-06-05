@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.6a28475f.chunk.css",
-    "main.js": "/static/js/main.5354bd25.chunk.js",
-    "main.js.map": "/static/js/main.5354bd25.chunk.js.map",
+    "main.js": "/static/js/main.451e29f6.chunk.js",
+    "main.js.map": "/static/js/main.451e29f6.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cb8b50a5.js",
     "runtime-main.js.map": "/static/js/runtime-main.cb8b50a5.js.map",
     "static/js/2.bf58034f.chunk.js": "/static/js/2.bf58034f.chunk.js",
@@ -14,7 +14,7 @@
     "static/media/coincodex.8839b857.png": "/static/media/coincodex.8839b857.png",
     "static/media/coingecko.7f110fd8.png": "/static/media/coingecko.7f110fd8.png",
     "static/media/coinmarketcap.0c39f339.png": "/static/media/coinmarketcap.0c39f339.png",
-    "static/media/contribute.bc901374.svg": "/static/media/contribute.bc901374.svg",
+    "static/media/contribute.8a141b66.svg": "/static/media/contribute.8a141b66.svg",
     "static/media/cratexio.d52369fa.png": "/static/media/cratexio.d52369fa.png",
     "static/media/deliondex.b1f720d1.png": "/static/media/deliondex.b1f720d1.png",
     "static/media/dex-guru.67d58c8a.png": "/static/media/dex-guru.67d58c8a.png",
@@ -44,6 +44,6 @@
     "static/js/runtime-main.cb8b50a5.js",
     "static/js/2.bf58034f.chunk.js",
     "static/css/main.6a28475f.chunk.css",
-    "static/js/main.5354bd25.chunk.js"
+    "static/js/main.451e29f6.chunk.js"
   ]
 }
