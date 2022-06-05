@@ -14,7 +14,7 @@
     "bs58": "^4.0.1",
     "crypto": "^1.0.1",
     "gh-pages": "^3.2.3",
-    "node-sass": "^4.14.1",
+    "node-sass": "6",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.0",
     "react-color": "^2.19.3",
