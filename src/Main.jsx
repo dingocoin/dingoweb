@@ -59,10 +59,10 @@ function Main() {
           <div className="d-none d-lg-block">
             <div className="d-flex flex-row py-5">
               <div className="d-flex flex-column me-auto my-5">
-                <h1 className="title text-left">
+                <h1 className="title text-start">
                   Community Development. Worldwide Adoption.
                 </h1>
-                <p className="lead mt-4 mb-4 text-left ms-0 me-auto">
+                <p className="lead mt-4 mb-4 text-start ms-0 me-auto">
                   Dingocoin is the most successful cryptocurrency fork of
                   Dogecoin, with revolutionary innovations and unstoppable
                   developments. Building an enthusiastic community, we bring
@@ -96,7 +96,7 @@ function Main() {
                 <h2 className="title text-center">
                   Community Development. Worldwide Adoption.
                 </h2>
-                <p className="lead mt-2 text-center mx-auto">
+                <p className="lead mt-2 text-start mx-auto">
                   Dingocoin is the most successful cryptocurrency fork of
                   Dogecoin, with revolutionary innovations and unstoppable
                   developments. Building an enthusiastic community, we bring
@@ -123,8 +123,8 @@ function Main() {
 
       <section className="features">
         <Container className="py-5 mt-5">
-          <h2 className="mb-3">Building Adoption</h2>
-          <span className="subtitle mx-auto">
+          <h2 className="mb-3 text-center">Building Adoption</h2>
+          <span className="subtitle mx-auto text-start text-lg-center">
             Dingocoin believes in utility and fun for all. With a community focused
             on building practical and meaningful applications, we strive to make
             Dingocoin the digital currency that is adopted everywhere.
@@ -285,10 +285,10 @@ function Main() {
 
       <section className="ecosystem">
         <Container className="py-5 mt-5 mb-5">
-          <h2>Join our wild ecosystem</h2>
+          <h2 className="text-center">Join our wild ecosystem</h2>
           <div className="d-flex flex-row flex-wrap justify-content-center mt-5">
             <a href="/community" className="card d-flex flex-column rounded">
-              <h3 className="text-left">Community</h3>
+              <h3 className="text-start">Community</h3>
               <span>Discover the Dingocoin community. Hang out, have fun.</span>
               <Button>
                 <FontAwesomeIcon className="icon" icon={faArrowRight} />
@@ -303,7 +303,7 @@ function Main() {
               rel="noreferrer"
               className="card d-flex flex-column rounded"
             >
-              <h3 className="text-left">Development Forum</h3>
+              <h3 className="text-start">Development Forum</h3>
               <span>Propose, discuss, and build projects for Dingocoin.</span>
               <Button>
                 <FontAwesomeIcon className="icon" icon={faArrowRight} />
@@ -313,7 +313,7 @@ function Main() {
               </div>
             </a>
             <a href="/wallets" className="card d-flex flex-column rounded">
-              <h3 className="text-left">Get Wallet</h3>
+              <h3 className="text-start">Get Wallet</h3>
               <span>Start your journey with Dingocoin today.</span>
               <Button>
                 <FontAwesomeIcon className="icon" icon={faArrowRight} />

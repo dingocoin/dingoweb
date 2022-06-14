@@ -187,7 +187,6 @@ a.simple-link:hover {
     max-width: 30rem;
     line-height: 170%;
     @media (max-width: 991px) {
-      text-align: center !important;
       font-size: 1rem;
     }
   }
@@ -201,46 +200,13 @@ a.simple-link:hover {
   }
 }
 
-.accessibility {
+.features {
   padding-left: 1rem;
   padding-right: 1rem;
-  background: $secondary;
-  .description {
-    .title {
-      width: 50%;
-      @media (max-width: 991px) {
-        width: 100%;
-      }
-      h2 {
-        font-weight: bold;
-      }
-      .faicon {
-        width: 5rem;
-        height: auto;
-      }
-      .demo {
-        height: 2.5rem;
-        width: auto;
-      }
-    }
-    .lead {
-      width: 50%;
-      @media (max-width: 991px) {
-        width: 100%;
-        font-size: 1rem;
-      }
-    }
-  }
-}
-
-.features {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   background: $secondary;
 
   h2 {
     @extend .text-primary;
-    @extend .text-center;
     font-weight: bold;
     font-size: 3.5rem;
     @media (max-width: 991px) {
@@ -250,7 +216,6 @@ a.simple-link:hover {
 
   .subtitle {
     @extend .text-muted;
-    @extend .text-center;
     margin-top: 0.5rem;
     display: block;
     font-size: 1.25rem;
@@ -312,7 +277,6 @@ a.simple-link:hover {
 
   h2 {
     @extend .text-primary;
-    @extend .text-center;
     font-weight: bold;
     font-size: 3.5rem;
     @media (max-width: 991px) {
