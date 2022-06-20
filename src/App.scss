@@ -510,7 +510,7 @@ a.simple-link:hover {
     padding-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    background: darken($secondary, 10%);
+    background: lighten($secondary, 3%);
     border: 1px solid darken($secondary, 10%);
 
     @media (max-width: 991px) {
