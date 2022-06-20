@@ -3,6 +3,7 @@ import React from "react";
 // Controls.
 import { Button, Container, Row, Col, Modal, Image } from "react-bootstrap";
 import CustomDivider from "./CustomDivider";
+import FadeInSection from "./FadeInSection";
 
 // Assets.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -116,206 +117,215 @@ function Main() {
 
       <section className="features">
         <Container className="py-5 mt-5">
-          <h2 className="mb-3 text-center">Building Adoption</h2>
-          <span className="subtitle mx-auto text-start text-lg-center">
-            Dingocoin believes in utility and fun for all. With a community focused
-            on building practical and meaningful applications, we strive to make
-            Dingocoin the digital currency that is adopted everywhere.
-          </span>
+          <FadeInSection>
+            <h2 className="mb-3 text-center">Building Adoption</h2>
+            <span className="subtitle mx-auto text-start text-lg-center">
+              Dingocoin believes in utility and fun for all. With a community
+              focused on building practical and meaningful applications, we
+              strive to make Dingocoin the digital currency that is adopted
+              everywhere.
+            </span>
 
-          <div className="d-flex">
-            <a href="/projects" className="mx-auto">
-              <Button
-                className="rounded-pill px-5 py-2 mt-5 mb-5"
-                style={{ fontSize: "1.3rem" }}
+            <div className="d-flex">
+              <a href="/projects" className="mx-auto">
+                <Button
+                  className="rounded-pill px-5 py-2 mt-5 mb-5"
+                  style={{ fontSize: "1.3rem" }}
+                >
+                  <span>Tour Projects</span>
+                  <FontAwesomeIcon className="icon ms-2" icon={faArrowRight} />
+                </Button>
+              </a>
+            </div>
+
+            <div className="d-none d-lg-flex flex-row mt-5">
+              <div
+                className="cell d-flex ms-auto"
+                style={{
+                  borderWidth: "1px 0px 1px 1px",
+                  borderStyle: "solid",
+                  borderRadius: "5px 0px 0px 5px",
+                }}
               >
-                <span>Tour Projects</span>
-                <FontAwesomeIcon className="icon ms-2" icon={faArrowRight} />
-              </Button>
-            </a>
-          </div>
+                <div className="d-flex flex-column">
+                  <div>
+                    <span>
+                      <b>Modern wallets.</b>
+                    </span>
+                    <span className="ms-1">
+                      Access Dingocoin from the Web, Browser, Mobile, and
+                      Desktop.
+                    </span>
+                  </div>
+                  <div className="d-flex flex-row mt-auto">
+                    <FontAwesomeIcon className="icon" icon={faGlobe} />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="cell d-flex"
+                style={{
+                  borderWidth: "1px 1px 1px 1px",
+                  borderStyle: "solid",
+                  borderRadius: "0px 0px 0px 0px",
+                }}
+              >
+                <div className="d-flex flex-column">
+                  <div>
+                    <span>
+                      <b>Services, games, activities.</b>
+                    </span>
+                    <span className="ms-1">
+                      <br />
+                      Build practical projects for Dingocoin.
+                    </span>
+                  </div>
+                  <div className="d-flex flex-row mt-auto">
+                    <FontAwesomeIcon className="icon" icon={faShapes} />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="cell me-auto d-flex"
+                style={{
+                  borderWidth: "1px 1px 1px 0px",
+                  borderStyle: "solid",
+                  borderRadius: "0px 5px 5px 0px",
+                }}
+              >
+                <div className="d-flex flex-column">
+                  <div>
+                    <span>
+                      <b>Community driven.</b>
+                    </span>
+                    <span className="ms-1">
+                      Bring out the most resilient and unexpected ideas.
+                    </span>
+                  </div>
+                  <div className="d-flex flex-row mt-auto">
+                    <FontAwesomeIcon className="icon" icon={faPeopleCarry} />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div className="d-none d-lg-flex flex-row mt-5">
-            <div
-              className="cell d-flex ms-auto"
-              style={{
-                borderWidth: "1px 0px 1px 1px",
-                borderStyle: "solid",
-                borderRadius: "5px 0px 0px 5px",
-              }}
-            >
-              <div className="d-flex flex-column">
-                <div>
-                  <span>
-                    <b>Modern wallets.</b>
-                  </span>
-                  <span className="ms-1">
-                    Access Dingocoin from the Web, Browser, Mobile, and Desktop.
-                  </span>
+            <div className="d-flex d-lg-none flex-column mt-4 px-2">
+              <div
+                className="cell-md d-flex mx-auto"
+                style={{
+                  borderWidth: "1px 1px 0px 1px",
+                  borderStyle: "solid",
+                  borderRadius: "5px 5px 0px 0px",
+                }}
+              >
+                <div className="d-flex flex-column">
+                  <div>
+                    <span>
+                      <b>Modern wallets.</b>
+                    </span>
+                    <span className="ms-1">
+                      Access Dingocoin from the Web, Browser, Mobile, and
+                      Desktop.
+                    </span>
+                  </div>
+                  <div className="d-flex flex-row mt-auto">
+                    <FontAwesomeIcon className="icon" icon={faGlobe} />
+                  </div>
                 </div>
-                <div className="d-flex flex-row mt-auto">
-                  <FontAwesomeIcon className="icon" icon={faGlobe} />
+              </div>
+              <div
+                className="cell-md d-flex mx-auto"
+                style={{
+                  borderWidth: "1px 1px 1px 1px",
+                  borderStyle: "solid",
+                  borderRadius: "0px 0px 0px 0px",
+                }}
+              >
+                <div className="d-flex flex-column">
+                  <div>
+                    <span>
+                      <b>Services, games, activities.</b>
+                    </span>
+                    <span className="ms-1">
+                      Build practical projects for Dingocoin.
+                    </span>
+                  </div>
+                  <div className="d-flex flex-row mt-auto">
+                    <FontAwesomeIcon className="icon" icon={faShapes} />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="cell-md mx-auto d-flex"
+                style={{
+                  borderWidth: "0px 1px 1px 1px",
+                  borderStyle: "solid",
+                  borderRadius: "0px 0px 5px 5px",
+                }}
+              >
+                <div className="d-flex flex-column">
+                  <div>
+                    <span>
+                      <b>Community driven.</b>
+                    </span>
+                    <span className="ms-1">
+                      Bring out the most resilient and unexpected ideas.
+                    </span>
+                  </div>
+                  <div className="d-flex flex-row mt-auto">
+                    <FontAwesomeIcon className="icon" icon={faPeopleCarry} />
+                  </div>
                 </div>
               </div>
             </div>
-            <div
-              className="cell d-flex"
-              style={{
-                borderWidth: "1px 1px 1px 1px",
-                borderStyle: "solid",
-                borderRadius: "0px 0px 0px 0px",
-              }}
-            >
-              <div className="d-flex flex-column">
-                <div>
-                  <span>
-                    <b>Services, games, activities.</b>
-                  </span>
-                  <span className="ms-1">
-                    <br />
-                    Build practical projects for Dingocoin.
-                  </span>
-                </div>
-                <div className="d-flex flex-row mt-auto">
-                  <FontAwesomeIcon className="icon" icon={faShapes} />
-                </div>
-              </div>
-            </div>
-            <div
-              className="cell me-auto d-flex"
-              style={{
-                borderWidth: "1px 1px 1px 0px",
-                borderStyle: "solid",
-                borderRadius: "0px 5px 5px 0px",
-              }}
-            >
-              <div className="d-flex flex-column">
-                <div>
-                  <span>
-                    <b>Community driven.</b>
-                  </span>
-                  <span className="ms-1">
-                    Bring out the most resilient and unexpected ideas.
-                  </span>
-                </div>
-                <div className="d-flex flex-row mt-auto">
-                  <FontAwesomeIcon className="icon" icon={faPeopleCarry} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="d-flex d-lg-none flex-column mt-4 px-2">
-            <div
-              className="cell-md d-flex mx-auto"
-              style={{
-                borderWidth: "1px 1px 0px 1px",
-                borderStyle: "solid",
-                borderRadius: "5px 5px 0px 0px",
-              }}
-            >
-              <div className="d-flex flex-column">
-                <div>
-                  <span>
-                    <b>Modern wallets.</b>
-                  </span>
-                  <span className="ms-1">
-                    Access Dingocoin from the Web, Browser, Mobile, and Desktop.
-                  </span>
-                </div>
-                <div className="d-flex flex-row mt-auto">
-                  <FontAwesomeIcon className="icon" icon={faGlobe} />
-                </div>
-              </div>
-            </div>
-            <div
-              className="cell-md d-flex mx-auto"
-              style={{
-                borderWidth: "1px 1px 1px 1px",
-                borderStyle: "solid",
-                borderRadius: "0px 0px 0px 0px",
-              }}
-            >
-              <div className="d-flex flex-column">
-                <div>
-                  <span>
-                    <b>Services, games, activities.</b>
-                  </span>
-                  <span className="ms-1">
-                    Build practical projects for Dingocoin.
-                  </span>
-                </div>
-                <div className="d-flex flex-row mt-auto">
-                  <FontAwesomeIcon className="icon" icon={faShapes} />
-                </div>
-              </div>
-            </div>
-            <div
-              className="cell-md mx-auto d-flex"
-              style={{
-                borderWidth: "0px 1px 1px 1px",
-                borderStyle: "solid",
-                borderRadius: "0px 0px 5px 5px",
-              }}
-            >
-              <div className="d-flex flex-column">
-                <div>
-                  <span>
-                    <b>Community driven.</b>
-                  </span>
-                  <span className="ms-1">
-                    Bring out the most resilient and unexpected ideas.
-                  </span>
-                </div>
-                <div className="d-flex flex-row mt-auto">
-                  <FontAwesomeIcon className="icon" icon={faPeopleCarry} />
-                </div>
-              </div>
-            </div>
-          </div>
+          </FadeInSection>
         </Container>
       </section>
 
       <section className="ecosystem">
         <Container className="py-5 mt-3 mb-4">
-          <h2 className="text-center">Join our wild ecosystem</h2>
-          <div className="d-flex flex-row flex-wrap justify-content-center mt-5">
-            <a href="/community" className="card d-flex flex-column rounded">
-              <h3 className="text-start">Community</h3>
-              <span>Discover the Dingocoin community. Hang out, have fun.</span>
-              <Button>
-                <FontAwesomeIcon className="icon" icon={faArrowRight} />
-              </Button>
-              <div className="d-flex mt-auto">
-                <FontAwesomeIcon className="logo" icon={faUsers} />
-              </div>
-            </a>
-            <a
-              href="https://dev.dingocoin.org"
-              target="_blank"
-              rel="noreferrer"
-              className="card d-flex flex-column rounded"
-            >
-              <h3 className="text-start">Development Forum</h3>
-              <span>Propose, discuss, and build projects for Dingocoin.</span>
-              <Button>
-                <FontAwesomeIcon className="icon" icon={faArrowRight} />
-              </Button>
-              <div className="d-flex mt-auto">
-                <FontAwesomeIcon className="logo" icon={faLaptopCode} />
-              </div>
-            </a>
-            <a href="/wallets" className="card d-flex flex-column rounded">
-              <h3 className="text-start">Get Wallet</h3>
-              <span>Start your journey with Dingocoin today.</span>
-              <Button>
-                <FontAwesomeIcon className="icon" icon={faArrowRight} />
-              </Button>
-              <div className="d-flex mt-auto">
-                <FontAwesomeIcon className="logo" icon={faWallet} />
-              </div>
-            </a>
-          </div>
+          <FadeInSection>
+            <h2 className="text-center">Join our wild ecosystem</h2>
+            <div className="d-flex flex-row flex-wrap justify-content-center mt-5">
+              <a href="/community" className="card d-flex flex-column rounded">
+                <h3 className="text-start">Community</h3>
+                <span>
+                  Discover the Dingocoin community. Hang out, have fun.
+                </span>
+                <Button>
+                  <FontAwesomeIcon className="icon" icon={faArrowRight} />
+                </Button>
+                <div className="d-flex mt-auto">
+                  <FontAwesomeIcon className="logo" icon={faUsers} />
+                </div>
+              </a>
+              <a
+                href="https://dev.dingocoin.org"
+                target="_blank"
+                rel="noreferrer"
+                className="card d-flex flex-column rounded"
+              >
+                <h3 className="text-start">Development Forum</h3>
+                <span>Propose, discuss, and build projects for Dingocoin.</span>
+                <Button>
+                  <FontAwesomeIcon className="icon" icon={faArrowRight} />
+                </Button>
+                <div className="d-flex mt-auto">
+                  <FontAwesomeIcon className="logo" icon={faLaptopCode} />
+                </div>
+              </a>
+              <a href="/wallets" className="card d-flex flex-column rounded">
+                <h3 className="text-start">Get Wallet</h3>
+                <span>Start your journey with Dingocoin today.</span>
+                <Button>
+                  <FontAwesomeIcon className="icon" icon={faArrowRight} />
+                </Button>
+                <div className="d-flex mt-auto">
+                  <FontAwesomeIcon className="logo" icon={faWallet} />
+                </div>
+              </a>
+            </div>
+          </FadeInSection>
         </Container>
       </section>
 
