@@ -13,14 +13,7 @@ import {
   faUsers,
   faWallet,
   faPeopleCarry,
-  faLaptop,
-  faMobileAlt,
-  faWindowRestore,
   faShapes,
-  faBullhorn,
-  faGamepad,
-  faUserAstronaut,
-  faBaby,
 } from "@fortawesome/free-solid-svg-icons";
 import AutradexLogo from "./assets/img/autradex.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
@@ -284,7 +277,7 @@ function Main() {
       </section>
 
       <section className="ecosystem">
-        <Container className="py-5 mt-5 mb-5">
+        <Container className="py-5 mt-3 mb-4">
           <h2 className="text-center">Join our wild ecosystem</h2>
           <div className="d-flex flex-row flex-wrap justify-content-center mt-5">
             <a href="/community" className="card d-flex flex-column rounded">

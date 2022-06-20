@@ -24,7 +24,6 @@ import MerchDingocoinArtLogo from "./assets/img/merch_dingocoinart.png";
 import NFTLogo from "./assets/img/dingocoinnftplatform.png";
 import BSCLogo from "./assets/img/bsc.png";
 import SOLLogo from "./assets/img/sol.png";
-import { faChrome } from "@fortawesome/free-brands-svg-icons";
 
 function Projects() {
   const [marketplaceModalShow, setMarketplaceModalShow] = React.useState(false);

@@ -35,7 +35,6 @@ function Stake() {
   const [currentList, setCurrentList] = React.useState([]);
   const [nextList, setNextList] = React.useState([]);
   const [terminalBlocks, setTerminalBlocks] = React.useState([]);
-  const [nextTerminalHeight, setNextTerminalHeight] = React.useState(null);
   const [view, setView] = React.useState("next");
   React.useEffect(() => {
     (async () => {
@@ -81,11 +80,6 @@ function Stake() {
         "https://stats.dingocoin.org:8443/stats/dingo"
       );
       setTerminalBlocks(STAKE_INTERVAL - (dingoStats.height % STAKE_INTERVAL));
-      setNextTerminalHeight(
-        dingoStats.height +
-          STAKE_INTERVAL -
-          (dingoStats.height % STAKE_INTERVAL)
-      );
     })();
   }, []);
 
@@ -95,6 +89,7 @@ function Stake() {
         <h1 className="mt-5 text-primary text-center">STAKE DINGOCOINS</h1>
         <CustomDivider />
         <Container>
+          {/*
           <Row>
             <p>Simply #KeepYourDingoInYourPants and get rewarded.</p>
           </Row>
@@ -273,6 +268,8 @@ function Stake() {
               Reward pool: <b>{(STAKE_REWARD).toLocaleString()} Dingocoins</b>.
             </p>
           </Row>
+          */}
+          <p>We are currently undergoing maintenance and will be back soon.</p>
         </Container>
       </section>
     </div>
