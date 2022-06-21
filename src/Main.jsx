@@ -222,10 +222,10 @@ function Main() {
                       wild pack on Discord. Hang out and have fun.
                     </p>
                     <a href="/community" className="read-more">
-                      Join Community ᐳ
+                      Community ᐳ
                     </a>
                     <a href="/projects#games" className="read-more">
-                      Explore Games ᐳ
+                      Games ᐳ
                     </a>
                   </div>
                 </div>
