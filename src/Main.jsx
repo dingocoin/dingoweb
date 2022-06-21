@@ -11,13 +11,10 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 // Assets.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faGlobe,
   faLaptopCode,
   faArrowRight,
   faUsers,
   faWallet,
-  faPeopleCarry,
-  faShapes,
 } from "@fortawesome/free-solid-svg-icons";
 import AutradexLogo from "./assets/img/autradex.png";
 import BirdeyeLogo from "./assets/img/birdeye.png";
@@ -46,6 +43,9 @@ import XTCOMLogo from "./assets/img/xtcom.png";
 import HighlightBrowserWallet from "./assets/img/highlight-browserwallet.png";
 import HighlightDingotip from "./assets/img/highlight-dingotip.png";
 import HighlightNft from "./assets/img/highlight-nft.png";
+import HighlightActivities from "./assets/img/highlight-activities.gif";
+import HighlightGames from "./assets/img/highlight-games.gif";
+import HighlightWrap from "./assets/img/wdingocoin.png";
 
 function Main() {
   const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
@@ -138,12 +138,173 @@ function Main() {
                   className="rounded-pill px-5 py-2 mt-5 mb-5"
                   style={{ fontSize: "1.3rem" }}
                 >
-                  <span>Tour Projects</span>
+                  <span>Tour All Projects</span>
                   <FontAwesomeIcon className="icon ms-2" icon={faArrowRight} />
                 </Button>
               </a>
             </div>
 
+            <Container>
+              <OwlCarousel
+                className="owl-theme"
+                autoplay
+                autoplayTimeout={10000}
+                autoplayHoverPause
+                nav
+                navText={["", ""]}
+                dots
+                margin={10}
+                responsive={{
+                  0: { items: 1 },
+                  992: { items: 2 },
+                  1400: { items: 3 },
+                }}
+              >
+                <div className="post-slide">
+                  <div className="post-img">
+                    <Image src={HighlightDingotip} alt="" />
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.dingotip"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="over-layer"
+                    >
+                      <i className="fa fa-link"></i>
+                    </a>
+                  </div>
+                  <div className="post-content">
+                    <h3 className="post-title">DingoTip</h3>
+                    <p className="post-description">
+                      With DingoTip you can effortlessly send and receive crypto
+                      using your phone number only. It is made with love for
+                      simplicity, by the Dingocoin community.
+                    </p>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.dingotip"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="read-more"
+                    >
+                      Get Android Preview (Beta) ᐳ
+                    </a>
+                  </div>
+                </div>
+
+                <div className="post-slide">
+                  <div className="post-img">
+                    <Image src={HighlightNft} alt="" />
+                    <a
+                      href="https://nft.dingocoin.org"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="over-layer"
+                    >
+                      <i className="fa fa-link"></i>
+                    </a>
+                  </div>
+                  <div className="post-content">
+                    <h3 className="post-title">NFT Platform</h3>
+                    <p className="post-description">
+                      Create and trade NFTs on-chain, with our very own NFT
+                      platform. Spend near-zero gas fees, and receive earnings
+                      immediately. Become the top NFT connoisseur!
+                    </p>
+                    <a
+                      href="https://nft.dingocoin.org"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="read-more"
+                    >
+                      Visit NFT Platform ᐳ
+                    </a>
+                  </div>
+                </div>
+
+                <div className="post-slide">
+                  <div className="post-img">
+                    <Image src={HighlightGames} alt="" />
+                    <a href="/projects#games" className="over-layer">
+                      <i className="fa fa-link"></i>
+                    </a>
+                  </div>
+                  <div className="post-content">
+                    <h3 className="post-title">Games and Social</h3>
+                    <p className="post-description">
+                      Play Dingocoin games made by the community. Chat with the
+                      wild pack on Discord. Hang out and have fun.
+                    </p>
+                    <a href="/community" className="read-more">
+                      Join Community ᐳ
+                    </a>
+                    <a href="/projects#games" className="read-more">
+                      Explore Games ᐳ
+                    </a>
+                  </div>
+                </div>
+
+                <div className="post-slide">
+                  <div className="post-img">
+                    <Image src={HighlightActivities} alt="" />
+                    <a href="/projects#activities" className="over-layer">
+                      <i className="fa fa-link"></i>
+                    </a>
+                  </div>
+                  <div className="post-content">
+                    <h3 className="post-title">Never-Ending Activities</h3>
+                    <p className="post-description">
+                      Weekly twitter airdrops, staking, paid-to-click referral
+                      rewards. Earn free Dingocoins by participating in our
+                      activities!
+                    </p>
+                    <a href="/projects#activities" className="read-more">
+                      Explore Activities ᐳ
+                    </a>
+                  </div>
+                </div>
+
+                <div className="post-slide">
+                  <div className="post-img">
+                    <Image src={HighlightBrowserWallet} alt="" />
+                    <a href="/wallets" className="over-layer">
+                      <i className="fa fa-link"></i>
+                    </a>
+                  </div>
+                  <div className="post-content">
+                    <h3 className="post-title">Web3.0 Browser Wallet</h3>
+                    <p className="post-description">
+                      Our browser wallet lets you hold Dingocoins right in your
+                      browser. It also lets you interact with webpages, bringing
+                      Dingocoin to the world of Web3.0.
+                    </p>
+                    <a href="/wallets" className="read-more">
+                      Explore Wallets ᐳ
+                    </a>
+                  </div>
+                </div>
+
+                <div className="post-slide">
+                  <div className="post-img">
+                    <Image src={HighlightWrap} alt="" />
+                    <a href="/projects#infrastructure" className="over-layer">
+                      <i className="fa fa-link"></i>
+                    </a>
+                  </div>
+                  <div className="post-content">
+                    <h3 className="post-title">Wrapped Dingocoin</h3>
+                    <p className="post-description">
+                      Our community-maintained custodians let you wrap
+                      Dingocoins onto BSC and SOL. Do whatever you want,
+                      wherever you want.
+                    </p>
+                    <a href="/projects#infrastructure" className="read-more">
+                      View Infrastructure ᐳ
+                    </a>
+                  </div>
+                </div>
+              </OwlCarousel>
+            </Container>
+
+            {/*
             <div className="d-none d-lg-flex flex-row mt-5">
               <div
                 className="cell d-flex ms-auto"
@@ -284,9 +445,12 @@ function Main() {
                 </div>
               </div>
             </div>
+            */}
           </FadeInSection>
         </Container>
       </section>
+
+      <section className="highlights"></section>
 
       <section className="ecosystem">
         <Container className="py-5 mt-3 mb-4">
@@ -332,186 +496,6 @@ function Main() {
               </a>
             </div>
           </FadeInSection>
-        </Container>
-      </section>
-
-      <section className="highlights">
-        <Container>
-          <OwlCarousel
-            className="owl-theme"
-            autoplay
-            loop
-            autoplayTimeout={3000}
-            autoplayHoverPause
-            nav
-            navText={["", ""]}
-            dots
-            dotsEach={1}
-            margin={10}
-            responsive={{
-              0: { items: 1 },
-              992: { items: 3 },
-            }}
-          >
-            <div className="post-slide">
-              <div className="post-img">
-                <Image src={HighlightBrowserWallet} alt="" />
-                <a href="#" className="over-layer">
-                  <i className="fa fa-link"></i>
-                </a>
-              </div>
-              <div className="post-content">
-                <h3 className="post-title">
-                  <a href="#">Lorem ipsum dolor sit amet.</a>
-                </h3>
-                <p className="post-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
-                  laudantium necessitatibus neque quae tempora......
-                </p>
-                <span className="post-date">
-                  <i className="fa fa-clock-o"></i>Out 27, 2019
-                </span>
-                <a href="#" className="read-more">
-                  read more
-                </a>
-              </div>
-            </div>
-
-            <div className="post-slide">
-              <div className="post-img">
-                <Image src={HighlightDingotip} alt="" />
-                <a href="#" className="over-layer">
-                  <i className="fa fa-link"></i>
-                </a>
-              </div>
-              <div className="post-content">
-                <h3 className="post-title">
-                  <a href="#">Lorem ipsum dolor sit amet.</a>
-                </h3>
-                <p className="post-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
-                  laudantium necessitatibus neque quae tempora......
-                </p>
-                <span className="post-date">
-                  <i className="fa fa-clock-o"></i>Out 27, 2019
-                </span>
-                <a href="#" className="read-more">
-                  read more
-                </a>
-              </div>
-            </div>
-
-            <div className="post-slide">
-              <div className="post-img">
-                <Image src={HighlightNft} alt="" />
-                <a href="#" className="over-layer">
-                  <i className="fa fa-link"></i>
-                </a>
-              </div>
-              <div className="post-content">
-                <h3 className="post-title">
-                  <a href="#">Lorem ipsum dolor sit amet.</a>
-                </h3>
-                <p className="post-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
-                  laudantium necessitatibus neque quae tempora......
-                </p>
-                <span className="post-date">
-                  <i className="fa fa-clock-o"></i>Out 27, 2019
-                </span>
-                <a href="#" className="read-more">
-                  read more
-                </a>
-              </div>
-            </div>
-
-            <div className="post-slide">
-              <div className="post-img">
-                <Image
-                  src="https://images.unsplash.com/photo-1576659531892-0f4991fca82b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501"
-                  alt=""
-                />
-                <a href="#" className="over-layer">
-                  <i className="fa fa-link"></i>
-                </a>
-              </div>
-              <div className="post-content">
-                <h3 className="post-title">
-                  <a href="#">Lorem ipsum dolor sit amet.</a>
-                </h3>
-                <p className="post-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
-                  laudantium necessitatibus neque quae tempora......
-                </p>
-                <span className="post-date">
-                  <i className="fa fa-clock-o"></i>Out 27, 2019
-                </span>
-                <a href="#" className="read-more">
-                  read more
-                </a>
-              </div>
-            </div>
-
-            <div className="post-slide">
-              <div className="post-img">
-                <Image
-                  src="https://images.unsplash.com/photo-1586083702768-190ae093d34d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=305&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=505"
-                  alt=""
-                />
-                <a href="#" className="over-layer">
-                  <i className="fa fa-link"></i>
-                </a>
-              </div>
-              <div className="post-content">
-                <h3 className="post-title">
-                  <a href="#">Lorem ipsum dolor sit amet.</a>
-                </h3>
-                <p className="post-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
-                  laudantium necessitatibus neque quae tempora......
-                </p>
-                <span className="post-date">
-                  <i className="fa fa-clock-o"></i>Out 27, 2019
-                </span>
-                <a href="#" className="read-more">
-                  read more
-                </a>
-              </div>
-            </div>
-
-            <div className="post-slide">
-              <div className="post-img">
-                <Image
-                  src="https://images.unsplash.com/photo-1484656551321-a1161420a2a0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=306&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=506"
-                  alt=""
-                />
-                <a href="#" className="over-layer">
-                  <i className="fa fa-link"></i>
-                </a>
-              </div>
-              <div className="post-content">
-                <h3 className="post-title">
-                  <a href="#">Lorem ipsum dolor sit amet.</a>
-                </h3>
-                <p className="post-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
-                  laudantium necessitatibus neque quae tempora......
-                </p>
-                <span className="post-date">
-                  <i className="fa fa-clock-o"></i>Out 27, 2019
-                </span>
-                <a href="#" className="read-more">
-                  read more
-                </a>
-              </div>
-            </div>
-          </OwlCarousel>
         </Container>
       </section>
 
