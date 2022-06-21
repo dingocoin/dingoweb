@@ -4,6 +4,9 @@ import React from "react";
 import { Button, Container, Row, Col, Modal, Image } from "react-bootstrap";
 import CustomDivider from "./CustomDivider";
 import FadeInSection from "./FadeInSection";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 // Assets.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,6 +43,9 @@ import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
 import SouthXchangeLogo from "./assets/img/southxchange.png";
 import XTCOMLogo from "./assets/img/xtcom.png";
+import HighlightBrowserWallet from "./assets/img/highlight-browserwallet.png";
+import HighlightDingotip from "./assets/img/highlight-dingotip.png";
+import HighlightNft from "./assets/img/highlight-nft.png";
 
 function Main() {
   const [exchangesModalShow, setExchangesModalShow] = React.useState(false);
@@ -326,6 +332,186 @@ function Main() {
               </a>
             </div>
           </FadeInSection>
+        </Container>
+      </section>
+
+      <section className="highlights">
+        <Container>
+          <OwlCarousel
+            className="owl-theme"
+            autoplay
+            loop
+            autoplayTimeout={3000}
+            autoplayHoverPause
+            nav
+            navText={["", ""]}
+            dots
+            dotsEach={1}
+            margin={10}
+            responsive={{
+              0: { items: 1 },
+              992: { items: 3 },
+            }}
+          >
+            <div className="post-slide">
+              <div className="post-img">
+                <Image src={HighlightBrowserWallet} alt="" />
+                <a href="#" className="over-layer">
+                  <i className="fa fa-link"></i>
+                </a>
+              </div>
+              <div className="post-content">
+                <h3 className="post-title">
+                  <a href="#">Lorem ipsum dolor sit amet.</a>
+                </h3>
+                <p className="post-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
+                  laudantium necessitatibus neque quae tempora......
+                </p>
+                <span className="post-date">
+                  <i className="fa fa-clock-o"></i>Out 27, 2019
+                </span>
+                <a href="#" className="read-more">
+                  read more
+                </a>
+              </div>
+            </div>
+
+            <div className="post-slide">
+              <div className="post-img">
+                <Image src={HighlightDingotip} alt="" />
+                <a href="#" className="over-layer">
+                  <i className="fa fa-link"></i>
+                </a>
+              </div>
+              <div className="post-content">
+                <h3 className="post-title">
+                  <a href="#">Lorem ipsum dolor sit amet.</a>
+                </h3>
+                <p className="post-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
+                  laudantium necessitatibus neque quae tempora......
+                </p>
+                <span className="post-date">
+                  <i className="fa fa-clock-o"></i>Out 27, 2019
+                </span>
+                <a href="#" className="read-more">
+                  read more
+                </a>
+              </div>
+            </div>
+
+            <div className="post-slide">
+              <div className="post-img">
+                <Image src={HighlightNft} alt="" />
+                <a href="#" className="over-layer">
+                  <i className="fa fa-link"></i>
+                </a>
+              </div>
+              <div className="post-content">
+                <h3 className="post-title">
+                  <a href="#">Lorem ipsum dolor sit amet.</a>
+                </h3>
+                <p className="post-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
+                  laudantium necessitatibus neque quae tempora......
+                </p>
+                <span className="post-date">
+                  <i className="fa fa-clock-o"></i>Out 27, 2019
+                </span>
+                <a href="#" className="read-more">
+                  read more
+                </a>
+              </div>
+            </div>
+
+            <div className="post-slide">
+              <div className="post-img">
+                <Image
+                  src="https://images.unsplash.com/photo-1576659531892-0f4991fca82b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501"
+                  alt=""
+                />
+                <a href="#" className="over-layer">
+                  <i className="fa fa-link"></i>
+                </a>
+              </div>
+              <div className="post-content">
+                <h3 className="post-title">
+                  <a href="#">Lorem ipsum dolor sit amet.</a>
+                </h3>
+                <p className="post-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
+                  laudantium necessitatibus neque quae tempora......
+                </p>
+                <span className="post-date">
+                  <i className="fa fa-clock-o"></i>Out 27, 2019
+                </span>
+                <a href="#" className="read-more">
+                  read more
+                </a>
+              </div>
+            </div>
+
+            <div className="post-slide">
+              <div className="post-img">
+                <Image
+                  src="https://images.unsplash.com/photo-1586083702768-190ae093d34d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=305&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=505"
+                  alt=""
+                />
+                <a href="#" className="over-layer">
+                  <i className="fa fa-link"></i>
+                </a>
+              </div>
+              <div className="post-content">
+                <h3 className="post-title">
+                  <a href="#">Lorem ipsum dolor sit amet.</a>
+                </h3>
+                <p className="post-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
+                  laudantium necessitatibus neque quae tempora......
+                </p>
+                <span className="post-date">
+                  <i className="fa fa-clock-o"></i>Out 27, 2019
+                </span>
+                <a href="#" className="read-more">
+                  read more
+                </a>
+              </div>
+            </div>
+
+            <div className="post-slide">
+              <div className="post-img">
+                <Image
+                  src="https://images.unsplash.com/photo-1484656551321-a1161420a2a0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=306&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=506"
+                  alt=""
+                />
+                <a href="#" className="over-layer">
+                  <i className="fa fa-link"></i>
+                </a>
+              </div>
+              <div className="post-content">
+                <h3 className="post-title">
+                  <a href="#">Lorem ipsum dolor sit amet.</a>
+                </h3>
+                <p className="post-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Aperiam consectetur cumque dolorum, ex incidunt ipsa
+                  laudantium necessitatibus neque quae tempora......
+                </p>
+                <span className="post-date">
+                  <i className="fa fa-clock-o"></i>Out 27, 2019
+                </span>
+                <a href="#" className="read-more">
+                  read more
+                </a>
+              </div>
+            </div>
+          </OwlCarousel>
         </Container>
       </section>
 
