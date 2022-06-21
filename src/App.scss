@@ -379,13 +379,12 @@ a.simple-link:hover {
   }
   .owl-nav .owl-prev:after,
   .owl-nav .owl-next:after {
-    content: "\f104";
-    font-family: FontAwesome;
+    content: "ᐸ";
     color: #333;
     font-size: 30px;
   }
   .owl-nav .owl-next:after {
-    content: "\f105";
+    content: "ᐳ";
   }
 }
 
