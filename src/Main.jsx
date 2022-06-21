@@ -132,19 +132,7 @@ function Main() {
               everywhere.
             </span>
 
-            <div className="d-flex">
-              <a href="/projects" className="mx-auto">
-                <Button
-                  className="rounded-pill px-5 py-2 mt-5 mb-5"
-                  style={{ fontSize: "1.3rem" }}
-                >
-                  <span>Tour All Projects</span>
-                  <FontAwesomeIcon className="icon ms-2" icon={faArrowRight} />
-                </Button>
-              </a>
-            </div>
-
-            <Container>
+            <Container className="mt-4 mb-4">
               <OwlCarousel
                 className="owl-theme"
                 autoplay
@@ -303,6 +291,18 @@ function Main() {
                 </div>
               </OwlCarousel>
             </Container>
+
+            <div className="d-flex">
+              <a href="/projects" className="mx-auto">
+                <Button
+                  className="rounded-pill px-5 py-2"
+                  style={{ fontSize: "1.3rem" }}
+                >
+                  <span>Tour All Projects</span>
+                  <FontAwesomeIcon className="icon ms-2" icon={faArrowRight} />
+                </Button>
+              </a>
+            </div>
 
             {/*
             <div className="d-none d-lg-flex flex-row mt-5">
