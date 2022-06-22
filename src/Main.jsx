@@ -65,8 +65,7 @@ function Main() {
                 <p className="lead mt-4 mb-4 text-start ms-0 me-auto">
                   Dingocoin is the most successful cryptocurrency fork of
                   Dogecoin, with revolutionary innovations and unstoppable
-                  developments. Building an enthusiastic community, we bring
-                  utility and fun to world.
+                  developments.
                 </p>
                 <div className="mb-5 d-flex flex-row me-auto">
                   <a href="/wallets">
@@ -99,8 +98,7 @@ function Main() {
                 <p className="lead mt-2 text-start mx-auto">
                   Dingocoin is the most successful cryptocurrency fork of
                   Dogecoin, with revolutionary innovations and unstoppable
-                  developments. Building an enthusiastic community, we bring
-                  utility and fun to world.
+                  developments.
                 </p>
                 <div className="d-flex flex-row mx-auto mt-2">
                   <a href="/wallets">
@@ -126,10 +124,8 @@ function Main() {
           <FadeInSection>
             <h2 className="mb-3 text-center">Building Adoption</h2>
             <span className="subtitle mx-auto text-start text-lg-center">
-              Dingocoin believes in utility and fun for all. With a community
-              focused on building practical and meaningful applications, we
-              strive to make Dingocoin the digital currency that is adopted
-              everywhere.
+              Dingocoin believes in utility and fun for all. We aim to become
+              the digital currency that is adopted everywhere.
             </span>
 
             <Container className="mt-4 mb-4">
