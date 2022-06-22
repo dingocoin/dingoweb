@@ -386,6 +386,10 @@ a.simple-link:hover {
   .owl-nav .owl-next:after {
     content: "ᐳ";
   }
+
+  .owl-theme .owl-nav .disabled {
+    display: none !important;
+  }
 }
 
 .ecosystem {
