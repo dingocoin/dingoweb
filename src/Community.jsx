@@ -64,18 +64,6 @@ function Community() {
             </Button>
           </a>
           <a
-            href="https://twitter.com/dingocoincrypto"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <Button className="btn-light">
-              <div className="d-flex flex-column">
-                <FontAwesomeIcon className="icon" icon={faTwitter} />
-                <span>Twitter</span>
-              </div>
-            </Button>
-          </a>
-          <a
             href="https://www.instagram.com/dingocoin"
             rel="noreferrer"
             target="_blank"
