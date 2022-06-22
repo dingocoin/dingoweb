@@ -8,6 +8,7 @@ import {
   faReddit,
   faFacebook,
   faDiscord,
+  faTiktok
 } from "@fortawesome/free-brands-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 
@@ -35,6 +36,30 @@ function Community() {
               <div className="d-flex flex-column">
                 <FontAwesomeIcon className="icon" icon={faTelegram} />
                 <span>Telegram</span>
+              </div>
+            </Button>
+          </a>
+          <a
+            href="https://twitter.com/dingocoincrypto"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <Button className="btn-light">
+              <div className="d-flex flex-column">
+                <FontAwesomeIcon className="icon" icon={faTwitter} />
+                <span>Twitter</span>
+              </div>
+            </Button>
+          </a>
+          <a
+            href="https://www.tiktok.com/@dingocoin"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <Button className="btn-light">
+              <div className="d-flex flex-column">
+                <FontAwesomeIcon className="icon" icon={faTiktok} />
+                <span>TikTok</span>
               </div>
             </Button>
           </a>
