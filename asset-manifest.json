@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.6970ee18.chunk.css",
-    "main.js": "/static/js/main.c9737517.chunk.js",
-    "main.js.map": "/static/js/main.c9737517.chunk.js.map",
+    "main.js": "/static/js/main.776d96c3.chunk.js",
+    "main.js.map": "/static/js/main.776d96c3.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cb8b50a5.js",
     "runtime-main.js.map": "/static/js/runtime-main.cb8b50a5.js.map",
     "static/css/2.591db2b6.chunk.css": "/static/css/2.591db2b6.chunk.css",
@@ -15,7 +15,7 @@
     "static/media/birdeye.7dadfca4.png": "/static/media/birdeye.7dadfca4.png",
     "static/media/coinmarketcap.6dd2f9c2.png": "/static/media/coinmarketcap.6dd2f9c2.png",
     "static/media/coinpaprika.49abc8f7.png": "/static/media/coinpaprika.49abc8f7.png",
-    "static/media/contribute.bd96fd2e.svg": "/static/media/contribute.bd96fd2e.svg",
+    "static/media/contribute.8a141b66.svg": "/static/media/contribute.8a141b66.svg",
     "static/media/dingette.ad867fa4.png": "/static/media/dingette.ad867fa4.png",
     "static/media/dingocoin-rotate.e377139e.gif": "/static/media/dingocoin-rotate.e377139e.gif",
     "static/media/dingocoin.eedeeedd.png": "/static/media/dingocoin.eedeeedd.png",
@@ -23,7 +23,7 @@
     "static/media/dingodigger.9513703c.png": "/static/media/dingodigger.9513703c.png",
     "static/media/dingominer.c792d4b7.png": "/static/media/dingominer.c792d4b7.png",
     "static/media/dingosino.0d9d3260.png": "/static/media/dingosino.0d9d3260.png",
-    "static/media/dingotip.f57cd504.svg": "/static/media/dingotip.f57cd504.svg",
+    "static/media/dingotip.65e3a0a6.svg": "/static/media/dingotip.65e3a0a6.svg",
     "static/media/doucheydingos.999a9b8a.gif": "/static/media/doucheydingos.999a9b8a.gif",
     "static/media/exbitron.e9ea8c3d.png": "/static/media/exbitron.e9ea8c3d.png",
     "static/media/highlight-activities.a5e582a9.gif": "/static/media/highlight-activities.a5e582a9.gif",
@@ -39,7 +39,7 @@
     "static/media/roblox.63a5a71e.png": "/static/media/roblox.63a5a71e.png",
     "static/media/socialfaucet.6a46fdd5.png": "/static/media/socialfaucet.6a46fdd5.png",
     "static/media/sol.4d550d0f.png": "/static/media/sol.4d550d0f.png",
-    "static/media/trailmap.6b3b8c2e.svg": "/static/media/trailmap.6b3b8c2e.svg",
+    "static/media/trailmap.a272b4d6.svg": "/static/media/trailmap.a272b4d6.svg",
     "static/media/wdingocoin.87eb60c2.png": "/static/media/wdingocoin.87eb60c2.png",
     "static/media/wechatinvite.7bcd01e6.png": "/static/media/wechatinvite.7bcd01e6.png"
   },
@@ -48,6 +48,6 @@
     "static/css/2.591db2b6.chunk.css",
     "static/js/2.368af7b7.chunk.js",
     "static/css/main.6970ee18.chunk.css",
-    "static/js/main.c9737517.chunk.js"
+    "static/js/main.776d96c3.chunk.js"
   ]
 }
