@@ -34,16 +34,15 @@ function Stake() {
 
   const [currentList, setCurrentList] = React.useState([]);
   const [nextList, setNextList] = React.useState([]);
-  const [terminalBlocks, setTerminalBlocks] = React.useState([]);
   const [view, setView] = React.useState("next");
   React.useEffect(() => {
     (async () => {
       const currentStaked = Object.entries(
-        await get("https://stats.dingocoin.org:8443/stake/current")
+        await get("https://stats-stake.dingocoin.io/current")
       ).map((x) => {
         return {
           address: x[0],
-          amount: parseInt(BigInt(x[1].amount) / BigInt("100000000")),
+          amount: parseInt(BigInt(x[1].amount)),
           score: parseInt(x[1].score),
         };
       });
@@ -62,11 +61,11 @@ function Stake() {
       setCurrentList(currentStaked);
 
       const staked = Object.entries(
-        await get("https://stats.dingocoin.org:8443/stake/next")
+        await get("https://stats-stake.dingocoin.io/next")
       ).map((x) => {
         return {
           address: x[0],
-          amount: parseInt(BigInt(x[1].amount) / BigInt("100000000")),
+          amount: parseInt(BigInt(x[1].amount)),
           score: parseInt(x[1].score),
         };
       });
@@ -75,11 +74,6 @@ function Stake() {
         staked[i].rank = i + 1;
       }
       setNextList(staked);
-
-      const dingoStats = await get(
-        "https://stats.dingocoin.org:8443/stats/dingo"
-      );
-      setTerminalBlocks(STAKE_INTERVAL - (dingoStats.height % STAKE_INTERVAL));
     })();
   }, []);
 
@@ -89,7 +83,6 @@ function Stake() {
         <h1 className="mt-5 text-primary text-center">STAKE DINGOCOINS</h1>
         <CustomDivider />
         <Container>
-          {/*
           <Row>
             <p>Simply #KeepYourDingoInYourPants and get rewarded.</p>
           </Row>
@@ -264,12 +257,9 @@ function Stake() {
           </Row>
           <Row>
             <p className="mt-4">
-              Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
               Reward pool: <b>{(STAKE_REWARD).toLocaleString()} Dingocoins</b>.
             </p>
           </Row>
-          */}
-          <p>We are currently undergoing maintenance and will be back soon.</p>
         </Container>
       </section>
     </div>
