@@ -18,8 +18,9 @@ import DingocoinLogo from "./assets/img/dingocoin.png";
 
 import BigInt from "big-integer";
 
-const STAKE_REWARD = 500000; // 2 Million.
+const STAKE_REWARD = 1000000; // 2 Million.
 const STAKE_INTERVAL = 10000; // 10k blocks.
+const STAKE_API = "https://stats-stake.dingocoin.io";
 
 function Stake() {
   async function get(link) {
@@ -35,10 +36,11 @@ function Stake() {
   const [currentList, setCurrentList] = React.useState([]);
   const [nextList, setNextList] = React.useState([]);
   const [view, setView] = React.useState("next");
+  const [terminalBlocks, setTerminalBlocks] = React.useState([]);
   React.useEffect(() => {
     (async () => {
       const currentStaked = Object.entries(
-        await get("https://stats-stake.dingocoin.io/current")
+        await get(`${STAKE_API}/current`)
       ).map((x) => {
         return {
           address: x[0],
@@ -60,9 +62,7 @@ function Stake() {
       }
       setCurrentList(currentStaked);
 
-      const staked = Object.entries(
-        await get("https://stats-stake.dingocoin.io/next")
-      ).map((x) => {
+      const staked = Object.entries(await get(`${STAKE_API}/next`)).map((x) => {
         return {
           address: x[0],
           amount: parseInt(BigInt(x[1].amount)),
@@ -74,6 +74,9 @@ function Stake() {
         staked[i].rank = i + 1;
       }
       setNextList(staked);
+
+      const stats = await get(`${STAKE_API}/stats`);
+      setTerminalBlocks(STAKE_INTERVAL - (stats.height % STAKE_INTERVAL));
     })();
   }, []);
 
@@ -111,6 +114,9 @@ function Stake() {
                     <p>
                       FAQ:
                       <br />
+                      * <b>3 confirmations</b> are required for your stake to be
+                      updated in the table below.
+                      <br/>
                       * Your funds need to be deposited before the start of each
                       round for it to be counted for that round.
                       <br />
@@ -134,132 +140,129 @@ function Stake() {
               </Accordion>
             </Col>
           </Row>
-          <Row>
-            <Col>
-              <DropdownButton
-                title={view === "next" ? "Next Round" : "Current Round"}
-                className="mb-2"
+          <div className="d-flex flex-column">
+            <DropdownButton
+              title={view === "next" ? "Next Round" : "Current Round"}
+              className="mb-2 mx-auto"
+            >
+              <Dropdown.Item
+                onClick={() => {
+                  setView("current");
+                }}
               >
-                <Dropdown.Item
-                  onClick={() => {
-                    setView("current");
-                  }}
+                Current Round
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => {
+                  setView("next");
+                }}
+              >
+                Next Round
+              </Dropdown.Item>
+            </DropdownButton>
+            <div className="social-faucet-board">
+              {view === "current" && (
+                <Table
+                  className="social-faucet-table"
+                  striped
+                  bordered
+                  responsive
                 >
-                  Current Round
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setView("next");
-                  }}
+                  <thead>
+                    <tr>
+                      <th className="col-1">#</th>
+                      <th className="col-5">Address</th>
+                      <th className="col-3 table-dingo">
+                        <span>
+                          <img alt="" src={DingocoinLogo} />
+                        </span>
+                        &nbsp;Staked
+                      </th>
+                      <th className="col-3 table-dingo">
+                        <span>
+                          <img alt="" src={DingocoinLogo} />
+                        </span>
+                        &nbsp;To Earn
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentList.map((x) => (
+                      <tr key={x.rank}>
+                        <td className="col-1">{x.rank}</td>
+                        <td className="col-5">{x.address}</td>
+                        <td className="col-3">{x.amount.toLocaleString()}</td>
+                        <td className="col-3">
+                          {Math.floor(x.earn).toLocaleString()}
+                        </td>
+                      </tr>
+                    ))}
+                    <tr>
+                      <td colSpan="2" className="col-7">
+                        <b>Total</b>
+                      </td>
+                      <td className="col-3">
+                        <b>
+                          {currentList
+                            .map((x) => x.amount)
+                            .reduce((a, b) => a + b, 0)
+                            .toLocaleString()}
+                        </b>
+                      </td>
+                      <td className="col-3"></td>
+                    </tr>
+                  </tbody>
+                </Table>
+              )}
+              {view === "next" && (
+                <Table
+                  className="social-faucet-table"
+                  striped
+                  bordered
+                  responsive
                 >
-                  Next Round
-                </Dropdown.Item>
-              </DropdownButton>
-              <div className="social-faucet-board">
-                {view === "current" && (
-                  <Table
-                    className="social-faucet-table"
-                    striped
-                    bordered
-                    responsive
-                  >
-                    <thead>
-                      <tr>
-                        <th className="col-1">#</th>
-                        <th className="col-5">Address</th>
-                        <th className="col-3 table-dingo">
-                          <span>
-                            <img alt="" src={DingocoinLogo} />
-                          </span>
-                          &nbsp;Staked
-                        </th>
-                        <th className="col-3 table-dingo">
-                          <span>
-                            <img alt="" src={DingocoinLogo} />
-                          </span>
-                          &nbsp;To Earn
-                        </th>
+                  <thead>
+                    <tr>
+                      <th className="col-1">#</th>
+                      <th className="col-5">Address</th>
+                      <th className="col-3 table-dingo">
+                        <span>
+                          <img alt="" src={DingocoinLogo} />
+                        </span>
+                        &nbsp;Staked
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {nextList.map((x) => (
+                      <tr key={x.rank}>
+                        <td className="col-1">{x.rank}</td>
+                        <td className="col-5">{x.address}</td>
+                        <td className="col-3">{x.amount.toLocaleString()}</td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {currentList.map((x) => (
-                        <tr key={x.rank}>
-                          <td className="col-1">{x.rank}</td>
-                          <td className="col-5">{x.address}</td>
-                          <td className="col-3">{x.amount.toLocaleString()}</td>
-                          <td className="col-3">
-                            {Math.floor(x.earn).toLocaleString()}
-                          </td>
-                        </tr>
-                      ))}
-                      <tr>
-                        <td colSpan="2" className="col-7">
-                          <b>Total</b>
-                        </td>
-                        <td className="col-3">
-                          <b>
-                            {currentList
-                              .map((x) => x.amount)
-                              .reduce((a, b) => a + b, 0)
-                              .toLocaleString()}
-                          </b>
-                        </td>
-                        <td className="col-3"></td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                )}
-                {view === "next" && (
-                  <Table
-                    className="social-faucet-table"
-                    striped
-                    bordered
-                    responsive
-                  >
-                    <thead>
-                      <tr>
-                        <th className="col-1">#</th>
-                        <th className="col-5">Address</th>
-                        <th className="col-3 table-dingo">
-                          <span>
-                            <img alt="" src={DingocoinLogo} />
-                          </span>
-                          &nbsp;Staked
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {nextList.map((x) => (
-                        <tr key={x.rank}>
-                          <td className="col-1">{x.rank}</td>
-                          <td className="col-5">{x.address}</td>
-                          <td className="col-3">{x.amount.toLocaleString()}</td>
-                        </tr>
-                      ))}
-                      <tr>
-                        <td colSpan="2" className="col-7">
-                          <b>Total</b>
-                        </td>
-                        <td className="col-3">
-                          <b>
-                            {nextList
-                              .map((x) => x.amount)
-                              .reduce((a, b) => a + b, 0)
-                              .toLocaleString()}
-                          </b>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                )}
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <p className="mt-4">
-              Reward pool: <b>{(STAKE_REWARD).toLocaleString()} Dingocoins</b>.
+                    ))}
+                    <tr>
+                      <td colSpan="2" className="col-7">
+                        <b>Total</b>
+                      </td>
+                      <td className="col-3">
+                        <b>
+                          {nextList
+                            .map((x) => x.amount)
+                            .reduce((a, b) => a + b, 0)
+                            .toLocaleString()}
+                        </b>
+                      </td>
+                    </tr>
+                  </tbody>
+                </Table>
+              )}
+            </div>
+            <p className="mt-4 mx-auto text-center">
+              Next round starting in: <b>{terminalBlocks} blocks</b>.<br />
+              Reward pool: <b>{STAKE_REWARD.toLocaleString()} Dingocoins</b>.
             </p>
-          </Row>
+          </div>
         </Container>
       </section>
     </div>
