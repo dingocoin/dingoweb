@@ -2,11 +2,9 @@ import React from "react";
 import { Modal, Row, Col, Button, Image, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChartLine,
+
   faShoppingCart,
   faRobot,
-  faArrowRight,
-  faLaptopCode,
   faWindowRestore,
 } from "@fortawesome/free-solid-svg-icons";
 import CryptoGrenadeLogo from "./assets/img/cryptogrenade.png";
@@ -165,7 +163,7 @@ function Projects() {
                 </p>
               </div>
             </a>
-            <a
+            {/*<a
               href="https://dev.dingocoin.org"
               target="_blank"
               rel="noreferrer"
@@ -180,7 +178,7 @@ function Projects() {
                   <FontAwesomeIcon className="icon" icon={faArrowRight} />
                 </Button>
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -201,7 +199,7 @@ function Projects() {
                 </p>
               </div>
             </a>
-            <a href="/stake" className="project-card d-flex">
+           {/* <a href="/stake" className="project-card d-flex">
               <div className="mb-auto mx-auto">
                 <div className="logo-holder">
                   <FontAwesomeIcon className="faicon" icon={faChartLine} />
@@ -211,7 +209,7 @@ function Projects() {
                   Earn weekly rewards just for holding Dingocoins.
                 </p>
               </div>
-            </a>
+            </a>*/}
             <a
               rel="noreferrer"
               href="https://cryptogrenade.xyz/"
@@ -229,7 +227,7 @@ function Projects() {
                 </p>
               </div>
             </a>
-            <a
+           {/* <a
               href="https://dev.dingocoin.org"
               target="_blank"
               rel="noreferrer"
@@ -244,7 +242,7 @@ function Projects() {
                   <FontAwesomeIcon className="icon" icon={faArrowRight} />
                 </Button>
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -298,7 +296,7 @@ function Projects() {
                 </p>
               </div>
             </a>
-            <a
+            {/*<a
               href="https://dev.dingocoin.org"
               target="_blank"
               rel="noreferrer"
@@ -313,7 +311,7 @@ function Projects() {
                   <FontAwesomeIcon className="icon" icon={faArrowRight} />
                 </Button>
               </div>
-            </a>
+            </a>*/}
           </div>
         </div>
       </Container>
