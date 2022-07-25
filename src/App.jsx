@@ -25,7 +25,7 @@ import {
   NavDropdown,
   Container,
   Row,
-  Image,
+  Image
 } from "react-bootstrap";
 
 // Assets.
@@ -48,6 +48,7 @@ import XTCOMLogo from "./assets/img/xtcom.png";
 import LBankLogo from "./assets/img/lbanklogo.png";
 import BitmartLogo from "./assets/img/bitmartlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MaintLogo from "./assets/img/Comp-1_1.gif";
 import {
   faHammer,
   faMicroscope,
@@ -55,13 +56,16 @@ import {
   faWallet,
   faUsers,
   faShapes,
-  faLaptopCode,
+  faPaintBrush,
+  faCoins,
+  faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WechatInvite from "./assets/img/wechatinvite.png";
 import Projects from "./Projects";
+import Maintenance from "./Maintenance";
 
-function App() {
+export default function App() {
   ReactGA.initialize("UA-210617812-1");
   ReactGA.pageview(window.location.pathname + window.location.search);
 
@@ -72,10 +76,14 @@ function App() {
   React.useEffect(() => {}, [location]);
 
   const [wechatModalShow, setWechatModalShow] = React.useState(false);
-
+{/* Maint Mode Toggle -- true = on  | false = off */}
+  const maintenance = false;
   return (
     <Router>
-      <div className="App">
+      {maintenance ? (
+        <Maintenance />
+      ) : (
+              <div className="App">
         <Navbar className="navbar" bg="dark" expand="lg" sticky="top">
           <Container>
             <Navbar.Brand href="/" className="navbar-brand align-items-center">
@@ -105,35 +113,35 @@ function App() {
                   <div className="d-flex flex-wrap navbar-panel justify-content-center">
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://coinmarketcap.com/currencies/dingocoin/"
                     >
                       <img alt="" src={CoinMarketCapLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://coinpaprika.com/coin/dingo-dingocoin/"
                     >
                       <img alt="" src={CoinPaprikaLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://www.coingecko.com/en/coins/dingocoin"
                     >
                       <img alt="" src={CoinGeckoLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
                     >
                       <img alt="" src={PooCoinLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
                     >
                       <img alt="" src={BirdeyeLogo} />
@@ -143,91 +151,91 @@ function App() {
                   <div className="d-flex flex-wrap navbar-panel justify-content-center">
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
                     >
                       <img alt="" src={BitmartLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://www.lbank.info/exchange/dingo/usdt"
                     >
                       <img alt="" src={LBankLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://www.xt.com/trade/dingo_usdt"
                     >
                       <img alt="" src={XTCOMLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
                     >
                       <img alt="" src={HotbitLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://main.southxchange.com/Market/Book/DINGO/LTC"
                     >
                       <img alt="" src={SouthXchangeLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://wallet.autradex.systems/"
                     >
                       <img alt="" src={AutradexLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://cratex.io/index.php?pair=DINGO/LTC"
                     >
                       <img alt="" src={CratexIoLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://www.exbitron.com/trading/dingousdt"
                     >
                       <img alt="" src={ExbitronLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://dex-trade.com/spot/trading/DINGOUSDT"
                     >
                       <img alt="" src={DexTradeLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://dex.delion.online/market/DELION.DINGO_DOGE"
                     >
                       <img alt="" src={DelionDexLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
                     >
                       <img alt="" src={PancakeSwap} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3&outputAmount=0&fixed=in"
                     >
                       <img alt="" src={RaydiumSwap} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="noreferrer"
+                      rel="nofollow"
                       href="https://wrap.dingocoin.org"
                     >
                       <span>Wrap Custodian</span>
@@ -245,12 +253,12 @@ function App() {
                         className="text-primary"
                       />
                     </div>{" "}
-                    Tour Projects
+                    Community Projects
                   </NavDropdown.Item>
-                  <NavDropdown.Item
+                {/*<NavDropdown.Item
                     href="https://dev.dingocoin.org"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="nofollow"
                   >
                     <div className="inline-logo-holder">
                       <FontAwesomeIcon
@@ -259,6 +267,32 @@ function App() {
                       />
                     </div>{" "}
                     Start Developing
+                  </NavDropdown.Item> */}
+                  <NavDropdown.Item
+                    href="https://nft.dingocoin.org"
+                    target="_blank"
+                    rel="nofollow"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        icon={faPaintBrush}
+                        className="text-primary"
+                      />
+                    </div>{" "}
+                    NFT Platform
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    href="https://wrap.dingocoin.org"
+                    target="_blank"
+                    rel="nofollow"
+                  >
+                    <div className="inline-logo-holder">
+                      <FontAwesomeIcon
+                        icon={faCoins}
+                        className="text-primary"
+                      />
+                    </div>{" "}
+                    Wrapped Dingo
                   </NavDropdown.Item>
                   <NavDropdown.Header>Chats and Socials</NavDropdown.Header>
                   <NavDropdown.Item href="/community">
@@ -274,7 +308,7 @@ function App() {
                 <NavDropdown className="navbar-important" title="Resources">
                   <NavDropdown.Item
                     target="_blank"
-                    rel="noreferrer"
+                    rel="nofollow"
                     href="https://miningpoolstats.stream/dingocoin"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -284,7 +318,7 @@ function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
-                    rel="noreferrer"
+                    rel="nofollow"
                     href="https://docs.google.com/presentation/d/1HSe8sbY6HtCS7rUwpw5UkjguVKy4KJPRlfQ0apgCfDM/edit?usp=sharing"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -294,7 +328,7 @@ function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
-                    rel="noreferrer"
+                    rel="nofollow"
                     href="https://explorer.dingocoin.org/"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -304,7 +338,7 @@ function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
-                    rel="noreferrer"
+                    rel="nofollow"
                     href="https://openchains.info/coin/dingocoin/blocks"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -314,7 +348,7 @@ function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
-                    rel="noreferrer"
+                    rel="nofollow"
                     href="https://www.dingochain.info/"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -322,7 +356,13 @@ function App() {
                     </div>{" "}
                     Explorer (Mirror)
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/privacy">
+                  <NavDropdown.Item href="https://dingocoin.org/DingocoinWhitePaper.pdf">
+                    <div className="inline-logo-holder text-primary">
+                      <FontAwesomeIcon icon={faFile} />
+                    </div>{" "}
+                    Dingcoin White Paper
+                  </NavDropdown.Item>
+                <NavDropdown.Item href="/privacy">
                     <div className="inline-logo-holder text-primary">
                       <FontAwesomeIcon icon={faUserSecret} />
                     </div>{" "}
@@ -334,7 +374,6 @@ function App() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-
         <Routes>
           <Route path="/wallets" element={<Wallets />} />
           <Route path="/community" element={<Community />} />
@@ -361,21 +400,15 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="*" element={<Main />} />
         </Routes>
-
         <section className="section-footer text-center">
           <Container>
-            <Row>
-              <span>
-                <b>© The Dingocoin Project 2021 - 2022</b>
-              </span>
-            </Row>
             <Row className="socials justify-content-md-center">
               <div className="mt-3">
                 <span>Multisig Marketing Fund</span>
                 <br />
                 <b>
                   <a
-                    rel="noreferrer"
+                    rel="nofollow"
                     href="https://openchains.info/coin/dingocoin/address/A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP"
                     target="_blank"
                     className="simple-link"
@@ -385,9 +418,23 @@ function App() {
                 </b>
               </div>
             </Row>
+          <br />
+            <Row>
+              <span>
+                <b>© The Dingocoin Project 2021 - 2022<br /></b><b>
+                  <a
+                    rel="nofollow"
+                    href="https://supertechdudes.com"
+                    target="_blank"
+                    className="simple-link"
+                  >
+                    Maintained By SuperTechDudes Team
+                  </a>
+                </b>
+              </span>
+            </Row>
           </Container>
         </section>
-
         <Modal
           size="md"
           aria-labelledby="contained-modal-title-vcenter"
@@ -410,8 +457,7 @@ function App() {
           </Modal.Body>
         </Modal>
       </div>
+      )}
     </Router>
   );
 }
-
-export default App;

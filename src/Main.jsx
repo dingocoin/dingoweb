@@ -11,7 +11,6 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 // Assets.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faLaptopCode,
   faArrowRight,
   faUsers,
   faWallet,
@@ -126,7 +125,7 @@ function Main() {
             <span className="subtitle mx-auto text-start text-lg-center">
               Dingocoin believes in utility and fun for all. We aim to become
               the digital currency that is adopted everywhere.
-            </span>
+          </span>
 
             <Container className="mt-4 mb-4">
               <OwlCarousel
@@ -451,7 +450,7 @@ function Main() {
       <section className="ecosystem">
         <Container className="py-5 mt-3 mb-4">
           <FadeInSection>
-            <h2 className="text-center">Join our wild ecosystem</h2>
+            <h2 className="text-center">Join Our Wild Ecosystem</h2>
             <div className="d-flex flex-row flex-wrap justify-content-center mt-5">
               <a href="/community" className="card d-flex flex-column rounded">
                 <h3 className="text-start">Community</h3>
@@ -465,7 +464,8 @@ function Main() {
                   <FontAwesomeIcon className="logo" icon={faUsers} />
                 </div>
               </a>
-              <a
+             
+	    {/* <a
                 href="https://dev.dingocoin.org"
                 target="_blank"
                 rel="noreferrer"
@@ -479,7 +479,7 @@ function Main() {
                 <div className="d-flex mt-auto">
                   <FontAwesomeIcon className="logo" icon={faLaptopCode} />
                 </div>
-              </a>
+              </a> */}
               <a href="/wallets" className="card d-flex flex-column rounded">
                 <h3 className="text-start">Get Wallet</h3>
                 <span>Start your journey with Dingocoin today.</span>
@@ -520,7 +520,7 @@ function Main() {
             <Row className="justify-content-center">
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
               >
                 <Button variant="outline">
@@ -529,7 +529,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://www.lbank.info/exchange/dingo/usdt"
               >
                 <Button variant="outline">
@@ -538,7 +538,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://www.xt.com/trade/dingo_usdt"
               >
                 <Button variant="outline">
@@ -547,7 +547,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
               >
                 <Button variant="outline">
@@ -556,7 +556,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://main.southxchange.com/Market/Book/DINGO/LTC"
               >
                 <Button variant="outline">
@@ -565,7 +565,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://wallet.autradex.systems/"
               >
                 <Button variant="outline">
@@ -574,7 +574,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://www.exbitron.com/trading/dingousdt"
               >
                 <Button variant="outline">
@@ -583,7 +583,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://cratex.io/index.php?pair=DINGO/LTC"
               >
                 <Button variant="outline">
@@ -592,7 +592,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://dex-trade.com/spot/trading/DINGOUSDT"
               >
                 <Button variant="outline">
@@ -601,7 +601,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://dex.delion.online/market/DELION.DINGO_DOGE"
               >
                 <Button variant="outline">
@@ -610,7 +610,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
               >
                 <Button variant="outline">
@@ -619,7 +619,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3&outputAmount=0&fixed=in"
               >
                 <Button variant="outline">
@@ -637,7 +637,7 @@ function Main() {
             <Row>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://coinpaprika.com/coin/dingo-dingocoin/"
               >
                 <Button variant="outline">
@@ -646,7 +646,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://coinmarketcap.com/currencies/dingocoin/"
               >
                 <Button variant="outline">
@@ -655,7 +655,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://www.coingecko.com/en/coins/dingocoin"
               >
                 <Button variant="outline">
@@ -664,7 +664,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://coincodex.com/crypto/dingocoin/"
               >
                 <Button variant="outline">
@@ -673,7 +673,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://dex.guru/token/0x9b208b117B2C4F76C1534B6f006b033220a681A4-bsc"
               >
                 <Button variant="outline">
@@ -682,7 +682,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
               >
                 <Button variant="outline">
@@ -691,7 +691,7 @@ function Main() {
               </a>
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow"
                 href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
               >
                 <Button variant="outline">
@@ -742,7 +742,7 @@ function Main() {
                 <a
                   target="_blank"
                   href="https://dingomerch.creator-spring.com"
-                  rel="noreferrer"
+                  rel="nofollow"
                 >
                   <Button className="px-4 py-2" variant="primary">
                     ! Amandum's Store
@@ -764,7 +764,7 @@ function Main() {
                 <a
                   target="_blank"
                   href="https://opensea.io/collection/dingocoin1"
-                  rel="noreferrer"
+                  rel="nofollow"
                 >
                   <Button className="px-4 py-2" variant="primary">
                     DingoCoin Collection #1
@@ -778,7 +778,7 @@ function Main() {
                 <a
                   target="_blank"
                   href="https://opensea.io/collection/cryptodingos"
-                  rel="noreferrer"
+                  rel="nofollow"
                 >
                   <Button className="px-4 py-2" variant="primary">
                     CryptoDingos
@@ -792,7 +792,7 @@ function Main() {
                 <a
                   target="_blank"
                   href="https://opensea.io/collection/dingocoinart"
-                  rel="noreferrer"
+                  rel="nofollow"
                 >
                   <Button className="px-4 py-2" variant="primary">
                     Dingocoin Art
@@ -806,7 +806,7 @@ function Main() {
                 <a
                   target="_blank"
                   href="https://opensea.io/collection/douchey-dingos"
-                  rel="noreferrer"
+                  rel="nofollow"
                 >
                   <Button className="px-4 py-2" variant="primary">
                     Douchey Dingos
@@ -836,5 +836,4 @@ function Main() {
     </div>
   );
 }
-
 export default Main;

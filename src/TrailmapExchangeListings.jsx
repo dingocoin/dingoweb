@@ -10,7 +10,7 @@ function TrailmapExchangeListings() {
         Dingocoin is proudly traded at 10 marketplaces April-July 2021: Delion,
         Dex-Trade, Cratex August-October 2021: SouthXchange, wrapped on BSC
         chain November-December 2021: Hotbit, wrapped on SOL chain
-        January-February 2022: XT.com, Exbitron, Udonex
+        January-February 2022: XT.com & Exbitron
       </p>
 
       <h4 className="mt-4">
