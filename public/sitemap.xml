@@ -1,19 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://dingocoin.org/</loc>
+    <lastmod>2022-05-18T18:38:59+00:00</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
+    <loc>https://nft.dingocoin.org/</loc>
+    <lastmod>2022-05-17T17:40:59+00:00</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://miner.dingocoin.org/</loc>
+    <lastmod>2022-05-17T17:40:59+00:00</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/privacy</loc>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://dingocoin.org/stake</loc>
-    <priority>0.99</priority>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://dingocoin.org/airdrop</loc>
-    <priority>0.98</priority>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://dingocoin.org/trailmap</loc>
-    <priority>0.97</priority>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/trailmap/manifesto</loc>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/trailmap/contribute</loc>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/trailmap/dingotip</loc>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/trailmap/nextgen</loc>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/trailmap/browserwallet</loc>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/trailmap/nftplatform</loc>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/trailmap/multilinguistics</loc>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://dingocoin.org/trailmap/exchangelistings</loc>
+    <lastmod>2022-05-09T14:38:59+00:00</lastmod>
+    <priority>0.70</priority>
   </url>
 </urlset>
