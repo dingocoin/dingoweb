@@ -5,6 +5,7 @@ import Main from "./Main";
 import Privacy from "./Privacy";
 import Stake from "./Stake";
 import Wallets from "./Wallets";
+import Donate from "./Donate";
 import Community from "./Community";
 import TrailmapNextGen from "./TrailmapNextGen";
 import TrailmapBrowserWallet from "./TrailmapBrowserWallet";
@@ -39,7 +40,6 @@ import DelionDexLogo from "./assets/img/deliondex.png";
 import DexTradeLogo from "./assets/img/dextrade.png";
 import DingocoinLogo from "./assets/img/dingocoin.png";
 import ExbitronLogo from "./assets/img/exbitron.png";
-import HotbitLogo from "./assets/img/hotbitex.png";
 import PancakeSwap from "./assets/img/pancakeswap.png";
 import PooCoinLogo from "./assets/img/poocoin.png";
 import RaydiumSwap from "./assets/img/raydiumswap.png";
@@ -48,7 +48,6 @@ import XTCOMLogo from "./assets/img/xtcom.png";
 import LBankLogo from "./assets/img/lbanklogo.png";
 import BitmartLogo from "./assets/img/bitmartlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MaintLogo from "./assets/img/Comp-1_1.gif";
 import {
   faHammer,
   faMicroscope,
@@ -76,7 +75,8 @@ export default function App() {
   React.useEffect(() => {}, [location]);
 
   const [wechatModalShow, setWechatModalShow] = React.useState(false);
-{/* Maint Mode Toggle -- true = on  | false = off */}
+
+  //* Maint Mode Toggle -- true = on  | false = off *//
   const maintenance = false;
   return (
     <Router>
@@ -113,35 +113,35 @@ export default function App() {
                   <div className="d-flex flex-wrap navbar-panel justify-content-center">
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://coinmarketcap.com/currencies/dingocoin/"
                     >
                       <img alt="" src={CoinMarketCapLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://coinpaprika.com/coin/dingo-dingocoin/"
                     >
                       <img alt="" src={CoinPaprikaLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://www.coingecko.com/en/coins/dingocoin"
                     >
                       <img alt="" src={CoinGeckoLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://poocoin.app/tokens/0x9b208b117b2c4f76c1534b6f006b033220a681a4"
                     >
                       <img alt="" src={PooCoinLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://birdeye.so/token/6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3"
                     >
                       <img alt="" src={BirdeyeLogo} />
@@ -151,84 +151,77 @@ export default function App() {
                   <div className="d-flex flex-wrap navbar-panel justify-content-center">
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://www.bitmart.com/trade/en?symbol=DINGO_USDT"
                     >
                       <img alt="" src={BitmartLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://www.lbank.info/exchange/dingo/usdt"
                     >
                       <img alt="" src={LBankLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://www.xt.com/trade/dingo_usdt"
                     >
                       <img alt="" src={XTCOMLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
-                      href="https://www.hotbit.io/exchange?symbol=DINGO_USDT"
-                    >
-                      <img alt="" src={HotbitLogo} />
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://main.southxchange.com/Market/Book/DINGO/LTC"
                     >
                       <img alt="" src={SouthXchangeLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://wallet.autradex.systems/"
                     >
                       <img alt="" src={AutradexLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://cratex.io/index.php?pair=DINGO/LTC"
                     >
                       <img alt="" src={CratexIoLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://www.exbitron.com/trading/dingousdt"
                     >
                       <img alt="" src={ExbitronLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://dex-trade.com/spot/trading/DINGOUSDT"
                     >
                       <img alt="" src={DexTradeLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://dex.delion.online/market/DELION.DINGO_DOGE"
                     >
                       <img alt="" src={DelionDexLogo} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://pancakeswap.finance/swap?outputCurrency=0x9b208b117B2C4F76C1534B6f006b033220a681A4"
                     >
                       <img alt="" src={PancakeSwap} />
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6VYF5jXq6rfq4QRgGMG6co7b1Ev1Lj7KSbHBxfQ9e1L3&outputAmount=0&fixed=in"
                     >
                       <img alt="" src={RaydiumSwap} />
@@ -258,7 +251,7 @@ export default function App() {
                 {/*<NavDropdown.Item
                     href="https://dev.dingocoin.org"
                     target="_blank"
-                    rel="nofollow"
+                    rel="nofollow noopener noreferrer"
                   >
                     <div className="inline-logo-holder">
                       <FontAwesomeIcon
@@ -271,7 +264,7 @@ export default function App() {
                   <NavDropdown.Item
                     href="https://nft.dingocoin.org"
                     target="_blank"
-                    rel="nofollow"
+                    rel="nofollow noopener noreferrer"
                   >
                     <div className="inline-logo-holder">
                       <FontAwesomeIcon
@@ -284,7 +277,7 @@ export default function App() {
                   <NavDropdown.Item
                     href="https://wrap.dingocoin.org"
                     target="_blank"
-                    rel="nofollow"
+                    rel="nofollow noopener noreferrer"
                   >
                     <div className="inline-logo-holder">
                       <FontAwesomeIcon
@@ -305,10 +298,14 @@ export default function App() {
                     Discover the Community
                   </NavDropdown.Item>
                 </NavDropdown>
+                
+              
+               <Nav.Link href="/donate">Donate</Nav.Link>
+              
                 <NavDropdown className="navbar-important" title="Resources">
                   <NavDropdown.Item
                     target="_blank"
-                    rel="nofollow"
+                    rel="nofollow noopener noreferrer"
                     href="https://miningpoolstats.stream/dingocoin"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -318,7 +315,7 @@ export default function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
-                    rel="nofollow"
+                    rel="nofollow noopener noreferrer"
                     href="https://docs.google.com/presentation/d/1HSe8sbY6HtCS7rUwpw5UkjguVKy4KJPRlfQ0apgCfDM/edit?usp=sharing"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -328,7 +325,7 @@ export default function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
-                    rel="nofollow"
+                    rel="nofollow noopener noreferrer"
                     href="https://explorer.dingocoin.org/"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -338,7 +335,7 @@ export default function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
-                    rel="nofollow"
+                    rel="nofollow noopener noreferrer"
                     href="https://openchains.info/coin/dingocoin/blocks"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -348,7 +345,7 @@ export default function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     target="_blank"
-                    rel="nofollow"
+                    rel="nofollow noopener noreferrer"
                     href="https://www.dingochain.info/"
                   >
                     <div className="inline-logo-holder text-primary">
@@ -377,6 +374,7 @@ export default function App() {
         <Routes>
           <Route path="/wallets" element={<Wallets />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/donate" element={<Donate />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/stake" element={<Stake />} />
@@ -401,29 +399,13 @@ export default function App() {
           <Route path="*" element={<Main />} />
         </Routes>
         <section className="section-footer text-center">
-          <Container>
-            <Row className="socials justify-content-md-center">
-              <div className="mt-3">
-                <span>Multisig Marketing Fund</span>
-                <br />
-                <b>
-                  <a
-                    rel="nofollow"
-                    href="https://openchains.info/coin/dingocoin/address/A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP"
-                    target="_blank"
-                    className="simple-link"
-                  >
-                    A4KTTmS4dECRZAn6ycsavechg8ccyjxkJP
-                  </a>
-                </b>
-              </div>
-            </Row>
+          <Container>     
           <br />
             <Row>
               <span>
                 <b>© The Dingocoin Project 2021 - 2022<br /></b><b>
                   <a
-                    rel="nofollow"
+                    rel="nofollow noopener noreferrer"
                     href="https://supertechdudes.com"
                     target="_blank"
                     className="simple-link"
