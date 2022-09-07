@@ -1,7 +1,7 @@
 import React from "react";
 import TrailmapTemplate from "./TrailmapTemplate";
 import {Image} from "react-bootstrap"
-import ContributionImage from "./assets/img/contribute.svg";
+import ContributionImage from "./assets/img/contribute.png";
 
 function TrailmapContribute() {
   return (

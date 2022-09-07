@@ -4,17 +4,13 @@ import MaintLogo from "./assets/img/Comp-1_1.gif";
 
 // Controls.
 import {
-  Modal,
   Navbar,
   Container,
-  Row,
+  Row
 } from "react-bootstrap";
 
 // Assets.
 import DingocoinLogo from "./assets/img/dingocoin.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export default function Maintenance() {
   return (
@@ -27,15 +23,16 @@ export default function Maintenance() {
           </Navbar.Brand> 
         </Container>
       </Navbar>
-      <section className="projects min-height-fill" >
-        <Container className="py-3 py-lg-5 d-flex flex-column mt-4">
-	      <Row>
-   			<h3 className="mt-4 text-center">We're Sorry.....</h3>
+    <section className="projects min-height-fill" >
+      <Container className="py-3 py-lg-5 d-flex flex-column mt-4">
+	  <Row>
+   	    <h3 className="mt-4 text-center">We're Sorry.....</h3>
             <span className="subtitle mx-auto text-start text-lg-center">
               We Are Down For Scheduled Maintenance. Please Check Back Later. <br /> <br />
-      	      <img alt="" src={MaintLogo} /></span>
-          </Row>
-        </Container>
+              <img alt="" src={MaintLogo} /> 
+      	   </span>
+         </Row>
+      </Container>
       </section>
       <br />
       <section className="section-footer text-center">
